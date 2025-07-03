@@ -1,21 +1,19 @@
-type TGlobalPointsSummaryProps = {
-  trees: { talents: { points: number }[] }[]
-  levelCap?: number
-}
-
-export const GlobalPointsSummary = (globalPointsSummaryProps: TGlobalPointsSummaryProps) => {
-  const { trees, levelCap = 61 } = globalPointsSummaryProps;
-
-  const total = trees.reduce((sum, t) => sum + t.talents.reduce((s, talent) => s + talent.points, 0), 0)
-  const remaining = Math.max(0, levelCap - total)
-
+export const GlobalPointsSummary = ({
+  totalTalentPoints,
+  totalPointsSpent,
+  pointsRemaining,
+}: {
+  totalTalentPoints: number
+  totalPointsSpent: number
+  pointsRemaining: number
+}) => {
   return (
     <div className="mb-4 text-sm text-ink flex justify-between items-center bg-parchment p-2 rounded shadow">
       <div>
-        <strong>Total Points Spent:</strong> {total} / {levelCap}
+        <strong>Total Points Spent:</strong> {totalPointsSpent} / {totalTalentPoints}
       </div>
       <div>
-        <strong>Points Remaining:</strong> {remaining}
+        <strong>Points Remaining:</strong> {pointsRemaining}
       </div>
     </div>
   )

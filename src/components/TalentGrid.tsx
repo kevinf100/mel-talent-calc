@@ -4,11 +4,11 @@ import { useTalentTrees } from '../core/useTalentTrees';
 import { TalentTreeScroller } from './TalentTreeScroller';
 
 export const TalentGrid = () => {
-  const { trees, modify, resetTree, resetAll } = useTalentTrees();
+  const { trees, modify, resetTree, resetAll, totalTalentPoints, totalPointsSpent, pointsRemaining } = useTalentTrees();
 
   return (
     <div className="space-y-4 sm:max-w-screen-xl sm:mx-auto w-full">
-      <GlobalPointsSummary trees={trees} />
+      <GlobalPointsSummary totalTalentPoints={totalTalentPoints} totalPointsSpent={totalPointsSpent} pointsRemaining={pointsRemaining} />
 
       <div className="flex justify-end">
         <button
@@ -21,7 +21,8 @@ export const TalentGrid = () => {
 
       <TalentTreeScroller
         trees={trees.map((tree, i) => (
-          <TalentTree
+          <TalentTree 
+            pointsRemaining={pointsRemaining}
             key={tree.name}
             name={tree.name}
             talents={tree.talents}

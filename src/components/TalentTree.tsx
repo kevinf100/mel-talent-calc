@@ -11,6 +11,7 @@ export type TTalentTreeProps = {
     e: MouseEvent
   ) => void
   onResetTree: () => void
+  pointsRemaining: number
 }
 
 export const TalentTree = (
@@ -21,6 +22,7 @@ export const TalentTree = (
     talents,
     onClickTalent,
     onResetTree,
+    pointsRemaining,
   } = talentTreeProps
 
   const pointsSpent = talents.reduce(
@@ -74,13 +76,15 @@ export const TalentTree = (
               }}
             >
               <TalentNode
-                label={t.label}
-                description={t.description}
+                availablePoints={pointsRemaining}
+                name={t.name}
+                icon={t.icon}
+                ranks={t.ranks}
                 points={t.points}
                 maxPoints={t.maxPoints}
                 disabled={locked}
                 onClick={e =>
-                  onClickTalent(t.id, e)
+                  onClickTalent(t.id, e as MouseEvent)
                 }
               />
             </div>

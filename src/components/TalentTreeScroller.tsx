@@ -8,7 +8,7 @@ export const TalentTreeScroller = ({
   trees: React.ReactNode[]
 }) => {
   return (
-    <div className='w-full overflow-x-auto snap-x snap-mandatory scroll-smooth'>
+    <div className='w-full overflow-x-auto snap-x snap-mandatory scroll-smooth relative'>
       <div className='flex min-w-full md:justify-between md:space-x-0 md:min-w-0 md:flex-nowrap'>
         {trees.map((tree, index) => (
           <div

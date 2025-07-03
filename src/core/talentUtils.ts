@@ -22,7 +22,7 @@ export const makeTalents = (
     for (const col of chosenCols) {
       allTalents.push({
         id: `${prefix}-${id}`,
-        label: `T${id}`,
+        name: `T${id}`,
         description: `Random ${prefix} Talent ${id}`,
         row,
         col,
