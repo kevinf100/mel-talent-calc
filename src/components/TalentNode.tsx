@@ -4,7 +4,7 @@ import {
   type MouseEvent,
 } from 'react'
 import FrameDefault from '../assets/icons/talent-frame-default.png'
-import FrameGold from '../assets/icons/talent-frame-gold.png'
+import FrameGold from '../assets/icons/talent-frame-gold3.png'
 import FrameGreen from '../assets/icons/talent-frame-green.png'
 import FrameActive from '../assets/icons/talent-frame-active.png'
 import { Tooltip } from './Tooltip'
@@ -88,9 +88,6 @@ export const TalentNode = ({
       ? 'bg-green-400 text-green-900 border border-green-600'
       : 'bg-gray-700 text-gray-400 border border-gray-500'
 
-  const iconEdges =
-    'polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%)'
-
   const desktopProps = isMobile
     ? {}
     : {
@@ -119,7 +116,7 @@ export const TalentNode = ({
       >
         {/* 🔲 Black Canvas */}
         <span
-          className='absolute z-0 pointer-events-none rounded-sm bg-gray-400'
+          className='absolute z-0 pointer-events-none rounded-sm bg-gray-700'
           style={{
             width: '62px',
             height: '62px',
@@ -130,7 +127,7 @@ export const TalentNode = ({
 
         {/* 🖼️ Outer Frame */}
         <span
-          className='absolute -inset-1 z-20 bg-center bg-no-repeat bg-contain pointer-events-none'
+          className='absolute -inset-1 z-30 bg-center bg-no-repeat bg-contain pointer-events-none'
           style={{
             backgroundImage: `url(${frame})`,
           }}
@@ -144,39 +141,37 @@ export const TalentNode = ({
               : ''
           }`}
           style={{
-            width: '59px',
-            height: '59px',
-            left: isPressed ? '5px' : '3px',
-            top: isPressed ? '5px' : '3px',
+            width: '52px',
+            height: '52px',
+            left: isPressed ? '8px' : '6px',
+            top: isPressed ? '8px' : '6px',
             backgroundImage: `url(src/assets/icons/${icon})`,
-            clipPath: iconEdges,
-            WebkitClipPath: iconEdges,
           }}
         />
 
         {/* 🟡 Inner Frame (press highlight) */}
         <span
-          className='absolute z-15 bg-center bg-no-repeat bg-contain pointer-events-none'
+          className='absolute z-20 bg-center bg-no-repeat bg-contain pointer-events-none'
           style={{
             backgroundImage: `url(${innerFrame})`,
-            width: '66px',
-            height: '66px',
-            left: '-1px',
-            top: '0',
+            width: '63px',
+            height: '63px',
+            left: '0.5px',
+            top: '1px',
           }}
         />
 
         {/* Blue Glow */}
         {isHovered && (
           <span
-            className='absolute z-20 pointer-events-none rounded-sm'
+            className='absolute z-15 pointer-events-none rounded-sm'
             style={{
-              width: '56px',
-              height: '56px',
-              left: '4px',
-              top: '5px',
+              width: '54px',
+              height: '54px',
+              left: '5px',
+              top: '6px',
               boxShadow:
-                'rgb(0 170 255 / 88%) 0px 0px 8px 6px inset',
+                'rgb(92 134 232) 0px 0px 5px 4px inset, rgb(158 197 251) 0px 0px 10px 8px inset',
             }}
           />
         )}
