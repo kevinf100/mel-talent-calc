@@ -49,13 +49,16 @@ export const TalentNode = ({
   const shouldShowRank =
     points > 0 || availablePoints > 0
 
-  const shouldGrayOut = availablePoints === 0 && points === 0
+  const shouldGrayOut =
+    (availablePoints === 0 && points === 0) ||
+    (!isActive && !isMaxed && disabled)
+
 
   const outerFrame = isMaxed
     ? FrameGold
     : isAvailable
-    ? FrameGreen
-    : FrameDefaultOuter
+      ? FrameGreen
+      : FrameDefaultOuter
 
   const innerFrame = isPressed
     ? FrameActive
@@ -90,8 +93,8 @@ export const TalentNode = ({
   const badgeClasses = isMaxed
     ? 'text-yellow-300'
     : isAvailable
-    ? 'text-green-400'
-    : 'text-gray-400'
+      ? 'text-green-400'
+      : 'text-gray-400'
 
   const desktopProps = isMobile
     ? {}
@@ -148,12 +151,14 @@ export const TalentNode = ({
               : ''
           }`}
           style={{
-            width: '52px',
-            height: '52px',
-            left: isPressed ? '8px' : '6px',
+            width: '54px',
+            height: '54px',
+            left: isPressed ? '8px' : '5px',
             top: isPressed ? '8px' : '6px',
             backgroundImage: `url(src/assets/icons/${icon})`,
-            filter: shouldGrayOut ? 'grayscale(100%)' : undefined,
+            filter: shouldGrayOut
+              ? 'grayscale(100%)'
+              : undefined,
           }}
         />
 
