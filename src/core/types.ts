@@ -13,5 +13,5 @@ export type Talent = {
   export type Tree = {
     name: string
     talents: Talent[]
-    background: string
+    backgroundImage: string
   }

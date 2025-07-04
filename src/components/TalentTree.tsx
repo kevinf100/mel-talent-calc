@@ -2,9 +2,11 @@ import { type MouseEvent } from 'react'
 import { TalentNode } from './TalentNode'
 import type { Talent } from '../core/types'
 import { meetsDependencies } from '../core/talentUtils'
+import ResetSprite from '../assets/ui/reset-button-sprite.png'
 
 export type TTalentTreeProps = {
   name: string
+  backgroundImage: string
   talents: Talent[]
   onClickTalent: (
     id: string,
@@ -19,6 +21,7 @@ export const TalentTree = (
 ) => {
   const {
     name,
+    backgroundImage,
     talents,
     onClickTalent,
     onResetTree,
@@ -38,7 +41,13 @@ export const TalentTree = (
   const requiredForTier = (row: number) => row * 5
 
   return (
-    <div className='w-full bg-parchment p-4 rounded shadow-inner snap-start touch-manipulation'>
+    <div className='w-full bg-parchment p-4 rounded shadow-inner snap-start touch-manipulation'
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
       <header className='mb-2 flex items-center justify-between'>
         <h2 className='text-2xl font-bold text-gold'>
           {name}
@@ -48,10 +57,30 @@ export const TalentTree = (
         </span>
         <button
           onClick={onResetTree}
-          className='px-2 py-1 bg-gold/80 text-parchment text-xs rounded hover:bg-gold transition'
-        >
-          Reset
-        </button>
+          aria-label='Reset Tree'
+          className='
+            w-[65px] h-[61px]
+            bg-no-repeat bg-[length:65px_121px]
+            transform scale-[0.75]
+            origin-right
+          '
+          style={{
+            backgroundImage: `url(${ResetSprite})`,
+            backgroundPosition: '0px 0px',
+          }}
+          onPointerDown={e => {
+            e.currentTarget.style.backgroundPosition =
+              '0px -61px'
+          }}
+          onPointerUp={e => {
+            e.currentTarget.style.backgroundPosition =
+              '0px 0px'
+          }}
+          onPointerLeave={e => {
+            e.currentTarget.style.backgroundPosition =
+              '0px 0px'
+          }}
+        />
       </header>
 
       <div className='grid grid-cols-4 grid-rows-7 gap-4'>
@@ -84,7 +113,10 @@ export const TalentTree = (
                 maxPoints={t.maxPoints}
                 disabled={locked}
                 onClick={e =>
-                  onClickTalent(t.id, e as MouseEvent)
+                  onClickTalent(
+                    t.id,
+                    e as MouseEvent
+                  )
                 }
               />
             </div>

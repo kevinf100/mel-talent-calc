@@ -4,7 +4,8 @@ import {
   type MouseEvent,
 } from 'react'
 import FrameDefault from '../assets/icons/talent-frame-default.png'
-import FrameGold from '../assets/icons/talent-frame-gold3.png'
+import FrameDefaultOuter from '../assets/icons/talent-frame-default-outer.png'
+import FrameGold from '../assets/icons/talent-frame-gold.png'
 import FrameGreen from '../assets/icons/talent-frame-green.png'
 import FrameActive from '../assets/icons/talent-frame-active.png'
 import { Tooltip } from './Tooltip'
@@ -41,16 +42,20 @@ export const TalentNode = ({
   const isMobile = window.innerWidth < 768
 
   const isMaxed = points === maxPoints
+  const isActive = points > 0
+  const hasSpendablePoints = availablePoints > 0
   const isAvailable =
-    !disabled && availablePoints > 0
+    !disabled && (hasSpendablePoints || isActive)
   const shouldShowRank =
     points > 0 || availablePoints > 0
 
-  const frame = isMaxed
+  const shouldGrayOut = availablePoints === 0 && points === 0
+
+  const outerFrame = isMaxed
     ? FrameGold
     : isAvailable
-      ? FrameGreen
-      : FrameDefault
+    ? FrameGreen
+    : FrameDefaultOuter
 
   const innerFrame = isPressed
     ? FrameActive
@@ -83,10 +88,10 @@ export const TalentNode = ({
   }
 
   const badgeClasses = isMaxed
-    ? 'bg-yellow-300 text-yellow-900 border border-yellow-600'
+    ? 'text-yellow-300'
     : isAvailable
-      ? 'bg-green-400 text-green-900 border border-green-600'
-      : 'bg-gray-700 text-gray-400 border border-gray-500'
+    ? 'text-green-400'
+    : 'text-gray-400'
 
   const desktopProps = isMobile
     ? {}
@@ -96,6 +101,8 @@ export const TalentNode = ({
         onMouseLeave: handlePressEnd,
       }
 
+  const badgeClipPath =
+    'polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%)'
 
   return (
     <div
@@ -129,7 +136,7 @@ export const TalentNode = ({
         <span
           className='absolute -inset-1 z-30 bg-center bg-no-repeat bg-contain pointer-events-none'
           style={{
-            backgroundImage: `url(${frame})`,
+            backgroundImage: `url(${outerFrame})`,
           }}
         />
 
@@ -146,6 +153,7 @@ export const TalentNode = ({
             left: isPressed ? '8px' : '6px',
             top: isPressed ? '8px' : '6px',
             backgroundImage: `url(src/assets/icons/${icon})`,
+            filter: shouldGrayOut ? 'grayscale(100%)' : undefined,
           }}
         />
 
@@ -154,10 +162,10 @@ export const TalentNode = ({
           className='absolute z-20 bg-center bg-no-repeat bg-contain pointer-events-none'
           style={{
             backgroundImage: `url(${innerFrame})`,
-            width: '63px',
-            height: '63px',
-            left: '0.5px',
-            top: '1px',
+            width: '62px',
+            height: '62px',
+            left: '1px',
+            top: '2px',
           }}
         />
 
@@ -180,8 +188,12 @@ export const TalentNode = ({
         {shouldShowRank && (
           <span
             className={`absolute bottom-0 right-0 translate-x-[35%] translate-y-[35%]
-              text-[10px] font-bold leading-none px-1 py-[1px] rounded-sm border z-30 pointer-events-none
-              ${badgeClasses}`}
+              text-[14px] font-main leading-none px-1 py-[1px] z-30 pointer-events-none
+              bg-gray-900 border border-yellow-400 ${badgeClasses}`}
+            style={{
+              clipPath: badgeClipPath,
+              WebkitClipPath: badgeClipPath,
+            }}
           >
             {points}/{maxPoints}
           </span>
