@@ -40,8 +40,33 @@ export const TalentTree = (
 
   const requiredForTier = (row: number) => row * 5
 
+  // Find talents that are targets of downward dependencies and calculate arrow height
+  const getArrowProps = (talent: Talent) => {
+    if (!talent.requires?.id) return { class: '', style: {} }
+    const sourceTalent = talents.find(
+      s => s.id === talent.requires!.id
+    )
+    if (!sourceTalent) return { class: '', style: {} }
+    // Only apply for downward dependencies (source row < target row)
+    if (sourceTalent.row >= talent.row) return { class: '', style: {} }
+
+    // Calculate arrow height to reach source node's bottom
+    const effectiveNodeHeight = 64
+    const rowDiff = talent.row - sourceTalent.row
+    const arrowHeight = rowDiff * effectiveNodeHeight
+
+    // Add 'glow' class if dependency is met
+    const glowClass = meetsDependencies(talent, talents) ? 'glow' : ''
+
+    return {
+      class: `down-arrow ${glowClass}`,
+      style: { '--arrow-height': `${arrowHeight}px` } as React.CSSProperties,
+    }
+  }
+
   return (
-    <div className='w-full bg-parchment p-4 rounded shadow-inner snap-start touch-manipulation'
+    <div
+      className='w-full bg-parchment p-4 rounded shadow-inner snap-start touch-manipulation relative'
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'cover',
@@ -83,7 +108,7 @@ export const TalentTree = (
         />
       </header>
 
-      <div className='grid grid-cols-4 grid-rows-7 gap-4'>
+      <div className='grid grid-cols-4 grid-rows-7 gap-4 relative'>
         {talents.map(t => {
           const meetsTier =
             totalBelowRow(t.row) >=
@@ -95,13 +120,16 @@ export const TalentTree = (
           const locked =
             !(meetsTier && meetsDep) &&
             t.points === 0
+          const { class: arrowClass, style: arrowStyle } = getArrowProps(t)
 
           return (
             <div
               key={t.id}
+              className={`relative ${arrowClass} ${locked ? 'disabled' : ''}`}
               style={{
                 gridColumnStart: t.col + 1,
                 gridRowStart: t.row + 1,
+                ...arrowStyle,
               }}
             >
               <TalentNode

@@ -7,7 +7,7 @@ import {
 } from './talentUtils'
 import { initialTalentTrees } from './talentData'
 
-const TOTAL_TALENT_POINTS = 15
+const TOTAL_TALENT_POINTS = 100
 
 export const useTalentTrees = () => {
   const [trees, setTrees] = useState<Tree[]>(initialTalentTrees)

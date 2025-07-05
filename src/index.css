@@ -4,3 +4,26 @@
 @theme {
   --font-main: 'EB Garamond', serif;
 }
+
+.down-arrow::before {
+  @apply absolute w-[64px] z-[1] pointer-events-none;
+  content: '';
+  background: url('/src/assets/ui/arrow-down-glow.png') no-repeat bottom;
+  bottom: 68px; /* Aligns with target node's top */
+  height: var(--arrow-height);
+}
+.down-arrow:not(.glow)::before {
+  @apply grayscale;
+}
+.down-arrow::after {
+  @apply absolute w-[64px] h-[21px] z-[30] pointer-events-none bottom-[61.75px] max-md:bottom-[55px];
+  content: '';
+  background: url('/src/assets/ui/arrow-down-head-glow.png') no-repeat center;
+}
+.down-arrow:not(.glow)::after {
+  @apply grayscale;
+}
+.down-arrow.glow.disabled::before,
+.down-arrow.glow.disabled::after {
+  @apply grayscale-0; /* Override disabled styling for glowing arrows */
+}
