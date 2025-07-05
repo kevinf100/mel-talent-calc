@@ -6,7 +6,7 @@
 }
 
 .down-arrow::before {
-  @apply absolute w-[64px] z-[1] pointer-events-none;
+  @apply absolute w-[64px] pointer-events-none;
   content: '';
   background: url('/src/assets/ui/arrow-down-glow.png') no-repeat bottom;
   bottom: 68px; /* Aligns with target node's top */
@@ -16,9 +16,9 @@
   @apply grayscale;
 }
 .down-arrow::after {
-  @apply absolute w-[64px] h-[21px] z-[30] pointer-events-none bottom-[61.75px] max-md:bottom-[55px];
+  @apply absolute w-[64px] h-[21px] z-[30] pointer-events-none md:bottom-[61.75px] bottom-[55px];
   content: '';
-  background: url('/src/assets/ui/arrow-down-head-glow.png') no-repeat center;
+  background: url('/src/assets/ui/arrow-down-head-glow.png') no-repeat bottom;
 }
 .down-arrow:not(.glow)::after {
   @apply grayscale;

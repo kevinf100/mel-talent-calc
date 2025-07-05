@@ -1,7 +1,10 @@
 import { type MouseEvent } from 'react'
 import { TalentNode } from './TalentNode'
 import type { Talent } from '../core/types'
-import { meetsDependencies } from '../core/talentUtils'
+import {
+  getArrowProps,
+  meetsDependencies,
+} from '../core/talentUtils'
 import ResetSprite from '../assets/ui/reset-button-sprite.png'
 
 export type TTalentTreeProps = {
@@ -40,38 +43,15 @@ export const TalentTree = (
 
   const requiredForTier = (row: number) => row * 5
 
-  // Find talents that are targets of downward dependencies and calculate arrow height
-  const getArrowProps = (talent: Talent) => {
-    if (!talent.requires?.id) return { class: '', style: {} }
-    const sourceTalent = talents.find(
-      s => s.id === talent.requires!.id
-    )
-    if (!sourceTalent) return { class: '', style: {} }
-    // Only apply for downward dependencies (source row < target row)
-    if (sourceTalent.row >= talent.row) return { class: '', style: {} }
-
-    // Calculate arrow height to reach source node's bottom
-    const effectiveNodeHeight = 64
-    const rowDiff = talent.row - sourceTalent.row
-    const arrowHeight = rowDiff * effectiveNodeHeight
-
-    // Add 'glow' class if dependency is met
-    const glowClass = meetsDependencies(talent, talents) ? 'glow' : ''
-
-    return {
-      class: `down-arrow ${glowClass}`,
-      style: { '--arrow-height': `${arrowHeight}px` } as React.CSSProperties,
-    }
-  }
-
   return (
     <div
-      className='w-full bg-parchment p-4 rounded shadow-inner snap-start touch-manipulation relative'
+      className='w-full p-4 rounded shadow-inner snap-start touch-manipulation relative'
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
+      onContextMenu={e => e.preventDefault()}
     >
       <header className='mb-2 flex items-center justify-between'>
         <h2 className='text-2xl font-bold text-gold'>
@@ -108,7 +88,7 @@ export const TalentTree = (
         />
       </header>
 
-      <div className='grid grid-cols-4 grid-rows-7 gap-4 relative'>
+      <div className='grid grid-cols-4 grid-rows-7 md:gap-4 gap-6 relative'>
         {talents.map(t => {
           const meetsTier =
             totalBelowRow(t.row) >=
@@ -120,7 +100,10 @@ export const TalentTree = (
           const locked =
             !(meetsTier && meetsDep) &&
             t.points === 0
-          const { class: arrowClass, style: arrowStyle } = getArrowProps(t)
+          const {
+            class: arrowClass,
+            style: arrowStyle,
+          } = getArrowProps(talents, t, locked)
 
           return (
             <div

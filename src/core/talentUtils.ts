@@ -1,49 +1,5 @@
 import type { Talent } from './types'
 
-/**
- * Generate dummy talents with random row/col placement inside a 4×7 grid.
- * Ensures 2–3 unique columns per row.
- */
-export const makeTalents = (
-  prefix: string,
-  startRow = 0,
-  rows = 7,
-  cols = 4,
-  minPerRow = 2,
-  maxPerRow = 3,
-  maxPoints = 5,
-): Talent[] => {
-  let id = 0
-  const allTalents: Talent[] = []
-  for (let i = 0; i < rows; i++) {
-    const row = startRow + i
-    const howMany = Math.floor(Math.random() * (maxPerRow - minPerRow + 1)) + minPerRow
-    const chosenCols = shuffle(Array.from({ length: cols }, (_, i) => i)).slice(0, howMany).sort()
-    for (const col of chosenCols) {
-      allTalents.push({
-        id: `${prefix}-${id}`,
-        name: `T${id}`,
-        description: `Random ${prefix} Talent ${id}`,
-        row,
-        col,
-        points: 0,
-        maxPoints,
-      })
-      id++
-    }
-  }
-  return allTalents
-}
-
-const shuffle = <T>(arr: T[]): T[] => {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
-
 export const requiredForTier = (row: number) => row * 5
 
 export const treeGatingValid = (
@@ -81,3 +37,27 @@ export const meetsDependencies = (
     dep.points >= talent.requires.points
   )
 }
+
+  // Find talents that are targets of downward dependencies and calculate arrow height
+  export const getArrowProps = (talents: Talent[], talent: Talent, locked: boolean) => {
+    if (!talent.requires?.id) return { class: '', style: {} } 
+    const sourceTalent = talents.find(
+      s => s.id === talent.requires!.id
+    )
+    if (!sourceTalent) return { class: '', style: {} }
+    // Only apply for downward dependencies (source row < target row)
+    if (sourceTalent.row >= talent.row) return { class: '', style: {} }
+
+    // Calculate arrow height to reach source node's bottom
+    const effectiveNodeHeight = 64
+    const rowDiff = talent.row - sourceTalent.row
+    const arrowHeight = rowDiff * effectiveNodeHeight
+
+    // Add 'glow' class if dependency is met
+    const glowClass = locked ? '' : 'glow'
+
+    return {
+      class: `down-arrow ${glowClass}`,
+      style: { '--arrow-height': `${arrowHeight}px` },
+    }
+  }

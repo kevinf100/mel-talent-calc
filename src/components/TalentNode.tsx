@@ -53,7 +53,6 @@ export const TalentNode = ({
     (availablePoints === 0 && points === 0) ||
     (!isActive && !isMaxed && disabled)
 
-
   const outerFrame = isMaxed
     ? FrameGold
     : isAvailable
@@ -80,14 +79,17 @@ export const TalentNode = ({
   const handlePressEnd = () => setPressed(false)
 
   const handleIncrement = () => {
-    onClick({ shiftKey: false, type: 'click' })
+    handleClick({
+      shiftKey: false,
+      type: 'click',
+    } as MouseEvent)
   }
 
   const handleDecrement = () => {
-    onClick({
+    handleClick({
       shiftKey: true,
       type: 'contextmenu',
-    })
+    } as MouseEvent)
   }
 
   const badgeClasses = isMaxed
@@ -97,7 +99,11 @@ export const TalentNode = ({
       : 'text-gray-400'
 
   const desktopProps = isMobile
-    ? {}
+    ? {
+        onTouchStart: handlePressStart,
+        onTouchEnd: handlePressEnd,
+        onTouchCancel: handlePressEnd,
+    }
     : {
         onMouseDown: handlePressStart,
         onMouseUp: handlePressEnd,
