@@ -107,7 +107,10 @@ export const TalentNode = ({
     : {
         onMouseDown: handlePressStart,
         onMouseUp: handlePressEnd,
-        onMouseLeave: handlePressEnd,
+        onMouseLeave: () => {
+          setHovered(false)
+          handlePressEnd()
+        },
       }
 
   const badgeClipPath =
@@ -116,11 +119,11 @@ export const TalentNode = ({
   return (
     <div
       className='relative overflow-visible'
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
     >
       <button
         ref={buttonRef}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
         {...desktopProps}
         onClick={handleClick}
         onContextMenu={e => {

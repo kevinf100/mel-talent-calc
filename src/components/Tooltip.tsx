@@ -1,5 +1,6 @@
-import { type ReactNode, useEffect, useRef } from 'react'
-import { useFloating, offset, arrow, autoUpdate, flip, shift } from '@floating-ui/react-dom'
+import { type ReactNode, useEffect } from 'react'
+import { useFloating, offset, autoUpdate, flip, shift } from '@floating-ui/react-dom'
+import { MetalBordersSmall } from './MetalBordersSmall'
 
 type TooltipProps = {
   children: ReactNode
@@ -10,27 +11,20 @@ type TooltipProps = {
   disabled?: boolean
 }
 
-export const Tooltip = (tooltipProps: TooltipProps) => {
-  const {
-    children,
-    referenceEl,
-    open,
-    onIncrement,
-    onDecrement,
-    disabled,
-  } = tooltipProps;
-
-  const arrowRef = useRef<HTMLDivElement | null>(null)
-
-  const { x, y, refs, strategy, middlewareData } = useFloating({
+export const Tooltip = ({
+  children,
+  referenceEl,
+  open,
+  onIncrement,
+  onDecrement,
+  disabled,
+}: TooltipProps) => {
+  const { x, y, refs, strategy } = useFloating({
     placement: 'right-start',
     middleware: [
-      offset(8),
-      flip({
-        fallbackPlacements: ['bottom'],
-      }),
-      shift({ padding: 8 }),
-      arrow({ element: arrowRef, padding: 6 }),
+      offset(4),
+      flip({ fallbackPlacements: ['bottom'] }),
+      shift({ padding: 4 }),
     ],
     whileElementsMounted: autoUpdate,
   })
@@ -50,52 +44,34 @@ export const Tooltip = (tooltipProps: TooltipProps) => {
         position: strategy,
         top: y ?? 0,
         left: x ?? 0,
-        backgroundColor: '#f9f4e5',
-        color: '#2e2a22',
-        border: '1px solid #d4af37',
-        borderRadius: '0.375rem',
-        minWidth: '12rem',
-        pointerEvents: 'none',
         zIndex: 50,
-        padding: '0.75rem',
-        fontSize: '0.875rem',
-        boxShadow: '0 10px 15px rgba(0,0,0,0.1)',
+        pointerEvents: 'none',
       }}
     >
-      {children}
+      <MetalBordersSmall>
+        <div
+          className="bg-[#2a2a2af7] text-[#2e2a22] border border-yellow-700 rounded-md min-w-[16rem] p-3 text-sm shadow-lg relative"
+        >
+          {children}
 
-      {!disabled && (onIncrement || onDecrement) && (
-        <div className="flex gap-2 mt-3 md:hidden pointer-events-auto">
-          <button
-            onClick={onDecrement}
-            className="px-2 py-1 bg-red-100 text-red-800 rounded text-sm font-semibold"
-          >
-            –
-          </button>
-          <button
-            onClick={onIncrement}
-            className="px-2 py-1 bg-green-100 text-green-800 rounded text-sm font-semibold"
-          >
-            +
-          </button>
+          {!disabled && (onIncrement || onDecrement) && (
+            <div className="flex gap-2 mt-3 md:hidden pointer-events-auto">
+              <button
+                onClick={onDecrement}
+                className="px-2 py-1 bg-red-100 text-red-800 rounded text-sm font-semibold"
+              >
+                -
+              </button>
+              <button
+                onClick={onIncrement}
+                className="px-2 py-1 bg-green-100 text-green-800 rounded text-sm font-semibold"
+              >
+                +
+              </button>
+            </div>
+          )}
         </div>
-      )}
-
-      <div
-        ref={arrowRef}
-        style={{
-          width: '0.75rem',
-          height: '0.75rem',
-          backgroundColor: '#f9f4e5',
-          transform: 'rotate(-45deg)',
-          position: 'absolute',
-          zIndex: -1,
-          left: middlewareData.arrow ? `${(middlewareData.arrow.x ?? 0) - 7}px` : '',
-          top: middlewareData.arrow?.y ?? 0,
-          borderLeft: '1px solid #d4af37',
-          borderTop: '1px solid #d4af37',
-        }}
-      />
+      </MetalBordersSmall>
     </div>
   )
 }

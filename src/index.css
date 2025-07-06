@@ -2,7 +2,31 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-main: 'EB Garamond', serif;
+  --color-gold-text: rgb(255, 215, 0);
+}
+
+@font-face {
+  font-family: 'FrizQuadrata';
+  src: url('/fonts/friz-quadrata-regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-family: 'FrizQuadrata', serif;
+  letter-spacing: 0.33px;
+}
+
+h1, h2, h3, h4 {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0);
+}
+
+/* Utility class for gold gradient text */
+.color-gradient {
+  background: linear-gradient(to right, rgb(206, 191, 132), #f7e34b, #ffcf21);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .down-arrow::before {
@@ -26,4 +50,112 @@
 .down-arrow.glow.disabled::before,
 .down-arrow.glow.disabled::after {
   @apply grayscale-0; /* Override disabled styling for glowing arrows */
+}
+
+/* Corners and horizontal beams from original sprite */
+.corner,
+.edge.top,
+.edge.bottom {
+  background-image: url('/src/assets/ui/UIFrameDiamondMetal2x.png');
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.top-left {
+  background-position: 0 -269px;
+}
+
+.top-right {
+  background-position: 0 -335px;
+}
+
+.bottom-left {
+  background-position: 0 -132px;
+}
+
+.bottom-right {
+  background-position: 0 -198px;
+}
+
+.edge.top {
+  background-position: 0 -18px;
+  background-size: 128px auto;
+  background-repeat: repeat-x;
+}
+
+.edge.bottom {
+  background-position: 0 -71px;
+  background-size: 128px auto;
+  background-repeat: repeat-x;
+}
+
+/* Vertical beams from new sprite */
+.edge.left,
+.edge.right {
+  background-image: url('/src/assets/ui/UIFrameDiamondMetalVertical2x.png');
+  background-repeat: repeat-y;
+  background-size: 46px auto;
+  z-index: 1;
+}
+
+.edge.left {
+  background-position: 0 0;
+}
+
+.edge.right {
+  background-position: 100% 0;
+}
+
+/* Corners and horizontal beams from smaller sprite */
+.corner-sm,
+.edge-sm.top-sm,
+.edge-sm.bottom-sm {
+  background-image: url('/src/assets/ui/UIFrameDiamondMetal.png');
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.top-left-sm {
+  background-position: 0 -137px;
+}
+
+.top-right-sm {
+  background-position: 0 -171px;
+}
+
+.bottom-left-sm {
+  background-position: 0 -70px;
+}
+
+.bottom-right-sm {
+  background-position: 0 -104px;
+}
+
+.edge-sm.top-sm {
+  background-position: 0 -11px;
+  background-size: 64px auto;
+  background-repeat: repeat-x;
+}
+
+.edge-sm.bottom-sm {
+  background-position: 0 -35px;
+  background-size: 64px auto;
+  background-repeat: repeat-x;
+}
+
+/* Vertical beams from small sprite */
+.edge-sm.left-sm,
+.edge-sm.right-sm {
+  background-image: url('/src/assets/ui/UIFrameDiamondMetalVertical.png');
+  background-repeat: repeat-y;
+  background-size: 22px auto;
+  z-index: 1;
+}
+
+.edge-sm.left-sm {
+  background-position: 0 0;
+}
+
+.edge-sm.right-sm {
+  background-position: 100% 0;
 }
