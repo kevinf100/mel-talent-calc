@@ -9,12 +9,12 @@ export const AbilityDataSection = ({
 }: AbilityDataSectionProps) => {
   if (!abilityData) return
   return (
-    <div className='mt-2 text-s text-ink/70'>
+    <div className='text-base text-white'>
       <div className='flex'>
         <div className='flex-1'>
           {abilityData.leftSide.map((line, i) =>
             line.trim() === '' ? (
-              <div
+              <p
                 key={`left-spacer-${i}`}
                 style={{
                   lineHeight: '1.25rem',
@@ -22,16 +22,16 @@ export const AbilityDataSection = ({
                 }}
               >
                 &nbsp;
-              </div>
+              </p>
             ) : (
-              <div key={`left-${i}`}>{line}</div>
+              <p key={`left-${i}`}>{line}</p>
             )
           )}
         </div>
         <div className='flex-1'>
           {abilityData.rightSide.map((line, i) =>
             line.trim() === '' ? (
-              <div
+              <p
                 key={`right-spacer-${i}`}
                 style={{
                   lineHeight: '1.25rem',
@@ -39,14 +39,14 @@ export const AbilityDataSection = ({
                 }}
               >
                 &nbsp;
-              </div>
+              </p>
             ) : (
-              <div
+              <p
                 key={`right-${i}`}
                 className='text-right'
               >
                 {line}
-              </div>
+              </p>
             )
           )}
         </div>

@@ -7,36 +7,74 @@
 
 @font-face {
   font-family: 'FrizQuadrata';
-  src: url('fonts/FrizQua-ReguOS.woff2') format('woff2'),
-      url('fonts/FrizQua-ReguOS.woff') format('woff');
+  src:
+    url('fonts/FrizQuadrataStd-Italic.woff2')
+      format('woff2'),
+    url('fonts/FrizQuadrataStd-Italic.woff')
+      format('woff');
   font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FrizQuadrata';
+  src:
+    url('fonts/FrizQuadrataStd-Bold.woff2')
+      format('woff2'),
+    url('fonts/FrizQuadrataStd-Bold.woff')
+      format('woff');
+  font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'FrizQuadrata';
-  src: url('fonts/FrizQua-BoldItalOS.woff2') format('woff2'),
-      url('fonts/FrizQua-BoldItalOS.woff') format('woff');
+  src:
+    url('fonts/FrizQuadrataStd.woff2') format('woff2'),
+    url('fonts/FrizQuadrataStd.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FrizQuadrata';
+  src:
+    url('FrizQuadrataStd-BoldItalic.woff2')
+      format('woff2'),
+    url('FrizQuadrataStd-BoldItalic.woff')
+      format('woff');
   font-weight: bold;
   font-style: italic;
   font-display: swap;
 }
-
-
 
 html {
   font-family: 'FrizQuadrata', serif;
   letter-spacing: 0.33px;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   text-shadow: 1px 1px 2px rgba(0, 0, 0);
+}
+
+p {
+  text-shadow: 1px 1px 0px rgba(0, 0, 0);
 }
 
 /* Utility class for gold gradient text */
 .color-gradient {
-  background: linear-gradient(to right, rgb(206, 191, 132), #f7e34b, #ffcf21);
+  background: linear-gradient(
+    to right,
+    rgb(206, 191, 132),
+    #f7e34b,
+    #ffcf21
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -45,7 +83,8 @@ h1, h2, h3, h4 {
 .down-arrow::before {
   @apply absolute w-[56px] pointer-events-none;
   content: '';
-  background: url('/src/assets/ui/arrow-down-glow.png') no-repeat bottom;
+  background: url('/src/assets/ui/arrow-down-glow.png')
+    no-repeat bottom;
   bottom: 65px; /* Aligns with target node's top */
   height: var(--arrow-height);
 }
@@ -55,7 +94,8 @@ h1, h2, h3, h4 {
 .down-arrow::after {
   @apply absolute w-[56px] h-[21px] z-[30] pointer-events-none md:bottom-[55.75px] bottom-[50px];
   content: '';
-  background: url('/src/assets/ui/arrow-down-head-glow.png') no-repeat bottom;
+  background: url('/src/assets/ui/arrow-down-head-glow.png')
+    no-repeat bottom;
 }
 .down-arrow:not(.glow)::after {
   @apply grayscale;

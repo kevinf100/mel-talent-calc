@@ -19,4 +19,5 @@ export type Talent = {
     name: string
     talents: Talent[]
     backgroundImage: string
+    specIcon: string
   }

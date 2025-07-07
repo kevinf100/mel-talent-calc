@@ -57,6 +57,7 @@ export const TalentGrid = () => {
             key={tree.name}
             name={tree.name}
             backgroundImage={tree.backgroundImage}
+            specIcon={tree.specIcon}
             talents={tree.talents}
             pointsRemaining={pointsRemaining}
             onClickTalent={(id, e) =>

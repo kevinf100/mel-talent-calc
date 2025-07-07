@@ -23,7 +23,8 @@ export const Tooltip = ({
     placement: 'top-start', // Aligns top of tooltip to top of referenceEl
     middleware: [
       offset({ crossAxis: 50 }), // Controls distance between tooltip and element
-      shift({ padding: 4 }), // Keeps tooltip inside viewport
+      shift({ padding: 4, }), // Keeps tooltip inside viewport
+
     ],
     whileElementsMounted: autoUpdate,
   })
@@ -49,7 +50,7 @@ export const Tooltip = ({
     >
       <MetalBordersSmall>
         <div
-          className="bg-[#2a2a2af7] min-w-[20rem] p-3 text-sm shadow-lg relative"
+          className="bg-[#2a2a2af7] min-w-[22rem] p-3 text-sm shadow-lg relative"
         >
           {children}
 

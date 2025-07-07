@@ -12,6 +12,7 @@ import RockBackground from '../assets/ui/UI-Background-Rock.png'
 export type TTalentTreeProps = {
   name: string
   backgroundImage: string
+  specIcon: string
   talents: Talent[]
   onClickTalent: (
     id: string,
@@ -31,6 +32,7 @@ export const TalentTree = (
     onClickTalent,
     onResetTree,
     pointsRemaining,
+    specIcon
   } = talentTreeProps
 
   const pointsSpent = talents.reduce(
@@ -84,7 +86,7 @@ export const TalentTree = (
               }}
             >
               <img
-                src='src/assets/icons/ability_racial_avatar.png'
+                src={`src/assets/icons/${specIcon}`}
                 alt='Spec Icon'
                 className='w-full h-full object-cover'
               />
@@ -157,7 +159,7 @@ export const TalentTree = (
             const {
               class: arrowClass,
               style: arrowStyle,
-            } = getArrowProps(talents, t, locked)
+            } = getArrowProps(talents, t, locked, pointsRemaining)
 
             const requiredTalent = t.requires
               ? talents.find(

@@ -52,7 +52,7 @@ export const TalentNode = ({
   requiredTalentPoints,
   totalPointsInTree,
   requiredTalentName,
-  talentTreeName
+  talentTreeName,
 }: TalentNodeProps) => {
   const buttonRef =
     useRef<HTMLButtonElement | null>(null)
@@ -145,6 +145,14 @@ export const TalentNode = ({
     requiredTalentName,
     talentTreeName,
   })
+
+  const currentRankIndex =
+    points <= 1
+      ? 0
+      : Math.min(points - 1, maxPoints - 1)
+
+  const showNextRank =
+    points > 0 && points < maxPoints
 
   return (
     <div className='relative overflow-visible'>
@@ -253,14 +261,17 @@ export const TalentNode = ({
           disabled ? undefined : handleDecrement
         }
       >
-        <strong className='text-gold'>
+        <h4 className='text-white text-xl'>
           {name}
-        </strong>
+        </h4>
+        <p className='text-white text-base'>
+          Rank {points}/{maxPoints}
+        </p>
 
         {requirementTexts.length > 0 && (
-          <div className='text-s text-ink/70'>
+          <div className='text-base text-[#ef1f21] '>
             {requirementTexts.map((text, idx) => (
-              <div key={idx}>{text}</div>
+              <p key={idx}>{text}</p>
             ))}
           </div>
         )}
@@ -268,9 +279,22 @@ export const TalentNode = ({
           abilityData={abilityData}
         />
 
-        <div className='text-sm mt-1 text-ink/90'>
-          {ranks[points]}
-        </div>
+        {/* 🟨 Current Rank */}
+        <p className='text-gold-text text-base'>
+          {ranks[currentRankIndex]}
+        </p>
+
+        {/* 🟦 Next Rank */}
+        {showNextRank && (
+          <>
+            <p className='text-white text-base mt-4'>
+              Next rank:
+            </p>
+            <p className='text-gold-text text-base'>
+              {ranks[points]}
+            </p>
+          </>
+        )}
       </Tooltip>
     </div>
   )

@@ -42,7 +42,8 @@ export const meetsDependencies = (
 export const getArrowProps = (
   talents: Talent[],
   talent: Talent,
-  locked: boolean
+  locked: boolean,
+  availablePoints: number
 ) => {
   if (!talent.requires?.id)
     return { class: '', style: {} }
@@ -61,8 +62,13 @@ export const getArrowProps = (
   const arrowHeight =
     rowDiff * effectiveNodeHeight
 
+  const isGlowAllowed =
+    !locked &&
+    sourceTalent.points > 0 &&
+    (availablePoints > 0 || talent.points > 0)
+
   // Add 'glow' class if dependency is met
-  const glowClass = locked ? '' : 'glow'
+  const glowClass = isGlowAllowed ? 'glow' : ''
 
   return {
     class: `down-arrow ${glowClass}`,
