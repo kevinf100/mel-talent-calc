@@ -1,16 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&display=swap');
 @import 'tailwindcss';
 
 @theme {
   --color-gold-text: rgb(255, 215, 0);
+  --breakpoint-xl: 85rem;
 }
 
 @font-face {
   font-family: 'FrizQuadrata';
-  src: url('/fonts/friz-quadrata-regular.woff2') format('woff2');
+  src: url('fonts/FrizQua-ReguOS.woff2') format('woff2'),
+      url('fonts/FrizQua-ReguOS.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
+
+@font-face {
+  font-family: 'FrizQuadrata';
+  src: url('fonts/FrizQua-BoldItalOS.woff2') format('woff2'),
+      url('fonts/FrizQua-BoldItalOS.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+
 
 html {
   font-family: 'FrizQuadrata', serif;
@@ -30,17 +43,17 @@ h1, h2, h3, h4 {
 }
 
 .down-arrow::before {
-  @apply absolute w-[64px] pointer-events-none;
+  @apply absolute w-[56px] pointer-events-none;
   content: '';
   background: url('/src/assets/ui/arrow-down-glow.png') no-repeat bottom;
-  bottom: 68px; /* Aligns with target node's top */
+  bottom: 65px; /* Aligns with target node's top */
   height: var(--arrow-height);
 }
 .down-arrow:not(.glow)::before {
   @apply grayscale;
 }
 .down-arrow::after {
-  @apply absolute w-[64px] h-[21px] z-[30] pointer-events-none md:bottom-[61.75px] bottom-[55px];
+  @apply absolute w-[56px] h-[21px] z-[30] pointer-events-none md:bottom-[55.75px] bottom-[50px];
   content: '';
   background: url('/src/assets/ui/arrow-down-head-glow.png') no-repeat bottom;
 }

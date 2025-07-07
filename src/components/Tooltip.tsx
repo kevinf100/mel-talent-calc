@@ -1,5 +1,5 @@
 import { type ReactNode, useEffect } from 'react'
-import { useFloating, offset, autoUpdate, flip, shift } from '@floating-ui/react-dom'
+import { useFloating, offset, autoUpdate, shift } from '@floating-ui/react-dom'
 import { MetalBordersSmall } from './MetalBordersSmall'
 
 type TooltipProps = {
@@ -20,11 +20,10 @@ export const Tooltip = ({
   disabled,
 }: TooltipProps) => {
   const { x, y, refs, strategy } = useFloating({
-    placement: 'right-start',
+    placement: 'top-start', // Aligns top of tooltip to top of referenceEl
     middleware: [
-      offset(4),
-      flip({ fallbackPlacements: ['bottom'] }),
-      shift({ padding: 4 }),
+      offset({ crossAxis: 50 }), // Controls distance between tooltip and element
+      shift({ padding: 4 }), // Keeps tooltip inside viewport
     ],
     whileElementsMounted: autoUpdate,
   })
@@ -50,7 +49,7 @@ export const Tooltip = ({
     >
       <MetalBordersSmall>
         <div
-          className="bg-[#2a2a2af7] text-[#2e2a22] border border-yellow-700 rounded-md min-w-[16rem] p-3 text-sm shadow-lg relative"
+          className="bg-[#2a2a2af7] min-w-[20rem] p-3 text-sm shadow-lg relative"
         >
           {children}
 

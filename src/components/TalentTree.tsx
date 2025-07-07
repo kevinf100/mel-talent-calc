@@ -52,13 +52,13 @@ export const TalentTree = (
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: '33% center',
         }}
         onContextMenu={e => e.preventDefault()}
       >
         <header
           className='
-            -mt-6 -mx-6 mb-6 px-6 py-3 flex flex-col items-center
+            -mt-6 -mx-6 mb-4 px-6 py-3 flex flex-col items-center
             relative rounded-lg border border-white/10
             shadow-[inset_0_0_0px_rgba(0,0,0,0.5),0_6px_5px_rgba(0,0,0,0.35),0_-2px_6px_rgba(255,255,255,0.1)]
             bg-cover bg-center bg-no-repeat
@@ -90,9 +90,7 @@ export const TalentTree = (
               />
             </div>
 
-            <h1
-              className='text-2xl font-bold text-center flex-grow text-gold-text'
-            >
+            <h1 className='text-2xl text-center flex-grow text-gold-text'>
               {name}
             </h1>
 
@@ -134,12 +132,17 @@ export const TalentTree = (
                 borderColor: 'black',
               }}
             >
-              Points spent in {name} Talents: <span style={{ color: 'white' }}>{pointsSpent}</span>
+              Points spent in {name} Talents:{' '}
+              <span
+                className={'text-white font-sans'}
+              >
+                {pointsSpent}
+              </span>
             </h2>
           </div>
         </header>
 
-        <div className='grid grid-cols-4 grid-rows-7 md:gap-4 gap-6 relative'>
+        <div className='grid grid-cols-4 grid-rows-7 md:gap-4 gap-6 relative lg:pl-4 lg:pr-4'>
           {talents.map(t => {
             const meetsTier =
               totalBelowRow(t.row) >=
@@ -155,6 +158,13 @@ export const TalentTree = (
               class: arrowClass,
               style: arrowStyle,
             } = getArrowProps(talents, t, locked)
+
+            const requiredTalent = t.requires
+              ? talents.find(
+                  talent =>
+                    talent.id === t.requires!.id
+                )
+              : undefined
 
             return (
               <div
@@ -175,6 +185,7 @@ export const TalentTree = (
                   ranks={t.ranks}
                   points={t.points}
                   maxPoints={t.maxPoints}
+                  abilityData={t.abilityData}
                   disabled={locked}
                   onClick={e =>
                     onClickTalent(
@@ -182,6 +193,18 @@ export const TalentTree = (
                       e as MouseEvent
                     )
                   }
+                  tierRequirement={requiredForTier(
+                    t.row
+                  )}
+                  requires={t.requires}
+                  totalPointsInTree={pointsSpent}
+                  requiredTalentPoints={
+                    requiredTalent?.points ?? 0
+                  }
+                  requiredTalentName={
+                    requiredTalent?.name
+                  }
+                  talentTreeName={name}
                 />
               </div>
             )

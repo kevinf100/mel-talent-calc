@@ -8,6 +8,11 @@ export type Talent = {
     maxPoints: number
     icon: string
     requires?: { id: string; points: number }
+    abilityData?: {
+      leftSide: string[],
+      rightSide: string[],
+      bottom: string[]
+    }
   }
   
   export type Tree = {

@@ -9,21 +9,33 @@ import FrameGold from '../assets/icons/talent-frame-gold.png'
 import FrameGreen from '../assets/icons/talent-frame-green.png'
 import FrameActive from '../assets/icons/talent-frame-active.png'
 import { Tooltip } from './Tooltip'
+import { AbilityDataSection } from './AbilityDataSection'
+import type { Talent } from '../core/types'
+import { getRequirementsText } from '../core/talentUtils'
 
 type TalentNodeProps = {
-  name: string
-  points: number
-  maxPoints: number
-  ranks: string[]
-  icon: string
   disabled: boolean
   availablePoints: number
+  totalPointsInTree: number
+  requiredTalentPoints: number
+  talentTreeName: string
+  requiredTalentName?: string
+  tierRequirement: number
   onClick: (
     e:
       | MouseEvent
       | { shiftKey: boolean; type: string }
   ) => void
-}
+} & Pick<
+  Talent,
+  | 'name'
+  | 'points'
+  | 'maxPoints'
+  | 'ranks'
+  | 'icon'
+  | 'abilityData'
+  | 'requires'
+>
 
 export const TalentNode = ({
   name,
@@ -34,6 +46,13 @@ export const TalentNode = ({
   disabled,
   availablePoints,
   onClick,
+  abilityData,
+  tierRequirement,
+  requires,
+  requiredTalentPoints,
+  totalPointsInTree,
+  requiredTalentName,
+  talentTreeName
 }: TalentNodeProps) => {
   const buttonRef =
     useRef<HTMLButtonElement | null>(null)
@@ -103,7 +122,7 @@ export const TalentNode = ({
         onTouchStart: handlePressStart,
         onTouchEnd: handlePressEnd,
         onTouchCancel: handlePressEnd,
-    }
+      }
     : {
         onMouseDown: handlePressStart,
         onMouseUp: handlePressEnd,
@@ -116,10 +135,19 @@ export const TalentNode = ({
   const badgeClipPath =
     'polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%)'
 
+  const requirementTexts = getRequirementsText({
+    disabled,
+    currentPoints: points,
+    totalPointsInTree,
+    tierRequirement,
+    requires,
+    requiredTalentPoints,
+    requiredTalentName,
+    talentTreeName,
+  })
+
   return (
-    <div
-      className='relative overflow-visible'
-    >
+    <div className='relative overflow-visible'>
       <button
         ref={buttonRef}
         onMouseEnter={() => setHovered(true)}
@@ -131,14 +159,14 @@ export const TalentNode = ({
           if (!disabled) handleClick(e)
         }}
         aria-label={`${name}: ${points}/${maxPoints}`}
-        className='relative w-[64px] h-[64px] min-w-[48px] min-h-[48px] transition focus:outline-none'
+        className='relative w-[56px] h-[56px] min-w-[42px] min-h-[42px] transition focus:outline-none'
       >
         {/* 🔲 Black Canvas */}
         <span
           className='absolute z-0 pointer-events-none rounded-sm bg-gray-700'
           style={{
-            width: '62px',
-            height: '62px',
+            width: '54px',
+            height: '54px',
             left: '1px',
             top: '1px',
           }}
@@ -160,10 +188,10 @@ export const TalentNode = ({
               : ''
           }`}
           style={{
-            width: '54px',
-            height: '54px',
-            left: isPressed ? '8px' : '5px',
-            top: isPressed ? '8px' : '6px',
+            width: '48px',
+            height: '48px',
+            left: isPressed ? '7px' : '4px',
+            top: isPressed ? '7px' : '5px',
             backgroundImage: `url(src/assets/icons/${icon})`,
             filter: shouldGrayOut
               ? 'grayscale(100%)'
@@ -176,8 +204,8 @@ export const TalentNode = ({
           className='absolute z-20 bg-center bg-no-repeat bg-contain pointer-events-none'
           style={{
             backgroundImage: `url(${innerFrame})`,
-            width: '62px',
-            height: '62px',
+            width: '54px',
+            height: '54px',
             left: '1px',
             top: '2px',
           }}
@@ -188,10 +216,10 @@ export const TalentNode = ({
           <span
             className='absolute z-15 pointer-events-none rounded-sm'
             style={{
-              width: '54px',
-              height: '54px',
-              left: '5px',
-              top: '6px',
+              width: '48px',
+              height: '48px',
+              left: '4px',
+              top: '5px',
               boxShadow:
                 'rgb(92 134 232) 0px 0px 5px 4px inset, rgb(158 197 251) 0px 0px 10px 8px inset',
             }}
@@ -201,8 +229,8 @@ export const TalentNode = ({
         {/* 📍 Rank Badge */}
         {shouldShowRank && (
           <span
-            className={`absolute bottom-0 right-0 translate-x-[35%] translate-y-[35%]
-              text-[14px] font-main leading-none px-1 py-[1px] z-30 pointer-events-none
+            className={`font-sans absolute bottom-0 right-0 translate-x-[30%] translate-y-[30%]
+              text-[12px] font-main leading-none px-1 py-[1px] z-30 pointer-events-none
               bg-gray-900 border border-yellow-400 ${badgeClasses}`}
             style={{
               clipPath: badgeClipPath,
@@ -228,14 +256,20 @@ export const TalentNode = ({
         <strong className='text-gold'>
           {name}
         </strong>
+
+        {requirementTexts.length > 0 && (
+          <div className='text-s text-ink/70'>
+            {requirementTexts.map((text, idx) => (
+              <div key={idx}>{text}</div>
+            ))}
+          </div>
+        )}
+        <AbilityDataSection
+          abilityData={abilityData}
+        />
+
         <div className='text-sm mt-1 text-ink/90'>
           {ranks[points]}
-        </div>
-        <div className='text-xs mt-2 italic text-ink/70'>
-          Tier requirement:{' '}
-          <span className='font-bold'>
-            {disabled ? 'Not met' : 'Met'}
-          </span>
         </div>
       </Tooltip>
     </div>
