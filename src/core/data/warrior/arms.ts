@@ -1,7 +1,6 @@
-import type { Tree } from './types'
+import type { Tree } from '../../types'
 
-export const initialTalentTrees: Tree[] = [
-  {
+export const arms: Tree = {
     name: 'Arms',
     backgroundImage:
       'src/assets/images/warrior/background-warrior-arms.webp',
@@ -219,6 +218,19 @@ export const initialTalentTrees: Tree[] = [
         points: 0,
         maxPoints: 1,
         icon: 'ability_rogue_slicedice.png',
+        abilityData: {
+          leftSide: [
+            '30 Rage',
+            'Instant'
+          ],
+          rightSide: [
+            '',
+            '30 sec cooldown'
+          ],
+          bottom: [
+            'Requires Battle Stance, Berserker Stance'
+          ]
+        }
       },
 
       {
@@ -409,7 +421,4 @@ export const initialTalentTrees: Tree[] = [
         }
       },
     ],
-  },
-  
-
-]
+  }

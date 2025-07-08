@@ -117,13 +117,15 @@ export const TalentNode = ({
       ? 'text-green-400'
       : 'text-gray-400'
 
-  const desktopProps = isMobile
+  const responsiveProps = isMobile
     ? {
+        onMouseEnter: () => setHovered(true),
         onTouchStart: handlePressStart,
         onTouchEnd: handlePressEnd,
         onTouchCancel: handlePressEnd,
       }
     : {
+        onMouseEnter: () => setHovered(true),
         onMouseDown: handlePressStart,
         onMouseUp: handlePressEnd,
         onMouseLeave: () => {
@@ -155,12 +157,13 @@ export const TalentNode = ({
     points > 0 && points < maxPoints
 
   return (
-    <div className='relative overflow-visible'>
+    <div
+      className='relative overflow-visible'
+      onMouseLeave={() => setHovered(false)}
+    >
       <button
         ref={buttonRef}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        {...desktopProps}
+        {...responsiveProps}
         onClick={handleClick}
         onContextMenu={e => {
           e.preventDefault()

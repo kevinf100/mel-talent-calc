@@ -12,7 +12,7 @@ export const AbilityDataSection = ({
     <div className='text-base text-white'>
       <div className='flex'>
         <div className='flex-1'>
-          {abilityData.leftSide.map((line, i) =>
+          {abilityData.leftSide?.map((line, i) =>
             line.trim() === '' ? (
               <p
                 key={`left-spacer-${i}`}
@@ -29,12 +29,11 @@ export const AbilityDataSection = ({
           )}
         </div>
         <div className='flex-1'>
-          {abilityData.rightSide.map((line, i) =>
+          {abilityData.rightSide?.map((line, i) =>
             line.trim() === '' ? (
               <p
                 key={`right-spacer-${i}`}
                 style={{
-                  lineHeight: '1.25rem',
                   visibility: 'hidden',
                 }}
               >

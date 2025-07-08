@@ -54,7 +54,7 @@ export const TalentTree = (
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: 'cover',
-          backgroundPosition: '33% center',
+          backgroundPosition: '45% 75px',
         }}
         onContextMenu={e => e.preventDefault()}
       >
@@ -88,7 +88,7 @@ export const TalentTree = (
               <img
                 src={`src/assets/icons/${specIcon}`}
                 alt='Spec Icon'
-                className='w-full h-full object-cover'
+                className='relative transform scale-[1.05]'
               />
             </div>
 
