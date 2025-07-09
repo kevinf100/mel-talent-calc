@@ -298,6 +298,16 @@ export const TalentNode = ({
             </p>
           </>
         )}
+        {!disabled && !isMaxed && hasSpendablePoints && (
+          <p className='text-green-400 text-base'>
+            Click to learn
+          </p>
+        )}
+        {!disabled && isMaxed && (
+          <p className='text-green-400 text-base'>
+            Right click to unlearn
+          </p>
+        )}
       </Tooltip>
     </div>
   )

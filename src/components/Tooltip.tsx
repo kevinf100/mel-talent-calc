@@ -1,7 +1,4 @@
-import {
-  type ReactNode,
-  useEffect,
-} from 'react'
+import { type ReactNode, useEffect } from 'react'
 import {
   useFloating,
   offset,
@@ -11,6 +8,8 @@ import {
 } from '@floating-ui/react-dom'
 import { createPortal } from 'react-dom'
 import { MetalBordersSmall } from './MetalBordersSmall'
+import ButtonIncrement from '../assets/ui/red-button-increment.png' 
+import ButtonDecrement from '../assets/ui/red-button-decrement.png'
 
 type TooltipProps = {
   children: ReactNode
@@ -34,7 +33,12 @@ export const Tooltip = ({
     middleware: [
       offset({ crossAxis: 50 }),
       shift({ padding: 8 }),
-      flip({ fallbackPlacements: ['right-end', 'bottom'] })
+      flip({
+        fallbackPlacements: [
+          'right-end',
+          'bottom',
+        ],
+      }),
     ],
     whileElementsMounted: autoUpdate,
   })
@@ -57,44 +61,75 @@ export const Tooltip = ({
         zIndex: 100,
         pointerEvents: 'none', // passive layout container
       }}
-      className="max-w-[24rem]"
+      className='max-w-[24rem] min-w-[24rem]'
     >
       {/* 👇 Enable interaction only inside content zone */}
-      <div className="pointer-events-auto">
+      <div className='pointer-events-auto'>
         <MetalBordersSmall>
-          <div className="bg-[#2a2a2af7] p-3 text-sm shadow-lg relative">
+          <div className='bg-[#2a2a2af7] p-3 text-sm shadow-lg relative'>
             {/* 🌟 Tooltip content */}
-            <div className="break-words whitespace-normal">
+            <div className='break-words whitespace-normal'>
               {children}
             </div>
 
             {/* 📲 Mobile-only buttons */}
-            {!disabled && (onIncrement || onDecrement) && (
-              <div className="flex gap-2 mt-3 md:hidden">
-                {onDecrement && (
-                  <button
-                    onClick={e => {
-                      e.stopPropagation()
-                      onDecrement?.()
-                    }}
-                    className="px-2 py-1 bg-red-100 text-red-800 rounded text-sm font-semibold"
-                  >
-                    -
-                  </button>
-                )}
-                {onIncrement && (
-                  <button
-                    onClick={e => {
-                      e.stopPropagation()
-                      onIncrement?.()
-                    }}
-                    className="px-2 py-1 bg-green-100 text-green-800 rounded text-sm font-semibold"
-                  >
-                    +
-                  </button>
-                )}
-              </div>
-            )}
+            {!disabled &&
+              (onIncrement || onDecrement) && (
+                <div className='flex gap-2 mt-1 md:hidden touch-manipulation justify-between'>
+                  {onDecrement && (
+                    <button
+                      onClick={e => {
+                        e.stopPropagation()
+                        onDecrement?.()
+                      }}
+                      className='w-[125px] h-[45px] bg-no-repeat bg-[length:125px_90px]'
+                      style={{
+                        backgroundImage: `url(${ButtonDecrement})`,
+                        backgroundPosition:
+                          '0px 0px',
+                      }}
+                      onPointerDown={e => {
+                        e.currentTarget.style.backgroundPosition =
+                          '0px -46px'
+                      }}
+                      onPointerUp={e => {
+                        e.currentTarget.style.backgroundPosition =
+                          '0px 0px'
+                      }}
+                      onPointerLeave={e => {
+                        e.currentTarget.style.backgroundPosition =
+                          '0px 0px'
+                      }}
+                    />
+                  )}
+                  {onIncrement && (
+                    <button
+                      onClick={e => {
+                        e.stopPropagation()
+                        onIncrement?.()
+                      }}
+                      className='w-[125px] h-[45px] bg-no-repeat bg-[length:125px_90px]'
+                      style={{
+                        backgroundImage: `url(${ButtonIncrement})`,
+                        backgroundPosition:
+                          '0px 0px',
+                      }}
+                      onPointerDown={e => {
+                        e.currentTarget.style.backgroundPosition =
+                          '0px -46px'
+                      }}
+                      onPointerUp={e => {
+                        e.currentTarget.style.backgroundPosition =
+                          '0px 0px'
+                      }}
+                      onPointerLeave={e => {
+                        e.currentTarget.style.backgroundPosition =
+                          '0px 0px'
+                      }}
+                    />
+                  )}
+                </div>
+              )}
           </div>
         </MetalBordersSmall>
       </div>

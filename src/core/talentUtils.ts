@@ -120,3 +120,39 @@ export const getRequirementsText = ({
 
   return requirements
 }
+
+// 🔐 Check if a talent is locked and cannot be incremented yet
+export const isTalentLocked = (
+  talent: Talent,
+  allTalents: Talent[],
+  pointsSpentInTree: number
+): boolean => {
+  const tierRequirementMet = pointsSpentInTree >= requiredForTier(talent.row)
+  const dependencyMet = meetsDependencies(talent, allTalents)
+  return !(tierRequirementMet && dependencyMet) && talent.points === 0
+}
+
+// 🔼 Determine if the talent can be incremented
+export const canIncrementTalent = (
+  talent: Talent,
+  pointsRemaining: number,
+  locked: boolean
+): boolean => {
+  return !locked && talent.points < talent.maxPoints && pointsRemaining > 0
+}
+
+// 🔽 Determine if the talent can be decremented
+export const canDecrementTalent = (
+  talent: Talent,
+  allTalents: Talent[],
+  locked: boolean
+): boolean => {
+  const hasDependents = allTalents.some(
+    dep => dep.requires?.id === talent.id && dep.points > (dep.requires.points ?? 0)
+  )
+
+  const cloneTalents = allTalents.map(t => ({ ...t }))
+  const gatingStillValid = treeGatingValid(cloneTalents)
+
+  return !locked && talent.points > 0 && !hasDependents && gatingStillValid
+}

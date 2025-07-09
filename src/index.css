@@ -3,6 +3,7 @@
 @theme {
   --color-gold-text: rgb(255, 215, 0);
   --breakpoint-xl: 85rem;
+  --color-green-400: oklch(0.78 0.32 147.09);
 }
 
 @font-face {
@@ -83,7 +84,7 @@ p {
 .down-arrow::before {
   @apply absolute w-[56px] pointer-events-none;
   content: '';
-  background: url('/src/assets/ui/arrow-down-glow.png')
+  background: url('/src/assets/ui/arrow-down-glow1.png')
     no-repeat bottom;
   bottom: 65px; /* Aligns with target node's top */
   height: var(--arrow-height);
@@ -92,9 +93,9 @@ p {
   @apply grayscale;
 }
 .down-arrow::after {
-  @apply absolute w-[56px] h-[21px] z-[30] pointer-events-none md:bottom-[55.75px] bottom-[50px];
+  @apply absolute w-[56px] h-[21px] z-[30] pointer-events-none md:bottom-[55.75px] bottom-[52px];
   content: '';
-  background: url('/src/assets/ui/arrow-down-head-glow.png')
+  background: url('/src/assets/ui/arrow-down-head-glow1.png')
     no-repeat bottom;
 }
 .down-arrow:not(.glow)::after {
