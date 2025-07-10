@@ -156,3 +156,37 @@ export const canDecrementTalent = (
 
   return !locked && talent.points > 0 && !hasDependents && gatingStillValid
 }
+
+// ✅ Checks if removing a point from this talent breaks any rules
+export const canSafelyDecrementTalent = (
+  talent: Talent,
+  allTalents: Talent[]
+): boolean => {
+  // 🔒 Must have points to unlearn
+  if (talent.points <= 0) return false
+
+  // 🔗 Must not be required by any other talents
+  const hasDependents = allTalents.some(
+    other => other.requires?.id === talent.id && other.points > 0
+  )
+  if (hasDependents) return false
+
+  // 🧪 Simulate decrement
+  const updatedTalents = allTalents.map(t =>
+    t.id === talent.id ? { ...t, points: t.points - 1 } : { ...t }
+  )
+
+  // ⛓️ Check if remaining talents still meet their tier requirements
+  const tierViolation = updatedTalents.some(t => {
+    if (t.points === 0) return false
+    const required = requiredForTier(t.row)
+    const belowSpent = updatedTalents
+      .filter(u => u.row < t.row)
+      .reduce((sum, u) => sum + u.points, 0)
+    return belowSpent < required
+  })
+  if (tierViolation) return false
+
+  // 🔐 Final gating pass
+  return treeGatingValid(updatedTalents)
+}

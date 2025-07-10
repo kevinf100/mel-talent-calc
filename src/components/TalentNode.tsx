@@ -26,6 +26,8 @@ type TalentNodeProps = {
       | MouseEvent
       | { shiftKey: boolean; type: string }
   ) => void
+  canIncrement: boolean
+  canDecrement: boolean
 } & Pick<
   Talent,
   | 'name'
@@ -53,6 +55,8 @@ export const TalentNode = ({
   totalPointsInTree,
   requiredTalentName,
   talentTreeName,
+  canIncrement,
+  canDecrement,
 }: TalentNodeProps) => {
   const buttonRef =
     useRef<HTMLButtonElement | null>(null)
@@ -253,16 +257,23 @@ export const TalentNode = ({
         )}
       </button>
 
+      {/* 🧠 Tooltip with control flags */}
       <Tooltip
         referenceEl={buttonRef.current}
         open={isHovered}
         disabled={disabled}
         onIncrement={
-          disabled ? undefined : handleIncrement
+          canIncrement
+            ? handleIncrement
+            : undefined
         }
         onDecrement={
-          disabled ? undefined : handleDecrement
+          canDecrement
+            ? handleDecrement
+            : undefined
         }
+        canIncrement={canIncrement}
+        canDecrement={canDecrement}
       >
         <h4 className='text-white text-xl'>
           {name}
@@ -272,7 +283,7 @@ export const TalentNode = ({
         </p>
 
         {requirementTexts.length > 0 && (
-          <div className='text-base text-[#ef1f21] '>
+          <div className='text-base text-[#ef1f21]'>
             {requirementTexts.map((text, idx) => (
               <p key={idx}>{text}</p>
             ))}
@@ -298,14 +309,22 @@ export const TalentNode = ({
             </p>
           </>
         )}
-        {!disabled && !isMaxed && hasSpendablePoints && (
+
+        {!disabled &&
+          !isMaxed &&
+          hasSpendablePoints && (
+            <p className='text-green-400 text-base'>
+              {isMobile
+                ? 'Tap icon or plus (+) to learn'
+                : 'Click to learn'}
+            </p>
+          )}
+
+        {!disabled && isMaxed && canDecrement && (
           <p className='text-green-400 text-base'>
-            Click to learn
-          </p>
-        )}
-        {!disabled && isMaxed && (
-          <p className='text-green-400 text-base'>
-            Right click to unlearn
+            {isMobile
+              ? 'Tap minus (-) to unlearn'
+              : 'Right click to unlearn'}
           </p>
         )}
       </Tooltip>

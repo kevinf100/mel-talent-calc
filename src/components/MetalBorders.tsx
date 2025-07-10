@@ -20,7 +20,7 @@ type MetalBordersProps = {
         <div className="absolute top-[61px] right-[6px] w-[23px] h-[calc(100%-121px)] edge right" />
       
         {/* Content fits inside with padding */}
-        <div className=" top-[20px] left-[20px] right-[20px] bottom-[20px] p-4">
+        <div className="p-4">
           {children}
         </div>
       </div>);

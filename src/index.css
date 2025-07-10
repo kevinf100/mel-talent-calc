@@ -213,3 +213,78 @@ p {
 .edge-sm.right-sm {
   background-position: 100% 0;
 }
+/*     background-image: url('/src/assets/ui/Parchment.PNG');      */
+
+
+/* Shared horizontal background image */
+.parchment .corner,
+.parchment .edge.top,
+.parchment .edge.bottom {
+  background-image: url('/src/assets/ui/parchment-sprite2.PNG'); /* horizontal + corner sprite */
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+/* Vertical edges from a separate file */
+.parchment .edge.left,
+.parchment .edge.right {
+  background-image: url('/src/assets/ui/parchment-sprite-sides.PNG'); /* vertical edge sprite */
+  background-repeat: repeat-y;
+  background-size: auto;
+  z-index: 1;
+}
+
+.parchment .background {
+  background-image: url('/src/assets/ui/parchment-sprite-bg.PNG');
+  background-repeat: repeat;
+  background-clip: content-box;
+  z-index: 1;
+}
+
+/* Corners */
+.parchment .top-left {
+  background-position: 0px -878px;
+}
+
+.parchment .top-right {
+  background-position: 0px -521px;
+}
+
+.parchment .bottom-left {
+  background-position: 0px -337px;
+}
+
+.parchment .bottom-right {
+  background-position: 0px -697px;
+}
+
+/* Horizontal edges — repeat slice width 500px, height 169px */
+.parchment .edge.top {
+  background-position: 0 -145px;
+  background-size: auto;
+  background-repeat: repeat-x;
+}
+
+.parchment .edge.bottom {
+  background-position: -0px 32px;
+  background-size: auto;
+  background-repeat: repeat-x;
+}
+
+/* Vertical edges */
+.parchment .edge.left {
+  background-position: 0 0;
+}
+
+.parchment .edge.right {
+  background-position: 100% 0;
+}
+
+/* Ribbon */
+.parchment .ribbon,
+.parchment .ribbon {
+  background-image: url('/src/assets/ui/parchment-sprite-ribbon.PNG'); /* vertical edge sprite */
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 10;
+}

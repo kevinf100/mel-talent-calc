@@ -8,8 +8,11 @@ import {
 } from '@floating-ui/react-dom'
 import { createPortal } from 'react-dom'
 import { MetalBordersSmall } from './MetalBordersSmall'
-import ButtonIncrement from '../assets/ui/red-button-increment.png' 
+
+import ButtonIncrement from '../assets/ui/red-button-increment.png'
 import ButtonDecrement from '../assets/ui/red-button-decrement.png'
+import ButtonIncrementGrey from '../assets/ui/red-button-increment-disabled2.png'
+import ButtonDecrementGrey from '../assets/ui/red-button-decrement-disabled2.png'
 
 type TooltipProps = {
   children: ReactNode
@@ -18,6 +21,8 @@ type TooltipProps = {
   onIncrement?: () => void
   onDecrement?: () => void
   disabled?: boolean
+  canIncrement: boolean
+  canDecrement: boolean
 }
 
 export const Tooltip = ({
@@ -27,18 +32,15 @@ export const Tooltip = ({
   onIncrement,
   onDecrement,
   disabled,
+  canIncrement,
+  canDecrement,
 }: TooltipProps) => {
   const { x, y, refs, strategy } = useFloating({
     placement: 'top-start',
     middleware: [
       offset({ crossAxis: 50 }),
       shift({ padding: 8 }),
-      flip({
-        fallbackPlacements: [
-          'right-end',
-          'bottom',
-        ],
-      }),
+      flip({ fallbackPlacements: ['right-end', 'bottom'] }),
     ],
     whileElementsMounted: autoUpdate,
   })
@@ -51,6 +53,16 @@ export const Tooltip = ({
 
   if (!open || !referenceEl) return null
 
+  const createButtonStyle = (
+    active: boolean,
+    activeSprite: string,
+    disabledSprite: string
+  ) => ({
+    backgroundImage: `url(${active ? activeSprite : disabledSprite})`,
+    backgroundSize: active ? '125px 90px' : '125px 46px',
+    backgroundPosition: active ? '0px 0px' : 'center',
+  })
+
   const tooltip = (
     <div
       ref={setFloating}
@@ -59,77 +71,73 @@ export const Tooltip = ({
         top: y ?? 0,
         left: x ?? 0,
         zIndex: 100,
-        pointerEvents: 'none', // passive layout container
+        pointerEvents: 'none',
+        touchAction: 'manipulation'
       }}
       className='max-w-[24rem] min-w-[24rem]'
     >
-      {/* 👇 Enable interaction only inside content zone */}
       <div className='pointer-events-auto'>
         <MetalBordersSmall>
           <div className='bg-[#2a2a2af7] p-3 text-sm shadow-lg relative'>
-            {/* 🌟 Tooltip content */}
-            <div className='break-words whitespace-normal'>
-              {children}
-            </div>
+            <div className='break-words whitespace-normal'>{children}</div>
 
-            {/* 📲 Mobile-only buttons */}
-            {!disabled &&
-              (onIncrement || onDecrement) && (
-                <div className='flex gap-2 mt-1 md:hidden touch-manipulation justify-between'>
-                  {onDecrement && (
-                    <button
-                      onClick={e => {
-                        e.stopPropagation()
-                        onDecrement?.()
-                      }}
-                      className='w-[125px] h-[45px] bg-no-repeat bg-[length:125px_90px]'
-                      style={{
-                        backgroundImage: `url(${ButtonDecrement})`,
-                        backgroundPosition:
-                          '0px 0px',
-                      }}
-                      onPointerDown={e => {
-                        e.currentTarget.style.backgroundPosition =
-                          '0px -46px'
-                      }}
-                      onPointerUp={e => {
-                        e.currentTarget.style.backgroundPosition =
-                          '0px 0px'
-                      }}
-                      onPointerLeave={e => {
-                        e.currentTarget.style.backgroundPosition =
-                          '0px 0px'
-                      }}
-                    />
+            {!disabled && (
+              <div className='flex gap-2 mt-1 md:hidden touch-manipulation justify-between'>
+                <button
+                  onClick={e => {
+                    if (!canDecrement) return
+                    e.stopPropagation()
+                    onDecrement?.()
+                  }}
+                  disabled={!canDecrement}
+                  className='w-[125px] h-[45px] bg-no-repeat'
+                  style={createButtonStyle(
+                    canDecrement,
+                    ButtonDecrement,
+                    ButtonDecrementGrey
                   )}
-                  {onIncrement && (
-                    <button
-                      onClick={e => {
-                        e.stopPropagation()
-                        onIncrement?.()
-                      }}
-                      className='w-[125px] h-[45px] bg-no-repeat bg-[length:125px_90px]'
-                      style={{
-                        backgroundImage: `url(${ButtonIncrement})`,
-                        backgroundPosition:
-                          '0px 0px',
-                      }}
-                      onPointerDown={e => {
-                        e.currentTarget.style.backgroundPosition =
-                          '0px -46px'
-                      }}
-                      onPointerUp={e => {
-                        e.currentTarget.style.backgroundPosition =
-                          '0px 0px'
-                      }}
-                      onPointerLeave={e => {
-                        e.currentTarget.style.backgroundPosition =
-                          '0px 0px'
-                      }}
-                    />
+                  onPointerDown={e => {
+                    if (canDecrement)
+                      e.currentTarget.style.backgroundPosition = '0px -46px'
+                  }}
+                  onPointerUp={e => {
+                    if (canDecrement)
+                      e.currentTarget.style.backgroundPosition = '0px 0px'
+                  }}
+                  onPointerLeave={e => {
+                    if (canDecrement)
+                      e.currentTarget.style.backgroundPosition = '0px 0px'
+                  }}
+                />
+
+                <button
+                  onClick={e => {
+                    if (!canIncrement) return
+                    e.stopPropagation()
+                    onIncrement?.()
+                  }}
+                  disabled={!canIncrement}
+                  className='w-[125px] h-[45px] bg-no-repeat'
+                  style={createButtonStyle(
+                    canIncrement,
+                    ButtonIncrement,
+                    ButtonIncrementGrey
                   )}
-                </div>
-              )}
+                  onPointerDown={e => {
+                    if (canIncrement)
+                      e.currentTarget.style.backgroundPosition = '0px -46px'
+                  }}
+                  onPointerUp={e => {
+                    if (canIncrement)
+                      e.currentTarget.style.backgroundPosition = '0px 0px'
+                  }}
+                  onPointerLeave={e => {
+                    if (canIncrement)
+                      e.currentTarget.style.backgroundPosition = '0px 0px'
+                  }}
+                />
+              </div>
+            )}
           </div>
         </MetalBordersSmall>
       </div>

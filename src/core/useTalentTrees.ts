@@ -1,9 +1,9 @@
 import { useState, useMemo } from 'react'
 import type { ClassName, Tree } from './types'
 import {
-  treeGatingValid,
-  meetsDependencies,
-  requiredForTier,
+  canIncrementTalent,
+  canSafelyDecrementTalent,
+  isTalentLocked,
 } from './talentUtils'
 import { talentData } from './data/talentData'
 
@@ -33,36 +33,35 @@ export const useTalentTrees = () => {
     setTrees(JSON.parse(JSON.stringify(talentData[selectedClass])));
   };
 
-  const modify = (treeIdx: number, talentId: string, e: React.MouseEvent | { shiftKey: boolean; type: string }) => {
+  const modify = (
+    treeIdx: number,
+    talentId: string,
+    e: React.MouseEvent | { shiftKey: boolean; type: string }
+  ) => {
     setTrees(prev => {
-      const copy = [...prev];
-      const talents = copy[treeIdx].talents.map(t => ({ ...t }));
-      const target = talents.find(t => t.id === talentId);
-      if (!target) return prev;
-
-      const treePoints = talents.reduce((sum, t) => sum + t.points, 0);
-      const locked = treePoints < requiredForTier(target.row) || !meetsDependencies(target, talents);
-
-      const isShift = e.shiftKey || e.type === 'contextmenu';
-
+      const copy = [...prev]
+      const talents = copy[treeIdx].talents.map(t => ({ ...t }))
+      const target = talents.find(t => t.id === talentId)
+      if (!target) return prev
+  
+      const pointsSpent = talents.reduce((s, t) => s + t.points, 0)
+      const locked = isTalentLocked(target, talents, pointsSpent)
+      const isShift = e.shiftKey || e.type === 'contextmenu'
+  
       if (isShift) {
-        const hasDependents = talents.some(t => t.requires?.id === target.id && t.points > t.requires.points);
-        if (target.points > 0 && !hasDependents) {
-          target.points -= 1;
-          if (!treeGatingValid(talents)) {
-            target.points += 1; // revert
-          }
+        if (canSafelyDecrementTalent(target, talents)) {
+          target.points -= 1
         }
       } else {
-        if (target.points < target.maxPoints && !locked && pointsRemaining > 0) {
-          target.points += 1;
+        if (canIncrementTalent(target, pointsRemaining, locked)) {
+          target.points += 1
         }
       }
-
-      copy[treeIdx] = { ...copy[treeIdx], talents };
-      return copy;
-    });
-  };
+  
+      copy[treeIdx] = { ...copy[treeIdx], talents }
+      return copy
+    })
+  }
 
   return {
     trees,

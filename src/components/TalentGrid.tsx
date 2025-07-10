@@ -4,6 +4,7 @@ import { useTalentTrees } from '../core/useTalentTrees'
 import { TalentTreeScroller } from './TalentTreeScroller'
 
 import ResetSprite from '../assets/ui/reset-all-button-sprite-small.png'
+import { ParchmentBorders } from './ParchmentBorders'
 
 export const TalentGrid = () => {
   const {
@@ -23,15 +24,32 @@ export const TalentGrid = () => {
         totalPointsSpent={totalPointsSpent}
         pointsRemaining={pointsRemaining}
       />
+      <div className='flex items-center justify-between'>
+      <ParchmentBorders>
+        {/* 🏅 Class Icon in Gold Ring */}
+        <div
+          className='relative flex items-center justify-center overflow-hidden w-[128px] h-[128px]'
+        >
+          {/* 🏅 Gold Ring Frame – above everything */}
+          <img
+            src='src/assets/icons/gold-ring3.png'
+            alt='Gold Ring'
+            className='absolute z-15 top-0 left-0 pointer-events-none w-[128px] h-[128px]'
+          />
 
-      <div className='flex justify-end'>
-        {/* 🆕 Image-based Reset Button */}
+          {/* 🧱 Class Icon – clipped inside ring */}
+          <img
+            src='src/assets/icons/classicon_warrior.png'
+            alt='Warrior Icon'
+            className='z-10 object-cover rounded-full w-[96px] h-[96px]'
+          />
+        </div>
+
+        {/* 🔁 Reset All Button */}
         <button
           onClick={resetAll}
           aria-label='Reset All'
-          className='
-            w-[150px] h-[49px]
-            bg-no-repeat bg-[length:150px_99px]'
+          className='w-[150px] h-[49px] bg-no-repeat bg-[length:150px_99px]'
           style={{
             backgroundImage: `url(${ResetSprite})`,
             backgroundPosition: '0px 0px',
@@ -49,6 +67,7 @@ export const TalentGrid = () => {
               '0px 0px'
           }}
         />
+      </ParchmentBorders>
       </div>
 
       <TalentTreeScroller

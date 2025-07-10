@@ -3,7 +3,11 @@ import { TalentNode } from './TalentNode'
 import type { Talent } from '../core/types'
 import {
   getArrowProps,
-  meetsDependencies,
+} from '../core/talentUtils'
+import {
+  isTalentLocked,
+  canIncrementTalent,
+  canSafelyDecrementTalent,
 } from '../core/talentUtils'
 import ResetSprite from '../assets/ui/reset-button-sprite.png'
 import { MetalBorders } from './MetalBorders'
@@ -22,30 +26,19 @@ export type TTalentTreeProps = {
   pointsRemaining: number
 }
 
-export const TalentTree = (
-  talentTreeProps: TTalentTreeProps
-) => {
-  const {
-    name,
-    backgroundImage,
-    talents,
-    onClickTalent,
-    onResetTree,
-    pointsRemaining,
-    specIcon
-  } = talentTreeProps
-
+export const TalentTree = ({
+  name,
+  backgroundImage,
+  talents,
+  onClickTalent,
+  onResetTree,
+  pointsRemaining,
+  specIcon,
+}: TTalentTreeProps) => {
   const pointsSpent = talents.reduce(
     (s, t) => s + t.points,
     0
   )
-
-  const totalBelowRow = (row: number) =>
-    talents
-      .filter(t => t.row < row)
-      .reduce((s, t) => s + t.points, 0)
-
-  const requiredForTier = (row: number) => row * 5
 
   return (
     <MetalBorders>
@@ -81,14 +74,14 @@ export const TalentTree = (
                 width: '64px',
                 height: '64px',
                 borderColor: '#43434385',
-                borderWidth: '3px',
                 borderStyle: 'ridge',
+                borderWidth: '2px',
               }}
             >
               <img
                 src={`src/assets/icons/${specIcon}`}
                 alt='Spec Icon'
-                className='relative transform scale-[1.05]'
+                className='relative rounded-full w-[60px] h-[60px] bottom-[2px]'
               />
             </div>
 
@@ -99,7 +92,7 @@ export const TalentTree = (
             <button
               onClick={onResetTree}
               aria-label='Reset Tree'
-              className='z-1 w-[39px] h-[38px] bg-no-repeat bg-[length:39px_75.5px]'
+              className='z-1 w-[39px] h-[38px] bg-no-repeat bg-[length:39px_75.5px] self-end'
               style={{
                 backgroundImage: `url(${ResetSprite})`,
                 backgroundPosition: '0px 0px',
@@ -123,49 +116,38 @@ export const TalentTree = (
             <h2
               className='text-center px-3 py-1 text-sm w-full rounded shadow-inner'
               style={{
-                backgroundColor:
-                  'rgba(3, 2, 2, 0.34)',
+                backgroundColor: 'rgba(3, 2, 2, 0.34)',
                 color: 'rgb(255, 215, 0)',
                 borderRadius: '5px',
-                boxShadow:
-                  'inset 0 0 8px rgba(0, 0, 0, 0.36)',
+                boxShadow: 'inset 0 0 8px rgba(0, 0, 0, 0.36)',
                 borderWidth: '1px',
                 borderStyle: 'inset',
                 borderColor: 'black',
               }}
             >
               Points spent in {name} Talents:{' '}
-              <span
-                className={'text-white font-sans'}
-              >
+              <span className='text-white font-sans'>
                 {pointsSpent}
               </span>
             </h2>
           </div>
         </header>
 
-        <div className='grid grid-cols-4 grid-rows-7 md:gap-4 gap-6 relative lg:pl-4 lg:pr-4'>
+        <div className='grid grid-cols-4 grid-rows-7 md:gap-4 gap-6 relative lg:pl-4 lg:pr-4 place-items-center'>
           {talents.map(t => {
-            const meetsTier =
-              totalBelowRow(t.row) >=
-              requiredForTier(t.row)
-            const meetsDep = meetsDependencies(
-              t,
-              talents
-            )
-            const locked =
-              !(meetsTier && meetsDep) &&
-              t.points === 0
+            const pointsSpentInTree = talents.reduce((s, talent) => s + talent.points, 0)
+            const locked = isTalentLocked(t, talents, pointsSpentInTree)
+
+            const canIncrement = canIncrementTalent(t, pointsRemaining, locked)
+            const canDecrement = canSafelyDecrementTalent(t, talents)
+
             const {
               class: arrowClass,
               style: arrowStyle,
             } = getArrowProps(talents, t, locked, pointsRemaining)
 
             const requiredTalent = t.requires
-              ? talents.find(
-                  talent =>
-                    talent.id === t.requires!.id
-                )
+              ? talents.find(talent => talent.id === t.requires!.id)
               : undefined
 
             return (
@@ -179,9 +161,7 @@ export const TalentTree = (
                 }}
               >
                 <TalentNode
-                  availablePoints={
-                    pointsRemaining
-                  }
+                  availablePoints={pointsRemaining}
                   name={t.name}
                   icon={t.icon}
                   ranks={t.ranks}
@@ -189,24 +169,15 @@ export const TalentTree = (
                   maxPoints={t.maxPoints}
                   abilityData={t.abilityData}
                   disabled={locked}
-                  onClick={e =>
-                    onClickTalent(
-                      t.id,
-                      e as MouseEvent
-                    )
-                  }
-                  tierRequirement={requiredForTier(
-                    t.row
-                  )}
+                  onClick={e => onClickTalent(t.id, e as MouseEvent)}
+                  tierRequirement={t.row * 5}
                   requires={t.requires}
-                  totalPointsInTree={pointsSpent}
-                  requiredTalentPoints={
-                    requiredTalent?.points ?? 0
-                  }
-                  requiredTalentName={
-                    requiredTalent?.name
-                  }
+                  totalPointsInTree={pointsSpentInTree}
+                  requiredTalentPoints={requiredTalent?.points ?? 0}
+                  requiredTalentName={requiredTalent?.name}
                   talentTreeName={name}
+                  canIncrement={canIncrement}
+                  canDecrement={canDecrement}
                 />
               </div>
             )
