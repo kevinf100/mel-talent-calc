@@ -12,4 +12,5 @@ export const talentData: TalentData = {
   shaman: [],
   mage: [],
   warlock: [],
+  druid: []
 };

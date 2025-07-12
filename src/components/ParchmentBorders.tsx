@@ -5,7 +5,7 @@ type ParchmentBordersProps = {
 export const ParchmentBorders = ({ children }: ParchmentBordersProps) => {
   return (
     <div
-      className="relative w-full h-full md:min-h-[340px] min-h-[440px] parchment"
+      className="relative w-full h-full md:min-h-[340px] min-h-[440px] parchment p-3"
     >
       {/* Background Layer */}
       <div
@@ -29,7 +29,7 @@ export const ParchmentBorders = ({ children }: ParchmentBordersProps) => {
 
 
       {/* Content Area */}
-      <div className="p-4 relative z-20 flex top-[50%]"> {/* Higher z-index for content */}
+      <div className="pt-12 p-6 sm:pb-8 sm:pt-14 sm:p-12 relative z-20 flex overflow-hidden"> {/* Higher z-index for content */}
         {children}
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import type { ClassName, Tree } from './types'
 import {
   canIncrementTalent,
@@ -9,9 +9,17 @@ import { talentData } from './data/talentData'
 
 const TOTAL_TALENT_POINTS = 51;
 
-export const useTalentTrees = () => {
-  const [selectedClass, setSelectedClass] = useState<ClassName>('warrior');
+type UseTalentTreesProps = {
+  selectedClass: ClassName;
+  setSelectedClass: (className: ClassName) => void;
+};
+
+export const useTalentTrees = ({ selectedClass, setSelectedClass }: UseTalentTreesProps) => {
   const [trees, setTrees] = useState<Tree[]>(talentData[selectedClass]);
+
+  useEffect(() => {
+    setTrees(talentData[selectedClass]);
+  }, [selectedClass]);  
 
   const totalPointsSpent = useMemo(() => {
     return trees.reduce((sum, tree) => sum + tree.talents.reduce((s, talent) => s + talent.points, 0), 0);

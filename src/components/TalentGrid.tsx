@@ -5,8 +5,13 @@ import { TalentTreeScroller } from './TalentTreeScroller'
 
 import ResetSprite from '../assets/ui/reset-all-button-sprite-small.png'
 import { ParchmentBorders } from './ParchmentBorders'
+import { ClassPicker } from './ClassPicker'
+import { useState } from 'react'
+import type { ClassName } from '../core/types'
 
 export const TalentGrid = () => {
+  const [selectedClass, setSelectedClass] =
+    useState<ClassName>('warrior')
   const {
     trees,
     modify,
@@ -15,7 +20,7 @@ export const TalentGrid = () => {
     totalTalentPoints,
     totalPointsSpent,
     pointsRemaining,
-  } = useTalentTrees()
+  } = useTalentTrees({selectedClass, setSelectedClass})
 
   return (
     <div className='space-y-4 sm:max-w-screen-xl sm:mx-auto w-full'>
@@ -24,50 +29,44 @@ export const TalentGrid = () => {
         totalPointsSpent={totalPointsSpent}
         pointsRemaining={pointsRemaining}
       />
-      <div className='flex items-center justify-between'>
-      <ParchmentBorders>
-        {/* 🏅 Class Icon in Gold Ring */}
-        <div
-          className='relative flex items-center justify-center overflow-hidden w-[128px] h-[128px]'
-        >
-          {/* 🏅 Gold Ring Frame – above everything */}
+      <div className='flex flex-col w-full gap-4'>
+        <ParchmentBorders>
+          {/* 🛡️ Class Crest Image */}
           <img
-            src='src/assets/icons/gold-ring3.png'
-            alt='Gold Ring'
-            className='absolute z-15 top-0 left-0 pointer-events-none w-[128px] h-[128px]'
+            src={`src/assets/images/${selectedClass}/classcrest_${selectedClass}.png`}
+            alt={`${selectedClass} crest`}
+            className='absolute right-0 top-0 z-0 sm:opacity-50 opacity-40 pointer-events-none fade-mask sm:top-[-100px] top-[188px] max-md:left-[140px]'
           />
+          <div className='flex flex-col w-full gap-6'>
+            {/* 🎭 Class Picker in first row */}
+            <ClassPicker selectedClass={selectedClass} setSelectedClass={setSelectedClass} />
 
-          {/* 🧱 Class Icon – clipped inside ring */}
-          <img
-            src='src/assets/icons/classicon_warrior.png'
-            alt='Warrior Icon'
-            className='z-10 object-cover rounded-full w-[96px] h-[96px]'
-          />
-        </div>
-
-        {/* 🔁 Reset All Button */}
-        <button
-          onClick={resetAll}
-          aria-label='Reset All'
-          className='w-[150px] h-[49px] bg-no-repeat bg-[length:150px_99px]'
-          style={{
-            backgroundImage: `url(${ResetSprite})`,
-            backgroundPosition: '0px 0px',
-          }}
-          onPointerDown={e => {
-            e.currentTarget.style.backgroundPosition =
-              '0.3px -48.75px'
-          }}
-          onPointerUp={e => {
-            e.currentTarget.style.backgroundPosition =
-              '0px 0px'
-          }}
-          onPointerLeave={e => {
-            e.currentTarget.style.backgroundPosition =
-              '0px 0px'
-          }}
-        />
-      </ParchmentBorders>
+            {/* 🔁 Reset Button in second row */}
+            <div className='flex justify-start'>
+              <button
+                onClick={resetAll}
+                aria-label='Reset All'
+                className='w-[150px] h-[49px] bg-no-repeat bg-[length:150px_99px]'
+                style={{
+                  backgroundImage: `url(${ResetSprite})`,
+                  backgroundPosition: '0px 0px',
+                }}
+                onPointerDown={e => {
+                  e.currentTarget.style.backgroundPosition =
+                    '0.3px -48.75px'
+                }}
+                onPointerUp={e => {
+                  e.currentTarget.style.backgroundPosition =
+                    '0px 0px'
+                }}
+                onPointerLeave={e => {
+                  e.currentTarget.style.backgroundPosition =
+                    '0px 0px'
+                }}
+              />
+            </div>
+          </div>
+        </ParchmentBorders>
       </div>
 
       <TalentTreeScroller

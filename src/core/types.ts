@@ -1,3 +1,5 @@
+import type { CLASS_NAMES } from "./constants"
+
 export type Talent = {
   id: string
   name: string
@@ -22,16 +24,7 @@ export type Tree = {
   specIcon: string
 }
 
-export type ClassName =
-  | 'warrior'
-  | 'paladin'
-  | 'hunter'
-  | 'rogue'
-  | 'priest'
-  | 'shaman'
-  | 'mage'
-  | 'warlock'
-
+export type ClassName = typeof CLASS_NAMES[number]
 
 export type TalentData = {
   [key in ClassName]: Tree[]

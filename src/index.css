@@ -33,8 +33,10 @@
 @font-face {
   font-family: 'FrizQuadrata';
   src:
-    url('fonts/FrizQuadrataStd.woff2') format('woff2'),
-    url('fonts/FrizQuadrataStd.woff') format('woff');
+    url('fonts/FrizQuadrataStd.woff2')
+      format('woff2'),
+    url('fonts/FrizQuadrataStd.woff')
+      format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -52,239 +54,299 @@
   font-display: swap;
 }
 
-html {
-  font-family: 'FrizQuadrata', serif;
-  letter-spacing: 0.33px;
-}
+@layer base {
+  html {
+    font-family: 'FrizQuadrata', serif;
+    letter-spacing: 0.33px;
+  }
 
-h1,
-h2,
-h3,
-h4 {
-  text-shadow: 1px 1px 2px rgba(0, 0, 0);
-}
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0);
+  }
 
-p {
-  text-shadow: 1px 1px 0px rgba(0, 0, 0);
+  p {
+    text-shadow: 1px 1px 0px rgba(0, 0, 0);
+  }
 }
+/*/ 
+@media (max-width: 767px) {
+  .fade-mask {
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+    -webkit-mask-size: none !important;
+    mask-size: none !important;
+    -webkit-mask-repeat: none !important;
+    mask-repeat: none !important;
+    -webkit-mask-composite: initial !important;
+    mask-composite: initial !important;
+  }
+}
+/*/
 
-/* Utility class for gold gradient text */
-.color-gradient {
-  background: linear-gradient(
-    to right,
-    rgb(206, 191, 132),
-    #f7e34b,
-    #ffcf21
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+@layer components {
+  @media (min-width: 640px) {
+    .fade-mask {
+      -webkit-mask-image:
+        linear-gradient(
+          to left,
+          transparent 0%,
+          black 10%
+        ),
+        linear-gradient(
+          to top,
+          transparent 0%,
+          black 10%
+        ),
+        linear-gradient(
+          to bottom,
+          transparent 0%,
+          black 20%
+        );
+      -webkit-mask-composite: destination-in;
+      mask-image:
+        linear-gradient(
+          to left,
+          transparent 0%,
+          black 20%
+        ),
+        linear-gradient(
+          to top,
+          transparent 0%,
+          black 10%
+        ),
+        linear-gradient(
+          to bottom,
+          transparent 25%,
+          black 20%
+        );
+      mask-composite: intersect; /* for Firefox */
+      -webkit-mask-size: 100% 77%;
+      mask-size: 100% 77%;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+    }
+  }
 
-.down-arrow::before {
-  @apply absolute w-[56px] pointer-events-none;
-  content: '';
-  background: url('/src/assets/ui/arrow-down-glow1.png')
-    no-repeat bottom;
-  bottom: 65px; /* Aligns with target node's top */
-  height: var(--arrow-height);
-}
-.down-arrow:not(.glow)::before {
-  @apply grayscale;
-}
-.down-arrow::after {
-  @apply absolute w-[56px] h-[21px] z-[30] pointer-events-none md:bottom-[55.75px] bottom-[52px];
-  content: '';
-  background: url('/src/assets/ui/arrow-down-head-glow1.png')
-    no-repeat bottom;
-}
-.down-arrow:not(.glow)::after {
-  @apply grayscale;
-}
-.down-arrow.glow.disabled::before,
-.down-arrow.glow.disabled::after {
-  @apply grayscale-0; /* Override disabled styling for glowing arrows */
-}
+  /* Utility class for gold gradient text */
+  .color-gradient {
+    background: linear-gradient(
+      to right,
+      rgb(206, 191, 132),
+      #f7e34b,
+      #ffcf21
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .down-arrow::before {
+    @apply absolute w-[56px] pointer-events-none;
+    content: '';
+    background: url('/src/assets/ui/arrow-down-glow1.png')
+      no-repeat bottom;
+    bottom: 65px; /* Aligns with target node's top */
+    height: var(--arrow-height);
+  }
+  .down-arrow:not(.glow)::before {
+    @apply grayscale;
+  }
+  .down-arrow::after {
+    @apply absolute w-[56px] h-[21px] z-[30] pointer-events-none md:bottom-[55.75px] bottom-[52px];
+    content: '';
+    background: url('/src/assets/ui/arrow-down-head-glow1.png')
+      no-repeat bottom;
+  }
+  .down-arrow:not(.glow)::after {
+    @apply grayscale;
+  }
+  .down-arrow.glow.disabled::before,
+  .down-arrow.glow.disabled::after {
+    @apply grayscale-0; /* Override disabled styling for glowing arrows */
+  }
 
 /* Corners and horizontal beams from original sprite */
-.corner,
-.edge.top,
-.edge.bottom {
+.mb-corner,
+.mb-edge-top,
+.mb-edge-bottom {
   background-image: url('/src/assets/ui/UIFrameDiamondMetal2x.png');
   background-repeat: no-repeat;
   z-index: 1;
 }
 
-.top-left {
+.mb-top-left {
   background-position: 0 -269px;
 }
 
-.top-right {
+.mb-top-right {
   background-position: 0 -335px;
 }
 
-.bottom-left {
+.mb-bottom-left {
   background-position: 0 -132px;
 }
 
-.bottom-right {
+.mb-bottom-right {
   background-position: 0 -198px;
 }
 
-.edge.top {
+.mb-edge-top {
   background-position: 0 -18px;
   background-size: 128px auto;
   background-repeat: repeat-x;
 }
 
-.edge.bottom {
+.mb-edge-bottom {
   background-position: 0 -71px;
   background-size: 128px auto;
   background-repeat: repeat-x;
 }
 
 /* Vertical beams from new sprite */
-.edge.left,
-.edge.right {
+.mb-edge-left,
+.mb-edge-right {
   background-image: url('/src/assets/ui/UIFrameDiamondMetalVertical2x.png');
   background-repeat: repeat-y;
   background-size: 46px auto;
   z-index: 1;
 }
 
-.edge.left {
+.mb-edge-left {
   background-position: 0 0;
 }
 
-.edge.right {
+.mb-edge-right {
   background-position: 100% 0;
 }
 
-/* Corners and horizontal beams from smaller sprite */
-.corner-sm,
-.edge-sm.top-sm,
-.edge-sm.bottom-sm {
-  background-image: url('/src/assets/ui/UIFrameDiamondMetal.png');
-  background-repeat: no-repeat;
-  z-index: 1;
-}
 
-.top-left-sm {
-  background-position: 0 -137px;
-}
+  /* Corners and horizontal beams from smaller sprite */
+  .corner-sm,
+  .edge-sm.top-sm,
+  .edge-sm.bottom-sm {
+    background-image: url('/src/assets/ui/UIFrameDiamondMetal.png');
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
 
-.top-right-sm {
-  background-position: 0 -171px;
-}
+  .top-left-sm {
+    background-position: 0 -137px;
+  }
 
-.bottom-left-sm {
-  background-position: 0 -70px;
-}
+  .top-right-sm {
+    background-position: 0 -171px;
+  }
 
-.bottom-right-sm {
-  background-position: 0 -104px;
-}
+  .bottom-left-sm {
+    background-position: 0 -70px;
+  }
 
-.edge-sm.top-sm {
-  background-position: 0 -11px;
-  background-size: 64px auto;
-  background-repeat: repeat-x;
-}
+  .bottom-right-sm {
+    background-position: 0 -104px;
+  }
 
-.edge-sm.bottom-sm {
-  background-position: 0 -35px;
-  background-size: 64px auto;
-  background-repeat: repeat-x;
-}
+  .edge-sm.top-sm {
+    background-position: 0 -11px;
+    background-size: 64px auto;
+    background-repeat: repeat-x;
+  }
 
-/* Vertical beams from small sprite */
-.edge-sm.left-sm,
-.edge-sm.right-sm {
-  background-image: url('/src/assets/ui/UIFrameDiamondMetalVertical.png');
-  background-repeat: repeat-y;
-  background-size: 22px auto;
-  z-index: 1;
-}
+  .edge-sm.bottom-sm {
+    background-position: 0 -35px;
+    background-size: 64px auto;
+    background-repeat: repeat-x;
+  }
 
-.edge-sm.left-sm {
-  background-position: 0 0;
-}
+  /* Vertical beams from small sprite */
+  .edge-sm.left-sm,
+  .edge-sm.right-sm {
+    background-image: url('/src/assets/ui/UIFrameDiamondMetalVertical.png');
+    background-repeat: repeat-y;
+    background-size: 22px auto;
+    z-index: 1;
+  }
 
-.edge-sm.right-sm {
-  background-position: 100% 0;
-}
-/*     background-image: url('/src/assets/ui/Parchment.PNG');      */
+  .edge-sm.left-sm {
+    background-position: 0 0;
+  }
 
+  .edge-sm.right-sm {
+    background-position: 100% 0;
+  }
 
-/* Shared horizontal background image */
-.parchment .corner,
-.parchment .edge.top,
-.parchment .edge.bottom {
-  background-image: url('/src/assets/ui/parchment-sprite2.PNG'); /* horizontal + corner sprite */
-  background-repeat: no-repeat;
-  z-index: 1;
-}
+  /* Shared horizontal background image */
+  .parchment .corner,
+  .parchment .edge.top,
+  .parchment .edge.bottom {
+    background-image: url('/src/assets/ui/parchment-sprite2.PNG'); /* horizontal + corner sprite */
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
 
-/* Vertical edges from a separate file */
-.parchment .edge.left,
-.parchment .edge.right {
-  background-image: url('/src/assets/ui/parchment-sprite-sides.PNG'); /* vertical edge sprite */
-  background-repeat: repeat-y;
-  background-size: auto;
-  z-index: 1;
-}
+  /* Vertical edges from a separate file */
+  .parchment .edge.left,
+  .parchment .edge.right {
+    background-image: url('/src/assets/ui/parchment-sprite-sides.PNG'); /* vertical edge sprite */
+    background-repeat: repeat-y;
+    background-size: auto;
+    z-index: 1;
+  }
 
-.parchment .background {
-  background-image: url('/src/assets/ui/parchment-sprite-bg.PNG');
-  background-repeat: repeat;
-  background-clip: content-box;
-  z-index: 1;
-}
+  .parchment .background {
+    background-image: url('/src/assets/ui/parchment-sprite-bg.PNG');
+    background-repeat: repeat;
+    background-clip: content-box;
+    z-index: 1;
+  }
 
-/* Corners */
-.parchment .top-left {
-  background-position: 0px -878px;
-}
+  /* Corners */
+  .parchment .top-left {
+    background-position: 0px -878px;
+  }
 
-.parchment .top-right {
-  background-position: 0px -521px;
-}
+  .parchment .top-right {
+    background-position: 0px -521px;
+  }
 
-.parchment .bottom-left {
-  background-position: 0px -337px;
-}
+  .parchment .bottom-left {
+    background-position: 0px -337px;
+  }
 
-.parchment .bottom-right {
-  background-position: 0px -697px;
-}
+  .parchment .bottom-right {
+    background-position: 0px -697px;
+  }
 
-/* Horizontal edges — repeat slice width 500px, height 169px */
-.parchment .edge.top {
-  background-position: 0 -145px;
-  background-size: auto;
-  background-repeat: repeat-x;
-}
+  /* Horizontal edges — repeat slice width 500px, height 169px */
+  .parchment .edge.top {
+    background-position: 0 -145px;
+    background-size: auto;
+    background-repeat: repeat-x;
+  }
 
-.parchment .edge.bottom {
-  background-position: -0px 32px;
-  background-size: auto;
-  background-repeat: repeat-x;
-}
+  .parchment .edge.bottom {
+    background-position: -0px 32px;
+    background-size: auto;
+    background-repeat: repeat-x;
+  }
 
-/* Vertical edges */
-.parchment .edge.left {
-  background-position: 0 0;
-}
+  /* Vertical edges */
+  .parchment .edge.left {
+    background-position: 0 0;
+  }
 
-.parchment .edge.right {
-  background-position: 100% 0;
-}
+  .parchment .edge.right {
+    background-position: 100% 0;
+  }
 
-/* Ribbon */
-.parchment .ribbon,
-.parchment .ribbon {
-  background-image: url('/src/assets/ui/parchment-sprite-ribbon.PNG'); /* vertical edge sprite */
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: 10;
+  /* Ribbon */
+  .parchment .ribbon,
+  .parchment .ribbon {
+    background-image: url('/src/assets/ui/parchment-sprite-ribbon.PNG'); /* vertical edge sprite */
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 10;
+  }
 }
