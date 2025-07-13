@@ -6,7 +6,7 @@ export const fire: Tree = {
     backgroundImage: "src/assets/images/mage/background-mage-fire.webp",
     talents: [
         {
-            id: "spell_fire_flamebolt",
+            id: "improved_fireball",
             ranks: [
                 "Reduces the casting time of your Fireball spell by 0.1 sec.",
                 "Reduces the casting time of your Fireball spell by 0.2 sec.",

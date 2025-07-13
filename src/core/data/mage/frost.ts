@@ -19,7 +19,7 @@ export const frost: Tree = {
             points: 0
         },
         {
-            id: "spell_frost_frostbolt02",
+            id: "improved_frostbolt",
             ranks: [
                 "Reduces the casting time of your Frostbolt spell by 0.1 sec.",
                 "Reduces the casting time of your Frostbolt spell by 0.2 sec.",

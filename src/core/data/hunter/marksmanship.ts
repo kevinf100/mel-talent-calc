@@ -186,7 +186,7 @@ export const marksmanship: Tree = {
             points: 0
         },
         {
-            id: "ability_upgrademoonglaive",
+            id: "barrage",
             ranks: [
                 "Increases the damage done by your Multi-Shot and Volley spells by 4%.",
                 "Increases the damage done by your Multi-Shot and Volley spells by 8%.",
@@ -270,7 +270,7 @@ export const marksmanship: Tree = {
             col: 2,
             maxPoints: 3,
             requires: {
-                id: "ability_upgrademoonglaive",
+                id: "barrage",
                 points: 3
             },
             icon: "ability_upgrademoonglaive.png",

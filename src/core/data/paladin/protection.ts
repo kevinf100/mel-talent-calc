@@ -262,14 +262,14 @@ export const protection: Tree = {
             col: 0,
             maxPoints: 2,
             requires: {
-                id: "spell_holy_blessingofprotection",
+                id: "holy_shield",
                 points: 1
             },
             icon: "spell_holy_blessingofprotection.png",
             points: 0
         },
         {
-            id: "spell_holy_blessingofprotection",
+            id: "holy_shield",
             ranks: [
                 "Increases chance to block by 30% for 10 seconds and deals 59 Holy damage for each attack blocked while active.  Damage caused by Holy Shield causes 35% additional threat.  Each block expends a charge.  4 charges."
             ],
@@ -326,7 +326,7 @@ export const protection: Tree = {
             col: 1,
             maxPoints: 1,
             requires: {
-                id: "spell_holy_blessingofprotection",
+                id: "holy_shield",
                 points: 1
             },
             icon: "spell_holy_avengersshield.png",

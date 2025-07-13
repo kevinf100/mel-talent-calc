@@ -3,7 +3,7 @@ import type { Tree } from '../../types';
 export const feralcombat: Tree = {
     specIcon: "ability_druid_enrage.png",
     name: "Feral Combat",
-    backgroundImage: "src/assets/images/druid/background-druid-feralcombat.webp",
+    backgroundImage: "src/assets/images/druid/background-druid-feral.webp",
     talents: [
         {
             id: "ability_hunter_pet_hyena",
@@ -248,7 +248,7 @@ export const feralcombat: Tree = {
             points: 0
         },
         {
-            id: "spell_nature_unyeildingstamina",
+            id: "leader_of_the_pack",
             ranks: [
                 "While in Cat, Bear or Dire Bear Form, the Leader of the Pack increases ranged and melee critical chance of all party and raid members within 45 yards by 2%.  In addition your own melee critical chance is increased by an additional 3%."
             ],
@@ -270,7 +270,7 @@ export const feralcombat: Tree = {
             col: 2,
             maxPoints: 2,
             requires: {
-                id: "spell_nature_unyeildingstamina",
+                id: "leader_of_the_pack",
                 points: 1
             },
             icon: "spell_nature_unyeildingstamina.png",
@@ -302,7 +302,7 @@ export const feralcombat: Tree = {
             col: 1,
             maxPoints: 1,
             requires: {
-                id: "spell_nature_unyeildingstamina",
+                id: "leader_of_the_pack",
                 points: 1
             },
             icon: "ability_druid_mangle2.png",

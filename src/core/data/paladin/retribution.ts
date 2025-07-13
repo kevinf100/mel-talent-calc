@@ -191,7 +191,7 @@ export const retribution: Tree = {
             points: 0
         },
         {
-            id: "spell_holy_mindvision",
+            id: "sanctity_aura",
             ranks: [
                 "Increases Holy damage done by party and raid members within 30 yards by 10%.  Players may only have one Aura on them per Paladin at any one time."
             ],
@@ -213,7 +213,7 @@ export const retribution: Tree = {
             col: 3,
             maxPoints: 2,
             requires: {
-                id: "spell_holy_mindvision",
+                id: "sanctity_aura",
                 points: 1
             },
             icon: "spell_holy_mindvision.png",
@@ -240,7 +240,7 @@ export const retribution: Tree = {
             points: 0
         },
         {
-            id: "spell_holy_righteousfury",
+            id: "sanctified_judgement",
             ranks: [
                 "Gives your Judgement spell a 33% chance to return 80% of the mana cost of the judged seal.",
                 "Gives your Judgement spell a 66% chance to return 80% of the mana cost of the judged seal.",
@@ -254,7 +254,7 @@ export const retribution: Tree = {
             points: 0
         },
         {
-            id: "spell_holy_holysmite",
+            id: "sanctified_seals",
             ranks: [
                 "Increases your chance to critically hit with all spells and melee attacks by 1% and reduces the chance your Seals will be dispelled by 33%.",
                 "Increases your chance to critically hit with all spells and melee attacks by 2% and reduces the chance your Seals will be dispelled by 66%.",

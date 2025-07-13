@@ -67,7 +67,7 @@ export const discipline: Tree = {
             points: 0
         },
         {
-            id: "spell_holy_powerwordshield",
+            id: "improved_pw_shield",
             ranks: [
                 "Increases the damage absorbed by your Power Word: Shield by 5%.",
                 "Increases the damage absorbed by your Power Word: Shield by 10%.",
@@ -215,7 +215,7 @@ export const discipline: Tree = {
             col: 3,
             maxPoints: 1,
             requires: {
-                id: 0,
+                id: "spell_nature_tranquility",
                 points: 2
             },
             icon: "spell_holy_painsupression.png",

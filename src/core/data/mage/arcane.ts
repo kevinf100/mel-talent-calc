@@ -35,7 +35,7 @@ export const arcane: Tree = {
             points: 0
         },
         {
-            id: "spell_nature_starfall",
+            id: "improved_arcane_missiles",
             ranks: [
                 "Gives you a 20% chance to avoid interruption caused by damage while channeling Arcane Missiles.",
                 "Gives you a 40% chance to avoid interruption caused by damage while channeling Arcane Missiles.",

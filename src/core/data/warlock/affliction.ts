@@ -22,7 +22,7 @@ export const affliction: Tree = {
             points: 0
         },
         {
-            id: "spell_shadow_abominationexplosion",
+            id: "improved_corruption",
             ranks: [
                 "Reduces the casting time of your Corruption spell by 0.4 sec, and the casting time of your Seed of Corruption spell by 0.1 sec.",
                 "Reduces the casting time of your Corruption spell by 0.8 sec, and the casting time of your Seed of Corruption spell by 0.2 sec.",

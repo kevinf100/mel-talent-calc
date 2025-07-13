@@ -22,7 +22,7 @@ export const balance: Tree = {
             points: 0
         },
         {
-            id: "spell_nature_natureswrath",
+            id: "natures_grasp",
             ranks: [
                 "While active, any time an enemy strikes the caster they have a 35% chance to become afflicted by Entangling Roots (Rank 1).  Only useable outdoors.  1 charge.  Lasts 45 seconds."
             ],
@@ -46,7 +46,7 @@ export const balance: Tree = {
             col: 2,
             maxPoints: 4,
             requires: {
-                id: "spell_nature_natureswrath",
+                id: "natures_grasp",
                 points: 1
             },
             icon: "spell_nature_natureswrath.png",
