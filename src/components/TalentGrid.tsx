@@ -20,7 +20,10 @@ export const TalentGrid = () => {
     totalTalentPoints,
     totalPointsSpent,
     pointsRemaining,
-  } = useTalentTrees({selectedClass, setSelectedClass})
+  } = useTalentTrees({
+    selectedClass,
+    setSelectedClass,
+  })
 
   return (
     <div className='space-y-4 sm:max-w-screen-xl sm:mx-auto w-full'>
@@ -35,14 +38,21 @@ export const TalentGrid = () => {
           <img
             src={`src/assets/images/${selectedClass}/classcrest_${selectedClass}.png`}
             alt={`${selectedClass} crest`}
-            className='absolute right-0 top-0 z-0 sm:opacity-50 opacity-40 pointer-events-none fade-mask sm:top-[-100px] top-[188px] max-md:left-[140px]'
+            className='absolute right-0 top-0 z-0 sm:opacity-50 opacity-40 pointer-events-none fade-mask 
+              sm:top-[-100px] top-[5%] max-md:left-[140px] 
+              [@media(max-width:420px)]:top-[52%]
+              [@media(max-width:420px)]:left-[100px]
+              [@media(max-width:1009px)]:top-[0]'
           />
           <div className='flex flex-col w-full gap-6'>
             {/* 🎭 Class Picker in first row */}
-            <ClassPicker selectedClass={selectedClass} setSelectedClass={setSelectedClass} />
+            <ClassPicker
+              selectedClass={selectedClass}
+              setSelectedClass={setSelectedClass}
+            />
 
             {/* 🔁 Reset Button in second row */}
-            <div className='flex justify-start'>
+            <div className='flex justify-start z-1'>
               <button
                 onClick={resetAll}
                 aria-label='Reset All'

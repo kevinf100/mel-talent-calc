@@ -1,0 +1,321 @@
+import type { Tree } from '../../types';
+
+export const enhancement: Tree = {
+    specIcon: "spell_nature_lightningshield.png",
+    name: "Enhancement",
+    backgroundImage: "src/assets/images/shaman/background-shaman-enhancement.webp",
+    talents: [
+        {
+            id: "spell_shadow_grimward",
+            ranks: [
+                "Increases your total Intellect by 2%.",
+                "Increases your total Intellect by 4%.",
+                "Increases your total Intellect by 6%.",
+                "Increases your total Intellect by 8%.",
+                "Increases your total Intellect by 10%."
+            ],
+            row: 0,
+            name: "Ancestral Knowledge",
+            col: 1,
+            maxPoints: 5,
+            icon: "spell_shadow_grimward.png",
+            points: 0
+        },
+        {
+            id: "inv_shield_06",
+            ranks: [
+                "Increases your chance to block attacks with a shield by 1% and increases the amount blocked by 5%.",
+                "Increases your chance to block attacks with a shield by 2% and increases the amount blocked by 10%.",
+                "Increases your chance to block attacks with a shield by 3% and increases the amount blocked by 15%.",
+                "Increases your chance to block attacks with a shield by 4% and increases the amount blocked by 20%.",
+                "Increases your chance to block attacks with a shield by 5% and increases the amount blocked by 25%."
+            ],
+            row: 0,
+            name: "Shield Specialization",
+            col: 2,
+            maxPoints: 5,
+            icon: "inv_shield_06.png",
+            points: 0
+        },
+        {
+            id: "spell_nature_stoneskintotem",
+            ranks: [
+                "Increases the amount of damage reduced by your Stoneskin Totem and Windwall Totem by 10% and reduces the cooldown of your Grounding Totem by 1 sec.",
+                "Increases the amount of damage reduced by your Stoneskin Totem and Windwall Totem by 20% and reduces the cooldown of your Grounding Totem by 2 sec."
+            ],
+            row: 1,
+            name: "Guardian Totems",
+            col: 0,
+            maxPoints: 2,
+            icon: "spell_nature_stoneskintotem.png",
+            points: 0
+        },
+        {
+            id: "ability_thunderbolt",
+            ranks: [
+                "Improves your chance to get a critical strike with your weapon attacks by 1%.",
+                "Improves your chance to get a critical strike with your weapon attacks by 2%.",
+                "Improves your chance to get a critical strike with your weapon attacks by 3%.",
+                "Improves your chance to get a critical strike with your weapon attacks by 4%.",
+                "Improves your chance to get a critical strike with your weapon attacks by 5%."
+            ],
+            row: 1,
+            name: "Thundering Strikes",
+            col: 1,
+            maxPoints: 5,
+            icon: "ability_thunderbolt.png",
+            points: 0
+        },
+        {
+            id: "spell_nature_spiritwolf",
+            ranks: [
+                "Reduces the cast time of your Ghost Wolf spell by 1 sec.",
+                "Reduces the cast time of your Ghost Wolf spell by 2 sec."
+            ],
+            row: 1,
+            name: "Improved Ghost Wolf",
+            col: 2,
+            maxPoints: 2,
+            icon: "spell_nature_spiritwolf.png",
+            points: 0
+        },
+        {
+            id: "spell_nature_lightningshield",
+            ranks: [
+                "Increases the damage done by your Lightning Shield orbs by 5%.",
+                "Increases the damage done by your Lightning Shield orbs by 10%.",
+                "Increases the damage done by your Lightning Shield orbs by 15%."
+            ],
+            row: 1,
+            name: "Improved Lightning Shield",
+            col: 3,
+            maxPoints: 3,
+            icon: "spell_nature_lightningshield.png",
+            points: 0
+        },
+        {
+            id: "spell_nature_earthbindtotem",
+            ranks: [
+                "Increases the effect of your Strength of Earth and Grace of Air Totems by 8%.",
+                "Increases the effect of your Strength of Earth and Grace of Air Totems by 15%."
+            ],
+            row: 2,
+            name: "Enhancing Totems",
+            col: 0,
+            maxPoints: 2,
+            icon: "spell_nature_earthbindtotem.png",
+            points: 0
+        },
+        {
+            id: "spell_nature_elementalabsorption",
+            ranks: [
+                "After landing a melee critical strike, you enter a Focused state.  The Focused state reduces the mana cost of your next Shock spell by 60%."
+            ],
+            row: 2,
+            name: "Shamanistic Focus",
+            col: 2,
+            maxPoints: 1,
+            icon: "spell_nature_elementalabsorption.png",
+            points: 0
+        },
+        {
+            id: "spell_nature_mirrorimage",
+            ranks: [
+                "Increases your chance to dodge by an additional 1%.",
+                "Increases your chance to dodge by an additional 2%.",
+                "Increases your chance to dodge by an additional 3%.",
+                "Increases your chance to dodge by an additional 4%.",
+                "Increases your chance to dodge by an additional 5%."
+            ],
+            row: 2,
+            name: "Anticipation",
+            col: 3,
+            maxPoints: 5,
+            icon: "spell_nature_mirrorimage.png",
+            points: 0
+        },
+        {
+            id: "ability_ghoulfrenzy",
+            ranks: [
+                "Increases your attack speed by 5% for your next 3 swings after dealing a critical strike.",
+                "Increases your attack speed by 10% for your next 3 swings after dealing a critical strike.",
+                "Increases your attack speed by 15% for your next 3 swings after dealing a critical strike.",
+                "Increases your attack speed by 20% for your next 3 swings after dealing a critical strike.",
+                "Increases your attack speed by 25% for your next 3 swings after dealing a critical strike."
+            ],
+            row: 3,
+            name: "Flurry",
+            col: 1,
+            maxPoints: 5,
+            requires: {
+                id: "ability_thunderbolt",
+                points: 5
+            },
+            icon: "ability_ghoulfrenzy.png",
+            points: 0
+        },
+        {
+            id: "spell_holy_devotion",
+            ranks: [
+                "Increases your armor value from items by 2%, and reduces the duration of movement slowing effects on you by 10%.",
+                "Increases your armor value from items by 4%, and reduces the duration of movement slowing effects on you by 20%.",
+                "Increases your armor value from items by 6%, and reduces the duration of movement slowing effects on you by 30%.",
+                "Increases your armor value from items by 8%, and reduces the duration of movement slowing effects on you by 40%.",
+                "Increases your armor value from items by 10%, and reduces the duration of movement slowing effects on you by 50%."
+            ],
+            row: 3,
+            name: "Toughness",
+            col: 2,
+            maxPoints: 5,
+            icon: "spell_holy_devotion.png",
+            points: 0
+        },
+        {
+            id: "spell_fire_enchantweapon",
+            ranks: [
+                "Increases the melee attack power bonus of your Windfury Totem by 15% and increases the damage caused and spell damage granted by your Flametongue Totem by 6%.",
+                "Increases the melee attack power bonus of your Windfury Totem by 30% and increases the damage caused and spell damage granted by your Flametongue Totem by 12%."
+            ],
+            row: 4,
+            name: "Improved Weapon Totems",
+            col: 0,
+            maxPoints: 2,
+            icon: "spell_fire_enchantweapon.png",
+            points: 0
+        },
+        {
+            id: "ability_parry",
+            ranks: [
+                "Gives a chance to parry enemy melee attacks and reduces the threat generated by your melee attacks unless you are wearing a shield by 30%."
+            ],
+            row: 4,
+            name: "Spirit Weapons",
+            col: 1,
+            maxPoints: 1,
+            icon: "ability_parry.png",
+            points: 0
+        },
+        {
+            id: "spell_fire_flametounge",
+            ranks: [
+                "Increases the damage caused by your Rockbiter Weapon by 7%, your Windfury Weapon effect by 13% and increases the damage caused by your Flametongue Weapon and Frostbrand Weapon by 5%.",
+                "Increases the damage caused by your Rockbiter Weapon by 14%, your Windfury Weapon effect by 27% and increases the damage caused by your Flametongue Weapon and Frostbrand Weapon by 10%.",
+                "Increases the damage caused by your Rockbiter Weapon by 20%, your Windfury Weapon effect by 40% and increases the damage caused by your Flametongue Weapon and Frostbrand Weapon by 15%."
+            ],
+            row: 4,
+            name: "Elemental Weapons",
+            col: 2,
+            maxPoints: 3,
+            icon: "spell_fire_flametounge.png",
+            points: 0
+        },
+        {
+            id: "spell_nature_mentalquickness",
+            ranks: [
+                "Reduces the mana cost of your instant cast Shaman spells by 2% and increases your spell damage and healing by an amount equal to 10% of your attack power.",
+                "Reduces the mana cost of your instant cast Shaman spells by 4% and increases your spell damage and healing by an amount equal to 20% of your attack power.",
+                "Reduces the mana cost of your instant cast Shaman spells by 6% and increases your spell damage and healing by an amount equal to 30% of your attack power."
+            ],
+            row: 5,
+            name: "Mental Quickness",
+            col: 0,
+            maxPoints: 3,
+            icon: "spell_nature_mentalquickness.png",
+            points: 0
+        },
+        {
+            id: "ability_hunter_swiftstrike",
+            ranks: [
+                "Increases the damage you deal with all weapons by 1%.",
+                "Increases the damage you deal with all weapons by 2%.",
+                "Increases the damage you deal with all weapons by 3%.",
+                "Increases the damage you deal with all weapons by 4%.",
+                "Increases the damage you deal with all weapons by 5%."
+            ],
+            row: 5,
+            name: "Weapon Mastery",
+            col: 3,
+            maxPoints: 5,
+            icon: "ability_hunter_swiftstrike.png",
+            points: 0
+        },
+        {
+            id: "ability_dualwieldspecialization",
+            ranks: [
+                "Increases your chance to hit with all weapons by an additional 2%.",
+                "Increases your chance to hit with all weapons by an additional 4%.",
+                "Increases your chance to hit with all weapons by an additional 6%."
+            ],
+            row: 6,
+            name: "Weapon Specialization",
+            col: 0,
+            maxPoints: 3,
+            requires: {
+                id: "ability_dualwield",
+                points: 1
+            },
+            icon: "ability_dualwieldspecialization.png",
+            points: 0
+        },
+        {
+            id: "ability_dualwield",
+            ranks: [
+                "Allows one-hand and off-hand weapons to be equipped in the off-hand.\n\nAdditionally, your Lightning Bolt and Molten Blast spells no longer delay your next melee swing, but deal 50% less damage if cast within 4.5 seconds after a melee attack."
+            ],
+            row: 6,
+            name: "Primal Wielding",
+            col: 1,
+            maxPoints: 1,
+            requires: {
+                id: "ability_parry",
+                points: 1
+            },
+            icon: "ability_dualwield.png",
+            points: 0
+        },
+        {
+            id: "ability_shaman_stormstrike",
+            ranks: [
+                "Instantly attack with your weapon, or both weapons if you are dual wielding.  In addition, the target takes 5% additional Nature damage.  Lasts 12 seconds."
+            ],
+            row: 6,
+            name: "Stormstrike",
+            col: 2,
+            maxPoints: 1,
+            requires: {
+                id: "spell_fire_flametounge",
+                points: 3
+            },
+            icon: "ability_shaman_stormstrike.png",
+            points: 0
+        },
+        {
+            id: "spell_nature_unleashedrage",
+            ranks: [
+                "Causes your critical hits with melee attacks to increase all party and raid members' melee attack power by 55 if within 20 yards of the Shaman.  Lasts 10 seconds.",
+                "Causes your critical hits with melee attacks to increase all party and raid members' melee attack power by 65 if within 20 yards of the Shaman.  Lasts 10 seconds.",
+                "Causes your critical hits with melee attacks to increase all party and raid members' melee attack power by 75 if within 20 yards of the Shaman.  Lasts 10 seconds.",
+                "Causes your critical hits with melee attacks to increase all party and raid members' melee attack power by 85 if within 20 yards of the Shaman.  Lasts 10 seconds.",
+                "Causes your critical hits with melee attacks to increase all party and raid members' melee attack power by 95 if within 20 yards of the Shaman.  Lasts 10 seconds."
+            ],
+            row: 7,
+            name: "Unleashed Rage",
+            col: 1,
+            maxPoints: 5,
+            icon: "spell_nature_unleashedrage.png",
+            points: 0
+        },
+        {
+            id: "spell_nature_shamanrage",
+            ranks: [
+                "Reduces all damage taken by 30% and causes your successful melee attacks to regenerate mana (based on weapon speed and attack power).  Lasts 15 seconds."
+            ],
+            row: 8,
+            name: "Shamanistic Rage",
+            col: 1,
+            maxPoints: 1,
+            icon: "spell_nature_shamanrage.png",
+            points: 0
+        }
+    ]
+};

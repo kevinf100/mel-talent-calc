@@ -1,0 +1,328 @@
+import type { Tree } from "../../types";
+
+export const assassination: Tree = {
+    specIcon: "ability_rogue_eviscerate.png",
+    name: "Assassination",
+    backgroundImage: "src/assets/images/rogue/background-rogue-assassination.webp",
+    talents: [
+        {
+            id: "ability_rogue_eviscerate",
+            ranks: [
+                "Increases the damage done by your Eviscerate ability by 5%.",
+                "Increases the damage done by your Eviscerate ability by 10%.",
+                "Increases the damage done by your Eviscerate ability by 15%."
+            ],
+            row: 0,
+            name: "Improved Eviscerate",
+            col: 0,
+            maxPoints: 3,
+            icon: "ability_rogue_eviscerate.png",
+            points: 0
+        },
+        {
+            id: "ability_fiegndead",
+            ranks: [
+                "After killing an opponent that yields experience or honor, gives you a 20% increased critical strike chance on your next Sinister Strike, Hemorrhage, Backstab, Mutilate, Ambush, or Ghostly Strike.  Lasts 20 seconds.",
+                "After killing an opponent that yields experience or honor, gives you a 40% increased critical strike chance on your next Sinister Strike, Hemorrhage, Backstab, Mutilate, Ambush, or Ghostly Strike.  Lasts 20 seconds."
+            ],
+            row: 0,
+            name: "Remorseless Attacks",
+            col: 1,
+            maxPoints: 2,
+            icon: "ability_fiegndead.png",
+            points: 0
+        },
+        {
+            id: "ability_racial_bloodrage",
+            ranks: [
+                "Increases your critical strike chance by 1%.",
+                "Increases your critical strike chance by 2%.",
+                "Increases your critical strike chance by 3%.",
+                "Increases your critical strike chance by 4%.",
+                "Increases your critical strike chance by 5%."
+            ],
+            row: 0,
+            name: "Malice",
+            col: 2,
+            maxPoints: 5,
+            icon: "ability_racial_bloodrage.png",
+            points: 0
+        },
+        {
+            id: "ability_druid_disembowel",
+            ranks: [
+                "Gives your melee finishing moves a 20% chance to add a combo point to your target.",
+                "Gives your melee finishing moves a 40% chance to add a combo point to your target.",
+                "Gives your melee finishing moves a 60% chance to add a combo point to your target."
+            ],
+            row: 1,
+            name: "Ruthlessness",
+            col: 0,
+            maxPoints: 3,
+            icon: "ability_druid_disembowel.png",
+            points: 0
+        },
+        {
+            id: "spell_shadow_deathscream",
+            ranks: [
+                "Increases all damage caused against Humanoid, Giant, Beast and Dragonkin targets by 1%.",
+                "Increases all damage caused against Humanoid, Giant, Beast and Dragonkin targets by 2%."
+            ],
+            row: 1,
+            name: "Murder",
+            col: 1,
+            maxPoints: 2,
+            icon: "spell_shadow_deathscream.png",
+            points: 0
+        },
+        {
+            id: "ability_backstab",
+            ranks: [
+                "Increases the critical strike chance of your Backstab ability by 10%, and the critical strike chance of your Mutilate ability by 5%.",
+                "Increases the critical strike chance of your Backstab ability by 20%, and the critical strike chance of your Mutilate ability by 10%.",
+                "Increases the critical strike chance of your Backstab ability by 30%, and the critical strike chance of your Mutilate ability by 15%."
+            ],
+            row: 1,
+            name: "Puncturing Wounds",
+            col: 3,
+            maxPoints: 3,
+            icon: "ability_backstab.png",
+            points: 0
+        },
+        {
+            id: "ability_warrior_decisivestrike",
+            ranks: [
+                "Your finishing moves have a 20% chance per combo point to restore 25 energy."
+            ],
+            row: 2,
+            name: "Relentless Strikes",
+            col: 0,
+            maxPoints: 1,
+            icon: "ability_warrior_decisivestrike.png",
+            points: 0
+        },
+        {
+            id: "inv_throwingknife_04",
+            ranks: [
+                "Throw and Deadly Throw now have a 50% chance to consume 10 minutes of your off-hand weapon's poison to apply it to the target.",
+                "Throw and Deadly Throw now have a 100% chance to consume 10 minutes of your off-hand weapon's poison to apply it to the target."
+            ],
+            row: 2,
+            name: "Poisoned Knife",
+            col: 1,
+            maxPoints: 2,
+            icon: "inv_throwingknife_04.png",
+            points: 0
+        },
+        {
+            id: "ability_criticalstrike",
+            ranks: [
+                "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ghostly Strike, Mutilate, Shiv, and Hemorrhage abilities by 6%.",
+                "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ghostly Strike, Mutilate, Shiv, and Hemorrhage abilities by 12%.",
+                "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ghostly Strike, Mutilate, Shiv, and Hemorrhage abilities by 18%.",
+                "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ghostly Strike, Mutilate, Shiv, and Hemorrhage abilities by 24%.",
+                "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ghostly Strike, Mutilate, Shiv, and Hemorrhage abilities by 30%."
+            ],
+            row: 2,
+            name: "Lethality",
+            col: 2,
+            maxPoints: 5,
+            requires: {
+                id: "ability_racial_bloodrage",
+                points: 5
+            },
+            icon: "ability_criticalstrike.png",
+            points: 0
+        },
+        {
+            id: "ability_rogue_feigndeath",
+            ranks: [
+                "Increases the damage dealt by your poisons and Envenom ability by 4% and gives your poisons an additional 8% chance to resist dispel effects.",
+                "Increases the damage dealt by your poisons and Envenom ability by 8% and gives your poisons an additional 16% chance to resist dispel effects.",
+                "Increases the damage dealt by your poisons and Envenom ability by 12% and gives your poisons an additional 24% chance to resist dispel effects.",
+                "Increases the damage dealt by your poisons and Envenom ability by 16% and gives your poisons an additional 32% chance to resist dispel effects.",
+                "Increases the damage dealt by your poisons and Envenom ability by 20% and gives your poisons an additional 40% chance to resist dispel effects."
+            ],
+            row: 3,
+            name: "Vile Poisons",
+            col: 1,
+            maxPoints: 5,
+            icon: "ability_rogue_feigndeath.png",
+            points: 0
+        },
+        {
+            id: "ability_poisons",
+            ranks: [
+                "Increases the chance to apply poisons to your target by 2%, and increases the duration of your poison on your weapon by 10%.",
+                "Increases the chance to apply poisons to your target by 4%, and increases the duration of your poison on your weapon by 20%.",
+                "Increases the chance to apply poisons to your target by 6%, and increases the duration of your poison on your weapon by 30%.",
+                "Increases the chance to apply poisons to your target by 8%, and increases the duration of your poison on your weapon by 40%.",
+                "Increases the chance to apply poisons to your target by 10%, and increases the duration of your poison on your weapon by 50%."
+            ],
+            row: 3,
+            name: "Improved Poisons",
+            col: 2,
+            maxPoints: 5,
+            icon: "ability_poisons.png",
+            points: 0
+        },
+        {
+            id: "ability_rogue_fleetfooted",
+            ranks: [
+                "Increases your chance to resist movement impairing effects by 5% and increases your movement speed by 8%.  This does not stack with other movement speed increasing effects.",
+                "Increases your chance to resist movement impairing effects by 10% and increases your movement speed by 15%.  This does not stack with other movement speed increasing effects."
+            ],
+            row: 4,
+            name: "Fleet Footed",
+            col: 0,
+            maxPoints: 2,
+            icon: "ability_rogue_fleetfooted.png",
+            points: 0
+        },
+        {
+            id: "spell_ice_lament",
+            ranks: [
+                "When activated, increases the critical strike chance of your next offensive ability by 100%."
+            ],
+            row: 4,
+            name: "Cold Blood",
+            col: 1,
+            maxPoints: 1,
+            icon: "spell_ice_lament.png",
+            points: 0
+        },
+        {
+            id: "ability_rogue_kidneyshot",
+            ranks: [
+                "While affected by your Kidney Shot ability, the target receives an additional 3% damage from all sources.",
+                "While affected by your Kidney Shot ability, the target receives an additional 6% damage from all sources.",
+                "While affected by your Kidney Shot ability, the target receives an additional 9% damage from all sources."
+            ],
+            row: 4,
+            name: "Improved Kidney Shot",
+            col: 2,
+            maxPoints: 3,
+            icon: "ability_rogue_kidneyshot.png",
+            points: 0
+        },
+        {
+            id: "ability_rogue_quickrecovery",
+            ranks: [
+                "All healing effects on you are increased by 10%.  In addition, your finishing moves cost 40% less Energy when they fail to hit.",
+                "All healing effects on you are increased by 20%.  In addition, your finishing moves cost 80% less Energy when they fail to hit."
+            ],
+            row: 4,
+            name: "Quick Recovery",
+            col: 3,
+            maxPoints: 2,
+            icon: "ability_rogue_quickrecovery.png",
+            points: 0
+        },
+        {
+            id: "ability_warrior_riposte",
+            ranks: [
+                "Increases the armor reduced by your Expose Armor ability by 13%.",
+                "Increases the armor reduced by your Expose Armor ability by 25%."
+            ],
+            row: 5,
+            name: "Improved Expose Armor",
+            col: 0,
+            maxPoints: 2,
+            icon: "ability_warrior_riposte.png",
+            points: 0
+        },
+        {
+            id: "spell_shadow_chilltouch",
+            ranks: [
+                "Your critical strikes from abilities that add combo points have a 20% chance to add an additional combo point.",
+                "Your critical strikes from abilities that add combo points have a 40% chance to add an additional combo point.",
+                "Your critical strikes from abilities that add combo points have a 60% chance to add an additional combo point.",
+                "Your critical strikes from abilities that add combo points have a 80% chance to add an additional combo point.",
+                "Your critical strikes from abilities that add combo points have a 100% chance to add an additional combo point."
+            ],
+            row: 5,
+            name: "Seal Fate",
+            col: 1,
+            maxPoints: 5,
+            requires: {
+                id: "spell_ice_lament",
+                points: 1
+            },
+            icon: "spell_shadow_chilltouch.png",
+            points: 0
+        },
+        {
+            id: "ability_creature_poison_06",
+            ranks: [
+                "Reduces the chance your poisons will be resisted by 5% and increases your chance to resist Poison effects by an additional 15%.",
+                "Reduces the chance your poisons will be resisted by 10% and increases your chance to resist Poison effects by an additional 30%."
+            ],
+            row: 5,
+            name: "Master Poisoner",
+            col: 2,
+            maxPoints: 2,
+            icon: "ability_creature_poison_06.png",
+            points: 0
+        },
+        {
+            id: "spell_nature_earthbindtotem",
+            ranks: [
+                "Increases your maximum Energy by 20 and your Energy regeneration by 10%."
+            ],
+            row: 6,
+            name: "Vigor",
+            col: 1,
+            maxPoints: 1,
+            icon: "spell_nature_earthbindtotem.png",
+            points: 0
+        },
+        {
+            id: "ability_rogue_deadenednerves",
+            ranks: [
+                "Decreases all physical damage taken by 1%.",
+                "Decreases all physical damage taken by 2%.",
+                "Decreases all physical damage taken by 3%.",
+                "Decreases all physical damage taken by 4%.",
+                "Decreases all physical damage taken by 5%."
+            ],
+            row: 6,
+            name: "Deadened Nerves",
+            col: 2,
+            maxPoints: 5,
+            icon: "ability_rogue_deadenednerves.png",
+            points: 0
+        },
+        {
+            id: "ability_rogue_findweakness",
+            ranks: [
+                "Your finishing moves increase the damage of all your offensive abilities by 2% for 10 seconds.",
+                "Your finishing moves increase the damage of all your offensive abilities by 4% for 10 seconds.",
+                "Your finishing moves increase the damage of all your offensive abilities by 6% for 10 seconds.",
+                "Your finishing moves increase the damage of all your offensive abilities by 8% for 10 seconds.",
+                "Your finishing moves increase the damage of all your offensive abilities by 10% for 10 seconds."
+            ],
+            row: 7,
+            name: "Find Weakness",
+            col: 2,
+            maxPoints: 5,
+            icon: "ability_rogue_findweakness.png",
+            points: 0
+        },
+        {
+            id: "ability_rogue_shadowstrikes",
+            ranks: [
+                "Instantly attacks with both weapons for an additional 44 with each weapon.  Damage is increased by 50% against Poisoned targets.  Awards 2 combo points."
+            ],
+            row: 8,
+            name: "Mutilate",
+            col: 1,
+            maxPoints: 1,
+            requires: {
+                id: "spell_nature_earthbindtotem",
+                points: 1
+            },
+            icon: "ability_rogue_shadowstrikes.png",
+            points: 0
+        }
+    ]
+};

@@ -1,0 +1,342 @@
+import type { Tree } from '../../types';
+
+export const fire: Tree = {
+    specIcon: "spell_fire_fireball.png",
+    name: "Fire",
+    backgroundImage: "src/assets/images/mage/background-mage-fire.webp",
+    talents: [
+        {
+            id: "spell_fire_flamebolt",
+            ranks: [
+                "Reduces the casting time of your Fireball spell by 0.1 sec.",
+                "Reduces the casting time of your Fireball spell by 0.2 sec.",
+                "Reduces the casting time of your Fireball spell by 0.3 sec.",
+                "Reduces the casting time of your Fireball spell by 0.4 sec.",
+                "Reduces the casting time of your Fireball spell by 0.5 sec."
+            ],
+            row: 0,
+            name: "Improved Fireball",
+            col: 1,
+            maxPoints: 5,
+            icon: "spell_fire_flamebolt.png",
+            points: 0
+        },
+        {
+            id: "spell_fire_meteorstorm",
+            ranks: [
+                "Gives your Fire spells a 2% chance to stun the target for 2 seconds.",
+                "Gives your Fire spells a 4% chance to stun the target for 2 seconds.",
+                "Gives your Fire spells a 6% chance to stun the target for 2 seconds.",
+                "Gives your Fire spells a 8% chance to stun the target for 2 seconds.",
+                "Gives your Fire spells a 10% chance to stun the target for 2 seconds."
+            ],
+            row: 0,
+            name: "Impact",
+            col: 2,
+            maxPoints: 5,
+            icon: "spell_fire_meteorstorm.png",
+            points: 0
+        },
+        {
+            id: "spell_fire_incinerate",
+            ranks: [
+                "Your critical strikes from Fire damage spells cause the target to burn for an additional 8% of your spell's damage over 4 seconds.",
+                "Your critical strikes from Fire damage spells cause the target to burn for an additional 16% of your spell's damage over 4 seconds.",
+                "Your critical strikes from Fire damage spells cause the target to burn for an additional 24% of your spell's damage over 4 seconds.",
+                "Your critical strikes from Fire damage spells cause the target to burn for an additional 32% of your spell's damage over 4 seconds.",
+                "Your critical strikes from Fire damage spells cause the target to burn for an additional 40% of your spell's damage over 4 seconds."
+            ],
+            row: 1,
+            name: "Ignite",
+            col: 0,
+            maxPoints: 5,
+            icon: "spell_fire_incinerate.png",
+            points: 0
+        },
+        {
+            id: "spell_fire_flare",
+            ranks: [
+                "Increases the range of your Fire spells by 3 yards.",
+                "Increases the range of your Fire spells by 6 yards."
+            ],
+            row: 1,
+            name: "Flame Throwing",
+            col: 1,
+            maxPoints: 2,
+            icon: "spell_fire_flare.png",
+            points: 0
+        },
+        {
+            id: "spell_fire_fireball",
+            ranks: [
+                "Reduces the cooldown of your Fire Blast spell by 0.5 sec and increases the critical strike chance of your Arcane Blast spell by 1%.",
+                "Reduces the cooldown of your Fire Blast spell by 1 sec and increases the critical strike chance of your Arcane Blast spell by 2%.",
+                "Reduces the cooldown of your Fire Blast spell by 1.5 sec and increases the critical strike chance of your Arcane Blast spell by 4%."
+            ],
+            row: 1,
+            name: "Improved Blasting",
+            col: 2,
+            maxPoints: 3,
+            icon: "spell_fire_fireball.png",
+            points: 0
+        },
+        {
+            id: "spell_fire_flameshock",
+            ranks: [
+                "Increases the critical strike chance of your Fire Blast and Scorch spells by 2%.",
+                "Increases the critical strike chance of your Fire Blast and Scorch spells by 4%."
+            ],
+            row: 2,
+            name: "Incineration",
+            col: 0,
+            maxPoints: 2,
+            icon: "spell_fire_flameshock.png",
+            points: 0
+        },
+        {
+            id: "spell_fire_selfdestruct",
+            ranks: [
+                "Increases the critical strike chance of your Flamestrike spell by 5%.",
+                "Increases the critical strike chance of your Flamestrike spell by 10%.",
+                "Increases the critical strike chance of your Flamestrike spell by 15%."
+            ],
+            row: 2,
+            name: "Improved Flamestrike",
+            col: 1,
+            maxPoints: 3,
+            icon: "spell_fire_selfdestruct.png",
+            points: 0
+        },
+        {
+            id: "spell_fire_fireball02",
+            ranks: [
+                "Hurls an immense fiery boulder that causes 216 Fire damage and an additional 56 Fire damage over 12 seconds."
+            ],
+            row: 2,
+            name: "Pyroblast",
+            col: 2,
+            maxPoints: 1,
+            icon: "spell_fire_fireball02.png",
+            points: 0
+        },
+        {
+            id: "spell_fire_fire",
+            ranks: [
+                "Gives your Fire spells a 35% chance to not lose casting time when you take damage and reduces the threat caused by your Fire spells by 5%.",
+                "Gives your Fire spells a 70% chance to not lose casting time when you take damage and reduces the threat caused by your Fire spells by 10%."
+            ],
+            row: 2,
+            name: "Burning Soul",
+            col: 3,
+            maxPoints: 2,
+            icon: "spell_fire_fire.png",
+            points: 0
+        },
+        {
+            id: "spell_fire_soulburn",
+            ranks: [
+                "Your Scorch spells have a 33% chance to cause your target to be vulnerable to Fire damage.  This vulnerability increases the Fire damage dealt to your target by 3% and lasts 30 seconds.  Stacks up to 5 times.",
+                "Your Scorch spells have a 66% chance to cause your target to be vulnerable to Fire damage.  This vulnerability increases the Fire damage dealt to your target by 3% and lasts 30 seconds.  Stacks up to 5 times.",
+                "Your Scorch spells have a 100% chance to cause your target to be vulnerable to Fire damage.  This vulnerability increases the Fire damage dealt to your target by 3% and lasts 30 seconds.  Stacks up to 5 times."
+            ],
+            row: 3,
+            name: "Improved Scorch",
+            col: 0,
+            maxPoints: 3,
+            icon: "spell_fire_soulburn.png",
+            points: 0
+        },
+        {
+            id: "spell_fire_firearmor",
+            ranks: [
+                "Causes your Fire Ward to have a 10% chance to reflect Fire spells while active. In addition, your Molten Armor has a 50% chance to affect ranged and spell attacks.",
+                "Causes your Fire Ward to have a 20% chance to reflect Fire spells while active. In addition, your Molten Armor has a 100% chance to affect ranged and spell attacks."
+            ],
+            row: 3,
+            name: "Molten Shields",
+            col: 1,
+            maxPoints: 2,
+            icon: "spell_fire_firearmor.png",
+            points: 0
+        },
+        {
+            id: "spell_fire_masterofelements",
+            ranks: [
+                "Your spell criticals will refund 10% of their base mana cost.",
+                "Your spell criticals will refund 20% of their base mana cost.",
+                "Your spell criticals will refund 30% of their base mana cost."
+            ],
+            row: 3,
+            name: "Master of Schools",
+            col: 3,
+            maxPoints: 3,
+            icon: "spell_fire_masterofelements.png",
+            points: 0
+        },
+        {
+            id: "spell_fire_playingwithfire",
+            ranks: [
+                "Increases all spell damage caused by 1% and all spell damage taken by 1%.",
+                "Increases all spell damage caused by 2% and all spell damage taken by 2%.",
+                "Increases all spell damage caused by 3% and all spell damage taken by 3%."
+            ],
+            row: 4,
+            name: "Playing with Fire",
+            col: 0,
+            maxPoints: 3,
+            icon: "spell_fire_playingwithfire.png",
+            points: 0
+        },
+        {
+            id: "spell_nature_wispheal",
+            ranks: [
+                "Increases the critical strike chance of your Fire spells by 2%.",
+                "Increases the critical strike chance of your Fire spells by 4%.",
+                "Increases the critical strike chance of your Fire spells by 6%."
+            ],
+            row: 4,
+            name: "Critical Mass",
+            col: 1,
+            maxPoints: 3,
+            icon: "spell_nature_wispheal.png",
+            points: 0
+        },
+        {
+            id: "spell_holy_excorcism_02",
+            ranks: [
+                "A wave of flame radiates outward from the caster, damaging all enemies caught within the blast for 184 Fire damage, and Dazing them for 6 seconds."
+            ],
+            row: 4,
+            name: "Blast Wave",
+            col: 2,
+            maxPoints: 1,
+            requires: {
+                id: "spell_fire_fireball02",
+                points: 1
+            },
+            icon: "spell_holy_excorcism_02.png",
+            points: 0
+        },
+        {
+            id: "spell_fire_volcano",
+            ranks: [
+                "Your Fire spell criticals have a 50% chance to increase the damage of your next Pyroblast by 10%, stacking up to 5 times.  You cannot cast Presence of Mind while this effect is active.",
+                "Your Fire spell criticals have a 100% chance to increase the damage of your next Pyroblast by 10%, stacking up to 5 times.  You cannot cast Presence of Mind while this effect is active."
+            ],
+            row: 4,
+            name: "Pyroclastic Burst",
+            col: 3,
+            maxPoints: 2,
+            requires: {
+                id: "spell_holy_excorcism_02",
+                points: 1
+            },
+            icon: "spell_fire_volcano.png",
+            points: 0
+        },
+        {
+            id: "spell_fire_burningspeed",
+            ranks: [
+                "Gives you a 5% chance when hit by a melee or ranged attack to increase your movement speed by 50% and dispel all movement impairing effects.  This effect lasts 8 seconds.",
+                "Gives you a 10% chance when hit by a melee or ranged attack to increase your movement speed by 50% and dispel all movement impairing effects.  This effect lasts 8 seconds."
+            ],
+            row: 5,
+            name: "Blazing Speed",
+            col: 0,
+            maxPoints: 2,
+            icon: "spell_fire_burningspeed.png",
+            points: 0
+        },
+        {
+            id: "spell_fire_immolation",
+            ranks: [
+                "Increases the damage done by your Fire spells by 2%.",
+                "Increases the damage done by your Fire spells by 4%.",
+                "Increases the damage done by your Fire spells by 6%.",
+                "Increases the damage done by your Fire spells by 8%.",
+                "Increases the damage done by your Fire spells by 10%."
+            ],
+            row: 5,
+            name: "Fire Power",
+            col: 2,
+            maxPoints: 5,
+            icon: "spell_fire_immolation.png",
+            points: 0
+        },
+        {
+            id: "spell_fire_burnout",
+            ranks: [
+                "Increases chance to critically hit and reduces the mana cost of all Fire spells by an additional 1%.",
+                "Increases chance to critically hit and reduces the mana cost of all Fire spells by an additional 2%.",
+                "Increases chance to critically hit and reduces the mana cost of all Fire spells by an additional 3%."
+            ],
+            row: 6,
+            name: "Pyromaniac",
+            col: 0,
+            maxPoints: 3,
+            icon: "spell_fire_burnout.png",
+            points: 0
+        },
+        {
+            id: "spell_fire_sealoffire",
+            ranks: [
+                "When activated, this spell causes each of your Fire damage spell hits to increase your critical strike chance with Fire damage spells by 10%.  This effect lasts until you have caused 3 critical strikes with Fire spells."
+            ],
+            row: 6,
+            name: "Combustion",
+            col: 1,
+            maxPoints: 1,
+            requires: {
+                id: "spell_nature_wispheal",
+                points: 3
+            },
+            icon: "spell_fire_sealoffire.png",
+            points: 0
+        },
+        {
+            id: "spell_fire_moltenblood",
+            ranks: [
+                "Increases damage of all spells against targets with less than 20% health by 10%.",
+                "Increases damage of all spells against targets with less than 20% health by 20%."
+            ],
+            row: 6,
+            name: "Molten Fury",
+            col: 2,
+            maxPoints: 2,
+            icon: "spell_fire_moltenblood.png",
+            points: 0
+        },
+        {
+            id: "spell_fire_flamebolt",
+            ranks: [
+                "Your Fireball spell gains an additional 3% of your bonus spell damage effects.",
+                "Your Fireball spell gains an additional 6% of your bonus spell damage effects.",
+                "Your Fireball spell gains an additional 9% of your bonus spell damage effects.",
+                "Your Fireball spell gains an additional 12% of your bonus spell damage effects.",
+                "Your Fireball spell gains an additional 15% of your bonus spell damage effects."
+            ],
+            row: 7,
+            name: "Empowered Fireball",
+            col: 2,
+            maxPoints: 5,
+            icon: "spell_fire_flamebolt.png",
+            points: 0
+        },
+        {
+            id: "inv_misc_head_dragon_01",
+            ranks: [
+                "Targets in a cone in front of the caster take 385 Fire damage and are Disoriented for 3 seconds.  Any direct damaging attack will revive targets.  Turns off your attack when used."
+            ],
+            row: 8,
+            name: "Dragon's Breath",
+            col: 1,
+            maxPoints: 1,
+            requires: {
+                id: "spell_fire_sealoffire",
+                points: 1
+            },
+            icon: "inv_misc_head_dragon_01.png",
+            points: 0
+        }
+    ]
+};

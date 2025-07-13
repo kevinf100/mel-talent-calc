@@ -64,11 +64,12 @@
   h2,
   h3,
   h4 {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0);
+    text-shadow: 2px 2px 1px rgba(0, 0, 0);
   }
 
   p {
     text-shadow: 1px 1px 0px rgba(0, 0, 0);
+    white-space: pre-line
   }
 }
 /*/ 
@@ -93,19 +94,18 @@
         linear-gradient(
           to left,
           transparent 0%,
-          black 10%
+          black 20%
         ),
         linear-gradient(
           to top,
-          transparent 0%,
+          transparent 5%,
           black 10%
         ),
         linear-gradient(
           to bottom,
-          transparent 0%,
-          black 20%
+          transparent 23.5%,
+          black 30%
         );
-      -webkit-mask-composite: destination-in;
       mask-image:
         linear-gradient(
           to left,
@@ -114,19 +114,55 @@
         ),
         linear-gradient(
           to top,
-          transparent 0%,
+          transparent 5%,
           black 10%
         ),
         linear-gradient(
           to bottom,
-          transparent 25%,
-          black 20%
+          transparent 23.5%,
+          black 30%
         );
+      -webkit-mask-composite: destination-in;
       mask-composite: intersect; /* for Firefox */
       -webkit-mask-size: 100% 77%;
       mask-size: 100% 77%;
       -webkit-mask-repeat: no-repeat;
       mask-repeat: no-repeat;
+
+      @media (max-width: 1009px) {
+        -webkit-mask-image:
+          linear-gradient(
+            to left,
+            transparent 0%,
+            black 10%
+          ),
+          linear-gradient(
+            to top,
+            transparent 7%,
+            black 10%
+          ),
+          linear-gradient(
+            to bottom,
+            transparent 25%,
+            black 20%
+          );
+        mask-image:
+          linear-gradient(
+            to left,
+            transparent 0%,
+            black 20%
+          ),
+          linear-gradient(
+            to top,
+            transparent 7%,
+            black 10%
+          ),
+          linear-gradient(
+            to bottom,
+            transparent 5%,
+            black 20%
+          );
+      }
     }
   }
 
@@ -168,60 +204,59 @@
     @apply grayscale-0; /* Override disabled styling for glowing arrows */
   }
 
-/* Corners and horizontal beams from original sprite */
-.mb-corner,
-.mb-edge-top,
-.mb-edge-bottom {
-  background-image: url('/src/assets/ui/UIFrameDiamondMetal2x.png');
-  background-repeat: no-repeat;
-  z-index: 1;
-}
+  /* Corners and horizontal beams from original sprite */
+  .mb-corner,
+  .mb-edge-top,
+  .mb-edge-bottom {
+    background-image: url('/src/assets/ui/UIFrameDiamondMetal2x.png');
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
 
-.mb-top-left {
-  background-position: 0 -269px;
-}
+  .mb-top-left {
+    background-position: 0 -269px;
+  }
 
-.mb-top-right {
-  background-position: 0 -335px;
-}
+  .mb-top-right {
+    background-position: 0 -335px;
+  }
 
-.mb-bottom-left {
-  background-position: 0 -132px;
-}
+  .mb-bottom-left {
+    background-position: 0 -132px;
+  }
 
-.mb-bottom-right {
-  background-position: 0 -198px;
-}
+  .mb-bottom-right {
+    background-position: 0 -198px;
+  }
 
-.mb-edge-top {
-  background-position: 0 -18px;
-  background-size: 128px auto;
-  background-repeat: repeat-x;
-}
+  .mb-edge-top {
+    background-position: 0 -18px;
+    background-size: 128px auto;
+    background-repeat: repeat-x;
+  }
 
-.mb-edge-bottom {
-  background-position: 0 -71px;
-  background-size: 128px auto;
-  background-repeat: repeat-x;
-}
+  .mb-edge-bottom {
+    background-position: 0 -71px;
+    background-size: 128px auto;
+    background-repeat: repeat-x;
+  }
 
-/* Vertical beams from new sprite */
-.mb-edge-left,
-.mb-edge-right {
-  background-image: url('/src/assets/ui/UIFrameDiamondMetalVertical2x.png');
-  background-repeat: repeat-y;
-  background-size: 46px auto;
-  z-index: 1;
-}
+  /* Vertical beams from new sprite */
+  .mb-edge-left,
+  .mb-edge-right {
+    background-image: url('/src/assets/ui/UIFrameDiamondMetalVertical2x.png');
+    background-repeat: repeat-y;
+    background-size: 46px auto;
+    z-index: 1;
+  }
 
-.mb-edge-left {
-  background-position: 0 0;
-}
+  .mb-edge-left {
+    background-position: 0 0;
+  }
 
-.mb-edge-right {
-  background-position: 100% 0;
-}
-
+  .mb-edge-right {
+    background-position: 100% 0;
+  }
 
   /* Corners and horizontal beams from smaller sprite */
   .corner-sm,
@@ -281,7 +316,7 @@
   .parchment .corner,
   .parchment .edge.top,
   .parchment .edge.bottom {
-    background-image: url('/src/assets/ui/parchment-sprite2.PNG'); /* horizontal + corner sprite */
+    background-image: url('/src/assets/ui/parchment-sprite3.PNG'); /* horizontal + corner sprite */
     background-repeat: no-repeat;
     z-index: 1;
   }
@@ -289,14 +324,14 @@
   /* Vertical edges from a separate file */
   .parchment .edge.left,
   .parchment .edge.right {
-    background-image: url('/src/assets/ui/parchment-sprite-sides.PNG'); /* vertical edge sprite */
+    background-image: url('/src/assets/ui/parchment-sprite-sides2.PNG'); /* vertical edge sprite */
     background-repeat: repeat-y;
     background-size: auto;
     z-index: 1;
   }
 
   .parchment .background {
-    background-image: url('/src/assets/ui/parchment-sprite-bg.PNG');
+    background-image: url('/src/assets/ui/parchment-sprite-bg2.PNG');
     background-repeat: repeat;
     background-clip: content-box;
     z-index: 1;

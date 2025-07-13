@@ -1,0 +1,339 @@
+import type { Tree } from '../../types';
+
+export const arcane: Tree = {
+    specIcon: "spell_arcane_arcanepotency.png",
+    name: "Arcane",
+    backgroundImage: "src/assets/images/mage/background-mage-arcane.webp",
+    talents: [
+        {
+            id: "spell_holy_dispelmagic",
+            ranks: [
+                "Reduces your target's resistance to all your spells by 5 and reduces the threat caused by your Arcane spells by 20%.",
+                "Reduces your target's resistance to all your spells by 10 and reduces the threat caused by your Arcane spells by 40%."
+            ],
+            row: 0,
+            name: "Arcane Subtlety",
+            col: 0,
+            maxPoints: 2,
+            icon: "spell_holy_dispelmagic.png",
+            points: 0
+        },
+        {
+            id: "spell_holy_devotion",
+            ranks: [
+                "Reduces the chance that the opponent can resist your Arcane spells by 2%.",
+                "Reduces the chance that the opponent can resist your Arcane spells by 4%.",
+                "Reduces the chance that the opponent can resist your Arcane spells by 6%.",
+                "Reduces the chance that the opponent can resist your Arcane spells by 8%.",
+                "Reduces the chance that the opponent can resist your Arcane spells by 10%."
+            ],
+            row: 0,
+            name: "Arcane Focus",
+            col: 1,
+            maxPoints: 5,
+            icon: "spell_holy_devotion.png",
+            points: 0
+        },
+        {
+            id: "spell_nature_starfall",
+            ranks: [
+                "Gives you a 20% chance to avoid interruption caused by damage while channeling Arcane Missiles.",
+                "Gives you a 40% chance to avoid interruption caused by damage while channeling Arcane Missiles.",
+                "Gives you a 60% chance to avoid interruption caused by damage while channeling Arcane Missiles.",
+                "Gives you a 80% chance to avoid interruption caused by damage while channeling Arcane Missiles.",
+                "Gives you a 100% chance to avoid interruption caused by damage while channeling Arcane Missiles."
+            ],
+            row: 0,
+            name: "Improved Arcane Missiles",
+            col: 2,
+            maxPoints: 5,
+            icon: "spell_nature_starfall.png",
+            points: 0
+        },
+        {
+            id: "inv_wand_01",
+            ranks: [
+                "Increases your damage with Wands by 13%.",
+                "Increases your damage with Wands by 25%."
+            ],
+            row: 1,
+            name: "Wand Specialization",
+            col: 0,
+            maxPoints: 2,
+            icon: "inv_wand_01.png",
+            points: 0
+        },
+        {
+            id: "spell_nature_astralrecalgroup",
+            ranks: [
+                "Increases all resistances by 2 and causes all spells you fully resist to restore 1% of your total mana.  1 sec. cooldown.",
+                "Increases all resistances by 4 and causes all spells you fully resist to restore 2% of your total mana.  1 sec. cooldown.",
+                "Increases all resistances by 6 and causes all spells you fully resist to restore 3% of your total mana.  1 sec. cooldown.",
+                "Increases all resistances by 8 and causes all spells you fully resist to restore 4% of your total mana.  1 sec. cooldown.",
+                "Increases all resistances by 10 and causes all spells you fully resist to restore 5% of your total mana.  1 sec. cooldown."
+            ],
+            row: 1,
+            name: "Magic Absorption",
+            col: 1,
+            maxPoints: 5,
+            icon: "spell_nature_astralrecalgroup.png",
+            points: 0
+        },
+        {
+            id: "spell_shadow_manaburn",
+            ranks: [
+                "Gives you a 2% chance of entering a Clearcasting state after any damage spell hits a target.  The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+                "Gives you a 4% chance of entering a Clearcasting state after any damage spell hits a target.  The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+                "Gives you a 6% chance of entering a Clearcasting state after any damage spell hits a target.  The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+                "Gives you a 8% chance of entering a Clearcasting state after any damage spell hits a target.  The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+                "Gives you a 10% chance of entering a Clearcasting state after any damage spell hits a target.  The Clearcasting state reduces the mana cost of your next damage spell by 100%."
+            ],
+            row: 1,
+            name: "Arcane Concentration",
+            col: 2,
+            maxPoints: 5,
+            icon: "spell_shadow_manaburn.png",
+            points: 0
+        },
+        {
+            id: "spell_nature_abolishmagic",
+            ranks: [
+                "Increases the effect of your Amplify Magic and Dampen Magic spells by 25%.",
+                "Increases the effect of your Amplify Magic and Dampen Magic spells by 50%."
+            ],
+            row: 2,
+            name: "Magic Attunement",
+            col: 0,
+            maxPoints: 2,
+            icon: "spell_nature_abolishmagic.png",
+            points: 0
+        },
+        {
+            id: "spell_nature_wispsplode",
+            ranks: [
+                "Increases the critical strike chance of your Arcane spells by an additional 2%.",
+                "Increases the critical strike chance of your Arcane spells by an additional 4%.",
+                "Increases the critical strike chance of your Arcane spells by an additional 6%."
+            ],
+            row: 2,
+            name: "Arcane Impact",
+            col: 1,
+            maxPoints: 3,
+            icon: "spell_nature_wispsplode.png",
+            points: 0
+        },
+        {
+            id: "spell_arcane_blast",
+            ranks: [
+                "Blasts the target with energy, dealing 199 Arcane damage.  Each time you cast Arcane Blast, the casting time is reduced while mana cost is increased.  Effect stacks up to 3 times and lasts 8 seconds."
+            ],
+            row: 2,
+            name: "Arcane Blast",
+            col: 3,
+            maxPoints: 1,
+            icon: "spell_arcane_blast.png",
+            points: 0
+        },
+        {
+            id: "spell_shadow_detectlesserinvisibility",
+            ranks: [
+                "Decreases the mana lost per point of damage taken when Mana Shield is active by 10% and increases the resistances gained from Mage Armor by 50%.",
+                "Decreases the mana lost per point of damage taken when Mana Shield is active by 20% and increases the resistances gained from Mage Armor by 100%."
+            ],
+            row: 3,
+            name: "Improved Shielding",
+            col: 0,
+            maxPoints: 2,
+            icon: "spell_shadow_detectlesserinvisibility.png",
+            points: 0
+        },
+        {
+            id: "spell_frost_iceshock",
+            ranks: [
+                "Gives your Counterspell a 50% chance to silence the target for 4 seconds.",
+                "Gives your Counterspell a 100% chance to silence the target for 4 seconds."
+            ],
+            row: 3,
+            name: "Improved Counterspell",
+            col: 1,
+            maxPoints: 2,
+            icon: "spell_frost_iceshock.png",
+            points: 0
+        },
+        {
+            id: "spell_shadow_siphonmana",
+            ranks: [
+                "Allows 10% of your mana regeneration to continue while casting.",
+                "Allows 20% of your mana regeneration to continue while casting.",
+                "Allows 30% of your mana regeneration to continue while casting."
+            ],
+            row: 3,
+            name: "Arcane Meditation",
+            col: 3,
+            maxPoints: 3,
+            icon: "spell_shadow_siphonmana.png",
+            points: 0
+        },
+        {
+            id: "spell_holy_magicalsentry",
+            ranks: [
+                "Your Arcane Intellect and Arcane Brilliance spells also increase the target's maximum mana by 4%.",
+                "Your Arcane Intellect and Arcane Brilliance spells also increase the target's maximum mana by 8%."
+            ],
+            row: 4,
+            name: "Improved Arcane Intellect",
+            col: 0,
+            maxPoints: 2,
+            icon: "spell_holy_magicalsentry.png",
+            points: 0
+        },
+        {
+            id: "spell_nature_enchantarmor",
+            ranks: [
+                "When activated, your next Mage spell with a casting time less than 10 sec becomes an instant cast spell."
+            ],
+            row: 4,
+            name: "Presence of Mind",
+            col: 1,
+            maxPoints: 1,
+            icon: "spell_nature_enchantarmor.png",
+            points: 0
+        },
+        {
+            id: "spell_shadow_charm",
+            ranks: [
+                "Increases your total Intellect by 3% and increases your armor by an amount equal to 20% of your Intellect.",
+                "Increases your total Intellect by 6% and increases your armor by an amount equal to 40% of your Intellect.",
+                "Increases your total Intellect by 9% and increases your armor by an amount equal to 60% of your Intellect.",
+                "Increases your total Intellect by 12% and increases your armor by an amount equal to 80% of your Intellect.",
+                "Increases your total Intellect by 15% and increases your armor by an amount equal to 100% of your Intellect."
+            ],
+            row: 4,
+            name: "Arcane Mind",
+            col: 3,
+            maxPoints: 5,
+            icon: "spell_shadow_charm.png",
+            points: 0
+        },
+        {
+            id: "spell_arcane_prismaticcloak",
+            ranks: [
+                "Reduces all damage taken by 2%, and for 4 seconds after casting Blink, your chance to be hit by all attacks and spells is reduced by 30%.",
+                "Reduces all damage taken by 4%, and for 4 seconds after casting Blink, your chance to be hit by all attacks and spells is reduced by 30%."
+            ],
+            row: 5,
+            name: "Prismatic Cloak",
+            col: 0,
+            maxPoints: 2,
+            icon: "spell_arcane_prismaticcloak.png",
+            points: 0
+        },
+        {
+            id: "spell_shadow_teleport",
+            ranks: [
+                "Increases your spell damage and critical strike chance by 1%.",
+                "Increases your spell damage and critical strike chance by 2%.",
+                "Increases your spell damage and critical strike chance by 3%."
+            ],
+            row: 5,
+            name: "Arcane Instability",
+            col: 1,
+            maxPoints: 3,
+            requires: {
+                id: "spell_nature_enchantarmor",
+                points: 1
+            },
+            icon: "spell_shadow_teleport.png",
+            points: 0
+        },
+        {
+            id: "spell_arcane_arcanepotency",
+            ranks: [
+                "Increases the critical strike chance of any spell cast while Clearcasting by 10%.",
+                "Increases the critical strike chance of any spell cast while Clearcasting by 20%.",
+                "Increases the critical strike chance of any spell cast while Clearcasting by 30%."
+            ],
+            row: 5,
+            name: "Arcane Potency",
+            col: 2,
+            maxPoints: 3,
+            requires: {
+                id: "spell_shadow_manaburn",
+                points: 5
+            },
+            icon: "spell_arcane_arcanepotency.png",
+            points: 0
+        },
+        {
+            id: "spell_nature_starfall",
+            ranks: [
+                "Your Arcane Missiles spell gains an additional 15% of your bonus spell damage effects, but mana cost is increased by 2%.",
+                "Your Arcane Missiles spell gains an additional 30% of your bonus spell damage effects, but mana cost is increased by 4%.",
+                "Your Arcane Missiles spell gains an additional 45% of your bonus spell damage effects, but mana cost is increased by 6%."
+            ],
+            row: 6,
+            name: "Empowered Arcane Missiles",
+            col: 0,
+            maxPoints: 3,
+            icon: "spell_nature_starfall.png",
+            points: 0
+        },
+        {
+            id: "spell_nature_lightning",
+            ranks: [
+                "When activated, your spells deal 30% more damage while costing 30% more mana to cast.  This effect lasts 15 seconds."
+            ],
+            row: 6,
+            name: "Arcane Power",
+            col: 1,
+            maxPoints: 1,
+            requires: {
+                id: "spell_shadow_teleport",
+                points: 3
+            },
+            icon: "spell_nature_lightning.png",
+            points: 0
+        },
+        {
+            id: "spell_arcane_arcanetorrent",
+            ranks: [
+                "Increases critical strike damage bonus of all spells by 25%.",
+                "Increases critical strike damage bonus of all spells by 50%."
+            ],
+            row: 6,
+            name: "Spell Power",
+            col: 2,
+            maxPoints: 2,
+            icon: "spell_arcane_arcanetorrent.png",
+            points: 0
+        },
+        {
+            id: "spell_arcane_mindmastery",
+            ranks: [
+                "Increases spell damage by up to 5% of your total Intellect.",
+                "Increases spell damage by up to 10% of your total Intellect.",
+                "Increases spell damage by up to 15% of your total Intellect.",
+                "Increases spell damage by up to 20% of your total Intellect.",
+                "Increases spell damage by up to 25% of your total Intellect."
+            ],
+            row: 7,
+            name: "Mind Mastery",
+            col: 1,
+            maxPoints: 5,
+            icon: "spell_arcane_mindmastery.png",
+            points: 0
+        },
+        {
+            id: "spell_nature_slow",
+            ranks: [
+                "Reduces target's movement speed by 50%, increases the time between ranged attacks by 50% and increases casting time by 50%. If the target is immune to movement speed reductions this spell enters a 2 minute cooldown and still applies the other effects.  Lasts 15 seconds.  Slow can only affect one target at a time."
+            ],
+            row: 8,
+            name: "Slow",
+            col: 1,
+            maxPoints: 1,
+            icon: "spell_nature_slow.png",
+            points: 0
+        }
+    ]
+};
