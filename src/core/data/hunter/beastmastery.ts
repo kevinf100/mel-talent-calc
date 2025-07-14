@@ -1,312 +1,313 @@
-import type { Tree } from '../../types';
+import type { Tree } from '../../types'
 
 export const beastmastery: Tree = {
-    specIcon: "ability_hunter_pet_bear.png",
-    name: "Beast Mastery",
-    backgroundImage: "src/assets/images/hunter/background-hunter-beastmastery.webp",
-    talents: [
-        {
-            id: "spell_nature_ravenform",
-            ranks: [
-                "While Aspect of the Hawk is active, all normal ranged attacks have a 10% chance of increasing ranged attack speed by 3% for 12 seconds.",
-                "While Aspect of the Hawk is active, all normal ranged attacks have a 10% chance of increasing ranged attack speed by 6% for 12 seconds.",
-                "While Aspect of the Hawk is active, all normal ranged attacks have a 10% chance of increasing ranged attack speed by 9% for 12 seconds.",
-                "While Aspect of the Hawk is active, all normal ranged attacks have a 10% chance of increasing ranged attack speed by 12% for 12 seconds.",
-                "While Aspect of the Hawk is active, all normal ranged attacks have a 10% chance of increasing ranged attack speed by 15% for 12 seconds."
-            ],
-            row: 0,
-            name: "Improved Aspect of the Hawk",
-            col: 1,
-            maxPoints: 5,
-            icon: "spell_nature_ravenform.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_reincarnation",
-            ranks: [
-                "Increases the Health of your pet by 2% and your total health by 1%.",
-                "Increases the Health of your pet by 4% and your total health by 2%.",
-                "Increases the Health of your pet by 6% and your total health by 3%.",
-                "Increases the Health of your pet by 8% and your total health by 4%.",
-                "Increases the Health of your pet by 10% and your total health by 5%."
-            ],
-            row: 0,
-            name: "Endurance Training",
-            col: 2,
-            maxPoints: 5,
-            icon: "spell_nature_reincarnation.png",
-            points: 0
-        },
-        {
-            id: "ability_hunter_silenthunter",
-            ranks: [
-                "All damage caused by you is increased by 1% while your pet is active and the critical strike chance of your Kill Command ability is increased by 10%.",
-                "All damage caused by you is increased by 2% while your pet is active and the critical strike chance of your Kill Command ability is increased by 20%."
-            ],
-            row: 1,
-            name: "Focused Fire",
-            col: 0,
-            maxPoints: 2,
-            icon: "ability_hunter_silenthunter.png",
-            points: 0
-        },
-        {
-            id: "ability_hunter_aspectofthemonkey",
-            ranks: [
-                "Increases the Dodge bonus of your Aspect of the Monkey by 2%.",
-                "Increases the Dodge bonus of your Aspect of the Monkey by 4%.",
-                "Increases the Dodge bonus of your Aspect of the Monkey by 6%."
-            ],
-            row: 1,
-            name: "Improved Aspect of the Monkey",
-            col: 1,
-            maxPoints: 3,
-            icon: "ability_hunter_aspectofthemonkey.png",
-            points: 0
-        },
-        {
-            id: "inv_misc_pelt_bear_03",
-            ranks: [
-                "Increases the armor rating of your pets by 7% and your armor contribution from items by 4%.",
-                "Increases the armor rating of your pets by 14% and your armor contribution from items by 7%.",
-                "Increases the armor rating of your pets by 20% and your armor contribution from items by 10%."
-            ],
-            row: 1,
-            name: "Thick Hide",
-            col: 2,
-            maxPoints: 3,
-            icon: "inv_misc_pelt_bear_03.png",
-            points: 0
-        },
-        {
-            id: "ability_hunter_beastsoothe",
-            ranks: [
-                "Revive Pet's casting time is reduced by 3 sec, mana cost is reduced by 20%, and increases the health your pet returns with by an additional 15%.",
-                "Revive Pet's casting time is reduced by 6 sec, mana cost is reduced by 40%, and increases the health your pet returns with by an additional 30%."
-            ],
-            row: 1,
-            name: "Improved Revive Pet",
-            col: 3,
-            maxPoints: 2,
-            icon: "ability_hunter_beastsoothe.png",
-            points: 0
-        },
-        {
-            id: "ability_mount_jungletiger",
-            ranks: [
-                "Increases the speed bonus of your Aspect of the Cheetah and Aspect of the Pack by 4%.",
-                "Increases the speed bonus of your Aspect of the Cheetah and Aspect of the Pack by 8%."
-            ],
-            row: 2,
-            name: "Pathfinding",
-            col: 0,
-            maxPoints: 2,
-            icon: "ability_mount_jungletiger.png",
-            points: 0
-        },
-        {
-            id: "ability_druid_dash",
-            ranks: [
-                "Increases the outdoor movement speed of your pets by 30%."
-            ],
-            row: 2,
-            name: "Bestial Swiftness",
-            col: 1,
-            maxPoints: 1,
-            icon: "ability_druid_dash.png",
-            points: 0
-        },
-        {
-            id: "ability_bullrush",
-            ranks: [
-                "Increases the damage done by your pets by 4%.",
-                "Increases the damage done by your pets by 8%.",
-                "Increases the damage done by your pets by 12%.",
-                "Increases the damage done by your pets by 16%.",
-                "Increases the damage done by your pets by 20%."
-            ],
-            row: 2,
-            name: "Unleashed Fury",
-            col: 2,
-            maxPoints: 5,
-            icon: "ability_bullrush.png",
-            points: 0
-        },
-        {
-            id: "ability_hunter_mendpet",
-            ranks: [
-                "Reduces the mana cost of your Mend Pet spell by 10% and gives the Mend Pet spell a 25% chance of cleansing 1 Curse, Disease, Magic or Poison effect from the pet each tick.",
-                "Reduces the mana cost of your Mend Pet spell by 20% and gives the Mend Pet spell a 50% chance of cleansing 1 Curse, Disease, Magic or Poison effect from the pet each tick."
-            ],
-            row: 3,
-            name: "Improved Mend Pet",
-            col: 1,
-            maxPoints: 2,
-            icon: "ability_hunter_mendpet.png",
-            points: 0
-        },
-        {
-            id: "inv_misc_monsterclaw_04",
-            ranks: [
-                "Increases the critical strike chance of your pet by 2%.",
-                "Increases the critical strike chance of your pet by 4%.",
-                "Increases the critical strike chance of your pet by 6%.",
-                "Increases the critical strike chance of your pet by 8%.",
-                "Increases the critical strike chance of your pet by 10%."
-            ],
-            row: 3,
-            name: "Ferocity",
-            col: 2,
-            maxPoints: 5,
-            icon: "inv_misc_monsterclaw_04.png",
-            points: 0
-        },
-        {
-            id: "ability_druid_demoralizingroar",
-            ranks: [
-                "While your pet is active, you and your pet will regenerate 1% of total health every 10 seconds sec.",
-                "While your pet is active, you and your pet will regenerate 2% of total health every 10 seconds sec."
-            ],
-            row: 4,
-            name: "Spirit Bond",
-            col: 0,
-            maxPoints: 2,
-            icon: "ability_druid_demoralizingroar.png",
-            points: 0
-        },
-        {
-            id: "ability_devour",
-            ranks: [
-                "Command your pet to intimidate the target on the next successful melee attack, causing a high amount of threat and stunning the target for 3 seconds."
-            ],
-            row: 4,
-            name: "Intimidation",
-            col: 1,
-            maxPoints: 1,
-            icon: "ability_devour.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_abolishmagic",
-            ranks: [
-                "Increases the Focus regeneration of your pets by 50%.",
-                "Increases the Focus regeneration of your pets by 100%."
-            ],
-            row: 4,
-            name: "Bestial Discipline",
-            col: 3,
-            maxPoints: 2,
-            icon: "spell_nature_abolishmagic.png",
-            points: 0
-        },
-        {
-            id: "ability_hunter_animalhandler",
-            ranks: [
-                "Increases your speed while mounted by 4% and your pet's chance to hit by 2%.  The mounted movement speed increase does not stack with other effects.",
-                "Increases your speed while mounted by 8% and your pet's chance to hit by 4%.  The mounted movement speed increase does not stack with other effects."
-            ],
-            row: 5,
-            name: "Animal Handler",
-            col: 0,
-            maxPoints: 2,
-            icon: "ability_hunter_animalhandler.png",
-            points: 0
-        },
-        {
-            id: "inv_misc_monsterclaw_03",
-            ranks: [
-                "Gives your pet a 20% chance to gain a 30% attack speed increase for 8 seconds after dealing a critical strike.",
-                "Gives your pet a 40% chance to gain a 30% attack speed increase for 8 seconds after dealing a critical strike.",
-                "Gives your pet a 60% chance to gain a 30% attack speed increase for 8 seconds after dealing a critical strike.",
-                "Gives your pet a 80% chance to gain a 30% attack speed increase for 8 seconds after dealing a critical strike.",
-                "Gives your pet a 100% chance to gain a 30% attack speed increase for 8 seconds after dealing a critical strike."
-            ],
-            row: 5,
-            name: "Frenzy",
-            col: 2,
-            maxPoints: 5,
-            requires: {
-                id: "inv_misc_monsterclaw_04",
-                points: 5
-            },
-            icon: "inv_misc_monsterclaw_03.png",
-            points: 0
-        },
-        {
-            id: "ability_hunter_ferociousinspiration",
-            ranks: [
-                "When your pet scores a critical hit, all party and raid members within 100 yards have all their damage increased by 1% for 10 seconds.",
-                "When your pet scores a critical hit, all party and raid members within 100 yards have all their damage increased by 2% for 10 seconds.",
-                "When your pet scores a critical hit, all party and raid members within 100 yards have all their damage increased by 3% for 10 seconds."
-            ],
-            row: 6,
-            name: "Ferocious Inspiration",
-            col: 0,
-            maxPoints: 3,
-            icon: "ability_hunter_ferociousinspiration.png",
-            points: 0
-        },
-        {
-            id: "ability_druid_ferociousbite",
-            ranks: [
-                "Send your pet into a rage causing 50% additional damage for 18 seconds.  While enraged, the beast does not feel pity or remorse or fear and it cannot be stopped unless killed."
-            ],
-            row: 6,
-            name: "Bestial Wrath",
-            col: 1,
-            maxPoints: 1,
-            requires: {
-                id: "ability_devour",
-                points: 1
-            },
-            icon: "ability_druid_ferociousbite.png",
-            points: 0
-        },
-        {
-            id: "ability_hunter_catlikereflexes",
-            ranks: [
-                "Increases your chance to dodge by 1% and your pet's chance to dodge by an additional 3%.",
-                "Increases your chance to dodge by 2% and your pet's chance to dodge by an additional 6%.",
-                "Increases your chance to dodge by 3% and your pet's chance to dodge by an additional 9%."
-            ],
-            row: 6,
-            name: "Catlike Reflexes",
-            col: 2,
-            maxPoints: 3,
-            icon: "ability_hunter_catlikereflexes.png",
-            points: 0
-        },
-        {
-            id: "ability_hunter_serpentswiftness",
-            ranks: [
-                "Increases ranged combat attack speed by 4% and your pet's melee attack speed by 2%.",
-                "Increases ranged combat attack speed by 8% and your pet's melee attack speed by 4%.",
-                "Increases ranged combat attack speed by 12% and your pet's melee attack speed by 6%.",
-                "Increases ranged combat attack speed by 16% and your pet's melee attack speed by 8%.",
-                "Increases ranged combat attack speed by 20% and your pet's melee attack speed by 10%."
-            ],
-            row: 7,
-            name: "Serpent's Swiftness",
-            col: 2,
-            maxPoints: 5,
-            icon: "ability_hunter_serpentswiftness.png",
-            points: 0
-        },
-        {
-            id: "ability_hunter_beastwithin",
-            ranks: [
-                "When your pet is under the effects of Bestial Wrath, you also go into a rage causing 10% additional damage and reducing mana costs of all spells by 20% for 18 seconds.  While enraged, you do not feel pity or remorse or fear and you cannot be stopped unless killed."
-            ],
-            row: 8,
-            name: "The Beast Within",
-            col: 1,
-            maxPoints: 1,
-            requires: {
-                id: "ability_druid_ferociousbite",
-                points: 1
-            },
-            icon: "ability_hunter_beastwithin.png",
-            points: 0
-        }
-    ]
-};
+  specIcon: 'ability_hunter_pet_bear.png',
+  name: 'Beast Mastery',
+  backgroundImage:
+    'src/assets/images/hunter/background-hunter-beastmastery.webp',
+  talents: [
+    {
+      id: 'spell_nature_ravenform',
+      ranks: [
+        'While Aspect of the Hawk is active, all normal ranged attacks have a 10% chance of increasing ranged attack speed by 3% for 12 seconds.',
+        'While Aspect of the Hawk is active, all normal ranged attacks have a 10% chance of increasing ranged attack speed by 6% for 12 seconds.',
+        'While Aspect of the Hawk is active, all normal ranged attacks have a 10% chance of increasing ranged attack speed by 9% for 12 seconds.',
+        'While Aspect of the Hawk is active, all normal ranged attacks have a 10% chance of increasing ranged attack speed by 12% for 12 seconds.',
+        'While Aspect of the Hawk is active, all normal ranged attacks have a 10% chance of increasing ranged attack speed by 15% for 12 seconds.',
+      ],
+      row: 0,
+      name: 'Improved Aspect of the Hawk',
+      col: 1,
+      maxPoints: 5,
+      icon: 'spell_nature_ravenform.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_reincarnation',
+      ranks: [
+        'Increases the Health of your pet by 2% and your total health by 1%.',
+        'Increases the Health of your pet by 4% and your total health by 2%.',
+        'Increases the Health of your pet by 6% and your total health by 3%.',
+        'Increases the Health of your pet by 8% and your total health by 4%.',
+        'Increases the Health of your pet by 10% and your total health by 5%.',
+      ],
+      row: 0,
+      name: 'Endurance Training',
+      col: 2,
+      maxPoints: 5,
+      icon: 'spell_nature_reincarnation.png',
+      points: 0,
+    },
+    {
+      id: 'ability_hunter_silenthunter',
+      ranks: [
+        'All damage caused by you is increased by 1% while your pet is active and the critical strike chance of your Kill Command ability is increased by 10%.',
+        'All damage caused by you is increased by 2% while your pet is active and the critical strike chance of your Kill Command ability is increased by 20%.',
+      ],
+      row: 1,
+      name: 'Focused Fire',
+      col: 0,
+      maxPoints: 2,
+      icon: 'ability_hunter_silenthunter.png',
+      points: 0,
+    },
+    {
+      id: 'ability_hunter_aspectofthemonkey',
+      ranks: [
+        'Increases the Dodge bonus of your Aspect of the Monkey by 2%.',
+        'Increases the Dodge bonus of your Aspect of the Monkey by 4%.',
+        'Increases the Dodge bonus of your Aspect of the Monkey by 6%.',
+      ],
+      row: 1,
+      name: 'Improved Aspect of the Monkey',
+      col: 1,
+      maxPoints: 3,
+      icon: 'ability_hunter_aspectofthemonkey.png',
+      points: 0,
+    },
+    {
+      id: 'inv_misc_pelt_bear_03',
+      ranks: [
+        'Increases the armor rating of your pets by 7% and your armor contribution from items by 4%.',
+        'Increases the armor rating of your pets by 14% and your armor contribution from items by 7%.',
+        'Increases the armor rating of your pets by 20% and your armor contribution from items by 10%.',
+      ],
+      row: 1,
+      name: 'Thick Hide',
+      col: 2,
+      maxPoints: 3,
+      icon: 'inv_misc_pelt_bear_03.png',
+      points: 0,
+    },
+    {
+      id: 'ability_hunter_beastsoothe',
+      ranks: [
+        "Revive Pet's casting time is reduced by 3 sec, mana cost is reduced by 20%, and increases the health your pet returns with by an additional 15%.",
+        "Revive Pet's casting time is reduced by 6 sec, mana cost is reduced by 40%, and increases the health your pet returns with by an additional 30%.",
+      ],
+      row: 1,
+      name: 'Improved Revive Pet',
+      col: 3,
+      maxPoints: 2,
+      icon: 'ability_hunter_beastsoothe.png',
+      points: 0,
+    },
+    {
+      id: 'ability_mount_jungletiger',
+      ranks: [
+        'Increases the speed bonus of your Aspect of the Cheetah and Aspect of the Pack by 4%.',
+        'Increases the speed bonus of your Aspect of the Cheetah and Aspect of the Pack by 8%.',
+      ],
+      row: 2,
+      name: 'Pathfinding',
+      col: 0,
+      maxPoints: 2,
+      icon: 'ability_mount_jungletiger.png',
+      points: 0,
+    },
+    {
+      id: 'ability_druid_dash',
+      ranks: [
+        'Increases the outdoor movement speed of your pets by 30%.',
+      ],
+      row: 2,
+      name: 'Bestial Swiftness',
+      col: 1,
+      maxPoints: 1,
+      icon: 'ability_druid_dash.png',
+      points: 0,
+    },
+    {
+      id: 'ability_bullrush',
+      ranks: [
+        'Increases the damage done by your pets by 4%.',
+        'Increases the damage done by your pets by 8%.',
+        'Increases the damage done by your pets by 12%.',
+        'Increases the damage done by your pets by 16%.',
+        'Increases the damage done by your pets by 20%.',
+      ],
+      row: 2,
+      name: 'Unleashed Fury',
+      col: 2,
+      maxPoints: 5,
+      icon: 'ability_bullrush.png',
+      points: 0,
+    },
+    {
+      id: 'ability_hunter_mendpet',
+      ranks: [
+        'Reduces the mana cost of your Mend Pet spell by 10% and gives the Mend Pet spell a 25% chance of cleansing 1 Curse, Disease, Magic or Poison effect from the pet each tick.',
+        'Reduces the mana cost of your Mend Pet spell by 20% and gives the Mend Pet spell a 50% chance of cleansing 1 Curse, Disease, Magic or Poison effect from the pet each tick.',
+      ],
+      row: 3,
+      name: 'Improved Mend Pet',
+      col: 1,
+      maxPoints: 2,
+      icon: 'ability_hunter_mendpet.png',
+      points: 0,
+    },
+    {
+      id: 'inv_misc_monsterclaw_04',
+      ranks: [
+        'Increases the critical strike chance of your pet by 2%.',
+        'Increases the critical strike chance of your pet by 4%.',
+        'Increases the critical strike chance of your pet by 6%.',
+        'Increases the critical strike chance of your pet by 8%.',
+        'Increases the critical strike chance of your pet by 10%.',
+      ],
+      row: 3,
+      name: 'Ferocity',
+      col: 2,
+      maxPoints: 5,
+      icon: 'inv_misc_monsterclaw_04.png',
+      points: 0,
+    },
+    {
+      id: 'ability_druid_demoralizingroar',
+      ranks: [
+        'While your pet is active, you and your pet will regenerate 1% of total health every 10 seconds sec.',
+        'While your pet is active, you and your pet will regenerate 2% of total health every 10 seconds sec.',
+      ],
+      row: 4,
+      name: 'Spirit Bond',
+      col: 0,
+      maxPoints: 2,
+      icon: 'ability_druid_demoralizingroar.png',
+      points: 0,
+    },
+    {
+      id: 'ability_devour',
+      ranks: [
+        'Command your pet to intimidate the target on the next successful melee attack, causing a high amount of threat and stunning the target for 3 seconds.',
+      ],
+      row: 4,
+      name: 'Intimidation',
+      col: 1,
+      maxPoints: 1,
+      icon: 'ability_devour.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_abolishmagic',
+      ranks: [
+        'Increases the Focus regeneration of your pets by 50%.',
+        'Increases the Focus regeneration of your pets by 100%.',
+      ],
+      row: 4,
+      name: 'Bestial Discipline',
+      col: 3,
+      maxPoints: 2,
+      icon: 'spell_nature_abolishmagic.png',
+      points: 0,
+    },
+    {
+      id: 'ability_hunter_animalhandler',
+      ranks: [
+        "Increases your speed while mounted by 4% and your pet's chance to hit by 2%.  The mounted movement speed increase does not stack with other effects.",
+        "Increases your speed while mounted by 8% and your pet's chance to hit by 4%.  The mounted movement speed increase does not stack with other effects.",
+      ],
+      row: 5,
+      name: 'Animal Handler',
+      col: 0,
+      maxPoints: 2,
+      icon: 'ability_hunter_animalhandler.png',
+      points: 0,
+    },
+    {
+      id: 'inv_misc_monsterclaw_03',
+      ranks: [
+        'Gives your pet a 20% chance to gain a 30% attack speed increase for 8 seconds after dealing a critical strike.',
+        'Gives your pet a 40% chance to gain a 30% attack speed increase for 8 seconds after dealing a critical strike.',
+        'Gives your pet a 60% chance to gain a 30% attack speed increase for 8 seconds after dealing a critical strike.',
+        'Gives your pet a 80% chance to gain a 30% attack speed increase for 8 seconds after dealing a critical strike.',
+        'Gives your pet a 100% chance to gain a 30% attack speed increase for 8 seconds after dealing a critical strike.',
+      ],
+      row: 5,
+      name: 'Frenzy',
+      col: 2,
+      maxPoints: 5,
+      requires: {
+        id: 'inv_misc_monsterclaw_04',
+        points: 5,
+      },
+      icon: 'inv_misc_monsterclaw_03.png',
+      points: 0,
+    },
+    {
+      id: 'ability_hunter_ferociousinspiration',
+      ranks: [
+        'When your pet scores a critical hit, all party and raid members within 100 yards have all their damage increased by 1% for 10 seconds.',
+        'When your pet scores a critical hit, all party and raid members within 100 yards have all their damage increased by 2% for 10 seconds.',
+        'When your pet scores a critical hit, all party and raid members within 100 yards have all their damage increased by 3% for 10 seconds.',
+      ],
+      row: 6,
+      name: 'Ferocious Inspiration',
+      col: 0,
+      maxPoints: 3,
+      icon: 'ability_hunter_ferociousinspiration.png',
+      points: 0,
+    },
+    {
+      id: 'ability_druid_ferociousbite',
+      ranks: [
+        'Send your pet into a rage causing 50% additional damage for 18 seconds.  While enraged, the beast does not feel pity or remorse or fear and it cannot be stopped unless killed.',
+      ],
+      row: 6,
+      name: 'Bestial Wrath',
+      col: 1,
+      maxPoints: 1,
+      requires: {
+        id: 'ability_devour',
+        points: 1,
+      },
+      icon: 'ability_druid_ferociousbite.png',
+      points: 0,
+    },
+    {
+      id: 'ability_hunter_catlikereflexes',
+      ranks: [
+        "Increases your chance to dodge by 1% and your pet's chance to dodge by an additional 3%.",
+        "Increases your chance to dodge by 2% and your pet's chance to dodge by an additional 6%.",
+        "Increases your chance to dodge by 3% and your pet's chance to dodge by an additional 9%.",
+      ],
+      row: 6,
+      name: 'Catlike Reflexes',
+      col: 2,
+      maxPoints: 3,
+      icon: 'ability_hunter_catlikereflexes.png',
+      points: 0,
+    },
+    {
+      id: 'ability_hunter_serpentswiftness',
+      ranks: [
+        "Increases ranged combat attack speed by 4% and your pet's melee attack speed by 2%.",
+        "Increases ranged combat attack speed by 8% and your pet's melee attack speed by 4%.",
+        "Increases ranged combat attack speed by 12% and your pet's melee attack speed by 6%.",
+        "Increases ranged combat attack speed by 16% and your pet's melee attack speed by 8%.",
+        "Increases ranged combat attack speed by 20% and your pet's melee attack speed by 10%.",
+      ],
+      row: 7,
+      name: "Serpent's Swiftness",
+      col: 2,
+      maxPoints: 5,
+      icon: 'ability_hunter_serpentswiftness.png',
+      points: 0,
+    },
+    {
+      id: 'ability_hunter_beastwithin',
+      ranks: [
+        'When your pet is under the effects of Bestial Wrath, you also go into a rage causing 10% additional damage and reducing mana costs of all spells by 20% for 18 seconds.  While enraged, you do not feel pity or remorse or fear and you cannot be stopped unless killed.',
+      ],
+      row: 8,
+      name: 'The Beast Within',
+      col: 1,
+      maxPoints: 1,
+      requires: {
+        id: 'ability_druid_ferociousbite',
+        points: 1,
+      },
+      icon: 'ability_hunter_beastwithin.png',
+      points: 0,
+    },
+  ],
+}

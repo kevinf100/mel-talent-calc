@@ -1,324 +1,325 @@
-import type { Tree } from "../../types";
+import type { Tree } from '../../types'
 
 export const subtlety: Tree = {
-    specIcon: "ability_stealth.png",
-    name: "Subtlety",
-    backgroundImage: "src/assets/images/rogue/background-rogue-subtlety.webp",
-    talents: [
-        {
-            id: "spell_shadow_charm",
-            ranks: [
-                "Reduces the chance enemies have to detect you while in Stealth mode.",
-                "Reduces the chance enemies have to detect you while in Stealth mode.  More effective than Master of Deception (Rank 1).",
-                "Reduces the chance enemies have to detect you while in Stealth mode.  More effective than Master of Deception (Rank 2).",
-                "Reduces the chance enemies have to detect you while in Stealth mode.  More effective than Master of Deception (Rank 3).",
-                "Reduces the chance enemies have to detect you while in Stealth mode.  More effective than Master of Deception (Rank 4)."
-            ],
-            row: 0,
-            name: "Master of Deception",
-            col: 1,
-            maxPoints: 5,
-            icon: "spell_shadow_charm.png",
-            points: 0
-        },
-        {
-            id: "ability_warrior_warcry",
-            ranks: [
-                "Increases the damage dealt when striking from behind with your Backstab, Mutilate, Garrote and Ambush abilities by 4%.",
-                "Increases the damage dealt when striking from behind with your Backstab, Mutilate, Garrote and Ambush abilities by 8%.",
-                "Increases the damage dealt when striking from behind with your Backstab, Mutilate, Garrote and Ambush abilities by 12%.",
-                "Increases the damage dealt when striking from behind with your Backstab, Mutilate, Garrote and Ambush abilities by 16%.",
-                "Increases the damage dealt when striking from behind with your Backstab, Mutilate, Garrote and Ambush abilities by 20%."
-            ],
-            row: 0,
-            name: "Opportunity",
-            col: 2,
-            maxPoints: 5,
-            icon: "ability_warrior_warcry.png",
-            points: 0
-        },
-        {
-            id: "ability_rogue_feint",
-            ranks: [
-                "Reduces the chance you are critically hit by melee and ranged attacks by 1% and increases the threat reduction of your Feint ability by 10%.",
-                "Reduces the chance you are critically hit by melee and ranged attacks by 2% and increases the threat reduction of your Feint ability by 20%."
-            ],
-            row: 1,
-            name: "Sleight of Hand",
-            col: 0,
-            maxPoints: 2,
-            icon: "ability_rogue_feint.png",
-            points: 0
-        },
-        {
-            id: "ability_sap",
-            ranks: [
-                "Increases the range of your Blind and Sap abilities by 2 yards and reduces the energy cost of your Blind and Sap abilities by 25%.",
-                "Increases the range of your Blind and Sap abilities by 5 yards and reduces the energy cost of your Blind and Sap abilities by 50%."
-            ],
-            row: 1,
-            name: "Dirty Tricks",
-            col: 1,
-            maxPoints: 2,
-            icon: "ability_sap.png",
-            points: 0
-        },
-        {
-            id: "ability_stealth",
-            ranks: [
-                "Increases your speed while stealthed by 3% and reduces the cooldown of your Stealth ability by 1 sec.",
-                "Increases your speed while stealthed by 6% and reduces the cooldown of your Stealth ability by 2 sec.",
-                "Increases your speed while stealthed by 9% and reduces the cooldown of your Stealth ability by 3 sec.",
-                "Increases your speed while stealthed by 12% and reduces the cooldown of your Stealth ability by 4 sec.",
-                "Increases your speed while stealthed by 15% and reduces the cooldown of your Stealth ability by 5 sec."
-            ],
-            row: 1,
-            name: "Camouflage",
-            col: 2,
-            maxPoints: 5,
-            icon: "ability_stealth.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_fumble",
-            ranks: [
-                "Gives you a 25% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability.",
-                "Gives you a 50% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability.",
-                "Gives you a 75% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability."
-            ],
-            row: 2,
-            name: "Initiative",
-            col: 0,
-            maxPoints: 3,
-            icon: "spell_shadow_fumble.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_curse",
-            ranks: [
-                "A strike that deals 125% weapon damage and increases your chance to dodge by 15% for 7 seconds.  Awards 1 combo point(s)."
-            ],
-            row: 2,
-            name: "Ghostly Strike",
-            col: 1,
-            maxPoints: 1,
-            icon: "spell_shadow_curse.png",
-            points: 0
-        },
-        {
-            id: "ability_rogue_ambush",
-            ranks: [
-                "Increases the critical strike chance of your Ambush ability by 15%.",
-                "Increases the critical strike chance of your Ambush ability by 30%.",
-                "Increases the critical strike chance of your Ambush ability by 45%."
-            ],
-            row: 2,
-            name: "Improved Ambush",
-            col: 2,
-            maxPoints: 3,
-            icon: "ability_rogue_ambush.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_mirrorimage",
-            ranks: [
-                "Gives you a 15% chance to add a combo point to your target after dodging their attack or fully resisting one of their spells.",
-                "Gives you a 30% chance to add a combo point to your target after dodging their attack or fully resisting one of their spells.",
-                "Gives you a 45% chance to add a combo point to your target after dodging their attack or fully resisting one of their spells."
-            ],
-            row: 3,
-            name: "Setup",
-            col: 0,
-            maxPoints: 3,
-            icon: "spell_nature_mirrorimage.png",
-            points: 0
-        },
-        {
-            id: "spell_magic_lesserinvisibilty",
-            ranks: [
-                "Reduces the cooldown of your Vanish and Blind abilities by 45 sec.",
-                "Reduces the cooldown of your Vanish and Blind abilities by 90 sec."
-            ],
-            row: 3,
-            name: "Elusiveness",
-            col: 1,
-            maxPoints: 2,
-            icon: "spell_magic_lesserinvisibilty.png",
-            points: 0
-        },
-        {
-            id: "inv_sword_17",
-            ranks: [
-                "Causes your attacks to ignore 160 of your target's Armor and increases the damage dealt by your Rupture ability by 10%.  The amount of Armor reduced increases with your level.",
-                "Causes your attacks to ignore 320 of your target's Armor and increases the damage dealt by your Rupture ability by 20%.  The amount of Armor reduced increases with your level.",
-                "Causes your attacks to ignore 480 of your target's Armor and increases the damage dealt by your Rupture ability by 30%.  The amount of Armor reduced increases with your level."
-            ],
-            row: 3,
-            name: "Serrated Blades",
-            col: 2,
-            maxPoints: 3,
-            icon: "inv_sword_17.png",
-            points: 0
-        },
-        {
-            id: "ability_ambush",
-            ranks: [
-                "Increases your Stealth detection and reduces the chance you are hit by spells and ranged attacks by 2%.",
-                "Increases your Stealth detection and reduces the chance you are hit by spells and ranged attacks by 4%.  More effective than Heightened Senses (Rank 1)."
-            ],
-            row: 4,
-            name: "Heightened Senses",
-            col: 0,
-            maxPoints: 2,
-            icon: "ability_ambush.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_antishadow",
-            ranks: [
-                "When activated, this ability immediately finishes the cooldown on your Evasion, Sprint, Vanish, Cold Blood, Shadowstep and Premeditation abilities."
-            ],
-            row: 4,
-            name: "Preparation",
-            col: 1,
-            maxPoints: 1,
-            icon: "spell_shadow_antishadow.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_summonsuccubus",
-            ranks: [
-                "Reduces the Energy cost of your Cheap Shot and Garrote abilities by 10.  Additionally, your special abilities cause 10% more damage against targets below 35% health.",
-                "Reduces the Energy cost of your Cheap Shot and Garrote abilities by 20.  Additionally, your special abilities cause 20% more damage against targets below 35% health."
-            ],
-            row: 4,
-            name: "Dirty Deeds",
-            col: 2,
-            maxPoints: 2,
-            icon: "spell_shadow_summonsuccubus.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_lifedrain",
-            ranks: [
-                "An instant strike that deals 110% weapon damage and causes the target to hemorrhage, increasing any Physical damage dealt to the target by up to 13.  Lasts 10 charges or 15 seconds.  Awards 1 combo point."
-            ],
-            row: 4,
-            name: "Hemorrhage",
-            col: 3,
-            maxPoints: 1,
-            requires: {
-                id: "inv_sword_17",
-                points: 3
-            },
-            icon: "spell_shadow_lifedrain.png",
-            points: 0
-        },
-        {
-            id: "ability_rogue_masterofsubtlety",
-            ranks: [
-                "Attacks made while stealthed and for 6 seconds after breaking stealth cause an additional 4% damage.",
-                "Attacks made while stealthed and for 6 seconds after breaking stealth cause an additional 7% damage.",
-                "Attacks made while stealthed and for 6 seconds after breaking stealth cause an additional 10% damage."
-            ],
-            row: 5,
-            name: "Master of Subtlety",
-            col: 0,
-            maxPoints: 3,
-            icon: "ability_rogue_masterofsubtlety.png",
-            points: 0
-        },
-        {
-            id: "inv_weapon_crossbow_11",
-            ranks: [
-                "Increases your attack power by 2%.",
-                "Increases your attack power by 4%.",
-                "Increases your attack power by 6%.",
-                "Increases your attack power by 8%.",
-                "Increases your attack power by 10%."
-            ],
-            row: 5,
-            name: "Deadliness",
-            col: 2,
-            maxPoints: 5,
-            icon: "inv_weapon_crossbow_11.png",
-            points: 0
-        },
-        {
-            id: "ability_rogue_envelopingshadows",
-            ranks: [
-                "Increases your chance to avoid area of effect attacks by an additional 5%.",
-                "Increases your chance to avoid area of effect attacks by an additional 10%.",
-                "Increases your chance to avoid area of effect attacks by an additional 15%."
-            ],
-            row: 6,
-            name: "Enveloping Shadows",
-            col: 0,
-            maxPoints: 3,
-            icon: "ability_rogue_envelopingshadows.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_possession",
-            ranks: [
-                "When used, adds 2 combo points to your target.  You must add to or use those combo points within 10 seconds or the combo points are lost."
-            ],
-            row: 6,
-            name: "Premeditation",
-            col: 1,
-            maxPoints: 1,
-            requires: {
-                id: "spell_shadow_antishadow",
-                points: 1
-            },
-            icon: "spell_shadow_possession.png",
-            points: 0
-        },
-        {
-            id: "ability_rogue_cheatdeath",
-            ranks: [
-                "You have a 33% chance that an attack which would otherwise kill you will instead reduce you to 10% of your maximum health, unless the attack is too devastating. In addition, all damage taken will be reduced by an amount equal to twice your dodge chance, up to 90%, for 3 seconds.  This effect cannot occur more than once per minute.",
-                "You have a 66% chance that an attack which would otherwise kill you will instead reduce you to 10% of your maximum health, unless the attack is too devastating. In addition, all damage taken will be reduced by an amount equal to twice your dodge chance, up to 90%, for 3 seconds.  This effect cannot occur more than once per minute.",
-                "You have a 100% chance that an attack which would otherwise kill you will instead reduce you to 10% of your maximum health, unless the attack is too devastating. In addition, all damage taken will be reduced by an amount equal to twice your dodge chance, up to 90%, for 3 seconds.  This effect cannot occur more than once per minute."
-            ],
-            row: 6,
-            name: "Cheat Death",
-            col: 2,
-            maxPoints: 3,
-            icon: "ability_rogue_cheatdeath.png",
-            points: 0
-        },
-        {
-            id: "ability_rogue_sinistercalling",
-            ranks: [
-                "Increases your total Agility by 3% and increases the percentage damage bonus of Backstab and Hemorrhage by an additional 1%.",
-                "Increases your total Agility by 6% and increases the percentage damage bonus of Backstab and Hemorrhage by an additional 2%.",
-                "Increases your total Agility by 9% and increases the percentage damage bonus of Backstab and Hemorrhage by an additional 3%.",
-                "Increases your total Agility by 12% and increases the percentage damage bonus of Backstab and Hemorrhage by an additional 4%.",
-                "Increases your total Agility by 15% and increases the percentage damage bonus of Backstab and Hemorrhage by an additional 5%."
-            ],
-            row: 7,
-            name: "Sinister Calling",
-            col: 1,
-            maxPoints: 5,
-            requires: {
-                id: "spell_shadow_possession",
-                points: 1
-            },
-            icon: "ability_rogue_sinistercalling.png",
-            points: 0
-        },
-        {
-            id: "ability_rogue_shadowstep",
-            ranks: [
-                "Attempts to step through the shadows and reappear behind your enemy and increases movement speed by 70% for 3 seconds.  The damage of your next ability is increased by 20% and the threat caused is reduced by 50%.  Lasts 10 seconds."
-            ],
-            row: 8,
-            name: "Shadowstep",
-            col: 1,
-            maxPoints: 1,
-            icon: "ability_rogue_shadowstep.png",
-            points: 0
-        }
-    ]
-};
+  specIcon: 'ability_stealth.png',
+  name: 'Subtlety',
+  backgroundImage:
+    'src/assets/images/rogue/background-rogue-subtlety.webp',
+  talents: [
+    {
+      id: 'spell_shadow_charm',
+      ranks: [
+        'Reduces the chance enemies have to detect you while in Stealth mode.',
+        'Reduces the chance enemies have to detect you while in Stealth mode.  More effective than Master of Deception (Rank 1).',
+        'Reduces the chance enemies have to detect you while in Stealth mode.  More effective than Master of Deception (Rank 2).',
+        'Reduces the chance enemies have to detect you while in Stealth mode.  More effective than Master of Deception (Rank 3).',
+        'Reduces the chance enemies have to detect you while in Stealth mode.  More effective than Master of Deception (Rank 4).',
+      ],
+      row: 0,
+      name: 'Master of Deception',
+      col: 1,
+      maxPoints: 5,
+      icon: 'spell_shadow_charm.png',
+      points: 0,
+    },
+    {
+      id: 'ability_warrior_warcry',
+      ranks: [
+        'Increases the damage dealt when striking from behind with your Backstab, Mutilate, Garrote and Ambush abilities by 4%.',
+        'Increases the damage dealt when striking from behind with your Backstab, Mutilate, Garrote and Ambush abilities by 8%.',
+        'Increases the damage dealt when striking from behind with your Backstab, Mutilate, Garrote and Ambush abilities by 12%.',
+        'Increases the damage dealt when striking from behind with your Backstab, Mutilate, Garrote and Ambush abilities by 16%.',
+        'Increases the damage dealt when striking from behind with your Backstab, Mutilate, Garrote and Ambush abilities by 20%.',
+      ],
+      row: 0,
+      name: 'Opportunity',
+      col: 2,
+      maxPoints: 5,
+      icon: 'ability_warrior_warcry.png',
+      points: 0,
+    },
+    {
+      id: 'ability_rogue_feint',
+      ranks: [
+        'Reduces the chance you are critically hit by melee and ranged attacks by 1% and increases the threat reduction of your Feint ability by 10%.',
+        'Reduces the chance you are critically hit by melee and ranged attacks by 2% and increases the threat reduction of your Feint ability by 20%.',
+      ],
+      row: 1,
+      name: 'Sleight of Hand',
+      col: 0,
+      maxPoints: 2,
+      icon: 'ability_rogue_feint.png',
+      points: 0,
+    },
+    {
+      id: 'ability_sap',
+      ranks: [
+        'Increases the range of your Blind and Sap abilities by 2 yards and reduces the energy cost of your Blind and Sap abilities by 25%.',
+        'Increases the range of your Blind and Sap abilities by 5 yards and reduces the energy cost of your Blind and Sap abilities by 50%.',
+      ],
+      row: 1,
+      name: 'Dirty Tricks',
+      col: 1,
+      maxPoints: 2,
+      icon: 'ability_sap.png',
+      points: 0,
+    },
+    {
+      id: 'ability_stealth',
+      ranks: [
+        'Increases your speed while stealthed by 3% and reduces the cooldown of your Stealth ability by 1 sec.',
+        'Increases your speed while stealthed by 6% and reduces the cooldown of your Stealth ability by 2 sec.',
+        'Increases your speed while stealthed by 9% and reduces the cooldown of your Stealth ability by 3 sec.',
+        'Increases your speed while stealthed by 12% and reduces the cooldown of your Stealth ability by 4 sec.',
+        'Increases your speed while stealthed by 15% and reduces the cooldown of your Stealth ability by 5 sec.',
+      ],
+      row: 1,
+      name: 'Camouflage',
+      col: 2,
+      maxPoints: 5,
+      icon: 'ability_stealth.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_fumble',
+      ranks: [
+        'Gives you a 25% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability.',
+        'Gives you a 50% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability.',
+        'Gives you a 75% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability.',
+      ],
+      row: 2,
+      name: 'Initiative',
+      col: 0,
+      maxPoints: 3,
+      icon: 'spell_shadow_fumble.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_curse',
+      ranks: [
+        'A strike that deals 125% weapon damage and increases your chance to dodge by 15% for 7 seconds.  Awards 1 combo point(s).',
+      ],
+      row: 2,
+      name: 'Ghostly Strike',
+      col: 1,
+      maxPoints: 1,
+      icon: 'spell_shadow_curse.png',
+      points: 0,
+    },
+    {
+      id: 'ability_rogue_ambush',
+      ranks: [
+        'Increases the critical strike chance of your Ambush ability by 15%.',
+        'Increases the critical strike chance of your Ambush ability by 30%.',
+        'Increases the critical strike chance of your Ambush ability by 45%.',
+      ],
+      row: 2,
+      name: 'Improved Ambush',
+      col: 2,
+      maxPoints: 3,
+      icon: 'ability_rogue_ambush.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_mirrorimage',
+      ranks: [
+        'Gives you a 15% chance to add a combo point to your target after dodging their attack or fully resisting one of their spells.',
+        'Gives you a 30% chance to add a combo point to your target after dodging their attack or fully resisting one of their spells.',
+        'Gives you a 45% chance to add a combo point to your target after dodging their attack or fully resisting one of their spells.',
+      ],
+      row: 3,
+      name: 'Setup',
+      col: 0,
+      maxPoints: 3,
+      icon: 'spell_nature_mirrorimage.png',
+      points: 0,
+    },
+    {
+      id: 'spell_magic_lesserinvisibilty',
+      ranks: [
+        'Reduces the cooldown of your Vanish and Blind abilities by 45 sec.',
+        'Reduces the cooldown of your Vanish and Blind abilities by 90 sec.',
+      ],
+      row: 3,
+      name: 'Elusiveness',
+      col: 1,
+      maxPoints: 2,
+      icon: 'spell_magic_lesserinvisibilty.png',
+      points: 0,
+    },
+    {
+      id: 'inv_sword_17',
+      ranks: [
+        "Causes your attacks to ignore 160 of your target's Armor and increases the damage dealt by your Rupture ability by 10%.  The amount of Armor reduced increases with your level.",
+        "Causes your attacks to ignore 320 of your target's Armor and increases the damage dealt by your Rupture ability by 20%.  The amount of Armor reduced increases with your level.",
+        "Causes your attacks to ignore 480 of your target's Armor and increases the damage dealt by your Rupture ability by 30%.  The amount of Armor reduced increases with your level.",
+      ],
+      row: 3,
+      name: 'Serrated Blades',
+      col: 2,
+      maxPoints: 3,
+      icon: 'inv_sword_17.png',
+      points: 0,
+    },
+    {
+      id: 'ability_ambush',
+      ranks: [
+        'Increases your Stealth detection and reduces the chance you are hit by spells and ranged attacks by 2%.',
+        'Increases your Stealth detection and reduces the chance you are hit by spells and ranged attacks by 4%.  More effective than Heightened Senses (Rank 1).',
+      ],
+      row: 4,
+      name: 'Heightened Senses',
+      col: 0,
+      maxPoints: 2,
+      icon: 'ability_ambush.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_antishadow',
+      ranks: [
+        'When activated, this ability immediately finishes the cooldown on your Evasion, Sprint, Vanish, Cold Blood, Shadowstep and Premeditation abilities.',
+      ],
+      row: 4,
+      name: 'Preparation',
+      col: 1,
+      maxPoints: 1,
+      icon: 'spell_shadow_antishadow.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_summonsuccubus',
+      ranks: [
+        'Reduces the Energy cost of your Cheap Shot and Garrote abilities by 10.  Additionally, your special abilities cause 10% more damage against targets below 35% health.',
+        'Reduces the Energy cost of your Cheap Shot and Garrote abilities by 20.  Additionally, your special abilities cause 20% more damage against targets below 35% health.',
+      ],
+      row: 4,
+      name: 'Dirty Deeds',
+      col: 2,
+      maxPoints: 2,
+      icon: 'spell_shadow_summonsuccubus.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_lifedrain',
+      ranks: [
+        'An instant strike that deals 110% weapon damage and causes the target to hemorrhage, increasing any Physical damage dealt to the target by up to 13.  Lasts 10 charges or 15 seconds.  Awards 1 combo point.',
+      ],
+      row: 4,
+      name: 'Hemorrhage',
+      col: 3,
+      maxPoints: 1,
+      requires: {
+        id: 'inv_sword_17',
+        points: 3,
+      },
+      icon: 'spell_shadow_lifedrain.png',
+      points: 0,
+    },
+    {
+      id: 'ability_rogue_masterofsubtlety',
+      ranks: [
+        'Attacks made while stealthed and for 6 seconds after breaking stealth cause an additional 4% damage.',
+        'Attacks made while stealthed and for 6 seconds after breaking stealth cause an additional 7% damage.',
+        'Attacks made while stealthed and for 6 seconds after breaking stealth cause an additional 10% damage.',
+      ],
+      row: 5,
+      name: 'Master of Subtlety',
+      col: 0,
+      maxPoints: 3,
+      icon: 'ability_rogue_masterofsubtlety.png',
+      points: 0,
+    },
+    {
+      id: 'inv_weapon_crossbow_11',
+      ranks: [
+        'Increases your attack power by 2%.',
+        'Increases your attack power by 4%.',
+        'Increases your attack power by 6%.',
+        'Increases your attack power by 8%.',
+        'Increases your attack power by 10%.',
+      ],
+      row: 5,
+      name: 'Deadliness',
+      col: 2,
+      maxPoints: 5,
+      icon: 'inv_weapon_crossbow_11.png',
+      points: 0,
+    },
+    {
+      id: 'ability_rogue_envelopingshadows',
+      ranks: [
+        'Increases your chance to avoid area of effect attacks by an additional 5%.',
+        'Increases your chance to avoid area of effect attacks by an additional 10%.',
+        'Increases your chance to avoid area of effect attacks by an additional 15%.',
+      ],
+      row: 6,
+      name: 'Enveloping Shadows',
+      col: 0,
+      maxPoints: 3,
+      icon: 'ability_rogue_envelopingshadows.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_possession',
+      ranks: [
+        'When used, adds 2 combo points to your target.  You must add to or use those combo points within 10 seconds or the combo points are lost.',
+      ],
+      row: 6,
+      name: 'Premeditation',
+      col: 1,
+      maxPoints: 1,
+      requires: {
+        id: 'spell_shadow_antishadow',
+        points: 1,
+      },
+      icon: 'spell_shadow_possession.png',
+      points: 0,
+    },
+    {
+      id: 'ability_rogue_cheatdeath',
+      ranks: [
+        'You have a 33% chance that an attack which would otherwise kill you will instead reduce you to 10% of your maximum health, unless the attack is too devastating. In addition, all damage taken will be reduced by an amount equal to twice your dodge chance, up to 90%, for 3 seconds.  This effect cannot occur more than once per minute.',
+        'You have a 66% chance that an attack which would otherwise kill you will instead reduce you to 10% of your maximum health, unless the attack is too devastating. In addition, all damage taken will be reduced by an amount equal to twice your dodge chance, up to 90%, for 3 seconds.  This effect cannot occur more than once per minute.',
+        'You have a 100% chance that an attack which would otherwise kill you will instead reduce you to 10% of your maximum health, unless the attack is too devastating. In addition, all damage taken will be reduced by an amount equal to twice your dodge chance, up to 90%, for 3 seconds.  This effect cannot occur more than once per minute.',
+      ],
+      row: 6,
+      name: 'Cheat Death',
+      col: 2,
+      maxPoints: 3,
+      icon: 'ability_rogue_cheatdeath.png',
+      points: 0,
+    },
+    {
+      id: 'ability_rogue_sinistercalling',
+      ranks: [
+        'Increases your total Agility by 3% and increases the percentage damage bonus of Backstab and Hemorrhage by an additional 1%.',
+        'Increases your total Agility by 6% and increases the percentage damage bonus of Backstab and Hemorrhage by an additional 2%.',
+        'Increases your total Agility by 9% and increases the percentage damage bonus of Backstab and Hemorrhage by an additional 3%.',
+        'Increases your total Agility by 12% and increases the percentage damage bonus of Backstab and Hemorrhage by an additional 4%.',
+        'Increases your total Agility by 15% and increases the percentage damage bonus of Backstab and Hemorrhage by an additional 5%.',
+      ],
+      row: 7,
+      name: 'Sinister Calling',
+      col: 1,
+      maxPoints: 5,
+      requires: {
+        id: 'spell_shadow_possession',
+        points: 1,
+      },
+      icon: 'ability_rogue_sinistercalling.png',
+      points: 0,
+    },
+    {
+      id: 'ability_rogue_shadowstep',
+      ranks: [
+        'Attempts to step through the shadows and reappear behind your enemy and increases movement speed by 70% for 3 seconds.  The damage of your next ability is increased by 20% and the threat caused is reduced by 50%.  Lasts 10 seconds.',
+      ],
+      row: 8,
+      name: 'Shadowstep',
+      col: 1,
+      maxPoints: 1,
+      icon: 'ability_rogue_shadowstep.png',
+      points: 0,
+    },
+  ],
+}

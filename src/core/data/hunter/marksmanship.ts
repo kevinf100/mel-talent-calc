@@ -1,312 +1,313 @@
-import type { Tree } from '../../types';
+import type { Tree } from '../../types'
 
 export const marksmanship: Tree = {
-    specIcon: "ability_marksmanship.png",
-    name: "Marksmanship",
-    backgroundImage: "src/assets/images/hunter/background-hunter-marksmanship.webp",
-    talents: [
-        {
-            id: "spell_frost_stun",
-            ranks: [
-                "Gives your Concussive Shot a 4% chance to stun the target for 3 seconds.",
-                "Gives your Concussive Shot a 8% chance to stun the target for 3 seconds.",
-                "Gives your Concussive Shot a 12% chance to stun the target for 3 seconds.",
-                "Gives your Concussive Shot a 16% chance to stun the target for 3 seconds.",
-                "Gives your Concussive Shot a 20% chance to stun the target for 3 seconds."
-            ],
-            row: 0,
-            name: "Improved Concussive Shot",
-            col: 1,
-            maxPoints: 5,
-            icon: "spell_frost_stun.png",
-            points: 0
-        },
-        {
-            id: "ability_searingarrow",
-            ranks: [
-                "Increases your critical strike chance with ranged weapons by 1%.",
-                "Increases your critical strike chance with ranged weapons by 2%.",
-                "Increases your critical strike chance with ranged weapons by 3%.",
-                "Increases your critical strike chance with ranged weapons by 4%.",
-                "Increases your critical strike chance with ranged weapons by 5%."
-            ],
-            row: 0,
-            name: "Lethal Shots",
-            col: 2,
-            maxPoints: 5,
-            icon: "ability_searingarrow.png",
-            points: 0
-        },
-        {
-            id: "ability_hunter_snipershot",
-            ranks: [
-                "Causes 20% of your Hunter's Mark ability's base attack power to apply to melee attack power as well.",
-                "Causes 40% of your Hunter's Mark ability's base attack power to apply to melee attack power as well.",
-                "Causes 60% of your Hunter's Mark ability's base attack power to apply to melee attack power as well.",
-                "Causes 80% of your Hunter's Mark ability's base attack power to apply to melee attack power as well.",
-                "Causes 100% of your Hunter's Mark ability's base attack power to apply to melee attack power as well."
-            ],
-            row: 1,
-            name: "Improved Hunter's Mark",
-            col: 1,
-            maxPoints: 5,
-            icon: "ability_hunter_snipershot.png",
-            points: 0
-        },
-        {
-            id: "spell_frost_wizardmark",
-            ranks: [
-                "Reduces the Mana cost of your Shots and Stings by 2%.",
-                "Reduces the Mana cost of your Shots and Stings by 4%.",
-                "Reduces the Mana cost of your Shots and Stings by 6%.",
-                "Reduces the Mana cost of your Shots and Stings by 8%.",
-                "Reduces the Mana cost of your Shots and Stings by 10%."
-            ],
-            row: 1,
-            name: "Efficiency",
-            col: 2,
-            maxPoints: 5,
-            icon: "spell_frost_wizardmark.png",
-            points: 0
-        },
-        {
-            id: "ability_hunter_goforthethroat",
-            ranks: [
-                "Your ranged critical hits cause your pet to generate 25 Focus.",
-                "Your ranged critical hits cause your pet to generate 50 Focus."
-            ],
-            row: 2,
-            name: "Go for the Throat",
-            col: 0,
-            maxPoints: 2,
-            icon: "ability_hunter_goforthethroat.png",
-            points: 0
-        },
-        {
-            id: "ability_impalingbolt",
-            ranks: [
-                "Reduces the cooldown of your Arcane Shot by 0.2 sec.",
-                "Reduces the cooldown of your Arcane Shot by 0.4 sec.",
-                "Reduces the cooldown of your Arcane Shot by 0.6 sec.",
-                "Reduces the cooldown of your Arcane Shot by 0.8 sec.",
-                "Reduces the cooldown of your Arcane Shot by 1 sec."
-            ],
-            row: 2,
-            name: "Improved Arcane Shot",
-            col: 1,
-            maxPoints: 5,
-            icon: "ability_impalingbolt.png",
-            points: 0
-        },
-        {
-            id: "inv_spear_07",
-            ranks: [
-                "An aimed shot that increases ranged damage by 70 and reduces healing done to that target by 50%.  Lasts 10 seconds."
-            ],
-            row: 2,
-            name: "Aimed Shot",
-            col: 2,
-            maxPoints: 1,
-            icon: "inv_spear_07.png",
-            points: 0
-        },
-        {
-            id: "ability_hunter_rapidkilling",
-            ranks: [
-                "Reduces the cooldown of your Rapid Fire ability by 1 min.  In addition, after killing an opponent that yields experience or honor, your next Aimed Shot, Arcane Shot or Auto Shot causes 10% additional damage.  Lasts 20 seconds.",
-                "Reduces the cooldown of your Rapid Fire ability by 2 min.  In addition, after killing an opponent that yields experience or honor, your next Aimed Shot, Arcane Shot or Auto Shot causes 20% additional damage.  Lasts 20 seconds."
-            ],
-            row: 2,
-            name: "Rapid Killing",
-            col: 3,
-            maxPoints: 2,
-            icon: "ability_hunter_rapidkilling.png",
-            points: 0
-        },
-        {
-            id: "ability_hunter_quickshot",
-            ranks: [
-                "Increases the damage done by your Serpent Sting and Wyvern Sting by 6% and the mana drained by your Viper Sting by 6%.  In addition, reduces the chance your Stings will be dispelled by 6%.",
-                "Increases the damage done by your Serpent Sting and Wyvern Sting by 12% and the mana drained by your Viper Sting by 12%.  In addition, reduces the chance your Stings will be dispelled by 12%.",
-                "Increases the damage done by your Serpent Sting and Wyvern Sting by 18% and the mana drained by your Viper Sting by 18%.  In addition, reduces the chance your Stings will be dispelled by 18%.",
-                "Increases the damage done by your Serpent Sting and Wyvern Sting by 24% and the mana drained by your Viper Sting by 24%.  In addition, reduces the chance your Stings will be dispelled by 24%.",
-                "Increases the damage done by your Serpent Sting and Wyvern Sting by 30% and the mana drained by your Viper Sting by 30%.  In addition, reduces the chance your Stings will be dispelled by 30%."
-            ],
-            row: 3,
-            name: "Improved Stings",
-            col: 1,
-            maxPoints: 5,
-            icon: "ability_hunter_quickshot.png",
-            points: 0
-        },
-        {
-            id: "ability_piercedamage",
-            ranks: [
-                "Increases your ranged weapon critical strike damage bonus by 6%.",
-                "Increases your ranged weapon critical strike damage bonus by 12%.",
-                "Increases your ranged weapon critical strike damage bonus by 18%.",
-                "Increases your ranged weapon critical strike damage bonus by 24%.",
-                "Increases your ranged weapon critical strike damage bonus by 30%."
-            ],
-            row: 3,
-            name: "Mortal Shots",
-            col: 2,
-            maxPoints: 5,
-            requires: {
-                id: "inv_spear_07",
-                points: 1
-            },
-            icon: "ability_piercedamage.png",
-            points: 0
-        },
-        {
-            id: "spell_arcane_starfire",
-            ranks: [
-                "Your successful Auto Shot attacks have a 2% chance to Daze the target for 4 seconds.",
-                "Your successful Auto Shot attacks have a 4% chance to Daze the target for 4 seconds.",
-                "Your successful Auto Shot attacks have a 6% chance to Daze the target for 4 seconds."
-            ],
-            row: 4,
-            name: "Concussive Barrage",
-            col: 0,
-            maxPoints: 3,
-            icon: "spell_arcane_starfire.png",
-            points: 0
-        },
-        {
-            id: "ability_golemstormbolt",
-            ranks: [
-                "A short-range shot that deals 50% weapon damage and disorients the target for 4 seconds.  Any damage caused will remove the effect.  Turns off your attack when used."
-            ],
-            row: 4,
-            name: "Scatter Shot",
-            col: 1,
-            maxPoints: 1,
-            icon: "ability_golemstormbolt.png",
-            points: 0
-        },
-        {
-            id: "barrage",
-            ranks: [
-                "Increases the damage done by your Multi-Shot and Volley spells by 4%.",
-                "Increases the damage done by your Multi-Shot and Volley spells by 8%.",
-                "Increases the damage done by your Multi-Shot and Volley spells by 12%."
-            ],
-            row: 4,
-            name: "Barrage",
-            col: 2,
-            maxPoints: 3,
-            icon: "ability_upgrademoonglaive.png",
-            points: 0
-        },
-        {
-            id: "ability_hunter_combatexperience",
-            ranks: [
-                "Increases your total Agility by 1% and your total Intellect by 3%.",
-                "Increases your total Agility by 2% and your total Intellect by 6%."
-            ],
-            row: 5,
-            name: "Combat Experience",
-            col: 0,
-            maxPoints: 2,
-            icon: "ability_hunter_combatexperience.png",
-            points: 0
-        },
-        {
-            id: "inv_weapon_rifle_06",
-            ranks: [
-                "Increases the damage you deal with ranged weapons by 1%.",
-                "Increases the damage you deal with ranged weapons by 2%.",
-                "Increases the damage you deal with ranged weapons by 3%.",
-                "Increases the damage you deal with ranged weapons by 4%.",
-                "Increases the damage you deal with ranged weapons by 5%."
-            ],
-            row: 5,
-            name: "Ranged Weapon Specialization",
-            col: 3,
-            maxPoints: 5,
-            icon: "inv_weapon_rifle_06.png",
-            points: 0
-        },
-        {
-            id: "ability_hunter_zenarchery",
-            ranks: [
-                "Increases your ranged attack power by an amount equal to 15% of your total Intellect.",
-                "Increases your ranged attack power by an amount equal to 30% of your total Intellect.",
-                "Increases your ranged attack power by an amount equal to 45% of your total Intellect."
-            ],
-            row: 6,
-            name: "Careful Aim",
-            col: 0,
-            maxPoints: 3,
-            icon: "ability_hunter_zenarchery.png",
-            points: 0
-        },
-        {
-            id: "ability_theblackarrow",
-            ranks: [
-                "A shot that deals 50% weapon damage and Silences the target for 3 seconds."
-            ],
-            row: 6,
-            name: "Silencing Shot",
-            col: 1,
-            maxPoints: 1,
-            requires: {
-                id: "ability_golemstormbolt",
-                points: 1
-            },
-            icon: "ability_theblackarrow.png",
-            points: 0
-        },
-        {
-            id: "ability_upgrademoonglaive",
-            ranks: [
-                "Increases the critical strike chance of your Multi-Shot ability by 4% and gives you a 33% chance to avoid interruption caused by damage while channeling Volley.",
-                "Increases the critical strike chance of your Multi-Shot ability by 8% and gives you a 66% chance to avoid interruption caused by damage while channeling Volley.",
-                "Increases the critical strike chance of your Multi-Shot ability by 12% and gives you a 100% chance to avoid interruption caused by damage while channeling Volley."
-            ],
-            row: 6,
-            name: "Improved Barrage",
-            col: 2,
-            maxPoints: 3,
-            requires: {
-                id: "barrage",
-                points: 3
-            },
-            icon: "ability_upgrademoonglaive.png",
-            points: 0
-        },
-        {
-            id: "ability_hunter_mastermarksman",
-            ranks: [
-                "Increases your ranged attack power by 2%.",
-                "Increases your ranged attack power by 4%.",
-                "Increases your ranged attack power by 6%.",
-                "Increases your ranged attack power by 8%.",
-                "Increases your ranged attack power by 10%."
-            ],
-            row: 7,
-            name: "Master Marksman",
-            col: 1,
-            maxPoints: 5,
-            icon: "ability_hunter_mastermarksman.png",
-            points: 0
-        },
-        {
-            id: "ability_trueshot",
-            ranks: [
-                "Increases the attack power of party and raid members within 45 yards by 50.  Lasts 0.001 seconds."
-            ],
-            row: 8,
-            name: "Trueshot Aura",
-            col: 1,
-            maxPoints: 1,
-            requires: {
-                id: "ability_hunter_mastermarksman",
-                points: 5
-            },
-            icon: "ability_trueshot.png",
-            points: 0
-        }
-    ]
-};
+  specIcon: 'ability_marksmanship.png',
+  name: 'Marksmanship',
+  backgroundImage:
+    'src/assets/images/hunter/background-hunter-marksmanship.webp',
+  talents: [
+    {
+      id: 'spell_frost_stun',
+      ranks: [
+        'Gives your Concussive Shot a 4% chance to stun the target for 3 seconds.',
+        'Gives your Concussive Shot a 8% chance to stun the target for 3 seconds.',
+        'Gives your Concussive Shot a 12% chance to stun the target for 3 seconds.',
+        'Gives your Concussive Shot a 16% chance to stun the target for 3 seconds.',
+        'Gives your Concussive Shot a 20% chance to stun the target for 3 seconds.',
+      ],
+      row: 0,
+      name: 'Improved Concussive Shot',
+      col: 1,
+      maxPoints: 5,
+      icon: 'spell_frost_stun.png',
+      points: 0,
+    },
+    {
+      id: 'ability_searingarrow',
+      ranks: [
+        'Increases your critical strike chance with ranged weapons by 1%.',
+        'Increases your critical strike chance with ranged weapons by 2%.',
+        'Increases your critical strike chance with ranged weapons by 3%.',
+        'Increases your critical strike chance with ranged weapons by 4%.',
+        'Increases your critical strike chance with ranged weapons by 5%.',
+      ],
+      row: 0,
+      name: 'Lethal Shots',
+      col: 2,
+      maxPoints: 5,
+      icon: 'ability_searingarrow.png',
+      points: 0,
+    },
+    {
+      id: 'ability_hunter_snipershot',
+      ranks: [
+        "Causes 20% of your Hunter's Mark ability's base attack power to apply to melee attack power as well.",
+        "Causes 40% of your Hunter's Mark ability's base attack power to apply to melee attack power as well.",
+        "Causes 60% of your Hunter's Mark ability's base attack power to apply to melee attack power as well.",
+        "Causes 80% of your Hunter's Mark ability's base attack power to apply to melee attack power as well.",
+        "Causes 100% of your Hunter's Mark ability's base attack power to apply to melee attack power as well.",
+      ],
+      row: 1,
+      name: "Improved Hunter's Mark",
+      col: 1,
+      maxPoints: 5,
+      icon: 'ability_hunter_snipershot.png',
+      points: 0,
+    },
+    {
+      id: 'spell_frost_wizardmark',
+      ranks: [
+        'Reduces the Mana cost of your Shots and Stings by 2%.',
+        'Reduces the Mana cost of your Shots and Stings by 4%.',
+        'Reduces the Mana cost of your Shots and Stings by 6%.',
+        'Reduces the Mana cost of your Shots and Stings by 8%.',
+        'Reduces the Mana cost of your Shots and Stings by 10%.',
+      ],
+      row: 1,
+      name: 'Efficiency',
+      col: 2,
+      maxPoints: 5,
+      icon: 'spell_frost_wizardmark.png',
+      points: 0,
+    },
+    {
+      id: 'ability_hunter_goforthethroat',
+      ranks: [
+        'Your ranged critical hits cause your pet to generate 25 Focus.',
+        'Your ranged critical hits cause your pet to generate 50 Focus.',
+      ],
+      row: 2,
+      name: 'Go for the Throat',
+      col: 0,
+      maxPoints: 2,
+      icon: 'ability_hunter_goforthethroat.png',
+      points: 0,
+    },
+    {
+      id: 'ability_impalingbolt',
+      ranks: [
+        'Reduces the cooldown of your Arcane Shot by 0.2 sec.',
+        'Reduces the cooldown of your Arcane Shot by 0.4 sec.',
+        'Reduces the cooldown of your Arcane Shot by 0.6 sec.',
+        'Reduces the cooldown of your Arcane Shot by 0.8 sec.',
+        'Reduces the cooldown of your Arcane Shot by 1 sec.',
+      ],
+      row: 2,
+      name: 'Improved Arcane Shot',
+      col: 1,
+      maxPoints: 5,
+      icon: 'ability_impalingbolt.png',
+      points: 0,
+    },
+    {
+      id: 'inv_spear_07',
+      ranks: [
+        'An aimed shot that increases ranged damage by 70 and reduces healing done to that target by 50%.  Lasts 10 seconds.',
+      ],
+      row: 2,
+      name: 'Aimed Shot',
+      col: 2,
+      maxPoints: 1,
+      icon: 'inv_spear_07.png',
+      points: 0,
+    },
+    {
+      id: 'ability_hunter_rapidkilling',
+      ranks: [
+        'Reduces the cooldown of your Rapid Fire ability by 1 min.  In addition, after killing an opponent that yields experience or honor, your next Aimed Shot, Arcane Shot or Auto Shot causes 10% additional damage.  Lasts 20 seconds.',
+        'Reduces the cooldown of your Rapid Fire ability by 2 min.  In addition, after killing an opponent that yields experience or honor, your next Aimed Shot, Arcane Shot or Auto Shot causes 20% additional damage.  Lasts 20 seconds.',
+      ],
+      row: 2,
+      name: 'Rapid Killing',
+      col: 3,
+      maxPoints: 2,
+      icon: 'ability_hunter_rapidkilling.png',
+      points: 0,
+    },
+    {
+      id: 'ability_hunter_quickshot',
+      ranks: [
+        'Increases the damage done by your Serpent Sting and Wyvern Sting by 6% and the mana drained by your Viper Sting by 6%.  In addition, reduces the chance your Stings will be dispelled by 6%.',
+        'Increases the damage done by your Serpent Sting and Wyvern Sting by 12% and the mana drained by your Viper Sting by 12%.  In addition, reduces the chance your Stings will be dispelled by 12%.',
+        'Increases the damage done by your Serpent Sting and Wyvern Sting by 18% and the mana drained by your Viper Sting by 18%.  In addition, reduces the chance your Stings will be dispelled by 18%.',
+        'Increases the damage done by your Serpent Sting and Wyvern Sting by 24% and the mana drained by your Viper Sting by 24%.  In addition, reduces the chance your Stings will be dispelled by 24%.',
+        'Increases the damage done by your Serpent Sting and Wyvern Sting by 30% and the mana drained by your Viper Sting by 30%.  In addition, reduces the chance your Stings will be dispelled by 30%.',
+      ],
+      row: 3,
+      name: 'Improved Stings',
+      col: 1,
+      maxPoints: 5,
+      icon: 'ability_hunter_quickshot.png',
+      points: 0,
+    },
+    {
+      id: 'ability_piercedamage',
+      ranks: [
+        'Increases your ranged weapon critical strike damage bonus by 6%.',
+        'Increases your ranged weapon critical strike damage bonus by 12%.',
+        'Increases your ranged weapon critical strike damage bonus by 18%.',
+        'Increases your ranged weapon critical strike damage bonus by 24%.',
+        'Increases your ranged weapon critical strike damage bonus by 30%.',
+      ],
+      row: 3,
+      name: 'Mortal Shots',
+      col: 2,
+      maxPoints: 5,
+      requires: {
+        id: 'inv_spear_07',
+        points: 1,
+      },
+      icon: 'ability_piercedamage.png',
+      points: 0,
+    },
+    {
+      id: 'spell_arcane_starfire',
+      ranks: [
+        'Your successful Auto Shot attacks have a 2% chance to Daze the target for 4 seconds.',
+        'Your successful Auto Shot attacks have a 4% chance to Daze the target for 4 seconds.',
+        'Your successful Auto Shot attacks have a 6% chance to Daze the target for 4 seconds.',
+      ],
+      row: 4,
+      name: 'Concussive Barrage',
+      col: 0,
+      maxPoints: 3,
+      icon: 'spell_arcane_starfire.png',
+      points: 0,
+    },
+    {
+      id: 'ability_golemstormbolt',
+      ranks: [
+        'A short-range shot that deals 50% weapon damage and disorients the target for 4 seconds.  Any damage caused will remove the effect.  Turns off your attack when used.',
+      ],
+      row: 4,
+      name: 'Scatter Shot',
+      col: 1,
+      maxPoints: 1,
+      icon: 'ability_golemstormbolt.png',
+      points: 0,
+    },
+    {
+      id: 'barrage',
+      ranks: [
+        'Increases the damage done by your Multi-Shot and Volley spells by 4%.',
+        'Increases the damage done by your Multi-Shot and Volley spells by 8%.',
+        'Increases the damage done by your Multi-Shot and Volley spells by 12%.',
+      ],
+      row: 4,
+      name: 'Barrage',
+      col: 2,
+      maxPoints: 3,
+      icon: 'ability_upgrademoonglaive.png',
+      points: 0,
+    },
+    {
+      id: 'ability_hunter_combatexperience',
+      ranks: [
+        'Increases your total Agility by 1% and your total Intellect by 3%.',
+        'Increases your total Agility by 2% and your total Intellect by 6%.',
+      ],
+      row: 5,
+      name: 'Combat Experience',
+      col: 0,
+      maxPoints: 2,
+      icon: 'ability_hunter_combatexperience.png',
+      points: 0,
+    },
+    {
+      id: 'inv_weapon_rifle_06',
+      ranks: [
+        'Increases the damage you deal with ranged weapons by 1%.',
+        'Increases the damage you deal with ranged weapons by 2%.',
+        'Increases the damage you deal with ranged weapons by 3%.',
+        'Increases the damage you deal with ranged weapons by 4%.',
+        'Increases the damage you deal with ranged weapons by 5%.',
+      ],
+      row: 5,
+      name: 'Ranged Weapon Specialization',
+      col: 3,
+      maxPoints: 5,
+      icon: 'inv_weapon_rifle_06.png',
+      points: 0,
+    },
+    {
+      id: 'ability_hunter_zenarchery',
+      ranks: [
+        'Increases your ranged attack power by an amount equal to 15% of your total Intellect.',
+        'Increases your ranged attack power by an amount equal to 30% of your total Intellect.',
+        'Increases your ranged attack power by an amount equal to 45% of your total Intellect.',
+      ],
+      row: 6,
+      name: 'Careful Aim',
+      col: 0,
+      maxPoints: 3,
+      icon: 'ability_hunter_zenarchery.png',
+      points: 0,
+    },
+    {
+      id: 'ability_theblackarrow',
+      ranks: [
+        'A shot that deals 50% weapon damage and Silences the target for 3 seconds.',
+      ],
+      row: 6,
+      name: 'Silencing Shot',
+      col: 1,
+      maxPoints: 1,
+      requires: {
+        id: 'ability_golemstormbolt',
+        points: 1,
+      },
+      icon: 'ability_theblackarrow.png',
+      points: 0,
+    },
+    {
+      id: 'ability_upgrademoonglaive',
+      ranks: [
+        'Increases the critical strike chance of your Multi-Shot ability by 4% and gives you a 33% chance to avoid interruption caused by damage while channeling Volley.',
+        'Increases the critical strike chance of your Multi-Shot ability by 8% and gives you a 66% chance to avoid interruption caused by damage while channeling Volley.',
+        'Increases the critical strike chance of your Multi-Shot ability by 12% and gives you a 100% chance to avoid interruption caused by damage while channeling Volley.',
+      ],
+      row: 6,
+      name: 'Improved Barrage',
+      col: 2,
+      maxPoints: 3,
+      requires: {
+        id: 'barrage',
+        points: 3,
+      },
+      icon: 'ability_upgrademoonglaive.png',
+      points: 0,
+    },
+    {
+      id: 'ability_hunter_mastermarksman',
+      ranks: [
+        'Increases your ranged attack power by 2%.',
+        'Increases your ranged attack power by 4%.',
+        'Increases your ranged attack power by 6%.',
+        'Increases your ranged attack power by 8%.',
+        'Increases your ranged attack power by 10%.',
+      ],
+      row: 7,
+      name: 'Master Marksman',
+      col: 1,
+      maxPoints: 5,
+      icon: 'ability_hunter_mastermarksman.png',
+      points: 0,
+    },
+    {
+      id: 'ability_trueshot',
+      ranks: [
+        'Increases the attack power of party and raid members within 45 yards by 50.  Lasts 0.001 seconds.',
+      ],
+      row: 8,
+      name: 'Trueshot Aura',
+      col: 1,
+      maxPoints: 1,
+      requires: {
+        id: 'ability_hunter_mastermarksman',
+        points: 5,
+      },
+      icon: 'ability_trueshot.png',
+      points: 0,
+    },
+  ],
+}

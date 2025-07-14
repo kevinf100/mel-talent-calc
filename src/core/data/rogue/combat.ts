@@ -1,379 +1,380 @@
-import type { Tree } from "../../types";
+import type { Tree } from '../../types'
 
 export const combat: Tree = {
-    specIcon: "ability_backstab.png",
-    name: "Combat",
-    backgroundImage: "src/assets/images/rogue/background-rogue-combat.webp",
-    talents: [
-        {
-            id: "ability_gouge",
-            ranks: [
-                "Increases the effect duration of your Gouge ability by 0.5 sec.",
-                "Increases the effect duration of your Gouge ability by 1 sec.",
-                "Increases the effect duration of your Gouge ability by 1.5 sec."
-            ],
-            row: 0,
-            name: "Improved Gouge",
-            col: 0,
-            maxPoints: 3,
-            icon: "ability_gouge.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_ritualofsacrifice",
-            ranks: [
-                "Reduces the Energy cost of your Sinister Strike ability by 3.",
-                "Reduces the Energy cost of your Sinister Strike ability by 5."
-            ],
-            row: 0,
-            name: "Improved Sinister Strike",
-            col: 1,
-            maxPoints: 2,
-            icon: "spell_shadow_ritualofsacrifice.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_invisibilty",
-            ranks: [
-                "Increases your Agility by 2%.",
-                "Increases your Agility by 4%.",
-                "Increases your Agility by 6%.",
-                "Increases your Agility by 8%.",
-                "Increases your Agility by 10%."
-            ],
-            row: 0,
-            name: "Lightning Reflexes",
-            col: 2,
-            maxPoints: 5,
-            icon: "spell_nature_invisibilty.png",
-            points: 0
-        },
-        {
-            id: "ability_rogue_slicedice",
-            ranks: [
-                "Increases the duration of your Slice and Dice ability by 15%.",
-                "Increases the duration of your Slice and Dice ability by 30%.",
-                "Increases the duration of your Slice and Dice ability by 45%."
-            ],
-            row: 1,
-            name: "Improved Slice and Dice",
-            col: 0,
-            maxPoints: 3,
-            icon: "ability_rogue_slicedice.png",
-            points: 0
-        },
-        {
-            id: "ability_parry",
-            ranks: [
-                "Increases your Parry chance by 1%.",
-                "Increases your Parry chance by 2%.",
-                "Increases your Parry chance by 3%.",
-                "Increases your Parry chance by 4%.",
-                "Increases your Parry chance by 5%."
-            ],
-            row: 1,
-            name: "Deflection",
-            col: 1,
-            maxPoints: 5,
-            icon: "ability_parry.png",
-            points: 0
-        },
-        {
-            id: "ability_marksmanship",
-            ranks: [
-                "Increases your chance to hit with weapons by 1%.",
-                "Increases your chance to hit with weapons by 2%.",
-                "Increases your chance to hit with weapons by 3%.",
-                "Increases your chance to hit with weapons by 4%.",
-                "Increases your chance to hit with weapons by 5%."
-            ],
-            row: 1,
-            name: "Precision",
-            col: 2,
-            maxPoints: 5,
-            icon: "ability_marksmanship.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_shadowward",
-            ranks: [
-                "Reduces the cooldown of your Sprint and Evasion abilities by 45 sec.",
-                "Reduces the cooldown of your Sprint and Evasion abilities by 1.5 min."
-            ],
-            row: 2,
-            name: "Endurance",
-            col: 0,
-            maxPoints: 2,
-            icon: "spell_shadow_shadowward.png",
-            points: 0
-        },
-        {
-            id: "ability_warrior_challange",
-            ranks: [
-                "A strike that becomes active after parrying an opponent's attack.  This attack deals 150% weapon damage and disarms the target for 6 seconds."
-            ],
-            row: 2,
-            name: "Riposte",
-            col: 1,
-            maxPoints: 1,
-            requires: {
-                id: "ability_parry",
-                points: 5
-            },
-            icon: "ability_warrior_challange.png",
-            points: 0
-        },
-        {
-            id: "ability_rogue_sprint",
-            ranks: [
-                "Gives a 50% chance to remove all Movement Impairing effects when you activate your Sprint ability.",
-                "Gives a 100% chance to remove all Movement Impairing effects when you activate your Sprint ability."
-            ],
-            row: 2,
-            name: "Improved Sprint",
-            col: 3,
-            maxPoints: 2,
-            icon: "ability_rogue_sprint.png",
-            points: 0
-        },
-        {
-            id: "ability_kick",
-            ranks: [
-                "Gives your Kick ability a 50% chance to silence the target for 2 seconds.",
-                "Gives your Kick ability a 100% chance to silence the target for 2 seconds."
-            ],
-            row: 3,
-            name: "Improved Kick",
-            col: 0,
-            maxPoints: 2,
-            icon: "ability_kick.png",
-            points: 0
-        },
-        {
-            id: "inv_weapon_shortblade_05",
-            ranks: [
-                "Increases your chance to get a critical strike with Daggers by 1%.",
-                "Increases your chance to get a critical strike with Daggers by 2%.",
-                "Increases your chance to get a critical strike with Daggers by 3%.",
-                "Increases your chance to get a critical strike with Daggers by 4%.",
-                "Increases your chance to get a critical strike with Daggers by 5%."
-            ],
-            row: 3,
-            name: "Dagger Specialization",
-            col: 1,
-            maxPoints: 5,
-            icon: "inv_weapon_shortblade_05.png",
-            points: 0
-        },
-        {
-            id: "ability_dualwield",
-            ranks: [
-                "Increases the damage done by your offhand weapon by 10%.",
-                "Increases the damage done by your offhand weapon by 20%.",
-                "Increases the damage done by your offhand weapon by 30%.",
-                "Increases the damage done by your offhand weapon by 40%.",
-                "Increases the damage done by your offhand weapon by 50%."
-            ],
-            row: 3,
-            name: "Dual Wield Specialization",
-            col: 2,
-            maxPoints: 5,
-            requires: {
-                id: "ability_marksmanship",
-                points: 5
-            },
-            icon: "ability_dualwield.png",
-            points: 0
-        },
-        {
-            id: "inv_axe_06",
-            ranks: [
-                "Gives you a 1% chance to cause your target to bleed for 100% weapon damage over 15 seconds after hitting them with an Axe.",
-                "Gives you a 2% chance to cause your target to bleed for 100% weapon damage over 15 seconds after hitting them with an Axe.",
-                "Gives you a 3% chance to cause your target to bleed for 100% weapon damage over 15 seconds after hitting them with an Axe.",
-                "Gives you a 4% chance to cause your target to bleed for 100% weapon damage over 15 seconds after hitting them with an Axe.",
-                "Gives you a 5% chance to cause your target to bleed for 100% weapon damage over 15 seconds after hitting them with an Axe."
-            ],
-            row: 3,
-            name: "Axe Specialization",
-            col: 3,
-            maxPoints: 5,
-            icon: "inv_axe_06.png",
-            points: 0
-        },
-        {
-            id: "inv_mace_01",
-            ranks: [
-                "Increases the damage dealt by your critical strikes with maces by 1%, and gives you a 1% chance to stun your target for 3 seconds with a mace.",
-                "Increases the damage dealt by your critical strikes with maces by 2%, and gives you a 2% chance to stun your target for 3 seconds with a mace.",
-                "Increases the damage dealt by your critical strikes with maces by 3%, and gives you a 3% chance to stun your target for 3 seconds with a mace.",
-                "Increases the damage dealt by your critical strikes with maces by 4%, and gives you a 4% chance to stun your target for 3 seconds with a mace.",
-                "Increases the damage dealt by your critical strikes with maces by 5%, and gives you a 6% chance to stun your target for 3 seconds with a mace."
-            ],
-            row: 4,
-            name: "Mace Specialization",
-            col: 0,
-            maxPoints: 5,
-            icon: "inv_mace_01.png",
-            points: 0
-        },
-        {
-            id: "ability_warrior_punishingblow",
-            ranks: [
-                "Increases your attack speed by 20%.  In addition, attacks strike an additional nearby opponent.  Lasts 15 seconds."
-            ],
-            row: 4,
-            name: "Blade Flurry",
-            col: 1,
-            maxPoints: 1,
-            icon: "ability_warrior_punishingblow.png",
-            points: 0
-        },
-        {
-            id: "inv_sword_27",
-            ranks: [
-                "Gives you a 1% chance to get an extra attack on the same target after hitting your target with your Sword.",
-                "Gives you a 2% chance to get an extra attack on the same target after hitting your target with your Sword.",
-                "Gives you a 3% chance to get an extra attack on the same target after hitting your target with your Sword.",
-                "Gives you a 4% chance to get an extra attack on the same target after hitting your target with your Sword.",
-                "Gives you a 5% chance to get an extra attack on the same target after hitting your target with your Sword."
-            ],
-            row: 4,
-            name: "Sword Specialization",
-            col: 2,
-            maxPoints: 5,
-            icon: "inv_sword_27.png",
-            points: 0
-        },
-        {
-            id: "inv_gauntlets_04",
-            ranks: [
-                "Increases your chance to get a critical strike with Fist Weapons by 1%.",
-                "Increases your chance to get a critical strike with Fist Weapons by 2%.",
-                "Increases your chance to get a critical strike with Fist Weapons by 3%.",
-                "Increases your chance to get a critical strike with Fist Weapons by 4%.",
-                "Increases your chance to get a critical strike with Fist Weapons by 5%."
-            ],
-            row: 4,
-            name: "Fist Weapon Specialization",
-            col: 3,
-            maxPoints: 5,
-            icon: "inv_gauntlets_04.png",
-            points: 0
-        },
-        {
-            id: "ability_rogue_bladetwisting",
-            ranks: [
-                "Gives your Sinister Strike, Backstab, Gouge and Shiv abilities a 10% chance to Daze the target for 4 seconds.",
-                "Gives your Sinister Strike, Backstab, Gouge and Shiv abilities a 20% chance to Daze the target for 4 seconds."
-            ],
-            row: 5,
-            name: "Blade Twisting",
-            col: 0,
-            maxPoints: 2,
-            icon: "ability_rogue_bladetwisting.png",
-            points: 0
-        },
-        {
-            id: "spell_holy_blessingofstrength",
-            ranks: [
-                "Reduces your chance to be dodged or parried by 1.25%.",
-                "Reduces your chance to be dodged or parried by 2.5%."
-            ],
-            row: 5,
-            name: "Weapon Expertise",
-            col: 1,
-            maxPoints: 2,
-            requires: {
-                id: "ability_warrior_punishingblow",
-                points: 1
-            },
-            icon: "spell_holy_blessingofstrength.png",
-            points: 0
-        },
-        {
-            id: "ability_racial_avatar",
-            ranks: [
-                "Increases the damage of your Sinister Strike, Backstab, and Eviscerate abilities by 2%.",
-                "Increases the damage of your Sinister Strike, Backstab, and Eviscerate abilities by 4%.",
-                "Increases the damage of your Sinister Strike, Backstab, and Eviscerate abilities by 6%."
-            ],
-            row: 5,
-            name: "Aggression",
-            col: 2,
-            maxPoints: 3,
-            icon: "ability_racial_avatar.png",
-            points: 0
-        },
-        {
-            id: "ability_warrior_revenge",
-            ranks: [
-                "Increases your total Stamina by 2% and your total Agility by 1%.",
-                "Increases your total Stamina by 4% and your total Agility by 2%."
-            ],
-            row: 6,
-            name: "Vitality",
-            col: 0,
-            maxPoints: 2,
-            icon: "ability_warrior_revenge.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_shadowworddominate",
-            ranks: [
-                "Increases your Energy regeneration rate by 100% for 15 seconds."
-            ],
-            row: 6,
-            name: "Adrenaline Rush",
-            col: 1,
-            maxPoints: 1,
-            icon: "spell_shadow_shadowworddominate.png",
-            points: 0
-        },
-        {
-            id: "ability_rogue_nervesofsteel",
-            ranks: [
-                "Increases your chance to resist Stun and Fear effects by an additional 5%.",
-                "Increases your chance to resist Stun and Fear effects by an additional 10%."
-            ],
-            row: 6,
-            name: "Nerves of Steel",
-            col: 2,
-            maxPoints: 2,
-            icon: "ability_rogue_nervesofsteel.png",
-            points: 0
-        },
-        {
-            id: "inv_weapon_shortblade_38",
-            ranks: [
-                "Gives your successful off-hand melee attacks a 20% chance to generate 3 Energy.",
-                "Gives your successful off-hand melee attacks a 20% chance to generate 6 Energy.",
-                "Gives your successful off-hand melee attacks a 20% chance to generate 9 Energy.",
-                "Gives your successful off-hand melee attacks a 20% chance to generate 12 Energy.",
-                "Gives your successful off-hand melee attacks a 20% chance to generate 15 Energy."
-            ],
-            row: 7,
-            name: "Combat Potency",
-            col: 2,
-            maxPoints: 5,
-            icon: "inv_weapon_shortblade_38.png",
-            points: 0
-        },
-        {
-            id: "ability_rogue_surpriseattack",
-            ranks: [
-                "Your finishing moves can no longer be dodged, and the damage dealt by your Sinister Strike, Backstab, Shiv and Gouge abilities is increased by 10%."
-            ],
-            row: 8,
-            name: "Surprise Attacks",
-            col: 1,
-            maxPoints: 1,
-            requires: {
-                id: "spell_shadow_shadowworddominate",
-                points: 1
-            },
-            icon: "ability_rogue_surpriseattack.png",
-            points: 0
-        }
-    ]
-};
+  specIcon: 'ability_backstab.png',
+  name: 'Combat',
+  backgroundImage:
+    'src/assets/images/rogue/background-rogue-combat.webp',
+  talents: [
+    {
+      id: 'ability_gouge',
+      ranks: [
+        'Increases the effect duration of your Gouge ability by 0.5 sec.',
+        'Increases the effect duration of your Gouge ability by 1 sec.',
+        'Increases the effect duration of your Gouge ability by 1.5 sec.',
+      ],
+      row: 0,
+      name: 'Improved Gouge',
+      col: 0,
+      maxPoints: 3,
+      icon: 'ability_gouge.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_ritualofsacrifice',
+      ranks: [
+        'Reduces the Energy cost of your Sinister Strike ability by 3.',
+        'Reduces the Energy cost of your Sinister Strike ability by 5.',
+      ],
+      row: 0,
+      name: 'Improved Sinister Strike',
+      col: 1,
+      maxPoints: 2,
+      icon: 'spell_shadow_ritualofsacrifice.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_invisibilty',
+      ranks: [
+        'Increases your Agility by 2%.',
+        'Increases your Agility by 4%.',
+        'Increases your Agility by 6%.',
+        'Increases your Agility by 8%.',
+        'Increases your Agility by 10%.',
+      ],
+      row: 0,
+      name: 'Lightning Reflexes',
+      col: 2,
+      maxPoints: 5,
+      icon: 'spell_nature_invisibilty.png',
+      points: 0,
+    },
+    {
+      id: 'ability_rogue_slicedice',
+      ranks: [
+        'Increases the duration of your Slice and Dice ability by 15%.',
+        'Increases the duration of your Slice and Dice ability by 30%.',
+        'Increases the duration of your Slice and Dice ability by 45%.',
+      ],
+      row: 1,
+      name: 'Improved Slice and Dice',
+      col: 0,
+      maxPoints: 3,
+      icon: 'ability_rogue_slicedice.png',
+      points: 0,
+    },
+    {
+      id: 'ability_parry',
+      ranks: [
+        'Increases your Parry chance by 1%.',
+        'Increases your Parry chance by 2%.',
+        'Increases your Parry chance by 3%.',
+        'Increases your Parry chance by 4%.',
+        'Increases your Parry chance by 5%.',
+      ],
+      row: 1,
+      name: 'Deflection',
+      col: 1,
+      maxPoints: 5,
+      icon: 'ability_parry.png',
+      points: 0,
+    },
+    {
+      id: 'ability_marksmanship',
+      ranks: [
+        'Increases your chance to hit with weapons by 1%.',
+        'Increases your chance to hit with weapons by 2%.',
+        'Increases your chance to hit with weapons by 3%.',
+        'Increases your chance to hit with weapons by 4%.',
+        'Increases your chance to hit with weapons by 5%.',
+      ],
+      row: 1,
+      name: 'Precision',
+      col: 2,
+      maxPoints: 5,
+      icon: 'ability_marksmanship.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_shadowward',
+      ranks: [
+        'Reduces the cooldown of your Sprint and Evasion abilities by 45 sec.',
+        'Reduces the cooldown of your Sprint and Evasion abilities by 1.5 min.',
+      ],
+      row: 2,
+      name: 'Endurance',
+      col: 0,
+      maxPoints: 2,
+      icon: 'spell_shadow_shadowward.png',
+      points: 0,
+    },
+    {
+      id: 'ability_warrior_challange',
+      ranks: [
+        "A strike that becomes active after parrying an opponent's attack.  This attack deals 150% weapon damage and disarms the target for 6 seconds.",
+      ],
+      row: 2,
+      name: 'Riposte',
+      col: 1,
+      maxPoints: 1,
+      requires: {
+        id: 'ability_parry',
+        points: 5,
+      },
+      icon: 'ability_warrior_challange.png',
+      points: 0,
+    },
+    {
+      id: 'ability_rogue_sprint',
+      ranks: [
+        'Gives a 50% chance to remove all Movement Impairing effects when you activate your Sprint ability.',
+        'Gives a 100% chance to remove all Movement Impairing effects when you activate your Sprint ability.',
+      ],
+      row: 2,
+      name: 'Improved Sprint',
+      col: 3,
+      maxPoints: 2,
+      icon: 'ability_rogue_sprint.png',
+      points: 0,
+    },
+    {
+      id: 'ability_kick',
+      ranks: [
+        'Gives your Kick ability a 50% chance to silence the target for 2 seconds.',
+        'Gives your Kick ability a 100% chance to silence the target for 2 seconds.',
+      ],
+      row: 3,
+      name: 'Improved Kick',
+      col: 0,
+      maxPoints: 2,
+      icon: 'ability_kick.png',
+      points: 0,
+    },
+    {
+      id: 'inv_weapon_shortblade_05',
+      ranks: [
+        'Increases your chance to get a critical strike with Daggers by 1%.',
+        'Increases your chance to get a critical strike with Daggers by 2%.',
+        'Increases your chance to get a critical strike with Daggers by 3%.',
+        'Increases your chance to get a critical strike with Daggers by 4%.',
+        'Increases your chance to get a critical strike with Daggers by 5%.',
+      ],
+      row: 3,
+      name: 'Dagger Specialization',
+      col: 1,
+      maxPoints: 5,
+      icon: 'inv_weapon_shortblade_05.png',
+      points: 0,
+    },
+    {
+      id: 'ability_dualwield',
+      ranks: [
+        'Increases the damage done by your offhand weapon by 10%.',
+        'Increases the damage done by your offhand weapon by 20%.',
+        'Increases the damage done by your offhand weapon by 30%.',
+        'Increases the damage done by your offhand weapon by 40%.',
+        'Increases the damage done by your offhand weapon by 50%.',
+      ],
+      row: 3,
+      name: 'Dual Wield Specialization',
+      col: 2,
+      maxPoints: 5,
+      requires: {
+        id: 'ability_marksmanship',
+        points: 5,
+      },
+      icon: 'ability_dualwield.png',
+      points: 0,
+    },
+    {
+      id: 'inv_axe_06',
+      ranks: [
+        'Gives you a 1% chance to cause your target to bleed for 100% weapon damage over 15 seconds after hitting them with an Axe.',
+        'Gives you a 2% chance to cause your target to bleed for 100% weapon damage over 15 seconds after hitting them with an Axe.',
+        'Gives you a 3% chance to cause your target to bleed for 100% weapon damage over 15 seconds after hitting them with an Axe.',
+        'Gives you a 4% chance to cause your target to bleed for 100% weapon damage over 15 seconds after hitting them with an Axe.',
+        'Gives you a 5% chance to cause your target to bleed for 100% weapon damage over 15 seconds after hitting them with an Axe.',
+      ],
+      row: 3,
+      name: 'Axe Specialization',
+      col: 3,
+      maxPoints: 5,
+      icon: 'inv_axe_06.png',
+      points: 0,
+    },
+    {
+      id: 'inv_mace_01',
+      ranks: [
+        'Increases the damage dealt by your critical strikes with maces by 1%, and gives you a 1% chance to stun your target for 3 seconds with a mace.',
+        'Increases the damage dealt by your critical strikes with maces by 2%, and gives you a 2% chance to stun your target for 3 seconds with a mace.',
+        'Increases the damage dealt by your critical strikes with maces by 3%, and gives you a 3% chance to stun your target for 3 seconds with a mace.',
+        'Increases the damage dealt by your critical strikes with maces by 4%, and gives you a 4% chance to stun your target for 3 seconds with a mace.',
+        'Increases the damage dealt by your critical strikes with maces by 5%, and gives you a 6% chance to stun your target for 3 seconds with a mace.',
+      ],
+      row: 4,
+      name: 'Mace Specialization',
+      col: 0,
+      maxPoints: 5,
+      icon: 'inv_mace_01.png',
+      points: 0,
+    },
+    {
+      id: 'ability_warrior_punishingblow',
+      ranks: [
+        'Increases your attack speed by 20%.  In addition, attacks strike an additional nearby opponent.  Lasts 15 seconds.',
+      ],
+      row: 4,
+      name: 'Blade Flurry',
+      col: 1,
+      maxPoints: 1,
+      icon: 'ability_warrior_punishingblow.png',
+      points: 0,
+    },
+    {
+      id: 'inv_sword_27',
+      ranks: [
+        'Gives you a 1% chance to get an extra attack on the same target after hitting your target with your Sword.',
+        'Gives you a 2% chance to get an extra attack on the same target after hitting your target with your Sword.',
+        'Gives you a 3% chance to get an extra attack on the same target after hitting your target with your Sword.',
+        'Gives you a 4% chance to get an extra attack on the same target after hitting your target with your Sword.',
+        'Gives you a 5% chance to get an extra attack on the same target after hitting your target with your Sword.',
+      ],
+      row: 4,
+      name: 'Sword Specialization',
+      col: 2,
+      maxPoints: 5,
+      icon: 'inv_sword_27.png',
+      points: 0,
+    },
+    {
+      id: 'inv_gauntlets_04',
+      ranks: [
+        'Increases your chance to get a critical strike with Fist Weapons by 1%.',
+        'Increases your chance to get a critical strike with Fist Weapons by 2%.',
+        'Increases your chance to get a critical strike with Fist Weapons by 3%.',
+        'Increases your chance to get a critical strike with Fist Weapons by 4%.',
+        'Increases your chance to get a critical strike with Fist Weapons by 5%.',
+      ],
+      row: 4,
+      name: 'Fist Weapon Specialization',
+      col: 3,
+      maxPoints: 5,
+      icon: 'inv_gauntlets_04.png',
+      points: 0,
+    },
+    {
+      id: 'ability_rogue_bladetwisting',
+      ranks: [
+        'Gives your Sinister Strike, Backstab, Gouge and Shiv abilities a 10% chance to Daze the target for 4 seconds.',
+        'Gives your Sinister Strike, Backstab, Gouge and Shiv abilities a 20% chance to Daze the target for 4 seconds.',
+      ],
+      row: 5,
+      name: 'Blade Twisting',
+      col: 0,
+      maxPoints: 2,
+      icon: 'ability_rogue_bladetwisting.png',
+      points: 0,
+    },
+    {
+      id: 'spell_holy_blessingofstrength',
+      ranks: [
+        'Reduces your chance to be dodged or parried by 1.25%.',
+        'Reduces your chance to be dodged or parried by 2.5%.',
+      ],
+      row: 5,
+      name: 'Weapon Expertise',
+      col: 1,
+      maxPoints: 2,
+      requires: {
+        id: 'ability_warrior_punishingblow',
+        points: 1,
+      },
+      icon: 'spell_holy_blessingofstrength.png',
+      points: 0,
+    },
+    {
+      id: 'ability_racial_avatar',
+      ranks: [
+        'Increases the damage of your Sinister Strike, Backstab, and Eviscerate abilities by 2%.',
+        'Increases the damage of your Sinister Strike, Backstab, and Eviscerate abilities by 4%.',
+        'Increases the damage of your Sinister Strike, Backstab, and Eviscerate abilities by 6%.',
+      ],
+      row: 5,
+      name: 'Aggression',
+      col: 2,
+      maxPoints: 3,
+      icon: 'ability_racial_avatar.png',
+      points: 0,
+    },
+    {
+      id: 'ability_warrior_revenge',
+      ranks: [
+        'Increases your total Stamina by 2% and your total Agility by 1%.',
+        'Increases your total Stamina by 4% and your total Agility by 2%.',
+      ],
+      row: 6,
+      name: 'Vitality',
+      col: 0,
+      maxPoints: 2,
+      icon: 'ability_warrior_revenge.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_shadowworddominate',
+      ranks: [
+        'Increases your Energy regeneration rate by 100% for 15 seconds.',
+      ],
+      row: 6,
+      name: 'Adrenaline Rush',
+      col: 1,
+      maxPoints: 1,
+      icon: 'spell_shadow_shadowworddominate.png',
+      points: 0,
+    },
+    {
+      id: 'ability_rogue_nervesofsteel',
+      ranks: [
+        'Increases your chance to resist Stun and Fear effects by an additional 5%.',
+        'Increases your chance to resist Stun and Fear effects by an additional 10%.',
+      ],
+      row: 6,
+      name: 'Nerves of Steel',
+      col: 2,
+      maxPoints: 2,
+      icon: 'ability_rogue_nervesofsteel.png',
+      points: 0,
+    },
+    {
+      id: 'inv_weapon_shortblade_38',
+      ranks: [
+        'Gives your successful off-hand melee attacks a 20% chance to generate 3 Energy.',
+        'Gives your successful off-hand melee attacks a 20% chance to generate 6 Energy.',
+        'Gives your successful off-hand melee attacks a 20% chance to generate 9 Energy.',
+        'Gives your successful off-hand melee attacks a 20% chance to generate 12 Energy.',
+        'Gives your successful off-hand melee attacks a 20% chance to generate 15 Energy.',
+      ],
+      row: 7,
+      name: 'Combat Potency',
+      col: 2,
+      maxPoints: 5,
+      icon: 'inv_weapon_shortblade_38.png',
+      points: 0,
+    },
+    {
+      id: 'ability_rogue_surpriseattack',
+      ranks: [
+        'Your finishing moves can no longer be dodged, and the damage dealt by your Sinister Strike, Backstab, Shiv and Gouge abilities is increased by 10%.',
+      ],
+      row: 8,
+      name: 'Surprise Attacks',
+      col: 1,
+      maxPoints: 1,
+      requires: {
+        id: 'spell_shadow_shadowworddominate',
+        points: 1,
+      },
+      icon: 'ability_rogue_surpriseattack.png',
+      points: 0,
+    },
+  ],
+}

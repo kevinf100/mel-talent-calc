@@ -328,18 +328,13 @@ export const initialTalentTrees: Tree[] = [
           points: 1,
         },
         abilityData: {
-          leftSide: [
-            '30 Rage',
-            'Instant'
-          ],
+          leftSide: ['30 Rage', 'Instant'],
           rightSide: [
             'Melee Range',
-            '6 sec cooldown'
+            '6 sec cooldown',
           ],
-          bottom: [
-            'Requires Melee Weapon'
-          ]
-        }
+          bottom: ['Requires Melee Weapon'],
+        },
       },
       {
         id: 'ability_hunter_harass',
@@ -395,21 +390,11 @@ export const initialTalentTrees: Tree[] = [
         maxPoints: 1,
         icon: 'ability_warrior_bladestorm.png',
         abilityData: {
-          leftSide: [
-            "25 Rage",
-            "Instant cast",
-          ],
-          rightSide: [
-            "",
-            "1.5 min cooldown"
-          ],
-          bottom: [
-            "Requires Melee Weapon"
-          ]
-        }
+          leftSide: ['25 Rage', 'Instant cast'],
+          rightSide: ['', '1.5 min cooldown'],
+          bottom: ['Requires Melee Weapon'],
+        },
       },
     ],
   },
-  
-
 ]

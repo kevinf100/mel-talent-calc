@@ -29,24 +29,25 @@ export const AbilityDataSection = ({
           )}
         </div>
         <div className='flex-1'>
-          {abilityData.rightSide?.map((line, i) =>
-            line.trim() === '' ? (
-              <p
-                key={`right-spacer-${i}`}
-                style={{
-                  visibility: 'hidden',
-                }}
-              >
-                &nbsp;
-              </p>
-            ) : (
-              <p
-                key={`right-${i}`}
-                className='text-right'
-              >
-                {line}
-              </p>
-            )
+          {abilityData.rightSide?.map(
+            (line, i) =>
+              line.trim() === '' ? (
+                <p
+                  key={`right-spacer-${i}`}
+                  style={{
+                    visibility: 'hidden',
+                  }}
+                >
+                  &nbsp;
+                </p>
+              ) : (
+                <p
+                  key={`right-${i}`}
+                  className='text-right'
+                >
+                  {line}
+                </p>
+              )
           )}
         </div>
       </div>

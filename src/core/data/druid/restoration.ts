@@ -1,325 +1,326 @@
-import type { Tree } from '../../types';
+import type { Tree } from '../../types'
 
 export const restoration: Tree = {
-    specIcon: "spell_nature_healingtouch.png",
-    name: "Restoration",
-    backgroundImage: "src/assets/images/druid/background-druid-restoration.webp",
-    talents: [
-        {
-            id: "spell_nature_regeneration",
-            ranks: [
-                "Increases the effects of your Mark of the Wild and Gift of the Wild spells by 7%.",
-                "Increases the effects of your Mark of the Wild and Gift of the Wild spells by 14%.",
-                "Increases the effects of your Mark of the Wild and Gift of the Wild spells by 21%.",
-                "Increases the effects of your Mark of the Wild and Gift of the Wild spells by 28%.",
-                "Increases the effects of your Mark of the Wild and Gift of the Wild spells by 35%."
-            ],
-            row: 0,
-            name: "Improved Mark of the Wild",
-            col: 1,
-            maxPoints: 5,
-            icon: "spell_nature_regeneration.png",
-            points: 0
-        },
-        {
-            id: "spell_holy_blessingofstamina",
-            ranks: [
-                "Gives you 20% chance to gain 15 Rage when you shapeshift into Bear and Dire Bear Form or 60 Energy when you shapeshift into Cat Form.",
-                "Gives you 40% chance to gain 15 Rage when you shapeshift into Bear and Dire Bear Form or 60 Energy when you shapeshift into Cat Form.",
-                "Gives you 60% chance to gain 15 Rage when you shapeshift into Bear and Dire Bear Form or 60 Energy when you shapeshift into Cat Form.",
-                "Gives you 80% chance to gain 15 Rage when you shapeshift into Bear and Dire Bear Form or 60 Energy when you shapeshift into Cat Form.",
-                "Gives you 100% chance to gain 15 Rage when you shapeshift into Bear and Dire Bear Form or 60 Energy when you shapeshift into Cat Form."
-            ],
-            row: 0,
-            name: "Furor",
-            col: 2,
-            maxPoints: 5,
-            icon: "spell_holy_blessingofstamina.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_healingtouch",
-            ranks: [
-                "Reduces the cast time of your Healing Touch spell by 0.1 sec and increases the damage you deal with physical attacks in all forms by 2%.",
-                "Reduces the cast time of your Healing Touch spell by 0.2 sec and increases the damage you deal with physical attacks in all forms by 4%.",
-                "Reduces the cast time of your Healing Touch spell by 0.3 sec and increases the damage you deal with physical attacks in all forms by 6%.",
-                "Reduces the cast time of your Healing Touch spell by 0.4 sec and increases the damage you deal with physical attacks in all forms by 8%.",
-                "Reduces the cast time of your Healing Touch spell by 0.5 sec and increases the damage you deal with physical attacks in all forms by 10%."
-            ],
-            row: 1,
-            name: "Naturalist",
-            col: 0,
-            maxPoints: 5,
-            icon: "spell_nature_healingtouch.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_healingwavegreater",
-            ranks: [
-                "Gives you a 14% chance to avoid interruption caused by damage while casting the Healing Touch, Regrowth and Tranquility spells.",
-                "Gives you a 28% chance to avoid interruption caused by damage while casting the Healing Touch, Regrowth and Tranquility spells.",
-                "Gives you a 42% chance to avoid interruption caused by damage while casting the Healing Touch, Regrowth and Tranquility spells.",
-                "Gives you a 56% chance to avoid interruption caused by damage while casting the Healing Touch, Regrowth and Tranquility spells.",
-                "Gives you a 70% chance to avoid interruption caused by damage while casting the Healing Touch, Regrowth and Tranquility spells."
-            ],
-            row: 1,
-            name: "Nature's Focus",
-            col: 1,
-            maxPoints: 5,
-            icon: "spell_nature_healingwavegreater.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_wispsplode",
-            ranks: [
-                "Reduces the mana cost of all shapeshifting by 10%.",
-                "Reduces the mana cost of all shapeshifting by 20%.",
-                "Reduces the mana cost of all shapeshifting by 30%."
-            ],
-            row: 1,
-            name: "Natural Shapeshifter",
-            col: 2,
-            maxPoints: 3,
-            icon: "spell_nature_wispsplode.png",
-            points: 0
-        },
-        {
-            id: "spell_frost_windwalkon",
-            ranks: [
-                "Allows 10% of your Mana regeneration to continue while casting and causes your Enrage ability to instantly generate 4 rage.",
-                "Allows 20% of your Mana regeneration to continue while casting and causes your Enrage ability to instantly generate 7 rage.",
-                "Allows 30% of your Mana regeneration to continue while casting and causes your Enrage ability to instantly generate 10 rage."
-            ],
-            row: 2,
-            name: "Intensity",
-            col: 0,
-            maxPoints: 3,
-            icon: "spell_frost_windwalkon.png",
-            points: 0
-        },
-        {
-            id: "ability_eyeoftheowl",
-            ranks: [
-                "Reduces the threat generated by your spells by 4% and reduces the chance your spells will be dispelled by 6%.",
-                "Reduces the threat generated by your spells by 8% and reduces the chance your spells will be dispelled by 12%.",
-                "Reduces the threat generated by your spells by 12% and reduces the chance your spells will be dispelled by 18%.",
-                "Reduces the threat generated by your spells by 16% and reduces the chance your spells will be dispelled by 24%.",
-                "Reduces the threat generated by your spells by 20% and reduces the chance your spells will be dispelled by 30%."
-            ],
-            row: 2,
-            name: "Subtlety",
-            col: 1,
-            maxPoints: 5,
-            icon: "ability_eyeoftheowl.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_crystalball",
-            ranks: [
-                "Each of your melee attacks have a chance of causing you to enter a Clearcasting state.  The Clearcasting state reduces the Mana, Rage or Energy cost of your next damage or healing spell or offensive ability by 100%."
-            ],
-            row: 2,
-            name: "Omen of Clarity",
-            col: 2,
-            maxPoints: 1,
-            icon: "spell_nature_crystalball.png",
-            points: 0
-        },
-        {
-            id: "ability_druid_replenish",
-            ranks: [
-                "Applies Rejuvenation (Rank 3) to your friendly target and that target's party members within 25 yards."
-            ],
-            row: 2,
-            name: "Overgrowth",
-            col: 3,
-            maxPoints: 1,
-            icon: "ability_druid_replenish.png",
-            points: 0
-        },
-        {
-            id: "spell_holy_elunesgrace",
-            ranks: [
-                "Reduces the mana cost of your Healing Touch and Tranquility spells by 2%.",
-                "Reduces the mana cost of your Healing Touch and Tranquility spells by 4%.",
-                "Reduces the mana cost of your Healing Touch and Tranquility spells by 6%.",
-                "Reduces the mana cost of your Healing Touch and Tranquility spells by 8%.",
-                "Reduces the mana cost of your Healing Touch and Tranquility spells by 10%."
-            ],
-            row: 3,
-            name: "Tranquil Spirit",
-            col: 1,
-            maxPoints: 5,
-            icon: "spell_holy_elunesgrace.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_rejuvenation",
-            ranks: [
-                "Increases the effect of your Rejuvenation spell by 5%.",
-                "Increases the effect of your Rejuvenation spell by 10%.",
-                "Increases the effect of your Rejuvenation spell by 15%."
-            ],
-            row: 3,
-            name: "Improved Rejuvenation",
-            col: 2,
-            maxPoints: 3,
-            icon: "spell_nature_rejuvenation.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_ravenform",
-            ranks: [
-                "When activated, your next Nature spell becomes an instant cast spell."
-            ],
-            row: 4,
-            name: "Nature's Swiftness",
-            col: 0,
-            maxPoints: 1,
-            requires: {
-                id: "spell_frost_windwalkon",
-                points: 3
-            },
-            icon: "spell_nature_ravenform.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_protectionformnature",
-            ranks: [
-                "Increases the effect of all healing spells by 2%.",
-                "Increases the effect of all healing spells by 4%.",
-                "Increases the effect of all healing spells by 6%.",
-                "Increases the effect of all healing spells by 8%.",
-                "Increases the effect of all healing spells by 10%."
-            ],
-            row: 4,
-            name: "Gift of Nature",
-            col: 1,
-            maxPoints: 5,
-            icon: "spell_nature_protectionformnature.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_tranquility",
-            ranks: [
-                "Reduces threat caused by Tranquility by 50%.",
-                "Reduces threat caused by Tranquility by 100%."
-            ],
-            row: 4,
-            name: "Improved Tranquility",
-            col: 3,
-            maxPoints: 2,
-            icon: "spell_nature_tranquility.png",
-            points: 0
-        },
-        {
-            id: "ability_druid_empoweredtouch",
-            ranks: [
-                "Your Healing Touch spell gains an additional 10% of your bonus healing effects.",
-                "Your Healing Touch spell gains an additional 20% of your bonus healing effects."
-            ],
-            row: 5,
-            name: "Empowered Touch",
-            col: 0,
-            maxPoints: 2,
-            icon: "ability_druid_empoweredtouch.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_resistnature",
-            ranks: [
-                "Increases the critical effect chance of your Regrowth spell by 10%.",
-                "Increases the critical effect chance of your Regrowth spell by 20%.",
-                "Increases the critical effect chance of your Regrowth spell by 30%.",
-                "Increases the critical effect chance of your Regrowth spell by 40%.",
-                "Increases the critical effect chance of your Regrowth spell by 50%."
-            ],
-            row: 5,
-            name: "Improved Regrowth",
-            col: 2,
-            maxPoints: 5,
-            requires: {
-                id: "spell_nature_rejuvenation",
-                points: 3
-            },
-            icon: "spell_nature_resistnature.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_giftofthewaterspirit",
-            ranks: [
-                "Increases your total Spirit by 5%.",
-                "Increases your total Spirit by 10%.",
-                "Increases your total Spirit by 15%."
-            ],
-            row: 6,
-            name: "Living Spirit",
-            col: 0,
-            maxPoints: 3,
-            icon: "spell_nature_giftofthewaterspirit.png",
-            points: 0
-        },
-        {
-            id: "inv_relics_idolofrejuvenation",
-            ranks: [
-                "Consumes a Rejuvenation or Regrowth effect on a friendly target to instantly heal them an amount equal to 12 sec. of Rejuvenation or 18 sec. of Regrowth."
-            ],
-            row: 6,
-            name: "Swiftmend",
-            col: 1,
-            maxPoints: 1,
-            requires: {
-                id: "spell_nature_protectionformnature",
-                points: 5
-            },
-            icon: "inv_relics_idolofrejuvenation.png",
-            points: 0
-        },
-        {
-            id: "ability_druid_naturalperfection",
-            ranks: [
-                "Your critical strike chance with all spells is increased by 1% and critical strikes against you give you the Natural Perfection effect reducing all damage taken by 2%.  Stacks up to 3 times.  Lasts 8 seconds.",
-                "Your critical strike chance with all spells is increased by 2% and critical strikes against you give you the Natural Perfection effect reducing all damage taken by 3%.  Stacks up to 3 times.  Lasts 8 seconds.",
-                "Your critical strike chance with all spells is increased by 3% and critical strikes against you give you the Natural Perfection effect reducing all damage taken by 4%.  Stacks up to 3 times.  Lasts 8 seconds."
-            ],
-            row: 6,
-            name: "Natural Perfection",
-            col: 2,
-            maxPoints: 3,
-            icon: "ability_druid_naturalperfection.png",
-            points: 0
-        },
-        {
-            id: "ability_druid_empoweredrejuvination",
-            ranks: [
-                "The bonus healing effects of your healing over time spells is increased by 4%.",
-                "The bonus healing effects of your healing over time spells is increased by 8%.",
-                "The bonus healing effects of your healing over time spells is increased by 12%.",
-                "The bonus healing effects of your healing over time spells is increased by 16%.",
-                "The bonus healing effects of your healing over time spells is increased by 20%."
-            ],
-            row: 7,
-            name: "Empowered Rejuvenation",
-            col: 1,
-            maxPoints: 5,
-            icon: "ability_druid_empoweredrejuvination.png",
-            points: 0
-        },
-        {
-            id: "ability_druid_treeoflife",
-            ranks: [
-                "Shapeshift into the Tree of Life.  While in this form you increase healing received by 25% of your total Spirit for all party members within 45 yards, your movement speed is reduced by 20%, and you can only cast Swiftmend, Innervate, Nature's Swiftness, Barkskin, non-healing Restoration spells, and healing over time spells, but the mana cost of these spells is reduced by 20%.\n\nThe act of shapeshifting frees the caster of Polymorph and Movement Impairing effects."
-            ],
-            row: 8,
-            name: "Tree of Life",
-            col: 1,
-            maxPoints: 1,
-            requires: {
-                id: "ability_druid_empoweredrejuvination",
-                points: 5
-            },
-            icon: "ability_druid_treeoflife.png",
-            points: 0
-        }
-    ]
-};
+  specIcon: 'spell_nature_healingtouch.png',
+  name: 'Restoration',
+  backgroundImage:
+    'src/assets/images/druid/background-druid-restoration.webp',
+  talents: [
+    {
+      id: 'spell_nature_regeneration',
+      ranks: [
+        'Increases the effects of your Mark of the Wild and Gift of the Wild spells by 7%.',
+        'Increases the effects of your Mark of the Wild and Gift of the Wild spells by 14%.',
+        'Increases the effects of your Mark of the Wild and Gift of the Wild spells by 21%.',
+        'Increases the effects of your Mark of the Wild and Gift of the Wild spells by 28%.',
+        'Increases the effects of your Mark of the Wild and Gift of the Wild spells by 35%.',
+      ],
+      row: 0,
+      name: 'Improved Mark of the Wild',
+      col: 1,
+      maxPoints: 5,
+      icon: 'spell_nature_regeneration.png',
+      points: 0,
+    },
+    {
+      id: 'spell_holy_blessingofstamina',
+      ranks: [
+        'Gives you 20% chance to gain 15 Rage when you shapeshift into Bear and Dire Bear Form or 60 Energy when you shapeshift into Cat Form.',
+        'Gives you 40% chance to gain 15 Rage when you shapeshift into Bear and Dire Bear Form or 60 Energy when you shapeshift into Cat Form.',
+        'Gives you 60% chance to gain 15 Rage when you shapeshift into Bear and Dire Bear Form or 60 Energy when you shapeshift into Cat Form.',
+        'Gives you 80% chance to gain 15 Rage when you shapeshift into Bear and Dire Bear Form or 60 Energy when you shapeshift into Cat Form.',
+        'Gives you 100% chance to gain 15 Rage when you shapeshift into Bear and Dire Bear Form or 60 Energy when you shapeshift into Cat Form.',
+      ],
+      row: 0,
+      name: 'Furor',
+      col: 2,
+      maxPoints: 5,
+      icon: 'spell_holy_blessingofstamina.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_healingtouch',
+      ranks: [
+        'Reduces the cast time of your Healing Touch spell by 0.1 sec and increases the damage you deal with physical attacks in all forms by 2%.',
+        'Reduces the cast time of your Healing Touch spell by 0.2 sec and increases the damage you deal with physical attacks in all forms by 4%.',
+        'Reduces the cast time of your Healing Touch spell by 0.3 sec and increases the damage you deal with physical attacks in all forms by 6%.',
+        'Reduces the cast time of your Healing Touch spell by 0.4 sec and increases the damage you deal with physical attacks in all forms by 8%.',
+        'Reduces the cast time of your Healing Touch spell by 0.5 sec and increases the damage you deal with physical attacks in all forms by 10%.',
+      ],
+      row: 1,
+      name: 'Naturalist',
+      col: 0,
+      maxPoints: 5,
+      icon: 'spell_nature_healingtouch.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_healingwavegreater',
+      ranks: [
+        'Gives you a 14% chance to avoid interruption caused by damage while casting the Healing Touch, Regrowth and Tranquility spells.',
+        'Gives you a 28% chance to avoid interruption caused by damage while casting the Healing Touch, Regrowth and Tranquility spells.',
+        'Gives you a 42% chance to avoid interruption caused by damage while casting the Healing Touch, Regrowth and Tranquility spells.',
+        'Gives you a 56% chance to avoid interruption caused by damage while casting the Healing Touch, Regrowth and Tranquility spells.',
+        'Gives you a 70% chance to avoid interruption caused by damage while casting the Healing Touch, Regrowth and Tranquility spells.',
+      ],
+      row: 1,
+      name: "Nature's Focus",
+      col: 1,
+      maxPoints: 5,
+      icon: 'spell_nature_healingwavegreater.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_wispsplode',
+      ranks: [
+        'Reduces the mana cost of all shapeshifting by 10%.',
+        'Reduces the mana cost of all shapeshifting by 20%.',
+        'Reduces the mana cost of all shapeshifting by 30%.',
+      ],
+      row: 1,
+      name: 'Natural Shapeshifter',
+      col: 2,
+      maxPoints: 3,
+      icon: 'spell_nature_wispsplode.png',
+      points: 0,
+    },
+    {
+      id: 'spell_frost_windwalkon',
+      ranks: [
+        'Allows 10% of your Mana regeneration to continue while casting and causes your Enrage ability to instantly generate 4 rage.',
+        'Allows 20% of your Mana regeneration to continue while casting and causes your Enrage ability to instantly generate 7 rage.',
+        'Allows 30% of your Mana regeneration to continue while casting and causes your Enrage ability to instantly generate 10 rage.',
+      ],
+      row: 2,
+      name: 'Intensity',
+      col: 0,
+      maxPoints: 3,
+      icon: 'spell_frost_windwalkon.png',
+      points: 0,
+    },
+    {
+      id: 'ability_eyeoftheowl',
+      ranks: [
+        'Reduces the threat generated by your spells by 4% and reduces the chance your spells will be dispelled by 6%.',
+        'Reduces the threat generated by your spells by 8% and reduces the chance your spells will be dispelled by 12%.',
+        'Reduces the threat generated by your spells by 12% and reduces the chance your spells will be dispelled by 18%.',
+        'Reduces the threat generated by your spells by 16% and reduces the chance your spells will be dispelled by 24%.',
+        'Reduces the threat generated by your spells by 20% and reduces the chance your spells will be dispelled by 30%.',
+      ],
+      row: 2,
+      name: 'Subtlety',
+      col: 1,
+      maxPoints: 5,
+      icon: 'ability_eyeoftheowl.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_crystalball',
+      ranks: [
+        'Each of your melee attacks have a chance of causing you to enter a Clearcasting state.  The Clearcasting state reduces the Mana, Rage or Energy cost of your next damage or healing spell or offensive ability by 100%.',
+      ],
+      row: 2,
+      name: 'Omen of Clarity',
+      col: 2,
+      maxPoints: 1,
+      icon: 'spell_nature_crystalball.png',
+      points: 0,
+    },
+    {
+      id: 'ability_druid_replenish',
+      ranks: [
+        "Applies Rejuvenation (Rank 3) to your friendly target and that target's party members within 25 yards.",
+      ],
+      row: 2,
+      name: 'Overgrowth',
+      col: 3,
+      maxPoints: 1,
+      icon: 'ability_druid_replenish.png',
+      points: 0,
+    },
+    {
+      id: 'spell_holy_elunesgrace',
+      ranks: [
+        'Reduces the mana cost of your Healing Touch and Tranquility spells by 2%.',
+        'Reduces the mana cost of your Healing Touch and Tranquility spells by 4%.',
+        'Reduces the mana cost of your Healing Touch and Tranquility spells by 6%.',
+        'Reduces the mana cost of your Healing Touch and Tranquility spells by 8%.',
+        'Reduces the mana cost of your Healing Touch and Tranquility spells by 10%.',
+      ],
+      row: 3,
+      name: 'Tranquil Spirit',
+      col: 1,
+      maxPoints: 5,
+      icon: 'spell_holy_elunesgrace.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_rejuvenation',
+      ranks: [
+        'Increases the effect of your Rejuvenation spell by 5%.',
+        'Increases the effect of your Rejuvenation spell by 10%.',
+        'Increases the effect of your Rejuvenation spell by 15%.',
+      ],
+      row: 3,
+      name: 'Improved Rejuvenation',
+      col: 2,
+      maxPoints: 3,
+      icon: 'spell_nature_rejuvenation.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_ravenform',
+      ranks: [
+        'When activated, your next Nature spell becomes an instant cast spell.',
+      ],
+      row: 4,
+      name: "Nature's Swiftness",
+      col: 0,
+      maxPoints: 1,
+      requires: {
+        id: 'spell_frost_windwalkon',
+        points: 3,
+      },
+      icon: 'spell_nature_ravenform.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_protectionformnature',
+      ranks: [
+        'Increases the effect of all healing spells by 2%.',
+        'Increases the effect of all healing spells by 4%.',
+        'Increases the effect of all healing spells by 6%.',
+        'Increases the effect of all healing spells by 8%.',
+        'Increases the effect of all healing spells by 10%.',
+      ],
+      row: 4,
+      name: 'Gift of Nature',
+      col: 1,
+      maxPoints: 5,
+      icon: 'spell_nature_protectionformnature.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_tranquility',
+      ranks: [
+        'Reduces threat caused by Tranquility by 50%.',
+        'Reduces threat caused by Tranquility by 100%.',
+      ],
+      row: 4,
+      name: 'Improved Tranquility',
+      col: 3,
+      maxPoints: 2,
+      icon: 'spell_nature_tranquility.png',
+      points: 0,
+    },
+    {
+      id: 'ability_druid_empoweredtouch',
+      ranks: [
+        'Your Healing Touch spell gains an additional 10% of your bonus healing effects.',
+        'Your Healing Touch spell gains an additional 20% of your bonus healing effects.',
+      ],
+      row: 5,
+      name: 'Empowered Touch',
+      col: 0,
+      maxPoints: 2,
+      icon: 'ability_druid_empoweredtouch.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_resistnature',
+      ranks: [
+        'Increases the critical effect chance of your Regrowth spell by 10%.',
+        'Increases the critical effect chance of your Regrowth spell by 20%.',
+        'Increases the critical effect chance of your Regrowth spell by 30%.',
+        'Increases the critical effect chance of your Regrowth spell by 40%.',
+        'Increases the critical effect chance of your Regrowth spell by 50%.',
+      ],
+      row: 5,
+      name: 'Improved Regrowth',
+      col: 2,
+      maxPoints: 5,
+      requires: {
+        id: 'spell_nature_rejuvenation',
+        points: 3,
+      },
+      icon: 'spell_nature_resistnature.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_giftofthewaterspirit',
+      ranks: [
+        'Increases your total Spirit by 5%.',
+        'Increases your total Spirit by 10%.',
+        'Increases your total Spirit by 15%.',
+      ],
+      row: 6,
+      name: 'Living Spirit',
+      col: 0,
+      maxPoints: 3,
+      icon: 'spell_nature_giftofthewaterspirit.png',
+      points: 0,
+    },
+    {
+      id: 'inv_relics_idolofrejuvenation',
+      ranks: [
+        'Consumes a Rejuvenation or Regrowth effect on a friendly target to instantly heal them an amount equal to 12 sec. of Rejuvenation or 18 sec. of Regrowth.',
+      ],
+      row: 6,
+      name: 'Swiftmend',
+      col: 1,
+      maxPoints: 1,
+      requires: {
+        id: 'spell_nature_protectionformnature',
+        points: 5,
+      },
+      icon: 'inv_relics_idolofrejuvenation.png',
+      points: 0,
+    },
+    {
+      id: 'ability_druid_naturalperfection',
+      ranks: [
+        'Your critical strike chance with all spells is increased by 1% and critical strikes against you give you the Natural Perfection effect reducing all damage taken by 2%.  Stacks up to 3 times.  Lasts 8 seconds.',
+        'Your critical strike chance with all spells is increased by 2% and critical strikes against you give you the Natural Perfection effect reducing all damage taken by 3%.  Stacks up to 3 times.  Lasts 8 seconds.',
+        'Your critical strike chance with all spells is increased by 3% and critical strikes against you give you the Natural Perfection effect reducing all damage taken by 4%.  Stacks up to 3 times.  Lasts 8 seconds.',
+      ],
+      row: 6,
+      name: 'Natural Perfection',
+      col: 2,
+      maxPoints: 3,
+      icon: 'ability_druid_naturalperfection.png',
+      points: 0,
+    },
+    {
+      id: 'ability_druid_empoweredrejuvination',
+      ranks: [
+        'The bonus healing effects of your healing over time spells is increased by 4%.',
+        'The bonus healing effects of your healing over time spells is increased by 8%.',
+        'The bonus healing effects of your healing over time spells is increased by 12%.',
+        'The bonus healing effects of your healing over time spells is increased by 16%.',
+        'The bonus healing effects of your healing over time spells is increased by 20%.',
+      ],
+      row: 7,
+      name: 'Empowered Rejuvenation',
+      col: 1,
+      maxPoints: 5,
+      icon: 'ability_druid_empoweredrejuvination.png',
+      points: 0,
+    },
+    {
+      id: 'ability_druid_treeoflife',
+      ranks: [
+        "Shapeshift into the Tree of Life.  While in this form you increase healing received by 25% of your total Spirit for all party members within 45 yards, your movement speed is reduced by 20%, and you can only cast Swiftmend, Innervate, Nature's Swiftness, Barkskin, non-healing Restoration spells, and healing over time spells, but the mana cost of these spells is reduced by 20%.\n\nThe act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.",
+      ],
+      row: 8,
+      name: 'Tree of Life',
+      col: 1,
+      maxPoints: 1,
+      requires: {
+        id: 'ability_druid_empoweredrejuvination',
+        points: 5,
+      },
+      icon: 'ability_druid_treeoflife.png',
+      points: 0,
+    },
+  ],
+}

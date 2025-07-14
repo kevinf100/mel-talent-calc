@@ -1,20 +1,30 @@
 import { TalentTree } from './TalentTree'
 import { GlobalPointsSummary } from './GlobalPointsSummary'
 import { useTalentTrees } from '../core/useTalentTrees'
-import { TalentTreeScroller, type TalentTreeScrollerRef } from './TalentTreeScroller'
+import {
+  TalentTreeScroller,
+  type TalentTreeScrollerRef,
+} from './TalentTreeScroller'
 
 import ResetSprite from '../assets/ui/reset-all-button-sprite-small.png'
 import { ParchmentBorders } from './ParchmentBorders'
 import { ClassPicker } from './ClassPicker'
-import { useState, useEffect, useRef } from 'react'
+import {
+  useState,
+  useEffect,
+  useRef,
+} from 'react'
 import type { ClassName } from '../core/types'
 import { CLASS_NAMES } from '../core/constants'
 
-const SELECTED_CLASS_KEY = 'mel-talent-calc-selected-class'
+const SELECTED_CLASS_KEY =
+  'mel-talent-calc-selected-class'
 
 const getInitialSelectedClass = (): ClassName => {
   try {
-    const saved = localStorage.getItem(SELECTED_CLASS_KEY)
+    const saved = localStorage.getItem(
+      SELECTED_CLASS_KEY
+    )
     return (saved as ClassName) || CLASS_NAMES[0]
   } catch {
     return CLASS_NAMES[0]
@@ -24,12 +34,16 @@ const getInitialSelectedClass = (): ClassName => {
 export const TalentGrid = () => {
   const [selectedClass, setSelectedClass] =
     useState<ClassName>(getInitialSelectedClass)
-  const scrollerRef = useRef<TalentTreeScrollerRef>(null)
-  
+  const scrollerRef =
+    useRef<TalentTreeScrollerRef>(null)
+
   // Save selected class to localStorage whenever it changes
   useEffect(() => {
     try {
-      localStorage.setItem(SELECTED_CLASS_KEY, selectedClass)
+      localStorage.setItem(
+        SELECTED_CLASS_KEY,
+        selectedClass
+      )
     } catch {
       // Silently fail if localStorage is not available
     }
@@ -92,9 +106,12 @@ export const TalentGrid = () => {
                   backgroundPosition: '0px 0px',
                 }}
                 onPointerDown={e => {
-                  const isDesktop = window.innerWidth >= 640
+                  const isDesktop =
+                    window.innerWidth >= 640
                   e.currentTarget.style.backgroundPosition =
-                    isDesktop ? '0.3px -48.75px' : '0.3px -38.75px'
+                    isDesktop
+                      ? '0.3px -48.75px'
+                      : '0.3px -38.75px'
                 }}
                 onPointerUp={e => {
                   e.currentTarget.style.backgroundPosition =

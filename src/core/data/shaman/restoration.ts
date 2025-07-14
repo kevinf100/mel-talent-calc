@@ -1,303 +1,304 @@
-import type { Tree } from '../../types';
+import type { Tree } from '../../types'
 
 export const restoration: Tree = {
-    specIcon: "spell_nature_magicimmunity.png",
-    name: "Restoration",
-    backgroundImage: "src/assets/images/shaman/background-shaman-restoration.webp",
-    talents: [
-        {
-            id: "spell_nature_magicimmunity",
-            ranks: [
-                "Reduces the casting time of your Healing Wave spell by 0.1 sec.",
-                "Reduces the casting time of your Healing Wave spell by 0.2 sec.",
-                "Reduces the casting time of your Healing Wave spell by 0.3 sec.",
-                "Reduces the casting time of your Healing Wave spell by 0.4 sec.",
-                "Reduces the casting time of your Healing Wave spell by 0.5 sec."
-            ],
-            row: 0,
-            name: "Improved Healing Wave",
-            col: 1,
-            maxPoints: 5,
-            icon: "spell_nature_magicimmunity.png",
-            points: 0
-        },
-        {
-            id: "spell_frost_manarecharge",
-            ranks: [
-                "Reduces the mana cost of your healing spells by 1%.",
-                "Reduces the mana cost of your healing spells by 2%.",
-                "Reduces the mana cost of your healing spells by 3%.",
-                "Reduces the mana cost of your healing spells by 4%.",
-                "Reduces the mana cost of your healing spells by 5%."
-            ],
-            row: 0,
-            name: "Tidal Focus",
-            col: 2,
-            maxPoints: 5,
-            icon: "spell_frost_manarecharge.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_reincarnation",
-            ranks: [
-                "Reduces the cooldown of your Reincarnation spell by 10 min and increases the amount of health and mana you reincarnate with by an additional 10%.",
-                "Reduces the cooldown of your Reincarnation spell by 20 min and increases the amount of health and mana you reincarnate with by an additional 20%."
-            ],
-            row: 1,
-            name: "Improved Reincarnation",
-            col: 0,
-            maxPoints: 2,
-            icon: "spell_nature_reincarnation.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_undyingstrength",
-            ranks: [
-                "Increases your target's armor value by 8% for 15 seconds after getting a critical effect from one of your healing spells.",
-                "Increases your target's armor value by 16% for 15 seconds after getting a critical effect from one of your healing spells.",
-                "Increases your target's armor value by 25% for 15 seconds after getting a critical effect from one of your healing spells."
-            ],
-            row: 1,
-            name: "Ancestral Healing",
-            col: 1,
-            maxPoints: 3,
-            icon: "spell_nature_undyingstrength.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_moonglow",
-            ranks: [
-                "Reduces the mana cost of your totems by 5%.",
-                "Reduces the mana cost of your totems by 10%.",
-                "Reduces the mana cost of your totems by 15%.",
-                "Reduces the mana cost of your totems by 20%.",
-                "Reduces the mana cost of your totems by 25%."
-            ],
-            row: 1,
-            name: "Totemic Focus",
-            col: 2,
-            maxPoints: 5,
-            icon: "spell_nature_moonglow.png",
-            points: 0
-        },
-        {
-            id: "spell_frost_stun",
-            ranks: [
-                "Increases your chance to hit with melee attacks and spells by 1%.",
-                "Increases your chance to hit with melee attacks and spells by 2%.",
-                "Increases your chance to hit with melee attacks and spells by 3%."
-            ],
-            row: 2,
-            name: "Nature's Guidance",
-            col: 0,
-            maxPoints: 3,
-            icon: "spell_frost_stun.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_healingwavelesser",
-            ranks: [
-                "Gives you a 14% chance to avoid interruption caused by damage while casting any Shaman healing spell.",
-                "Gives you a 28% chance to avoid interruption caused by damage while casting any Shaman healing spell.",
-                "Gives you a 42% chance to avoid interruption caused by damage while casting any Shaman healing spell.",
-                "Gives you a 56% chance to avoid interruption caused by damage while casting any Shaman healing spell.",
-                "Gives you a 70% chance to avoid interruption caused by damage while casting any Shaman healing spell."
-            ],
-            row: 2,
-            name: "Healing Focus",
-            col: 1,
-            maxPoints: 5,
-            icon: "spell_nature_healingwavelesser.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_nullward",
-            ranks: [
-                "The radius of your totems that affect friendly targets is increased to 30 yards."
-            ],
-            row: 2,
-            name: "Totemic Mastery",
-            col: 2,
-            maxPoints: 1,
-            icon: "spell_nature_nullward.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_healingtouch",
-            ranks: [
-                "Reduces the threat generated by your healing spells by 5% and reduces the chance your spells will be dispelled by 10%.",
-                "Reduces the threat generated by your healing spells by 10% and reduces the chance your spells will be dispelled by 20%.",
-                "Reduces the threat generated by your healing spells by 15% and reduces the chance your spells will be dispelled by 30%."
-            ],
-            row: 2,
-            name: "Healing Grace",
-            col: 3,
-            maxPoints: 3,
-            icon: "spell_nature_healingtouch.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_manaregentotem",
-            ranks: [
-                "Increases the effect of your Mana Spring and Healing Stream Totems by 5%.",
-                "Increases the effect of your Mana Spring and Healing Stream Totems by 10%.",
-                "Increases the effect of your Mana Spring and Healing Stream Totems by 15%.",
-                "Increases the effect of your Mana Spring and Healing Stream Totems by 20%.",
-                "Increases the effect of your Mana Spring and Healing Stream Totems by 25%."
-            ],
-            row: 3,
-            name: "Restorative Totems",
-            col: 1,
-            maxPoints: 5,
-            icon: "spell_nature_manaregentotem.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_tranquility",
-            ranks: [
-                "Increases the critical effect chance of your healing and lightning spells by 1%.",
-                "Increases the critical effect chance of your healing and lightning spells by 2%.",
-                "Increases the critical effect chance of your healing and lightning spells by 3%.",
-                "Increases the critical effect chance of your healing and lightning spells by 4%.",
-                "Increases the critical effect chance of your healing and lightning spells by 5%."
-            ],
-            row: 3,
-            name: "Tidal Mastery",
-            col: 2,
-            maxPoints: 5,
-            icon: "spell_nature_tranquility.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_healingway",
-            ranks: [
-                "Your Healing Wave spells have a 33% chance to increase the effect of subsequent Healing Wave spells on that target by 6% for 15 seconds.  This effect will stack up to 3 times.",
-                "Your Healing Wave spells have a 66% chance to increase the effect of subsequent Healing Wave spells on that target by 6% for 15 seconds.  This effect will stack up to 3 times.",
-                "Your Healing Wave spells have a 100% chance to increase the effect of subsequent Healing Wave spells on that target by 6% for 15 seconds.  This effect will stack up to 3 times."
-            ],
-            row: 4,
-            name: "Healing Way",
-            col: 0,
-            maxPoints: 3,
-            icon: "spell_nature_healingway.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_ravenform",
-            ranks: [
-                "When activated, your next Nature spell with a casting time less than 10 sec. becomes an instant cast spell."
-            ],
-            row: 4,
-            name: "Nature's Swiftness",
-            col: 2,
-            maxPoints: 1,
-            icon: "spell_nature_ravenform.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_focusedmind",
-            ranks: [
-                "Reduces the duration of any Silence or Interrupt effects used against the Shaman by 10%. This effect does not stack with other similar effects.",
-                "Reduces the duration of any Silence or Interrupt effects used against the Shaman by 20%. This effect does not stack with other similar effects.",
-                "Reduces the duration of any Silence or Interrupt effects used against the Shaman by 30%. This effect does not stack with other similar effects."
-            ],
-            row: 4,
-            name: "Focused Mind",
-            col: 3,
-            maxPoints: 3,
-            icon: "spell_nature_focusedmind.png",
-            points: 0
-        },
-        {
-            id: "spell_frost_wizardmark",
-            ranks: [
-                "Increases the effectiveness of your healing spells by 2%.",
-                "Increases the effectiveness of your healing spells by 4%.",
-                "Increases the effectiveness of your healing spells by 6%.",
-                "Increases the effectiveness of your healing spells by 8%.",
-                "Increases the effectiveness of your healing spells by 10%."
-            ],
-            row: 5,
-            name: "Purification",
-            col: 2,
-            maxPoints: 5,
-            icon: "spell_frost_wizardmark.png",
-            points: 0
-        },
-        {
-            id: "spell_frost_summonwaterelemental",
-            ranks: [
-                "Summons a Mana Tide Totem with 5 health at the feet of the caster for 12 sec that restores 6% of total mana every 3 seconds seconds to group members within 20 yards."
-            ],
-            row: 6,
-            name: "Mana Tide Totem",
-            col: 1,
-            maxPoints: 1,
-            requires: {
-                id: "spell_nature_manaregentotem",
-                points: 5
-            },
-            icon: "spell_frost_summonwaterelemental.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_natureguardian",
-            ranks: [
-                "Whenever a damaging attack is taken that reduces you below 30% health, you have a 10% chance to heal 10% of your total health and reduce your threat level on that target.  5 second cooldown.",
-                "Whenever a damaging attack is taken that reduces you below 30% health, you have a 20% chance to heal 10% of your total health and reduce your threat level on that target.  5 second cooldown.",
-                "Whenever a damaging attack is taken that reduces you below 30% health, you have a 30% chance to heal 10% of your total health and reduce your threat level on that target.  5 second cooldown.",
-                "Whenever a damaging attack is taken that reduces you below 30% health, you have a 40% chance to heal 10% of your total health and reduce your threat level on that target.  5 second cooldown.",
-                "Whenever a damaging attack is taken that reduces you below 30% health, you have a 50% chance to heal 10% of your total health and reduce your threat level on that target.  5 second cooldown."
-            ],
-            row: 6,
-            name: "Nature's Guardian",
-            col: 2,
-            maxPoints: 5,
-            icon: "spell_nature_natureguardian.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_natureblessing",
-            ranks: [
-                "Increases your spell damage and healing by an amount equal to 10% of your Intellect.",
-                "Increases your spell damage and healing by an amount equal to 20% of your Intellect.",
-                "Increases your spell damage and healing by an amount equal to 30% of your Intellect."
-            ],
-            row: 7,
-            name: "Nature's Blessing",
-            col: 1,
-            maxPoints: 3,
-            icon: "spell_nature_natureblessing.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_healingwavegreater",
-            ranks: [
-                "Increases the amount healed by your Chain Heal spell by 10%.",
-                "Increases the amount healed by your Chain Heal spell by 20%."
-            ],
-            row: 7,
-            name: "Improved Chain Heal",
-            col: 2,
-            maxPoints: 2,
-            icon: "spell_nature_healingwavegreater.png",
-            points: 0
-        },
-        {
-            id: "spell_nature_skinofearth",
-            ranks: [
-                "Protects the target with an earthen shield, giving a 30% chance of ignoring spell interruption when damaged and causing attacks to heal the shielded target for 150.  This effect can only occur once every few seconds.  6 charges.  Lasts 600 seconds.  Earth Shield can only be placed on one target at a time and only one Elemental Shield can be active on a target at a time."
-            ],
-            row: 8,
-            name: "Earth Shield",
-            col: 1,
-            maxPoints: 1,
-            requires: {
-                id: "spell_nature_natureblessing",
-                points: 3
-            },
-            icon: "spell_nature_skinofearth.png",
-            points: 0
-        }
-    ]
-};
+  specIcon: 'spell_nature_magicimmunity.png',
+  name: 'Restoration',
+  backgroundImage:
+    'src/assets/images/shaman/background-shaman-restoration.webp',
+  talents: [
+    {
+      id: 'spell_nature_magicimmunity',
+      ranks: [
+        'Reduces the casting time of your Healing Wave spell by 0.1 sec.',
+        'Reduces the casting time of your Healing Wave spell by 0.2 sec.',
+        'Reduces the casting time of your Healing Wave spell by 0.3 sec.',
+        'Reduces the casting time of your Healing Wave spell by 0.4 sec.',
+        'Reduces the casting time of your Healing Wave spell by 0.5 sec.',
+      ],
+      row: 0,
+      name: 'Improved Healing Wave',
+      col: 1,
+      maxPoints: 5,
+      icon: 'spell_nature_magicimmunity.png',
+      points: 0,
+    },
+    {
+      id: 'spell_frost_manarecharge',
+      ranks: [
+        'Reduces the mana cost of your healing spells by 1%.',
+        'Reduces the mana cost of your healing spells by 2%.',
+        'Reduces the mana cost of your healing spells by 3%.',
+        'Reduces the mana cost of your healing spells by 4%.',
+        'Reduces the mana cost of your healing spells by 5%.',
+      ],
+      row: 0,
+      name: 'Tidal Focus',
+      col: 2,
+      maxPoints: 5,
+      icon: 'spell_frost_manarecharge.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_reincarnation',
+      ranks: [
+        'Reduces the cooldown of your Reincarnation spell by 10 min and increases the amount of health and mana you reincarnate with by an additional 10%.',
+        'Reduces the cooldown of your Reincarnation spell by 20 min and increases the amount of health and mana you reincarnate with by an additional 20%.',
+      ],
+      row: 1,
+      name: 'Improved Reincarnation',
+      col: 0,
+      maxPoints: 2,
+      icon: 'spell_nature_reincarnation.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_undyingstrength',
+      ranks: [
+        "Increases your target's armor value by 8% for 15 seconds after getting a critical effect from one of your healing spells.",
+        "Increases your target's armor value by 16% for 15 seconds after getting a critical effect from one of your healing spells.",
+        "Increases your target's armor value by 25% for 15 seconds after getting a critical effect from one of your healing spells.",
+      ],
+      row: 1,
+      name: 'Ancestral Healing',
+      col: 1,
+      maxPoints: 3,
+      icon: 'spell_nature_undyingstrength.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_moonglow',
+      ranks: [
+        'Reduces the mana cost of your totems by 5%.',
+        'Reduces the mana cost of your totems by 10%.',
+        'Reduces the mana cost of your totems by 15%.',
+        'Reduces the mana cost of your totems by 20%.',
+        'Reduces the mana cost of your totems by 25%.',
+      ],
+      row: 1,
+      name: 'Totemic Focus',
+      col: 2,
+      maxPoints: 5,
+      icon: 'spell_nature_moonglow.png',
+      points: 0,
+    },
+    {
+      id: 'spell_frost_stun',
+      ranks: [
+        'Increases your chance to hit with melee attacks and spells by 1%.',
+        'Increases your chance to hit with melee attacks and spells by 2%.',
+        'Increases your chance to hit with melee attacks and spells by 3%.',
+      ],
+      row: 2,
+      name: "Nature's Guidance",
+      col: 0,
+      maxPoints: 3,
+      icon: 'spell_frost_stun.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_healingwavelesser',
+      ranks: [
+        'Gives you a 14% chance to avoid interruption caused by damage while casting any Shaman healing spell.',
+        'Gives you a 28% chance to avoid interruption caused by damage while casting any Shaman healing spell.',
+        'Gives you a 42% chance to avoid interruption caused by damage while casting any Shaman healing spell.',
+        'Gives you a 56% chance to avoid interruption caused by damage while casting any Shaman healing spell.',
+        'Gives you a 70% chance to avoid interruption caused by damage while casting any Shaman healing spell.',
+      ],
+      row: 2,
+      name: 'Healing Focus',
+      col: 1,
+      maxPoints: 5,
+      icon: 'spell_nature_healingwavelesser.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_nullward',
+      ranks: [
+        'The radius of your totems that affect friendly targets is increased to 30 yards.',
+      ],
+      row: 2,
+      name: 'Totemic Mastery',
+      col: 2,
+      maxPoints: 1,
+      icon: 'spell_nature_nullward.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_healingtouch',
+      ranks: [
+        'Reduces the threat generated by your healing spells by 5% and reduces the chance your spells will be dispelled by 10%.',
+        'Reduces the threat generated by your healing spells by 10% and reduces the chance your spells will be dispelled by 20%.',
+        'Reduces the threat generated by your healing spells by 15% and reduces the chance your spells will be dispelled by 30%.',
+      ],
+      row: 2,
+      name: 'Healing Grace',
+      col: 3,
+      maxPoints: 3,
+      icon: 'spell_nature_healingtouch.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_manaregentotem',
+      ranks: [
+        'Increases the effect of your Mana Spring and Healing Stream Totems by 5%.',
+        'Increases the effect of your Mana Spring and Healing Stream Totems by 10%.',
+        'Increases the effect of your Mana Spring and Healing Stream Totems by 15%.',
+        'Increases the effect of your Mana Spring and Healing Stream Totems by 20%.',
+        'Increases the effect of your Mana Spring and Healing Stream Totems by 25%.',
+      ],
+      row: 3,
+      name: 'Restorative Totems',
+      col: 1,
+      maxPoints: 5,
+      icon: 'spell_nature_manaregentotem.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_tranquility',
+      ranks: [
+        'Increases the critical effect chance of your healing and lightning spells by 1%.',
+        'Increases the critical effect chance of your healing and lightning spells by 2%.',
+        'Increases the critical effect chance of your healing and lightning spells by 3%.',
+        'Increases the critical effect chance of your healing and lightning spells by 4%.',
+        'Increases the critical effect chance of your healing and lightning spells by 5%.',
+      ],
+      row: 3,
+      name: 'Tidal Mastery',
+      col: 2,
+      maxPoints: 5,
+      icon: 'spell_nature_tranquility.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_healingway',
+      ranks: [
+        'Your Healing Wave spells have a 33% chance to increase the effect of subsequent Healing Wave spells on that target by 6% for 15 seconds.  This effect will stack up to 3 times.',
+        'Your Healing Wave spells have a 66% chance to increase the effect of subsequent Healing Wave spells on that target by 6% for 15 seconds.  This effect will stack up to 3 times.',
+        'Your Healing Wave spells have a 100% chance to increase the effect of subsequent Healing Wave spells on that target by 6% for 15 seconds.  This effect will stack up to 3 times.',
+      ],
+      row: 4,
+      name: 'Healing Way',
+      col: 0,
+      maxPoints: 3,
+      icon: 'spell_nature_healingway.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_ravenform',
+      ranks: [
+        'When activated, your next Nature spell with a casting time less than 10 sec. becomes an instant cast spell.',
+      ],
+      row: 4,
+      name: "Nature's Swiftness",
+      col: 2,
+      maxPoints: 1,
+      icon: 'spell_nature_ravenform.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_focusedmind',
+      ranks: [
+        'Reduces the duration of any Silence or Interrupt effects used against the Shaman by 10%. This effect does not stack with other similar effects.',
+        'Reduces the duration of any Silence or Interrupt effects used against the Shaman by 20%. This effect does not stack with other similar effects.',
+        'Reduces the duration of any Silence or Interrupt effects used against the Shaman by 30%. This effect does not stack with other similar effects.',
+      ],
+      row: 4,
+      name: 'Focused Mind',
+      col: 3,
+      maxPoints: 3,
+      icon: 'spell_nature_focusedmind.png',
+      points: 0,
+    },
+    {
+      id: 'spell_frost_wizardmark',
+      ranks: [
+        'Increases the effectiveness of your healing spells by 2%.',
+        'Increases the effectiveness of your healing spells by 4%.',
+        'Increases the effectiveness of your healing spells by 6%.',
+        'Increases the effectiveness of your healing spells by 8%.',
+        'Increases the effectiveness of your healing spells by 10%.',
+      ],
+      row: 5,
+      name: 'Purification',
+      col: 2,
+      maxPoints: 5,
+      icon: 'spell_frost_wizardmark.png',
+      points: 0,
+    },
+    {
+      id: 'spell_frost_summonwaterelemental',
+      ranks: [
+        'Summons a Mana Tide Totem with 5 health at the feet of the caster for 12 sec that restores 6% of total mana every 3 seconds seconds to group members within 20 yards.',
+      ],
+      row: 6,
+      name: 'Mana Tide Totem',
+      col: 1,
+      maxPoints: 1,
+      requires: {
+        id: 'spell_nature_manaregentotem',
+        points: 5,
+      },
+      icon: 'spell_frost_summonwaterelemental.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_natureguardian',
+      ranks: [
+        'Whenever a damaging attack is taken that reduces you below 30% health, you have a 10% chance to heal 10% of your total health and reduce your threat level on that target.  5 second cooldown.',
+        'Whenever a damaging attack is taken that reduces you below 30% health, you have a 20% chance to heal 10% of your total health and reduce your threat level on that target.  5 second cooldown.',
+        'Whenever a damaging attack is taken that reduces you below 30% health, you have a 30% chance to heal 10% of your total health and reduce your threat level on that target.  5 second cooldown.',
+        'Whenever a damaging attack is taken that reduces you below 30% health, you have a 40% chance to heal 10% of your total health and reduce your threat level on that target.  5 second cooldown.',
+        'Whenever a damaging attack is taken that reduces you below 30% health, you have a 50% chance to heal 10% of your total health and reduce your threat level on that target.  5 second cooldown.',
+      ],
+      row: 6,
+      name: "Nature's Guardian",
+      col: 2,
+      maxPoints: 5,
+      icon: 'spell_nature_natureguardian.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_natureblessing',
+      ranks: [
+        'Increases your spell damage and healing by an amount equal to 10% of your Intellect.',
+        'Increases your spell damage and healing by an amount equal to 20% of your Intellect.',
+        'Increases your spell damage and healing by an amount equal to 30% of your Intellect.',
+      ],
+      row: 7,
+      name: "Nature's Blessing",
+      col: 1,
+      maxPoints: 3,
+      icon: 'spell_nature_natureblessing.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_healingwavegreater',
+      ranks: [
+        'Increases the amount healed by your Chain Heal spell by 10%.',
+        'Increases the amount healed by your Chain Heal spell by 20%.',
+      ],
+      row: 7,
+      name: 'Improved Chain Heal',
+      col: 2,
+      maxPoints: 2,
+      icon: 'spell_nature_healingwavegreater.png',
+      points: 0,
+    },
+    {
+      id: 'spell_nature_skinofearth',
+      ranks: [
+        'Protects the target with an earthen shield, giving a 30% chance of ignoring spell interruption when damaged and causing attacks to heal the shielded target for 150.  This effect can only occur once every few seconds.  6 charges.  Lasts 600 seconds.  Earth Shield can only be placed on one target at a time and only one Elemental Shield can be active on a target at a time.',
+      ],
+      row: 8,
+      name: 'Earth Shield',
+      col: 1,
+      maxPoints: 1,
+      requires: {
+        id: 'spell_nature_natureblessing',
+        points: 3,
+      },
+      icon: 'spell_nature_skinofearth.png',
+      points: 0,
+    },
+  ],
+}

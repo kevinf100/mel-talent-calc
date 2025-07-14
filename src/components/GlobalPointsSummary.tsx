@@ -8,12 +8,14 @@ export const GlobalPointsSummary = ({
   pointsRemaining: number
 }) => {
   return (
-    <div className="mb-4 text-sm text-ink flex justify-between items-center bg-parchment p-2 rounded shadow">
+    <div className='mb-4 text-sm text-ink flex justify-between items-center bg-parchment p-2 rounded shadow'>
       <div>
-        <strong>Total Points Spent:</strong> {totalPointsSpent} / {totalTalentPoints}
+        <strong>Total Points Spent:</strong>{' '}
+        {totalPointsSpent} / {totalTalentPoints}
       </div>
       <div>
-        <strong>Points Remaining:</strong> {pointsRemaining}
+        <strong>Points Remaining:</strong>{' '}
+        {pointsRemaining}
       </div>
     </div>
   )

@@ -69,7 +69,7 @@
 
   p {
     text-shadow: 1px 1px 0px rgba(0, 0, 0);
-    white-space: pre-line
+    white-space: pre-line;
   }
 }
 /*/ 
@@ -239,7 +239,9 @@
     background: url('/src/assets/ui/arrow-right-glow.png')
       no-repeat left;
     width: var(--arrow-width);
-    transform: scaleX(-1); /* Flip the glow horizontally */
+    transform: scaleX(
+      -1
+    ); /* Flip the glow horizontally */
   }
   .left-arrow:not(.glow)::before {
     @apply grayscale;
@@ -320,13 +322,20 @@
     content: '';
     background: url('/src/assets/ui/arrow-rightdown-glow.png')
       no-repeat;
-    width: var(--connector-width, 69px); /* Use dynamic width, fallback to 69px */
+    width: var(
+      --connector-width,
+      69px
+    ); /* Use dynamic width, fallback to 69px */
     height: 64px;
     right: -38px; /* Keep original positioning */
-    top: calc(-64px - 23px); /* -64px (node height) - 18px (gap/padding) = -82px */
+    top: calc(
+      -64px - 23px
+    ); /* -64px (node height) - 18px (gap/padding) = -82px */
     background-position: 100% center;
   }
-  .arrow-element.right-connector-arrow:not(.glow)::before {
+  .arrow-element.right-connector-arrow:not(
+      .glow
+    )::before {
     @apply grayscale;
   }
   /* No ::after for right-connector-arrow - no arrowhead */

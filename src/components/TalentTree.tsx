@@ -1,9 +1,11 @@
-import { type MouseEvent, useState, useEffect } from 'react'
+import {
+  type MouseEvent,
+  useState,
+  useEffect,
+} from 'react'
 import { TalentNode } from './TalentNode'
 import type { Talent } from '../core/types'
-import {
-  getArrowProps,
-} from '../core/talentUtils'
+import { getArrowProps } from '../core/talentUtils'
 import {
   isTalentLocked,
   canIncrementTalent,
@@ -36,7 +38,8 @@ export const TalentTree = ({
   specIcon,
 }: TTalentTreeProps) => {
   // State to force re-render when viewport changes
-  const [viewportKey, setViewportKey] = useState(0)
+  const [viewportKey, setViewportKey] =
+    useState(0)
 
   // Listen for viewport changes to recalculate arrows
   useEffect(() => {
@@ -44,13 +47,25 @@ export const TalentTree = ({
       setViewportKey(prev => prev + 1)
     }
 
-    window.addEventListener('resize', handleResize)
+    window.addEventListener(
+      'resize',
+      handleResize
+    )
     // Also listen for orientation change on mobile
-    window.addEventListener('orientationchange', handleResize)
+    window.addEventListener(
+      'orientationchange',
+      handleResize
+    )
 
     return () => {
-      window.removeEventListener('resize', handleResize)
-      window.removeEventListener('orientationchange', handleResize)
+      window.removeEventListener(
+        'resize',
+        handleResize
+      )
+      window.removeEventListener(
+        'orientationchange',
+        handleResize
+      )
     }
   }, [])
 
@@ -135,10 +150,12 @@ export const TalentTree = ({
             <h2
               className='text-center px-3 py-1 text-sm w-full rounded shadow-inner'
               style={{
-                backgroundColor: 'rgba(3, 2, 2, 0.34)',
+                backgroundColor:
+                  'rgba(3, 2, 2, 0.34)',
                 color: 'rgb(255, 215, 0)',
                 borderRadius: '5px',
-                boxShadow: 'inset 0 0 8px rgba(0, 0, 0, 0.36)',
+                boxShadow:
+                  'inset 0 0 8px rgba(0, 0, 0, 0.36)',
                 borderWidth: '1px',
                 borderStyle: 'inset',
                 borderColor: 'black',
@@ -154,63 +171,104 @@ export const TalentTree = ({
 
         <div className='flex justify-center items-center mt-1'>
           <div className='grid grid-cols-4 grid-rows-7 md:gap-6 gap-8 relative lg:pl-4 lg:pr-4 place-items-center max-w-[400px] w-full'>
-          {talents.map(t => {
-            const pointsSpentInTree = talents.reduce((s, talent) => s + talent.points, 0)
-            const locked = isTalentLocked(t, talents, pointsSpentInTree)
+            {talents.map(t => {
+              const pointsSpentInTree =
+                talents.reduce(
+                  (s, talent) =>
+                    s + talent.points,
+                  0
+                )
+              const locked = isTalentLocked(
+                t,
+                talents,
+                pointsSpentInTree
+              )
 
-            const canIncrement = canIncrementTalent(t, pointsRemaining, locked)
-            const canDecrement = canSafelyDecrementTalent(t, talents)
+              const canIncrement =
+                canIncrementTalent(
+                  t,
+                  pointsRemaining,
+                  locked
+                )
+              const canDecrement =
+                canSafelyDecrementTalent(
+                  t,
+                  talents
+                )
 
-            const {
-              class: arrowClass,
-              style: arrowStyle,
-              arrows,
-            } = getArrowProps(talents, t, locked, pointsRemaining)
+              const {
+                class: arrowClass,
+                style: arrowStyle,
+                arrows,
+              } = getArrowProps(
+                talents,
+                t,
+                locked,
+                pointsRemaining
+              )
 
-            const requiredTalent = t.requires
-              ? talents.find(talent => talent.id === t.requires!.id)
-              : undefined
+              const requiredTalent = t.requires
+                ? talents.find(
+                    talent =>
+                      talent.id === t.requires!.id
+                  )
+                : undefined
 
-            return (
-              <div
-                key={t.id}
-                className={`relative ${arrowClass} ${locked ? 'disabled' : ''}`}
-                style={{
-                  gridColumnStart: t.col + 1,
-                  gridRowStart: t.row + 1,
-                  ...arrowStyle,
-                }}
-              >
-                {/* Render separate arrow elements for corner connections */}
-                {arrows?.map((arrow, index) => (
-                  <div
-                    key={index}
-                    className={`arrow-element ${arrow.type}-arrow ${arrow.glow ? 'glow' : ''}`}
-                    style={arrow.style as React.CSSProperties}
+              return (
+                <div
+                  key={t.id}
+                  className={`relative ${arrowClass} ${locked ? 'disabled' : ''}`}
+                  style={{
+                    gridColumnStart: t.col + 1,
+                    gridRowStart: t.row + 1,
+                    ...arrowStyle,
+                  }}
+                >
+                  {/* Render separate arrow elements for corner connections */}
+                  {arrows?.map((arrow, index) => (
+                    <div
+                      key={index}
+                      className={`arrow-element ${arrow.type}-arrow ${arrow.glow ? 'glow' : ''}`}
+                      style={
+                        arrow.style as React.CSSProperties
+                      }
+                    />
+                  ))}
+                  <TalentNode
+                    availablePoints={
+                      pointsRemaining
+                    }
+                    name={t.name}
+                    icon={t.icon}
+                    ranks={t.ranks}
+                    points={t.points}
+                    maxPoints={t.maxPoints}
+                    abilityData={t.abilityData}
+                    disabled={locked}
+                    onClick={e =>
+                      onClickTalent(
+                        t.id,
+                        e as MouseEvent
+                      )
+                    }
+                    tierRequirement={t.row * 5}
+                    requires={t.requires}
+                    totalPointsInTree={
+                      pointsSpentInTree
+                    }
+                    requiredTalentPoints={
+                      requiredTalent?.points ?? 0
+                    }
+                    requiredTalentName={
+                      requiredTalent?.name
+                    }
+                    talentTreeName={name}
+                    canIncrement={canIncrement}
+                    canDecrement={canDecrement}
                   />
-                ))}
-                <TalentNode
-                  availablePoints={pointsRemaining}
-                  name={t.name}
-                  icon={t.icon}
-                  ranks={t.ranks}
-                  points={t.points}
-                  maxPoints={t.maxPoints}
-                  abilityData={t.abilityData}
-                  disabled={locked}
-                  onClick={e => onClickTalent(t.id, e as MouseEvent)}
-                  tierRequirement={t.row * 5}
-                  requires={t.requires}
-                  totalPointsInTree={pointsSpentInTree}
-                  requiredTalentPoints={requiredTalent?.points ?? 0}
-                  requiredTalentName={requiredTalent?.name}
-                  talentTreeName={name}
-                  canIncrement={canIncrement}
-                  canDecrement={canDecrement}
-                />
-              </div>
-            )
-          })}
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>

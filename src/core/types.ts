@@ -1,4 +1,4 @@
-import type { CLASS_NAMES } from "./constants"
+import type { CLASS_NAMES } from './constants'
 
 export type Talent = {
   id: string
@@ -24,7 +24,8 @@ export type Tree = {
   specIcon: string
 }
 
-export type ClassName = typeof CLASS_NAMES[number]
+export type ClassName =
+  (typeof CLASS_NAMES)[number]
 
 export type TalentData = {
   [key in ClassName]: Tree[]

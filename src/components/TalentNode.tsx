@@ -327,10 +327,11 @@ export const TalentNode = ({
               : 'Right click to unlearn'}
           </p>
         )}
-        {isMobile && 
+        {isMobile && (
           <p className='mb-1 text-gray-400 italic'>
             (Tap outside to dismiss)
-          </p>}
+          </p>
+        )}
       </Tooltip>
     </div>
   )

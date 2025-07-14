@@ -1,4 +1,4 @@
-import type { ClassName } from "./types"
+import type { ClassName } from './types'
 
 export const CLASS_COLORS: Record<
   ClassName,
@@ -12,7 +12,7 @@ export const CLASS_COLORS: Record<
   shaman: '#0070DD', // Blue
   mage: '#3FC7EB', // Light Blue
   warlock: '#8788EE', // Purple
-  druid: '#FF7C0A' // Orange
+  druid: '#FF7C0A', // Orange
 }
 
 export const CLASS_NAMES = [

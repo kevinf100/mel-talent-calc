@@ -1,4 +1,8 @@
-import { useState, useMemo, useEffect } from 'react'
+import {
+  useState,
+  useMemo,
+  useEffect,
+} from 'react'
 import type { ClassName, Tree } from './types'
 import {
   canIncrementTalent,
@@ -7,66 +11,120 @@ import {
 } from './talentUtils'
 import { talentData } from './data/talentData'
 
-const TOTAL_TALENT_POINTS = 51;
+const TOTAL_TALENT_POINTS = 51
 
 type UseTalentTreesProps = {
-  selectedClass: ClassName;
-  setSelectedClass: (className: ClassName) => void;
-};
+  selectedClass: ClassName
+  setSelectedClass: (className: ClassName) => void
+}
 
-export const useTalentTrees = ({ selectedClass, setSelectedClass }: UseTalentTreesProps) => {
-  const [trees, setTrees] = useState<Tree[]>(talentData[selectedClass]);
+export const useTalentTrees = ({
+  selectedClass,
+  setSelectedClass,
+}: UseTalentTreesProps) => {
+  const [trees, setTrees] = useState<Tree[]>(
+    talentData[selectedClass]
+  )
 
   useEffect(() => {
-    setTrees(talentData[selectedClass]);
-  }, [selectedClass]);  
+    setTrees(talentData[selectedClass])
+  }, [selectedClass])
 
   const totalPointsSpent = useMemo(() => {
-    return trees.reduce((sum, tree) => sum + tree.talents.reduce((s, talent) => s + talent.points, 0), 0);
-  }, [trees]);
+    return trees.reduce(
+      (sum, tree) =>
+        sum +
+        tree.talents.reduce(
+          (s, talent) => s + talent.points,
+          0
+        ),
+      0
+    )
+  }, [trees])
 
   const pointsRemaining = useMemo(() => {
-    return Math.max(0, TOTAL_TALENT_POINTS - totalPointsSpent);
-  }, [totalPointsSpent]);
+    return Math.max(
+      0,
+      TOTAL_TALENT_POINTS - totalPointsSpent
+    )
+  }, [totalPointsSpent])
 
   const resetTree = (idx: number) => {
     setTrees(prev => {
-      const copy = [...prev];
-      copy[idx] = { ...copy[idx], talents: copy[idx].talents.map(t => ({ ...t, points: 0 })) };
-      return copy;
-    });
-  };
+      const copy = [...prev]
+      copy[idx] = {
+        ...copy[idx],
+        talents: copy[idx].talents.map(t => ({
+          ...t,
+          points: 0,
+        })),
+      }
+      return copy
+    })
+  }
 
   const resetAll = () => {
-    setTrees(JSON.parse(JSON.stringify(talentData[selectedClass])));
-  };
+    setTrees(
+      JSON.parse(
+        JSON.stringify(talentData[selectedClass])
+      )
+    )
+  }
 
   const modify = (
     treeIdx: number,
     talentId: string,
-    e: React.MouseEvent | { shiftKey: boolean; type: string }
+    e:
+      | React.MouseEvent
+      | { shiftKey: boolean; type: string }
   ) => {
     setTrees(prev => {
       const copy = [...prev]
-      const talents = copy[treeIdx].talents.map(t => ({ ...t }))
-      const target = talents.find(t => t.id === talentId)
+      const talents = copy[treeIdx].talents.map(
+        t => ({ ...t })
+      )
+      const target = talents.find(
+        t => t.id === talentId
+      )
       if (!target) return prev
-  
-      const pointsSpent = talents.reduce((s, t) => s + t.points, 0)
-      const locked = isTalentLocked(target, talents, pointsSpent)
-      const isShift = e.shiftKey || e.type === 'contextmenu'
-  
+
+      const pointsSpent = talents.reduce(
+        (s, t) => s + t.points,
+        0
+      )
+      const locked = isTalentLocked(
+        target,
+        talents,
+        pointsSpent
+      )
+      const isShift =
+        e.shiftKey || e.type === 'contextmenu'
+
       if (isShift) {
-        if (canSafelyDecrementTalent(target, talents)) {
+        if (
+          canSafelyDecrementTalent(
+            target,
+            talents
+          )
+        ) {
           target.points -= 1
         }
       } else {
-        if (canIncrementTalent(target, pointsRemaining, locked)) {
+        if (
+          canIncrementTalent(
+            target,
+            pointsRemaining,
+            locked
+          )
+        ) {
           target.points += 1
         }
       }
-  
-      copy[treeIdx] = { ...copy[treeIdx], talents }
+
+      copy[treeIdx] = {
+        ...copy[treeIdx],
+        talents,
+      }
       return copy
     })
   }
@@ -80,5 +138,5 @@ export const useTalentTrees = ({ selectedClass, setSelectedClass }: UseTalentTre
     resetTree,
     resetAll,
     setSelectedClass, // Add to allow class switching
-  };
-};
+  }
+}

@@ -1,320 +1,321 @@
-import type { Tree } from '../../types';
+import type { Tree } from '../../types'
 
 export const affliction: Tree = {
-    specIcon: "spell_shadow_curseofsargeras.png",
-    name: "Affliction",
-    backgroundImage: "src/assets/images/warlock/background-warlock-affliction.webp",
-    talents: [
-        {
-            id: "spell_shadow_unsummonbuilding",
-            ranks: [
-                "Reduces the chance for enemies to resist your Affliction spells by 2%.",
-                "Reduces the chance for enemies to resist your Affliction spells by 4%.",
-                "Reduces the chance for enemies to resist your Affliction spells by 6%.",
-                "Reduces the chance for enemies to resist your Affliction spells by 8%.",
-                "Reduces the chance for enemies to resist your Affliction spells by 10%."
-            ],
-            row: 0,
-            name: "Suppression",
-            col: 1,
-            maxPoints: 5,
-            icon: "spell_shadow_unsummonbuilding.png",
-            points: 0
-        },
-        {
-            id: "improved_corruption",
-            ranks: [
-                "Reduces the casting time of your Corruption spell by 0.4 sec, and the casting time of your Seed of Corruption spell by 0.1 sec.",
-                "Reduces the casting time of your Corruption spell by 0.8 sec, and the casting time of your Seed of Corruption spell by 0.2 sec.",
-                "Reduces the casting time of your Corruption spell by 1.2 sec, and the casting time of your Seed of Corruption spell by 0.3 sec.",
-                "Reduces the casting time of your Corruption spell by 1.6 sec, and the casting time of your Seed of Corruption spell by 0.4 sec.",
-                "Reduces the casting time of your Corruption spell by 2 sec, and the casting time of your Seed of Corruption spell by 0.5 sec."
-            ],
-            row: 0,
-            name: "Improved Corruption",
-            col: 2,
-            maxPoints: 5,
-            icon: "spell_shadow_abominationexplosion.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_curseofmannoroth",
-            ranks: [
-                "Increases the effect of your Curse of Weakness by 10%.",
-                "Increases the effect of your Curse of Weakness by 20%."
-            ],
-            row: 1,
-            name: "Improved Curse of Weakness",
-            col: 0,
-            maxPoints: 2,
-            icon: "spell_shadow_curseofmannoroth.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_haunting",
-            ranks: [
-                "Returns 7% of your maximum mana if the target is killed by you while you drain its soul, and increases the damage of Drain Soul by 12%.  In addition, your Affliction spells generate 5% less threat.",
-                "Returns 15% of your maximum mana if the target is killed by you while you drain its soul, and increases the damage of Drain Soul by 24%.  In addition, your Affliction spells generate 10% less threat."
-            ],
-            row: 1,
-            name: "Improved Drain Soul",
-            col: 1,
-            maxPoints: 2,
-            icon: "spell_shadow_haunting.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_burningspirit",
-            ranks: [
-                "Increases the amount of Mana awarded by your Life Tap spell by 10%.",
-                "Increases the amount of Mana awarded by your Life Tap spell by 20%."
-            ],
-            row: 1,
-            name: "Improved Life Tap",
-            col: 2,
-            maxPoints: 2,
-            icon: "spell_shadow_burningspirit.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_lifedrain02",
-            ranks: [
-                "Increases the amount drained by your Drain Life and Drain Soul spells by an additional 2% for each Affliction effect on the target, up to a maximum of 12% additional effect.",
-                "Increases the amount drained by your Drain Life and Drain Soul spells by an additional 3% for each Affliction effect on the target, up to a maximum of 24% additional effect."
-            ],
-            row: 1,
-            name: "Soul Siphon",
-            col: 3,
-            maxPoints: 2,
-            icon: "spell_shadow_lifedrain02.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_curseofsargeras",
-            ranks: [
-                "Increases the damage done by your Bane of Agony by 5%.",
-                "Increases the damage done by your Bane of Agony by 10%."
-            ],
-            row: 2,
-            name: "Improved Bane of Agony",
-            col: 0,
-            maxPoints: 2,
-            icon: "spell_shadow_curseofsargeras.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_fingerofdeath",
-            ranks: [
-                "Gives you a 14% chance to avoid interruption caused by damage while channeling the Drain Life, Drain Mana, or Drain Soul spell.",
-                "Gives you a 28% chance to avoid interruption caused by damage while channeling the Drain Life, Drain Mana, or Drain Soul spell.",
-                "Gives you a 42% chance to avoid interruption caused by damage while channeling the Drain Life, Drain Mana, or Drain Soul spell.",
-                "Gives you a 56% chance to avoid interruption caused by damage while channeling the Drain Life, Drain Mana, or Drain Soul spell.",
-                "Gives you a 70% chance to avoid interruption caused by damage while channeling the Drain Life, Drain Mana, or Drain Soul spell."
-            ],
-            row: 2,
-            name: "Fel Concentration",
-            col: 1,
-            maxPoints: 5,
-            icon: "spell_shadow_fingerofdeath.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_contagion",
-            ranks: [
-                "Increases the effect of your next Bane of Doom or Bane of Agony by 50%, your next Bane of Exhaustion by an additional 20%, or your next Bane of Tongues by an additional 10%.  Lasts 30 seconds."
-            ],
-            row: 2,
-            name: "Amplify Bane",
-            col: 2,
-            maxPoints: 1,
-            icon: "spell_shadow_contagion.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_callofbone",
-            ranks: [
-                "Increases the range of your Affliction spells by 10%.",
-                "Increases the range of your Affliction spells by 20%."
-            ],
-            row: 3,
-            name: "Grim Reach",
-            col: 0,
-            maxPoints: 2,
-            icon: "spell_shadow_callofbone.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_twilight",
-            ranks: [
-                "Gives your Corruption, Drain Life, and Seed of Corruption spells a 2% chance to cause you to enter a Shadow Trance state after damaging the opponent.  The Shadow Trance state reduces the casting time of your next Shadow Bolt spell by 100%.",
-                "Gives your Corruption, Drain Life, and Seed of Corruption spells a 4% chance to cause you to enter a Shadow Trance state after damaging the opponent.  The Shadow Trance state reduces the casting time of your next Shadow Bolt spell by 100%."
-            ],
-            row: 3,
-            name: "Nightfall",
-            col: 1,
-            maxPoints: 2,
-            icon: "spell_shadow_twilight.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_abominationexplosion",
-            ranks: [
-                "Your Corruption spell gains an additional 24% of your bonus spell damage effects, and your Seed of Corruption requires 10% less damage to trigger its explosion.",
-                "Your Corruption spell gains an additional 36% of your bonus spell damage effects, and your Seed of Corruption requires 20% less damage to trigger its explosion.",
-                "Your Corruption spell gains an additional 48% of your bonus spell damage effects, and your Seed of Corruption requires 30% less damage to trigger its explosion."
-            ],
-            row: 3,
-            name: "Empowered Corruption",
-            col: 3,
-            maxPoints: 3,
-            icon: "spell_shadow_abominationexplosion.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_shadowembrace",
-            ranks: [
-                "Your Corruption, Bane of Agony, Siphon Life and Seed of Corruption spells also cause the Shadow Embrace effect, which reduces physical damage caused by 1%.",
-                "Your Corruption, Bane of Agony, Siphon Life and Seed of Corruption spells also cause the Shadow Embrace effect, which reduces physical damage caused by 3%.",
-                "Your Corruption, Bane of Agony, Siphon Life and Seed of Corruption spells also cause the Shadow Embrace effect, which reduces physical damage caused by 5%."
-            ],
-            row: 4,
-            name: "Shadow Embrace",
-            col: 0,
-            maxPoints: 3,
-            icon: "spell_shadow_shadowembrace.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_requiem",
-            ranks: [
-                "Transfers 15 health from the target to the caster every 3 seconds sec.  Lasts 30 seconds."
-            ],
-            row: 4,
-            name: "Siphon Life",
-            col: 1,
-            maxPoints: 1,
-            icon: "spell_shadow_requiem.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_grimward",
-            ranks: [
-                "Reduces the target's movement speed by 30% for 12 seconds.  Only one Bane per Warlock can be active on any one target."
-            ],
-            row: 4,
-            name: "Bane of Exhaustion",
-            col: 2,
-            maxPoints: 1,
-            requires: {
-                id: "spell_shadow_contagion",
-                points: 1
-            },
-            icon: "spell_shadow_grimward.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_summonfelhunter",
-            ranks: [
-                "Your Felhunter regains 5% of its maximum mana each time it hits with its Shadow Bite ability.",
-                "Your Felhunter regains 10% of its maximum mana each time it hits with its Shadow Bite ability."
-            ],
-            row: 4,
-            name: "Improved Shadow Bite",
-            col: 3,
-            maxPoints: 2,
-            icon: "spell_shadow_summonfelhunter.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_shadetruesight",
-            ranks: [
-                "Increases the damage dealt or life drained by your Shadow spells by 2%.",
-                "Increases the damage dealt or life drained by your Shadow spells by 4%.",
-                "Increases the damage dealt or life drained by your Shadow spells by 6%.",
-                "Increases the damage dealt or life drained by your Shadow spells by 8%.",
-                "Increases the damage dealt or life drained by your Shadow spells by 10%."
-            ],
-            row: 5,
-            name: "Shadow Mastery",
-            col: 1,
-            maxPoints: 5,
-            requires: {
-                id: "spell_shadow_requiem",
-                points: 1
-            },
-            icon: "spell_shadow_shadetruesight.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_painfulafflictions",
-            ranks: [
-                "Increases the damage of Bane of Agony, Corruption and Seed of Corruption by 1% and reduces the chance your Affliction spells will be dispelled by an additional 6%.",
-                "Increases the damage of Bane of Agony, Corruption and Seed of Corruption by 2% and reduces the chance your Affliction spells will be dispelled by an additional 12%.",
-                "Increases the damage of Bane of Agony, Corruption and Seed of Corruption by 3% and reduces the chance your Affliction spells will be dispelled by an additional 18%.",
-                "Increases the damage of Bane of Agony, Corruption and Seed of Corruption by 4% and reduces the chance your Affliction spells will be dispelled by an additional 24%.",
-                "Increases the damage of Bane of Agony, Corruption and Seed of Corruption by 5% and reduces the chance your Affliction spells will be dispelled by an additional 30%."
-            ],
-            row: 6,
-            name: "Contagion",
-            col: 1,
-            maxPoints: 5,
-            icon: "spell_shadow_painfulafflictions.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_darkritual",
-            ranks: [
-                "Drains 305 of your pet's Mana, returning 100% to you."
-            ],
-            row: 6,
-            name: "Dark Pact",
-            col: 2,
-            maxPoints: 1,
-            icon: "spell_shadow_darkritual.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_deathscream",
-            ranks: [
-                "Reduces the casting time of your Howl of Terror spell by 0.8 sec.",
-                "Reduces the casting time of your Howl of Terror spell by 1.5 sec."
-            ],
-            row: 7,
-            name: "Improved Howl of Terror",
-            col: 0,
-            maxPoints: 2,
-            icon: "spell_shadow_deathscream.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_curseofachimonde",
-            ranks: [
-                "Increases the damage bonus effect of your Curse of the Elements spell by an additional 1%.",
-                "Increases the damage bonus effect of your Curse of the Elements spell by an additional 2%.",
-                "Increases the damage bonus effect of your Curse of the Elements spell by an additional 3%."
-            ],
-            row: 7,
-            name: "Malediction",
-            col: 2,
-            maxPoints: 3,
-            icon: "spell_shadow_curseofachimonde.png",
-            points: 0
-        },
-        {
-            id: "spell_shadow_unstableaffliction_3",
-            ranks: [
-                "Shadow energy slowly destroys the target, causing 822 damage over 18 seconds.  In addition, if the Unstable Affliction is dispelled it will cause 1224 damage to the dispeller and silence them for 5 seconds."
-            ],
-            row: 8,
-            name: "Unstable Affliction",
-            col: 1,
-            maxPoints: 1,
-            requires: {
-                id: "spell_shadow_painfulafflictions",
-                points: 5
-            },
-            icon: "spell_shadow_unstableaffliction_3.png",
-            points: 0
-        }
-    ]
-};
+  specIcon: 'spell_shadow_curseofsargeras.png',
+  name: 'Affliction',
+  backgroundImage:
+    'src/assets/images/warlock/background-warlock-affliction.webp',
+  talents: [
+    {
+      id: 'spell_shadow_unsummonbuilding',
+      ranks: [
+        'Reduces the chance for enemies to resist your Affliction spells by 2%.',
+        'Reduces the chance for enemies to resist your Affliction spells by 4%.',
+        'Reduces the chance for enemies to resist your Affliction spells by 6%.',
+        'Reduces the chance for enemies to resist your Affliction spells by 8%.',
+        'Reduces the chance for enemies to resist your Affliction spells by 10%.',
+      ],
+      row: 0,
+      name: 'Suppression',
+      col: 1,
+      maxPoints: 5,
+      icon: 'spell_shadow_unsummonbuilding.png',
+      points: 0,
+    },
+    {
+      id: 'improved_corruption',
+      ranks: [
+        'Reduces the casting time of your Corruption spell by 0.4 sec, and the casting time of your Seed of Corruption spell by 0.1 sec.',
+        'Reduces the casting time of your Corruption spell by 0.8 sec, and the casting time of your Seed of Corruption spell by 0.2 sec.',
+        'Reduces the casting time of your Corruption spell by 1.2 sec, and the casting time of your Seed of Corruption spell by 0.3 sec.',
+        'Reduces the casting time of your Corruption spell by 1.6 sec, and the casting time of your Seed of Corruption spell by 0.4 sec.',
+        'Reduces the casting time of your Corruption spell by 2 sec, and the casting time of your Seed of Corruption spell by 0.5 sec.',
+      ],
+      row: 0,
+      name: 'Improved Corruption',
+      col: 2,
+      maxPoints: 5,
+      icon: 'spell_shadow_abominationexplosion.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_curseofmannoroth',
+      ranks: [
+        'Increases the effect of your Curse of Weakness by 10%.',
+        'Increases the effect of your Curse of Weakness by 20%.',
+      ],
+      row: 1,
+      name: 'Improved Curse of Weakness',
+      col: 0,
+      maxPoints: 2,
+      icon: 'spell_shadow_curseofmannoroth.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_haunting',
+      ranks: [
+        'Returns 7% of your maximum mana if the target is killed by you while you drain its soul, and increases the damage of Drain Soul by 12%.  In addition, your Affliction spells generate 5% less threat.',
+        'Returns 15% of your maximum mana if the target is killed by you while you drain its soul, and increases the damage of Drain Soul by 24%.  In addition, your Affliction spells generate 10% less threat.',
+      ],
+      row: 1,
+      name: 'Improved Drain Soul',
+      col: 1,
+      maxPoints: 2,
+      icon: 'spell_shadow_haunting.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_burningspirit',
+      ranks: [
+        'Increases the amount of Mana awarded by your Life Tap spell by 10%.',
+        'Increases the amount of Mana awarded by your Life Tap spell by 20%.',
+      ],
+      row: 1,
+      name: 'Improved Life Tap',
+      col: 2,
+      maxPoints: 2,
+      icon: 'spell_shadow_burningspirit.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_lifedrain02',
+      ranks: [
+        'Increases the amount drained by your Drain Life and Drain Soul spells by an additional 2% for each Affliction effect on the target, up to a maximum of 12% additional effect.',
+        'Increases the amount drained by your Drain Life and Drain Soul spells by an additional 3% for each Affliction effect on the target, up to a maximum of 24% additional effect.',
+      ],
+      row: 1,
+      name: 'Soul Siphon',
+      col: 3,
+      maxPoints: 2,
+      icon: 'spell_shadow_lifedrain02.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_curseofsargeras',
+      ranks: [
+        'Increases the damage done by your Bane of Agony by 5%.',
+        'Increases the damage done by your Bane of Agony by 10%.',
+      ],
+      row: 2,
+      name: 'Improved Bane of Agony',
+      col: 0,
+      maxPoints: 2,
+      icon: 'spell_shadow_curseofsargeras.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_fingerofdeath',
+      ranks: [
+        'Gives you a 14% chance to avoid interruption caused by damage while channeling the Drain Life, Drain Mana, or Drain Soul spell.',
+        'Gives you a 28% chance to avoid interruption caused by damage while channeling the Drain Life, Drain Mana, or Drain Soul spell.',
+        'Gives you a 42% chance to avoid interruption caused by damage while channeling the Drain Life, Drain Mana, or Drain Soul spell.',
+        'Gives you a 56% chance to avoid interruption caused by damage while channeling the Drain Life, Drain Mana, or Drain Soul spell.',
+        'Gives you a 70% chance to avoid interruption caused by damage while channeling the Drain Life, Drain Mana, or Drain Soul spell.',
+      ],
+      row: 2,
+      name: 'Fel Concentration',
+      col: 1,
+      maxPoints: 5,
+      icon: 'spell_shadow_fingerofdeath.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_contagion',
+      ranks: [
+        'Increases the effect of your next Bane of Doom or Bane of Agony by 50%, your next Bane of Exhaustion by an additional 20%, or your next Bane of Tongues by an additional 10%.  Lasts 30 seconds.',
+      ],
+      row: 2,
+      name: 'Amplify Bane',
+      col: 2,
+      maxPoints: 1,
+      icon: 'spell_shadow_contagion.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_callofbone',
+      ranks: [
+        'Increases the range of your Affliction spells by 10%.',
+        'Increases the range of your Affliction spells by 20%.',
+      ],
+      row: 3,
+      name: 'Grim Reach',
+      col: 0,
+      maxPoints: 2,
+      icon: 'spell_shadow_callofbone.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_twilight',
+      ranks: [
+        'Gives your Corruption, Drain Life, and Seed of Corruption spells a 2% chance to cause you to enter a Shadow Trance state after damaging the opponent.  The Shadow Trance state reduces the casting time of your next Shadow Bolt spell by 100%.',
+        'Gives your Corruption, Drain Life, and Seed of Corruption spells a 4% chance to cause you to enter a Shadow Trance state after damaging the opponent.  The Shadow Trance state reduces the casting time of your next Shadow Bolt spell by 100%.',
+      ],
+      row: 3,
+      name: 'Nightfall',
+      col: 1,
+      maxPoints: 2,
+      icon: 'spell_shadow_twilight.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_abominationexplosion',
+      ranks: [
+        'Your Corruption spell gains an additional 24% of your bonus spell damage effects, and your Seed of Corruption requires 10% less damage to trigger its explosion.',
+        'Your Corruption spell gains an additional 36% of your bonus spell damage effects, and your Seed of Corruption requires 20% less damage to trigger its explosion.',
+        'Your Corruption spell gains an additional 48% of your bonus spell damage effects, and your Seed of Corruption requires 30% less damage to trigger its explosion.',
+      ],
+      row: 3,
+      name: 'Empowered Corruption',
+      col: 3,
+      maxPoints: 3,
+      icon: 'spell_shadow_abominationexplosion.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_shadowembrace',
+      ranks: [
+        'Your Corruption, Bane of Agony, Siphon Life and Seed of Corruption spells also cause the Shadow Embrace effect, which reduces physical damage caused by 1%.',
+        'Your Corruption, Bane of Agony, Siphon Life and Seed of Corruption spells also cause the Shadow Embrace effect, which reduces physical damage caused by 3%.',
+        'Your Corruption, Bane of Agony, Siphon Life and Seed of Corruption spells also cause the Shadow Embrace effect, which reduces physical damage caused by 5%.',
+      ],
+      row: 4,
+      name: 'Shadow Embrace',
+      col: 0,
+      maxPoints: 3,
+      icon: 'spell_shadow_shadowembrace.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_requiem',
+      ranks: [
+        'Transfers 15 health from the target to the caster every 3 seconds sec.  Lasts 30 seconds.',
+      ],
+      row: 4,
+      name: 'Siphon Life',
+      col: 1,
+      maxPoints: 1,
+      icon: 'spell_shadow_requiem.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_grimward',
+      ranks: [
+        "Reduces the target's movement speed by 30% for 12 seconds.  Only one Bane per Warlock can be active on any one target.",
+      ],
+      row: 4,
+      name: 'Bane of Exhaustion',
+      col: 2,
+      maxPoints: 1,
+      requires: {
+        id: 'spell_shadow_contagion',
+        points: 1,
+      },
+      icon: 'spell_shadow_grimward.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_summonfelhunter',
+      ranks: [
+        'Your Felhunter regains 5% of its maximum mana each time it hits with its Shadow Bite ability.',
+        'Your Felhunter regains 10% of its maximum mana each time it hits with its Shadow Bite ability.',
+      ],
+      row: 4,
+      name: 'Improved Shadow Bite',
+      col: 3,
+      maxPoints: 2,
+      icon: 'spell_shadow_summonfelhunter.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_shadetruesight',
+      ranks: [
+        'Increases the damage dealt or life drained by your Shadow spells by 2%.',
+        'Increases the damage dealt or life drained by your Shadow spells by 4%.',
+        'Increases the damage dealt or life drained by your Shadow spells by 6%.',
+        'Increases the damage dealt or life drained by your Shadow spells by 8%.',
+        'Increases the damage dealt or life drained by your Shadow spells by 10%.',
+      ],
+      row: 5,
+      name: 'Shadow Mastery',
+      col: 1,
+      maxPoints: 5,
+      requires: {
+        id: 'spell_shadow_requiem',
+        points: 1,
+      },
+      icon: 'spell_shadow_shadetruesight.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_painfulafflictions',
+      ranks: [
+        'Increases the damage of Bane of Agony, Corruption and Seed of Corruption by 1% and reduces the chance your Affliction spells will be dispelled by an additional 6%.',
+        'Increases the damage of Bane of Agony, Corruption and Seed of Corruption by 2% and reduces the chance your Affliction spells will be dispelled by an additional 12%.',
+        'Increases the damage of Bane of Agony, Corruption and Seed of Corruption by 3% and reduces the chance your Affliction spells will be dispelled by an additional 18%.',
+        'Increases the damage of Bane of Agony, Corruption and Seed of Corruption by 4% and reduces the chance your Affliction spells will be dispelled by an additional 24%.',
+        'Increases the damage of Bane of Agony, Corruption and Seed of Corruption by 5% and reduces the chance your Affliction spells will be dispelled by an additional 30%.',
+      ],
+      row: 6,
+      name: 'Contagion',
+      col: 1,
+      maxPoints: 5,
+      icon: 'spell_shadow_painfulafflictions.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_darkritual',
+      ranks: [
+        "Drains 305 of your pet's Mana, returning 100% to you.",
+      ],
+      row: 6,
+      name: 'Dark Pact',
+      col: 2,
+      maxPoints: 1,
+      icon: 'spell_shadow_darkritual.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_deathscream',
+      ranks: [
+        'Reduces the casting time of your Howl of Terror spell by 0.8 sec.',
+        'Reduces the casting time of your Howl of Terror spell by 1.5 sec.',
+      ],
+      row: 7,
+      name: 'Improved Howl of Terror',
+      col: 0,
+      maxPoints: 2,
+      icon: 'spell_shadow_deathscream.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_curseofachimonde',
+      ranks: [
+        'Increases the damage bonus effect of your Curse of the Elements spell by an additional 1%.',
+        'Increases the damage bonus effect of your Curse of the Elements spell by an additional 2%.',
+        'Increases the damage bonus effect of your Curse of the Elements spell by an additional 3%.',
+      ],
+      row: 7,
+      name: 'Malediction',
+      col: 2,
+      maxPoints: 3,
+      icon: 'spell_shadow_curseofachimonde.png',
+      points: 0,
+    },
+    {
+      id: 'spell_shadow_unstableaffliction_3',
+      ranks: [
+        'Shadow energy slowly destroys the target, causing 822 damage over 18 seconds.  In addition, if the Unstable Affliction is dispelled it will cause 1224 damage to the dispeller and silence them for 5 seconds.',
+      ],
+      row: 8,
+      name: 'Unstable Affliction',
+      col: 1,
+      maxPoints: 1,
+      requires: {
+        id: 'spell_shadow_painfulafflictions',
+        points: 5,
+      },
+      icon: 'spell_shadow_unstableaffliction_3.png',
+      points: 0,
+    },
+  ],
+}
