@@ -191,7 +191,7 @@
     @apply grayscale;
   }
   .down-arrow::after {
-    @apply absolute w-[56px] h-[21px] z-[30] pointer-events-none md:bottom-[55.75px] bottom-[55px];
+    @apply absolute w-[56px] h-[21px] z-[30] pointer-events-none sm:bottom-[55.75px] bottom-[51px];
     content: '';
     background: url('/src/assets/ui/arrow-down-head-glow1.png')
       no-repeat bottom;
@@ -230,15 +230,7 @@
     @apply grayscale-0; /* Override disabled styling for glowing arrows */
   }
 
-  /* Mobile adjustments for right arrows */
-  @media (max-width: 767px) {
-    .right-arrow::before {
-      width: calc(var(--arrow-width) * 1.5); /* 50% more width for mobile */
-    }
-    .arrow-element.right-arrow::before {
-      width: calc(var(--arrow-width) * 1.5); /* 50% more width for mobile */
-    }
-  }
+  /* Mobile adjustments removed - now calculated dynamically in JavaScript */
 
   /* Left arrow styles */
   .left-arrow::before {
@@ -267,15 +259,7 @@
     @apply grayscale-0; /* Override disabled styling for glowing arrows */
   }
 
-  /* Mobile adjustments for left arrows */
-  @media (max-width: 767px) {
-    .left-arrow::before {
-      width: calc(var(--arrow-width) * 1.2); /* 20% more width for mobile */
-    }
-    .arrow-element.left-arrow::before {
-      width: calc(var(--arrow-width) * 1.2); /* 20% more width for mobile */
-    }
-  }
+  /* Mobile adjustments removed - now calculated dynamically in JavaScript */
 
   /* Arrow elements for corner connections */
   .arrow-element {
@@ -296,7 +280,7 @@
     @apply grayscale;
   }
   .arrow-element.down-arrow::after {
-    @apply absolute w-[56px] h-[21px] z-[35] pointer-events-none md:bottom-[55.75px] bottom-[52px];
+    @apply absolute w-[56px] h-[21px] z-[35] pointer-events-none bottom-[52px];
     content: '';
     background: url('/src/assets/ui/arrow-down-head-glow1.png')
       no-repeat bottom;
@@ -309,7 +293,7 @@
 
   /* Right arrow element styles (with arrowhead for standalone right arrows) */
   .arrow-element.right-arrow::before {
-    @apply absolute h-[56px] pointer-events-none md:right-[50px] right-[65px];
+    @apply absolute h-[56px] pointer-events-none right-[65px];
     content: '';
     background: url('/src/assets/ui/arrow-right-glow.png')
       no-repeat right;
@@ -320,7 +304,7 @@
     @apply grayscale;
   }
   .arrow-element.right-arrow::after {
-    @apply absolute h-[56px] w-[21px] z-[30] pointer-events-none md:right-[50px] right-[52px];
+    @apply absolute h-[56px] w-[21px] z-[30] pointer-events-none right-[52px];
     content: '';
     background: url('/src/assets/ui/arrow-right-head-glow1.png')
       no-repeat right;
@@ -336,9 +320,9 @@
     content: '';
     background: url('/src/assets/ui/arrow-rightdown-glow.png')
       no-repeat;
-    width: 69px;
+    width: var(--connector-width, 69px); /* Use dynamic width, fallback to 69px */
     height: 64px;
-    right: -38px;
+    right: -38px; /* Keep original positioning */
     top: calc(-64px - 18px); /* -64px (node height) - 18px (gap/padding) = -82px */
     background-position: 100% center;
   }
@@ -347,12 +331,7 @@
   }
   /* No ::after for right-connector-arrow - no arrowhead */
 
-  /* Mobile adjustments for right-connector-arrow */
-  @media (max-width: 767px) {
-    .arrow-element.right-connector-arrow::before {
-      width: calc(69px * 2); /* 100% more width for mobile (double width) */
-    }
-  }
+  /* Mobile adjustments removed - now calculated dynamically in JavaScript */
 
   /* Corners and horizontal beams from original sprite */
   .mb-corner,

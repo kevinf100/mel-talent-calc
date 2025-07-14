@@ -71,7 +71,7 @@ export const ClassPicker = ({
       </div>
 
       {/* 📊 Selected Class Display */}
-      <div className="flex items-center justify-start w-full gap-4 md:gap-7 z-1 h-full min-h-[120px]">
+      <div className="flex items-center justify-start w-full gap-7 z-1 h-full min-h-[120px] pl-2 md: pl-0">
         {/* 🎯 Selected Class Icon */}
         <div className="relative z-10 max-w-[62px] max-h-[62px] [@media(min-width:640px)]:max-w-[105px] [@media(min-width:640px)]:max-h-[105px] md:max-w-[140px] md:max-h-[140px] h-full">
           <img

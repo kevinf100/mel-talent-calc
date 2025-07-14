@@ -1,5 +1,45 @@
 import type { Talent } from './types'
 
+// Calculate effective node width based on screen size and grid structure
+// Grid: 4 columns, gap-6 (24px) on mobile, gap-4 (16px) on desktop
+// Node: 56px width, Container padding: varies
+const calculateEffectiveNodeWidth = (): number => {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+  const nodeWidth = 56 // TalentNode button width
+  const gap = isMobile ? 24 : 16 // gap-6 on mobile, gap-4 on desktop
+  
+  // Get the actual grid container width
+  if (typeof window !== 'undefined') {
+    const gridContainer = document.querySelector('.grid.grid-cols-4')
+    if (gridContainer) {
+      const containerWidth = gridContainer.clientWidth
+      const paddingLeft = isMobile ? 16 : 32 // lg:pl-4 = 16px, default padding
+      const paddingRight = isMobile ? 16 : 32
+      const availableWidth = containerWidth - paddingLeft - paddingRight
+      const totalGaps = 3 * gap // 3 gaps between 4 columns
+      const cellWidth = (availableWidth - totalGaps) / 4
+      
+      // Arrow should reach from center of source to center of target
+      // So we need: gap + (nodeWidth/2) + (nodeWidth/2) = gap + nodeWidth
+      // But on mobile, reduce slightly to account for visual padding
+      const effectiveWidth = cellWidth + gap
+      return isMobile ? effectiveWidth * 0.85 : effectiveWidth // 15% reduction on mobile
+    }
+  }
+  
+  // Fallback to calculated approximation
+  const baseWidth = nodeWidth + gap
+  return isMobile ? baseWidth * 0.85 : baseWidth // 15% reduction on mobile
+}
+
+// Calculate connector width specifically for right-connector-arrow
+// This needs to be slightly larger on mobile to reach properly
+const calculateConnectorWidth = (effectiveNodeWidth: number): number => {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+  // For right-connector, we need a bit more width on mobile to reach the edge
+  return isMobile ? effectiveNodeWidth * 1.15 : effectiveNodeWidth // 15% increase on mobile
+}
+
 export const requiredForTier = (row: number) =>
   row * 5
 
@@ -63,8 +103,8 @@ export const getArrowProps = (
   // Check for right arrow (same row, source col < target col)
   if (sourceTalent.row === talent.row && sourceTalent.col < talent.col) {
     // Calculate based on actual grid spacing: 56px node + gap
-    // Use 72px as an approximation for node width + gap
-    const effectiveNodeWidth = 72
+    // Dynamic calculation based on screen width and grid structure
+    const effectiveNodeWidth = calculateEffectiveNodeWidth()
     const colDiff = talent.col - sourceTalent.col
     const arrowWidth = colDiff * effectiveNodeWidth
 
@@ -79,7 +119,7 @@ export const getArrowProps = (
   // Check for left arrow (same row, source col > target col)
   if (sourceTalent.row === talent.row && sourceTalent.col > talent.col) {
     // Use same dimensions as right arrow
-    const effectiveNodeWidth = 72
+    const effectiveNodeWidth = calculateEffectiveNodeWidth()
     const colDiff = sourceTalent.col - talent.col
     const arrowWidth = colDiff * effectiveNodeWidth
 
@@ -97,7 +137,7 @@ export const getArrowProps = (
       (talent.row - sourceTalent.row === 1 && talent.col - sourceTalent.col === 1)) {
     // For corner connections, return separate arrow elements
     const effectiveNodeHeight = 64
-    const effectiveNodeWidth = 72
+    const effectiveNodeWidth = calculateEffectiveNodeWidth()
     const rowDiff = talent.row - sourceTalent.row
     const colDiff = talent.col - sourceTalent.col
     const arrowHeight = rowDiff * effectiveNodeHeight
@@ -119,6 +159,7 @@ export const getArrowProps = (
           glow: isGlowAllowed,
           style: {
             '--arrow-width': `${arrowWidth}px`,
+            '--connector-width': `${calculateConnectorWidth(effectiveNodeWidth)}px`, // For the diagonal arrow itself
           },
         },
       ],

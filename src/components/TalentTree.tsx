@@ -92,7 +92,7 @@ export const TalentTree = ({
             <button
               onClick={onResetTree}
               aria-label='Reset Tree'
-              className='z-1 w-[39px] h-[38px] bg-no-repeat bg-[length:39px_75.5px] self-end'
+              className='z-1 w-[39px] h-[38px] bg-no-repeat bg-[length:39px_75.5px] self-start'
               style={{
                 backgroundImage: `url(${ResetSprite})`,
                 backgroundPosition: '0px 0px',
@@ -133,7 +133,8 @@ export const TalentTree = ({
           </div>
         </header>
 
-        <div className='grid grid-cols-4 grid-rows-7 md:gap-4 gap-6 relative lg:pl-4 lg:pr-4 place-items-center'>
+        <div className='flex justify-center items-center mt-1'>
+          <div className='grid grid-cols-4 grid-rows-7 md:gap-6 gap-8 relative lg:pl-4 lg:pr-4 place-items-center max-w-[400px] w-full'>
           {talents.map(t => {
             const pointsSpentInTree = talents.reduce((s, talent) => s + talent.points, 0)
             const locked = isTalentLocked(t, talents, pointsSpentInTree)
@@ -166,7 +167,7 @@ export const TalentTree = ({
                   <div
                     key={index}
                     className={`arrow-element ${arrow.type}-arrow ${arrow.glow ? 'glow' : ''}`}
-                    style={arrow.style}
+                    style={arrow.style as React.CSSProperties}
                   />
                 ))}
                 <TalentNode
@@ -191,6 +192,7 @@ export const TalentTree = ({
               </div>
             )
           })}
+          </div>
         </div>
       </div>
     </MetalBorders>
