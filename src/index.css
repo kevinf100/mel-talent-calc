@@ -524,4 +524,11 @@
     background-size: cover;
     z-index: 10;
   }
+
+  /* Default tooltip width (fallback for immediate rendering - desktop only) */
+  @media (min-width: 768px) {
+    .tooltip-container {
+      max-width: 24rem;
+    }
+  }
 }
