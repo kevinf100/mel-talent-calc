@@ -80,7 +80,6 @@ export const Tooltip = ({
         <MetalBordersSmall>
           <div className='bg-[#2a2a2af7] p-3 text-sm shadow-lg relative'>
             <div className='break-words whitespace-normal'>{children}</div>
-
             {!disabled && (
               <div className='flex gap-2 mt-1 md:hidden touch-manipulation justify-between'>
                 <button

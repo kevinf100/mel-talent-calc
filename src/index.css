@@ -184,14 +184,14 @@
     content: '';
     background: url('/src/assets/ui/arrow-down-glow1.png')
       no-repeat bottom;
-    bottom: 65px; /* Aligns with target node's top */
-    height: var(--arrow-height);
+    bottom: 64px; /* Aligns with target node's top */
+    height: calc(var(--arrow-height) + 10px);
   }
   .down-arrow:not(.glow)::before {
     @apply grayscale;
   }
   .down-arrow::after {
-    @apply absolute w-[56px] h-[21px] z-[30] pointer-events-none sm:bottom-[55.75px] bottom-[51px];
+    @apply absolute w-[56px] h-[21px] z-[30] pointer-events-none md:bottom-[55.75px] bottom-[51px];
     content: '';
     background: url('/src/assets/ui/arrow-down-head-glow1.png')
       no-repeat bottom;
@@ -273,14 +273,14 @@
     background: url('/src/assets/ui/arrow-down-glow1.png')
       no-repeat bottom;
     bottom: 0;
-    height: var(--arrow-height);
+    height: calc(var(--arrow-height) + 5px);
     left: 0;
   }
   .arrow-element.down-arrow:not(.glow)::before {
     @apply grayscale;
   }
   .arrow-element.down-arrow::after {
-    @apply absolute w-[56px] h-[21px] z-[35] pointer-events-none bottom-[52px];
+    @apply absolute w-[56px] h-[21px] z-[35] pointer-events-none;
     content: '';
     background: url('/src/assets/ui/arrow-down-head-glow1.png')
       no-repeat bottom;
@@ -323,7 +323,7 @@
     width: var(--connector-width, 69px); /* Use dynamic width, fallback to 69px */
     height: 64px;
     right: -38px; /* Keep original positioning */
-    top: calc(-64px - 18px); /* -64px (node height) - 18px (gap/padding) = -82px */
+    top: calc(-64px - 23px); /* -64px (node height) - 18px (gap/padding) = -82px */
     background-position: 100% center;
   }
   .arrow-element.right-connector-arrow:not(.glow)::before {
@@ -332,6 +332,17 @@
   /* No ::after for right-connector-arrow - no arrowhead */
 
   /* Mobile adjustments removed - now calculated dynamically in JavaScript */
+
+  /* Reset button responsive sizing for mobile (below 640px) */
+  @media (max-width: 639px) {
+    /* Original: 150px x 49px, target: 120px wide (30px less) */
+    /* Aspect ratio: 150/49 ≈ 3.06, so 120px wide = 39.2px high */
+    button.w-\[150px\].h-\[49px\] {
+      width: 120px !important;
+      height: 39px !important;
+      background-size: 120px 79px !important; /* Scale background proportionally */
+    }
+  }
 
   /* Corners and horizontal beams from original sprite */
   .mb-corner,

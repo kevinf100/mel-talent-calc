@@ -1,4 +1,4 @@
-import { type MouseEvent } from 'react'
+import { type MouseEvent, useState, useEffect } from 'react'
 import { TalentNode } from './TalentNode'
 import type { Talent } from '../core/types'
 import {
@@ -35,6 +35,25 @@ export const TalentTree = ({
   pointsRemaining,
   specIcon,
 }: TTalentTreeProps) => {
+  // State to force re-render when viewport changes
+  const [viewportKey, setViewportKey] = useState(0)
+
+  // Listen for viewport changes to recalculate arrows
+  useEffect(() => {
+    const handleResize = () => {
+      setViewportKey(prev => prev + 1)
+    }
+
+    window.addEventListener('resize', handleResize)
+    // Also listen for orientation change on mobile
+    window.addEventListener('orientationchange', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('orientationchange', handleResize)
+    }
+  }, [])
+
   const pointsSpent = talents.reduce(
     (s, t) => s + t.points,
     0

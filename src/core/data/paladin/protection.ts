@@ -118,7 +118,7 @@ export const protection: Tree = {
             col: 2,
             maxPoints: 3,
             requires: {
-                id: 0,
+                id: "ability_defend",
                 points: 5
             },
             icon: "inv_shield_06.png",

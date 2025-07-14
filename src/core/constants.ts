@@ -16,13 +16,13 @@ export const CLASS_COLORS: Record<
 }
 
 export const CLASS_NAMES = [
-  'warrior',
-  'paladin',
-  'hunter',
-  'rogue',
-  'priest',
-  'shaman',
-  'mage',
-  'warlock',
   'druid',
+  'hunter',
+  'mage',
+  'paladin',
+  'priest',
+  'rogue',
+  'shaman',
+  'warlock',
+  'warrior',
 ] as const

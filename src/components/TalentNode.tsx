@@ -328,7 +328,7 @@ export const TalentNode = ({
           </p>
         )}
         {isMobile && 
-          <p className='mb-2 text-gray-400 italic'>
+          <p className='mb-1 text-gray-400 italic'>
             (Tap outside to dismiss)
           </p>}
       </Tooltip>

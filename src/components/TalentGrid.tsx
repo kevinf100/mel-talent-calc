@@ -1,17 +1,47 @@
 import { TalentTree } from './TalentTree'
 import { GlobalPointsSummary } from './GlobalPointsSummary'
 import { useTalentTrees } from '../core/useTalentTrees'
-import { TalentTreeScroller } from './TalentTreeScroller'
+import { TalentTreeScroller, type TalentTreeScrollerRef } from './TalentTreeScroller'
 
 import ResetSprite from '../assets/ui/reset-all-button-sprite-small.png'
 import { ParchmentBorders } from './ParchmentBorders'
 import { ClassPicker } from './ClassPicker'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import type { ClassName } from '../core/types'
+import { CLASS_NAMES } from '../core/constants'
+
+const SELECTED_CLASS_KEY = 'mel-talent-calc-selected-class'
+
+const getInitialSelectedClass = (): ClassName => {
+  try {
+    const saved = localStorage.getItem(SELECTED_CLASS_KEY)
+    return (saved as ClassName) || CLASS_NAMES[0]
+  } catch {
+    return CLASS_NAMES[0]
+  }
+}
 
 export const TalentGrid = () => {
   const [selectedClass, setSelectedClass] =
-    useState<ClassName>('warrior')
+    useState<ClassName>(getInitialSelectedClass)
+  const scrollerRef = useRef<TalentTreeScrollerRef>(null)
+  
+  // Save selected class to localStorage whenever it changes
+  useEffect(() => {
+    try {
+      localStorage.setItem(SELECTED_CLASS_KEY, selectedClass)
+    } catch {
+      // Silently fail if localStorage is not available
+    }
+  }, [selectedClass])
+
+  // Reset scroll to first tree when class changes
+  useEffect(() => {
+    if (scrollerRef.current) {
+      scrollerRef.current.scrollToFirst()
+    }
+  }, [selectedClass])
+
   const {
     trees,
     modify,
@@ -56,14 +86,15 @@ export const TalentGrid = () => {
               <button
                 onClick={resetAll}
                 aria-label='Reset All'
-                className='w-[150px] h-[49px] bg-no-repeat bg-[length:150px_99px]'
+                className='w-[120px] h-[39px] bg-no-repeat bg-[length:120px_79px] sm:w-[150px] sm:h-[49px] sm:bg-[length:150px_99px]'
                 style={{
                   backgroundImage: `url(${ResetSprite})`,
                   backgroundPosition: '0px 0px',
                 }}
                 onPointerDown={e => {
+                  const isDesktop = window.innerWidth >= 640
                   e.currentTarget.style.backgroundPosition =
-                    '0.3px -48.75px'
+                    isDesktop ? '0.3px -48.75px' : '0.3px -38.75px'
                 }}
                 onPointerUp={e => {
                   e.currentTarget.style.backgroundPosition =
@@ -80,6 +111,7 @@ export const TalentGrid = () => {
       </div>
 
       <TalentTreeScroller
+        ref={scrollerRef}
         trees={trees.map((tree, i) => (
           <TalentTree
             key={tree.name}
