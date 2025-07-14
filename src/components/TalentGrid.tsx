@@ -52,7 +52,12 @@ export const TalentGrid = () => {
   // Reset scroll to first tree when class changes
   useEffect(() => {
     if (scrollerRef.current) {
-      scrollerRef.current.scrollToFirst()
+      // Add small delay to ensure new trees are rendered before scrolling
+      setTimeout(() => {
+        if (scrollerRef.current) {
+          scrollerRef.current.scrollToFirst()
+        }
+      }, 10)
     }
   }, [selectedClass])
 

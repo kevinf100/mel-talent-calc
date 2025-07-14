@@ -534,10 +534,8 @@
     z-index: 10;
   }
 
-  /* Default tooltip width (fallback for immediate rendering - desktop only) */
-  @media (min-width: 768px) {
-    .tooltip-container {
-      max-width: 24rem;
-    }
+  .tooltip-container {
+    min-width: 24rem;
+    max-width: 24rem;
   }
 }
