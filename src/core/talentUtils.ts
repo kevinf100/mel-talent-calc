@@ -38,7 +38,7 @@ export const meetsDependencies = (
   )
 }
 
-// Find talents that are targets of downward dependencies and calculate arrow height
+// Find talents that are targets of dependencies and calculate arrow properties
 export const getArrowProps = (
   talents: Talent[],
   talent: Talent,
@@ -52,30 +52,95 @@ export const getArrowProps = (
   )
   if (!sourceTalent)
     return { class: '', style: {} }
-  // Only apply for downward dependencies (source row < target row)
-  if (sourceTalent.row >= talent.row)
-    return { class: '', style: {} }
-
-  // Calculate arrow height to reach source node's bottom
-  const effectiveNodeHeight = 64
-  const rowDiff = talent.row - sourceTalent.row
-  const arrowHeight =
-    rowDiff * effectiveNodeHeight
 
   const isGlowAllowed =
     !locked &&
     sourceTalent.points > 0 &&
     (availablePoints > 0 || talent.points > 0)
 
-  // Add 'glow' class if dependency is met
   const glowClass = isGlowAllowed ? 'glow' : ''
 
-  return {
-    class: `down-arrow ${glowClass}`,
-    style: {
-      '--arrow-height': `${arrowHeight}px`,
-    },
+  // Check for right arrow (same row, source col < target col)
+  if (sourceTalent.row === talent.row && sourceTalent.col < talent.col) {
+    // Calculate based on actual grid spacing: 56px node + gap
+    // Use 72px as an approximation for node width + gap
+    const effectiveNodeWidth = 72
+    const colDiff = talent.col - sourceTalent.col
+    const arrowWidth = colDiff * effectiveNodeWidth
+
+    return {
+      class: `right-arrow ${glowClass}`,
+      style: {
+        '--arrow-width': `${arrowWidth}px`,
+      },
+    }
   }
+
+  // Check for left arrow (same row, source col > target col)
+  if (sourceTalent.row === talent.row && sourceTalent.col > talent.col) {
+    // Use same dimensions as right arrow
+    const effectiveNodeWidth = 72
+    const colDiff = sourceTalent.col - talent.col
+    const arrowWidth = colDiff * effectiveNodeWidth
+
+    return {
+      class: `left-arrow ${glowClass}`,
+      style: {
+        '--arrow-width': `${arrowWidth}px`,
+      },
+    }
+  }
+
+  // Check for corner connection (down + right): ONLY for specific L-shaped connections
+  // This should only apply when we need both down AND right arrows (like row+1, col+1)
+  if (sourceTalent.row < talent.row && sourceTalent.col < talent.col && 
+      (talent.row - sourceTalent.row === 1 && talent.col - sourceTalent.col === 1)) {
+    // For corner connections, return separate arrow elements
+    const effectiveNodeHeight = 64
+    const effectiveNodeWidth = 72
+    const rowDiff = talent.row - sourceTalent.row
+    const colDiff = talent.col - sourceTalent.col
+    const arrowHeight = rowDiff * effectiveNodeHeight
+    const arrowWidth = colDiff * effectiveNodeWidth
+
+    return {
+      class: 'corner-connection',
+      style: {},
+      arrows: [
+        {
+          type: 'down',
+          glow: isGlowAllowed,
+          style: {
+            '--arrow-height': `${rowDiff === 1 ? 40 : arrowHeight}px`,
+          },
+        },
+        {
+          type: 'right-connector',
+          glow: isGlowAllowed,
+          style: {
+            '--arrow-width': `${arrowWidth}px`,
+          },
+        },
+      ],
+    }
+  }
+
+  // Check for down arrow (source row < target row)
+  if (sourceTalent.row < talent.row) {
+    const effectiveNodeHeight = 64
+    const rowDiff = talent.row - sourceTalent.row
+    const arrowHeight = rowDiff * effectiveNodeHeight
+
+    return {
+      class: `down-arrow ${glowClass}`,
+      style: {
+        '--arrow-height': `${rowDiff === 1 ? 40 : arrowHeight}px`,
+      },
+    }
+  }
+
+  // No supported arrow direction
+  return { class: '', style: {} }
 }
 
 export type RequirementParams = {

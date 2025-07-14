@@ -191,7 +191,7 @@
     @apply grayscale;
   }
   .down-arrow::after {
-    @apply absolute w-[56px] h-[21px] z-[30] pointer-events-none md:bottom-[55.75px] bottom-[52px];
+    @apply absolute w-[56px] h-[21px] z-[30] pointer-events-none md:bottom-[55.75px] bottom-[55px];
     content: '';
     background: url('/src/assets/ui/arrow-down-head-glow1.png')
       no-repeat bottom;
@@ -202,6 +202,156 @@
   .down-arrow.glow.disabled::before,
   .down-arrow.glow.disabled::after {
     @apply grayscale-0; /* Override disabled styling for glowing arrows */
+  }
+
+  /* Right arrow styles */
+  .right-arrow::before {
+    @apply absolute h-[56px] pointer-events-none md:right-[50px] right-[65px];
+    content: '';
+    background: url('/src/assets/ui/arrow-right-glow.png')
+      no-repeat right;
+    width: var(--arrow-width);
+  }
+  .right-arrow:not(.glow)::before {
+    @apply grayscale;
+  }
+  .right-arrow::after {
+    @apply absolute h-[56px] w-[21px] z-[30] pointer-events-none md:right-[50px] right-[52px];
+    content: '';
+    background: url('/src/assets/ui/arrow-right-head-glow1.png')
+      no-repeat right;
+    top: 0; /* Fix: add proper top positioning */
+  }
+  .right-arrow:not(.glow)::after {
+    @apply grayscale;
+  }
+  .right-arrow.glow.disabled::before,
+  .right-arrow.glow.disabled::after {
+    @apply grayscale-0; /* Override disabled styling for glowing arrows */
+  }
+
+  /* Mobile adjustments for right arrows */
+  @media (max-width: 767px) {
+    .right-arrow::before {
+      width: calc(var(--arrow-width) * 1.5); /* 50% more width for mobile */
+    }
+    .arrow-element.right-arrow::before {
+      width: calc(var(--arrow-width) * 1.5); /* 50% more width for mobile */
+    }
+  }
+
+  /* Left arrow styles */
+  .left-arrow::before {
+    @apply absolute h-[56px] pointer-events-none md:left-[50px] left-[65px];
+    content: '';
+    background: url('/src/assets/ui/arrow-right-glow.png')
+      no-repeat left;
+    width: var(--arrow-width);
+    transform: scaleX(-1); /* Flip the glow horizontally */
+  }
+  .left-arrow:not(.glow)::before {
+    @apply grayscale;
+  }
+  .left-arrow::after {
+    @apply absolute h-[56px] w-[21px] z-[30] pointer-events-none md:left-[50px] left-[52px];
+    content: '';
+    background: url('/src/assets/ui/arrow-left-head-glow1.png')
+      no-repeat left;
+    top: 0;
+  }
+  .left-arrow:not(.glow)::after {
+    @apply grayscale;
+  }
+  .left-arrow.glow.disabled::before,
+  .left-arrow.glow.disabled::after {
+    @apply grayscale-0; /* Override disabled styling for glowing arrows */
+  }
+
+  /* Mobile adjustments for left arrows */
+  @media (max-width: 767px) {
+    .left-arrow::before {
+      width: calc(var(--arrow-width) * 1.2); /* 20% more width for mobile */
+    }
+    .arrow-element.left-arrow::before {
+      width: calc(var(--arrow-width) * 1.2); /* 20% more width for mobile */
+    }
+  }
+
+  /* Arrow elements for corner connections */
+  .arrow-element {
+    @apply absolute pointer-events-none;
+  }
+
+  /* Down arrow element styles */
+  .arrow-element.down-arrow::before {
+    @apply absolute w-[56px] pointer-events-none;
+    content: '';
+    background: url('/src/assets/ui/arrow-down-glow1.png')
+      no-repeat bottom;
+    bottom: 0;
+    height: var(--arrow-height);
+    left: 0;
+  }
+  .arrow-element.down-arrow:not(.glow)::before {
+    @apply grayscale;
+  }
+  .arrow-element.down-arrow::after {
+    @apply absolute w-[56px] h-[21px] z-[35] pointer-events-none md:bottom-[55.75px] bottom-[52px];
+    content: '';
+    background: url('/src/assets/ui/arrow-down-head-glow1.png')
+      no-repeat bottom;
+    left: 0;
+    bottom: -7px;
+  }
+  .arrow-element.down-arrow:not(.glow)::after {
+    @apply grayscale;
+  }
+
+  /* Right arrow element styles (with arrowhead for standalone right arrows) */
+  .arrow-element.right-arrow::before {
+    @apply absolute h-[56px] pointer-events-none md:right-[50px] right-[65px];
+    content: '';
+    background: url('/src/assets/ui/arrow-right-glow.png')
+      no-repeat right;
+    width: var(--arrow-width);
+    top: 0;
+  }
+  .arrow-element.right-arrow:not(.glow)::before {
+    @apply grayscale;
+  }
+  .arrow-element.right-arrow::after {
+    @apply absolute h-[56px] w-[21px] z-[30] pointer-events-none md:right-[50px] right-[52px];
+    content: '';
+    background: url('/src/assets/ui/arrow-right-head-glow1.png')
+      no-repeat right;
+    top: 0;
+  }
+  .arrow-element.right-arrow:not(.glow)::after {
+    @apply grayscale;
+  }
+
+  /* Right connector element styles (no arrowhead for corner connections) */
+  .arrow-element.right-connector-arrow::before {
+    @apply absolute pointer-events-none;
+    content: '';
+    background: url('/src/assets/ui/arrow-rightdown-glow.png')
+      no-repeat;
+    width: 69px;
+    height: 64px;
+    right: -38px;
+    top: calc(-64px - 18px); /* -64px (node height) - 18px (gap/padding) = -82px */
+    background-position: 100% center;
+  }
+  .arrow-element.right-connector-arrow:not(.glow)::before {
+    @apply grayscale;
+  }
+  /* No ::after for right-connector-arrow - no arrowhead */
+
+  /* Mobile adjustments for right-connector-arrow */
+  @media (max-width: 767px) {
+    .arrow-element.right-connector-arrow::before {
+      width: calc(69px * 2); /* 100% more width for mobile (double width) */
+    }
   }
 
   /* Corners and horizontal beams from original sprite */

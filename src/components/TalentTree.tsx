@@ -144,6 +144,7 @@ export const TalentTree = ({
             const {
               class: arrowClass,
               style: arrowStyle,
+              arrows,
             } = getArrowProps(talents, t, locked, pointsRemaining)
 
             const requiredTalent = t.requires
@@ -160,6 +161,14 @@ export const TalentTree = ({
                   ...arrowStyle,
                 }}
               >
+                {/* Render separate arrow elements for corner connections */}
+                {arrows?.map((arrow, index) => (
+                  <div
+                    key={index}
+                    className={`arrow-element ${arrow.type}-arrow ${arrow.glow ? 'glow' : ''}`}
+                    style={arrow.style}
+                  />
+                ))}
                 <TalentNode
                   availablePoints={pointsRemaining}
                   name={t.name}
