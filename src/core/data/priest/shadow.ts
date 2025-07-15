@@ -121,6 +121,10 @@ export const shadow: Tree = {
       maxPoints: 1,
       icon: 'spell_shadow_siphonmana.png',
       points: 0,
+      abilityData: {
+        leftSide: ['45 Mana', '3 sec channel'],
+        rightSide: ['20 yd range'],
+      },
     },
     {
       id: 'spell_magic_lesserinvisibilty',
@@ -179,6 +183,10 @@ export const shadow: Tree = {
       },
       icon: 'spell_shadow_impphaseshift.png',
       points: 0,
+      abilityData: {
+        leftSide: ['225 Mana', 'Instant'],
+        rightSide: ['30 yd range', '45 sec cooldown'],
+      },
     },
     {
       id: 'spell_shadow_unsummonbuilding',
@@ -191,6 +199,10 @@ export const shadow: Tree = {
       maxPoints: 1,
       icon: 'spell_shadow_unsummonbuilding.png',
       points: 0,
+      abilityData: {
+        leftSide: ['40 Mana', 'Instant'],
+        rightSide: ['30 yd range'],
+      },
     },
     {
       id: 'spell_shadow_improvedvampiricembrace',
@@ -267,6 +279,9 @@ export const shadow: Tree = {
       },
       icon: 'spell_shadow_shadowform.png',
       points: 0,
+      abilityData: {
+        leftSide: ['32% of base Mana', 'Instant'],
+      },
     },
     {
       id: 'spell_shadow_shadowpower',
@@ -315,6 +330,10 @@ export const shadow: Tree = {
       },
       icon: 'spell_holy_stoicism.png',
       points: 0,
+      abilityData: {
+        leftSide: ['325 Mana', '1.5 sec cast'],
+        rightSide: ['30 yd range'],
+      },
     },
   ],
 }

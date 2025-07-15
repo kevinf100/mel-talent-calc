@@ -122,6 +122,9 @@ export const retribution: Tree = {
       maxPoints: 1,
       icon: 'ability_warrior_innerrage.png',
       points: 0,
+      abilityData: {
+        leftSide: ['65 Mana', 'Instant'],
+      },
     },
     {
       id: 'spell_holy_persuitofjustice',
@@ -202,6 +205,9 @@ export const retribution: Tree = {
       maxPoints: 1,
       icon: 'spell_holy_mindvision.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+      },
     },
     {
       id: 'spell_holy_mindvision',
@@ -279,6 +285,10 @@ export const retribution: Tree = {
       maxPoints: 1,
       icon: 'spell_holy_prayerofhealing.png',
       points: 0,
+      abilityData: {
+        leftSide: ['60 Mana', 'Instant'],
+        rightSide: ['20 yd range', '1 min cooldown'],
+      },
     },
     {
       id: 'spell_holy_divinepurpose',
@@ -325,6 +335,11 @@ export const retribution: Tree = {
       maxPoints: 1,
       icon: 'spell_holy_crusaderstrike.png',
       points: 0,
+      abilityData: {
+        leftSide: ['8% of base Mana', 'Instant'],
+        rightSide: ['Melee Range', '6 sec cooldown'],
+        bottom: ['Requires Melee Weapon'],
+      },
     },
   ],
 }

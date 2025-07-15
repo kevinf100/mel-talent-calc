@@ -119,6 +119,10 @@ export const fire: Tree = {
       maxPoints: 1,
       icon: 'spell_fire_fireball02.png',
       points: 0,
+      abilityData: {
+        leftSide: ['125 Mana', '6 sec cast'],
+        rightSide: ['35 yd range'],
+      },
     },
     {
       id: 'spell_fire_fire',
@@ -217,6 +221,10 @@ export const fire: Tree = {
       },
       icon: 'spell_holy_excorcism_02.png',
       points: 0,
+      abilityData: {
+        leftSide: ['215 Mana', 'Instant'],
+        rightSide: ['', '45 sec cooldown'],
+      },
     },
     {
       id: 'spell_fire_volcano',
@@ -293,6 +301,10 @@ export const fire: Tree = {
       },
       icon: 'spell_fire_sealoffire.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['3 min cooldown'],
+      },
     },
     {
       id: 'spell_fire_moltenblood',
@@ -338,6 +350,10 @@ export const fire: Tree = {
       },
       icon: 'inv_misc_head_dragon_01.png',
       points: 0,
+      abilityData: {
+        leftSide: ['475 Mana', 'Instant'],
+        rightSide: ['', '20 sec cooldown'],
+      },
     },
   ],
 }

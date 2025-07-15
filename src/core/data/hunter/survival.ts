@@ -146,6 +146,10 @@ export const survival: Tree = {
       maxPoints: 1,
       icon: 'ability_whirlwind.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['5 min cooldown'],
+      },
     },
     {
       id: 'ability_ensnare',
@@ -289,6 +293,11 @@ export const survival: Tree = {
       },
       icon: 'inv_spear_02.png',
       points: 0,
+      abilityData: {
+        leftSide: ['115 Mana'],
+        rightSide: ['35 yd range', '2 min cooldown'],
+        bottom: ['Requires Ranged Weapon'],
+      },
     },
     {
       id: 'ability_rogue_findweakness',
@@ -339,6 +348,10 @@ export const survival: Tree = {
       },
       icon: 'ability_hunter_readiness.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['5 min cooldown'],
+      },
     },
   ],
 }

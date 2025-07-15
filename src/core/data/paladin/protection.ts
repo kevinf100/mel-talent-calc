@@ -92,6 +92,10 @@ export const protection: Tree = {
       maxPoints: 1,
       icon: 'spell_magic_magearmor.png',
       points: 0,
+      abilityData: {
+        leftSide: ['6% of base Mana', 'Instant'],
+        rightSide: ['30 yd range'],
+      },
     },
     {
       id: 'spell_holy_sealoffury',
@@ -206,6 +210,10 @@ export const protection: Tree = {
       maxPoints: 1,
       icon: 'spell_nature_lightningshield.png',
       points: 0,
+      abilityData: {
+        leftSide: ['60 Mana', 'Instant'],
+        rightSide: ['30 yd range'],
+      },
     },
     {
       id: 'spell_holy_blessingofstrength',
@@ -284,6 +292,11 @@ export const protection: Tree = {
       },
       icon: 'spell_holy_blessingofprotection.png',
       points: 0,
+      abilityData: {
+        leftSide: ['135 Mana', 'Instant'],
+        rightSide: ['', '10 sec cooldown'],
+        bottom: ['Requires Shields'],
+      },
     },
     {
       id: 'spell_holy_ardentdefender',
@@ -332,6 +345,11 @@ export const protection: Tree = {
       },
       icon: 'spell_holy_avengersshield.png',
       points: 0,
+      abilityData: {
+        leftSide: ['500 Mana', '1 sec cast'],
+        rightSide: ['30 yd range', '30 sec cooldown'],
+        bottom: ['Requires Shields'],
+      },
     },
   ],
 }

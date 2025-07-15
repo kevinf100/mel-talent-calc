@@ -193,6 +193,10 @@ export const holy: Tree = {
       },
       icon: 'spell_holy_heal.png',
       points: 0,
+      abilityData: {
+        leftSide: ['3% of base Mana', 'Instant'],
+        rightSide: ['', '2 min cooldown'],
+      },
     },
     {
       id: 'spell_holy_healingaura',
@@ -266,6 +270,10 @@ export const holy: Tree = {
       },
       icon: 'spell_holy_searinglight.png',
       points: 0,
+      abilityData: {
+        leftSide: ['335 Mana', 'Instant'],
+        rightSide: ['20 yd range', '15 sec cooldown'],
+      },
     },
     {
       id: 'spell_holy_blessedlife',
@@ -308,6 +316,10 @@ export const holy: Tree = {
       maxPoints: 1,
       icon: 'spell_holy_divineillumination.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['3 min cooldown'],
+      },
     },
   ],
 }

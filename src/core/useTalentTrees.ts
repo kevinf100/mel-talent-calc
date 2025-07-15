@@ -11,16 +11,18 @@ import {
 } from './talentUtils'
 import { talentData } from './data/talentData'
 
-const TOTAL_TALENT_POINTS = 51
+const additionalTalentPointsLevels = [14,19,24,29,34,39,44,49,54,60]
 
 type UseTalentTreesProps = {
   selectedClass: ClassName
   setSelectedClass: (className: ClassName) => void
+  totalTalentPoints?: number
 }
 
 export const useTalentTrees = ({
   selectedClass,
   setSelectedClass,
+  totalTalentPoints = 61,
 }: UseTalentTreesProps) => {
   const [trees, setTrees] = useState<Tree[]>(
     talentData[selectedClass]
@@ -42,12 +44,39 @@ export const useTalentTrees = ({
     )
   }, [trees])
 
+  const pointsByLevel = useMemo(() => {
+    const list: number[] = []
+    for (let level = 1; level <= 200; level++) {
+      let points = 0
+      if (level >= 10) points += 1
+      if (additionalTalentPointsLevels.includes(level)) points += 1
+      list[level] = points
+    }
+    return list
+  }, [])
+
+  const cumulativePointsByLevel = useMemo(() => {
+    const cumulative: number[] = []
+    let total = 0
+    for (let level = 1; level <= pointsByLevel.length - 1; level++) {
+      total += pointsByLevel[level]
+      cumulative[level] = total
+    }
+    return cumulative
+  }, [pointsByLevel])
+
+  const currentLevel = useMemo(() => {
+    for (let level = 10; level < cumulativePointsByLevel.length; level++) {
+      if (cumulativePointsByLevel[level] >= totalPointsSpent) {
+        return level
+      }
+    }
+    return cumulativePointsByLevel.length - 1
+  }, [totalPointsSpent, cumulativePointsByLevel])
+
   const pointsRemaining = useMemo(() => {
-    return Math.max(
-      0,
-      TOTAL_TALENT_POINTS - totalPointsSpent
-    )
-  }, [totalPointsSpent])
+    return Math.max(0, totalTalentPoints - totalPointsSpent)
+  }, [totalTalentPoints, totalPointsSpent])
 
   const resetTree = (idx: number) => {
     setTrees(prev => {
@@ -80,43 +109,20 @@ export const useTalentTrees = ({
   ) => {
     setTrees(prev => {
       const copy = [...prev]
-      const talents = copy[treeIdx].talents.map(
-        t => ({ ...t })
-      )
-      const target = talents.find(
-        t => t.id === talentId
-      )
+      const talents = copy[treeIdx].talents.map(t => ({ ...t }))
+      const target = talents.find(t => t.id === talentId)
       if (!target) return prev
 
-      const pointsSpent = talents.reduce(
-        (s, t) => s + t.points,
-        0
-      )
-      const locked = isTalentLocked(
-        target,
-        talents,
-        pointsSpent
-      )
-      const isShift =
-        e.shiftKey || e.type === 'contextmenu'
+      const pointsSpent = talents.reduce((s, t) => s + t.points, 0)
+      const locked = isTalentLocked(target, talents, pointsSpent)
+      const isShift = e.shiftKey || e.type === 'contextmenu'
 
       if (isShift) {
-        if (
-          canSafelyDecrementTalent(
-            target,
-            talents
-          )
-        ) {
+        if (canSafelyDecrementTalent(target, talents)) {
           target.points -= 1
         }
       } else {
-        if (
-          canIncrementTalent(
-            target,
-            pointsRemaining,
-            locked
-          )
-        ) {
+        if (canIncrementTalent(target, pointsRemaining, locked)) {
           target.points += 1
         }
       }
@@ -131,12 +137,13 @@ export const useTalentTrees = ({
 
   return {
     trees,
-    totalTalentPoints: TOTAL_TALENT_POINTS,
+    currentLevel,
     totalPointsSpent,
+    totalTalentPoints,
     pointsRemaining,
     modify,
     resetTree,
     resetAll,
-    setSelectedClass, // Add to allow class switching
+    setSelectedClass,
   }
 }

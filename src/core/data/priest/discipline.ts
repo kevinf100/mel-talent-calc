@@ -119,6 +119,10 @@ export const discipline: Tree = {
       maxPoints: 1,
       icon: 'spell_frost_windwalkon.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['3 min cooldown'],
+      },
     },
     {
       id: 'spell_nature_sleep',
@@ -221,6 +225,10 @@ export const discipline: Tree = {
       },
       icon: 'spell_holy_painsupression.png',
       points: 0,
+      abilityData: {
+        leftSide: ['8% of base Mana', 'Instant'],
+        rightSide: ['40 yd range', '2 min cooldown'],
+      },
     },
     {
       id: 'spell_shadow_focusedpower',
@@ -280,6 +288,10 @@ export const discipline: Tree = {
       },
       icon: 'spell_holy_powerinfusion.png',
       points: 0,
+      abilityData: {
+        leftSide: ['16% of base Mana', 'Instant'],
+        rightSide: ['30 yd range', '2 min cooldown'],
+      },
     },
     {
       id: 'spell_holy_powerwordshield',
@@ -324,6 +336,10 @@ export const discipline: Tree = {
       maxPoints: 1,
       icon: 'spell_holy_powerwordbarrier.png',
       points: 0,
+      abilityData: {
+        leftSide: ['4% of base Mana', 'Instant'],
+        rightSide: ['40 yd range', '3 min cooldown'],
+      },
     },
   ],
 }

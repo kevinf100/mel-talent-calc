@@ -22,8 +22,8 @@ export const Layout = ({
         </header>
       )}
 
-      <main className='flex-1 w-full px-2'>
-        <div className='flex w-full items-start gap-4'>
+      <main className='flex-1 w-full'>
+        <div className='flex w-full items-start gap-4 bg-[#13191b]'>
           {/* Sidebar (if provided) */}
           {sidebar && (
             <aside className='w-64 shrink-0'>

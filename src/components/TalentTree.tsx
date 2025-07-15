@@ -1,7 +1,4 @@
-import {
-  type MouseEvent,
-
-} from 'react'
+import { type MouseEvent } from 'react'
 import { TalentNode } from './TalentNode'
 import type { Talent } from '../core/types'
 import { getArrowProps } from '../core/talentUtils'
@@ -113,23 +110,22 @@ export const TalentTree = ({
             />
           </div>
 
-          <div className='w-full flex justify-center mt-1'>
-            <h2
-              className='text-center px-3 py-1 text-sm w-full rounded shadow-inner'
-              style={{
-                backgroundColor:
-                  'rgba(3, 2, 2, 0.34)',
-                color: 'rgb(255, 215, 0)',
-                borderRadius: '5px',
-                boxShadow:
-                  'inset 0 0 8px rgba(0, 0, 0, 0.36)',
-                borderWidth: '1px',
-                borderStyle: 'inset',
-                borderColor: 'black',
-              }}
-            >
+          <div
+            className='w-full flex justify-center mt-1 pt-1 sm:pt-0'
+            style={{
+              backgroundColor:
+                'rgba(3, 2, 2, 0.34)',
+              borderRadius: '5px',
+              boxShadow:
+                'inset 0 0 8px rgba(0, 0, 0, 0.36)',
+              borderWidth: '1px',
+              borderStyle: 'inset',
+              borderColor: 'black',
+            }}
+          >
+            <h2 className='text-center px-3 py-[1px] sm:py-[2px] text-sm w-full rounded shadow-inner text-gold-text'>
               Points spent in {name} Talents:{' '}
-              <span className='text-white font-sans'>
+              <span className='text-white font-italic text-base'>
                 {pointsSpent}
               </span>
             </h2>

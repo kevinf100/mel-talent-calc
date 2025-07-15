@@ -2,7 +2,7 @@
 
 @theme {
   --color-gold-text: rgb(255, 215, 0);
-  --breakpoint-xl: 85rem;
+  --breakpoint-xl: 2400px;
   --color-green-400: oklch(0.78 0.32 147.09);
 }
 
@@ -72,22 +72,42 @@
     white-space: pre-line;
   }
 }
-/*/ 
-@media (max-width: 767px) {
-  .fade-mask {
-    -webkit-mask-image: none !important;
-    mask-image: none !important;
-    -webkit-mask-size: none !important;
-    mask-size: none !important;
-    -webkit-mask-repeat: none !important;
-    mask-repeat: none !important;
-    -webkit-mask-composite: initial !important;
-    mask-composite: initial !important;
-  }
-}
-/*/
 
 @layer components {
+  .glow-overlay {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glow-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: none;
+  }
+
+  .glow-overlay:hover::before {
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    animation: sweepGlow 0.8s ease forwards;
+  }
+
+  @keyframes sweepGlow {
+    0% {
+      transform: translateX(-100%) skewX(-20deg);
+    }
+    100% {
+      transform: translateX(100%) skewX(-20deg);
+    }
+  }
   @media (min-width: 640px) {
     .fade-mask {
       -webkit-mask-image:
@@ -124,8 +144,8 @@
         );
       -webkit-mask-composite: destination-in;
       mask-composite: intersect; /* for Firefox */
-      -webkit-mask-size: 100% 77%;
-      mask-size: 100% 77%;
+      -webkit-mask-size: 100% 80%;
+      mask-size: 100% 80%;
       -webkit-mask-repeat: no-repeat;
       mask-repeat: no-repeat;
 
@@ -465,7 +485,7 @@
   .parchment .corner,
   .parchment .edge.top,
   .parchment .edge.bottom {
-    background-image: url('/src/assets/ui/parchment-sprite3.PNG'); /* horizontal + corner sprite */
+    background-image: url('/src/assets/ui/parchment-sprite4.PNG'); /* horizontal + corner sprite */
     background-repeat: no-repeat;
     z-index: 1;
   }
@@ -473,14 +493,14 @@
   /* Vertical edges from a separate file */
   .parchment .edge.left,
   .parchment .edge.right {
-    background-image: url('/src/assets/ui/parchment-sprite-sides2.PNG'); /* vertical edge sprite */
+    background-image: url('/src/assets/ui/parchment-sprite-sides3.PNG'); /* vertical edge sprite */
     background-repeat: repeat-y;
     background-size: auto;
     z-index: 1;
   }
 
   .parchment .background {
-    background-image: url('/src/assets/ui/parchment-sprite-bg2.PNG');
+    background-image: url('/src/assets/ui/parchment-sprite-bg3.PNG');
     background-repeat: repeat;
     background-clip: content-box;
     z-index: 1;

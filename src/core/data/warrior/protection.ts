@@ -293,6 +293,7 @@ export const protection: Tree = {
           'Melee Range',
           '6 sec cooldown',
         ],
+        bottom: ['Requires Shields'],
       },
     },
     {

@@ -254,6 +254,10 @@ export const elemental: Tree = {
       },
       icon: 'spell_nature_wispheal.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['3 min cooldown'],
+      },
     },
     {
       id: 'spell_nature_elementalshields',
@@ -300,6 +304,10 @@ export const elemental: Tree = {
       },
       icon: 'spell_fire_totemofwrath.png',
       points: 0,
+      abilityData: {
+        leftSide: ['5% of base mana', 'Instant'],
+        bottom: ['Tools: Fire Totem']
+      },
     },
   ],
 }

@@ -92,6 +92,9 @@ export const holy: Tree = {
       maxPoints: 1,
       icon: 'spell_holy_holynova.png',
       points: 0,
+      abilityData: {
+        leftSide: ['185 Mana', 'Instant'],
+      },
     },
     {
       id: 'spell_holy_blessedrecovery',
@@ -264,6 +267,10 @@ export const holy: Tree = {
       },
       icon: 'spell_holy_summonlightwell.png',
       points: 0,
+      abilityData: {
+        leftSide: ['225 Mana', '1.5 sec cast'],
+        rightSide: ['40 yd range', '6 min cooldown'],
+      },
     },
     {
       id: 'spell_holy_blessedresillience',
@@ -306,6 +313,10 @@ export const holy: Tree = {
       maxPoints: 1,
       icon: 'spell_holy_circleofrenewal.png',
       points: 0,
+      abilityData: {
+        leftSide: ['300 Mana', 'Instant'],
+        rightSide: ['40 yd range'],
+      },
     },
   ],
 }

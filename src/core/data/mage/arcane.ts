@@ -134,6 +134,10 @@ export const arcane: Tree = {
       maxPoints: 1,
       icon: 'spell_arcane_blast.png',
       points: 0,
+      abilityData: {
+        leftSide: ['195 Mana', '2.5 sec cast'],
+        rightSide: ['30 yd range']
+      }
     },
     {
       id: 'spell_shadow_detectlesserinvisibility',
@@ -199,6 +203,10 @@ export const arcane: Tree = {
       maxPoints: 1,
       icon: 'spell_nature_enchantarmor.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['3 min cooldown'],
+      },
     },
     {
       id: 'spell_shadow_charm',
@@ -294,6 +302,10 @@ export const arcane: Tree = {
       },
       icon: 'spell_nature_lightning.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['3 min cooldown'],
+      },
     },
     {
       id: 'spell_arcane_arcanetorrent',
@@ -335,6 +347,10 @@ export const arcane: Tree = {
       maxPoints: 1,
       icon: 'spell_nature_slow.png',
       points: 0,
+      abilityData: {
+        leftSide: ['20% of base Mana', 'Instant'],
+        rightSide: ['30 yd range'],
+      },
     },
   ],
 }

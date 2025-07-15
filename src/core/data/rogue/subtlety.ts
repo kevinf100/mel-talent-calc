@@ -105,6 +105,11 @@ export const subtlety: Tree = {
       maxPoints: 1,
       icon: 'spell_shadow_curse.png',
       points: 0,
+      abilityData: {
+        leftSide: ['40 Energy', 'Instant'],
+        rightSide: ['Melee Range', ''],
+        bottom: ['Requires Melee Weapon'],
+      },
     },
     {
       id: 'ability_rogue_ambush',
@@ -185,6 +190,10 @@ export const subtlety: Tree = {
       maxPoints: 1,
       icon: 'spell_shadow_antishadow.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['10 min cooldown'],
+      },
     },
     {
       id: 'spell_shadow_summonsuccubus',
@@ -214,6 +223,11 @@ export const subtlety: Tree = {
       },
       icon: 'spell_shadow_lifedrain.png',
       points: 0,
+      abilityData: {
+        leftSide: ['35 Energy', 'Instant'],
+        rightSide: ['Melee Range', ''],
+        bottom: ['Requires Melee Weapon'],
+      },
     },
     {
       id: 'ability_rogue_masterofsubtlety',
@@ -274,6 +288,11 @@ export const subtlety: Tree = {
       },
       icon: 'spell_shadow_possession.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['30 sec cooldown'],
+        bottom: ['Requires Stealth'],
+      },
     },
     {
       id: 'ability_rogue_cheatdeath',
@@ -320,6 +339,11 @@ export const subtlety: Tree = {
       maxPoints: 1,
       icon: 'ability_rogue_shadowstep.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['30 sec cooldown'],
+        bottom: ['Requires Stealth'],
+      },
     },
   ],
 }

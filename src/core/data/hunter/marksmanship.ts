@@ -110,6 +110,11 @@ export const marksmanship: Tree = {
       maxPoints: 1,
       icon: 'inv_spear_07.png',
       points: 0,
+      abilityData: {
+        leftSide: ['75 Mana', '3 sec cast'],
+        rightSide: ['5-35 yd range', '8 sec cooldown'],
+        bottom: ['Requires Ranged Weapon']
+      },
     },
     {
       id: 'ability_hunter_rapidkilling',
@@ -185,6 +190,11 @@ export const marksmanship: Tree = {
       maxPoints: 1,
       icon: 'ability_golemstormbolt.png',
       points: 0,
+      abilityData: {
+        leftSide: ['6% of base Mana', 'Instant'],
+        rightSide: ['15 yd range', '30 sec cooldown'],
+        bottom: ['Requires Ranged Weapon']
+      },
     },
     {
       id: 'barrage',
@@ -258,6 +268,11 @@ export const marksmanship: Tree = {
       },
       icon: 'ability_theblackarrow.png',
       points: 0,
+      abilityData: {
+        leftSide: ['6% of base Mana', 'Instant'],
+        rightSide: ['35 yd range', '20 sec cooldown'],
+        bottom: ['Requires Ranged Weapon']
+      },
     },
     {
       id: 'ability_upgrademoonglaive',
@@ -296,7 +311,7 @@ export const marksmanship: Tree = {
     {
       id: 'ability_trueshot',
       ranks: [
-        'Increases the attack power of party and raid members within 45 yards by 50.  Lasts 0.001 seconds.',
+        'Increases the attack power of party and raid members within 45 yards by 50.  Lasts until cancelled.',
       ],
       row: 8,
       name: 'Trueshot Aura',
@@ -308,6 +323,9 @@ export const marksmanship: Tree = {
       },
       icon: 'ability_trueshot.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+      },
     },
   ],
 }

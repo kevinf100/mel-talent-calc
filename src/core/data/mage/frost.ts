@@ -131,6 +131,10 @@ export const frost: Tree = {
       maxPoints: 1,
       icon: 'spell_frost_coldhearted.png',
       points: 0,
+      abilityData: {
+        leftSide: ['3% of base Mana', 'Instant'],
+        rightSide: ['', '3 min cooldown'],
+      },
     },
     {
       id: 'spell_frost_icestorm',
@@ -218,6 +222,10 @@ export const frost: Tree = {
       maxPoints: 1,
       icon: 'spell_frost_wizardmark.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['8 min cooldown'],
+      },
     },
     {
       id: 'spell_frost_glacier',
@@ -277,6 +285,10 @@ export const frost: Tree = {
       },
       icon: 'spell_ice_lament.png',
       points: 0,
+      abilityData: {
+        leftSide: ['305 Mana', 'Instant'],
+        rightSide: ['', '30 sec cooldown'],
+      },
     },
     {
       id: 'spell_frost_arcticwinds',
@@ -321,6 +333,10 @@ export const frost: Tree = {
       maxPoints: 1,
       icon: 'spell_frost_summonwaterelemental_2.png',
       points: 0,
+      abilityData: {
+        leftSide: ['16% of base Mana', 'Instant'],
+        rightSide: ['', '3 min cooldown'],
+      },
     },
   ],
 }

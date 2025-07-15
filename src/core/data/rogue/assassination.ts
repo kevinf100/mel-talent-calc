@@ -191,6 +191,10 @@ export const assassination: Tree = {
       maxPoints: 1,
       icon: 'spell_ice_lament.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['1 min cooldown'],
+      },
     },
     {
       id: 'ability_rogue_kidneyshot',
@@ -324,6 +328,11 @@ export const assassination: Tree = {
       },
       icon: 'ability_rogue_shadowstrikes.png',
       points: 0,
+      abilityData: {
+        leftSide: ['60 Energy', 'Instant'],
+        rightSide: ['Melee Range', ''],
+        bottom: ['Requires Daggers'],
+      },
     },
   ],
 }

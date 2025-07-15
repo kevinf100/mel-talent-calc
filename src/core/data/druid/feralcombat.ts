@@ -103,6 +103,16 @@ export const feralcombat: Tree = {
       maxPoints: 1,
       icon: 'ability_hunter_pet_bear.png',
       points: 0,
+      abilityData: {
+        leftSide: ['5 Rage', 'Instant'],
+        rightSide: [
+          '8 - 25 yd range',
+          '15 sec cooldown',
+        ],
+        bottom: [
+          'Requires Bear Form, Dire Bear Form',
+        ],
+      },
     },
     {
       id: 'inv_misc_monsterclaw_04',
@@ -186,6 +196,13 @@ export const feralcombat: Tree = {
       maxPoints: 1,
       icon: 'spell_nature_faeriefire.png',
       points: 0,
+      abilityData: {
+        leftSide: ['30 yd range', 'Instant'],
+        rightSide: ['', '6 sec cooldown'],
+        bottom: [
+          'Requires Cat Form, Bear Form, Dire Bear Form',
+        ],
+      },
     },
     {
       id: 'ability_druid_healinginstincts',
@@ -308,6 +325,9 @@ export const feralcombat: Tree = {
       },
       icon: 'ability_druid_mangle2.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+      },
     },
   ],
 }

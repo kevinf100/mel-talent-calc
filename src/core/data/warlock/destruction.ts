@@ -123,6 +123,11 @@ export const destruction: Tree = {
       maxPoints: 1,
       icon: 'spell_shadow_scourgebuild.png',
       points: 0,
+      abilityData: {
+        leftSide: ['105 Mana', 'Instant'],
+        rightSide: ['20 yd range', '15 sec cooldown'],
+        bottom: ['Reagents: Soul Shard'],
+      },
     },
     {
       id: 'spell_fire_lavaspawn',
@@ -220,6 +225,10 @@ export const destruction: Tree = {
       maxPoints: 1,
       icon: 'spell_shadow_shadowfury.png',
       points: 0,
+      abilityData: {
+        leftSide: ['440 Mana', '0.5 sec cast'],
+        rightSide: ['30 yd range', '20 sec cooldown'],
+      },
     },
     {
       id: 'spell_shadow_netherprotection',
@@ -280,6 +289,10 @@ export const destruction: Tree = {
       },
       icon: 'spell_fire_fireball.png',
       points: 0,
+      abilityData: {
+        leftSide: ['165 Mana', 'Instant'],
+        rightSide: ['30 yd range', '10 sec cooldown'],
+      },
     },
     {
       id: 'spell_shadow_soulleech_3',
@@ -326,6 +339,9 @@ export const destruction: Tree = {
       },
       icon: 'spell_shadow_psychicscream.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+      },
     },
   ],
 }

@@ -130,6 +130,10 @@ export const affliction: Tree = {
       maxPoints: 1,
       icon: 'spell_shadow_contagion.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['3 min cooldown'],
+      },
     },
     {
       id: 'spell_shadow_callofbone',
@@ -196,6 +200,10 @@ export const affliction: Tree = {
       maxPoints: 1,
       icon: 'spell_shadow_requiem.png',
       points: 0,
+      abilityData: {
+        leftSide: ['140 Mana', 'Instant'],
+        rightSide: ['30 yd range'],
+      },
     },
     {
       id: 'spell_shadow_grimward',
@@ -212,6 +220,10 @@ export const affliction: Tree = {
       },
       icon: 'spell_shadow_grimward.png',
       points: 0,
+      abilityData: {
+        leftSide: ['6% of base Mana', 'Instant'],
+        rightSide: ['30 yd range'],
+      },
     },
     {
       id: 'spell_shadow_summonfelhunter',
@@ -273,6 +285,10 @@ export const affliction: Tree = {
       maxPoints: 1,
       icon: 'spell_shadow_darkritual.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['30 yd range'],
+      },
     },
     {
       id: 'spell_shadow_deathscream',
@@ -316,6 +332,10 @@ export const affliction: Tree = {
       },
       icon: 'spell_shadow_unstableaffliction_3.png',
       points: 0,
+      abilityData: {
+        leftSide: ['270 Mana', '1.5 sec cast'],
+        rightSide: ['30 yd range'],
+      },
     },
   ],
 }

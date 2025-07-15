@@ -123,6 +123,11 @@ export const combat: Tree = {
       },
       icon: 'ability_warrior_challange.png',
       points: 0,
+      abilityData: {
+        leftSide: ['10 Energy', 'Instant'],
+        rightSide: ['Melee Range', '6 sec cooldown'],
+        bottom: ['Requires Melee Weapon'],
+      },
     },
     {
       id: 'ability_rogue_sprint',
@@ -229,6 +234,10 @@ export const combat: Tree = {
       maxPoints: 1,
       icon: 'ability_warrior_punishingblow.png',
       points: 0,
+      abilityData: {
+        leftSide: ['25 Energy', 'Instant'],
+        rightSide: ['', '2 min cooldown'],
+      },
     },
     {
       id: 'inv_sword_27',
@@ -330,6 +339,10 @@ export const combat: Tree = {
       maxPoints: 1,
       icon: 'spell_shadow_shadowworddominate.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['5 min cooldown'],
+      },
     },
     {
       id: 'ability_rogue_nervesofsteel',

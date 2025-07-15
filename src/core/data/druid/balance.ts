@@ -33,6 +33,10 @@ export const balance: Tree = {
       maxPoints: 1,
       icon: 'spell_nature_natureswrath.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['1 min cooldown'],
+      },
     },
     {
       id: 'spell_nature_natureswrath',
@@ -118,6 +122,10 @@ export const balance: Tree = {
       maxPoints: 1,
       icon: 'spell_nature_insectswarm.png',
       points: 0,
+      abilityData: {
+        leftSide: ['50 Mana', 'Instant'],
+        rightSide: ['30 yd range'],
+      },
     },
     {
       id: 'spell_nature_naturetouchgrow',
@@ -264,6 +272,9 @@ export const balance: Tree = {
       maxPoints: 1,
       icon: 'spell_nature_forceofnature.png',
       points: 0,
+      abilityData: {
+        leftSide: ['22% of base Mana', 'Instant'],
+      },
     },
     {
       id: 'spell_nature_faeriefire',
@@ -306,6 +317,10 @@ export const balance: Tree = {
       maxPoints: 1,
       icon: 'ability_druid_forceofnature.png',
       points: 0,
+      abilityData: {
+        leftSide: ['12% of base Mana', 'Instant'],
+        rightSide: ['30 yd range', '3 min cooldown'],
+      },
     },
   ],
 }

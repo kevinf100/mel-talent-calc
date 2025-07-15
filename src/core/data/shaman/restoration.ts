@@ -194,6 +194,10 @@ export const restoration: Tree = {
       maxPoints: 1,
       icon: 'spell_nature_ravenform.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['3 min cooldown'],
+      },
     },
     {
       id: 'spell_nature_focusedmind',
@@ -240,6 +244,11 @@ export const restoration: Tree = {
       },
       icon: 'spell_frost_summonwaterelemental.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['5 min cooldown'],
+        bottom: ['Tools: Water Totem']
+      },
     },
     {
       id: 'spell_nature_natureguardian',
@@ -299,6 +308,10 @@ export const restoration: Tree = {
       },
       icon: 'spell_nature_skinofearth.png',
       points: 0,
+      abilityData: {
+        leftSide: ['300 Mana', 'Instant'],
+        rightSide: ['40 yd range'],
+      },
     },
   ],
 }

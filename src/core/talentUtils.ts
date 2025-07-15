@@ -207,7 +207,7 @@ export const getArrowProps = (
     const effectiveNodeHeight = 64
     const rowDiff = talent.row - sourceTalent.row
     const arrowHeight =
-      rowDiff * effectiveNodeHeight
+      rowDiff * (effectiveNodeHeight + 10)
 
     return {
       class: `down-arrow ${glowClass}`,

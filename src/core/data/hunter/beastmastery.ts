@@ -186,6 +186,10 @@ export const beastmastery: Tree = {
       maxPoints: 1,
       icon: 'ability_devour.png',
       points: 0,
+      abilityData: {
+        leftSide: ['6% of base Mana', 'Instant'],
+        rightSide: ['100 yd range', '1 min cooldown'],
+      },
     },
     {
       id: 'spell_nature_abolishmagic',
@@ -262,6 +266,10 @@ export const beastmastery: Tree = {
       },
       icon: 'ability_druid_ferociousbite.png',
       points: 0,
+      abilityData: {
+        leftSide: ['10% of base Mana', 'Instant'],
+        rightSide: ['100 yd range', '2 min cooldown'],
+      },
     },
     {
       id: 'ability_hunter_catlikereflexes',

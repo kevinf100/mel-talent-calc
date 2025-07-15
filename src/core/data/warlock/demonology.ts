@@ -115,6 +115,10 @@ export const demonology: Tree = {
       maxPoints: 1,
       icon: 'spell_nature_removecurse.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['15 min cooldown'],
+      },
     },
     {
       id: 'spell_shadow_antishadow',
@@ -201,6 +205,10 @@ export const demonology: Tree = {
       maxPoints: 1,
       icon: 'ability_warlock_demonicempowerment.png',
       points: 0,
+      abilityData: {
+        leftSide: ['6% of base Mana', 'Instant'],
+        rightSide: ['1 min cooldown'],
+      },
     },
     {
       id: 'inv_ammo_firetar',
@@ -278,6 +286,9 @@ export const demonology: Tree = {
       },
       icon: 'spell_shadow_gathershadows.png',
       points: 0,
+      abilityData: {
+        leftSide: ['16% of base Mana', 'Instant'],
+      },
     },
     {
       id: 'spell_shadow_improvedvampiricembrace',
@@ -320,6 +331,10 @@ export const demonology: Tree = {
       maxPoints: 1,
       icon: 'spell_shadow_summonfelguard.png',
       points: 0,
+      abilityData: {
+        leftSide: ['80% of base Mana', '10 sec cast'],
+        bottom: ['Reagents: Soul Shard'],
+      },
     },
   ],
 }

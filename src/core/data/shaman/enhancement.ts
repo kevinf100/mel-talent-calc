@@ -289,6 +289,11 @@ export const enhancement: Tree = {
       },
       icon: 'ability_shaman_stormstrike.png',
       points: 0,
+      abilityData: {
+        leftSide: ['8% of base mana', 'Instant'],
+        rightSide: ['Melee Range', '10 sec cooldown'],
+        bottom: ['Requires Melee Weapon'],
+      },
     },
     {
       id: 'spell_nature_unleashedrage',
@@ -317,6 +322,10 @@ export const enhancement: Tree = {
       maxPoints: 1,
       icon: 'spell_nature_shamanrage.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['2 min cooldown'],
+      },
     },
   ],
 }

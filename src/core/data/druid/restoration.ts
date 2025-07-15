@@ -125,6 +125,9 @@ export const restoration: Tree = {
       maxPoints: 1,
       icon: 'spell_nature_crystalball.png',
       points: 0,
+      abilityData: {
+        leftSide: ['120 Mana', 'Instant'],
+      },
     },
     {
       id: 'ability_druid_replenish',
@@ -183,6 +186,10 @@ export const restoration: Tree = {
       },
       icon: 'spell_nature_ravenform.png',
       points: 0,
+      abilityData: {
+        leftSide: ['Instant'],
+        rightSide: ['3 min cooldown'],
+      },
     },
     {
       id: 'spell_nature_protectionformnature',
@@ -275,6 +282,10 @@ export const restoration: Tree = {
       },
       icon: 'inv_relics_idolofrejuvenation.png',
       points: 0,
+      abilityData: {
+        leftSide: ['16% of base Mana', 'Instant'],
+        rightSide: ['40 yd range', '15 sec cooldown'],
+      },
     },
     {
       id: 'ability_druid_naturalperfection',
@@ -321,6 +332,9 @@ export const restoration: Tree = {
       },
       icon: 'ability_druid_treeoflife.png',
       points: 0,
+      abilityData: {
+        leftSide: ['28% of base Mana', 'Instant'],
+      },
     },
   ],
 }
