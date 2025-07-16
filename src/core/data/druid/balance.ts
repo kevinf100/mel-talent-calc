@@ -319,7 +319,10 @@ export const balance: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['12% of base Mana', 'Instant'],
-        rightSide: ['30 yd range', '3 min cooldown'],
+        rightSide: [
+          '30 yd range',
+          '3 min cooldown',
+        ],
       },
     },
   ],

@@ -10,6 +10,7 @@ import ResetSprite from '../assets/ui/reset-all-button-sprite-small.png'
 import ShareSprite from '../assets/ui/share-btn-sprite-small2.png'
 import { ParchmentBorders } from './ParchmentBorders'
 import { ClassPicker } from './ClassPicker'
+import { showCopyToast } from '../lib/showCopyToast'
 import {
   useState,
   useEffect,
@@ -17,6 +18,7 @@ import {
 } from 'react'
 import type { ClassName } from '../core/types'
 import { CLASS_NAMES } from '../core/constants'
+import ClipboardJS from 'clipboard'
 
 const SELECTED_CLASS_KEY =
   'mel-talent-calc-selected-class'
@@ -61,6 +63,39 @@ export const TalentGrid = () => {
       }, 10)
     }
   }, [selectedClass])
+
+  const shareBtnRef =
+    useRef<HTMLButtonElement>(null)
+  const clipboardInstance =
+    useRef<ClipboardJS | null>(null)
+
+  useEffect(() => {
+    if (!shareBtnRef.current) return
+
+    // Initialize ClipboardJS on the share button
+    clipboardInstance.current = new ClipboardJS(
+      shareBtnRef.current,
+      {
+        text: () => window.location.href,
+      }
+    )
+
+    clipboardInstance.current.on(
+      'success',
+      () => {
+        showCopyToast()
+      }
+    )
+
+    clipboardInstance.current.on('error', e => {
+      console.error('Clipboard copy failed', e)
+      showCopyToast()
+    })
+
+    return () => {
+      clipboardInstance.current?.destroy()
+    }
+  }, [])
 
   const {
     trees,
@@ -140,12 +175,7 @@ export const TalentGrid = () => {
 
                 {/* Share Button */}
                 <button
-                  onClick={() => {
-                    // TODO: Implement your share logic here
-                    console.log(
-                      'Share button clicked'
-                    )
-                  }}
+                  ref={shareBtnRef}
                   aria-label='Share'
                   className='relative sm:top-1 w-[308px] h-[95px] bg-[length:308px_296px] bg-no-repeat sm:w-[308px] sm:h-[95px] sm:bg-[length:308px_296px]'
                   style={{

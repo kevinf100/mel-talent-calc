@@ -347,7 +347,10 @@ export const protection: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['500 Mana', '1 sec cast'],
-        rightSide: ['30 yd range', '30 sec cooldown'],
+        rightSide: [
+          '30 yd range',
+          '30 sec cooldown',
+        ],
         bottom: ['Requires Shields'],
       },
     },

@@ -227,7 +227,10 @@ export const discipline: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['8% of base Mana', 'Instant'],
-        rightSide: ['40 yd range', '2 min cooldown'],
+        rightSide: [
+          '40 yd range',
+          '2 min cooldown',
+        ],
       },
     },
     {
@@ -290,7 +293,10 @@ export const discipline: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['16% of base Mana', 'Instant'],
-        rightSide: ['30 yd range', '2 min cooldown'],
+        rightSide: [
+          '30 yd range',
+          '2 min cooldown',
+        ],
       },
     },
     {
@@ -338,7 +344,10 @@ export const discipline: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['4% of base Mana', 'Instant'],
-        rightSide: ['40 yd range', '3 min cooldown'],
+        rightSide: [
+          '40 yd range',
+          '3 min cooldown',
+        ],
       },
     },
   ],

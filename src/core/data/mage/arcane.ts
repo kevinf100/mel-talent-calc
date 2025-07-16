@@ -136,8 +136,8 @@ export const arcane: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['195 Mana', '2.5 sec cast'],
-        rightSide: ['30 yd range']
-      }
+        rightSide: ['30 yd range'],
+      },
     },
     {
       id: 'spell_shadow_detectlesserinvisibility',

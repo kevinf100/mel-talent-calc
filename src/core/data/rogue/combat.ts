@@ -125,7 +125,10 @@ export const combat: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['10 Energy', 'Instant'],
-        rightSide: ['Melee Range', '6 sec cooldown'],
+        rightSide: [
+          'Melee Range',
+          '6 sec cooldown',
+        ],
         bottom: ['Requires Melee Weapon'],
       },
     },

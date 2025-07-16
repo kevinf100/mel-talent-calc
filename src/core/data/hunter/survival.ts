@@ -295,7 +295,10 @@ export const survival: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['115 Mana'],
-        rightSide: ['35 yd range', '2 min cooldown'],
+        rightSide: [
+          '35 yd range',
+          '2 min cooldown',
+        ],
         bottom: ['Requires Ranged Weapon'],
       },
     },

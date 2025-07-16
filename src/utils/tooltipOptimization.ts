@@ -53,7 +53,7 @@ export const optimizeTooltipWidth = async (
       })
 
       // Force layout recalculation
-      elements.floating.offsetHeight
+      void elements.floating.offsetHeight
 
       // Check if clipping with default width
       if (
@@ -86,7 +86,7 @@ export const optimizeTooltipWidth = async (
         )
 
         // Force layout recalculation
-        elements.floating.offsetHeight
+        void elements.floating.offsetHeight
 
         // Check if clipping is resolved
         if (

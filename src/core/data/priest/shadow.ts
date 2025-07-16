@@ -185,7 +185,10 @@ export const shadow: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['225 Mana', 'Instant'],
-        rightSide: ['30 yd range', '45 sec cooldown'],
+        rightSide: [
+          '30 yd range',
+          '45 sec cooldown',
+        ],
       },
     },
     {

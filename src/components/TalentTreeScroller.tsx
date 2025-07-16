@@ -25,10 +25,10 @@ export const TalentTreeScroller = forwardRef<
     scrollToFirst: () => {
       const container = scrollContainerRef.current
       if (!container) return
-      
+
       // Check if already at the start (avoid unnecessary scroll)
       if (container.scrollLeft <= 5) return // 5px tolerance
-      
+
       // Use 'auto' behavior to prevent conflicts with snap logic
       // and ensure immediate positioning
       isManualScrollRef.current = true
@@ -36,7 +36,7 @@ export const TalentTreeScroller = forwardRef<
         left: 0,
         behavior: 'auto', // Changed from 'smooth' to 'auto'
       })
-      
+
       // Force a second scroll after a brief delay to ensure position
       // This handles cases where the first scroll gets corrected
       setTimeout(() => {
@@ -57,12 +57,14 @@ export const TalentTreeScroller = forwardRef<
     if (!container) return
 
     let isScrolling = false
-    let scrollTimeout: ReturnType<typeof setTimeout>
+    let scrollTimeout: ReturnType<
+      typeof setTimeout
+    >
 
     const handleScrollEnd = () => {
       // Only apply on mobile (when snap is active)
       if (window.innerWidth >= 768) return
-      
+
       // Skip auto-snap if manual scroll is in progress
       if (isManualScrollRef.current) return
 

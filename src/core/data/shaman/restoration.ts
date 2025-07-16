@@ -247,7 +247,7 @@ export const restoration: Tree = {
       abilityData: {
         leftSide: ['Instant'],
         rightSide: ['5 min cooldown'],
-        bottom: ['Tools: Water Totem']
+        bottom: ['Tools: Water Totem'],
       },
     },
     {

@@ -332,7 +332,10 @@ export const demonology: Tree = {
       icon: 'spell_shadow_summonfelguard.png',
       points: 0,
       abilityData: {
-        leftSide: ['80% of base Mana', '10 sec cast'],
+        leftSide: [
+          '80% of base Mana',
+          '10 sec cast',
+        ],
         bottom: ['Reagents: Soul Shard'],
       },
     },

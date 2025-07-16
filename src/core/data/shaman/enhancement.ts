@@ -291,7 +291,10 @@ export const enhancement: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['8% of base mana', 'Instant'],
-        rightSide: ['Melee Range', '10 sec cooldown'],
+        rightSide: [
+          'Melee Range',
+          '10 sec cooldown',
+        ],
         bottom: ['Requires Melee Weapon'],
       },
     },

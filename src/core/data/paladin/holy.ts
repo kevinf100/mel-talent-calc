@@ -272,7 +272,10 @@ export const holy: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['335 Mana', 'Instant'],
-        rightSide: ['20 yd range', '15 sec cooldown'],
+        rightSide: [
+          '20 yd range',
+          '15 sec cooldown',
+        ],
       },
     },
     {

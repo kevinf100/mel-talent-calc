@@ -188,7 +188,10 @@ export const beastmastery: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['6% of base Mana', 'Instant'],
-        rightSide: ['100 yd range', '1 min cooldown'],
+        rightSide: [
+          '100 yd range',
+          '1 min cooldown',
+        ],
       },
     },
     {
@@ -268,7 +271,10 @@ export const beastmastery: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['10% of base Mana', 'Instant'],
-        rightSide: ['100 yd range', '2 min cooldown'],
+        rightSide: [
+          '100 yd range',
+          '2 min cooldown',
+        ],
       },
     },
     {

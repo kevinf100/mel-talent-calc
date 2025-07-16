@@ -1,4 +1,5 @@
 import { type ReactNode } from 'react'
+import { Toaster } from 'react-hot-toast'
 
 export type TLayoutProps = {
   children: ReactNode
@@ -44,6 +45,14 @@ export const Layout = ({
           {footer}
         </footer>
       )}
+
+      <Toaster
+        position='top-center'
+        toastOptions={{
+          duration: 2500,
+          className: 'pointer-events-auto',
+        }}
+      />
     </div>
   )
 }

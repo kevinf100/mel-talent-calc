@@ -112,8 +112,11 @@ export const marksmanship: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['75 Mana', '3 sec cast'],
-        rightSide: ['5-35 yd range', '8 sec cooldown'],
-        bottom: ['Requires Ranged Weapon']
+        rightSide: [
+          '5-35 yd range',
+          '8 sec cooldown',
+        ],
+        bottom: ['Requires Ranged Weapon'],
       },
     },
     {
@@ -192,8 +195,11 @@ export const marksmanship: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['6% of base Mana', 'Instant'],
-        rightSide: ['15 yd range', '30 sec cooldown'],
-        bottom: ['Requires Ranged Weapon']
+        rightSide: [
+          '15 yd range',
+          '30 sec cooldown',
+        ],
+        bottom: ['Requires Ranged Weapon'],
       },
     },
     {
@@ -270,8 +276,11 @@ export const marksmanship: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['6% of base Mana', 'Instant'],
-        rightSide: ['35 yd range', '20 sec cooldown'],
-        bottom: ['Requires Ranged Weapon']
+        rightSide: [
+          '35 yd range',
+          '20 sec cooldown',
+        ],
+        bottom: ['Requires Ranged Weapon'],
       },
     },
     {

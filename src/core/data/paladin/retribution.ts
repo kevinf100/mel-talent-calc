@@ -287,7 +287,10 @@ export const retribution: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['60 Mana', 'Instant'],
-        rightSide: ['20 yd range', '1 min cooldown'],
+        rightSide: [
+          '20 yd range',
+          '1 min cooldown',
+        ],
       },
     },
     {
@@ -337,7 +340,10 @@ export const retribution: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['8% of base Mana', 'Instant'],
-        rightSide: ['Melee Range', '6 sec cooldown'],
+        rightSide: [
+          'Melee Range',
+          '6 sec cooldown',
+        ],
         bottom: ['Requires Melee Weapon'],
       },
     },

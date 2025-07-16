@@ -306,7 +306,7 @@ export const elemental: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['5% of base mana', 'Instant'],
-        bottom: ['Tools: Fire Totem']
+        bottom: ['Tools: Fire Totem'],
       },
     },
   ],
