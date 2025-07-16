@@ -147,7 +147,7 @@ export const TalentGrid = () => {
                     )
                   }}
                   aria-label='Share'
-                  className='relative w-[308px] h-[95px] bg-[length:308px_296px] bg-no-repeat sm:w-[308px] sm:h-[95px] sm:bg-[length:308px_296px]'
+                  className='relative sm:top-1 w-[308px] h-[95px] bg-[length:308px_296px] bg-no-repeat sm:w-[308px] sm:h-[95px] sm:bg-[length:308px_296px]'
                   style={{
                     backgroundImage: `url(${ShareSprite})`,
                     backgroundPosition: '0px 0px',

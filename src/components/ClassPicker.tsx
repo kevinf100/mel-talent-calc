@@ -33,7 +33,7 @@ export const ClassPicker = ({
     'ontouchstart' in window
 
   return (
-    <div className='flex flex-col w-full items-start gap-6 h-full'>
+    <div className='flex flex-col w-full items-start gap-6 sm:gap-8 h-full'>
       {/* 🧱 Icon Grid */}
       <div className='flex flex-wrap gap-2 sm:justify-start justify-center w-full'>
         {CLASS_NAMES.map(className => {
