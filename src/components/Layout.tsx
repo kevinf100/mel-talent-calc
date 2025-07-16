@@ -49,7 +49,7 @@ export const Layout = ({
       <Toaster
         position='top-center'
         toastOptions={{
-          duration: 99999999,
+          duration: 2500,
           className: 'pointer-events-auto',
         }}
       />

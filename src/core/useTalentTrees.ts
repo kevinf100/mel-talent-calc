@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
 import type { ClassName, Tree } from './types'
 import {
   canIncrementTalent,
@@ -24,35 +24,40 @@ export const useTalentTrees = ({
   setSelectedClass,
   totalTalentPoints = 61
 }: UseTalentTreesProps) => {
-  const [trees, setTrees] = useState<Tree[]>(talentData[selectedClass])
-
-  useEffect(() => {
+  const [trees, setTrees] = useState<Tree[]>(() => {
     const params = new URLSearchParams(window.location.search)
     const encoded = params.get('data')
-    const classFromURL = params.get('class')
-
-    if (classFromURL && classFromURL !== selectedClass) {
-      setSelectedClass(classFromURL as ClassName)
-    }
 
     if (!encoded) {
-      setTrees(talentData[selectedClass])
-      return
+      return JSON.parse(JSON.stringify(talentData[selectedClass]))
     }
 
     const decoded = decodeTalentBuild(encoded)
     const rebuilt = JSON.parse(JSON.stringify(talentData[selectedClass]))
 
-    decoded.forEach(([idx, pts]) => {
+    decoded.forEach(([globalIdx, pts]) => {
+      let remaining = globalIdx
       for (const tree of rebuilt) {
-        if (tree.talents[idx]) {
-          tree.talents[idx].points = pts
+        if (remaining < tree.talents.length) {
+          tree.talents[remaining].points = pts
           break
         }
+        remaining -= tree.talents.length
       }
     })
 
-    setTrees(rebuilt)
+    return rebuilt
+  })
+
+  const prevClassRef = useRef<ClassName | null>(null)
+
+  useEffect(() => {
+    if (prevClassRef.current !== null && prevClassRef.current !== selectedClass) {
+      const defaultTrees = JSON.parse(JSON.stringify(talentData[selectedClass]))
+      setTrees(defaultTrees)
+      updateURL(defaultTrees, selectedClass)
+    }
+    prevClassRef.current = selectedClass
   }, [selectedClass])
 
   const totalPointsSpent = useMemo(() => {

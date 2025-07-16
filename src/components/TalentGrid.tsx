@@ -23,16 +23,23 @@ import ClipboardJS from 'clipboard'
 const SELECTED_CLASS_KEY =
   'mel-talent-calc-selected-class'
 
-const getInitialSelectedClass = (): ClassName => {
-  try {
-    const saved = localStorage.getItem(
-      SELECTED_CLASS_KEY
-    )
-    return (saved as ClassName) || CLASS_NAMES[0]
-  } catch {
-    return CLASS_NAMES[0]
+  const getInitialSelectedClass = (): ClassName => {
+    const params = new URLSearchParams(window.location.search)
+    const classFromURL = params.get('class')
+  
+    if (classFromURL) {
+      return classFromURL as ClassName
+    }
+  
+    try {
+      const saved = localStorage.getItem(
+        SELECTED_CLASS_KEY
+      )
+      return (saved as ClassName) || CLASS_NAMES[0]
+    } catch {
+      return CLASS_NAMES[0]
+    }
   }
-}
 
 export const TalentGrid = () => {
   const [selectedClass, setSelectedClass] =

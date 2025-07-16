@@ -4,12 +4,14 @@ import type { Tree } from "../core/types"
 export const encodeTalentBuild = (trees: Tree[]): string => {
   const bytes: number[] = []
 
+  let cumulative = 0
   trees.forEach(tree => {
     tree.talents.forEach((talent, index) => {
       if (talent.points > 0) {
-        bytes.push(index, talent.points)
+        bytes.push(cumulative + index, talent.points)
       }
     })
+    cumulative += tree.talents.length
   })
 
   const binary = String.fromCharCode(...bytes)
