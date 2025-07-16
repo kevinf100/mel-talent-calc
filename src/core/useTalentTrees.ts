@@ -1,19 +1,17 @@
-import {
-  useState,
-  useMemo,
-  useEffect,
-} from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import type { ClassName, Tree } from './types'
 import {
   canIncrementTalent,
   canSafelyDecrementTalent,
-  isTalentLocked,
+  isTalentLocked
 } from './talentUtils'
 import { talentData } from './data/talentData'
+import {
+  decodeTalentBuild,
+  encodeTalentBuild
+} from '../utils/base64Utils'
 
-const additionalTalentPointsLevels = [
-  14, 19, 24, 29, 34, 39, 44, 49, 54, 60,
-]
+const additionalTalentPointsLevels = [14, 19, 24, 29, 34, 39, 44, 49, 54, 60]
 
 type UseTalentTreesProps = {
   selectedClass: ClassName
@@ -24,24 +22,42 @@ type UseTalentTreesProps = {
 export const useTalentTrees = ({
   selectedClass,
   setSelectedClass,
-  totalTalentPoints = 61,
+  totalTalentPoints = 61
 }: UseTalentTreesProps) => {
-  const [trees, setTrees] = useState<Tree[]>(
-    talentData[selectedClass]
-  )
+  const [trees, setTrees] = useState<Tree[]>(talentData[selectedClass])
 
   useEffect(() => {
-    setTrees(talentData[selectedClass])
+    const params = new URLSearchParams(window.location.search)
+    const encoded = params.get('data')
+    const classFromURL = params.get('class')
+
+    if (classFromURL && classFromURL !== selectedClass) {
+      setSelectedClass(classFromURL as ClassName)
+    }
+
+    if (!encoded) {
+      setTrees(talentData[selectedClass])
+      return
+    }
+
+    const decoded = decodeTalentBuild(encoded)
+    const rebuilt = JSON.parse(JSON.stringify(talentData[selectedClass]))
+
+    decoded.forEach(([idx, pts]) => {
+      for (const tree of rebuilt) {
+        if (tree.talents[idx]) {
+          tree.talents[idx].points = pts
+          break
+        }
+      }
+    })
+
+    setTrees(rebuilt)
   }, [selectedClass])
 
   const totalPointsSpent = useMemo(() => {
     return trees.reduce(
-      (sum, tree) =>
-        sum +
-        tree.talents.reduce(
-          (s, talent) => s + talent.points,
-          0
-        ),
+      (sum, tree) => sum + tree.talents.reduce((s, talent) => s + talent.points, 0),
       0
     )
   }, [trees])
@@ -51,12 +67,7 @@ export const useTalentTrees = ({
     for (let level = 1; level <= 200; level++) {
       let points = 0
       if (level >= 10) points += 1
-      if (
-        additionalTalentPointsLevels.includes(
-          level
-        )
-      )
-        points += 1
+      if (additionalTalentPointsLevels.includes(level)) points += 1
       list[level] = points
     }
     return list
@@ -65,11 +76,7 @@ export const useTalentTrees = ({
   const cumulativePointsByLevel = useMemo(() => {
     const cumulative: number[] = []
     let total = 0
-    for (
-      let level = 1;
-      level <= pointsByLevel.length - 1;
-      level++
-    ) {
+    for (let level = 1; level < pointsByLevel.length; level++) {
       total += pointsByLevel[level]
       cumulative[level] = total
     }
@@ -77,15 +84,8 @@ export const useTalentTrees = ({
   }, [pointsByLevel])
 
   const currentLevel = useMemo(() => {
-    for (
-      let level = 10;
-      level < cumulativePointsByLevel.length;
-      level++
-    ) {
-      if (
-        cumulativePointsByLevel[level] >=
-        totalPointsSpent
-      ) {
+    for (let level = 10; level < cumulativePointsByLevel.length; level++) {
+      if (cumulativePointsByLevel[level] >= totalPointsSpent) {
         return level
       }
     }
@@ -93,88 +93,71 @@ export const useTalentTrees = ({
   }, [totalPointsSpent, cumulativePointsByLevel])
 
   const pointsRemaining = useMemo(() => {
-    return Math.max(
-      0,
-      totalTalentPoints - totalPointsSpent
-    )
+    return Math.max(0, totalTalentPoints - totalPointsSpent)
   }, [totalTalentPoints, totalPointsSpent])
+
+  const updateURL = (trees: Tree[], selectedClass: ClassName) => {
+    const isEmptyBuild = trees.every(tree =>
+      tree.talents.every(t => t.points === 0)
+    )
+
+    const params = new URLSearchParams()
+    params.set('class', selectedClass)
+
+    if (!isEmptyBuild) {
+      const encoded = encodeTalentBuild(trees)
+      params.set('data', encoded)
+    }
+
+    const url = `${window.location.origin}?${params.toString()}`
+    window.history.replaceState(null, '', url)
+  }
 
   const resetTree = (idx: number) => {
     setTrees(prev => {
       const copy = [...prev]
       copy[idx] = {
         ...copy[idx],
-        talents: copy[idx].talents.map(t => ({
-          ...t,
-          points: 0,
-        })),
+        talents: copy[idx].talents.map(t => ({ ...t, points: 0 }))
       }
+      updateURL(copy, selectedClass)
       return copy
     })
   }
 
   const resetAll = () => {
-    setTrees(
-      JSON.parse(
-        JSON.stringify(talentData[selectedClass])
-      )
-    )
+    const reset = JSON.parse(JSON.stringify(talentData[selectedClass]))
+    setTrees(reset)
+    updateURL(reset, selectedClass)
   }
 
   const modify = (
     treeIdx: number,
     talentId: string,
-    e:
-      | React.MouseEvent
-      | { shiftKey: boolean; type: string }
+    e: React.MouseEvent | { shiftKey: boolean; type: string }
   ) => {
     setTrees(prev => {
       const copy = [...prev]
-      const talents = copy[treeIdx].talents.map(
-        t => ({ ...t })
-      )
-      const target = talents.find(
-        t => t.id === talentId
-      )
+      const talents = copy[treeIdx].talents.map(t => ({ ...t }))
+      const target = talents.find(t => t.id === talentId)
       if (!target) return prev
 
-      const pointsSpent = talents.reduce(
-        (s, t) => s + t.points,
-        0
-      )
-      const locked = isTalentLocked(
-        target,
-        talents,
-        pointsSpent
-      )
-      const isShift =
-        e.shiftKey || e.type === 'contextmenu'
+      const pointsSpent = talents.reduce((s, t) => s + t.points, 0)
+      const locked = isTalentLocked(target, talents, pointsSpent)
+      const isShift = e.shiftKey || e.type === 'contextmenu'
 
       if (isShift) {
-        if (
-          canSafelyDecrementTalent(
-            target,
-            talents
-          )
-        ) {
+        if (canSafelyDecrementTalent(target, talents)) {
           target.points -= 1
         }
       } else {
-        if (
-          canIncrementTalent(
-            target,
-            pointsRemaining,
-            locked
-          )
-        ) {
+        if (canIncrementTalent(target, pointsRemaining, locked)) {
           target.points += 1
         }
       }
 
-      copy[treeIdx] = {
-        ...copy[treeIdx],
-        talents,
-      }
+      copy[treeIdx] = { ...copy[treeIdx], talents }
+      updateURL(copy, selectedClass)
       return copy
     })
   }
@@ -188,6 +171,6 @@ export const useTalentTrees = ({
     modify,
     resetTree,
     resetAll,
-    setSelectedClass,
+    setSelectedClass
   }
 }

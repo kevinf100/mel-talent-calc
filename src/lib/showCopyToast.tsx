@@ -1,15 +1,20 @@
 import toast from 'react-hot-toast'
 import { MetalBordersSmall } from '../components/MetalBordersSmall'
+import successIcon from '../assets/icons/success_icon.png'
+
 
 export const showCopyToast = () =>
   toast.custom(() => (
-    <div className='w-[400px] h-auto'>
+    <div className='w-[550px] h-auto'>
       <MetalBordersSmall>
-        <div className='bg-[#2a2a2af7] p-3 text-sm shadow-lg' style={{
-          boxShadow: 'rgb(63 199 255 / 32%) 0px 10px 20px 20px'
+        <div className='flex bg-[#2a2a2af7] justify-between px-6 py-3 pt-4 sm:pt-3 text-3xl sm:text-4xl text-green-400' style={{
+          boxShadow: 'rgb(0 0 0 / 90%) 0px 10px 20px 20px'
         }}>
-          Link copied!
-        </div>{' '}
+          <h1 className='flex self-center'>Link copied to clipboard!</h1>
+          <img className='flex self-center z-[30] flex w-16 h-16 rounded-full' src={successIcon} alt="Success" style={{
+            filter: 'drop-shadow(0 0 20px var(--color-green-400))'
+          }}/>
+        </div>
       </MetalBordersSmall>
     </div>
   ))
