@@ -448,7 +448,7 @@
   .parchment .corner,
   .parchment .edge.top,
   .parchment .edge.bottom {
-    background-image: url('/src/assets/ui/parchment-sprite4.PNG'); /* horizontal + corner sprite */
+    background-image: url('/src/assets/ui/parchment-sprite.png'); /* horizontal + corner sprite */
     background-repeat: no-repeat;
     z-index: 1;
   }
@@ -456,14 +456,14 @@
   /* Vertical edges from a separate file */
   .parchment .edge.left,
   .parchment .edge.right {
-    background-image: url('/src/assets/ui/parchment-sprite-sides3.PNG'); /* vertical edge sprite */
+    background-image: url('/src/assets/ui/parchment-sprite-sides.png'); /* vertical edge sprite */
     background-repeat: repeat-y;
     background-size: auto;
     z-index: 1;
   }
 
   .parchment .background {
-    background-image: url('/src/assets/ui/parchment-sprite-bg3.PNG');
+    background-image: url('/src/assets/ui/parchment-sprite-bg.png');
     background-repeat: repeat;
     background-clip: content-box;
     z-index: 1;
