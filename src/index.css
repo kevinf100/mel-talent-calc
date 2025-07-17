@@ -340,7 +340,7 @@
   .mb-corner,
   .mb-edge-top,
   .mb-edge-bottom {
-    background-image: url('/src/assets/ui/UIFrameDiamondMetal2x.png');
+    background-image: url('/src/assets/ui/ui-frame-diamond-metal-double.png');
     background-repeat: no-repeat;
     z-index: 1;
   }
@@ -376,7 +376,7 @@
   /* Vertical beams from new sprite */
   .mb-edge-left,
   .mb-edge-right {
-    background-image: url('/src/assets/ui/UIFrameDiamondMetalVertical2x.png');
+    background-image: url('/src/assets/ui/ui-frame-diamond-metal-vertical-double.png');
     background-repeat: repeat-y;
     background-size: 46px auto;
     z-index: 1;
@@ -394,7 +394,7 @@
   .corner-sm,
   .edge-sm.top-sm,
   .edge-sm.bottom-sm {
-    background-image: url('/src/assets/ui/UIFrameDiamondMetal.png');
+    background-image: url('/src/assets/ui/ui-frame-diamond-metal.png');
     background-repeat: no-repeat;
     z-index: 1;
   }
