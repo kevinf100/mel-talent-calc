@@ -8,6 +8,7 @@ import {
   canSafelyDecrementTalent,
 } from '../core/talentUtils'
 import ResetSprite from '../assets/ui/reset-button-sprite.png'
+import RockBackground from '../assets/ui/background-rock.png'
 import { MetalBorders } from './MetalBorders'
 import { useViewport } from '../hooks/useViewport'
 import { useAsset } from '../hooks/useAsset'
@@ -41,7 +42,6 @@ export const TalentTree = ({
   } = useViewport()
   const treeBackground = useAsset(backgroundImage)
   const treeIcon = useAsset(specIcon)
-  const rockBackground = useAsset('assets/ui/ui-background-rock.png')
 
   const pointsSpent = talents.reduce(
     (s, t) => s + t.points,
@@ -68,7 +68,7 @@ export const TalentTree = ({
             text-shadow gap-1
           '
           style={{
-            backgroundImage: `url(${rockBackground})`,
+            backgroundImage: `url(${RockBackground})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
