@@ -5,6 +5,8 @@ import {
   CLASS_COLORS,
 } from '../core/constants'
 import GoldRing from '../assets/icons/gold-ring3.png'
+import { useAsset } from '../hooks/useAsset'
+import { ClassPickerGridIcons } from './ClassPickerGridIcons'
 
 // 🌟 Shadow helpers
 const CLASS_SHADOWS = {
@@ -27,7 +29,10 @@ export const ClassPicker = ({
   setSelectedClass,
 }: ClassPickerProps) => {
   const [hoveredClass, setHoveredClass] =
-    useState<ClassName | null>('warrior')
+    useState<ClassName | null>(null)
+  const selectedClassIcon = useAsset(
+    `classicon_${selectedClass}.png`
+  )
 
   const isTouchDevice =
     typeof window !== 'undefined' &&
@@ -55,37 +60,14 @@ export const ClassPicker = ({
                 : undefined
 
           return (
-            <button
+            <ClassPickerGridIcons
+              className={className}
+              boxShadow={boxShadow}
+              isSelected={isSelected}
+              setHoveredClass={setHoveredClass}
+              setSelectedClass={setSelectedClass}
               key={className}
-              onClick={() =>
-                setSelectedClass(className)
-              }
-              onMouseEnter={() => {
-                if (!isTouchDevice)
-                  setHoveredClass(className)
-              }}
-              onMouseLeave={() => {
-                if (!isTouchDevice)
-                  setHoveredClass(null)
-              }}
-              className='relative w-[60px] h-[60px] sm:w-[90px] sm:h-[90px] flex items-center justify-center group'
-            >
-              {/* 🟡 Ring Frame */}
-              <img
-                src={GoldRing}
-                alt='Ring'
-                className={`absolute z-10 top-0 left-0 w-full h-full pointer-events-none ${
-                  isSelected ? '' : 'grayscale'
-                }`}
-              />
-              {/* 🌟 Class Icon with glow */}
-              <img
-                src={`src/assets/icons/classicon_${className}.png`}
-                alt={className}
-                style={{ boxShadow }}
-                className='z-0 object-cover rounded-full w-[48px] h-[48px] sm:w-[67px] sm:h-[67px] transition-shadow duration-200'
-              />
-            </button>
+            />
           )
         })}
       </div>
@@ -102,12 +84,14 @@ export const ClassPicker = ({
               [@media(min-width:420px)]:top-0 [@media(min-width:420px)]:h-full
               [@media(min-width:768px)]:h-[140px] [@media(min-width:768px)]:top-[-17px]'
           />
-          <img
-            src={`src/assets/icons/classicon_${selectedClass}.png`}
-            alt={selectedClass}
-            className='relative z-1 object-cover rounded-full w-auto h-auto top-0 left-0
+          {selectedClassIcon && (
+            <img
+              src={selectedClassIcon}
+              alt={selectedClass}
+              className='relative z-1 object-cover rounded-full w-auto h-auto top-0 left-0
               [@media(min-width:768px)]:w-[105px] [@media(min-width:768px)]:h-[105px]'
-          />
+            />
+          )}
         </div>
 
         {/* 📈 Info Column */}

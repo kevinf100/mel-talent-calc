@@ -11,6 +11,7 @@ import ResetSprite from '../assets/ui/reset-button-sprite.png'
 import { MetalBorders } from './MetalBorders'
 import RockBackground from '../assets/ui/UI-Background-Rock.png'
 import { useViewport } from '../hooks/useViewport'
+import { useAsset } from '../hooks/useAsset'
 
 export type TTalentTreeProps = {
   name: string
@@ -39,6 +40,9 @@ export const TalentTree = ({
     windowWidth,
     containerWidth,
   } = useViewport()
+  const treeBackground = useAsset(backgroundImage)
+  const treeIcon = useAsset(specIcon)
+
   const pointsSpent = talents.reduce(
     (s, t) => s + t.points,
     0
@@ -49,7 +53,7 @@ export const TalentTree = ({
       <div
         className='w-full p-6 rounded shadow-inner snap-start touch-manipulation relative'
         style={{
-          backgroundImage: `url(${backgroundImage})`,
+          backgroundImage: `url(${treeBackground})`,
           backgroundSize: 'cover',
           backgroundPosition: '45% 75px',
         }}
@@ -82,11 +86,13 @@ export const TalentTree = ({
                 borderWidth: '2px',
               }}
             >
-              <img
-                src={`src/assets/icons/${specIcon}`}
-                alt='Spec Icon'
-                className='relative rounded-full w-[60px] h-[60px] bottom-[2px]'
-              />
+              {treeIcon && (
+                <img
+                  src={treeIcon}
+                  alt='Spec Icon'
+                  className='relative rounded-full w-[60px] h-[60px] bottom-[2px]'
+                />
+              )}
             </div>
 
             <h1 className='text-2xl text-center flex-grow text-gold-text'>

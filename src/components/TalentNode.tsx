@@ -3,6 +3,7 @@ import {
   useState,
   type MouseEvent,
 } from 'react'
+import { useAsset } from '../hooks/useAsset'
 import FrameDefault from '../assets/ui/talent-frame-default.png'
 import FrameDefaultOuter from '../assets/ui/talent-frame-default-outer.png'
 import FrameGold from '../assets/ui/talent-frame-gold.png'
@@ -62,7 +63,8 @@ export const TalentNode = ({
     useRef<HTMLButtonElement | null>(null)
   const [isHovered, setHovered] = useState(false)
   const [isPressed, setPressed] = useState(false)
-  const isMobile = window.innerWidth < 768
+  const iconUrl = useAsset(icon)
+  const isDesktop = window.innerWidth >= 768
 
   const isMaxed = points === maxPoints
   const isActive = points > 0
@@ -88,7 +90,7 @@ export const TalentNode = ({
 
   const handleClick = (e: MouseEvent) => {
     if (disabled) return
-    if (isMobile && !isHovered) {
+    if (!isDesktop && !isHovered) {
       setHovered(true)
       return
     }
@@ -121,14 +123,8 @@ export const TalentNode = ({
       ? 'text-green-400'
       : 'text-gray-400'
 
-  const responsiveProps = isMobile
+  const responsiveProps = isDesktop
     ? {
-        onMouseEnter: () => setHovered(true),
-        onTouchStart: handlePressStart,
-        onTouchEnd: handlePressEnd,
-        onTouchCancel: handlePressEnd,
-      }
-    : {
         onMouseEnter: () => setHovered(true),
         onMouseDown: handlePressStart,
         onMouseUp: handlePressEnd,
@@ -136,6 +132,12 @@ export const TalentNode = ({
           setHovered(false)
           handlePressEnd()
         },
+      }
+    : {
+        onMouseEnter: () => setHovered(true),
+        onTouchStart: handlePressStart,
+        onTouchEnd: handlePressEnd,
+        onTouchCancel: handlePressEnd,
       }
 
   const badgeClipPath =
@@ -207,7 +209,7 @@ export const TalentNode = ({
             height: '48px',
             left: isPressed ? '7px' : '4px',
             top: isPressed ? '7px' : '5px',
-            backgroundImage: `url(src/assets/icons/${icon})`,
+            backgroundImage: `url(${iconUrl})`,
             filter: shouldGrayOut
               ? 'grayscale(100%)'
               : undefined,
@@ -314,7 +316,7 @@ export const TalentNode = ({
           !isMaxed &&
           hasSpendablePoints && (
             <p className='text-green-400 text-base'>
-              {isMobile
+              {!isDesktop
                 ? 'Tap icon or plus (+) to learn'
                 : 'Click to learn'}
             </p>
@@ -322,12 +324,12 @@ export const TalentNode = ({
 
         {!disabled && isMaxed && canDecrement && (
           <p className='text-green-400 text-base'>
-            {isMobile
+            {!isDesktop
               ? 'Tap minus (-) to unlearn'
               : 'Right click to unlearn'}
           </p>
         )}
-        {isMobile && (
+        {!isDesktop && (
           <p className='mb-1 text-gray-400 italic'>
             (Tap outside to dismiss)
           </p>

@@ -19,6 +19,7 @@ import {
 import type { ClassName } from '../core/types'
 import { CLASS_NAMES } from '../core/constants'
 import ClipboardJS from 'clipboard'
+import { useAsset } from '../hooks/useAsset'
 
 const SELECTED_CLASS_KEY =
   'mel-talent-calc-selected-class'
@@ -119,6 +120,9 @@ export const TalentGrid = () => {
     selectedClass,
     setSelectedClass,
   })
+  const classCrestImage = useAsset(
+    `images/${selectedClass}/classcrest_${selectedClass}.png`
+  )
 
   return (
     <div>
@@ -126,15 +130,17 @@ export const TalentGrid = () => {
         <div className='flex flex-col w-full gap-4'>
           <ParchmentBorders>
             {/* 🛡️ Class Crest Image */}
-            <img
-              src={`src/assets/images/${selectedClass}/classcrest_${selectedClass}.png`}
-              alt={`${selectedClass} crest`}
-              className='absolute right-0 top-0 z-0 sm:opacity-50 opacity-40 pointer-events-none fade-mask 
+            {classCrestImage && (
+              <img
+                src={classCrestImage}
+                alt={`${selectedClass} crest`}
+                className='absolute right-0 top-0 z-0 sm:opacity-50 opacity-40 pointer-events-none fade-mask 
               sm:top-[-100px] top-[5%] max-md:left-[140px] 
               [@media(max-width:420px)]:top-[52%]
               [@media(max-width:420px)]:left-[100px]
               [@media(max-width:1009px)]:top-[0]'
-            />
+              />
+            )}
             <div className='flex flex-col w-full gap-6'>
               {/* 🎭 Class Picker in first row */}
               <ClassPicker
@@ -143,7 +149,6 @@ export const TalentGrid = () => {
                   setSelectedClass
                 }
               />
-
               {/* 🔁 Reset + 📤 Share Buttons in second row */}
               <div
                 className='flex justify-start sm:justify-between gap-4 z-1 items-end 

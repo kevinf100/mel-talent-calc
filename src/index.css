@@ -9,9 +9,9 @@
 @font-face {
   font-family: 'FrizQuadrata';
   src:
-    url('fonts/FrizQuadrataStd-Italic.woff2')
+    url('/fonts/FrizQuadrataStd-Italic.woff2')
       format('woff2'),
-    url('fonts/FrizQuadrataStd-Italic.woff')
+    url('/fonts/FrizQuadrataStd-Italic.woff')
       format('woff');
   font-weight: normal;
   font-style: italic;
@@ -21,9 +21,9 @@
 @font-face {
   font-family: 'FrizQuadrata';
   src:
-    url('fonts/FrizQuadrataStd-Bold.woff2')
+    url('/fonts/FrizQuadrataStd-Bold.woff2')
       format('woff2'),
-    url('fonts/FrizQuadrataStd-Bold.woff')
+    url('/fonts/FrizQuadrataStd-Bold.woff')
       format('woff');
   font-weight: bold;
   font-style: normal;
@@ -33,9 +33,9 @@
 @font-face {
   font-family: 'FrizQuadrata';
   src:
-    url('fonts/FrizQuadrataStd.woff2')
+    url('/fonts/FrizQuadrataStd.woff2')
       format('woff2'),
-    url('fonts/FrizQuadrataStd.woff')
+    url('/fonts/FrizQuadrataStd.woff')
       format('woff');
   font-weight: 500;
   font-style: normal;
@@ -45,9 +45,9 @@
 @font-face {
   font-family: 'FrizQuadrata';
   src:
-    url('FrizQuadrataStd-BoldItalic.woff2')
+    url('/fonts/FrizQuadrataStd-BoldItalic.woff2')
       format('woff2'),
-    url('FrizQuadrataStd-BoldItalic.woff')
+    url('/fonts/FrizQuadrataStd-BoldItalic.woff')
       format('woff');
   font-weight: bold;
   font-style: italic;
@@ -235,7 +235,7 @@
   .left-arrow::after {
     @apply absolute h-[56px] w-[21px] z-[30] pointer-events-none md:left-[50px] left-[52px];
     content: '';
-    background: url('/src/assets/ui/arrow-left-head-glow1.png')
+    background: url('/src/assets/ui/arrow-left-head-glow.png')
       no-repeat left;
     top: 0;
   }
