@@ -13,9 +13,9 @@ export const GlobalPointsSummary = ({
   onResetAll: () => void
 }) => {
   return (
-    <div className='mt-2 mb-1 p-2 text-sm rounded-sm w-[95%] md:w-[98%] text-white mx-auto  font-italic'>
+    <div className='mt-2 mb-1 p-2 rounded-sm w-[95%] md:w-[98%] text-white mx-auto  font-italic'>
       {/* Mobile: labels row */}
-      <div className='flex justify-end text-2xl text-white md:hidden'>
+      <div className='flex justify-end text-xl sm:text-2xl text-white md:hidden'>
         <div className='flex space-x-2 items-center'>
           <p className='text-gold-text'>Level:</p>
           <p>{currentLevel}</p>
@@ -23,7 +23,7 @@ export const GlobalPointsSummary = ({
       </div>
 
       {/* Mobile: values row */}
-      <div className='flex justify-between md:hidden text-2xl mt-1 items-center'>
+      <div className='flex justify-between md:hidden text-xl sm:text-2xl mt-1 items-center'>
         <div className='flex gap-2'>
           <button
             onClick={onResetAll}
