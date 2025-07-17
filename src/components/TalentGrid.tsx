@@ -6,7 +6,6 @@ import {
   type TalentTreeScrollerRef,
 } from './TalentTreeScroller'
 
-import ResetSprite from '../assets/ui/reset-all-button-sprite-small.png'
 import ShareSprite from '../assets/ui/share-btn-sprite-small2.png'
 import { ParchmentBorders } from './ParchmentBorders'
 import { ClassPicker } from './ClassPicker'
@@ -153,38 +152,10 @@ export const TalentGrid = () => {
                   setSelectedClass
                 }
               />
-              {/* 🔁 Reset + 📤 Share Buttons in second row */}
               <div
-                className='flex justify-start sm:justify-between gap-4 z-1 items-end 
+                className='flex justify-start sm:justify-end gap-4 z-1 items-end 
                 [@media(max-width:440px)]:justify-center'
               >
-                {/* Reset Button */}
-                <button
-                  onClick={resetAll}
-                  aria-label='Reset All'
-                  className='w-[120px] h-[39px] bg-no-repeat bg-[length:120px_79px] sm:w-[150px] sm:h-[49px] sm:bg-[length:150px_99px] hidden sm:flex'
-                  style={{
-                    backgroundImage: `url(${ResetSprite})`,
-                    backgroundPosition: '0px 0px',
-                  }}
-                  onPointerDown={e => {
-                    const isDesktop =
-                      window.innerWidth >= 640
-                    e.currentTarget.style.backgroundPosition =
-                      isDesktop
-                        ? '0px -48.75px'
-                        : '0px -38.75px'
-                  }}
-                  onPointerUp={e => {
-                    e.currentTarget.style.backgroundPosition =
-                      '0px 0px'
-                  }}
-                  onPointerLeave={e => {
-                    e.currentTarget.style.backgroundPosition =
-                      '0px 0px'
-                  }}
-                />
-
                 {/* Share Button */}
                 <button
                   ref={shareBtnRef}

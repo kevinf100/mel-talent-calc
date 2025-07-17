@@ -110,8 +110,8 @@
         );
       -webkit-mask-composite: destination-in;
       mask-composite: intersect; /* for Firefox */
-      -webkit-mask-size: 100% 80%;
-      mask-size: 100% 80%;
+      -webkit-mask-size: 100% 85%;
+      mask-size: 100% 85%;
       -webkit-mask-repeat: no-repeat;
       mask-repeat: no-repeat;
 
