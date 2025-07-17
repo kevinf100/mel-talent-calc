@@ -430,7 +430,7 @@
   /* Vertical beams from small sprite */
   .edge-sm.left-sm,
   .edge-sm.right-sm {
-    background-image: url('/src/assets/ui/UIFrameDiamondMetalVertical.png');
+    background-image: url('/src/assets/ui/ui-frame-diamond-metal-vertical.png');
     background-repeat: repeat-y;
     background-size: 22px auto;
     z-index: 1;
