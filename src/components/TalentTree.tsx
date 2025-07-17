@@ -9,7 +9,6 @@ import {
 } from '../core/talentUtils'
 import ResetSprite from '../assets/ui/reset-button-sprite.png'
 import { MetalBorders } from './MetalBorders'
-//import RockBackground from '../assets/ui/UI-Background-Rock.png'
 import { useViewport } from '../hooks/useViewport'
 import { useAsset } from '../hooks/useAsset'
 
@@ -42,6 +41,7 @@ export const TalentTree = ({
   } = useViewport()
   const treeBackground = useAsset(backgroundImage)
   const treeIcon = useAsset(specIcon)
+  const rockBackground = useAsset('assets/ui/UI-Background-Rock.png')
 
   const pointsSpent = talents.reduce(
     (s, t) => s + t.points,
@@ -68,6 +68,7 @@ export const TalentTree = ({
             text-shadow gap-1
           '
           style={{
+            backgroundImage: `url(${rockBackground})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
