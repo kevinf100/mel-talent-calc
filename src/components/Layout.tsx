@@ -25,7 +25,7 @@ export const Layout = ({
       >
         {/* Optional header */}
         {header && (
-          <header className='w-full bg-[#13191b] bg-gradient-to-r from-neutral-900 '>
+          <header className='w-full bg-[#13191b] bg-gradient-to-r from-neutral-900 mb-2'>
             {header}
           </header>
         )}

@@ -193,7 +193,7 @@ export const TalentTree = ({
               return (
                 <div
                   key={t.id}
-                  className={`relative ${arrowClass} ${locked ? 'disabled' : ''} ${isNodeOpaque ? '' : 'opacity-50'}`}
+                  className={`relative ${arrowClass} ${locked ? 'disabled' : ''} ${isNodeOpaque ? '' : 'opacity-60'}`}
                   style={{
                     gridColumnStart: t.col + 1,
                     gridRowStart: t.row + 1,
