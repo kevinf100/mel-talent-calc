@@ -168,7 +168,7 @@
   .down-arrow::before {
     @apply absolute w-[56px] pointer-events-none;
     content: '';
-    background: url('/src/assets/ui/arrow-down-glow1.png')
+    background: url('/src/assets/ui/arrow-down-glow.png')
       no-repeat bottom;
     bottom: 64px; /* Aligns with target node's top */
     height: var(--arrow-height);
@@ -179,7 +179,7 @@
   .down-arrow::after {
     @apply absolute w-[56px] h-[21px] z-[30] pointer-events-none md:bottom-[55.75px] bottom-[53.75px];
     content: '';
-    background: url('/src/assets/ui/arrow-down-head-glow1.png')
+    background: url('/src/assets/ui/arrow-down-head-glow.png')
       no-repeat bottom;
   }
   .down-arrow:not(.glow)::after {
@@ -204,7 +204,7 @@
   .right-arrow::after {
     @apply absolute h-[56px] w-[21px] z-[30] pointer-events-none md:right-[50px] right-[52px];
     content: '';
-    background: url('/src/assets/ui/arrow-right-head-glow1.png')
+    background: url('/src/assets/ui/arrow-right-head-glow.png')
       no-repeat right;
     top: 0; /* Fix: add proper top positioning */
   }
@@ -258,7 +258,7 @@
   .arrow-element.down-arrow::before {
     @apply absolute w-[56px] pointer-events-none;
     content: '';
-    background: url('/src/assets/ui/arrow-down-glow1.png')
+    background: url('/src/assets/ui/arrow-down-glow.png')
       no-repeat bottom;
     bottom: 0;
     height: var(--arrow-height);
@@ -270,7 +270,7 @@
   .arrow-element.down-arrow::after {
     @apply absolute w-[56px] h-[21px] z-[35] pointer-events-none;
     content: '';
-    background: url('/src/assets/ui/arrow-down-head-glow1.png')
+    background: url('/src/assets/ui/arrow-down-head-glow.png')
       no-repeat bottom;
     left: 0;
     bottom: -7px;
@@ -294,7 +294,7 @@
   .arrow-element.right-arrow::after {
     @apply absolute h-[56px] w-[21px] z-[30] pointer-events-none right-[52px];
     content: '';
-    background: url('/src/assets/ui/arrow-right-head-glow1.png')
+    background: url('/src/assets/ui/arrow-right-head-glow.png')
       no-repeat right;
     top: 0;
   }

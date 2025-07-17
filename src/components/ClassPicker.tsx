@@ -4,6 +4,7 @@ import {
   CLASS_NAMES,
   CLASS_COLORS,
 } from '../core/constants'
+import GoldRing from '../assets/icons/gold-ring3.png'
 
 // 🌟 Shadow helpers
 const CLASS_SHADOWS = {
@@ -71,7 +72,7 @@ export const ClassPicker = ({
             >
               {/* 🟡 Ring Frame */}
               <img
-                src='src/assets/icons/gold-ring3.png'
+                src={GoldRing}
                 alt='Ring'
                 className={`absolute z-10 top-0 left-0 w-full h-full pointer-events-none ${
                   isSelected ? '' : 'grayscale'
@@ -94,7 +95,7 @@ export const ClassPicker = ({
         {/* 🎯 Selected Class Icon */}
         <div className='relative z-10 max-w-[62px] max-h-[62px] [@media(min-width:640px)]:max-w-[105px] [@media(min-width:640px)]:max-h-[105px] md:max-w-[140px] md:max-h-[140px] h-full'>
           <img
-            src='src/assets/icons/gold-ring3.png'
+            src={GoldRing}
             alt='Gold Ring'
             className='absolute z-10 left-0 pointer-events-none object-contain w-full h-full top-0 scale-[1.35]
               [@media(max-width:420px)]:top-[-12px] [@media(max-width:420px)]:h-[84px]

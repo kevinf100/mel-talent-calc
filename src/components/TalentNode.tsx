@@ -3,11 +3,11 @@ import {
   useState,
   type MouseEvent,
 } from 'react'
-import FrameDefault from '../assets/icons/talent-frame-default.png'
-import FrameDefaultOuter from '../assets/icons/talent-frame-default-outer.png'
-import FrameGold from '../assets/icons/talent-frame-gold.png'
-import FrameGreen from '../assets/icons/talent-frame-green.png'
-import FrameActive from '../assets/icons/talent-frame-active.png'
+import FrameDefault from '../assets/ui/talent-frame-default.png'
+import FrameDefaultOuter from '../assets/ui/talent-frame-default-outer.png'
+import FrameGold from '../assets/ui/talent-frame-gold.png'
+import FrameGreen from '../assets/ui/talent-frame-green.png'
+import FrameActive from '../assets/ui/talent-frame-active.png'
 import { Tooltip } from './Tooltip'
 import { AbilityDataSection } from './AbilityDataSection'
 import type { Talent } from '../core/types'
