@@ -74,40 +74,6 @@
 }
 
 @layer components {
-  .glow-overlay {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .glow-overlay::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background: none;
-  }
-
-  .glow-overlay:hover::before {
-    background: linear-gradient(
-      120deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.4) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    animation: sweepGlow 0.8s ease forwards;
-  }
-
-  @keyframes sweepGlow {
-    0% {
-      transform: translateX(-100%) skewX(-20deg);
-    }
-    100% {
-      transform: translateX(100%) skewX(-20deg);
-    }
-  }
   @media (min-width: 640px) {
     .fade-mask {
       -webkit-mask-image:
@@ -205,13 +171,13 @@
     background: url('/src/assets/ui/arrow-down-glow1.png')
       no-repeat bottom;
     bottom: 64px; /* Aligns with target node's top */
-    height: calc(var(--arrow-height) + 10px);
+    height: var(--arrow-height);
   }
   .down-arrow:not(.glow)::before {
     @apply grayscale;
   }
   .down-arrow::after {
-    @apply absolute w-[56px] h-[21px] z-[30] pointer-events-none md:bottom-[55.75px] bottom-[51px];
+    @apply absolute w-[56px] h-[21px] z-[30] pointer-events-none md:bottom-[55.75px] bottom-[53.75px];
     content: '';
     background: url('/src/assets/ui/arrow-down-head-glow1.png')
       no-repeat bottom;
@@ -226,7 +192,7 @@
 
   /* Right arrow styles */
   .right-arrow::before {
-    @apply absolute h-[56px] pointer-events-none md:right-[50px] right-[65px];
+    @apply absolute h-[56px] pointer-events-none right-[58px];
     content: '';
     background: url('/src/assets/ui/arrow-right-glow.png')
       no-repeat right;
@@ -254,7 +220,7 @@
 
   /* Left arrow styles */
   .left-arrow::before {
-    @apply absolute h-[56px] pointer-events-none md:left-[50px] left-[65px];
+    @apply absolute h-[56px] pointer-events-none left-[58px];
     content: '';
     background: url('/src/assets/ui/arrow-right-glow.png')
       no-repeat left;
@@ -295,7 +261,7 @@
     background: url('/src/assets/ui/arrow-down-glow1.png')
       no-repeat bottom;
     bottom: 0;
-    height: calc(var(--arrow-height) + 5px);
+    height: var(--arrow-height);
     left: 0;
   }
   .arrow-element.down-arrow:not(.glow)::before {
@@ -342,10 +308,7 @@
     content: '';
     background: url('/src/assets/ui/arrow-rightdown-glow.png')
       no-repeat;
-    width: var(
-      --connector-width,
-      69px
-    ); /* Use dynamic width, fallback to 69px */
+    width: var(--connector-width); /* Use dynamic width, fallback to 69px */
     height: 64px;
     right: -38px; /* Keep original positioning */
     top: calc(
@@ -543,15 +506,6 @@
 
   .parchment .edge.right {
     background-position: 100% 0;
-  }
-
-  /* Ribbon */
-  .parchment .ribbon,
-  .parchment .ribbon {
-    background-image: url('/src/assets/ui/parchment-sprite-ribbon.PNG'); /* vertical edge sprite */
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 10;
   }
 
   .tooltip-container {

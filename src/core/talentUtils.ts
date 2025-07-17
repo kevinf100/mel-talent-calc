@@ -1,62 +1,25 @@
 import type { Talent } from './types'
 
-// Calculate effective node width based on screen size and grid structure
-// Grid: 4 columns, gap-6 (24px) on mobile, gap-4 (16px) on desktop
-// Node: 56px width, Container padding: varies
-const calculateEffectiveNodeWidth =
-  (): number => {
-    const isMobile =
-      typeof window !== 'undefined' &&
-      window.innerWidth < 768
-    const nodeWidth = 56 // TalentNode button width
-    const gap = isMobile ? 24 : 16 // gap-6 on mobile, gap-4 on desktop
+const FIXED_OFFSET = 58
 
-    // Get the actual grid container width
-    if (typeof window !== 'undefined') {
-      const gridContainer =
-        document.querySelector(
-          '.grid.grid-cols-4'
-        )
-      if (gridContainer) {
-        const containerWidth =
-          gridContainer.clientWidth
-        const paddingLeft = isMobile ? 16 : 32 // lg:pl-4 = 16px, default padding
-        const paddingRight = isMobile ? 16 : 32
-        const availableWidth =
-          containerWidth -
-          paddingLeft -
-          paddingRight
-        const totalGaps = 3 * gap // 3 gaps between 4 columns
-        const cellWidth =
-          (availableWidth - totalGaps) / 4
-
-        // Arrow should reach from center of source to center of target
-        // So we need: gap + (nodeWidth/2) + (nodeWidth/2) = gap + nodeWidth
-        // But on mobile, reduce slightly to account for visual padding
-        const effectiveWidth = cellWidth + gap
-        return isMobile
-          ? effectiveWidth * 0.85
-          : effectiveWidth // 15% reduction on mobile
-      }
-    }
-
-    // Fallback to calculated approximation
-    const baseWidth = nodeWidth + gap
-    return isMobile ? baseWidth * 0.85 : baseWidth // 15% reduction on mobile
-  }
-
-// Calculate connector width specifically for right-connector-arrow
-// This needs to be slightly larger on mobile to reach properly
-const calculateConnectorWidth = (
-  effectiveNodeWidth: number
+const calculateEffectiveNodeWidth = (
+  windowWidth: number,
+  containerWidth: number,
+  isDesktop: boolean
 ): number => {
-  const isMobile =
-    typeof window !== 'undefined' &&
-    window.innerWidth < 768
-  // For right-connector, we need a bit more width on mobile to reach the edge
-  return isMobile
-    ? effectiveNodeWidth * 1.15
-    : effectiveNodeWidth // 15% increase on mobile
+  const gridContainer = document.querySelector(
+    '.grid.grid-cols-4'
+  )
+  if (!gridContainer) return isDesktop ? 42 : 42 // fallback
+  const padding = windowWidth >= 1024 ? 16 : 0
+  const gap = isDesktop ? 24 : 32
+  const availableWidth =
+    containerWidth - padding * 2
+  const totalGaps = gap * 3
+  const columnWidth =
+    (availableWidth - totalGaps) / 4
+
+  return columnWidth + gap - FIXED_OFFSET
 }
 
 export const requiredForTier = (row: number) =>
@@ -70,9 +33,9 @@ export const treeGatingValid = (
     rowTotals[t.row] =
       (rowTotals[t.row] || 0) + t.points
   })
+
   return talents.every(t => {
     if (t.points === 0) return true
-
     const prevPoints = Object.entries(rowTotals)
       .filter(([r]) => Number(r) < t.row)
       .reduce((s, [, v]) => s + v, 0)
@@ -97,12 +60,14 @@ export const meetsDependencies = (
   )
 }
 
-// Find talents that are targets of dependencies and calculate arrow properties
 export const getArrowProps = (
   talents: Talent[],
   talent: Talent,
   locked: boolean,
-  availablePoints: number
+  availablePoints: number,
+  isDesktop: boolean,
+  windowWidth: number,
+  containerWidth: number
 ) => {
   if (!talent.requires?.id)
     return { class: '', style: {} }
@@ -116,62 +81,45 @@ export const getArrowProps = (
     !locked &&
     sourceTalent.points > 0 &&
     (availablePoints > 0 || talent.points > 0)
-
   const glowClass = isGlowAllowed ? 'glow' : ''
 
-  // Check for right arrow (same row, source col < target col)
-  if (
-    sourceTalent.row === talent.row &&
-    sourceTalent.col < talent.col
-  ) {
-    // Calculate based on actual grid spacing: 56px node + gap
-    // Dynamic calculation based on screen width and grid structure
+  // Left / Right Arrow
+  if (sourceTalent.row === talent.row) {
+    const colDiff = Math.abs(
+      talent.col - sourceTalent.col
+    )
     const effectiveNodeWidth =
-      calculateEffectiveNodeWidth()
-    const colDiff = talent.col - sourceTalent.col
+      calculateEffectiveNodeWidth(
+        windowWidth,
+        containerWidth,
+        isDesktop
+      )
     const arrowWidth =
       colDiff * effectiveNodeWidth
 
     return {
-      class: `right-arrow ${glowClass}`,
+      class: `${sourceTalent.col < talent.col ? 'right-arrow' : 'left-arrow'} ${glowClass}`,
       style: {
         '--arrow-width': `${arrowWidth}px`,
       },
     }
   }
 
-  // Check for left arrow (same row, source col > target col)
-  if (
-    sourceTalent.row === talent.row &&
-    sourceTalent.col > talent.col
-  ) {
-    // Use same dimensions as right arrow
-    const effectiveNodeWidth =
-      calculateEffectiveNodeWidth()
-    const colDiff = sourceTalent.col - talent.col
-    const arrowWidth =
-      colDiff * effectiveNodeWidth
-
-    return {
-      class: `left-arrow ${glowClass}`,
-      style: {
-        '--arrow-width': `${arrowWidth}px`,
-      },
-    }
-  }
-
-  // Check for corner connection (down + right): ONLY for specific L-shaped connections
-  // This should only apply when we need both down AND right arrows (like row+1, col+1)
+  // Corner Connection (Down + Right)
   if (
     sourceTalent.row < talent.row &&
     sourceTalent.col < talent.col &&
     talent.row - sourceTalent.row === 1 &&
     talent.col - sourceTalent.col === 1
   ) {
-    // For corner connections, return separate arrow elements
-    const effectiveNodeHeight = 64
+    const effectiveNodeHeight = 45
     const effectiveNodeWidth =
-      calculateEffectiveNodeWidth()
+    calculateEffectiveNodeWidth(
+      windowWidth,
+      containerWidth,
+      isDesktop
+    ) + 43
+
     const rowDiff = talent.row - sourceTalent.row
     const colDiff = talent.col - sourceTalent.col
     const arrowHeight =
@@ -187,7 +135,7 @@ export const getArrowProps = (
           type: 'down',
           glow: isGlowAllowed,
           style: {
-            '--arrow-height': `${rowDiff === 1 ? 40 : arrowHeight}px`,
+            '--arrow-height': `${arrowHeight}px`,
           },
         },
         {
@@ -195,29 +143,29 @@ export const getArrowProps = (
           glow: isGlowAllowed,
           style: {
             '--arrow-width': `${arrowWidth}px`,
-            '--connector-width': `${calculateConnectorWidth(effectiveNodeWidth)}px`, // For the diagonal arrow itself
+            '--connector-width': `${effectiveNodeWidth}px`,
           },
         },
       ],
     }
   }
 
-  // Check for down arrow (source row < target row)
+  // Down Arrow
   if (sourceTalent.row < talent.row) {
-    const effectiveNodeHeight = 64
-    const rowDiff = talent.row - sourceTalent.row
-    const arrowHeight =
-      rowDiff * (effectiveNodeHeight + 10)
+    const isIOS = /iP(hone|ad|od)/.test(navigator.userAgent);
 
+    const rowDiff = talent.row - sourceTalent.row
+    const extraHeight = talent.row > 6 ? rowDiff * 5 + 4 : 0
+    const arrowHeight = 87 * rowDiff - 59 + (isIOS ? 0 : extraHeight)
+  
     return {
       class: `down-arrow ${glowClass}`,
       style: {
-        '--arrow-height': `${rowDiff === 1 ? 40 : arrowHeight}px`,
+        '--arrow-height': `${arrowHeight}px`,
       },
     }
   }
 
-  // No supported arrow direction
   return { class: '', style: {} }
 }
 
@@ -228,7 +176,7 @@ export type RequirementParams = {
   tierRequirement: number
   requires?: { id: string; points: number }
   requiredTalentPoints?: number
-  requiredTalentName?: string // ✅ Add this
+  requiredTalentName?: string
   talentTreeName: string
 }
 
@@ -264,7 +212,6 @@ export const getRequirementsText = ({
   return requirements
 }
 
-// 🔐 Check if a talent is locked and cannot be incremented yet
 export const isTalentLocked = (
   talent: Talent,
   allTalents: Talent[],
@@ -283,7 +230,6 @@ export const isTalentLocked = (
   )
 }
 
-// 🔼 Determine if the talent can be incremented
 export const canIncrementTalent = (
   talent: Talent,
   pointsRemaining: number,
@@ -296,7 +242,6 @@ export const canIncrementTalent = (
   )
 }
 
-// 🔽 Determine if the talent can be decremented
 export const canDecrementTalent = (
   talent: Talent,
   allTalents: Talent[],
@@ -322,15 +267,12 @@ export const canDecrementTalent = (
   )
 }
 
-// ✅ Checks if removing a point from this talent breaks any rules
 export const canSafelyDecrementTalent = (
   talent: Talent,
   allTalents: Talent[]
 ): boolean => {
-  // 🔒 Must have points to unlearn
   if (talent.points <= 0) return false
 
-  // 🔗 Must not be required by any other talents
   const hasDependents = allTalents.some(
     other =>
       other.requires?.id === talent.id &&
@@ -338,14 +280,12 @@ export const canSafelyDecrementTalent = (
   )
   if (hasDependents) return false
 
-  // 🧪 Simulate decrement
   const updatedTalents = allTalents.map(t =>
     t.id === talent.id
       ? { ...t, points: t.points - 1 }
       : { ...t }
   )
 
-  // ⛓️ Check if remaining talents still meet their tier requirements
   const tierViolation = updatedTalents.some(t => {
     if (t.points === 0) return false
     const required = requiredForTier(t.row)
@@ -356,6 +296,5 @@ export const canSafelyDecrementTalent = (
   })
   if (tierViolation) return false
 
-  // 🔐 Final gating pass
   return treeGatingValid(updatedTalents)
 }

@@ -173,11 +173,11 @@ export const TalentTreeScroller = forwardRef<
         scrollSnapAlign: 'start',
       }}
     >
-      <div className='flex min-w-full md:justify-between md:space-x-0 md:min-w-0 md:flex-nowrap'>
+      <div className='flex min-w-full lg:justify-between lg:space-x-0 lg:min-w-0 lg:flex-nowrap'>
         {trees.map((tree, index) => (
           <div
             key={index}
-            className='flex-shrink-0 w-full md:w-auto md:flex-1 md:max-w-[33.33%]'
+            className='flex-shrink-0 w-full lg:w-auto lg:flex-1 lg:max-w-[33.33%]'
             style={{
               scrollSnapAlign: 'start',
               scrollSnapStop: 'always',

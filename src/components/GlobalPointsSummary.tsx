@@ -14,9 +14,9 @@ export const GlobalPointsSummary = ({
   onResetAll: () => void
 }) => {
   return (
-    <div className='mt-2 mb-1 p-2 text-sm rounded-sm w-[95%] sm:w-[98%] text-white mx-auto  font-italic'>
+    <div className='mt-2 mb-1 p-2 text-sm rounded-sm w-[95%] md:w-[98%] text-white mx-auto  font-italic'>
       {/* Mobile: labels row */}
-      <div className='flex justify-between text-xl text-white sm:hidden'>
+      <div className='flex justify-between text-xl text-white md:hidden'>
         <div className='flex space-x-2'>
           <button
             onClick={onResetAll}
@@ -51,7 +51,7 @@ export const GlobalPointsSummary = ({
       </div>
 
       {/* Mobile: values row */}
-      <div className='flex justify-between sm:hidden text-xl mt-1'>
+      <div className='flex justify-between md:hidden text-xl mt-1'>
         <div className='flex gap-2'>
           <p className='text-gold-text'>
             Points spent:
@@ -74,7 +74,7 @@ export const GlobalPointsSummary = ({
       </div>
 
       {/* Desktop: single combined row */}
-      <div className='hidden sm:flex justify-between items-center'>
+      <div className='hidden md:flex justify-between items-center'>
         <div className='flex items-center space-x-2 text-3xl'>
           <p className='text-gold-text '>
             Points spent:

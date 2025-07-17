@@ -1,30 +1,27 @@
 import { useState, useEffect } from 'react'
 
-/**
- * Custom hook for detecting viewport size and responsive breakpoints
- * @returns Object containing viewport state and helper functions
- */
 export const useViewport = () => {
-  const [isDesktop, setIsDesktop] =
-    useState(false)
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768)
+  const [containerWidth, setContainerWidth] = useState(0)
 
   useEffect(() => {
-    const checkViewport = () => {
-      setIsDesktop(window.innerWidth >= 768)
+    const onResize = () => {
+      const w = window.innerWidth
+      setWindowWidth(w)
+      setIsDesktop(w >= 768)
+
+      const gridContainer = document.querySelector('.grid.grid-cols-4')
+      if (gridContainer) {
+        setContainerWidth(gridContainer.clientWidth)
+      }
     }
 
-    checkViewport()
-    window.addEventListener(
-      'resize',
-      checkViewport
-    )
+    onResize() // initialize on mount
 
-    return () =>
-      window.removeEventListener(
-        'resize',
-        checkViewport
-      )
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
   }, [])
 
-  return { isDesktop }
+  return { windowWidth, isDesktop, containerWidth }
 }

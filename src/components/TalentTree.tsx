@@ -10,6 +10,7 @@ import {
 import ResetSprite from '../assets/ui/reset-button-sprite.png'
 import { MetalBorders } from './MetalBorders'
 import RockBackground from '../assets/ui/UI-Background-Rock.png'
+import { useViewport } from '../hooks/useViewport'
 
 export type TTalentTreeProps = {
   name: string
@@ -33,6 +34,11 @@ export const TalentTree = ({
   pointsRemaining,
   specIcon,
 }: TTalentTreeProps) => {
+  const {
+    isDesktop,
+    windowWidth,
+    containerWidth,
+  } = useViewport()
   const pointsSpent = talents.reduce(
     (s, t) => s + t.points,
     0
@@ -123,9 +129,9 @@ export const TalentTree = ({
               borderColor: 'black',
             }}
           >
-            <h2 className='text-center px-3 py-[1px] sm:py-[2px] text-sm w-full rounded shadow-inner text-gold-text'>
+            <h2 className='text-center px-3 py-[1px] sm:py-[2px] text-sm w-full rounded shadow-inner text-gold-text lg:text-xs [@media(min-width:1160px)]:text-base'>
               Points spent in {name} Talents:{' '}
-              <span className='text-white font-italic text-base'>
+              <span className='text-white font-italic text-base lg:text-sm'>
                 {pointsSpent}
               </span>
             </h2>
@@ -133,7 +139,7 @@ export const TalentTree = ({
         </header>
 
         <div className='flex justify-center items-center mt-1'>
-          <div className='grid grid-cols-4 grid-rows-7 md:gap-6 gap-8 relative lg:pl-4 lg:pr-4 place-items-center max-w-[400px] w-full'>
+          <div className='grid grid-cols-4 grid-rows-7 gap-8 relative lg:pl-4 lg:pr-4 place-items-center w-full max-w-[400px] min-w-[300px] min-h-[760px] max-h-[760px]'>
             {talents.map(t => {
               const pointsSpentInTree =
                 talents.reduce(
@@ -159,6 +165,10 @@ export const TalentTree = ({
                   talents
                 )
 
+              const isNodeOpaque =
+                t.points > 0 ||
+                pointsRemaining > 0
+
               const {
                 class: arrowClass,
                 style: arrowStyle,
@@ -167,7 +177,10 @@ export const TalentTree = ({
                 talents,
                 t,
                 locked,
-                pointsRemaining
+                pointsRemaining,
+                isDesktop,
+                windowWidth,
+                containerWidth
               )
 
               const requiredTalent = t.requires
@@ -180,7 +193,7 @@ export const TalentTree = ({
               return (
                 <div
                   key={t.id}
-                  className={`relative ${arrowClass} ${locked ? 'disabled' : ''}`}
+                  className={`relative ${arrowClass} ${locked ? 'disabled' : ''} ${isNodeOpaque ? '' : 'opacity-50'}`}
                   style={{
                     gridColumnStart: t.col + 1,
                     gridRowStart: t.row + 1,
@@ -191,7 +204,7 @@ export const TalentTree = ({
                   {arrows?.map((arrow, index) => (
                     <div
                       key={index}
-                      className={`arrow-element ${arrow.type}-arrow ${arrow.glow ? 'glow' : ''}`}
+                      className={`arrow-element ${arrow.type}-arrow ${arrow.glow ? 'glow' : ''} `}
                       style={
                         arrow.style as React.CSSProperties
                       }

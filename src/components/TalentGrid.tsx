@@ -23,23 +23,25 @@ import ClipboardJS from 'clipboard'
 const SELECTED_CLASS_KEY =
   'mel-talent-calc-selected-class'
 
-  const getInitialSelectedClass = (): ClassName => {
-    const params = new URLSearchParams(window.location.search)
-    const classFromURL = params.get('class')
-  
-    if (classFromURL) {
-      return classFromURL as ClassName
-    }
-  
-    try {
-      const saved = localStorage.getItem(
-        SELECTED_CLASS_KEY
-      )
-      return (saved as ClassName) || CLASS_NAMES[0]
-    } catch {
-      return CLASS_NAMES[0]
-    }
+const getInitialSelectedClass = (): ClassName => {
+  const params = new URLSearchParams(
+    window.location.search
+  )
+  const classFromURL = params.get('class')
+
+  if (classFromURL) {
+    return classFromURL as ClassName
   }
+
+  try {
+    const saved = localStorage.getItem(
+      SELECTED_CLASS_KEY
+    )
+    return (saved as ClassName) || CLASS_NAMES[0]
+  } catch {
+    return CLASS_NAMES[0]
+  }
+}
 
 export const TalentGrid = () => {
   const [selectedClass, setSelectedClass] =
@@ -119,13 +121,7 @@ export const TalentGrid = () => {
   })
 
   return (
-    <div
-      className='bg-gradient-to-r from-neutral-900 space-y-4 sm:max-w-screen-xl sm:mx-auto w-full bg-[#13191b]'
-      style={{
-        boxShadow:
-          'rgba(11, 6, 4, 0.8) 0px 0px 50px, rgba(11, 6, 4, 0.6) 0px 0px 100px, rgba(11, 6, 4, 0.3) 0px 0px 500px',
-      }}
-    >
+    <div>
       <div className='max-w-[85rem] m-auto'>
         <div className='flex flex-col w-full gap-4'>
           <ParchmentBorders>

@@ -22,7 +22,7 @@ type UseTalentTreesProps = {
 export const useTalentTrees = ({
   selectedClass,
   setSelectedClass,
-  totalTalentPoints = 61
+  totalTalentPoints = 21
 }: UseTalentTreesProps) => {
   const [trees, setTrees] = useState<Tree[]>(() => {
     const params = new URLSearchParams(window.location.search)
