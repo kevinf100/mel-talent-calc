@@ -116,6 +116,7 @@ export const TalentGrid = () => {
     totalPointsSpent,
     pointsRemaining,
     currentLevel,
+    pointsSpentPerTree
   } = useTalentTrees({
     selectedClass,
     setSelectedClass,
@@ -123,6 +124,8 @@ export const TalentGrid = () => {
   const classCrestImage = useAsset(
     `images/${selectedClass}/classcrest_${selectedClass}.png`
   )
+
+  const pointsSpentPerTreeOrdered = trees.map(tree => pointsSpentPerTree[tree.name] || 0)
 
   return (
     <div>
@@ -144,6 +147,7 @@ export const TalentGrid = () => {
             <div className='flex flex-col w-full gap-6'>
               {/* 🎭 Class Picker in first row */}
               <ClassPicker
+                pointsSpentPerTree={pointsSpentPerTreeOrdered}
                 selectedClass={selectedClass}
                 setSelectedClass={
                   setSelectedClass

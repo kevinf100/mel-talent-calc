@@ -118,6 +118,14 @@ export const useTalentTrees = ({
     window.history.replaceState(null, '', url)
   }
 
+  const pointsSpentPerTree = useMemo(() => {
+    const result: Record<string, number> = {}
+    for (const tree of trees) {
+      result[tree.name] = tree.talents.reduce((sum, talent) => sum + talent.points, 0)
+    }
+    return result
+  }, [trees])
+
   const resetTree = (idx: number) => {
     setTrees(prev => {
       const copy = [...prev]
@@ -173,9 +181,10 @@ export const useTalentTrees = ({
     totalPointsSpent,
     totalTalentPoints,
     pointsRemaining,
+    pointsSpentPerTree,
     modify,
     resetTree,
     resetAll,
-    setSelectedClass
+    setSelectedClass,
   }
 }

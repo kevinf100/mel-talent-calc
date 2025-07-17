@@ -22,9 +22,11 @@ const CLASS_SHADOWS = {
 type ClassPickerProps = {
   selectedClass: ClassName
   setSelectedClass: (className: ClassName) => void
+  pointsSpentPerTree: number[]
 }
 
 export const ClassPicker = ({
+  pointsSpentPerTree,
   selectedClass,
   setSelectedClass,
 }: ClassPickerProps) => {
@@ -37,6 +39,8 @@ export const ClassPicker = ({
   const isTouchDevice =
     typeof window !== 'undefined' &&
     'ontouchstart' in window
+
+  const pointsArray = Object.values(pointsSpentPerTree)
 
   return (
     <div className='flex flex-col w-full items-start gap-6 sm:gap-8 h-full'>
@@ -109,7 +113,7 @@ export const ClassPicker = ({
             className='relative text-4xl left-[5px]'
             style={{ textShadow: 'none' }}
           >
-            {0} / {0} / {0}
+            {pointsArray.join(' / ')}
           </p>
         </div>
       </div>
