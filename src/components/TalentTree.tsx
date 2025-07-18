@@ -47,7 +47,12 @@ export const TalentTree = ({
     (s, t) => s + t.points,
     0
   )
+/*
 
+                borderColor: '#43434385',
+                borderStyle: 'ridge',
+                borderWidth: '2px',
+*/
   return (
     <MetalBorders>
       <div
@@ -77,20 +82,20 @@ export const TalentTree = ({
         >
           <div className='w-full flex items-center justify-between'>
             <div
-              className='rounded-full overflow-hidden'
+              className='rounded-full overflow-hidden relative'
               style={{
                 width: '64px',
                 height: '64px',
                 borderColor: '#43434385',
-                borderStyle: 'ridge',
-                borderWidth: '2px',
+                borderStyle: 'outset',
+                borderWidth: '3px',
               }}
             >
               {treeIcon && (
                 <img
                   src={treeIcon}
                   alt='Spec Icon'
-                  className='relative rounded-full w-[60px] h-[60px] bottom-[2px]'
+                  className='absolute rounded-full w-[64px] h-[58px]  scale-[1.06]'
                 />
               )}
             </div>
