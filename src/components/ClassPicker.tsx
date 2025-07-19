@@ -106,7 +106,7 @@ export const ClassPicker = ({
             />
           )}
         </div>
-        {primaryTree.name && <div className='absolute z-15 w-[30px] h-[30px] translate-x-[40px] translate-y-[30px] sm:w-[40px] sm:h-[40px] sm:translate-x-[75px] sm:translate-y-[50px]'>
+        {primaryTree.name && <div className='absolute z-15 w-[30px] h-[30px] translate-x-[40px] translate-y-[30px] sm:w-[45px] sm:h-[45px] sm:translate-x-[72.5px] sm:translate-y-[48px]'>
           {GoldRing && (
             <img
               src={GoldRing}
