@@ -37,6 +37,7 @@ export const ClassPicker = ({
     `classicon_${selectedClass}.webp`
   )
   const GoldRing = useAsset('gold-ring.webp')
+  const SpecIcon = useAsset(primaryTree.specIcon)
 
   const isTouchDevice =
     typeof window !== 'undefined' &&
@@ -45,6 +46,8 @@ export const ClassPicker = ({
   const pointsArray = Object.values(
     pointsSpentPerTree
   )
+
+  console.log(primaryTree, selectedClass)
 
   return (
     <div className='flex flex-col w-full items-start gap-6 sm:gap-8 h-full'>
@@ -88,7 +91,7 @@ export const ClassPicker = ({
             <img
               src={GoldRing}
               alt='Gold Ring'
-              className='absolute z-10 left-0 pointer-events-none object-contain w-full h-full top-0 scale-[1.35]
+              className='absolute z-10 left-0 pointer-events-none object-contain w-full h-full top-0 scale-[1.3]
               [@media(max-width:420px)]:top-[-12px] [@media(max-width:420px)]:h-[84px]
               [@media(min-width:420px)]:top-0 [@media(min-width:420px)]:h-full
               [@media(min-width:768px)]:h-[140px] [@media(min-width:768px)]:top-[-17px]'
@@ -103,6 +106,22 @@ export const ClassPicker = ({
             />
           )}
         </div>
+        {primaryTree.name && <div className='absolute z-15 w-[30px] h-[30px] translate-x-[40px] translate-y-[30px] sm:w-[40px] sm:h-[40px] sm:translate-x-[75px] sm:translate-y-[50px]'>
+          {GoldRing && (
+            <img
+              src={GoldRing}
+              alt='Gold Ring'
+              className='absolute z-10 left-0 pointer-events-none object-contain w-full h-full top-0 scale-[1.3] opacity-75'
+            />
+          )}
+          {SpecIcon && (
+            <img
+              src={SpecIcon}
+              alt={selectedClass}
+              className='relative z-1 object-cover rounded-full w-auto h-auto top-0 left-0'
+            />
+          )}
+        </div>}
 
         {/* 📈 Info Column */}
         <div className='flex flex-col text-[#4a2c0d] justify-between flex-1'>
@@ -126,8 +145,7 @@ export const ClassPicker = ({
             {selectedClass}
           </h2>
           <p
-            className='relative text-4xl'
-            style={{ textShadow: 'none' }}
+            className='relative text-4xl md:text-shadow-none'
           >
             {pointsArray.join(' / ')}
           </p>

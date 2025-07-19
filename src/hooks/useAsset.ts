@@ -8,6 +8,7 @@ export const useAsset = (relativePath: string) => {
     let cancelled = false
 
     const load = async () => {
+      if (!relativePath) return ''
       const assetUrl = await loadAsset(relativePath)
       if (!cancelled) {
         setUrl(assetUrl)
