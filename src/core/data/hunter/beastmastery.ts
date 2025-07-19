@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const beastmastery: Tree = {
-  specIcon: 'ability_hunter_pet_bear.webp',
+  specIcon: 'ability_hunter_beasttaming.webp',
   name: 'Beast Mastery',
   backgroundImage:
     'src/assets/images/hunter/background-hunter-beastmastery.webp',

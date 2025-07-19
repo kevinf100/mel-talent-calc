@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const demonology: Tree = {
-  specIcon: 'spell_shadow_summonimp.webp',
+  specIcon: 'spell_shadow_metamorphosis.webp',
   name: 'Demonology',
   backgroundImage:
     'src/assets/images/warlock/background-warlock-demonology.webp',

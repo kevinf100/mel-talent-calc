@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const feralcombat: Tree = {
-  specIcon: 'ability_druid_enrage.webp',
+  specIcon: 'ability_racial_bearform.webp',
   name: 'Feral Combat',
   backgroundImage:
     'src/assets/images/druid/background-druid-feral.webp',

@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const shadow: Tree = {
-  specIcon: 'spell_shadow_shadowform.webp',
+  specIcon: 'spell_shadow_shadowwordpain.webp',
   name: 'Shadow',
   backgroundImage:
     'src/assets/images/priest/background-priest-shadow.webp',

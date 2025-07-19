@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const arcane: Tree = {
-  specIcon: 'spell_arcane_arcanepotency.webp',
+  specIcon: 'spell_holy_magicalsentry.webp',
   name: 'Arcane',
   backgroundImage:
     'src/assets/images/mage/background-mage-arcane.webp',

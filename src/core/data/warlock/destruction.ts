@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const destruction: Tree = {
-  specIcon: 'spell_shadow_shadowbolt.webp',
+  specIcon: 'spell_shadow_rainoffire.webp',
   name: 'Destruction',
   backgroundImage:
     'src/assets/images/warlock/background-warlock-destruction.webp',

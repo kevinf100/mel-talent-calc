@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const fire: Tree = {
-  specIcon: 'spell_fire_fireball.webp',
+  specIcon: 'spell_fire_flamebolt.webp',
   name: 'Fire',
   backgroundImage:
     'src/assets/images/mage/background-mage-fire.webp',

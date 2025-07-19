@@ -2,7 +2,7 @@ import type { Tree } from '../../types'
 
 export const survival: Tree = {
   specIcon:
-    'ability_hunter_survivalinstincts.webp',
+    'ability_hunter_swiftstrike.webp',
   name: 'Survival',
   backgroundImage:
     'src/assets/images/hunter/background-hunter-survival.webp',

@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const affliction: Tree = {
-  specIcon: 'spell_shadow_curseofsargeras.webp',
+  specIcon: 'spell_shadow_deathcoil.webp',
   name: 'Affliction',
   backgroundImage:
     'src/assets/images/warlock/background-warlock-affliction.webp',

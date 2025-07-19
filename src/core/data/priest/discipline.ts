@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const discipline: Tree = {
-  specIcon: 'spell_holy_powerwordshield.webp',
+  specIcon: 'spell_holy_wordfortitude.webp',
   name: 'Discipline',
   backgroundImage:
     'src/assets/images/priest/background-priest-discipline.webp',
