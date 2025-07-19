@@ -165,8 +165,8 @@ export const beastmastery: Tree = {
     {
       id: 'ability_druid_demoralizingroar',
       ranks: [
-        'While your pet is active, you and your pet will regenerate 1% of total health every 10 seconds sec.',
-        'While your pet is active, you and your pet will regenerate 2% of total health every 10 seconds sec.',
+        'While your pet is active, you and your pet will regenerate 1% of total health every 10 seconds.',
+        'While your pet is active, you and your pet will regenerate 2% of total health every 10 seconds.',
       ],
       row: 4,
       name: 'Spirit Bond',
