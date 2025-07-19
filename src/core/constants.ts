@@ -4,7 +4,7 @@ export const CLASS_COLORS: Record<
   ClassName,
   string
 > = {
-  warrior: '#C69B6D', // Tan
+  warrior: '#613000', // Tan
   paladin: '#F48CBA', // Pink
   hunter: '#AAD372', // Pistachio
   rogue: '#FFF468', // Yellow
