@@ -342,7 +342,6 @@ export const subtlety: Tree = {
       abilityData: {
         leftSide: ['Instant'],
         rightSide: ['30 sec cooldown'],
-        bottom: ['Requires Stealth'],
       },
     },
   ],

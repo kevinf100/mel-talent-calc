@@ -233,6 +233,10 @@ export const survival: Tree = {
       },
       icon: 'ability_warrior_challange.png',
       points: 0,
+      abilityData: {
+        leftSide: ['45 Mana', 'Instant'],
+        rightSide: ['Melee Range', '5 sec cooldown']
+      }
     },
     {
       id: 'ability_hunter_resourcefulness',
@@ -294,7 +298,7 @@ export const survival: Tree = {
       icon: 'inv_spear_02.png',
       points: 0,
       abilityData: {
-        leftSide: ['115 Mana'],
+        leftSide: ['115 Mana', 'Instant'],
         rightSide: [
           '35 yd range',
           '2 min cooldown',

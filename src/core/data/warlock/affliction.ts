@@ -192,7 +192,7 @@ export const affliction: Tree = {
     {
       id: 'spell_shadow_requiem',
       ranks: [
-        'Transfers 15 health from the target to the caster every 3 seconds sec.  Lasts 30 seconds.',
+        'Transfers 15 health from the target to the caster every 3 sec.  Lasts 30 seconds.',
       ],
       row: 4,
       name: 'Siphon Life',

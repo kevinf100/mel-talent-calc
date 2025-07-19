@@ -336,7 +336,7 @@ export const destruction: Tree = {
     {
       id: 'spell_shadow_psychicscream',
       ranks: [
-        'When activated, sacrifices your summoned demon to grant you an effect that lasts 1800 seconds.  The effect is canceled if any Demon is summoned.\n\nImp: Increases your Fire damage by 15%.\n\nVoidwalker: Restores 2% of total health every 4 seconds sec.\n\nSuccubus: Increases your Shadow damage by 15%.\n\nFelhunter: Restores 3% of total mana every 4 seconds sec.\n\nFelguard: Increases your Shadow damage by 10% and restores 2% of total mana every 4 seconds sec.',
+        'When activated, sacrifices your summoned demon to grant you an effect that lasts 1800 seconds.  The effect is canceled if any Demon is summoned.\n\nImp: Increases your Fire damage by 15%.\n\nVoidwalker: Restores 2% of total health every 4 seconds.\n\nSuccubus: Increases your Shadow damage by 15%.\n\nFelhunter: Restores 3% of total mana every 4 seconds.\n\nFelguard: Increases your Shadow damage by 10% and restores 2% of total mana every 4 seconds.',
       ],
       row: 8,
       name: 'Demonic Sacrifice',

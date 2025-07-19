@@ -197,7 +197,7 @@ export const demonology: Tree = {
     {
       id: 'ability_warlock_demonicempowerment',
       ranks: [
-        "Grants the Warlock's summoned demon Empowerment.\n\nImp: Your Imp's Firebolts have a 100% chance to critically hit and cost no mana for 8 seconds.\n\nVoidwalker: Summon demonic plating onto your Voidwalker, increasing its armor by 15% and improving its threat generation by 10%. Lasts 8 seconds.\n\nSuccubus: Your Succubus casts Partial Invisibility, causing all melee and ranged attacks made against it to have a 75% chance to miss and increasing its damage by 10%.\n\nFelhunter: Sacrifice 10% to 20% of your maximum health to empower your Felhunter's Spell Lock ability, reducing its cooldown by 10 seconds for 20 seconds. Must be above 20% health to cast.\n\nFelguard: Your Felguard hurls their weapon at the target and enrages, stunning the target for 4 seconds and increasing its damage dealt by 15% for 10 seconds.\n\nInfernal: Your Infernal becomes immune to all attacks and spells for 6 seconds.\n\nDoomguard: Your Doomguard casts Shadow Bolt Volley, dealing 1016 Shadow damage to all nearby enemies within 30 yards.\n\nEnslaved Demon: Apply Demonic Frenzy to your Enslaved Demon, causing it to take 344 damage every 2 seconds seconds and increasing its attack speed by 20% and casting speed by 10% for 10 seconds.",
+        "Grants the Warlock's summoned demon Empowerment.\n\nImp: Your Imp's Firebolts have a 100% chance to critically hit and cost no mana for 8 seconds.\n\nVoidwalker: Summon demonic plating onto your Voidwalker, increasing its armor by 15% and improving its threat generation by 10%. Lasts 8 seconds.\n\nSuccubus: Your Succubus casts Partial Invisibility, causing all melee and ranged attacks made against it to have a 75% chance to miss and increasing its damage by 10%.\n\nFelhunter: Sacrifice 10% to 20% of your maximum health to empower your Felhunter's Spell Lock ability, reducing its cooldown by 10 seconds for 20 seconds. Must be above 20% health to cast.\n\nFelguard: Your Felguard hurls their weapon at the target and enrages, stunning the target for 4 seconds and increasing its damage dealt by 15% for 10 seconds.\n\nInfernal: Your Infernal becomes immune to all attacks and spells for 6 seconds.\n\nDoomguard: Your Doomguard casts Shadow Bolt Volley, dealing 1016 Shadow damage to all nearby enemies within 30 yards.\n\nEnslaved Demon: Apply Demonic Frenzy to your Enslaved Demon, causing it to take 344 damage every 2 seconds and increasing its attack speed by 20% and casting speed by 10% for 10 seconds.",
       ],
       row: 4,
       name: 'Demonic Empowerment',
@@ -207,7 +207,7 @@ export const demonology: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['6% of base Mana', 'Instant'],
-        rightSide: ['1 min cooldown'],
+        rightSide: ['', '1 min cooldown'],
       },
     },
     {

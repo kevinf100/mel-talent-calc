@@ -232,7 +232,7 @@ export const restoration: Tree = {
     {
       id: 'spell_frost_summonwaterelemental',
       ranks: [
-        'Summons a Mana Tide Totem with 5 health at the feet of the caster for 12 sec that restores 6% of total mana every 3 seconds seconds to group members within 20 yards.',
+        'Summons a Mana Tide Totem with 5 health at the feet of the caster for 12 sec that restores 6% of total mana every 3 seconds to group members within 20 yards.',
       ],
       row: 6,
       name: 'Mana Tide Totem',
