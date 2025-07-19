@@ -126,6 +126,24 @@ export const useTalentTrees = ({
     return result
   }, [trees])
 
+  const primaryTree = useMemo(() => {
+    let maxPoints = 10
+    let primary = { name: '', specIcon: '' }
+  
+    for (const tree of trees) {
+      const points = pointsSpentPerTree[tree.name] ?? 0
+      if (points > maxPoints) {
+        maxPoints = points
+        primary = {
+          name: tree.name,
+          specIcon: tree.specIcon
+        }
+      }
+    }
+  
+    return primary
+  }, [trees, pointsSpentPerTree])
+
   const resetTree = (idx: number) => {
     setTrees(prev => {
       const copy = [...prev]
@@ -182,6 +200,7 @@ export const useTalentTrees = ({
     totalTalentPoints,
     pointsRemaining,
     pointsSpentPerTree,
+    primaryTree,
     modify,
     resetTree,
     resetAll,

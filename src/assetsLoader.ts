@@ -12,7 +12,7 @@ export const loadAsset = async (input: string): Promise<string> => {
   // 3. If input is bare filename (no slash), default to icons folder
   let path: string
   if (!cleanInput.includes('/')) {
-    path = `./assets/icons-webp/${cleanInput}`
+    path = `./assets/icons/${cleanInput}`
   } else if (cleanInput.startsWith('assets/')) {
     // If it already starts with assets/, just add './' for glob key
     path = `./${cleanInput}`

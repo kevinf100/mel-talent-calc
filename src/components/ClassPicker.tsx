@@ -22,9 +22,11 @@ type ClassPickerProps = {
   selectedClass: ClassName
   setSelectedClass: (className: ClassName) => void
   pointsSpentPerTree: number[]
+  primaryTree: { name: string; specIcon: string }
 }
 
 export const ClassPicker = ({
+  primaryTree,
   pointsSpentPerTree,
   selectedClass,
   setSelectedClass,
@@ -40,7 +42,9 @@ export const ClassPicker = ({
     typeof window !== 'undefined' &&
     'ontouchstart' in window
 
-  const pointsArray = Object.values(pointsSpentPerTree)
+  const pointsArray = Object.values(
+    pointsSpentPerTree
+  )
 
   return (
     <div className='flex flex-col w-full items-start gap-6 sm:gap-8 h-full'>
@@ -80,14 +84,16 @@ export const ClassPicker = ({
       <div className='flex items-center justify-start w-full gap-7 z-1 h-full min-h-[120px] pl-2 md: pl-0'>
         {/* 🎯 Selected Class Icon */}
         <div className='relative z-10 max-w-[62px] max-h-[62px] [@media(min-width:640px)]:max-w-[105px] [@media(min-width:640px)]:max-h-[105px] md:max-w-[140px] md:max-h-[140px] h-full'>
-          <img
-            src={GoldRing}
-            alt='Gold Ring'
-            className='absolute z-10 left-0 pointer-events-none object-contain w-full h-full top-0 scale-[1.35]
+          {GoldRing && (
+            <img
+              src={GoldRing}
+              alt='Gold Ring'
+              className='absolute z-10 left-0 pointer-events-none object-contain w-full h-full top-0 scale-[1.35]
               [@media(max-width:420px)]:top-[-12px] [@media(max-width:420px)]:h-[84px]
               [@media(min-width:420px)]:top-0 [@media(min-width:420px)]:h-full
               [@media(min-width:768px)]:h-[140px] [@media(min-width:768px)]:top-[-17px]'
-          />
+            />
+          )}
           {selectedClassIcon && (
             <img
               src={selectedClassIcon}
@@ -100,17 +106,27 @@ export const ClassPicker = ({
 
         {/* 📈 Info Column */}
         <div className='flex flex-col text-[#4a2c0d] justify-between flex-1'>
+          <h3
+            className='relative sm:hidden text-2xl capitalize'
+            style={{
+              color: CLASS_COLORS[selectedClass],
+            }}
+          >
+            {primaryTree.name}
+          </h3>
           <h2
             className='sm:text-6xl text-5xl capitalize'
             style={{
               color: CLASS_COLORS[selectedClass],
             }}
           >
+            <span className='hidden sm:contents'>
+              {primaryTree.name}{' '}
+            </span>
             {selectedClass}
           </h2>
-          <span className='absolute -bottom-[8px] left-[10%] w-[80%] h-[6px] opacity-0 sm:group-hover:opacity-100 transition-all duration-300 rounded-full blur-sm' />
           <p
-            className='relative text-4xl left-[5px]'
+            className='relative text-4xl'
             style={{ textShadow: 'none' }}
           >
             {pointsArray.join(' / ')}
