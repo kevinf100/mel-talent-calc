@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const demonology: Tree = {
-  specIcon: 'spell_shadow_summonimp.png',
+  specIcon: 'spell_shadow_summonimp.webp',
   name: 'Demonology',
   backgroundImage:
     'src/assets/images/warlock/background-warlock-demonology.webp',
@@ -16,7 +16,7 @@ export const demonology: Tree = {
       name: 'Improved Healthstone',
       col: 0,
       maxPoints: 2,
-      icon: 'inv_stone_04.png',
+      icon: 'inv_stone_04.webp',
       points: 0,
     },
     {
@@ -30,7 +30,7 @@ export const demonology: Tree = {
       name: 'Improved Imp',
       col: 1,
       maxPoints: 3,
-      icon: 'spell_shadow_summonimp.png',
+      icon: 'spell_shadow_summonimp.webp',
       points: 0,
     },
     {
@@ -46,7 +46,7 @@ export const demonology: Tree = {
       name: 'Demonic Embrace',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_shadow_metamorphosis.png',
+      icon: 'spell_shadow_metamorphosis.webp',
       points: 0,
     },
     {
@@ -59,7 +59,7 @@ export const demonology: Tree = {
       name: 'Improved Health Funnel',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_shadow_lifedrain.png',
+      icon: 'spell_shadow_lifedrain.webp',
       points: 0,
     },
     {
@@ -73,7 +73,7 @@ export const demonology: Tree = {
       name: 'Improved Voidwalker',
       col: 1,
       maxPoints: 3,
-      icon: 'spell_shadow_summonvoidwalker.png',
+      icon: 'spell_shadow_summonvoidwalker.webp',
       points: 0,
     },
     {
@@ -87,7 +87,7 @@ export const demonology: Tree = {
       name: 'Fel Intellect',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_holy_magicalsentry.png',
+      icon: 'spell_holy_magicalsentry.webp',
       points: 0,
     },
     {
@@ -101,7 +101,7 @@ export const demonology: Tree = {
       name: 'Improved Succubus',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_shadow_summonsuccubus.png',
+      icon: 'spell_shadow_summonsuccubus.webp',
       points: 0,
     },
     {
@@ -113,7 +113,7 @@ export const demonology: Tree = {
       name: 'Fel Domination',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_nature_removecurse.png',
+      icon: 'spell_nature_removecurse.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],
@@ -131,7 +131,7 @@ export const demonology: Tree = {
       name: 'Fel Stamina',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_shadow_antishadow.png',
+      icon: 'spell_shadow_antishadow.webp',
       points: 0,
     },
     {
@@ -145,7 +145,7 @@ export const demonology: Tree = {
       name: 'Demonic Aegis',
       col: 3,
       maxPoints: 3,
-      icon: 'spell_shadow_ragingscream.png',
+      icon: 'spell_shadow_ragingscream.webp',
       points: 0,
     },
     {
@@ -162,7 +162,7 @@ export const demonology: Tree = {
         id: 'spell_nature_removecurse',
         points: 1,
       },
-      icon: 'spell_shadow_impphaseshift.png',
+      icon: 'spell_shadow_impphaseshift.webp',
       points: 0,
     },
     {
@@ -178,7 +178,7 @@ export const demonology: Tree = {
       name: 'Unholy Power',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_shadow_shadowworddominate.png',
+      icon: 'spell_shadow_shadowworddominate.webp',
       points: 0,
     },
     {
@@ -191,7 +191,7 @@ export const demonology: Tree = {
       name: 'Improved Enslave Demon',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_shadow_enslavedemon.png',
+      icon: 'spell_shadow_enslavedemon.webp',
       points: 0,
     },
     {
@@ -203,7 +203,7 @@ export const demonology: Tree = {
       name: 'Demonic Empowerment',
       col: 1,
       maxPoints: 1,
-      icon: 'ability_warlock_demonicempowerment.png',
+      icon: 'ability_warlock_demonicempowerment.webp',
       points: 0,
       abilityData: {
         leftSide: ['6% of base Mana', 'Instant'],
@@ -220,7 +220,7 @@ export const demonology: Tree = {
       name: 'Master Conjuror',
       col: 3,
       maxPoints: 2,
-      icon: 'inv_ammo_firetar.png',
+      icon: 'inv_ammo_firetar.webp',
       points: 0,
     },
     {
@@ -234,7 +234,7 @@ export const demonology: Tree = {
       name: 'Mana Feed',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_shadow_manafeed.png',
+      icon: 'spell_shadow_manafeed.webp',
       points: 0,
     },
     {
@@ -254,7 +254,7 @@ export const demonology: Tree = {
         id: 'spell_shadow_shadowworddominate',
         points: 5,
       },
-      icon: 'spell_shadow_shadowpact.png',
+      icon: 'spell_shadow_shadowpact.webp',
       points: 0,
     },
     {
@@ -268,7 +268,7 @@ export const demonology: Tree = {
       name: 'Demonic Resilience',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_shadow_demonicfortitude.png',
+      icon: 'spell_shadow_demonicfortitude.webp',
       points: 0,
     },
     {
@@ -284,7 +284,7 @@ export const demonology: Tree = {
         id: 'ability_warlock_demonicempowerment',
         points: 1,
       },
-      icon: 'spell_shadow_gathershadows.png',
+      icon: 'spell_shadow_gathershadows.webp',
       points: 0,
       abilityData: {
         leftSide: ['16% of base Mana', 'Instant'],
@@ -301,7 +301,7 @@ export const demonology: Tree = {
       name: 'Demonic Knowledge',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_shadow_improvedvampiricembrace.png',
+      icon: 'spell_shadow_improvedvampiricembrace.webp',
       points: 0,
     },
     {
@@ -317,7 +317,7 @@ export const demonology: Tree = {
       name: 'Demonic Tactics',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_shadow_demonictactics.png',
+      icon: 'spell_shadow_demonictactics.webp',
       points: 0,
     },
     {
@@ -329,7 +329,7 @@ export const demonology: Tree = {
       name: 'Summon Felguard',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_shadow_summonfelguard.png',
+      icon: 'spell_shadow_summonfelguard.webp',
       points: 0,
       abilityData: {
         leftSide: [

@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const feralcombat: Tree = {
-  specIcon: 'ability_druid_enrage.png',
+  specIcon: 'ability_druid_enrage.webp',
   name: 'Feral Combat',
   backgroundImage:
     'src/assets/images/druid/background-druid-feral.webp',
@@ -19,7 +19,7 @@ export const feralcombat: Tree = {
       name: 'Ferocity',
       col: 1,
       maxPoints: 5,
-      icon: 'ability_hunter_pet_hyena.png',
+      icon: 'ability_hunter_pet_hyena.webp',
       points: 0,
     },
     {
@@ -35,7 +35,7 @@ export const feralcombat: Tree = {
       name: 'Feral Aggression',
       col: 2,
       maxPoints: 5,
-      icon: 'ability_druid_demoralizingroar.png',
+      icon: 'ability_druid_demoralizingroar.webp',
       points: 0,
     },
     {
@@ -49,7 +49,7 @@ export const feralcombat: Tree = {
       name: 'Feral Instinct',
       col: 0,
       maxPoints: 3,
-      icon: 'ability_ambush.png',
+      icon: 'ability_ambush.webp',
       points: 0,
     },
     {
@@ -62,7 +62,7 @@ export const feralcombat: Tree = {
       name: 'Brutal Impact',
       col: 1,
       maxPoints: 2,
-      icon: 'ability_druid_bash.png',
+      icon: 'ability_druid_bash.webp',
       points: 0,
     },
     {
@@ -76,7 +76,7 @@ export const feralcombat: Tree = {
       name: 'Thick Hide',
       col: 2,
       maxPoints: 3,
-      icon: 'inv_misc_pelt_bear_03.png',
+      icon: 'inv_misc_pelt_bear_03.webp',
       points: 0,
     },
     {
@@ -89,7 +89,7 @@ export const feralcombat: Tree = {
       name: 'Feral Swiftness',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_nature_spiritwolf.png',
+      icon: 'spell_nature_spiritwolf.webp',
       points: 0,
     },
     {
@@ -101,7 +101,7 @@ export const feralcombat: Tree = {
       name: 'Feral Charge',
       col: 1,
       maxPoints: 1,
-      icon: 'ability_hunter_pet_bear.png',
+      icon: 'ability_hunter_pet_bear.webp',
       points: 0,
       abilityData: {
         leftSide: ['5 Rage', 'Instant'],
@@ -125,7 +125,7 @@ export const feralcombat: Tree = {
       name: 'Sharpened Claws',
       col: 2,
       maxPoints: 3,
-      icon: 'inv_misc_monsterclaw_04.png',
+      icon: 'inv_misc_monsterclaw_04.webp',
       points: 0,
     },
     {
@@ -138,7 +138,7 @@ export const feralcombat: Tree = {
       name: 'Shredding Attacks',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_shadow_vampiricaura.png',
+      icon: 'spell_shadow_vampiricaura.webp',
       points: 0,
     },
     {
@@ -152,7 +152,7 @@ export const feralcombat: Tree = {
       name: 'Predatory Strikes',
       col: 1,
       maxPoints: 3,
-      icon: 'ability_hunter_pet_cat.png',
+      icon: 'ability_hunter_pet_cat.webp',
       points: 0,
     },
     {
@@ -169,7 +169,7 @@ export const feralcombat: Tree = {
         id: 'inv_misc_monsterclaw_04',
         points: 3,
       },
-      icon: 'ability_racial_cannibalize.png',
+      icon: 'ability_racial_cannibalize.webp',
       points: 0,
     },
     {
@@ -182,7 +182,7 @@ export const feralcombat: Tree = {
       name: 'Savage Fury',
       col: 0,
       maxPoints: 2,
-      icon: 'ability_druid_ravage.png',
+      icon: 'ability_druid_ravage.webp',
       points: 0,
     },
     {
@@ -194,7 +194,7 @@ export const feralcombat: Tree = {
       name: 'Faerie Fire (Feral)',
       col: 2,
       maxPoints: 1,
-      icon: 'spell_nature_faeriefire.png',
+      icon: 'spell_nature_faeriefire.webp',
       points: 0,
       abilityData: {
         leftSide: ['30 yd range', 'Instant'],
@@ -214,7 +214,7 @@ export const feralcombat: Tree = {
       name: 'Nurturing Instinct',
       col: 3,
       maxPoints: 2,
-      icon: 'ability_druid_healinginstincts.png',
+      icon: 'ability_druid_healinginstincts.webp',
       points: 0,
     },
     {
@@ -234,7 +234,7 @@ export const feralcombat: Tree = {
         id: 'ability_hunter_pet_cat',
         points: 3,
       },
-      icon: 'spell_holy_blessingofagility.png',
+      icon: 'spell_holy_blessingofagility.webp',
       points: 0,
     },
     {
@@ -248,7 +248,7 @@ export const feralcombat: Tree = {
       name: 'Survival of the Fittest',
       col: 2,
       maxPoints: 3,
-      icon: 'ability_druid_enrage.png',
+      icon: 'ability_druid_enrage.webp',
       points: 0,
     },
     {
@@ -262,7 +262,7 @@ export const feralcombat: Tree = {
       name: 'Primal Tenacity',
       col: 0,
       maxPoints: 3,
-      icon: 'ability_druid_primaltenacity.png',
+      icon: 'ability_druid_primaltenacity.webp',
       points: 0,
     },
     {
@@ -274,7 +274,7 @@ export const feralcombat: Tree = {
       name: 'Leader of the Pack',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_nature_unyeildingstamina.png',
+      icon: 'spell_nature_unyeildingstamina.webp',
       points: 0,
     },
     {
@@ -291,7 +291,7 @@ export const feralcombat: Tree = {
         id: 'leader_of_the_pack',
         points: 1,
       },
-      icon: 'spell_nature_unyeildingstamina.png',
+      icon: 'spell_nature_unyeildingstamina.webp',
       points: 0,
     },
     {
@@ -307,7 +307,7 @@ export const feralcombat: Tree = {
       name: 'Predatory Instincts',
       col: 2,
       maxPoints: 5,
-      icon: 'ability_druid_predatoryinstincts.png',
+      icon: 'ability_druid_predatoryinstincts.webp',
       points: 0,
     },
     {
@@ -323,7 +323,7 @@ export const feralcombat: Tree = {
         id: 'leader_of_the_pack',
         points: 1,
       },
-      icon: 'ability_druid_mangle2.png',
+      icon: 'ability_druid_mangle2.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],

@@ -4,12 +4,12 @@ export const fury: Tree = {
   name: 'Fury',
   backgroundImage:
     'src/assets/images/warrior/background-warrior-fury.webp',
-  specIcon: 'ability_warrior_innerrage.png',
+  specIcon: 'ability_warrior_innerrage.webp',
   talents: [
     {
       row: 0,
       col: 1,
-      icon: 'spell_nature_purge.png',
+      icon: 'spell_nature_purge.webp',
       id: 'spell_nature_purge',
       name: 'Booming Voice',
       ranks: [
@@ -25,7 +25,7 @@ export const fury: Tree = {
     {
       row: 0,
       col: 2,
-      icon: 'ability_rogue_eviscerate.png',
+      icon: 'ability_rogue_eviscerate.webp',
       id: 'ability_rogue_eviscerate',
       name: 'Cruelty',
       ranks: [
@@ -41,7 +41,7 @@ export const fury: Tree = {
     {
       row: 1,
       col: 1,
-      icon: 'ability_warrior_warcry.png',
+      icon: 'ability_warrior_warcry.webp',
       id: 'ability_warrior_warcry',
       name: 'Improved Demoralizing Shout',
       ranks: [
@@ -57,7 +57,7 @@ export const fury: Tree = {
     {
       row: 1,
       col: 2,
-      icon: 'spell_nature_stoneclawtotem.png',
+      icon: 'spell_nature_stoneclawtotem.webp',
       id: 'spell_nature_stoneclawtotem',
       name: 'Unbridled Wrath',
       ranks: [
@@ -73,7 +73,7 @@ export const fury: Tree = {
     {
       row: 2,
       col: 0,
-      icon: 'ability_warrior_cleave.png',
+      icon: 'ability_warrior_cleave.webp',
       id: 'ability_warrior_cleave',
       name: 'Improved Cleave',
       ranks: [
@@ -87,7 +87,7 @@ export const fury: Tree = {
     {
       row: 2,
       col: 1,
-      icon: 'spell_shadow_deathscream.png',
+      icon: 'spell_shadow_deathscream.webp',
       id: 'spell_shadow_deathscream',
       name: 'Piercing Howl',
       ranks: [
@@ -102,7 +102,7 @@ export const fury: Tree = {
     {
       row: 2,
       col: 2,
-      icon: 'spell_shadow_summonimp.png',
+      icon: 'spell_shadow_summonimp.webp',
       id: 'spell_shadow_summonimp',
       name: 'Blood Craze',
       ranks: [
@@ -116,7 +116,7 @@ export const fury: Tree = {
     {
       row: 2,
       col: 3,
-      icon: 'spell_nature_focusedmind.png',
+      icon: 'spell_nature_focusedmind.webp',
       id: 'spell_nature_focusedmind',
       name: 'Commanding Presence',
       ranks: [
@@ -132,7 +132,7 @@ export const fury: Tree = {
     {
       row: 3,
       col: 1,
-      icon: 'ability_dualwield.png',
+      icon: 'ability_dualwield.webp',
       id: 'ability_dualwield',
       name: 'Dual Wield Specialization',
       ranks: [
@@ -148,7 +148,7 @@ export const fury: Tree = {
     {
       row: 3,
       col: 2,
-      icon: 'spell_shadow_unholyfrenzy.png',
+      icon: 'spell_shadow_unholyfrenzy.webp',
       id: 'spell_shadow_unholyfrenzy',
       name: 'Enrage',
       ranks: [
@@ -164,7 +164,7 @@ export const fury: Tree = {
     {
       row: 4,
       col: 0,
-      icon: 'inv_sword_48.png',
+      icon: 'inv_sword_48.webp',
       id: 'inv_sword_48',
       name: 'Improved Execute',
       ranks: [
@@ -177,7 +177,7 @@ export const fury: Tree = {
     {
       row: 4,
       col: 1,
-      icon: 'spell_shadow_deathpact.png',
+      icon: 'spell_shadow_deathpact.webp',
       id: 'spell_shadow_deathpact',
       name: 'Death Wish',
       ranks: [
@@ -193,7 +193,7 @@ export const fury: Tree = {
     {
       row: 4,
       col: 3,
-      icon: 'ability_warrior_weaponmastery.png',
+      icon: 'ability_warrior_weaponmastery.webp',
       id: 'ability_warrior_weaponmastery',
       name: 'Weapon Mastery',
       ranks: [
@@ -206,7 +206,7 @@ export const fury: Tree = {
     {
       row: 5,
       col: 0,
-      icon: 'spell_nature_ancestralguardian.png',
+      icon: 'spell_nature_ancestralguardian.webp',
       id: 'spell_nature_ancestralguardian',
       name: 'Improved Berserker Rage',
       ranks: [
@@ -219,7 +219,7 @@ export const fury: Tree = {
     {
       row: 5,
       col: 2,
-      icon: 'ability_ghoulfrenzy.png',
+      icon: 'ability_ghoulfrenzy.webp',
       id: 'ability_ghoulfrenzy',
       name: 'Flurry',
       ranks: [
@@ -239,7 +239,7 @@ export const fury: Tree = {
     {
       row: 6,
       col: 0,
-      icon: 'ability_marksmanship.png',
+      icon: 'ability_marksmanship.webp',
       id: 'ability_marksmanship',
       name: 'Precision',
       ranks: [
@@ -253,7 +253,7 @@ export const fury: Tree = {
     {
       row: 6,
       col: 1,
-      icon: 'spell_nature_bloodlust.png',
+      icon: 'spell_nature_bloodlust.webp',
       id: 'spell_nature_bloodlust',
       name: 'Bloodthirst',
       ranks: [
@@ -276,7 +276,7 @@ export const fury: Tree = {
     {
       row: 6,
       col: 2,
-      icon: 'ability_whirlwind.png',
+      icon: 'ability_whirlwind.webp',
       id: 'ability_whirlwind',
       name: 'Improved Whirlwind',
       ranks: [
@@ -289,7 +289,7 @@ export const fury: Tree = {
     {
       row: 7,
       col: 2,
-      icon: 'ability_racial_avatar.png',
+      icon: 'ability_racial_avatar.webp',
       id: 'ability_racial_avatar',
       name: 'Improved Berserker Stance',
       ranks: [
@@ -305,7 +305,7 @@ export const fury: Tree = {
     {
       row: 8,
       col: 1,
-      icon: 'ability_warrior_rampage.png',
+      icon: 'ability_warrior_rampage.webp',
       id: 'ability_warrior_rampage',
       name: 'Rampage',
       ranks: [

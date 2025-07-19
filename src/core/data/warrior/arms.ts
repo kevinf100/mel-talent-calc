@@ -4,7 +4,7 @@ export const arms: Tree = {
   name: 'Arms',
   backgroundImage:
     'src/assets/images/warrior/background-warrior-arms.webp',
-  specIcon: 'ability_warrior_savageblow.png',
+  specIcon: 'ability_warrior_savageblow.webp',
   talents: [
     {
       id: 'ability_rogue_ambush',
@@ -18,7 +18,7 @@ export const arms: Tree = {
       col: 0,
       points: 0,
       maxPoints: 3,
-      icon: 'ability_rogue_ambush.png',
+      icon: 'ability_rogue_ambush.webp',
     },
     {
       id: 'ability_parry',
@@ -34,7 +34,7 @@ export const arms: Tree = {
       col: 1,
       points: 0,
       maxPoints: 5,
-      icon: 'ability_parry.png',
+      icon: 'ability_parry.webp',
     },
     {
       id: 'ability_gouge',
@@ -48,7 +48,7 @@ export const arms: Tree = {
       col: 2,
       points: 0,
       maxPoints: 3,
-      icon: 'ability_gouge.png',
+      icon: 'ability_gouge.webp',
     },
     {
       id: 'ability_warrior_charge',
@@ -61,7 +61,7 @@ export const arms: Tree = {
       col: 0,
       points: 0,
       maxPoints: 2,
-      icon: 'ability_warrior_charge.png',
+      icon: 'ability_warrior_charge.webp',
     },
     {
       id: 'spell_magic_magearmor',
@@ -77,7 +77,7 @@ export const arms: Tree = {
       col: 1,
       points: 0,
       maxPoints: 5,
-      icon: 'spell_magic_magearmor.png',
+      icon: 'spell_magic_magearmor.webp',
     },
     {
       id: 'ability_thunderclap',
@@ -91,7 +91,7 @@ export const arms: Tree = {
       col: 2,
       points: 0,
       maxPoints: 3,
-      icon: 'ability_thunderclap.png',
+      icon: 'ability_thunderclap.webp',
     },
     {
       id: 'inv_sword_05',
@@ -104,7 +104,7 @@ export const arms: Tree = {
       col: 0,
       points: 0,
       maxPoints: 2,
-      icon: 'inv_sword_05.png',
+      icon: 'inv_sword_05.webp',
     },
     {
       id: 'spell_holy_blessingofstamina',
@@ -116,7 +116,7 @@ export const arms: Tree = {
       col: 1,
       points: 0,
       maxPoints: 1,
-      icon: 'spell_holy_blessingofstamina.png',
+      icon: 'spell_holy_blessingofstamina.webp',
     },
     {
       id: 'ability_backstab',
@@ -130,7 +130,7 @@ export const arms: Tree = {
       col: 2,
       points: 0,
       maxPoints: 3,
-      icon: 'ability_backstab.png',
+      icon: 'ability_backstab.webp',
     },
     {
       id: 'inv_axe_09',
@@ -146,7 +146,7 @@ export const arms: Tree = {
       col: 1,
       points: 0,
       maxPoints: 5,
-      icon: 'inv_axe_09.png',
+      icon: 'inv_axe_09.webp',
     },
     {
       id: 'ability_searingarrow',
@@ -159,7 +159,7 @@ export const arms: Tree = {
       col: 2,
       points: 0,
       maxPoints: 2,
-      icon: 'ability_searingarrow.png',
+      icon: 'ability_searingarrow.webp',
       requires: {
         id: 'ability_backstab',
         points: 3,
@@ -176,7 +176,7 @@ export const arms: Tree = {
       col: 3,
       points: 0,
       maxPoints: 2,
-      icon: 'ability_warrior_decisivestrike.png',
+      icon: 'ability_warrior_decisivestrike.webp',
     },
     {
       id: 'inv_axe_06',
@@ -192,7 +192,7 @@ export const arms: Tree = {
       col: 0,
       points: 0,
       maxPoints: 5,
-      icon: 'inv_axe_06.png',
+      icon: 'inv_axe_06.webp',
     },
     {
       id: 'ability_rogue_slicedice',
@@ -204,7 +204,7 @@ export const arms: Tree = {
       col: 1,
       points: 0,
       maxPoints: 1,
-      icon: 'ability_rogue_slicedice.png',
+      icon: 'ability_rogue_slicedice.webp',
       abilityData: {
         leftSide: ['30 Rage', 'Instant'],
         rightSide: ['', '30 sec cooldown'],
@@ -227,7 +227,7 @@ export const arms: Tree = {
       col: 2,
       points: 0,
       maxPoints: 5,
-      icon: 'inv_mace_01.png',
+      icon: 'inv_mace_01.webp',
     },
     {
       id: 'inv_sword_27',
@@ -243,7 +243,7 @@ export const arms: Tree = {
       col: 3,
       points: 0,
       maxPoints: 5,
-      icon: 'inv_sword_27.png',
+      icon: 'inv_sword_27.webp',
     },
     {
       id: 'ability_rogue_sprint',
@@ -256,7 +256,7 @@ export const arms: Tree = {
       col: 0,
       points: 0,
       maxPoints: 2,
-      icon: 'ability_rogue_sprint.png',
+      icon: 'ability_rogue_sprint.webp',
     },
     {
       id: 'ability_shockwave',
@@ -270,7 +270,7 @@ export const arms: Tree = {
       col: 2,
       points: 0,
       maxPoints: 3,
-      icon: 'ability_shockwave.png',
+      icon: 'ability_shockwave.webp',
     },
     {
       id: 'ability_warrior_improveddisciplines',
@@ -284,7 +284,7 @@ export const arms: Tree = {
       col: 3,
       points: 0,
       maxPoints: 3,
-      icon: 'ability_warrior_improveddisciplines.png',
+      icon: 'ability_warrior_improveddisciplines.webp',
     },
     {
       id: 'ability_warrior_bloodfrenzy',
@@ -297,7 +297,7 @@ export const arms: Tree = {
       col: 0,
       points: 0,
       maxPoints: 2,
-      icon: 'ability_warrior_bloodfrenzy.png',
+      icon: 'ability_warrior_bloodfrenzy.webp',
     },
     {
       id: 'ability_warrior_savageblow',
@@ -309,7 +309,7 @@ export const arms: Tree = {
       col: 1,
       points: 0,
       maxPoints: 1,
-      icon: 'ability_warrior_savageblow.png',
+      icon: 'ability_warrior_savageblow.webp',
       requires: {
         id: 'ability_rogue_slicedice',
         points: 1,
@@ -334,7 +334,7 @@ export const arms: Tree = {
       col: 2,
       points: 0,
       maxPoints: 2,
-      icon: 'ability_hunter_harass.png',
+      icon: 'ability_hunter_harass.webp',
     },
     {
       id: 'ability_warrior_endlessrage',
@@ -348,7 +348,7 @@ export const arms: Tree = {
       col: 1,
       points: 0,
       maxPoints: 3,
-      icon: 'ability_warrior_endlessrage.png',
+      icon: 'ability_warrior_endlessrage.webp',
     },
     {
       id: 'ability_warrior_bloodbath',
@@ -361,7 +361,7 @@ export const arms: Tree = {
       col: 2,
       points: 0,
       maxPoints: 2,
-      icon: 'ability_warrior_bloodbath.png',
+      icon: 'ability_warrior_bloodbath.webp',
     },
     {
       id: 'ability_warrior_bladestorm',
@@ -373,7 +373,7 @@ export const arms: Tree = {
       col: 1,
       points: 0,
       maxPoints: 1,
-      icon: 'ability_warrior_bladestorm.png',
+      icon: 'ability_warrior_bladestorm.webp',
       abilityData: {
         leftSide: ['25 Rage', 'Instant cast'],
         rightSide: ['', '1.5 min cooldown'],

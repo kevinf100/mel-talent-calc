@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const protection: Tree = {
-  specIcon: 'spell_holy_devotionaura.png',
+  specIcon: 'spell_holy_devotionaura.webp',
   name: 'Protection',
   backgroundImage:
     'src/assets/images/paladin/background-paladin-protection.webp',
@@ -19,7 +19,7 @@ export const protection: Tree = {
       name: 'Improved Devotion Aura',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_holy_devotionaura.png',
+      icon: 'spell_holy_devotionaura.webp',
       points: 0,
     },
     {
@@ -35,7 +35,7 @@ export const protection: Tree = {
       name: 'Redoubt',
       col: 2,
       maxPoints: 5,
-      icon: 'ability_defend.png',
+      icon: 'ability_defend.webp',
       points: 0,
     },
     {
@@ -49,7 +49,7 @@ export const protection: Tree = {
       name: 'Precision',
       col: 0,
       maxPoints: 3,
-      icon: 'ability_rogue_ambush.png',
+      icon: 'ability_rogue_ambush.webp',
       points: 0,
     },
     {
@@ -62,7 +62,7 @@ export const protection: Tree = {
       name: "Guardian's Favor",
       col: 1,
       maxPoints: 2,
-      icon: 'spell_holy_sealofprotection.png',
+      icon: 'spell_holy_sealofprotection.webp',
       points: 0,
     },
     {
@@ -78,7 +78,7 @@ export const protection: Tree = {
       name: 'Toughness',
       col: 3,
       maxPoints: 5,
-      icon: 'spell_holy_devotion.png',
+      icon: 'spell_holy_devotion.webp',
       points: 0,
     },
     {
@@ -90,7 +90,7 @@ export const protection: Tree = {
       name: 'Blessing of Kings',
       col: 0,
       maxPoints: 1,
-      icon: 'spell_magic_magearmor.png',
+      icon: 'spell_magic_magearmor.webp',
       points: 0,
       abilityData: {
         leftSide: ['6% of base Mana', 'Instant'],
@@ -108,7 +108,7 @@ export const protection: Tree = {
       name: 'Improved Righteous Fury',
       col: 1,
       maxPoints: 3,
-      icon: 'spell_holy_sealoffury.png',
+      icon: 'spell_holy_sealoffury.webp',
       points: 0,
     },
     {
@@ -126,7 +126,7 @@ export const protection: Tree = {
         id: 'ability_defend',
         points: 5,
       },
-      icon: 'inv_shield_06.png',
+      icon: 'inv_shield_06.webp',
       points: 0,
     },
     {
@@ -140,7 +140,7 @@ export const protection: Tree = {
       name: 'Improved Concentration Aura',
       col: 3,
       maxPoints: 3,
-      icon: 'spell_holy_mindsooth.png',
+      icon: 'spell_holy_mindsooth.webp',
       points: 0,
     },
     {
@@ -153,7 +153,7 @@ export const protection: Tree = {
       name: 'Stoicism',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_holy_stoicism.png',
+      icon: 'spell_holy_stoicism.webp',
       points: 0,
     },
     {
@@ -167,7 +167,7 @@ export const protection: Tree = {
       name: 'Improved Hammer of Justice',
       col: 1,
       maxPoints: 3,
-      icon: 'spell_holy_sealofmight.png',
+      icon: 'spell_holy_sealofmight.webp',
       points: 0,
     },
     {
@@ -183,7 +183,7 @@ export const protection: Tree = {
       name: 'Anticipation',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_magic_lesserinvisibilty.png',
+      icon: 'spell_magic_lesserinvisibilty.webp',
       points: 0,
     },
     {
@@ -196,7 +196,7 @@ export const protection: Tree = {
       name: 'Spell Warding',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_holy_improvedresistanceauras.png',
+      icon: 'spell_holy_improvedresistanceauras.webp',
       points: 0,
     },
     {
@@ -208,7 +208,7 @@ export const protection: Tree = {
       name: 'Blessing of Sanctuary',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_nature_lightningshield.png',
+      icon: 'spell_nature_lightningshield.webp',
       points: 0,
       abilityData: {
         leftSide: ['60 Mana', 'Instant'],
@@ -228,7 +228,7 @@ export const protection: Tree = {
       name: 'Reckoning',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_holy_blessingofstrength.png',
+      icon: 'spell_holy_blessingofstrength.webp',
       points: 0,
     },
     {
@@ -241,7 +241,7 @@ export const protection: Tree = {
       name: 'Sacred Duty',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_holy_divineintervention.png',
+      icon: 'spell_holy_divineintervention.webp',
       points: 0,
     },
     {
@@ -257,7 +257,7 @@ export const protection: Tree = {
       name: 'One-Handed Weapon Specialization',
       col: 2,
       maxPoints: 5,
-      icon: 'inv_sword_20.png',
+      icon: 'inv_sword_20.webp',
       points: 0,
     },
     {
@@ -274,7 +274,7 @@ export const protection: Tree = {
         id: 'holy_shield',
         points: 1,
       },
-      icon: 'spell_holy_blessingofprotection.png',
+      icon: 'spell_holy_blessingofprotection.webp',
       points: 0,
     },
     {
@@ -290,7 +290,7 @@ export const protection: Tree = {
         id: 'spell_nature_lightningshield',
         points: 1,
       },
-      icon: 'spell_holy_blessingofprotection.png',
+      icon: 'spell_holy_blessingofprotection.webp',
       points: 0,
       abilityData: {
         leftSide: ['135 Mana', 'Instant'],
@@ -311,7 +311,7 @@ export const protection: Tree = {
       name: 'Ardent Defender',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_holy_ardentdefender.png',
+      icon: 'spell_holy_ardentdefender.webp',
       points: 0,
     },
     {
@@ -327,7 +327,7 @@ export const protection: Tree = {
       name: 'Combat Expertise',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_holy_weaponmastery.png',
+      icon: 'spell_holy_weaponmastery.webp',
       points: 0,
     },
     {
@@ -343,7 +343,7 @@ export const protection: Tree = {
         id: 'holy_shield',
         points: 1,
       },
-      icon: 'spell_holy_avengersshield.png',
+      icon: 'spell_holy_avengersshield.webp',
       points: 0,
       abilityData: {
         leftSide: ['500 Mana', '1 sec cast'],

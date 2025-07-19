@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const restoration: Tree = {
-  specIcon: 'spell_nature_healingtouch.png',
+  specIcon: 'spell_nature_healingtouch.webp',
   name: 'Restoration',
   backgroundImage:
     'src/assets/images/druid/background-druid-restoration.webp',
@@ -19,7 +19,7 @@ export const restoration: Tree = {
       name: 'Improved Mark of the Wild',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_nature_regeneration.png',
+      icon: 'spell_nature_regeneration.webp',
       points: 0,
     },
     {
@@ -35,7 +35,7 @@ export const restoration: Tree = {
       name: 'Furor',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_holy_blessingofstamina.png',
+      icon: 'spell_holy_blessingofstamina.webp',
       points: 0,
     },
     {
@@ -51,7 +51,7 @@ export const restoration: Tree = {
       name: 'Naturalist',
       col: 0,
       maxPoints: 5,
-      icon: 'spell_nature_healingtouch.png',
+      icon: 'spell_nature_healingtouch.webp',
       points: 0,
     },
     {
@@ -67,7 +67,7 @@ export const restoration: Tree = {
       name: "Nature's Focus",
       col: 1,
       maxPoints: 5,
-      icon: 'spell_nature_healingwavegreater.png',
+      icon: 'spell_nature_healingwavegreater.webp',
       points: 0,
     },
     {
@@ -81,7 +81,7 @@ export const restoration: Tree = {
       name: 'Natural Shapeshifter',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_nature_wispsplode.png',
+      icon: 'spell_nature_wispsplode.webp',
       points: 0,
     },
     {
@@ -95,7 +95,7 @@ export const restoration: Tree = {
       name: 'Intensity',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_frost_windwalkon.png',
+      icon: 'spell_frost_windwalkon.webp',
       points: 0,
     },
     {
@@ -111,7 +111,7 @@ export const restoration: Tree = {
       name: 'Subtlety',
       col: 1,
       maxPoints: 5,
-      icon: 'ability_eyeoftheowl.png',
+      icon: 'ability_eyeoftheowl.webp',
       points: 0,
     },
     {
@@ -123,7 +123,7 @@ export const restoration: Tree = {
       name: 'Omen of Clarity',
       col: 2,
       maxPoints: 1,
-      icon: 'spell_nature_crystalball.png',
+      icon: 'spell_nature_crystalball.webp',
       points: 0,
       abilityData: {
         leftSide: ['120 Mana', 'Instant'],
@@ -138,7 +138,7 @@ export const restoration: Tree = {
       name: 'Overgrowth',
       col: 3,
       maxPoints: 1,
-      icon: 'ability_druid_replenish.png',
+      icon: 'ability_druid_replenish.webp',
       points: 0,
       abilityData: {
         leftSide: ['115 Mana', '1.5 sec cast'],
@@ -158,7 +158,7 @@ export const restoration: Tree = {
       name: 'Tranquil Spirit',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_holy_elunesgrace.png',
+      icon: 'spell_holy_elunesgrace.webp',
       points: 0,
     },
     {
@@ -172,7 +172,7 @@ export const restoration: Tree = {
       name: 'Improved Rejuvenation',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_nature_rejuvenation.png',
+      icon: 'spell_nature_rejuvenation.webp',
       points: 0,
     },
     {
@@ -188,7 +188,7 @@ export const restoration: Tree = {
         id: 'spell_frost_windwalkon',
         points: 3,
       },
-      icon: 'spell_nature_ravenform.png',
+      icon: 'spell_nature_ravenform.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],
@@ -208,7 +208,7 @@ export const restoration: Tree = {
       name: 'Gift of Nature',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_nature_protectionformnature.png',
+      icon: 'spell_nature_protectionformnature.webp',
       points: 0,
     },
     {
@@ -221,7 +221,7 @@ export const restoration: Tree = {
       name: 'Improved Tranquility',
       col: 3,
       maxPoints: 2,
-      icon: 'spell_nature_tranquility.png',
+      icon: 'spell_nature_tranquility.webp',
       points: 0,
     },
     {
@@ -234,7 +234,7 @@ export const restoration: Tree = {
       name: 'Empowered Touch',
       col: 0,
       maxPoints: 2,
-      icon: 'ability_druid_empoweredtouch.png',
+      icon: 'ability_druid_empoweredtouch.webp',
       points: 0,
     },
     {
@@ -254,7 +254,7 @@ export const restoration: Tree = {
         id: 'spell_nature_rejuvenation',
         points: 3,
       },
-      icon: 'spell_nature_resistnature.png',
+      icon: 'spell_nature_resistnature.webp',
       points: 0,
     },
     {
@@ -268,7 +268,7 @@ export const restoration: Tree = {
       name: 'Living Spirit',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_nature_giftofthewaterspirit.png',
+      icon: 'spell_nature_giftofthewaterspirit.webp',
       points: 0,
     },
     {
@@ -284,7 +284,7 @@ export const restoration: Tree = {
         id: 'spell_nature_protectionformnature',
         points: 5,
       },
-      icon: 'inv_relics_idolofrejuvenation.png',
+      icon: 'inv_relics_idolofrejuvenation.webp',
       points: 0,
       abilityData: {
         leftSide: ['16% of base Mana', 'Instant'],
@@ -305,7 +305,7 @@ export const restoration: Tree = {
       name: 'Natural Perfection',
       col: 2,
       maxPoints: 3,
-      icon: 'ability_druid_naturalperfection.png',
+      icon: 'ability_druid_naturalperfection.webp',
       points: 0,
     },
     {
@@ -321,7 +321,7 @@ export const restoration: Tree = {
       name: 'Empowered Rejuvenation',
       col: 1,
       maxPoints: 5,
-      icon: 'ability_druid_empoweredrejuvination.png',
+      icon: 'ability_druid_empoweredrejuvination.webp',
       points: 0,
     },
     {
@@ -337,7 +337,7 @@ export const restoration: Tree = {
         id: 'ability_druid_empoweredrejuvination',
         points: 5,
       },
-      icon: 'ability_druid_treeoflife.png',
+      icon: 'ability_druid_treeoflife.webp',
       points: 0,
       abilityData: {
         leftSide: ['28% of base Mana', 'Instant'],

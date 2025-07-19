@@ -4,7 +4,6 @@ import {
   CLASS_NAMES,
   CLASS_COLORS,
 } from '../core/constants'
-import GoldRing from '../assets/icons/gold-ring3.png'
 import { useAsset } from '../hooks/useAsset'
 import { ClassPickerGridIcons } from './ClassPickerGridIcons'
 
@@ -33,8 +32,9 @@ export const ClassPicker = ({
   const [hoveredClass, setHoveredClass] =
     useState<ClassName | null>(null)
   const selectedClassIcon = useAsset(
-    `classicon_${selectedClass}.png`
+    `classicon_${selectedClass}.webp`
   )
+  const GoldRing = useAsset('gold-ring.webp')
 
   const isTouchDevice =
     typeof window !== 'undefined' &&

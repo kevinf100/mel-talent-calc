@@ -168,7 +168,7 @@
   .down-arrow::before {
     @apply absolute w-[56px] pointer-events-none;
     content: '';
-    background: url('/src/assets/ui/arrow-down-glow.png')
+    background: url('/src/assets/ui/arrow-down-glow.webp')
       no-repeat bottom;
     bottom: 64px; /* Aligns with target node's top */
     height: var(--arrow-height);
@@ -179,7 +179,7 @@
   .down-arrow::after {
     @apply absolute w-[56px] h-[21px] z-[30] pointer-events-none md:bottom-[55.75px] bottom-[53.75px];
     content: '';
-    background: url('/src/assets/ui/arrow-down-head-glow.png')
+    background: url('/src/assets/ui/arrow-down-head-glow.webp')
       no-repeat bottom;
   }
   .down-arrow:not(.glow)::after {
@@ -194,7 +194,7 @@
   .right-arrow::before {
     @apply absolute h-[56px] pointer-events-none right-[58px];
     content: '';
-    background: url('/src/assets/ui/arrow-right-glow.png')
+    background: url('/src/assets/ui/arrow-right-glow.webp')
       no-repeat right;
     width: var(--arrow-width);
   }
@@ -204,7 +204,7 @@
   .right-arrow::after {
     @apply absolute h-[56px] w-[21px] z-[30] pointer-events-none md:right-[50px] right-[52px];
     content: '';
-    background: url('/src/assets/ui/arrow-right-head-glow.png')
+    background: url('/src/assets/ui/arrow-right-head-glow.webp')
       no-repeat right;
     top: 0; /* Fix: add proper top positioning */
   }
@@ -222,7 +222,7 @@
   .left-arrow::before {
     @apply absolute h-[56px] pointer-events-none left-[58px];
     content: '';
-    background: url('/src/assets/ui/arrow-right-glow.png')
+    background: url('/src/assets/ui/arrow-right-glow.webp')
       no-repeat left;
     width: var(--arrow-width);
     transform: scaleX(
@@ -235,7 +235,7 @@
   .left-arrow::after {
     @apply absolute h-[56px] w-[21px] z-[30] pointer-events-none md:left-[50px] left-[52px];
     content: '';
-    background: url('/src/assets/ui/arrow-left-head-glow.png')
+    background: url('/src/assets/ui/arrow-left-head-glow.webp')
       no-repeat left;
     top: 0;
   }
@@ -258,7 +258,7 @@
   .arrow-element.down-arrow::before {
     @apply absolute w-[56px] pointer-events-none;
     content: '';
-    background: url('/src/assets/ui/arrow-down-glow.png')
+    background: url('/src/assets/ui/arrow-down-glow.webp')
       no-repeat bottom;
     bottom: 0;
     height: var(--arrow-height);
@@ -270,7 +270,7 @@
   .arrow-element.down-arrow::after {
     @apply absolute w-[56px] h-[21px] z-[35] pointer-events-none;
     content: '';
-    background: url('/src/assets/ui/arrow-down-head-glow.png')
+    background: url('/src/assets/ui/arrow-down-head-glow.webp')
       no-repeat bottom;
     left: 0;
     bottom: -7px;
@@ -283,7 +283,7 @@
   .arrow-element.right-arrow::before {
     @apply absolute h-[56px] pointer-events-none right-[65px];
     content: '';
-    background: url('/src/assets/ui/arrow-right-glow.png')
+    background: url('/src/assets/ui/arrow-right-glow.webp')
       no-repeat right;
     width: var(--arrow-width);
     top: 0;
@@ -294,7 +294,7 @@
   .arrow-element.right-arrow::after {
     @apply absolute h-[56px] w-[21px] z-[30] pointer-events-none right-[52px];
     content: '';
-    background: url('/src/assets/ui/arrow-right-head-glow.png')
+    background: url('/src/assets/ui/arrow-right-head-glow.webp')
       no-repeat right;
     top: 0;
   }
@@ -306,7 +306,7 @@
   .arrow-element.right-connector-arrow::before {
     @apply absolute pointer-events-none;
     content: '';
-    background: url('/src/assets/ui/arrow-rightdown-glow.png')
+    background: url('/src/assets/ui/arrow-rightdown-glow.webp')
       no-repeat;
     width: var(--connector-width); /* Use dynamic width, fallback to 69px */
     height: 64px;
@@ -340,7 +340,7 @@
   .mb-corner,
   .mb-edge-top,
   .mb-edge-bottom {
-    background-image: url('/src/assets/ui/ui-frame-diamond-metal-double.png');
+    background-image: url('/src/assets/ui/ui-frame-diamond-metal-double.webp');
     background-repeat: no-repeat;
     z-index: 1;
   }
@@ -376,7 +376,7 @@
   /* Vertical beams from new sprite */
   .mb-edge-left,
   .mb-edge-right {
-    background-image: url('/src/assets/ui/ui-frame-diamond-metal-vertical-double.png');
+    background-image: url('/src/assets/ui/ui-frame-diamond-metal-vertical-double.webp');
     background-repeat: repeat-y;
     background-size: 46px auto;
     z-index: 1;
@@ -394,7 +394,7 @@
   .corner-sm,
   .edge-sm.top-sm,
   .edge-sm.bottom-sm {
-    background-image: url('/src/assets/ui/ui-frame-diamond-metal.png');
+    background-image: url('/src/assets/ui/ui-frame-diamond-metal.webp');
     background-repeat: no-repeat;
     z-index: 1;
   }
@@ -430,7 +430,7 @@
   /* Vertical beams from small sprite */
   .edge-sm.left-sm,
   .edge-sm.right-sm {
-    background-image: url('/src/assets/ui/ui-frame-diamond-metal-vertical.png');
+    background-image: url('/src/assets/ui/ui-frame-diamond-metal-vertical.webp');
     background-repeat: repeat-y;
     background-size: 22px auto;
     z-index: 1;
@@ -448,7 +448,7 @@
   .parchment .corner,
   .parchment .edge.top,
   .parchment .edge.bottom {
-    background-image: url('/src/assets/ui/parchment-sprite.png'); /* horizontal + corner sprite */
+    background-image: url('/src/assets/ui/parchment-sprite.webp'); /* horizontal + corner sprite */
     background-repeat: no-repeat;
     z-index: 1;
   }
@@ -456,14 +456,14 @@
   /* Vertical edges from a separate file */
   .parchment .edge.left,
   .parchment .edge.right {
-    background-image: url('/src/assets/ui/parchment-sprite-sides.png'); /* vertical edge sprite */
+    background-image: url('/src/assets/ui/parchment-sprite-sides.webp'); /* vertical edge sprite */
     background-repeat: repeat-y;
     background-size: auto;
     z-index: 1;
   }
 
   .parchment .background {
-    background-image: url('/src/assets/ui/parchment-sprite-bg.png');
+    background-image: url('/src/assets/ui/parchment-sprite-bg.webp');
     background-repeat: repeat;
     background-clip: content-box;
     z-index: 1;

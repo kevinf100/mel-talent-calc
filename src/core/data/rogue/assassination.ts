@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const assassination: Tree = {
-  specIcon: 'ability_rogue_eviscerate.png',
+  specIcon: 'ability_rogue_eviscerate.webp',
   name: 'Assassination',
   backgroundImage:
     'src/assets/images/rogue/background-rogue-assassination.webp',
@@ -17,7 +17,7 @@ export const assassination: Tree = {
       name: 'Improved Eviscerate',
       col: 0,
       maxPoints: 3,
-      icon: 'ability_rogue_eviscerate.png',
+      icon: 'ability_rogue_eviscerate.webp',
       points: 0,
     },
     {
@@ -30,7 +30,7 @@ export const assassination: Tree = {
       name: 'Remorseless Attacks',
       col: 1,
       maxPoints: 2,
-      icon: 'ability_fiegndead.png',
+      icon: 'ability_fiegndead.webp',
       points: 0,
     },
     {
@@ -46,7 +46,7 @@ export const assassination: Tree = {
       name: 'Malice',
       col: 2,
       maxPoints: 5,
-      icon: 'ability_racial_bloodrage.png',
+      icon: 'ability_racial_bloodrage.webp',
       points: 0,
     },
     {
@@ -60,7 +60,7 @@ export const assassination: Tree = {
       name: 'Ruthlessness',
       col: 0,
       maxPoints: 3,
-      icon: 'ability_druid_disembowel.png',
+      icon: 'ability_druid_disembowel.webp',
       points: 0,
     },
     {
@@ -73,7 +73,7 @@ export const assassination: Tree = {
       name: 'Murder',
       col: 1,
       maxPoints: 2,
-      icon: 'spell_shadow_deathscream.png',
+      icon: 'spell_shadow_deathscream.webp',
       points: 0,
     },
     {
@@ -87,7 +87,7 @@ export const assassination: Tree = {
       name: 'Puncturing Wounds',
       col: 3,
       maxPoints: 3,
-      icon: 'ability_backstab.png',
+      icon: 'ability_backstab.webp',
       points: 0,
     },
     {
@@ -99,7 +99,7 @@ export const assassination: Tree = {
       name: 'Relentless Strikes',
       col: 0,
       maxPoints: 1,
-      icon: 'ability_warrior_decisivestrike.png',
+      icon: 'ability_warrior_decisivestrike.webp',
       points: 0,
     },
     {
@@ -112,7 +112,7 @@ export const assassination: Tree = {
       name: 'Poisoned Knife',
       col: 1,
       maxPoints: 2,
-      icon: 'inv_throwingknife_04.png',
+      icon: 'inv_throwingknife_04.webp',
       points: 0,
     },
     {
@@ -132,7 +132,7 @@ export const assassination: Tree = {
         id: 'ability_racial_bloodrage',
         points: 5,
       },
-      icon: 'ability_criticalstrike.png',
+      icon: 'ability_criticalstrike.webp',
       points: 0,
     },
     {
@@ -148,7 +148,7 @@ export const assassination: Tree = {
       name: 'Vile Poisons',
       col: 1,
       maxPoints: 5,
-      icon: 'ability_rogue_feigndeath.png',
+      icon: 'ability_rogue_feigndeath.webp',
       points: 0,
     },
     {
@@ -164,7 +164,7 @@ export const assassination: Tree = {
       name: 'Improved Poisons',
       col: 2,
       maxPoints: 5,
-      icon: 'ability_poisons.png',
+      icon: 'ability_poisons.webp',
       points: 0,
     },
     {
@@ -177,7 +177,7 @@ export const assassination: Tree = {
       name: 'Fleet Footed',
       col: 0,
       maxPoints: 2,
-      icon: 'ability_rogue_fleetfooted.png',
+      icon: 'ability_rogue_fleetfooted.webp',
       points: 0,
     },
     {
@@ -189,7 +189,7 @@ export const assassination: Tree = {
       name: 'Cold Blood',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_ice_lament.png',
+      icon: 'spell_ice_lament.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],
@@ -207,7 +207,7 @@ export const assassination: Tree = {
       name: 'Improved Kidney Shot',
       col: 2,
       maxPoints: 3,
-      icon: 'ability_rogue_kidneyshot.png',
+      icon: 'ability_rogue_kidneyshot.webp',
       points: 0,
     },
     {
@@ -220,7 +220,7 @@ export const assassination: Tree = {
       name: 'Quick Recovery',
       col: 3,
       maxPoints: 2,
-      icon: 'ability_rogue_quickrecovery.png',
+      icon: 'ability_rogue_quickrecovery.webp',
       points: 0,
     },
     {
@@ -233,7 +233,7 @@ export const assassination: Tree = {
       name: 'Improved Expose Armor',
       col: 0,
       maxPoints: 2,
-      icon: 'ability_warrior_riposte.png',
+      icon: 'ability_warrior_riposte.webp',
       points: 0,
     },
     {
@@ -253,7 +253,7 @@ export const assassination: Tree = {
         id: 'spell_ice_lament',
         points: 1,
       },
-      icon: 'spell_shadow_chilltouch.png',
+      icon: 'spell_shadow_chilltouch.webp',
       points: 0,
     },
     {
@@ -266,7 +266,7 @@ export const assassination: Tree = {
       name: 'Master Poisoner',
       col: 2,
       maxPoints: 2,
-      icon: 'ability_creature_poison_06.png',
+      icon: 'ability_creature_poison_06.webp',
       points: 0,
     },
     {
@@ -278,7 +278,7 @@ export const assassination: Tree = {
       name: 'Vigor',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_nature_earthbindtotem.png',
+      icon: 'spell_nature_earthbindtotem.webp',
       points: 0,
     },
     {
@@ -294,7 +294,7 @@ export const assassination: Tree = {
       name: 'Deadened Nerves',
       col: 2,
       maxPoints: 5,
-      icon: 'ability_rogue_deadenednerves.png',
+      icon: 'ability_rogue_deadenednerves.webp',
       points: 0,
     },
     {
@@ -310,7 +310,7 @@ export const assassination: Tree = {
       name: 'Find Weakness',
       col: 2,
       maxPoints: 5,
-      icon: 'ability_rogue_findweakness.png',
+      icon: 'ability_rogue_findweakness.webp',
       points: 0,
     },
     {
@@ -326,7 +326,7 @@ export const assassination: Tree = {
         id: 'spell_nature_earthbindtotem',
         points: 1,
       },
-      icon: 'ability_rogue_shadowstrikes.png',
+      icon: 'ability_rogue_shadowstrikes.webp',
       points: 0,
       abilityData: {
         leftSide: ['60 Energy', 'Instant'],

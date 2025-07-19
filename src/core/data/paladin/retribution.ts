@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const retribution: Tree = {
-  specIcon: 'spell_holy_auraoflight.png',
+  specIcon: 'spell_holy_auraoflight.webp',
   name: 'Retribution',
   backgroundImage:
     'src/assets/images/paladin/background-paladin-retribution.webp',
@@ -19,7 +19,7 @@ export const retribution: Tree = {
       name: 'Improved Blessing of Might',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_holy_fistofjustice.png',
+      icon: 'spell_holy_fistofjustice.webp',
       points: 0,
     },
     {
@@ -35,7 +35,7 @@ export const retribution: Tree = {
       name: 'Benediction',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_frost_windwalkon.png',
+      icon: 'spell_frost_windwalkon.webp',
       points: 0,
     },
     {
@@ -48,7 +48,7 @@ export const retribution: Tree = {
       name: 'Improved Judgement',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_holy_righteousfury.png',
+      icon: 'spell_holy_righteousfury.webp',
       points: 0,
     },
     {
@@ -62,7 +62,7 @@ export const retribution: Tree = {
       name: 'Improved Seal of the Crusader',
       col: 1,
       maxPoints: 3,
-      icon: 'spell_holy_holysmite.png',
+      icon: 'spell_holy_holysmite.webp',
       points: 0,
     },
     {
@@ -78,7 +78,7 @@ export const retribution: Tree = {
       name: 'Deflection',
       col: 2,
       maxPoints: 5,
-      icon: 'ability_parry.png',
+      icon: 'ability_parry.webp',
       points: 0,
     },
     {
@@ -92,7 +92,7 @@ export const retribution: Tree = {
       name: 'Vindication',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_holy_vindication.png',
+      icon: 'spell_holy_vindication.webp',
       points: 0,
     },
     {
@@ -108,7 +108,7 @@ export const retribution: Tree = {
       name: 'Conviction',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_holy_retributionaura.png',
+      icon: 'spell_holy_retributionaura.webp',
       points: 0,
     },
     {
@@ -120,7 +120,7 @@ export const retribution: Tree = {
       name: 'Seal of Command',
       col: 2,
       maxPoints: 1,
-      icon: 'ability_warrior_innerrage.png',
+      icon: 'ability_warrior_innerrage.webp',
       points: 0,
       abilityData: {
         leftSide: ['65 Mana', 'Instant'],
@@ -137,7 +137,7 @@ export const retribution: Tree = {
       name: 'Pursuit of Justice',
       col: 3,
       maxPoints: 3,
-      icon: 'spell_holy_persuitofjustice.png',
+      icon: 'spell_holy_persuitofjustice.webp',
       points: 0,
     },
     {
@@ -150,7 +150,7 @@ export const retribution: Tree = {
       name: 'Eye for an Eye',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_holy_eyeforaneye.png',
+      icon: 'spell_holy_eyeforaneye.webp',
       points: 0,
     },
     {
@@ -163,7 +163,7 @@ export const retribution: Tree = {
       name: 'Improved Retribution Aura',
       col: 2,
       maxPoints: 2,
-      icon: 'spell_holy_auraoflight.png',
+      icon: 'spell_holy_auraoflight.webp',
       points: 0,
     },
     {
@@ -177,7 +177,7 @@ export const retribution: Tree = {
       name: 'Crusade',
       col: 3,
       maxPoints: 3,
-      icon: 'spell_holy_crusade.png',
+      icon: 'spell_holy_crusade.webp',
       points: 0,
     },
     {
@@ -191,7 +191,7 @@ export const retribution: Tree = {
       name: 'Two-Handed Weapon Specialization',
       col: 0,
       maxPoints: 3,
-      icon: 'inv_hammer_04.png',
+      icon: 'inv_hammer_04.webp',
       points: 0,
     },
     {
@@ -203,7 +203,7 @@ export const retribution: Tree = {
       name: 'Sanctity Aura',
       col: 2,
       maxPoints: 1,
-      icon: 'spell_holy_mindvision.png',
+      icon: 'spell_holy_mindvision.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],
@@ -223,7 +223,7 @@ export const retribution: Tree = {
         id: 'sanctity_aura',
         points: 1,
       },
-      icon: 'spell_holy_mindvision.png',
+      icon: 'spell_holy_mindvision.webp',
       points: 0,
     },
     {
@@ -243,7 +243,7 @@ export const retribution: Tree = {
         id: 'spell_holy_retributionaura',
         points: 5,
       },
-      icon: 'ability_racial_avatar.png',
+      icon: 'ability_racial_avatar.webp',
       points: 0,
     },
     {
@@ -257,7 +257,7 @@ export const retribution: Tree = {
       name: 'Sanctified Judgement',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_holy_righteousfury.png',
+      icon: 'spell_holy_righteousfury.webp',
       points: 0,
     },
     {
@@ -271,7 +271,7 @@ export const retribution: Tree = {
       name: 'Sanctified Seals',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_holy_holysmite.png',
+      icon: 'spell_holy_holysmite.webp',
       points: 0,
     },
     {
@@ -283,7 +283,7 @@ export const retribution: Tree = {
       name: 'Repentance',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_holy_prayerofhealing.png',
+      icon: 'spell_holy_prayerofhealing.webp',
       points: 0,
       abilityData: {
         leftSide: ['60 Mana', 'Instant'],
@@ -304,7 +304,7 @@ export const retribution: Tree = {
       name: 'Divine Purpose',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_holy_divinepurpose.png',
+      icon: 'spell_holy_divinepurpose.webp',
       points: 0,
     },
     {
@@ -324,7 +324,7 @@ export const retribution: Tree = {
         id: 'spell_holy_prayerofhealing',
         points: 1,
       },
-      icon: 'spell_holy_fanaticism.png',
+      icon: 'spell_holy_fanaticism.webp',
       points: 0,
     },
     {
@@ -336,7 +336,7 @@ export const retribution: Tree = {
       name: 'Crusader Strike',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_holy_crusaderstrike.png',
+      icon: 'spell_holy_crusaderstrike.webp',
       points: 0,
       abilityData: {
         leftSide: ['8% of base Mana', 'Instant'],

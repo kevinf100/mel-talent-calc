@@ -1,6 +1,6 @@
 import toast from 'react-hot-toast'
 import { MetalBordersSmall } from '../components/MetalBordersSmall'
-import successIcon from '../assets/icons/success_icon.png'
+import successIcon from '../assets/icons-webp/success_icon.webp'
 
 
 export const showCopyToast = () =>

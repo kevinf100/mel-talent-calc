@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const combat: Tree = {
-  specIcon: 'ability_backstab.png',
+  specIcon: 'ability_backstab.webp',
   name: 'Combat',
   backgroundImage:
     'src/assets/images/rogue/background-rogue-combat.webp',
@@ -17,7 +17,7 @@ export const combat: Tree = {
       name: 'Improved Gouge',
       col: 0,
       maxPoints: 3,
-      icon: 'ability_gouge.png',
+      icon: 'ability_gouge.webp',
       points: 0,
     },
     {
@@ -30,7 +30,7 @@ export const combat: Tree = {
       name: 'Improved Sinister Strike',
       col: 1,
       maxPoints: 2,
-      icon: 'spell_shadow_ritualofsacrifice.png',
+      icon: 'spell_shadow_ritualofsacrifice.webp',
       points: 0,
     },
     {
@@ -46,7 +46,7 @@ export const combat: Tree = {
       name: 'Lightning Reflexes',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_nature_invisibilty.png',
+      icon: 'spell_nature_invisibilty.webp',
       points: 0,
     },
     {
@@ -60,7 +60,7 @@ export const combat: Tree = {
       name: 'Improved Slice and Dice',
       col: 0,
       maxPoints: 3,
-      icon: 'ability_rogue_slicedice.png',
+      icon: 'ability_rogue_slicedice.webp',
       points: 0,
     },
     {
@@ -76,7 +76,7 @@ export const combat: Tree = {
       name: 'Deflection',
       col: 1,
       maxPoints: 5,
-      icon: 'ability_parry.png',
+      icon: 'ability_parry.webp',
       points: 0,
     },
     {
@@ -92,7 +92,7 @@ export const combat: Tree = {
       name: 'Precision',
       col: 2,
       maxPoints: 5,
-      icon: 'ability_marksmanship.png',
+      icon: 'ability_marksmanship.webp',
       points: 0,
     },
     {
@@ -105,7 +105,7 @@ export const combat: Tree = {
       name: 'Endurance',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_shadow_shadowward.png',
+      icon: 'spell_shadow_shadowward.webp',
       points: 0,
     },
     {
@@ -121,7 +121,7 @@ export const combat: Tree = {
         id: 'ability_parry',
         points: 5,
       },
-      icon: 'ability_warrior_challange.png',
+      icon: 'ability_warrior_challange.webp',
       points: 0,
       abilityData: {
         leftSide: ['10 Energy', 'Instant'],
@@ -142,7 +142,7 @@ export const combat: Tree = {
       name: 'Improved Sprint',
       col: 3,
       maxPoints: 2,
-      icon: 'ability_rogue_sprint.png',
+      icon: 'ability_rogue_sprint.webp',
       points: 0,
     },
     {
@@ -155,7 +155,7 @@ export const combat: Tree = {
       name: 'Improved Kick',
       col: 0,
       maxPoints: 2,
-      icon: 'ability_kick.png',
+      icon: 'ability_kick.webp',
       points: 0,
     },
     {
@@ -171,7 +171,7 @@ export const combat: Tree = {
       name: 'Dagger Specialization',
       col: 1,
       maxPoints: 5,
-      icon: 'inv_weapon_shortblade_05.png',
+      icon: 'inv_weapon_shortblade_05.webp',
       points: 0,
     },
     {
@@ -191,7 +191,7 @@ export const combat: Tree = {
         id: 'ability_marksmanship',
         points: 5,
       },
-      icon: 'ability_dualwield.png',
+      icon: 'ability_dualwield.webp',
       points: 0,
     },
     {
@@ -207,7 +207,7 @@ export const combat: Tree = {
       name: 'Axe Specialization',
       col: 3,
       maxPoints: 5,
-      icon: 'inv_axe_06.png',
+      icon: 'inv_axe_06.webp',
       points: 0,
     },
     {
@@ -223,7 +223,7 @@ export const combat: Tree = {
       name: 'Mace Specialization',
       col: 0,
       maxPoints: 5,
-      icon: 'inv_mace_01.png',
+      icon: 'inv_mace_01.webp',
       points: 0,
     },
     {
@@ -235,7 +235,7 @@ export const combat: Tree = {
       name: 'Blade Flurry',
       col: 1,
       maxPoints: 1,
-      icon: 'ability_warrior_punishingblow.png',
+      icon: 'ability_warrior_punishingblow.webp',
       points: 0,
       abilityData: {
         leftSide: ['25 Energy', 'Instant'],
@@ -255,7 +255,7 @@ export const combat: Tree = {
       name: 'Sword Specialization',
       col: 2,
       maxPoints: 5,
-      icon: 'inv_sword_27.png',
+      icon: 'inv_sword_27.webp',
       points: 0,
     },
     {
@@ -271,7 +271,7 @@ export const combat: Tree = {
       name: 'Fist Weapon Specialization',
       col: 3,
       maxPoints: 5,
-      icon: 'inv_gauntlets_04.png',
+      icon: 'inv_gauntlets_04.webp',
       points: 0,
     },
     {
@@ -284,7 +284,7 @@ export const combat: Tree = {
       name: 'Blade Twisting',
       col: 0,
       maxPoints: 2,
-      icon: 'ability_rogue_bladetwisting.png',
+      icon: 'ability_rogue_bladetwisting.webp',
       points: 0,
     },
     {
@@ -301,7 +301,7 @@ export const combat: Tree = {
         id: 'ability_warrior_punishingblow',
         points: 1,
       },
-      icon: 'spell_holy_blessingofstrength.png',
+      icon: 'spell_holy_blessingofstrength.webp',
       points: 0,
     },
     {
@@ -315,7 +315,7 @@ export const combat: Tree = {
       name: 'Aggression',
       col: 2,
       maxPoints: 3,
-      icon: 'ability_racial_avatar.png',
+      icon: 'ability_racial_avatar.webp',
       points: 0,
     },
     {
@@ -328,7 +328,7 @@ export const combat: Tree = {
       name: 'Vitality',
       col: 0,
       maxPoints: 2,
-      icon: 'ability_warrior_revenge.png',
+      icon: 'ability_warrior_revenge.webp',
       points: 0,
     },
     {
@@ -340,7 +340,7 @@ export const combat: Tree = {
       name: 'Adrenaline Rush',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_shadow_shadowworddominate.png',
+      icon: 'spell_shadow_shadowworddominate.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],
@@ -357,7 +357,7 @@ export const combat: Tree = {
       name: 'Nerves of Steel',
       col: 2,
       maxPoints: 2,
-      icon: 'ability_rogue_nervesofsteel.png',
+      icon: 'ability_rogue_nervesofsteel.webp',
       points: 0,
     },
     {
@@ -373,7 +373,7 @@ export const combat: Tree = {
       name: 'Combat Potency',
       col: 2,
       maxPoints: 5,
-      icon: 'inv_weapon_shortblade_38.png',
+      icon: 'inv_weapon_shortblade_38.webp',
       points: 0,
     },
     {
@@ -389,7 +389,7 @@ export const combat: Tree = {
         id: 'spell_shadow_shadowworddominate',
         points: 1,
       },
-      icon: 'ability_rogue_surpriseattack.png',
+      icon: 'ability_rogue_surpriseattack.webp',
       points: 0,
     },
   ],

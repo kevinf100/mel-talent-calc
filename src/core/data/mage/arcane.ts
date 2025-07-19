@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const arcane: Tree = {
-  specIcon: 'spell_arcane_arcanepotency.png',
+  specIcon: 'spell_arcane_arcanepotency.webp',
   name: 'Arcane',
   backgroundImage:
     'src/assets/images/mage/background-mage-arcane.webp',
@@ -16,7 +16,7 @@ export const arcane: Tree = {
       name: 'Arcane Subtlety',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_holy_dispelmagic.png',
+      icon: 'spell_holy_dispelmagic.webp',
       points: 0,
     },
     {
@@ -32,7 +32,7 @@ export const arcane: Tree = {
       name: 'Arcane Focus',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_holy_devotion.png',
+      icon: 'spell_holy_devotion.webp',
       points: 0,
     },
     {
@@ -48,7 +48,7 @@ export const arcane: Tree = {
       name: 'Improved Arcane Missiles',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_nature_starfall.png',
+      icon: 'spell_nature_starfall.webp',
       points: 0,
     },
     {
@@ -61,7 +61,7 @@ export const arcane: Tree = {
       name: 'Wand Specialization',
       col: 0,
       maxPoints: 2,
-      icon: 'inv_wand_01.png',
+      icon: 'inv_wand_01.webp',
       points: 0,
     },
     {
@@ -77,7 +77,7 @@ export const arcane: Tree = {
       name: 'Magic Absorption',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_nature_astralrecalgroup.png',
+      icon: 'spell_nature_astralrecalgroup.webp',
       points: 0,
     },
     {
@@ -93,7 +93,7 @@ export const arcane: Tree = {
       name: 'Arcane Concentration',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_shadow_manaburn.png',
+      icon: 'spell_shadow_manaburn.webp',
       points: 0,
     },
     {
@@ -106,7 +106,7 @@ export const arcane: Tree = {
       name: 'Magic Attunement',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_nature_abolishmagic.png',
+      icon: 'spell_nature_abolishmagic.webp',
       points: 0,
     },
     {
@@ -120,7 +120,7 @@ export const arcane: Tree = {
       name: 'Arcane Impact',
       col: 1,
       maxPoints: 3,
-      icon: 'spell_nature_wispsplode.png',
+      icon: 'spell_nature_wispsplode.webp',
       points: 0,
     },
     {
@@ -132,7 +132,7 @@ export const arcane: Tree = {
       name: 'Arcane Blast',
       col: 3,
       maxPoints: 1,
-      icon: 'spell_arcane_blast.png',
+      icon: 'spell_arcane_blast.webp',
       points: 0,
       abilityData: {
         leftSide: ['195 Mana', '2.5 sec cast'],
@@ -149,7 +149,7 @@ export const arcane: Tree = {
       name: 'Improved Shielding',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_shadow_detectlesserinvisibility.png',
+      icon: 'spell_shadow_detectlesserinvisibility.webp',
       points: 0,
     },
     {
@@ -162,7 +162,7 @@ export const arcane: Tree = {
       name: 'Improved Counterspell',
       col: 1,
       maxPoints: 2,
-      icon: 'spell_frost_iceshock.png',
+      icon: 'spell_frost_iceshock.webp',
       points: 0,
     },
     {
@@ -176,7 +176,7 @@ export const arcane: Tree = {
       name: 'Arcane Meditation',
       col: 3,
       maxPoints: 3,
-      icon: 'spell_shadow_siphonmana.png',
+      icon: 'spell_shadow_siphonmana.webp',
       points: 0,
     },
     {
@@ -189,7 +189,7 @@ export const arcane: Tree = {
       name: 'Improved Arcane Intellect',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_holy_magicalsentry.png',
+      icon: 'spell_holy_magicalsentry.webp',
       points: 0,
     },
     {
@@ -201,7 +201,7 @@ export const arcane: Tree = {
       name: 'Presence of Mind',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_nature_enchantarmor.png',
+      icon: 'spell_nature_enchantarmor.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],
@@ -221,7 +221,7 @@ export const arcane: Tree = {
       name: 'Arcane Mind',
       col: 3,
       maxPoints: 5,
-      icon: 'spell_shadow_charm.png',
+      icon: 'spell_shadow_charm.webp',
       points: 0,
     },
     {
@@ -234,7 +234,7 @@ export const arcane: Tree = {
       name: 'Prismatic Cloak',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_arcane_prismaticcloak.png',
+      icon: 'spell_arcane_prismaticcloak.webp',
       points: 0,
     },
     {
@@ -252,7 +252,7 @@ export const arcane: Tree = {
         id: 'spell_nature_enchantarmor',
         points: 1,
       },
-      icon: 'spell_shadow_teleport.png',
+      icon: 'spell_shadow_teleport.webp',
       points: 0,
     },
     {
@@ -270,7 +270,7 @@ export const arcane: Tree = {
         id: 'spell_shadow_manaburn',
         points: 5,
       },
-      icon: 'spell_arcane_arcanepotency.png',
+      icon: 'spell_arcane_arcanepotency.webp',
       points: 0,
     },
     {
@@ -284,7 +284,7 @@ export const arcane: Tree = {
       name: 'Empowered Arcane Missiles',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_nature_starfall.png',
+      icon: 'spell_nature_starfall.webp',
       points: 0,
     },
     {
@@ -300,7 +300,7 @@ export const arcane: Tree = {
         id: 'spell_shadow_teleport',
         points: 3,
       },
-      icon: 'spell_nature_lightning.png',
+      icon: 'spell_nature_lightning.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],
@@ -317,7 +317,7 @@ export const arcane: Tree = {
       name: 'Spell Power',
       col: 2,
       maxPoints: 2,
-      icon: 'spell_arcane_arcanetorrent.png',
+      icon: 'spell_arcane_arcanetorrent.webp',
       points: 0,
     },
     {
@@ -333,7 +333,7 @@ export const arcane: Tree = {
       name: 'Mind Mastery',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_arcane_mindmastery.png',
+      icon: 'spell_arcane_mindmastery.webp',
       points: 0,
     },
     {
@@ -345,7 +345,7 @@ export const arcane: Tree = {
       name: 'Slow',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_nature_slow.png',
+      icon: 'spell_nature_slow.webp',
       points: 0,
       abilityData: {
         leftSide: ['20% of base Mana', 'Instant'],

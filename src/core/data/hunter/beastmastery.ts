@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const beastmastery: Tree = {
-  specIcon: 'ability_hunter_pet_bear.png',
+  specIcon: 'ability_hunter_pet_bear.webp',
   name: 'Beast Mastery',
   backgroundImage:
     'src/assets/images/hunter/background-hunter-beastmastery.webp',
@@ -19,7 +19,7 @@ export const beastmastery: Tree = {
       name: 'Improved Aspect of the Hawk',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_nature_ravenform.png',
+      icon: 'spell_nature_ravenform.webp',
       points: 0,
     },
     {
@@ -35,7 +35,7 @@ export const beastmastery: Tree = {
       name: 'Endurance Training',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_nature_reincarnation.png',
+      icon: 'spell_nature_reincarnation.webp',
       points: 0,
     },
     {
@@ -48,7 +48,7 @@ export const beastmastery: Tree = {
       name: 'Focused Fire',
       col: 0,
       maxPoints: 2,
-      icon: 'ability_hunter_silenthunter.png',
+      icon: 'ability_hunter_silenthunter.webp',
       points: 0,
     },
     {
@@ -62,7 +62,7 @@ export const beastmastery: Tree = {
       name: 'Improved Aspect of the Monkey',
       col: 1,
       maxPoints: 3,
-      icon: 'ability_hunter_aspectofthemonkey.png',
+      icon: 'ability_hunter_aspectofthemonkey.webp',
       points: 0,
     },
     {
@@ -76,7 +76,7 @@ export const beastmastery: Tree = {
       name: 'Thick Hide',
       col: 2,
       maxPoints: 3,
-      icon: 'inv_misc_pelt_bear_03.png',
+      icon: 'inv_misc_pelt_bear_03.webp',
       points: 0,
     },
     {
@@ -89,7 +89,7 @@ export const beastmastery: Tree = {
       name: 'Improved Revive Pet',
       col: 3,
       maxPoints: 2,
-      icon: 'ability_hunter_beastsoothe.png',
+      icon: 'ability_hunter_beastsoothe.webp',
       points: 0,
     },
     {
@@ -102,7 +102,7 @@ export const beastmastery: Tree = {
       name: 'Pathfinding',
       col: 0,
       maxPoints: 2,
-      icon: 'ability_mount_jungletiger.png',
+      icon: 'ability_mount_jungletiger.webp',
       points: 0,
     },
     {
@@ -114,7 +114,7 @@ export const beastmastery: Tree = {
       name: 'Bestial Swiftness',
       col: 1,
       maxPoints: 1,
-      icon: 'ability_druid_dash.png',
+      icon: 'ability_druid_dash.webp',
       points: 0,
     },
     {
@@ -130,7 +130,7 @@ export const beastmastery: Tree = {
       name: 'Unleashed Fury',
       col: 2,
       maxPoints: 5,
-      icon: 'ability_bullrush.png',
+      icon: 'ability_bullrush.webp',
       points: 0,
     },
     {
@@ -143,7 +143,7 @@ export const beastmastery: Tree = {
       name: 'Improved Mend Pet',
       col: 1,
       maxPoints: 2,
-      icon: 'ability_hunter_mendpet.png',
+      icon: 'ability_hunter_mendpet.webp',
       points: 0,
     },
     {
@@ -159,7 +159,7 @@ export const beastmastery: Tree = {
       name: 'Ferocity',
       col: 2,
       maxPoints: 5,
-      icon: 'inv_misc_monsterclaw_04.png',
+      icon: 'inv_misc_monsterclaw_04.webp',
       points: 0,
     },
     {
@@ -172,7 +172,7 @@ export const beastmastery: Tree = {
       name: 'Spirit Bond',
       col: 0,
       maxPoints: 2,
-      icon: 'ability_druid_demoralizingroar.png',
+      icon: 'ability_druid_demoralizingroar.webp',
       points: 0,
     },
     {
@@ -184,7 +184,7 @@ export const beastmastery: Tree = {
       name: 'Intimidation',
       col: 1,
       maxPoints: 1,
-      icon: 'ability_devour.png',
+      icon: 'ability_devour.webp',
       points: 0,
       abilityData: {
         leftSide: ['6% of base Mana', 'Instant'],
@@ -204,7 +204,7 @@ export const beastmastery: Tree = {
       name: 'Bestial Discipline',
       col: 3,
       maxPoints: 2,
-      icon: 'spell_nature_abolishmagic.png',
+      icon: 'spell_nature_abolishmagic.webp',
       points: 0,
     },
     {
@@ -217,7 +217,7 @@ export const beastmastery: Tree = {
       name: 'Animal Handler',
       col: 0,
       maxPoints: 2,
-      icon: 'ability_hunter_animalhandler.png',
+      icon: 'ability_hunter_animalhandler.webp',
       points: 0,
     },
     {
@@ -237,7 +237,7 @@ export const beastmastery: Tree = {
         id: 'inv_misc_monsterclaw_04',
         points: 5,
       },
-      icon: 'inv_misc_monsterclaw_03.png',
+      icon: 'inv_misc_monsterclaw_03.webp',
       points: 0,
     },
     {
@@ -251,7 +251,7 @@ export const beastmastery: Tree = {
       name: 'Ferocious Inspiration',
       col: 0,
       maxPoints: 3,
-      icon: 'ability_hunter_ferociousinspiration.png',
+      icon: 'ability_hunter_ferociousinspiration.webp',
       points: 0,
     },
     {
@@ -267,7 +267,7 @@ export const beastmastery: Tree = {
         id: 'ability_devour',
         points: 1,
       },
-      icon: 'ability_druid_ferociousbite.png',
+      icon: 'ability_druid_ferociousbite.webp',
       points: 0,
       abilityData: {
         leftSide: ['10% of base Mana', 'Instant'],
@@ -288,7 +288,7 @@ export const beastmastery: Tree = {
       name: 'Catlike Reflexes',
       col: 2,
       maxPoints: 3,
-      icon: 'ability_hunter_catlikereflexes.png',
+      icon: 'ability_hunter_catlikereflexes.webp',
       points: 0,
     },
     {
@@ -304,7 +304,7 @@ export const beastmastery: Tree = {
       name: "Serpent's Swiftness",
       col: 2,
       maxPoints: 5,
-      icon: 'ability_hunter_serpentswiftness.png',
+      icon: 'ability_hunter_serpentswiftness.webp',
       points: 0,
     },
     {
@@ -320,7 +320,7 @@ export const beastmastery: Tree = {
         id: 'ability_druid_ferociousbite',
         points: 1,
       },
-      icon: 'ability_hunter_beastwithin.png',
+      icon: 'ability_hunter_beastwithin.webp',
       points: 0,
     },
   ],

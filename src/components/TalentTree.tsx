@@ -7,8 +7,6 @@ import {
   canIncrementTalent,
   canSafelyDecrementTalent,
 } from '../core/talentUtils'
-import ResetSprite from '../assets/ui/reset-button-sprite.png'
-import RockBackground from '../assets/ui/background-rock.png'
 import { MetalBorders } from './MetalBorders'
 import { useViewport } from '../hooks/useViewport'
 import { useAsset } from '../hooks/useAsset'
@@ -42,17 +40,14 @@ export const TalentTree = ({
   } = useViewport()
   const treeBackground = useAsset(backgroundImage)
   const treeIcon = useAsset(specIcon)
+  const ResetSprite = useAsset('ui/reset-button-sprite.webp')
+  const RockBackground = useAsset('ui/background-rock.webp')
 
   const pointsSpent = talents.reduce(
     (s, t) => s + t.points,
     0
   )
-/*
 
-                borderColor: '#43434385',
-                borderStyle: 'ridge',
-                borderWidth: '2px',
-*/
   return (
     <MetalBorders>
       <div

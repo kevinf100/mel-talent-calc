@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const affliction: Tree = {
-  specIcon: 'spell_shadow_curseofsargeras.png',
+  specIcon: 'spell_shadow_curseofsargeras.webp',
   name: 'Affliction',
   backgroundImage:
     'src/assets/images/warlock/background-warlock-affliction.webp',
@@ -19,7 +19,7 @@ export const affliction: Tree = {
       name: 'Suppression',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_shadow_unsummonbuilding.png',
+      icon: 'spell_shadow_unsummonbuilding.webp',
       points: 0,
     },
     {
@@ -35,7 +35,7 @@ export const affliction: Tree = {
       name: 'Improved Corruption',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_shadow_abominationexplosion.png',
+      icon: 'spell_shadow_abominationexplosion.webp',
       points: 0,
     },
     {
@@ -48,7 +48,7 @@ export const affliction: Tree = {
       name: 'Improved Curse of Weakness',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_shadow_curseofmannoroth.png',
+      icon: 'spell_shadow_curseofmannoroth.webp',
       points: 0,
     },
     {
@@ -61,7 +61,7 @@ export const affliction: Tree = {
       name: 'Improved Drain Soul',
       col: 1,
       maxPoints: 2,
-      icon: 'spell_shadow_haunting.png',
+      icon: 'spell_shadow_haunting.webp',
       points: 0,
     },
     {
@@ -74,7 +74,7 @@ export const affliction: Tree = {
       name: 'Improved Life Tap',
       col: 2,
       maxPoints: 2,
-      icon: 'spell_shadow_burningspirit.png',
+      icon: 'spell_shadow_burningspirit.webp',
       points: 0,
     },
     {
@@ -87,7 +87,7 @@ export const affliction: Tree = {
       name: 'Soul Siphon',
       col: 3,
       maxPoints: 2,
-      icon: 'spell_shadow_lifedrain02.png',
+      icon: 'spell_shadow_lifedrain02.webp',
       points: 0,
     },
     {
@@ -100,7 +100,7 @@ export const affliction: Tree = {
       name: 'Improved Bane of Agony',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_shadow_curseofsargeras.png',
+      icon: 'spell_shadow_curseofsargeras.webp',
       points: 0,
     },
     {
@@ -116,7 +116,7 @@ export const affliction: Tree = {
       name: 'Fel Concentration',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_shadow_fingerofdeath.png',
+      icon: 'spell_shadow_fingerofdeath.webp',
       points: 0,
     },
     {
@@ -128,7 +128,7 @@ export const affliction: Tree = {
       name: 'Amplify Bane',
       col: 2,
       maxPoints: 1,
-      icon: 'spell_shadow_contagion.png',
+      icon: 'spell_shadow_contagion.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],
@@ -145,7 +145,7 @@ export const affliction: Tree = {
       name: 'Grim Reach',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_shadow_callofbone.png',
+      icon: 'spell_shadow_callofbone.webp',
       points: 0,
     },
     {
@@ -158,7 +158,7 @@ export const affliction: Tree = {
       name: 'Nightfall',
       col: 1,
       maxPoints: 2,
-      icon: 'spell_shadow_twilight.png',
+      icon: 'spell_shadow_twilight.webp',
       points: 0,
     },
     {
@@ -172,7 +172,7 @@ export const affliction: Tree = {
       name: 'Empowered Corruption',
       col: 3,
       maxPoints: 3,
-      icon: 'spell_shadow_abominationexplosion.png',
+      icon: 'spell_shadow_abominationexplosion.webp',
       points: 0,
     },
     {
@@ -186,7 +186,7 @@ export const affliction: Tree = {
       name: 'Shadow Embrace',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_shadow_shadowembrace.png',
+      icon: 'spell_shadow_shadowembrace.webp',
       points: 0,
     },
     {
@@ -198,7 +198,7 @@ export const affliction: Tree = {
       name: 'Siphon Life',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_shadow_requiem.png',
+      icon: 'spell_shadow_requiem.webp',
       points: 0,
       abilityData: {
         leftSide: ['140 Mana', 'Instant'],
@@ -218,7 +218,7 @@ export const affliction: Tree = {
         id: 'spell_shadow_contagion',
         points: 1,
       },
-      icon: 'spell_shadow_grimward.png',
+      icon: 'spell_shadow_grimward.webp',
       points: 0,
       abilityData: {
         leftSide: ['6% of base Mana', 'Instant'],
@@ -235,7 +235,7 @@ export const affliction: Tree = {
       name: 'Improved Shadow Bite',
       col: 3,
       maxPoints: 2,
-      icon: 'spell_shadow_summonfelhunter.png',
+      icon: 'spell_shadow_summonfelhunter.webp',
       points: 0,
     },
     {
@@ -255,7 +255,7 @@ export const affliction: Tree = {
         id: 'spell_shadow_requiem',
         points: 1,
       },
-      icon: 'spell_shadow_shadetruesight.png',
+      icon: 'spell_shadow_shadetruesight.webp',
       points: 0,
     },
     {
@@ -271,7 +271,7 @@ export const affliction: Tree = {
       name: 'Contagion',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_shadow_painfulafflictions.png',
+      icon: 'spell_shadow_painfulafflictions.webp',
       points: 0,
     },
     {
@@ -283,7 +283,7 @@ export const affliction: Tree = {
       name: 'Dark Pact',
       col: 2,
       maxPoints: 1,
-      icon: 'spell_shadow_darkritual.png',
+      icon: 'spell_shadow_darkritual.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],
@@ -300,7 +300,7 @@ export const affliction: Tree = {
       name: 'Improved Howl of Terror',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_shadow_deathscream.png',
+      icon: 'spell_shadow_deathscream.webp',
       points: 0,
     },
     {
@@ -314,7 +314,7 @@ export const affliction: Tree = {
       name: 'Malediction',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_shadow_curseofachimonde.png',
+      icon: 'spell_shadow_curseofachimonde.webp',
       points: 0,
     },
     {
@@ -330,7 +330,7 @@ export const affliction: Tree = {
         id: 'spell_shadow_painfulafflictions',
         points: 5,
       },
-      icon: 'spell_shadow_unstableaffliction_3.png',
+      icon: 'spell_shadow_unstableaffliction_3.webp',
       points: 0,
       abilityData: {
         leftSide: ['270 Mana', '1.5 sec cast'],

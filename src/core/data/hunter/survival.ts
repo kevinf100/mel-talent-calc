@@ -2,7 +2,7 @@ import type { Tree } from '../../types'
 
 export const survival: Tree = {
   specIcon:
-    'ability_hunter_survivalinstincts.png',
+    'ability_hunter_survivalinstincts.webp',
   name: 'Survival',
   backgroundImage:
     'src/assets/images/hunter/background-hunter-survival.webp',
@@ -18,7 +18,7 @@ export const survival: Tree = {
       name: 'Monster Slaying',
       col: 0,
       maxPoints: 3,
-      icon: 'inv_misc_head_dragon_black.png',
+      icon: 'inv_misc_head_dragon_black.webp',
       points: 0,
     },
     {
@@ -32,7 +32,7 @@ export const survival: Tree = {
       name: 'Humanoid Slaying',
       col: 1,
       maxPoints: 3,
-      icon: 'spell_holy_prayerofhealing.png',
+      icon: 'spell_holy_prayerofhealing.webp',
       points: 0,
     },
     {
@@ -46,7 +46,7 @@ export const survival: Tree = {
       name: 'Hawk Eye',
       col: 2,
       maxPoints: 3,
-      icon: 'ability_townwatch.png',
+      icon: 'ability_townwatch.webp',
       points: 0,
     },
     {
@@ -59,7 +59,7 @@ export const survival: Tree = {
       name: 'Savage Strikes',
       col: 3,
       maxPoints: 2,
-      icon: 'ability_racial_bloodrage.png',
+      icon: 'ability_racial_bloodrage.webp',
       points: 0,
     },
     {
@@ -73,7 +73,7 @@ export const survival: Tree = {
       name: 'Entrapment',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_nature_stranglevines.png',
+      icon: 'spell_nature_stranglevines.webp',
       points: 0,
     },
     {
@@ -89,7 +89,7 @@ export const survival: Tree = {
       name: 'Deflection',
       col: 1,
       maxPoints: 5,
-      icon: 'ability_parry.png',
+      icon: 'ability_parry.webp',
       points: 0,
     },
     {
@@ -103,7 +103,7 @@ export const survival: Tree = {
       name: 'Improved Wing Clip',
       col: 2,
       maxPoints: 3,
-      icon: 'ability_rogue_trip.png',
+      icon: 'ability_rogue_trip.webp',
       points: 0,
     },
     {
@@ -116,7 +116,7 @@ export const survival: Tree = {
       name: 'Clever Traps',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_nature_timestop.png',
+      icon: 'spell_nature_timestop.webp',
       points: 0,
     },
     {
@@ -132,7 +132,7 @@ export const survival: Tree = {
       name: 'Survivalist',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_shadow_twilight.png',
+      icon: 'spell_shadow_twilight.webp',
       points: 0,
     },
     {
@@ -144,7 +144,7 @@ export const survival: Tree = {
       name: 'Deterrence',
       col: 2,
       maxPoints: 1,
-      icon: 'ability_whirlwind.png',
+      icon: 'ability_whirlwind.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],
@@ -161,7 +161,7 @@ export const survival: Tree = {
       name: 'Trap Mastery',
       col: 0,
       maxPoints: 2,
-      icon: 'ability_ensnare.png',
+      icon: 'ability_ensnare.webp',
       points: 0,
     },
     {
@@ -175,7 +175,7 @@ export const survival: Tree = {
       name: 'Surefooted',
       col: 1,
       maxPoints: 3,
-      icon: 'ability_kick.png',
+      icon: 'ability_kick.webp',
       points: 0,
     },
     {
@@ -188,7 +188,7 @@ export const survival: Tree = {
       name: 'Improved Feign Death',
       col: 3,
       maxPoints: 2,
-      icon: 'ability_rogue_feigndeath.png',
+      icon: 'ability_rogue_feigndeath.webp',
       points: 0,
     },
     {
@@ -201,7 +201,7 @@ export const survival: Tree = {
       name: 'Survival Instincts',
       col: 0,
       maxPoints: 2,
-      icon: 'ability_hunter_survivalinstincts.png',
+      icon: 'ability_hunter_survivalinstincts.webp',
       points: 0,
     },
     {
@@ -215,7 +215,7 @@ export const survival: Tree = {
       name: 'Killer Instinct',
       col: 1,
       maxPoints: 3,
-      icon: 'spell_holy_blessingofstamina.png',
+      icon: 'spell_holy_blessingofstamina.webp',
       points: 0,
     },
     {
@@ -231,7 +231,7 @@ export const survival: Tree = {
         id: 'ability_whirlwind',
         points: 1,
       },
-      icon: 'ability_warrior_challange.png',
+      icon: 'ability_warrior_challange.webp',
       points: 0,
       abilityData: {
         leftSide: ['45 Mana', 'Instant'],
@@ -249,7 +249,7 @@ export const survival: Tree = {
       name: 'Resourcefulness',
       col: 0,
       maxPoints: 3,
-      icon: 'ability_hunter_resourcefulness.png',
+      icon: 'ability_hunter_resourcefulness.webp',
       points: 0,
     },
     {
@@ -265,7 +265,7 @@ export const survival: Tree = {
       name: 'Lightning Reflexes',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_nature_invisibilty.png',
+      icon: 'spell_nature_invisibilty.webp',
       points: 0,
     },
     {
@@ -279,7 +279,7 @@ export const survival: Tree = {
       name: 'Thrill of the Hunt',
       col: 0,
       maxPoints: 3,
-      icon: 'ability_hunter_thrillofthehunt.png',
+      icon: 'ability_hunter_thrillofthehunt.webp',
       points: 0,
     },
     {
@@ -295,7 +295,7 @@ export const survival: Tree = {
         id: 'spell_holy_blessingofstamina',
         points: 3,
       },
-      icon: 'inv_spear_02.png',
+      icon: 'inv_spear_02.webp',
       points: 0,
       abilityData: {
         leftSide: ['115 Mana', 'Instant'],
@@ -321,7 +321,7 @@ export const survival: Tree = {
         id: 'spell_nature_invisibilty',
         points: 5,
       },
-      icon: 'ability_rogue_findweakness.png',
+      icon: 'ability_rogue_findweakness.webp',
       points: 0,
     },
     {
@@ -337,7 +337,7 @@ export const survival: Tree = {
       name: 'Master Tactician',
       col: 1,
       maxPoints: 5,
-      icon: 'ability_hunter_mastertactitian.png',
+      icon: 'ability_hunter_mastertactitian.webp',
       points: 0,
     },
     {
@@ -353,7 +353,7 @@ export const survival: Tree = {
         id: 'ability_hunter_mastertactitian',
         points: 5,
       },
-      icon: 'ability_hunter_readiness.png',
+      icon: 'ability_hunter_readiness.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],

@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const shadow: Tree = {
-  specIcon: 'spell_shadow_shadowform.png',
+  specIcon: 'spell_shadow_shadowform.webp',
   name: 'Shadow',
   backgroundImage:
     'src/assets/images/priest/background-priest-shadow.webp',
@@ -19,7 +19,7 @@ export const shadow: Tree = {
       name: 'Spirit Tap',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_shadow_requiem.png',
+      icon: 'spell_shadow_requiem.webp',
       points: 0,
     },
     {
@@ -35,7 +35,7 @@ export const shadow: Tree = {
       name: 'Blackout',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_shadow_gathershadows.png',
+      icon: 'spell_shadow_gathershadows.webp',
       points: 0,
     },
     {
@@ -49,7 +49,7 @@ export const shadow: Tree = {
       name: 'Shadow Affinity',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_shadow_shadowward.png',
+      icon: 'spell_shadow_shadowward.webp',
       points: 0,
     },
     {
@@ -62,7 +62,7 @@ export const shadow: Tree = {
       name: 'Improved Shadow Word: Pain',
       col: 1,
       maxPoints: 2,
-      icon: 'spell_shadow_shadowwordpain.png',
+      icon: 'spell_shadow_shadowwordpain.webp',
       points: 0,
     },
     {
@@ -78,7 +78,7 @@ export const shadow: Tree = {
       name: 'Shadow Focus',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_shadow_burningspirit.png',
+      icon: 'spell_shadow_burningspirit.webp',
       points: 0,
     },
     {
@@ -91,7 +91,7 @@ export const shadow: Tree = {
       name: 'Improved Psychic Scream',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_shadow_psychicscream.png',
+      icon: 'spell_shadow_psychicscream.webp',
       points: 0,
     },
     {
@@ -107,7 +107,7 @@ export const shadow: Tree = {
       name: 'Improved Mind Blast',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_shadow_unholyfrenzy.png',
+      icon: 'spell_shadow_unholyfrenzy.webp',
       points: 0,
     },
     {
@@ -119,7 +119,7 @@ export const shadow: Tree = {
       name: 'Mind Flay',
       col: 2,
       maxPoints: 1,
-      icon: 'spell_shadow_siphonmana.png',
+      icon: 'spell_shadow_siphonmana.webp',
       points: 0,
       abilityData: {
         leftSide: ['45 Mana', '3 sec channel'],
@@ -136,7 +136,7 @@ export const shadow: Tree = {
       name: 'Improved Fade',
       col: 1,
       maxPoints: 2,
-      icon: 'spell_magic_lesserinvisibilty.png',
+      icon: 'spell_magic_lesserinvisibilty.webp',
       points: 0,
     },
     {
@@ -149,7 +149,7 @@ export const shadow: Tree = {
       name: 'Shadow Reach',
       col: 2,
       maxPoints: 2,
-      icon: 'spell_shadow_chilltouch.png',
+      icon: 'spell_shadow_chilltouch.webp',
       points: 0,
     },
     {
@@ -165,7 +165,7 @@ export const shadow: Tree = {
       name: 'Shadow Weaving',
       col: 3,
       maxPoints: 5,
-      icon: 'spell_shadow_blackplague.png',
+      icon: 'spell_shadow_blackplague.webp',
       points: 0,
     },
     {
@@ -181,7 +181,7 @@ export const shadow: Tree = {
         id: 'spell_shadow_psychicscream',
         points: 2,
       },
-      icon: 'spell_shadow_impphaseshift.png',
+      icon: 'spell_shadow_impphaseshift.webp',
       points: 0,
       abilityData: {
         leftSide: ['225 Mana', 'Instant'],
@@ -200,7 +200,7 @@ export const shadow: Tree = {
       name: 'Vampiric Embrace',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_shadow_unsummonbuilding.png',
+      icon: 'spell_shadow_unsummonbuilding.webp',
       points: 0,
       abilityData: {
         leftSide: ['40 Mana', 'Instant'],
@@ -221,7 +221,7 @@ export const shadow: Tree = {
         id: 'spell_shadow_unsummonbuilding',
         points: 1,
       },
-      icon: 'spell_shadow_improvedvampiricembrace.png',
+      icon: 'spell_shadow_improvedvampiricembrace.webp',
       points: 0,
     },
     {
@@ -235,7 +235,7 @@ export const shadow: Tree = {
       name: 'Focused Mind',
       col: 3,
       maxPoints: 3,
-      icon: 'spell_nature_focusedmind.png',
+      icon: 'spell_nature_focusedmind.webp',
       points: 0,
     },
     {
@@ -248,7 +248,7 @@ export const shadow: Tree = {
       name: 'Shadow Resilience',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_shadow_grimward.png',
+      icon: 'spell_shadow_grimward.webp',
       points: 0,
     },
     {
@@ -264,7 +264,7 @@ export const shadow: Tree = {
       name: 'Darkness',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_shadow_twilight.png',
+      icon: 'spell_shadow_twilight.webp',
       points: 0,
     },
     {
@@ -280,7 +280,7 @@ export const shadow: Tree = {
         id: 'spell_shadow_unsummonbuilding',
         points: 1,
       },
-      icon: 'spell_shadow_shadowform.png',
+      icon: 'spell_shadow_shadowform.webp',
       points: 0,
       abilityData: {
         leftSide: ['32% of base Mana', 'Instant'],
@@ -299,7 +299,7 @@ export const shadow: Tree = {
       name: 'Shadow Power',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_shadow_shadowpower.png',
+      icon: 'spell_shadow_shadowpower.webp',
       points: 0,
     },
     {
@@ -315,7 +315,7 @@ export const shadow: Tree = {
       name: 'Misery',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_shadow_misery.png',
+      icon: 'spell_shadow_misery.webp',
       points: 0,
     },
     {
@@ -331,7 +331,7 @@ export const shadow: Tree = {
         id: 'spell_shadow_shadowform',
         points: 1,
       },
-      icon: 'spell_holy_stoicism.png',
+      icon: 'spell_holy_stoicism.webp',
       points: 0,
       abilityData: {
         leftSide: ['325 Mana', '1.5 sec cast'],

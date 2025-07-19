@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const holy: Tree = {
-  specIcon: 'spell_holy_holybolt.png',
+  specIcon: 'spell_holy_holybolt.webp',
   name: 'Holy',
   backgroundImage:
     'src/assets/images/paladin/background-paladin-holy.webp',
@@ -19,7 +19,7 @@ export const holy: Tree = {
       name: 'Divine Strength',
       col: 1,
       maxPoints: 5,
-      icon: 'ability_golemthunderclap.png',
+      icon: 'ability_golemthunderclap.webp',
       points: 0,
     },
     {
@@ -35,7 +35,7 @@ export const holy: Tree = {
       name: 'Divine Intellect',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_nature_sleep.png',
+      icon: 'spell_nature_sleep.webp',
       points: 0,
     },
     {
@@ -51,7 +51,7 @@ export const holy: Tree = {
       name: 'Spiritual Focus',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_arcane_blink.png',
+      icon: 'spell_arcane_blink.webp',
       points: 0,
     },
     {
@@ -67,7 +67,7 @@ export const holy: Tree = {
       name: 'Improved Seal of Righteousness',
       col: 2,
       maxPoints: 5,
-      icon: 'ability_thunderbolt.png',
+      icon: 'ability_thunderbolt.webp',
       points: 0,
     },
     {
@@ -81,7 +81,7 @@ export const holy: Tree = {
       name: 'Healing Light',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_holy_holybolt.png',
+      icon: 'spell_holy_holybolt.webp',
       points: 0,
     },
     {
@@ -93,7 +93,7 @@ export const holy: Tree = {
       name: 'Aura Mastery',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_holy_auramastery.png',
+      icon: 'spell_holy_auramastery.webp',
       points: 0,
     },
     {
@@ -106,7 +106,7 @@ export const holy: Tree = {
       name: 'Improved Lay on Hands',
       col: 2,
       maxPoints: 2,
-      icon: 'spell_holy_layonhands.png',
+      icon: 'spell_holy_layonhands.webp',
       points: 0,
     },
     {
@@ -119,7 +119,7 @@ export const holy: Tree = {
       name: 'Unyielding Faith',
       col: 3,
       maxPoints: 2,
-      icon: 'spell_holy_unyieldingfaith.png',
+      icon: 'spell_holy_unyieldingfaith.webp',
       points: 0,
     },
     {
@@ -135,7 +135,7 @@ export const holy: Tree = {
       name: 'Illumination',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_holy_greaterheal.png',
+      icon: 'spell_holy_greaterheal.webp',
       points: 0,
     },
     {
@@ -148,7 +148,7 @@ export const holy: Tree = {
       name: 'Improved Blessing of Wisdom',
       col: 2,
       maxPoints: 2,
-      icon: 'spell_holy_sealofwisdom.png',
+      icon: 'spell_holy_sealofwisdom.webp',
       points: 0,
     },
     {
@@ -161,7 +161,7 @@ export const holy: Tree = {
       name: 'Overwhelming Light',
       col: 3,
       maxPoints: 2,
-      icon: 'spell_holy_divineprovidence.png',
+      icon: 'spell_holy_divineprovidence.webp',
       points: 0,
     },
     {
@@ -175,7 +175,7 @@ export const holy: Tree = {
       name: 'Pure of Heart',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_holy_pureofheart.png',
+      icon: 'spell_holy_pureofheart.webp',
       points: 0,
     },
     {
@@ -191,7 +191,7 @@ export const holy: Tree = {
         id: 'spell_holy_greaterheal',
         points: 5,
       },
-      icon: 'spell_holy_heal.png',
+      icon: 'spell_holy_heal.webp',
       points: 0,
       abilityData: {
         leftSide: ['3% of base Mana', 'Instant'],
@@ -209,7 +209,7 @@ export const holy: Tree = {
       name: 'Sanctified Light',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_holy_healingaura.png',
+      icon: 'spell_holy_healingaura.webp',
       points: 0,
     },
     {
@@ -222,7 +222,7 @@ export const holy: Tree = {
       name: 'Purifying Power',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_holy_purifyingpower.png',
+      icon: 'spell_holy_purifyingpower.webp',
       points: 0,
     },
     {
@@ -238,7 +238,7 @@ export const holy: Tree = {
       name: 'Holy Power',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_holy_power.png',
+      icon: 'spell_holy_power.webp',
       points: 0,
     },
     {
@@ -252,7 +252,7 @@ export const holy: Tree = {
       name: "Light's Grace",
       col: 0,
       maxPoints: 3,
-      icon: 'spell_holy_lightsgrace.png',
+      icon: 'spell_holy_lightsgrace.webp',
       points: 0,
     },
     {
@@ -268,7 +268,7 @@ export const holy: Tree = {
         id: 'spell_holy_heal',
         points: 1,
       },
-      icon: 'spell_holy_searinglight.png',
+      icon: 'spell_holy_searinglight.webp',
       points: 0,
       abilityData: {
         leftSide: ['335 Mana', 'Instant'],
@@ -289,7 +289,7 @@ export const holy: Tree = {
       name: 'Blessed Life',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_holy_blessedlife.png',
+      icon: 'spell_holy_blessedlife.webp',
       points: 0,
     },
     {
@@ -305,7 +305,7 @@ export const holy: Tree = {
       name: 'Holy Guidance',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_holy_holyguidance.png',
+      icon: 'spell_holy_holyguidance.webp',
       points: 0,
     },
     {
@@ -317,7 +317,7 @@ export const holy: Tree = {
       name: 'Divine Illumination',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_holy_divineillumination.png',
+      icon: 'spell_holy_divineillumination.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],

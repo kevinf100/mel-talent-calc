@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const enhancement: Tree = {
-  specIcon: 'spell_nature_lightningshield.png',
+  specIcon: 'spell_nature_lightningshield.webp',
   name: 'Enhancement',
   backgroundImage:
     'src/assets/images/shaman/background-shaman-enhancement.webp',
@@ -19,7 +19,7 @@ export const enhancement: Tree = {
       name: 'Ancestral Knowledge',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_shadow_grimward.png',
+      icon: 'spell_shadow_grimward.webp',
       points: 0,
     },
     {
@@ -35,7 +35,7 @@ export const enhancement: Tree = {
       name: 'Shield Specialization',
       col: 2,
       maxPoints: 5,
-      icon: 'inv_shield_06.png',
+      icon: 'inv_shield_06.webp',
       points: 0,
     },
     {
@@ -48,7 +48,7 @@ export const enhancement: Tree = {
       name: 'Guardian Totems',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_nature_stoneskintotem.png',
+      icon: 'spell_nature_stoneskintotem.webp',
       points: 0,
     },
     {
@@ -64,7 +64,7 @@ export const enhancement: Tree = {
       name: 'Thundering Strikes',
       col: 1,
       maxPoints: 5,
-      icon: 'ability_thunderbolt.png',
+      icon: 'ability_thunderbolt.webp',
       points: 0,
     },
     {
@@ -77,7 +77,7 @@ export const enhancement: Tree = {
       name: 'Improved Ghost Wolf',
       col: 2,
       maxPoints: 2,
-      icon: 'spell_nature_spiritwolf.png',
+      icon: 'spell_nature_spiritwolf.webp',
       points: 0,
     },
     {
@@ -91,7 +91,7 @@ export const enhancement: Tree = {
       name: 'Improved Lightning Shield',
       col: 3,
       maxPoints: 3,
-      icon: 'spell_nature_lightningshield.png',
+      icon: 'spell_nature_lightningshield.webp',
       points: 0,
     },
     {
@@ -104,7 +104,7 @@ export const enhancement: Tree = {
       name: 'Enhancing Totems',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_nature_earthbindtotem.png',
+      icon: 'spell_nature_earthbindtotem.webp',
       points: 0,
     },
     {
@@ -116,7 +116,7 @@ export const enhancement: Tree = {
       name: 'Shamanistic Focus',
       col: 2,
       maxPoints: 1,
-      icon: 'spell_nature_elementalabsorption.png',
+      icon: 'spell_nature_elementalabsorption.webp',
       points: 0,
     },
     {
@@ -132,7 +132,7 @@ export const enhancement: Tree = {
       name: 'Anticipation',
       col: 3,
       maxPoints: 5,
-      icon: 'spell_nature_mirrorimage.png',
+      icon: 'spell_nature_mirrorimage.webp',
       points: 0,
     },
     {
@@ -152,7 +152,7 @@ export const enhancement: Tree = {
         id: 'ability_thunderbolt',
         points: 5,
       },
-      icon: 'ability_ghoulfrenzy.png',
+      icon: 'ability_ghoulfrenzy.webp',
       points: 0,
     },
     {
@@ -168,7 +168,7 @@ export const enhancement: Tree = {
       name: 'Toughness',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_holy_devotion.png',
+      icon: 'spell_holy_devotion.webp',
       points: 0,
     },
     {
@@ -181,7 +181,7 @@ export const enhancement: Tree = {
       name: 'Improved Weapon Totems',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_fire_enchantweapon.png',
+      icon: 'spell_fire_enchantweapon.webp',
       points: 0,
     },
     {
@@ -193,7 +193,7 @@ export const enhancement: Tree = {
       name: 'Spirit Weapons',
       col: 1,
       maxPoints: 1,
-      icon: 'ability_parry.png',
+      icon: 'ability_parry.webp',
       points: 0,
     },
     {
@@ -207,7 +207,7 @@ export const enhancement: Tree = {
       name: 'Elemental Weapons',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_fire_flametounge.png',
+      icon: 'spell_fire_flametounge.webp',
       points: 0,
     },
     {
@@ -221,7 +221,7 @@ export const enhancement: Tree = {
       name: 'Mental Quickness',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_nature_mentalquickness.png',
+      icon: 'spell_nature_mentalquickness.webp',
       points: 0,
     },
     {
@@ -237,7 +237,7 @@ export const enhancement: Tree = {
       name: 'Weapon Mastery',
       col: 3,
       maxPoints: 5,
-      icon: 'ability_hunter_swiftstrike.png',
+      icon: 'ability_hunter_swiftstrike.webp',
       points: 0,
     },
     {
@@ -255,7 +255,7 @@ export const enhancement: Tree = {
         id: 'ability_dualwield',
         points: 1,
       },
-      icon: 'ability_dualwieldspecialization.png',
+      icon: 'ability_dualwieldspecialization.webp',
       points: 0,
     },
     {
@@ -271,7 +271,7 @@ export const enhancement: Tree = {
         id: 'ability_parry',
         points: 1,
       },
-      icon: 'ability_dualwield.png',
+      icon: 'ability_dualwield.webp',
       points: 0,
     },
     {
@@ -287,7 +287,7 @@ export const enhancement: Tree = {
         id: 'spell_fire_flametounge',
         points: 3,
       },
-      icon: 'ability_shaman_stormstrike.png',
+      icon: 'ability_shaman_stormstrike.webp',
       points: 0,
       abilityData: {
         leftSide: ['8% of base mana', 'Instant'],
@@ -311,7 +311,7 @@ export const enhancement: Tree = {
       name: 'Unleashed Rage',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_nature_unleashedrage.png',
+      icon: 'spell_nature_unleashedrage.webp',
       points: 0,
     },
     {
@@ -323,7 +323,7 @@ export const enhancement: Tree = {
       name: 'Shamanistic Rage',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_nature_shamanrage.png',
+      icon: 'spell_nature_shamanrage.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],

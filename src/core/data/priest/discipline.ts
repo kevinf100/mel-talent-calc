@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const discipline: Tree = {
-  specIcon: 'spell_holy_powerwordshield.png',
+  specIcon: 'spell_holy_powerwordshield.webp',
   name: 'Discipline',
   backgroundImage:
     'src/assets/images/priest/background-priest-discipline.webp',
@@ -19,7 +19,7 @@ export const discipline: Tree = {
       name: 'Unbreakable Will',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_magic_magearmor.png',
+      icon: 'spell_magic_magearmor.webp',
       points: 0,
     },
     {
@@ -35,7 +35,7 @@ export const discipline: Tree = {
       name: 'Wand Specialization',
       col: 2,
       maxPoints: 5,
-      icon: 'inv_wand_01.png',
+      icon: 'inv_wand_01.webp',
       points: 0,
     },
     {
@@ -51,7 +51,7 @@ export const discipline: Tree = {
       name: 'Silent Resolve',
       col: 0,
       maxPoints: 5,
-      icon: 'spell_nature_manaregentotem.png',
+      icon: 'spell_nature_manaregentotem.webp',
       points: 0,
     },
     {
@@ -64,7 +64,7 @@ export const discipline: Tree = {
       name: 'Improved Power Word: Fortitude',
       col: 1,
       maxPoints: 2,
-      icon: 'spell_holy_wordfortitude.png',
+      icon: 'spell_holy_wordfortitude.webp',
       points: 0,
     },
     {
@@ -78,7 +78,7 @@ export const discipline: Tree = {
       name: 'Improved Power Word: Shield',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_holy_powerwordshield.png',
+      icon: 'spell_holy_powerwordshield.webp',
       points: 0,
     },
     {
@@ -91,7 +91,7 @@ export const discipline: Tree = {
       name: 'Martyrdom',
       col: 3,
       maxPoints: 2,
-      icon: 'spell_nature_tranquility.png',
+      icon: 'spell_nature_tranquility.webp',
       points: 0,
     },
     {
@@ -105,7 +105,7 @@ export const discipline: Tree = {
       name: 'Absolution',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_holy_absolution.png',
+      icon: 'spell_holy_absolution.webp',
       points: 0,
     },
     {
@@ -117,7 +117,7 @@ export const discipline: Tree = {
       name: 'Inner Focus',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_frost_windwalkon.png',
+      icon: 'spell_frost_windwalkon.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],
@@ -135,7 +135,7 @@ export const discipline: Tree = {
       name: 'Meditation',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_nature_sleep.png',
+      icon: 'spell_nature_sleep.webp',
       points: 0,
     },
     {
@@ -149,7 +149,7 @@ export const discipline: Tree = {
       name: 'Improved Inner Fire',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_holy_innerfire.png',
+      icon: 'spell_holy_innerfire.webp',
       points: 0,
     },
     {
@@ -165,7 +165,7 @@ export const discipline: Tree = {
       name: 'Mental Agility',
       col: 1,
       maxPoints: 5,
-      icon: 'ability_hibernation.png',
+      icon: 'ability_hibernation.webp',
       points: 0,
     },
     {
@@ -178,7 +178,7 @@ export const discipline: Tree = {
       name: 'Improved Mana Burn',
       col: 2,
       maxPoints: 2,
-      icon: 'spell_shadow_manaburn.png',
+      icon: 'spell_shadow_manaburn.webp',
       points: 0,
     },
     {
@@ -194,7 +194,7 @@ export const discipline: Tree = {
       name: 'Mental Strength',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_nature_enchantarmor.png',
+      icon: 'spell_nature_enchantarmor.webp',
       points: 0,
     },
     {
@@ -207,7 +207,7 @@ export const discipline: Tree = {
       name: 'Improved Divine Spirit',
       col: 2,
       maxPoints: 2,
-      icon: 'spell_holy_divinespirit.png',
+      icon: 'spell_holy_divinespirit.webp',
       points: 0,
     },
     {
@@ -223,7 +223,7 @@ export const discipline: Tree = {
         id: 'spell_nature_tranquility',
         points: 2,
       },
-      icon: 'spell_holy_painsupression.png',
+      icon: 'spell_holy_painsupression.webp',
       points: 0,
       abilityData: {
         leftSide: ['8% of base Mana', 'Instant'],
@@ -243,7 +243,7 @@ export const discipline: Tree = {
       name: 'Focused Power',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_shadow_focusedpower.png',
+      icon: 'spell_shadow_focusedpower.webp',
       points: 0,
     },
     {
@@ -259,7 +259,7 @@ export const discipline: Tree = {
       name: 'Force of Will',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_nature_slowingtotem.png',
+      icon: 'spell_nature_slowingtotem.webp',
       points: 0,
     },
     {
@@ -273,7 +273,7 @@ export const discipline: Tree = {
       name: 'Focused Will',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_arcane_focusedpower.png',
+      icon: 'spell_arcane_focusedpower.webp',
       points: 0,
     },
     {
@@ -289,7 +289,7 @@ export const discipline: Tree = {
         id: 'spell_nature_enchantarmor',
         points: 5,
       },
-      icon: 'spell_holy_powerinfusion.png',
+      icon: 'spell_holy_powerinfusion.webp',
       points: 0,
       abilityData: {
         leftSide: ['16% of base Mana', 'Instant'],
@@ -312,7 +312,7 @@ export const discipline: Tree = {
       name: 'Reflective Shield',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_holy_powerwordshield.png',
+      icon: 'spell_holy_powerwordshield.webp',
       points: 0,
     },
     {
@@ -328,7 +328,7 @@ export const discipline: Tree = {
       name: 'Enlightenment',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_arcane_mindmastery.png',
+      icon: 'spell_arcane_mindmastery.webp',
       points: 0,
     },
     {
@@ -340,7 +340,7 @@ export const discipline: Tree = {
       name: 'Power Word: Barrier',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_holy_powerwordbarrier.png',
+      icon: 'spell_holy_powerwordbarrier.webp',
       points: 0,
       abilityData: {
         leftSide: ['4% of base Mana', 'Instant'],

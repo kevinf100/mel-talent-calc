@@ -4,11 +4,6 @@ import {
   type MouseEvent,
 } from 'react'
 import { useAsset } from '../hooks/useAsset'
-import FrameDefault from '../assets/ui/talent-frame-default.png'
-import FrameDefaultOuter from '../assets/ui/talent-frame-default-outer.png'
-import FrameGold from '../assets/ui/talent-frame-gold.png'
-import FrameGreen from '../assets/ui/talent-frame-green.png'
-import FrameActive from '../assets/ui/talent-frame-active.png'
 import { Tooltip } from './Tooltip'
 import { AbilityDataSection } from './AbilityDataSection'
 import type { Talent } from '../core/types'
@@ -64,6 +59,12 @@ export const TalentNode = ({
   const [isHovered, setHovered] = useState(false)
   const [isPressed, setPressed] = useState(false)
   const iconUrl = useAsset(icon)
+  const FrameDefault = useAsset('ui/talent-frame-default.webp')
+  const FrameDefaultOuter = useAsset('ui/talent-frame-default-outer.webp')
+  const FrameGold = useAsset('ui/talent-frame-gold.webp')
+  const FrameGreen = useAsset('ui/talent-frame-green.webp')
+  const FrameActive = useAsset('ui/talent-frame-active.webp')
+  
   const isDesktop = window.innerWidth >= 768
 
   const isMaxed = points === maxPoints

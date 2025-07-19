@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const frost: Tree = {
-  specIcon: 'spell_frost_frostbolt02.png',
+  specIcon: 'spell_frost_frostbolt02.webp',
   name: 'Frost',
   backgroundImage:
     'src/assets/images/mage/background-mage-frost.webp',
@@ -16,7 +16,7 @@ export const frost: Tree = {
       name: 'Frost Warding',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_frost_frostward.png',
+      icon: 'spell_frost_frostward.webp',
       points: 0,
     },
     {
@@ -32,7 +32,7 @@ export const frost: Tree = {
       name: 'Improved Frostbolt',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_frost_frostbolt02.png',
+      icon: 'spell_frost_frostbolt02.webp',
       points: 0,
     },
     {
@@ -46,7 +46,7 @@ export const frost: Tree = {
       name: 'Elemental Precision',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_ice_magicdamage.png',
+      icon: 'spell_ice_magicdamage.webp',
       points: 0,
     },
     {
@@ -62,7 +62,7 @@ export const frost: Tree = {
       name: 'Ice Shards',
       col: 0,
       maxPoints: 5,
-      icon: 'spell_frost_iceshard.png',
+      icon: 'spell_frost_iceshard.webp',
       points: 0,
     },
     {
@@ -76,7 +76,7 @@ export const frost: Tree = {
       name: 'Frostbite',
       col: 1,
       maxPoints: 3,
-      icon: 'spell_frost_frostarmor.png',
+      icon: 'spell_frost_frostarmor.webp',
       points: 0,
     },
     {
@@ -89,7 +89,7 @@ export const frost: Tree = {
       name: 'Improved Frost Nova',
       col: 2,
       maxPoints: 2,
-      icon: 'spell_frost_freezingbreath.png',
+      icon: 'spell_frost_freezingbreath.webp',
       points: 0,
     },
     {
@@ -103,7 +103,7 @@ export const frost: Tree = {
       name: 'Permafrost',
       col: 3,
       maxPoints: 3,
-      icon: 'spell_frost_wisp.png',
+      icon: 'spell_frost_wisp.webp',
       points: 0,
     },
     {
@@ -117,7 +117,7 @@ export const frost: Tree = {
       name: 'Piercing Ice',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_frost_frostbolt.png',
+      icon: 'spell_frost_frostbolt.webp',
       points: 0,
     },
     {
@@ -129,7 +129,7 @@ export const frost: Tree = {
       name: 'Icy Veins',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_frost_coldhearted.png',
+      icon: 'spell_frost_coldhearted.webp',
       points: 0,
       abilityData: {
         leftSide: ['3% of base Mana', 'Instant'],
@@ -147,7 +147,7 @@ export const frost: Tree = {
       name: 'Improved Blizzard',
       col: 3,
       maxPoints: 3,
-      icon: 'spell_frost_icestorm.png',
+      icon: 'spell_frost_icestorm.webp',
       points: 0,
     },
     {
@@ -160,7 +160,7 @@ export const frost: Tree = {
       name: 'Arctic Reach',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_shadow_darkritual.png',
+      icon: 'spell_shadow_darkritual.webp',
       points: 0,
     },
     {
@@ -174,7 +174,7 @@ export const frost: Tree = {
       name: 'Frost Channeling',
       col: 1,
       maxPoints: 3,
-      icon: 'spell_frost_stun.png',
+      icon: 'spell_frost_stun.webp',
       points: 0,
     },
     {
@@ -194,7 +194,7 @@ export const frost: Tree = {
         id: 'spell_frost_freezingbreath',
         points: 2,
       },
-      icon: 'spell_frost_frostshock.png',
+      icon: 'spell_frost_frostshock.webp',
       points: 0,
     },
     {
@@ -208,7 +208,7 @@ export const frost: Tree = {
       name: 'Frozen Core',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_frost_frozencore.png',
+      icon: 'spell_frost_frozencore.webp',
       points: 0,
     },
     {
@@ -220,7 +220,7 @@ export const frost: Tree = {
       name: 'Cold Snap',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_frost_wizardmark.png',
+      icon: 'spell_frost_wizardmark.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],
@@ -238,7 +238,7 @@ export const frost: Tree = {
       name: 'Improved Cone of Cold',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_frost_glacier.png',
+      icon: 'spell_frost_glacier.webp',
       points: 0,
     },
     {
@@ -251,7 +251,7 @@ export const frost: Tree = {
       name: 'Ice Floes',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_frost_icefloes.png',
+      icon: 'spell_frost_icefloes.webp',
       points: 0,
     },
     {
@@ -267,7 +267,7 @@ export const frost: Tree = {
       name: "Winter's Chill",
       col: 2,
       maxPoints: 5,
-      icon: 'spell_frost_chillingblast.png',
+      icon: 'spell_frost_chillingblast.webp',
       points: 0,
     },
     {
@@ -283,7 +283,7 @@ export const frost: Tree = {
         id: 'spell_frost_wizardmark',
         points: 1,
       },
-      icon: 'spell_ice_lament.png',
+      icon: 'spell_ice_lament.webp',
       points: 0,
       abilityData: {
         leftSide: ['305 Mana', 'Instant'],
@@ -303,7 +303,7 @@ export const frost: Tree = {
       name: 'Arctic Winds',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_frost_arcticwinds.png',
+      icon: 'spell_frost_arcticwinds.webp',
       points: 0,
     },
     {
@@ -319,7 +319,7 @@ export const frost: Tree = {
       name: 'Empowered Frostbolt',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_frost_frostbolt02.png',
+      icon: 'spell_frost_frostbolt02.webp',
       points: 0,
     },
     {
@@ -331,7 +331,7 @@ export const frost: Tree = {
       name: 'Summon Water Elemental',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_frost_summonwaterelemental_2.png',
+      icon: 'spell_frost_summonwaterelemental_2.webp',
       points: 0,
       abilityData: {
         leftSide: ['16% of base Mana', 'Instant'],

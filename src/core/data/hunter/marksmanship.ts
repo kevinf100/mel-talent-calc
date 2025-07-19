@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const marksmanship: Tree = {
-  specIcon: 'ability_marksmanship.png',
+  specIcon: 'ability_marksmanship.webp',
   name: 'Marksmanship',
   backgroundImage:
     'src/assets/images/hunter/background-hunter-marksmanship.webp',
@@ -19,7 +19,7 @@ export const marksmanship: Tree = {
       name: 'Improved Concussive Shot',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_frost_stun.png',
+      icon: 'spell_frost_stun.webp',
       points: 0,
     },
     {
@@ -35,7 +35,7 @@ export const marksmanship: Tree = {
       name: 'Lethal Shots',
       col: 2,
       maxPoints: 5,
-      icon: 'ability_searingarrow.png',
+      icon: 'ability_searingarrow.webp',
       points: 0,
     },
     {
@@ -51,7 +51,7 @@ export const marksmanship: Tree = {
       name: "Improved Hunter's Mark",
       col: 1,
       maxPoints: 5,
-      icon: 'ability_hunter_snipershot.png',
+      icon: 'ability_hunter_snipershot.webp',
       points: 0,
     },
     {
@@ -67,7 +67,7 @@ export const marksmanship: Tree = {
       name: 'Efficiency',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_frost_wizardmark.png',
+      icon: 'spell_frost_wizardmark.webp',
       points: 0,
     },
     {
@@ -80,7 +80,7 @@ export const marksmanship: Tree = {
       name: 'Go for the Throat',
       col: 0,
       maxPoints: 2,
-      icon: 'ability_hunter_goforthethroat.png',
+      icon: 'ability_hunter_goforthethroat.webp',
       points: 0,
     },
     {
@@ -96,7 +96,7 @@ export const marksmanship: Tree = {
       name: 'Improved Arcane Shot',
       col: 1,
       maxPoints: 5,
-      icon: 'ability_impalingbolt.png',
+      icon: 'ability_impalingbolt.webp',
       points: 0,
     },
     {
@@ -108,7 +108,7 @@ export const marksmanship: Tree = {
       name: 'Aimed Shot',
       col: 2,
       maxPoints: 1,
-      icon: 'inv_spear_07.png',
+      icon: 'inv_spear_07.webp',
       points: 0,
       abilityData: {
         leftSide: ['75 Mana', '3 sec cast'],
@@ -129,7 +129,7 @@ export const marksmanship: Tree = {
       name: 'Rapid Killing',
       col: 3,
       maxPoints: 2,
-      icon: 'ability_hunter_rapidkilling.png',
+      icon: 'ability_hunter_rapidkilling.webp',
       points: 0,
     },
     {
@@ -145,7 +145,7 @@ export const marksmanship: Tree = {
       name: 'Improved Stings',
       col: 1,
       maxPoints: 5,
-      icon: 'ability_hunter_quickshot.png',
+      icon: 'ability_hunter_quickshot.webp',
       points: 0,
     },
     {
@@ -165,7 +165,7 @@ export const marksmanship: Tree = {
         id: 'inv_spear_07',
         points: 1,
       },
-      icon: 'ability_piercedamage.png',
+      icon: 'ability_piercedamage.webp',
       points: 0,
     },
     {
@@ -179,7 +179,7 @@ export const marksmanship: Tree = {
       name: 'Concussive Barrage',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_arcane_starfire.png',
+      icon: 'spell_arcane_starfire.webp',
       points: 0,
     },
     {
@@ -191,7 +191,7 @@ export const marksmanship: Tree = {
       name: 'Scatter Shot',
       col: 1,
       maxPoints: 1,
-      icon: 'ability_golemstormbolt.png',
+      icon: 'ability_golemstormbolt.webp',
       points: 0,
       abilityData: {
         leftSide: ['6% of base Mana', 'Instant'],
@@ -213,7 +213,7 @@ export const marksmanship: Tree = {
       name: 'Barrage',
       col: 2,
       maxPoints: 3,
-      icon: 'ability_upgrademoonglaive.png',
+      icon: 'ability_upgrademoonglaive.webp',
       points: 0,
     },
     {
@@ -226,7 +226,7 @@ export const marksmanship: Tree = {
       name: 'Combat Experience',
       col: 0,
       maxPoints: 2,
-      icon: 'ability_hunter_combatexperience.png',
+      icon: 'ability_hunter_combatexperience.webp',
       points: 0,
     },
     {
@@ -242,7 +242,7 @@ export const marksmanship: Tree = {
       name: 'Ranged Weapon Specialization',
       col: 3,
       maxPoints: 5,
-      icon: 'inv_weapon_rifle_06.png',
+      icon: 'inv_weapon_rifle_06.webp',
       points: 0,
     },
     {
@@ -256,7 +256,7 @@ export const marksmanship: Tree = {
       name: 'Careful Aim',
       col: 0,
       maxPoints: 3,
-      icon: 'ability_hunter_zenarchery.png',
+      icon: 'ability_hunter_zenarchery.webp',
       points: 0,
     },
     {
@@ -272,7 +272,7 @@ export const marksmanship: Tree = {
         id: 'ability_golemstormbolt',
         points: 1,
       },
-      icon: 'ability_theblackarrow.png',
+      icon: 'ability_theblackarrow.webp',
       points: 0,
       abilityData: {
         leftSide: ['6% of base Mana', 'Instant'],
@@ -298,7 +298,7 @@ export const marksmanship: Tree = {
         id: 'barrage',
         points: 3,
       },
-      icon: 'ability_upgrademoonglaive.png',
+      icon: 'ability_upgrademoonglaive.webp',
       points: 0,
     },
     {
@@ -314,7 +314,7 @@ export const marksmanship: Tree = {
       name: 'Master Marksman',
       col: 1,
       maxPoints: 5,
-      icon: 'ability_hunter_mastermarksman.png',
+      icon: 'ability_hunter_mastermarksman.webp',
       points: 0,
     },
     {
@@ -330,7 +330,7 @@ export const marksmanship: Tree = {
         id: 'ability_hunter_mastermarksman',
         points: 5,
       },
-      icon: 'ability_trueshot.png',
+      icon: 'ability_trueshot.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],

@@ -1,4 +1,4 @@
-import ResetSprite from '../assets/ui/reset-all-button-sprite-small.png'
+import { useAsset } from '../hooks/useAsset'
 
 export const GlobalPointsSummary = ({
   totalTalentPoints,
@@ -12,6 +12,7 @@ export const GlobalPointsSummary = ({
   currentLevel: number
   onResetAll: () => void
 }) => {
+  const ResetSprite = useAsset('ui/reset-all-button-sprite-small.webp')
   return (
     <div className='mt-2 mb-1 p-2 rounded-sm w-[95%] md:w-[98%] text-white mx-auto  font-italic'>
       {/* Mobile: labels row */}

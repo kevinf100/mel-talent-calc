@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const fire: Tree = {
-  specIcon: 'spell_fire_fireball.png',
+  specIcon: 'spell_fire_fireball.webp',
   name: 'Fire',
   backgroundImage:
     'src/assets/images/mage/background-mage-fire.webp',
@@ -19,7 +19,7 @@ export const fire: Tree = {
       name: 'Improved Fireball',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_fire_flamebolt.png',
+      icon: 'spell_fire_flamebolt.webp',
       points: 0,
     },
     {
@@ -35,7 +35,7 @@ export const fire: Tree = {
       name: 'Impact',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_fire_meteorstorm.png',
+      icon: 'spell_fire_meteorstorm.webp',
       points: 0,
     },
     {
@@ -51,7 +51,7 @@ export const fire: Tree = {
       name: 'Ignite',
       col: 0,
       maxPoints: 5,
-      icon: 'spell_fire_incinerate.png',
+      icon: 'spell_fire_incinerate.webp',
       points: 0,
     },
     {
@@ -64,7 +64,7 @@ export const fire: Tree = {
       name: 'Flame Throwing',
       col: 1,
       maxPoints: 2,
-      icon: 'spell_fire_flare.png',
+      icon: 'spell_fire_flare.webp',
       points: 0,
     },
     {
@@ -78,7 +78,7 @@ export const fire: Tree = {
       name: 'Improved Blasting',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_fire_fireball.png',
+      icon: 'spell_fire_fireball.webp',
       points: 0,
     },
     {
@@ -91,7 +91,7 @@ export const fire: Tree = {
       name: 'Incineration',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_fire_flameshock.png',
+      icon: 'spell_fire_flameshock.webp',
       points: 0,
     },
     {
@@ -105,7 +105,7 @@ export const fire: Tree = {
       name: 'Improved Flamestrike',
       col: 1,
       maxPoints: 3,
-      icon: 'spell_fire_selfdestruct.png',
+      icon: 'spell_fire_selfdestruct.webp',
       points: 0,
     },
     {
@@ -117,7 +117,7 @@ export const fire: Tree = {
       name: 'Pyroblast',
       col: 2,
       maxPoints: 1,
-      icon: 'spell_fire_fireball02.png',
+      icon: 'spell_fire_fireball02.webp',
       points: 0,
       abilityData: {
         leftSide: ['125 Mana', '6 sec cast'],
@@ -134,7 +134,7 @@ export const fire: Tree = {
       name: 'Burning Soul',
       col: 3,
       maxPoints: 2,
-      icon: 'spell_fire_fire.png',
+      icon: 'spell_fire_fire.webp',
       points: 0,
     },
     {
@@ -148,7 +148,7 @@ export const fire: Tree = {
       name: 'Improved Scorch',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_fire_soulburn.png',
+      icon: 'spell_fire_soulburn.webp',
       points: 0,
     },
     {
@@ -161,7 +161,7 @@ export const fire: Tree = {
       name: 'Molten Shields',
       col: 1,
       maxPoints: 2,
-      icon: 'spell_fire_firearmor.png',
+      icon: 'spell_fire_firearmor.webp',
       points: 0,
     },
     {
@@ -175,7 +175,7 @@ export const fire: Tree = {
       name: 'Master of Schools',
       col: 3,
       maxPoints: 3,
-      icon: 'spell_fire_masterofelements.png',
+      icon: 'spell_fire_masterofelements.webp',
       points: 0,
     },
     {
@@ -189,7 +189,7 @@ export const fire: Tree = {
       name: 'Playing with Fire',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_fire_playingwithfire.png',
+      icon: 'spell_fire_playingwithfire.webp',
       points: 0,
     },
     {
@@ -203,7 +203,7 @@ export const fire: Tree = {
       name: 'Critical Mass',
       col: 1,
       maxPoints: 3,
-      icon: 'spell_nature_wispheal.png',
+      icon: 'spell_nature_wispheal.webp',
       points: 0,
     },
     {
@@ -219,7 +219,7 @@ export const fire: Tree = {
         id: 'spell_fire_fireball02',
         points: 1,
       },
-      icon: 'spell_holy_excorcism_02.png',
+      icon: 'spell_holy_excorcism_02.webp',
       points: 0,
       abilityData: {
         leftSide: ['215 Mana', 'Instant'],
@@ -240,7 +240,7 @@ export const fire: Tree = {
         id: 'spell_holy_excorcism_02',
         points: 1,
       },
-      icon: 'spell_fire_volcano.png',
+      icon: 'spell_fire_volcano.webp',
       points: 0,
     },
     {
@@ -253,7 +253,7 @@ export const fire: Tree = {
       name: 'Blazing Speed',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_fire_burningspeed.png',
+      icon: 'spell_fire_burningspeed.webp',
       points: 0,
     },
     {
@@ -269,7 +269,7 @@ export const fire: Tree = {
       name: 'Fire Power',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_fire_immolation.png',
+      icon: 'spell_fire_immolation.webp',
       points: 0,
     },
     {
@@ -283,7 +283,7 @@ export const fire: Tree = {
       name: 'Pyromaniac',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_fire_burnout.png',
+      icon: 'spell_fire_burnout.webp',
       points: 0,
     },
     {
@@ -299,7 +299,7 @@ export const fire: Tree = {
         id: 'spell_nature_wispheal',
         points: 3,
       },
-      icon: 'spell_fire_sealoffire.png',
+      icon: 'spell_fire_sealoffire.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],
@@ -316,7 +316,7 @@ export const fire: Tree = {
       name: 'Molten Fury',
       col: 2,
       maxPoints: 2,
-      icon: 'spell_fire_moltenblood.png',
+      icon: 'spell_fire_moltenblood.webp',
       points: 0,
     },
     {
@@ -332,7 +332,7 @@ export const fire: Tree = {
       name: 'Empowered Fireball',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_fire_flamebolt.png',
+      icon: 'spell_fire_flamebolt.webp',
       points: 0,
     },
     {
@@ -348,7 +348,7 @@ export const fire: Tree = {
         id: 'spell_fire_sealoffire',
         points: 1,
       },
-      icon: 'inv_misc_head_dragon_01.png',
+      icon: 'inv_misc_head_dragon_01.webp',
       points: 0,
       abilityData: {
         leftSide: ['475 Mana', 'Instant'],

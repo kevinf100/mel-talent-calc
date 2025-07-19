@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const balance: Tree = {
-  specIcon: 'spell_nature_starfall.png',
+  specIcon: 'spell_nature_starfall.webp',
   name: 'Balance',
   backgroundImage:
     'src/assets/images/druid/background-druid-balance.webp',
@@ -19,7 +19,7 @@ export const balance: Tree = {
       name: 'Starlight Wrath',
       col: 0,
       maxPoints: 5,
-      icon: 'spell_nature_abolishmagic.png',
+      icon: 'spell_nature_abolishmagic.webp',
       points: 0,
     },
     {
@@ -31,7 +31,7 @@ export const balance: Tree = {
       name: "Nature's Grasp",
       col: 1,
       maxPoints: 1,
-      icon: 'spell_nature_natureswrath.png',
+      icon: 'spell_nature_natureswrath.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],
@@ -54,7 +54,7 @@ export const balance: Tree = {
         id: 'natures_grasp',
         points: 1,
       },
-      icon: 'spell_nature_natureswrath.png',
+      icon: 'spell_nature_natureswrath.webp',
       points: 0,
     },
     {
@@ -68,7 +68,7 @@ export const balance: Tree = {
       name: 'Control of Nature',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_nature_stranglevines.png',
+      icon: 'spell_nature_stranglevines.webp',
       points: 0,
     },
     {
@@ -81,7 +81,7 @@ export const balance: Tree = {
       name: 'Focused Starlight',
       col: 1,
       maxPoints: 2,
-      icon: 'inv_staff_01.png',
+      icon: 'inv_staff_01.webp',
       points: 0,
     },
     {
@@ -94,7 +94,7 @@ export const balance: Tree = {
       name: 'Improved Moonfire',
       col: 2,
       maxPoints: 2,
-      icon: 'spell_nature_starfall.png',
+      icon: 'spell_nature_starfall.webp',
       points: 0,
     },
     {
@@ -108,7 +108,7 @@ export const balance: Tree = {
       name: 'Brambles',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_nature_thorns.png',
+      icon: 'spell_nature_thorns.webp',
       points: 0,
     },
     {
@@ -120,7 +120,7 @@ export const balance: Tree = {
       name: 'Insect Swarm',
       col: 2,
       maxPoints: 1,
-      icon: 'spell_nature_insectswarm.png',
+      icon: 'spell_nature_insectswarm.webp',
       points: 0,
       abilityData: {
         leftSide: ['50 Mana', 'Instant'],
@@ -137,7 +137,7 @@ export const balance: Tree = {
       name: "Nature's Reach",
       col: 3,
       maxPoints: 2,
-      icon: 'spell_nature_naturetouchgrow.png',
+      icon: 'spell_nature_naturetouchgrow.webp',
       points: 0,
     },
     {
@@ -157,7 +157,7 @@ export const balance: Tree = {
         id: 'inv_staff_01',
         points: 2,
       },
-      icon: 'spell_nature_purge.png',
+      icon: 'spell_nature_purge.webp',
       points: 0,
     },
     {
@@ -171,7 +171,7 @@ export const balance: Tree = {
       name: 'Celestial Focus',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_arcane_starfire.png',
+      icon: 'spell_arcane_starfire.webp',
       points: 0,
     },
     {
@@ -185,7 +185,7 @@ export const balance: Tree = {
       name: 'Lunar Guidance',
       col: 0,
       maxPoints: 3,
-      icon: 'ability_druid_lunarguidance.png',
+      icon: 'ability_druid_lunarguidance.webp',
       points: 0,
     },
     {
@@ -197,7 +197,7 @@ export const balance: Tree = {
       name: "Nature's Grace",
       col: 1,
       maxPoints: 1,
-      icon: 'spell_nature_naturesblessing.png',
+      icon: 'spell_nature_naturesblessing.webp',
       points: 0,
     },
     {
@@ -211,7 +211,7 @@ export const balance: Tree = {
       name: 'Moonglow',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_nature_sentinal.png',
+      icon: 'spell_nature_sentinal.webp',
       points: 0,
     },
     {
@@ -231,7 +231,7 @@ export const balance: Tree = {
         id: 'spell_nature_naturesblessing',
         points: 1,
       },
-      icon: 'spell_nature_moonglow.png',
+      icon: 'spell_nature_moonglow.webp',
       points: 0,
     },
     {
@@ -244,7 +244,7 @@ export const balance: Tree = {
       name: 'Balance of Power',
       col: 2,
       maxPoints: 2,
-      icon: 'ability_druid_balanceofpower.png',
+      icon: 'ability_druid_balanceofpower.webp',
       points: 0,
     },
     {
@@ -258,7 +258,7 @@ export const balance: Tree = {
       name: 'Dreamstate',
       col: 0,
       maxPoints: 3,
-      icon: 'ability_druid_dreamstate.png',
+      icon: 'ability_druid_dreamstate.webp',
       points: 0,
     },
     {
@@ -270,7 +270,7 @@ export const balance: Tree = {
       name: 'Moonkin Form',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_nature_forceofnature.png',
+      icon: 'spell_nature_forceofnature.webp',
       points: 0,
       abilityData: {
         leftSide: ['22% of base Mana', 'Instant'],
@@ -287,7 +287,7 @@ export const balance: Tree = {
       name: 'Improved Faerie Fire',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_nature_faeriefire.png',
+      icon: 'spell_nature_faeriefire.webp',
       points: 0,
     },
     {
@@ -303,7 +303,7 @@ export const balance: Tree = {
       name: 'Wrath of Cenarius',
       col: 1,
       maxPoints: 5,
-      icon: 'ability_druid_twilightswrath.png',
+      icon: 'ability_druid_twilightswrath.webp',
       points: 0,
     },
     {
@@ -315,7 +315,7 @@ export const balance: Tree = {
       name: 'Force of Nature',
       col: 1,
       maxPoints: 1,
-      icon: 'ability_druid_forceofnature.png',
+      icon: 'ability_druid_forceofnature.webp',
       points: 0,
       abilityData: {
         leftSide: ['12% of base Mana', 'Instant'],

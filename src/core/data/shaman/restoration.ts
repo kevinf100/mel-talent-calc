@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const restoration: Tree = {
-  specIcon: 'spell_nature_magicimmunity.png',
+  specIcon: 'spell_nature_magicimmunity.webp',
   name: 'Restoration',
   backgroundImage:
     'src/assets/images/shaman/background-shaman-restoration.webp',
@@ -19,7 +19,7 @@ export const restoration: Tree = {
       name: 'Improved Healing Wave',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_nature_magicimmunity.png',
+      icon: 'spell_nature_magicimmunity.webp',
       points: 0,
     },
     {
@@ -35,7 +35,7 @@ export const restoration: Tree = {
       name: 'Tidal Focus',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_frost_manarecharge.png',
+      icon: 'spell_frost_manarecharge.webp',
       points: 0,
     },
     {
@@ -48,7 +48,7 @@ export const restoration: Tree = {
       name: 'Improved Reincarnation',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_nature_reincarnation.png',
+      icon: 'spell_nature_reincarnation.webp',
       points: 0,
     },
     {
@@ -62,7 +62,7 @@ export const restoration: Tree = {
       name: 'Ancestral Healing',
       col: 1,
       maxPoints: 3,
-      icon: 'spell_nature_undyingstrength.png',
+      icon: 'spell_nature_undyingstrength.webp',
       points: 0,
     },
     {
@@ -78,7 +78,7 @@ export const restoration: Tree = {
       name: 'Totemic Focus',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_nature_moonglow.png',
+      icon: 'spell_nature_moonglow.webp',
       points: 0,
     },
     {
@@ -92,7 +92,7 @@ export const restoration: Tree = {
       name: "Nature's Guidance",
       col: 0,
       maxPoints: 3,
-      icon: 'spell_frost_stun.png',
+      icon: 'spell_frost_stun.webp',
       points: 0,
     },
     {
@@ -108,7 +108,7 @@ export const restoration: Tree = {
       name: 'Healing Focus',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_nature_healingwavelesser.png',
+      icon: 'spell_nature_healingwavelesser.webp',
       points: 0,
     },
     {
@@ -120,7 +120,7 @@ export const restoration: Tree = {
       name: 'Totemic Mastery',
       col: 2,
       maxPoints: 1,
-      icon: 'spell_nature_nullward.png',
+      icon: 'spell_nature_nullward.webp',
       points: 0,
     },
     {
@@ -134,7 +134,7 @@ export const restoration: Tree = {
       name: 'Healing Grace',
       col: 3,
       maxPoints: 3,
-      icon: 'spell_nature_healingtouch.png',
+      icon: 'spell_nature_healingtouch.webp',
       points: 0,
     },
     {
@@ -150,7 +150,7 @@ export const restoration: Tree = {
       name: 'Restorative Totems',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_nature_manaregentotem.png',
+      icon: 'spell_nature_manaregentotem.webp',
       points: 0,
     },
     {
@@ -166,7 +166,7 @@ export const restoration: Tree = {
       name: 'Tidal Mastery',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_nature_tranquility.png',
+      icon: 'spell_nature_tranquility.webp',
       points: 0,
     },
     {
@@ -180,7 +180,7 @@ export const restoration: Tree = {
       name: 'Healing Way',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_nature_healingway.png',
+      icon: 'spell_nature_healingway.webp',
       points: 0,
     },
     {
@@ -192,7 +192,7 @@ export const restoration: Tree = {
       name: "Nature's Swiftness",
       col: 2,
       maxPoints: 1,
-      icon: 'spell_nature_ravenform.png',
+      icon: 'spell_nature_ravenform.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],
@@ -210,7 +210,7 @@ export const restoration: Tree = {
       name: 'Focused Mind',
       col: 3,
       maxPoints: 3,
-      icon: 'spell_nature_focusedmind.png',
+      icon: 'spell_nature_focusedmind.webp',
       points: 0,
     },
     {
@@ -226,7 +226,7 @@ export const restoration: Tree = {
       name: 'Purification',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_frost_wizardmark.png',
+      icon: 'spell_frost_wizardmark.webp',
       points: 0,
     },
     {
@@ -242,7 +242,7 @@ export const restoration: Tree = {
         id: 'spell_nature_manaregentotem',
         points: 5,
       },
-      icon: 'spell_frost_summonwaterelemental.png',
+      icon: 'spell_frost_summonwaterelemental.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],
@@ -263,7 +263,7 @@ export const restoration: Tree = {
       name: "Nature's Guardian",
       col: 2,
       maxPoints: 5,
-      icon: 'spell_nature_natureguardian.png',
+      icon: 'spell_nature_natureguardian.webp',
       points: 0,
     },
     {
@@ -277,7 +277,7 @@ export const restoration: Tree = {
       name: "Nature's Blessing",
       col: 1,
       maxPoints: 3,
-      icon: 'spell_nature_natureblessing.png',
+      icon: 'spell_nature_natureblessing.webp',
       points: 0,
     },
     {
@@ -290,7 +290,7 @@ export const restoration: Tree = {
       name: 'Improved Chain Heal',
       col: 2,
       maxPoints: 2,
-      icon: 'spell_nature_healingwavegreater.png',
+      icon: 'spell_nature_healingwavegreater.webp',
       points: 0,
     },
     {
@@ -306,7 +306,7 @@ export const restoration: Tree = {
         id: 'spell_nature_natureblessing',
         points: 3,
       },
-      icon: 'spell_nature_skinofearth.png',
+      icon: 'spell_nature_skinofearth.webp',
       points: 0,
       abilityData: {
         leftSide: ['300 Mana', 'Instant'],

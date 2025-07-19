@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const destruction: Tree = {
-  specIcon: 'spell_shadow_shadowbolt.png',
+  specIcon: 'spell_shadow_shadowbolt.webp',
   name: 'Destruction',
   backgroundImage:
     'src/assets/images/warlock/background-warlock-destruction.webp',
@@ -19,7 +19,7 @@ export const destruction: Tree = {
       name: 'Improved Shadow Bolt',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_shadow_shadowbolt.png',
+      icon: 'spell_shadow_shadowbolt.webp',
       points: 0,
     },
     {
@@ -35,7 +35,7 @@ export const destruction: Tree = {
       name: 'Cataclysm',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_fire_windsofwoe.png',
+      icon: 'spell_fire_windsofwoe.webp',
       points: 0,
     },
     {
@@ -51,7 +51,7 @@ export const destruction: Tree = {
       name: 'Bane',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_shadow_deathpact.png',
+      icon: 'spell_shadow_deathpact.webp',
       points: 0,
     },
     {
@@ -67,7 +67,7 @@ export const destruction: Tree = {
       name: 'Aftermath',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_fire_fire.png',
+      icon: 'spell_fire_fire.webp',
       points: 0,
     },
     {
@@ -80,7 +80,7 @@ export const destruction: Tree = {
       name: 'Improved Firebolt',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_fire_firebolt.png',
+      icon: 'spell_fire_firebolt.webp',
       points: 0,
     },
     {
@@ -93,7 +93,7 @@ export const destruction: Tree = {
       name: 'Improved Lash of Pain',
       col: 1,
       maxPoints: 2,
-      icon: 'spell_shadow_curse.png',
+      icon: 'spell_shadow_curse.webp',
       points: 0,
     },
     {
@@ -109,7 +109,7 @@ export const destruction: Tree = {
       name: 'Devastation',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_fire_flameshock.png',
+      icon: 'spell_fire_flameshock.webp',
       points: 0,
     },
     {
@@ -121,7 +121,7 @@ export const destruction: Tree = {
       name: 'Shadowburn',
       col: 3,
       maxPoints: 1,
-      icon: 'spell_shadow_scourgebuild.png',
+      icon: 'spell_shadow_scourgebuild.webp',
       points: 0,
       abilityData: {
         leftSide: ['105 Mana', 'Instant'],
@@ -142,7 +142,7 @@ export const destruction: Tree = {
       name: 'Intensity',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_fire_lavaspawn.png',
+      icon: 'spell_fire_lavaspawn.webp',
       points: 0,
     },
     {
@@ -155,7 +155,7 @@ export const destruction: Tree = {
       name: 'Destructive Reach',
       col: 1,
       maxPoints: 2,
-      icon: 'spell_shadow_corpseexplode.png',
+      icon: 'spell_shadow_corpseexplode.webp',
       points: 0,
     },
     {
@@ -169,7 +169,7 @@ export const destruction: Tree = {
       name: 'Improved Searing Pain',
       col: 3,
       maxPoints: 3,
-      icon: 'spell_fire_soulburn.png',
+      icon: 'spell_fire_soulburn.webp',
       points: 0,
     },
     {
@@ -182,7 +182,7 @@ export const destruction: Tree = {
       name: 'Pyroclasm',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_fire_volcano.png',
+      icon: 'spell_fire_volcano.webp',
       points: 0,
     },
     {
@@ -198,7 +198,7 @@ export const destruction: Tree = {
       name: 'Improved Immolate',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_fire_immolation.png',
+      icon: 'spell_fire_immolation.webp',
       points: 0,
     },
     {
@@ -214,7 +214,7 @@ export const destruction: Tree = {
         id: 'spell_fire_flameshock',
         points: 5,
       },
-      icon: 'spell_shadow_shadowwordpain.png',
+      icon: 'spell_shadow_shadowwordpain.webp',
       points: 0,
     },
     {
@@ -226,7 +226,7 @@ export const destruction: Tree = {
       name: 'Shadowfury',
       col: 3,
       maxPoints: 1,
-      icon: 'spell_shadow_shadowfury.png',
+      icon: 'spell_shadow_shadowfury.webp',
       points: 0,
       abilityData: {
         leftSide: ['440 Mana', '0.5 sec cast'],
@@ -247,7 +247,7 @@ export const destruction: Tree = {
       name: 'Nether Protection',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_shadow_netherprotection.png',
+      icon: 'spell_shadow_netherprotection.webp',
       points: 0,
     },
     {
@@ -263,7 +263,7 @@ export const destruction: Tree = {
       name: 'Emberstorm',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_fire_selfdestruct.png',
+      icon: 'spell_fire_selfdestruct.webp',
       points: 0,
     },
     {
@@ -277,7 +277,7 @@ export const destruction: Tree = {
       name: 'Backlash',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_fire_playingwithfire.png',
+      icon: 'spell_fire_playingwithfire.webp',
       points: 0,
     },
     {
@@ -293,7 +293,7 @@ export const destruction: Tree = {
         id: 'spell_fire_immolation',
         points: 5,
       },
-      icon: 'spell_fire_fireball.png',
+      icon: 'spell_fire_fireball.webp',
       points: 0,
       abilityData: {
         leftSide: ['165 Mana', 'Instant'],
@@ -314,7 +314,7 @@ export const destruction: Tree = {
       name: 'Soul Leech',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_shadow_soulleech_3.png',
+      icon: 'spell_shadow_soulleech_3.webp',
       points: 0,
     },
     {
@@ -330,7 +330,7 @@ export const destruction: Tree = {
       name: 'Shadow and Flame',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_shadow_shadowandflame.png',
+      icon: 'spell_shadow_shadowandflame.webp',
       points: 0,
     },
     {
@@ -346,7 +346,7 @@ export const destruction: Tree = {
         id: 'spell_shadow_shadowandflame',
         points: 5,
       },
-      icon: 'spell_shadow_psychicscream.png',
+      icon: 'spell_shadow_psychicscream.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],

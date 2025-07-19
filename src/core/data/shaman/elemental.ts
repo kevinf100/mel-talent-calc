@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const elemental: Tree = {
-  specIcon: 'spell_nature_lightning.png',
+  specIcon: 'spell_nature_lightning.webp',
   name: 'Elemental',
   backgroundImage:
     'src/assets/images/shaman/background-shaman-elemental.webp',
@@ -19,7 +19,7 @@ export const elemental: Tree = {
       name: 'Convection',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_nature_wispsplode.png',
+      icon: 'spell_nature_wispsplode.webp',
       points: 0,
     },
     {
@@ -35,7 +35,7 @@ export const elemental: Tree = {
       name: 'Concussion',
       col: 2,
       maxPoints: 5,
-      icon: 'spell_fire_fireball.png',
+      icon: 'spell_fire_fireball.webp',
       points: 0,
     },
     {
@@ -48,7 +48,7 @@ export const elemental: Tree = {
       name: "Earth's Grasp",
       col: 0,
       maxPoints: 2,
-      icon: 'spell_nature_stoneclawtotem.png',
+      icon: 'spell_nature_stoneclawtotem.webp',
       points: 0,
     },
     {
@@ -62,7 +62,7 @@ export const elemental: Tree = {
       name: 'Elemental Warding',
       col: 1,
       maxPoints: 3,
-      icon: 'spell_nature_spiritarmor.png',
+      icon: 'spell_nature_spiritarmor.webp',
       points: 0,
     },
     {
@@ -76,7 +76,7 @@ export const elemental: Tree = {
       name: 'Call of Flame',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_fire_immolation.png',
+      icon: 'spell_fire_immolation.webp',
       points: 0,
     },
     {
@@ -88,7 +88,7 @@ export const elemental: Tree = {
       name: 'Elemental Focus',
       col: 0,
       maxPoints: 1,
-      icon: 'spell_shadow_manaburn.png',
+      icon: 'spell_shadow_manaburn.webp',
       points: 0,
     },
     {
@@ -104,7 +104,7 @@ export const elemental: Tree = {
       name: 'Reverberation',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_frost_frostward.png',
+      icon: 'spell_frost_frostward.webp',
       points: 0,
     },
     {
@@ -120,7 +120,7 @@ export const elemental: Tree = {
       name: 'Fire and Lightning Mastery',
       col: 2,
       maxPoints: 5,
-      icon: 'shaman_talent_elementalblast.png',
+      icon: 'shaman_talent_elementalblast.webp',
       points: 0,
     },
     {
@@ -133,7 +133,7 @@ export const elemental: Tree = {
       name: 'Improved Fire Totems',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_fire_sealoffire.png',
+      icon: 'spell_fire_sealoffire.webp',
       points: 0,
     },
     {
@@ -147,7 +147,7 @@ export const elemental: Tree = {
       name: 'Rolling Thunder',
       col: 1,
       maxPoints: 3,
-      icon: 'spell_shaman_thunderstorm.png',
+      icon: 'spell_shaman_thunderstorm.webp',
       points: 0,
     },
     {
@@ -161,7 +161,7 @@ export const elemental: Tree = {
       name: 'Elemental Devastation',
       col: 3,
       maxPoints: 3,
-      icon: 'spell_fire_elementaldevastation.png',
+      icon: 'spell_fire_elementaldevastation.webp',
       points: 0,
     },
     {
@@ -174,7 +174,7 @@ export const elemental: Tree = {
       name: 'Storm Reach',
       col: 0,
       maxPoints: 2,
-      icon: 'spell_nature_stormreach.png',
+      icon: 'spell_nature_stormreach.webp',
       points: 0,
     },
     {
@@ -186,7 +186,7 @@ export const elemental: Tree = {
       name: 'Elemental Fury',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_fire_volcano.png',
+      icon: 'spell_fire_volcano.webp',
       points: 0,
     },
     {
@@ -202,7 +202,7 @@ export const elemental: Tree = {
       name: 'Unrelenting Storm',
       col: 3,
       maxPoints: 5,
-      icon: 'spell_nature_unrelentingstorm.png',
+      icon: 'spell_nature_unrelentingstorm.webp',
       points: 0,
     },
     {
@@ -216,7 +216,7 @@ export const elemental: Tree = {
       name: 'Elemental Precision',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_nature_elementalprecision_1.png',
+      icon: 'spell_nature_elementalprecision_1.webp',
       points: 0,
     },
     {
@@ -236,7 +236,7 @@ export const elemental: Tree = {
         id: 'shaman_talent_elementalblast',
         points: 1,
       },
-      icon: 'spell_nature_callstorm.png',
+      icon: 'spell_nature_callstorm.webp',
       points: 0,
     },
     {
@@ -252,7 +252,7 @@ export const elemental: Tree = {
         id: 'spell_fire_volcano',
         points: 1,
       },
-      icon: 'spell_nature_wispheal.png',
+      icon: 'spell_nature_wispheal.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],
@@ -270,7 +270,7 @@ export const elemental: Tree = {
       name: 'Elemental Shields',
       col: 2,
       maxPoints: 3,
-      icon: 'spell_nature_elementalshields.png',
+      icon: 'spell_nature_elementalshields.webp',
       points: 0,
     },
     {
@@ -286,7 +286,7 @@ export const elemental: Tree = {
       name: 'Elemental Overload',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_shaman_lavaflow.png',
+      icon: 'spell_shaman_lavaflow.webp',
       points: 0,
     },
     {
@@ -302,7 +302,7 @@ export const elemental: Tree = {
         id: 'spell_shaman_lavaflow',
         points: 5,
       },
-      icon: 'spell_fire_totemofwrath.png',
+      icon: 'spell_fire_totemofwrath.webp',
       points: 0,
       abilityData: {
         leftSide: ['5% of base mana', 'Instant'],

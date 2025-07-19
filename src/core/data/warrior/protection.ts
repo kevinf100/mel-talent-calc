@@ -4,12 +4,12 @@ export const protection: Tree = {
   name: 'Protection',
   backgroundImage:
     'src/assets/images/warrior/background-warrior-protection.webp',
-  specIcon: 'ability_warrior_defensivestance.png',
+  specIcon: 'ability_warrior_defensivestance.webp',
   talents: [
     {
       row: 0,
       col: 0,
-      icon: 'ability_racial_bloodrage.png',
+      icon: 'ability_racial_bloodrage.webp',
       id: 'ability_racial_bloodrage',
       name: 'Improved Bloodrage',
       points: 0,
@@ -22,7 +22,7 @@ export const protection: Tree = {
     {
       row: 0,
       col: 1,
-      icon: 'spell_nature_enchantarmor.png',
+      icon: 'spell_nature_enchantarmor.webp',
       id: 'spell_nature_enchantarmor',
       name: 'Tactical Mastery',
       points: 0,
@@ -36,7 +36,7 @@ export const protection: Tree = {
     {
       row: 0,
       col: 2,
-      icon: 'spell_nature_mirrorimage.png',
+      icon: 'spell_nature_mirrorimage.webp',
       id: 'spell_nature_mirrorimage',
       name: 'Anticipation',
       points: 0,
@@ -52,7 +52,7 @@ export const protection: Tree = {
     {
       row: 1,
       col: 1,
-      icon: 'inv_shield_06.png',
+      icon: 'inv_shield_06.webp',
       id: 'inv_shield_06',
       name: 'Shield Specialization',
       points: 0,
@@ -68,7 +68,7 @@ export const protection: Tree = {
     {
       row: 1,
       col: 2,
-      icon: 'spell_holy_devotion.png',
+      icon: 'spell_holy_devotion.webp',
       id: 'spell_holy_devotion',
       name: 'Toughness',
       points: 0,
@@ -84,7 +84,7 @@ export const protection: Tree = {
     {
       row: 2,
       col: 0,
-      icon: 'spell_holy_ashestoashes.png',
+      icon: 'spell_holy_ashestoashes.webp',
       id: 'spell_holy_ashestoashes',
       name: 'Last Stand',
       points: 0,
@@ -100,7 +100,7 @@ export const protection: Tree = {
     {
       row: 2,
       col: 1,
-      icon: 'ability_defend.png',
+      icon: 'ability_defend.webp',
       id: 'ability_defend',
       name: 'Improved Shield Block',
       points: 0,
@@ -116,7 +116,7 @@ export const protection: Tree = {
     {
       row: 2,
       col: 2,
-      icon: 'ability_warrior_revenge.png',
+      icon: 'ability_warrior_revenge.webp',
       id: 'ability_warrior_revenge',
       name: 'Improved Revenge',
       points: 0,
@@ -130,7 +130,7 @@ export const protection: Tree = {
     {
       row: 2,
       col: 3,
-      icon: 'ability_warrior_innerrage.png',
+      icon: 'ability_warrior_innerrage.webp',
       id: 'ability_warrior_innerrage',
       name: 'Defiance',
       points: 0,
@@ -144,7 +144,7 @@ export const protection: Tree = {
     {
       row: 3,
       col: 0,
-      icon: 'ability_warrior_sunder.png',
+      icon: 'ability_warrior_sunder.webp',
       id: 'ability_warrior_sunder',
       name: 'Improved Sunder Armor',
       points: 0,
@@ -158,7 +158,7 @@ export const protection: Tree = {
     {
       row: 3,
       col: 1,
-      icon: 'ability_warrior_disarm.png',
+      icon: 'ability_warrior_disarm.webp',
       id: 'ability_warrior_disarm',
       name: 'Improved Disarm',
       points: 0,
@@ -172,7 +172,7 @@ export const protection: Tree = {
     {
       row: 3,
       col: 2,
-      icon: 'spell_nature_reincarnation.png',
+      icon: 'spell_nature_reincarnation.webp',
       id: 'spell_nature_reincarnation',
       name: 'Improved Taunt',
       points: 0,
@@ -185,7 +185,7 @@ export const protection: Tree = {
     {
       row: 4,
       col: 0,
-      icon: 'ability_warrior_shieldwall.png',
+      icon: 'ability_warrior_shieldwall.webp',
       id: 'ability_warrior_shieldwall',
       name: 'Improved Shield Wall',
       points: 0,
@@ -198,7 +198,7 @@ export const protection: Tree = {
     {
       row: 4,
       col: 1,
-      icon: 'ability_thunderbolt.png',
+      icon: 'ability_thunderbolt.webp',
       id: 'ability_thunderbolt',
       name: 'Concussion Blow',
       points: 0,
@@ -218,7 +218,7 @@ export const protection: Tree = {
     {
       row: 4,
       col: 2,
-      icon: 'ability_warrior_shieldbash.png',
+      icon: 'ability_warrior_shieldbash.webp',
       id: 'ability_warrior_shieldbash',
       name: 'Improved Shield Bash',
       points: 0,
@@ -231,7 +231,7 @@ export const protection: Tree = {
     {
       row: 5,
       col: 0,
-      icon: 'ability_warrior_shieldmastery.png',
+      icon: 'ability_warrior_shieldmastery.webp',
       id: 'ability_warrior_shieldmastery',
       name: 'Shield Mastery',
       points: 0,
@@ -245,7 +245,7 @@ export const protection: Tree = {
     {
       row: 5,
       col: 2,
-      icon: 'inv_sword_20.png',
+      icon: 'inv_sword_20.webp',
       id: 'inv_sword_20',
       name: 'One-Handed Weapon Specialization',
       points: 0,
@@ -261,7 +261,7 @@ export const protection: Tree = {
     {
       row: 6,
       col: 0,
-      icon: 'ability_warrior_defensivestance.png',
+      icon: 'ability_warrior_defensivestance.webp',
       id: 'ability_warrior_defensivestance',
       name: 'Improved Defensive Stance',
       points: 0,
@@ -275,7 +275,7 @@ export const protection: Tree = {
     {
       row: 6,
       col: 1,
-      icon: 'inv_shield_05.png',
+      icon: 'inv_shield_05.webp',
       id: 'inv_shield_05',
       name: 'Shield Slam',
       points: 0,
@@ -299,7 +299,7 @@ export const protection: Tree = {
     {
       row: 6,
       col: 2,
-      icon: 'ability_warrior_focusedrage.png',
+      icon: 'ability_warrior_focusedrage.webp',
       id: 'ability_warrior_focusedrage',
       name: 'Focused Rage',
       points: 0,
@@ -313,7 +313,7 @@ export const protection: Tree = {
     {
       row: 7,
       col: 1,
-      icon: 'inv_helmet_21.png',
+      icon: 'inv_helmet_21.webp',
       id: 'inv_helmet_21',
       name: 'Vitality',
       points: 0,
@@ -329,7 +329,7 @@ export const protection: Tree = {
     {
       row: 8,
       col: 1,
-      icon: 'inv_sword_11.png',
+      icon: 'inv_sword_11.webp',
       id: 'inv_sword_11',
       name: 'Devastate',
       points: 0,

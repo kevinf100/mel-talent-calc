@@ -5,8 +5,6 @@ import {
   TalentTreeScroller,
   type TalentTreeScrollerRef,
 } from './TalentTreeScroller'
-
-import ShareSprite from '../assets/ui/share-btn-sprite-small2.png'
 import { ParchmentBorders } from './ParchmentBorders'
 import { ClassPicker } from './ClassPicker'
 import { showCopyToast } from '../lib/showCopyToast'
@@ -29,7 +27,12 @@ const getInitialSelectedClass = (): ClassName => {
   )
   const classFromURL = params.get('class')
 
-  if (classFromURL) {
+  if (
+    classFromURL &&
+    CLASS_NAMES.includes(
+      classFromURL as ClassName
+    )
+  ) {
     return classFromURL as ClassName
   }
 
@@ -37,10 +40,17 @@ const getInitialSelectedClass = (): ClassName => {
     const saved = localStorage.getItem(
       SELECTED_CLASS_KEY
     )
-    return (saved as ClassName) || CLASS_NAMES[0]
+    if (
+      saved &&
+      CLASS_NAMES.includes(saved as ClassName)
+    ) {
+      return saved as ClassName
+    }
   } catch {
-    return CLASS_NAMES[0]
+    // Ignore storage errors
   }
+
+  return CLASS_NAMES[0]
 }
 
 export const TalentGrid = () => {
@@ -115,16 +125,20 @@ export const TalentGrid = () => {
     totalPointsSpent,
     pointsRemaining,
     currentLevel,
-    pointsSpentPerTree
+    pointsSpentPerTree,
   } = useTalentTrees({
     selectedClass,
     setSelectedClass,
   })
   const classCrestImage = useAsset(
-    `images/${selectedClass}/classcrest_${selectedClass}.png`
+    `images/${selectedClass}/classcrest_${selectedClass}.webp`
   )
+  const ShareSprite = useAsset('ui/share-btn-sprite-small2.webp')
 
-  const pointsSpentPerTreeOrdered = trees.map(tree => pointsSpentPerTree[tree.name] || 0)
+
+  const pointsSpentPerTreeOrdered = trees.map(
+    tree => pointsSpentPerTree[tree.name] || 0
+  )
 
   return (
     <div>
@@ -146,7 +160,9 @@ export const TalentGrid = () => {
             <div className='flex flex-col w-full gap-6'>
               {/* 🎭 Class Picker in first row */}
               <ClassPicker
-                pointsSpentPerTree={pointsSpentPerTreeOrdered}
+                pointsSpentPerTree={
+                  pointsSpentPerTreeOrdered
+                }
                 selectedClass={selectedClass}
                 setSelectedClass={
                   setSelectedClass

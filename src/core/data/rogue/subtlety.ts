@@ -1,7 +1,7 @@
 import type { Tree } from '../../types'
 
 export const subtlety: Tree = {
-  specIcon: 'ability_stealth.png',
+  specIcon: 'ability_stealth.webp',
   name: 'Subtlety',
   backgroundImage:
     'src/assets/images/rogue/background-rogue-subtlety.webp',
@@ -19,7 +19,7 @@ export const subtlety: Tree = {
       name: 'Master of Deception',
       col: 1,
       maxPoints: 5,
-      icon: 'spell_shadow_charm.png',
+      icon: 'spell_shadow_charm.webp',
       points: 0,
     },
     {
@@ -35,7 +35,7 @@ export const subtlety: Tree = {
       name: 'Opportunity',
       col: 2,
       maxPoints: 5,
-      icon: 'ability_warrior_warcry.png',
+      icon: 'ability_warrior_warcry.webp',
       points: 0,
     },
     {
@@ -48,7 +48,7 @@ export const subtlety: Tree = {
       name: 'Sleight of Hand',
       col: 0,
       maxPoints: 2,
-      icon: 'ability_rogue_feint.png',
+      icon: 'ability_rogue_feint.webp',
       points: 0,
     },
     {
@@ -61,7 +61,7 @@ export const subtlety: Tree = {
       name: 'Dirty Tricks',
       col: 1,
       maxPoints: 2,
-      icon: 'ability_sap.png',
+      icon: 'ability_sap.webp',
       points: 0,
     },
     {
@@ -77,7 +77,7 @@ export const subtlety: Tree = {
       name: 'Camouflage',
       col: 2,
       maxPoints: 5,
-      icon: 'ability_stealth.png',
+      icon: 'ability_stealth.webp',
       points: 0,
     },
     {
@@ -91,7 +91,7 @@ export const subtlety: Tree = {
       name: 'Initiative',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_shadow_fumble.png',
+      icon: 'spell_shadow_fumble.webp',
       points: 0,
     },
     {
@@ -103,7 +103,7 @@ export const subtlety: Tree = {
       name: 'Ghostly Strike',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_shadow_curse.png',
+      icon: 'spell_shadow_curse.webp',
       points: 0,
       abilityData: {
         leftSide: ['40 Energy', 'Instant'],
@@ -122,7 +122,7 @@ export const subtlety: Tree = {
       name: 'Improved Ambush',
       col: 2,
       maxPoints: 3,
-      icon: 'ability_rogue_ambush.png',
+      icon: 'ability_rogue_ambush.webp',
       points: 0,
     },
     {
@@ -136,7 +136,7 @@ export const subtlety: Tree = {
       name: 'Setup',
       col: 0,
       maxPoints: 3,
-      icon: 'spell_nature_mirrorimage.png',
+      icon: 'spell_nature_mirrorimage.webp',
       points: 0,
     },
     {
@@ -149,7 +149,7 @@ export const subtlety: Tree = {
       name: 'Elusiveness',
       col: 1,
       maxPoints: 2,
-      icon: 'spell_magic_lesserinvisibilty.png',
+      icon: 'spell_magic_lesserinvisibilty.webp',
       points: 0,
     },
     {
@@ -163,7 +163,7 @@ export const subtlety: Tree = {
       name: 'Serrated Blades',
       col: 2,
       maxPoints: 3,
-      icon: 'inv_sword_17.png',
+      icon: 'inv_sword_17.webp',
       points: 0,
     },
     {
@@ -176,7 +176,7 @@ export const subtlety: Tree = {
       name: 'Heightened Senses',
       col: 0,
       maxPoints: 2,
-      icon: 'ability_ambush.png',
+      icon: 'ability_ambush.webp',
       points: 0,
     },
     {
@@ -188,7 +188,7 @@ export const subtlety: Tree = {
       name: 'Preparation',
       col: 1,
       maxPoints: 1,
-      icon: 'spell_shadow_antishadow.png',
+      icon: 'spell_shadow_antishadow.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],
@@ -205,7 +205,7 @@ export const subtlety: Tree = {
       name: 'Dirty Deeds',
       col: 2,
       maxPoints: 2,
-      icon: 'spell_shadow_summonsuccubus.png',
+      icon: 'spell_shadow_summonsuccubus.webp',
       points: 0,
     },
     {
@@ -221,7 +221,7 @@ export const subtlety: Tree = {
         id: 'inv_sword_17',
         points: 3,
       },
-      icon: 'spell_shadow_lifedrain.png',
+      icon: 'spell_shadow_lifedrain.webp',
       points: 0,
       abilityData: {
         leftSide: ['35 Energy', 'Instant'],
@@ -240,7 +240,7 @@ export const subtlety: Tree = {
       name: 'Master of Subtlety',
       col: 0,
       maxPoints: 3,
-      icon: 'ability_rogue_masterofsubtlety.png',
+      icon: 'ability_rogue_masterofsubtlety.webp',
       points: 0,
     },
     {
@@ -256,7 +256,7 @@ export const subtlety: Tree = {
       name: 'Deadliness',
       col: 2,
       maxPoints: 5,
-      icon: 'inv_weapon_crossbow_11.png',
+      icon: 'inv_weapon_crossbow_11.webp',
       points: 0,
     },
     {
@@ -270,7 +270,7 @@ export const subtlety: Tree = {
       name: 'Enveloping Shadows',
       col: 0,
       maxPoints: 3,
-      icon: 'ability_rogue_envelopingshadows.png',
+      icon: 'ability_rogue_envelopingshadows.webp',
       points: 0,
     },
     {
@@ -286,7 +286,7 @@ export const subtlety: Tree = {
         id: 'spell_shadow_antishadow',
         points: 1,
       },
-      icon: 'spell_shadow_possession.png',
+      icon: 'spell_shadow_possession.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],
@@ -305,7 +305,7 @@ export const subtlety: Tree = {
       name: 'Cheat Death',
       col: 2,
       maxPoints: 3,
-      icon: 'ability_rogue_cheatdeath.png',
+      icon: 'ability_rogue_cheatdeath.webp',
       points: 0,
     },
     {
@@ -325,7 +325,7 @@ export const subtlety: Tree = {
         id: 'spell_shadow_possession',
         points: 1,
       },
-      icon: 'ability_rogue_sinistercalling.png',
+      icon: 'ability_rogue_sinistercalling.webp',
       points: 0,
     },
     {
@@ -337,7 +337,7 @@ export const subtlety: Tree = {
       name: 'Shadowstep',
       col: 1,
       maxPoints: 1,
-      icon: 'ability_rogue_shadowstep.png',
+      icon: 'ability_rogue_shadowstep.webp',
       points: 0,
       abilityData: {
         leftSide: ['Instant'],
