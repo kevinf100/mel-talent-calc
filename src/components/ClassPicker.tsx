@@ -47,8 +47,6 @@ export const ClassPicker = ({
     pointsSpentPerTree
   )
 
-  console.log(primaryTree, selectedClass)
-
   return (
     <div className='flex flex-col w-full items-start gap-6 sm:gap-8 h-full'>
       {/* 🧱 Icon Grid */}
@@ -125,14 +123,14 @@ export const ClassPicker = ({
 
         {/* 📈 Info Column */}
         <div className='flex flex-col text-[#4a2c0d] justify-between flex-1'>
-          <h3
-            className='relative sm:hidden text-2xl capitalize'
+          <p
+            className='relative sm:hidden text-3xl capitalize -mb-1'
             style={{
               color: CLASS_COLORS[selectedClass],
             }}
           >
             {primaryTree.name}
-          </h3>
+          </p>
           <h2
             className='sm:text-6xl text-5xl capitalize'
             style={{
