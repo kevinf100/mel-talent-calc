@@ -1,5 +1,6 @@
 import { type ClassName } from '../core/types'
 import { useAsset } from '../hooks/useAsset'
+import GoldRing from '../assets/icons/gold-ring.webp'
 
 type TClassPickerGridIcons = {
   className: ClassName
@@ -24,7 +25,6 @@ export const ClassPickerGridIcons = (
   const classIcon = useAsset(
     `classicon_${className}.webp`
   )
-  const GoldRing = useAsset('gold-ring.webp')
 
   const isTouchDevice =
     typeof window !== 'undefined' &&

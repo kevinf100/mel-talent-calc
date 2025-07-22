@@ -10,6 +10,8 @@ import {
 import { MetalBorders } from './MetalBorders'
 import { useViewport } from '../hooks/useViewport'
 import { useAsset } from '../hooks/useAsset'
+import ResetSprite from '../assets/ui/reset-button-sprite.webp'
+import RockBackground from '../assets/ui/background-rock.webp'
 
 export type TTalentTreeProps = {
   name: string
@@ -40,8 +42,6 @@ export const TalentTree = ({
   } = useViewport()
   const treeBackground = useAsset(backgroundImage)
   const treeIcon = useAsset(specIcon)
-  const ResetSprite = useAsset('ui/reset-button-sprite.webp')
-  const RockBackground = useAsset('ui/background-rock.webp')
 
   const pointsSpent = talents.reduce(
     (s, t) => s + t.points,
@@ -51,7 +51,7 @@ export const TalentTree = ({
   return (
     <MetalBorders>
       <div
-        className='w-full p-6 rounded shadow-inner snap-start touch-manipulation relative'
+        className='w-full p-6 rounded snap-start touch-manipulation relative'
         style={{
           backgroundImage: `url(${treeBackground})`,
           backgroundSize: 'cover',

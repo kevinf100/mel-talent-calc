@@ -8,6 +8,11 @@ import { Tooltip } from './Tooltip'
 import { AbilityDataSection } from './AbilityDataSection'
 import type { Talent } from '../core/types'
 import { getRequirementsText } from '../core/talentUtils'
+import FrameDefault from '../assets/ui/talent-frame-default.webp'
+import FrameDefaultOuter from '../assets/ui/talent-frame-default-outer.webp'
+import FrameGold from '../assets/ui/talent-frame-gold.webp'
+import FrameGreen from '../assets/ui/talent-frame-green.webp'
+import FrameActive from '../assets/ui/talent-frame-active.webp'
 
 type TalentNodeProps = {
   disabled: boolean
@@ -59,11 +64,6 @@ export const TalentNode = ({
   const [isHovered, setHovered] = useState(false)
   const [isPressed, setPressed] = useState(false)
   const iconUrl = useAsset(icon)
-  const FrameDefault = useAsset('ui/talent-frame-default.webp')
-  const FrameDefaultOuter = useAsset('ui/talent-frame-default-outer.webp')
-  const FrameGold = useAsset('ui/talent-frame-gold.webp')
-  const FrameGreen = useAsset('ui/talent-frame-green.webp')
-  const FrameActive = useAsset('ui/talent-frame-active.webp')
   
   const isDesktop = window.innerWidth >= 768
 

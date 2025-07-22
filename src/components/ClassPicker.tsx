@@ -6,6 +6,7 @@ import {
 } from '../core/constants'
 import { useAsset } from '../hooks/useAsset'
 import { ClassPickerGridIcons } from './ClassPickerGridIcons'
+import GoldRing from '../assets/icons/gold-ring.webp'
 
 // 🌟 Shadow helpers
 const CLASS_SHADOWS = {
@@ -36,7 +37,6 @@ export const ClassPicker = ({
   const selectedClassIcon = useAsset(
     `classicon_${selectedClass}.webp`
   )
-  const GoldRing = useAsset('gold-ring.webp')
   const SpecIcon = useAsset(primaryTree.specIcon)
 
   const isTouchDevice =

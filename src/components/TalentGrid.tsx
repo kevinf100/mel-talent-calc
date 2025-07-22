@@ -17,6 +17,7 @@ import type { ClassName } from '../core/types'
 import { CLASS_NAMES } from '../core/constants'
 import ClipboardJS from 'clipboard'
 import { useAsset } from '../hooks/useAsset'
+import ShareSprite from '../assets/ui/share-btn-sprite-small2.webp'
 
 const SELECTED_CLASS_KEY =
   'mel-talent-calc-selected-class'
@@ -134,7 +135,6 @@ export const TalentGrid = () => {
   const classCrestImage = useAsset(
     `images/${selectedClass}/classcrest_${selectedClass}.webp`
   )
-  const ShareSprite = useAsset('ui/share-btn-sprite-small2.webp')
 
   const pointsSpentPerTreeOrdered = trees.map(
     tree => pointsSpentPerTree[tree.name] || 0
