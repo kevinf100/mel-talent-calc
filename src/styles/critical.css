@@ -1,0 +1,202 @@
+@layer base {
+  html {
+    font-family: 'FrizQuadrata', serif;
+    letter-spacing: 0.33px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-shadow: 2px 2px 1px rgba(0, 0, 0);
+  }
+
+  p {
+    text-shadow: 1px 1px 0px rgba(0, 0, 0);
+    white-space: pre-line;
+  }
+}
+
+@layer components {
+  /* Utility class for gold gradient text */
+  .color-gradient {
+    background: linear-gradient(
+      to right,
+      rgb(206, 191, 132),
+      #f7e34b,
+      #ffcf21
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* CRITICAL: Parchment border styles (visible above fold) */
+  .parchment .corner,
+  .parchment .edge.top,
+  .parchment .edge.bottom {
+    background-image: url('/src/assets/ui/parchment-sprite.webp');
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+
+  .parchment .edge.left,
+  .parchment .edge.right {
+    background-image: url('/src/assets/ui/parchment-sprite-sides.webp');
+    background-repeat: repeat-y;
+    background-size: auto;
+    z-index: 1;
+  }
+
+  .parchment .background {
+    background-image: url('/src/assets/ui/parchment-sprite-bg.webp');
+    background-repeat: repeat;
+    background-clip: content-box;
+    z-index: 1;
+  }
+
+  /* Parchment corner positions */
+  .parchment .top-left {
+    background-position: 0px -878px;
+  }
+  .parchment .top-right {
+    background-position: 0px -521px;
+  }
+  .parchment .bottom-left {
+    background-position: 0px -337px;
+  }
+  .parchment .bottom-right {
+    background-position: 0px -697px;
+  }
+
+  /* Parchment edges */
+  .parchment .edge.top {
+    background-position: 0 -145px;
+    background-size: auto;
+    background-repeat: repeat-x;
+  }
+  .parchment .edge.bottom {
+    background-position: -0px 32px;
+    background-size: auto;
+    background-repeat: repeat-x;
+  }
+  .parchment .edge.left {
+    background-position: 0 0;
+  }
+  .parchment .edge.right {
+    background-position: 100% 0;
+  }
+
+  /* CRITICAL: Metal border styles (visible above fold) */
+  .mb-corner,
+  .mb-edge-top,
+  .mb-edge-bottom {
+    background-image: url('/src/assets/ui/ui-frame-diamond-metal-double.webp');
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+
+  .mb-edge-left,
+  .mb-edge-right {
+    background-image: url('/src/assets/ui/ui-frame-diamond-metal-vertical-double.webp');
+    background-repeat: repeat-y;
+    background-size: 46px auto;
+    z-index: 1;
+  }
+
+  /* Metal border positions */
+  .mb-top-left { background-position: 0 -269px; }
+  .mb-top-right { background-position: 0 -335px; }
+  .mb-bottom-left { background-position: 0 -132px; }
+  .mb-bottom-right { background-position: 0 -198px; }
+  .mb-edge-top {
+    background-position: 0 -18px;
+    background-size: 128px auto;
+    background-repeat: repeat-x;
+  }
+  .mb-edge-bottom {
+    background-position: 0 -71px;
+    background-size: 128px auto;
+    background-repeat: repeat-x;
+  }
+  .mb-edge-left { background-position: 0 0; }
+  .mb-edge-right { background-position: 100% 0; }
+
+  @media (min-width: 640px) {
+    .fade-mask {
+      -webkit-mask-image:
+        linear-gradient(
+          to left,
+          transparent 0%,
+          black 20%
+        ),
+        linear-gradient(
+          to top,
+          transparent 5%,
+          black 10%
+        ),
+        linear-gradient(
+          to bottom,
+          transparent 23.5%,
+          black 30%
+        );
+      mask-image:
+        linear-gradient(
+          to left,
+          transparent 0%,
+          black 20%
+        ),
+        linear-gradient(
+          to top,
+          transparent 5%,
+          black 10%
+        ),
+        linear-gradient(
+          to bottom,
+          transparent 23.5%,
+          black 30%
+        );
+      -webkit-mask-composite: destination-in;
+      mask-composite: intersect; /* for Firefox */
+      -webkit-mask-size: 100% 85%;
+      mask-size: 100% 85%;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+
+      @media (max-width: 1009px) {
+        -webkit-mask-image:
+          linear-gradient(
+            to left,
+            transparent 0%,
+            black 10%
+          ),
+          linear-gradient(
+            to top,
+            transparent 7%,
+            black 10%
+          ),
+          linear-gradient(
+            to bottom,
+            transparent 25%,
+            black 20%
+          );
+        mask-image:
+          linear-gradient(
+            to left,
+            transparent 0%,
+            black 20%
+          ),
+          linear-gradient(
+            to top,
+            transparent 7%,
+            black 10%
+          ),
+          linear-gradient(
+            to bottom,
+            transparent 5%,
+            black 20%
+          );
+      }
+    }
+  }
+}

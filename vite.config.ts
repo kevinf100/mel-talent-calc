@@ -16,4 +16,17 @@ export default defineConfig({
     svgr(),
     checker({ typescript: true }), // run tsc in a worker
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Separate vendor chunks for better caching
+          'react-vendor': ['react', 'react-dom'],
+          'analytics': ['@vercel/analytics', '@vercel/speed-insights'],
+        }
+      }
+    },
+    // Reduce chunk size warning limit
+    chunkSizeWarningLimit: 1000,
+  },
 })

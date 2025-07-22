@@ -13,11 +13,9 @@ export function Header() {
 
       {/* Header Banner */}
       <div
-        className="w-full h-[200px] bg-cover bg-center flex items-center justify-center"
+        className="w-full h-[200px] relative flex items-center justify-center overflow-hidden"
         style={{
-          backgroundImage: `url('${HeaderBg}')`,
           borderTop: '3px solid #fffff',
-          borderRadius: '5px',
           boxShadow: 'inset 0 0 8px rgba(0, 0, 0, 0.36), 0px 0px 20px 10px rgba(0, 0, 0, 0.36)',
           borderWidth: '1px',
           borderStyle: 'solid',
@@ -27,7 +25,16 @@ export function Header() {
           filter: 'drop-shadow(2px 4px 6px black)'
         }}
       >
-        <h1 className="text-5xl sm:text-7xl text-gold-text">
+        {/* LCP Background Image */}
+        <img 
+          src={HeaderBg} 
+          alt="" 
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          fetchPriority="high"
+          loading="eager"
+        />
+        {/* Content */}
+        <h1 className="relative z-10 text-5xl sm:text-7xl text-gold-text">
           Talent Calculator
         </h1>
       </div>

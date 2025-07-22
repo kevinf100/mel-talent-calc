@@ -1,12 +1,13 @@
-import { TalentTree } from './TalentTree'
-import { GlobalPointsSummary } from './GlobalPointsSummary'
+import { lazy, Suspense } from 'react'
+const TalentTree = lazy(() => import('./TalentTree').then(m => ({ default: m.TalentTree })))
+const GlobalPointsSummary = lazy(() => import('./GlobalPointsSummary').then(m => ({ default: m.GlobalPointsSummary })))
+const ClassPicker = lazy(() => import('./ClassPicker').then(m => ({ default: m.ClassPicker })))
 import { useTalentTrees } from '../core/useTalentTrees'
 import {
   TalentTreeScroller,
   type TalentTreeScrollerRef,
 } from './TalentTreeScroller'
 import { ParchmentBorders } from './ParchmentBorders'
-import { ClassPicker } from './ClassPicker'
 import { showCopyToast } from '../lib/showCopyToast'
 import {
   useState,
@@ -220,20 +221,22 @@ export const TalentGrid = () => {
         <TalentTreeScroller
           ref={scrollerRef}
           trees={trees.map((tree, i) => (
-            <TalentTree
-              key={tree.name}
-              name={tree.name}
-              backgroundImage={
-                tree.backgroundImage
-              }
-              specIcon={tree.specIcon}
-              talents={tree.talents}
-              pointsRemaining={pointsRemaining}
-              onClickTalent={(id, e) =>
-                modify(i, id, e)
-              }
-              onResetTree={() => resetTree(i)}
-            />
+            <Suspense key={tree.name} fallback={<div className="w-full h-[800px] flex items-center justify-center bg-gray-800 bg-opacity-50 rounded-lg"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div></div>}>
+              <TalentTree
+                key={tree.name}
+                name={tree.name}
+                backgroundImage={
+                  tree.backgroundImage
+                }
+                specIcon={tree.specIcon}
+                talents={tree.talents}
+                pointsRemaining={pointsRemaining}
+                onClickTalent={(id, e) =>
+                  modify(i, id, e)
+                }
+                onResetTree={() => resetTree(i)}
+              />
+            </Suspense>
           ))}
         />
       </div>
