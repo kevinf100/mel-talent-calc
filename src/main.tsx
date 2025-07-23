@@ -20,3 +20,9 @@ createRoot(
     </Suspense>
   </StrictMode>
 )
+
+// Mark React as loaded to hide critical elements and show React versions
+// Increased delay to reduce flickering during initial load
+setTimeout(() => {
+  document.documentElement.classList.add('react-loaded')
+}, 200)

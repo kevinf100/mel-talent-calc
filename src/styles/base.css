@@ -2,8 +2,15 @@
 
 @theme {
   --color-gold-text: rgb(255, 215, 0);
-  --breakpoint-xl: 2400px;
   --color-green-400: oklch(0.78 0.32 147.09);
+  
+  /* Standard Tailwind breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 2400px;
 }
 
 @font-face {
@@ -15,7 +22,7 @@
       format('woff');
   font-weight: normal;
   font-style: italic;
-  font-display: optional;
+  font-display: fallback;
 }
 
 @font-face {
@@ -37,9 +44,9 @@
       format('woff2'),
     url('/fonts/FrizQuadrataStd.woff')
       format('woff');
-  font-weight: 500;
+  font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: fallback;
 }
 
 @font-face {
@@ -51,6 +58,6 @@
       format('woff');
   font-weight: bold;
   font-style: italic;
-  font-display: optional;
+  font-display: swap;
 }
 

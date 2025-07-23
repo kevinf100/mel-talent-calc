@@ -3,6 +3,7 @@ import {
   forwardRef,
   useRef,
   useEffect,
+  useState,
 } from 'react'
 
 export type TTalentTreeScrollerProps = {
@@ -20,6 +21,18 @@ export const TalentTreeScroller = forwardRef<
   const scrollContainerRef =
     useRef<HTMLDivElement>(null)
   const isManualScrollRef = useRef(false)
+  const [isVisible, setIsVisible] = useState(false)
+
+  // Add fade-in effect when trees are loaded
+  useEffect(() => {
+    if (trees.length > 0) {
+      // Small delay to ensure DOM is ready, then fade in
+      const timer = setTimeout(() => {
+        setIsVisible(true)
+      }, 50)
+      return () => clearTimeout(timer)
+    }
+  }, [trees.length])
 
   useImperativeHandle(ref, () => ({
     scrollToFirst: () => {
@@ -167,7 +180,9 @@ export const TalentTreeScroller = forwardRef<
   return (
     <div
       ref={scrollContainerRef}
-      className='w-full overflow-x-auto snap-x snap-mandatory scroll-smooth relative'
+      className={`w-full overflow-x-auto snap-x snap-mandatory scroll-smooth relative transition-opacity duration-300 ${
+        isVisible ? 'opacity-100' : 'opacity-0'
+      }`}
       style={{
         scrollPaddingLeft: '0px',
         scrollSnapAlign: 'start',

@@ -12,10 +12,10 @@ import { createPortal } from 'react-dom'
 import { MetalBordersSmall } from './MetalBordersSmall'
 import { useViewport } from '../hooks/useViewport'
 import { optimizeTooltipWidth } from '../utils/tooltipOptimization'
-import ButtonIncrement from '../assets/ui/red-button-increment.webp'
-import ButtonDecrement from '../assets/ui/red-button-decrement.webp'
-import ButtonIncrementGrey from '../assets/ui/red-button-increment-disabled2.webp'
-import ButtonDecrementGrey from '../assets/ui/red-button-decrement-disabled2.webp'
+import ButtonIncrement from '../assets/ui/red-button-increment.webp?w=250&h=156&imagetools'
+import ButtonDecrement from '../assets/ui/red-button-decrement.webp?w=250&h=156&imagetools'
+import ButtonIncrementGrey from '../assets/ui/red-button-increment-disabled2.webp?w=250&h=78&imagetools'
+import ButtonDecrementGrey from '../assets/ui/red-button-decrement-disabled2.webp?w=250&h=78&imagetools'
 
 type TooltipProps = {
   children: ReactNode
@@ -97,8 +97,8 @@ export const Tooltip = ({
   ) => ({
     backgroundImage: `url(${active ? activeSprite : disabledSprite})`,
     backgroundSize: active
-      ? '125px 90px'
-      : '125px 46px',
+      ? '125px 78px'
+      : '125px 39px',
     backgroundPosition: active
       ? '0px 0px'
       : 'center',
@@ -132,7 +132,7 @@ export const Tooltip = ({
                     onDecrement?.()
                   }}
                   disabled={!canDecrement}
-                  className='w-[125px] h-[45px] bg-no-repeat'
+                  className='w-[125px] h-[39px] bg-no-repeat'
                   style={createButtonStyle(
                     canDecrement,
                     ButtonDecrement,
@@ -141,7 +141,7 @@ export const Tooltip = ({
                   onPointerDown={e => {
                     if (canDecrement)
                       e.currentTarget.style.backgroundPosition =
-                        '0px -46px'
+                        '0px -39px'
                   }}
                   onPointerUp={e => {
                     if (canDecrement)
@@ -162,7 +162,7 @@ export const Tooltip = ({
                     onIncrement?.()
                   }}
                   disabled={!canIncrement}
-                  className='w-[125px] h-[45px] bg-no-repeat'
+                  className='w-[125px] h-[39px] bg-no-repeat'
                   style={createButtonStyle(
                     canIncrement,
                     ButtonIncrement,
@@ -171,7 +171,7 @@ export const Tooltip = ({
                   onPointerDown={e => {
                     if (canIncrement)
                       e.currentTarget.style.backgroundPosition =
-                        '0px -46px'
+                        '0px -39px'
                   }}
                   onPointerUp={e => {
                     if (canIncrement)

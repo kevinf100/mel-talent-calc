@@ -8,11 +8,11 @@ import { Tooltip } from './Tooltip'
 import { AbilityDataSection } from './AbilityDataSection'
 import type { Talent } from '../core/types'
 import { getRequirementsText } from '../core/talentUtils'
-import FrameDefault from '../assets/ui/talent-frame-default.webp'
-import FrameDefaultOuter from '../assets/ui/talent-frame-default-outer.webp'
-import FrameGold from '../assets/ui/talent-frame-gold.webp'
-import FrameGreen from '../assets/ui/talent-frame-green.webp'
-import FrameActive from '../assets/ui/talent-frame-active.webp'
+import FrameDefault from '../assets/ui/talent-frame-default.webp?w=56&h=56&imagetools'
+import FrameDefaultOuter from '../assets/ui/talent-frame-default-outer.webp?w=56&h=56&imagetools'
+import FrameGold from '../assets/ui/talent-frame-gold.webp?w=56&h=56&imagetools'
+import FrameGreen from '../assets/ui/talent-frame-green.webp?w=56&h=56&imagetools'
+import FrameActive from '../assets/ui/talent-frame-active.webp?w=56&h=56&imagetools'
 
 type TalentNodeProps = {
   disabled: boolean

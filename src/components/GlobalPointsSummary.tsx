@@ -1,4 +1,4 @@
-import ResetSprite from '../assets/ui/reset-all-button-sprite-small.webp'
+import ResetSprite from '../assets/ui/reset-all-button-sprite-small.webp?w=201&h=132&imagetools'
 
 export const GlobalPointsSummary = ({
   totalTalentPoints,
@@ -38,8 +38,8 @@ export const GlobalPointsSummary = ({
                 window.innerWidth >= 640
               e.currentTarget.style.backgroundPosition =
                 isDesktop
-                  ? '0px -48.75px'
-                  : '0px -38.75px'
+                  ? '0px -49px'
+                  : '0px -39px'
             }}
             onPointerUp={e => {
               e.currentTarget.style.backgroundPosition =
@@ -79,8 +79,8 @@ export const GlobalPointsSummary = ({
               window.innerWidth >= 640
             e.currentTarget.style.backgroundPosition =
               isDesktop
-                ? '0px -48.75px'
-                : '0px -38.75px'
+                ? '0px -49px'
+                : '0px -39px'
           }}
           onPointerUp={e => {
             e.currentTarget.style.backgroundPosition =

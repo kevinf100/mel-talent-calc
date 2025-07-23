@@ -10,8 +10,8 @@ import {
 import { MetalBorders } from './MetalBorders'
 import { useViewport } from '../hooks/useViewport'
 import { useAsset } from '../hooks/useAsset'
-import ResetSprite from '../assets/ui/reset-button-sprite.webp'
-import RockBackground from '../assets/ui/background-rock.webp'
+import ResetSprite from '../assets/ui/reset-button-sprite.webp?w=65&h=121&imagetools'
+import RockBackground from '../assets/ui/background-rock.webp?w=400&h=100&imagetools'
 
 export type TTalentTreeProps = {
   name: string
@@ -71,8 +71,8 @@ export const TalentTree = ({
             backgroundImage: `url(${RockBackground})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            borderBottom: '5px double #00000059',
+            backgroundRepeat: 'repeat',
+            borderBottom: '5px double #00000065',
           }}
         >
           <div className='w-full flex items-center justify-between'>
@@ -102,7 +102,7 @@ export const TalentTree = ({
             <button
               onClick={onResetTree}
               aria-label='Reset Tree'
-              className='z-1 w-[39px] h-[38px] bg-no-repeat bg-[length:39px_75.5px] self-start'
+              className='z-1 w-[39px] h-[38px] bg-no-repeat bg-[length:39px_76px] self-start'
               style={{
                 backgroundImage: `url(${ResetSprite})`,
                 backgroundPosition: '0px 0px',

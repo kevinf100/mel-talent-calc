@@ -1,12 +1,12 @@
 import { lazy, Suspense } from 'react'
+// Critical components for LCP - keep these eager
 const TalentTree = lazy(() => import('./TalentTree').then(m => ({ default: m.TalentTree })))
 const GlobalPointsSummary = lazy(() => import('./GlobalPointsSummary').then(m => ({ default: m.GlobalPointsSummary })))
 const ClassPicker = lazy(() => import('./ClassPicker').then(m => ({ default: m.ClassPicker })))
+// Lazy load the talent tree scroller since it's below the fold
+const TalentTreeScroller = lazy(() => import('./TalentTreeScroller').then(m => ({ default: m.TalentTreeScroller })))
 import { useTalentTrees } from '../core/useTalentTrees'
-import {
-  TalentTreeScroller,
-  type TalentTreeScrollerRef,
-} from './TalentTreeScroller'
+import type { TalentTreeScrollerRef } from './TalentTreeScroller'
 import { ParchmentBorders } from './ParchmentBorders'
 import { showCopyToast } from '../lib/showCopyToast'
 import {
@@ -18,7 +18,7 @@ import type { ClassName } from '../core/types'
 import { CLASS_NAMES } from '../core/constants'
 import ClipboardJS from 'clipboard'
 import { useAsset } from '../hooks/useAsset'
-import ShareSprite from '../assets/ui/share-btn-sprite-small2.webp'
+import ShareSprite from '../assets/ui/share-btn-sprite-small2.webp?w=616&h=592&imagetools'
 
 const SELECTED_CLASS_KEY =
   'mel-talent-calc-selected-class'
@@ -120,6 +120,7 @@ export const TalentGrid = () => {
 
   const {
     trees,
+    error,
     modify,
     resetTree,
     resetAll,
@@ -133,46 +134,66 @@ export const TalentGrid = () => {
     selectedClass,
     setSelectedClass,
   })
-  const classCrestImage = useAsset(
-    `images/${selectedClass}/classcrest_${selectedClass}.webp`
-  )
+  // Use simple asset loading for class crest
+  const classCrest = useAsset(`images/${selectedClass}/classcrest_${selectedClass}.webp`)
 
   const pointsSpentPerTreeOrdered = trees.map(
     tree => pointsSpentPerTree[tree.name] || 0
   )
 
+
+  // Show error state if there's an error
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className='max-w-[85rem] w-full m-auto px-4'>
+          <div className="w-full flex items-center justify-center bg-red-900 bg-opacity-30 rounded-lg py-16">
+            <div className="text-center p-8">
+              <p className="text-red-400 text-lg mb-4">Failed to load talent data</p>
+              <p className="text-red-300 text-sm mb-4">{error}</p>
+              <button 
+                onClick={() => window.location.reload()} 
+                className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded transition-colors"
+              >
+                Retry
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  // Show full app when everything is ready
   return (
     <div>
       <div className='max-w-[85rem] m-auto'>
         <div className='flex flex-col w-full gap-4'>
           <ParchmentBorders>
-            {/* 🛡️ Class Crest Image */}
-            {classCrestImage && (
-              <img
-                src={classCrestImage}
-                alt={`${selectedClass} crest`}
+            {/* Class Crest */}
+            {classCrest && (
+              <div 
                 className='absolute right-0 top-0 z-0 sm:opacity-50 opacity-40 pointer-events-none fade-mask 
-              sm:top-[-100px] top-[5%] max-md:left-[140px] 
-              [@media(max-width:420px)]:top-[52%]
-              [@media(max-width:420px)]:left-[100px]
-              [@media(max-width:1009px)]:top-[0]'
+                w-[150px] h-[150px] sm:w-[250px] sm:h-[250px]'
+                style={{
+                  backgroundImage: `url(${classCrest})`,
+                  backgroundSize: 'contain',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}
+                role="img"
+                aria-label={`${selectedClass} crest`}
               />
             )}
             <div className='flex flex-col w-full gap-6'>
               {/* 🎭 Class Picker in first row */}
               <ClassPicker
-              primaryTree={primaryTree}
-                pointsSpentPerTree={
-                  pointsSpentPerTreeOrdered
-                }
+                primaryTree={primaryTree}
+                pointsSpentPerTree={pointsSpentPerTreeOrdered}
                 selectedClass={selectedClass}
-                setSelectedClass={
-                  setSelectedClass
-                }
+                setSelectedClass={setSelectedClass}
               />
-              <div
-                className='flex justify-center sm:justify-end gap-4 z-1 items-end'
-              >
+              <div className='flex justify-center sm:justify-end gap-4 z-1 items-end'>
                 {/* Share Button */}
                 <button
                   ref={shareBtnRef}
@@ -183,33 +204,27 @@ export const TalentGrid = () => {
                     backgroundPosition: '0px 0px',
                   }}
                   onMouseOver={e => {
-                    const isDesktop =
-                      window.innerWidth >= 640
+                    const isDesktop = window.innerWidth >= 640
                     if (isDesktop)
-                      e.currentTarget.style.backgroundPosition =
-                        '0px -197px'
+                      e.currentTarget.style.backgroundPosition = '0px -197px'
                   }}
                   onPointerDown={e => {
-                    const isDesktop =
-                      window.innerWidth >= 640
+                    const isDesktop = window.innerWidth >= 640
                     e.currentTarget.style.backgroundPosition =
-                      isDesktop
-                        ? '-1px -99.5px'
-                        : '-1px -100px'
+                      isDesktop ? '-1px -99.5px' : '-1px -100px'
                   }}
                   onPointerUp={e => {
-                    e.currentTarget.style.backgroundPosition =
-                      '0px -197px'
+                    e.currentTarget.style.backgroundPosition = '0px -197px'
                   }}
                   onPointerLeave={e => {
-                    e.currentTarget.style.backgroundPosition =
-                      '0px 0px'
+                    e.currentTarget.style.backgroundPosition = '0px 0px'
                   }}
                 />
               </div>
             </div>
           </ParchmentBorders>
         </div>
+        
         <GlobalPointsSummary
           totalTalentPoints={totalTalentPoints}
           totalPointsSpent={totalPointsSpent}
@@ -218,27 +233,23 @@ export const TalentGrid = () => {
           onResetAll={resetAll}
         />
 
-        <TalentTreeScroller
-          ref={scrollerRef}
-          trees={trees.map((tree, i) => (
-            <Suspense key={tree.name} fallback={<div className="w-full h-[800px] flex items-center justify-center bg-gray-800 bg-opacity-50 rounded-lg"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div></div>}>
+        <Suspense fallback={null}>
+          <TalentTreeScroller
+            ref={scrollerRef}
+            trees={trees.map((tree, i) => (
               <TalentTree
                 key={tree.name}
                 name={tree.name}
-                backgroundImage={
-                  tree.backgroundImage
-                }
+                backgroundImage={tree.backgroundImage}
                 specIcon={tree.specIcon}
                 talents={tree.talents}
                 pointsRemaining={pointsRemaining}
-                onClickTalent={(id, e) =>
-                  modify(i, id, e)
-                }
+                onClickTalent={(id, e) => modify(i, id, e)}
                 onResetTree={() => resetTree(i)}
               />
-            </Suspense>
-          ))}
-        />
+            ))}
+          />
+        </Suspense>
       </div>
     </div>
   )

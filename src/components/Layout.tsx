@@ -15,9 +15,9 @@ export const Layout = ({
   sidebar,
 }: TLayoutProps) => {
   return (
-    <div className='bg-[#13191b]'>
+    <div className='bg-[#13191b] no-flicker'>
       <div
-        className='min-h-screen flex flex-col overflow-x-hidden sm:max-w-screen-xl sm:mx-auto w-full'
+        className='min-h-screen flex flex-col overflow-x-hidden sm:max-w-screen-3xl sm:mx-auto w-full smooth-mount'
         style={{
           boxShadow:
             'rgba(11, 6, 4, 0.8) 0px 0px 50px, rgba(11, 6, 4, 0.6) 0px 0px 100px, rgba(11, 6, 4, 0.3) 0px 0px 500px',

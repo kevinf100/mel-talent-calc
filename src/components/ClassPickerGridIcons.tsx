@@ -1,6 +1,6 @@
 import { type ClassName } from '../core/types'
 import { useAsset } from '../hooks/useAsset'
-import GoldRing from '../assets/icons/gold-ring.webp'
+import GoldRing from '../assets/icons/gold-ring.webp?w=90&h=90&imagetools'
 
 type TClassPickerGridIcons = {
   className: ClassName

@@ -1,11 +1,11 @@
-import { useState, useMemo, useEffect, useRef } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import type { ClassName, Tree } from './types'
 import {
   canIncrementTalent,
   canSafelyDecrementTalent,
   isTalentLocked
 } from './talentUtils'
-import { talentData } from './data/talentData'
+import { loadTalentData } from './data/talentLoader'
 import {
   decodeTalentBuild,
   encodeTalentBuild
@@ -24,40 +24,53 @@ export const useTalentTrees = ({
   setSelectedClass,
   totalTalentPoints = 61
 }: UseTalentTreesProps) => {
-  const [trees, setTrees] = useState<Tree[]>(() => {
-    const params = new URLSearchParams(window.location.search)
-    const encoded = params.get('data')
+  const [trees, setTrees] = useState<Tree[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
-    if (!encoded) {
-      return JSON.parse(JSON.stringify(talentData[selectedClass]))
-    }
-
-    const decoded = decodeTalentBuild(encoded)
-    const rebuilt = JSON.parse(JSON.stringify(talentData[selectedClass]))
-
-    decoded.forEach(([globalIdx, pts]) => {
-      let remaining = globalIdx
-      for (const tree of rebuilt) {
-        if (remaining < tree.talents.length) {
-          tree.talents[remaining].points = pts
-          break
-        }
-        remaining -= tree.talents.length
-      }
-    })
-
-    return rebuilt
-  })
-
-  const prevClassRef = useRef<ClassName | null>(null)
-
+  // Load talent data when component mounts or class changes
   useEffect(() => {
-    if (prevClassRef.current !== null && prevClassRef.current !== selectedClass) {
-      const defaultTrees = JSON.parse(JSON.stringify(talentData[selectedClass]))
-      setTrees(defaultTrees)
-      updateURL(defaultTrees, selectedClass)
+    const loadData = async () => {
+      try {
+        setIsLoading(true)
+        setError(null)
+        
+        const talentData = await loadTalentData(selectedClass)
+        
+        // Handle URL decoding if present
+        const params = new URLSearchParams(window.location.search)
+        const encoded = params.get('data')
+        
+        let initialTrees: Tree[]
+        
+        if (!encoded) {
+          initialTrees = JSON.parse(JSON.stringify(talentData))
+        } else {
+          const decoded = decodeTalentBuild(encoded)
+          initialTrees = JSON.parse(JSON.stringify(talentData))
+          
+          decoded.forEach(([globalIdx, pts]) => {
+            let remaining = globalIdx
+            for (const tree of initialTrees) {
+              if (remaining < tree.talents.length) {
+                tree.talents[remaining].points = pts
+                break
+              }
+              remaining -= tree.talents.length
+            }
+          })
+        }
+        
+        setTrees(initialTrees)
+        updateURL(initialTrees, selectedClass)
+      } catch (err) {
+        setError(`Failed to load talent data: ${err instanceof Error ? err.message : String(err)}`)
+      } finally {
+        setIsLoading(false)
+      }
     }
-    prevClassRef.current = selectedClass
+    
+    loadData()
   }, [selectedClass])
 
   const totalPointsSpent = useMemo(() => {
@@ -156,10 +169,15 @@ export const useTalentTrees = ({
     })
   }
 
-  const resetAll = () => {
-    const reset = JSON.parse(JSON.stringify(talentData[selectedClass]))
-    setTrees(reset)
-    updateURL(reset, selectedClass)
+  const resetAll = async () => {
+    try {
+      const talentData = await loadTalentData(selectedClass)
+      const reset = JSON.parse(JSON.stringify(talentData))
+      setTrees(reset)
+      updateURL(reset, selectedClass)
+    } catch (err) {
+      setError(`Failed to reset: ${err instanceof Error ? err.message : String(err)}`)
+    }
   }
 
   const modify = (
@@ -195,6 +213,8 @@ export const useTalentTrees = ({
 
   return {
     trees,
+    isLoading,
+    error,
     currentLevel,
     totalPointsSpent,
     totalTalentPoints,
