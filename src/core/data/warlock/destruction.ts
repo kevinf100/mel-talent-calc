@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/warlock/background-warlock-destruction.webp?format=avif&quality=80&imagetools'
 
 export const destruction: Tree = {
   specIcon: 'spell_shadow_rainoffire.webp',
   name: 'Destruction',
-  backgroundImage:
-    'src/assets/images/warlock/background-warlock-destruction.webp',
+  backgroundImage,
   talents: [
     {
       id: 'spell_shadow_shadowbolt',

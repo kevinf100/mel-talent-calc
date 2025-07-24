@@ -5,8 +5,8 @@ import HeaderBgMobile from '../assets/images/header-bg.webp?w=800&h=400&quality=
 import HeaderBgTablet from '../assets/images/header-bg.webp?w=1400&h=350&quality=88&format=webp&imagetools'
 import HeaderBgDesktop from '../assets/images/header-bg.webp?w=2000&h=400&quality=90&format=webp&imagetools'
 import HeaderBgBlur from '../assets/images/header-bg.webp?w=40&h=20&blur=5&quality=30&format=webp&imagetools'
-import EpochLogoMobile from '../assets/images/full-logo.webp?w=370&h=96&imagetools'
-import EpochLogoDesktop from '../assets/images/full-logo.webp?w=185&h=48&imagetools'
+import EpochLogoMobile from '../assets/images/full-logo.webp?w=370&h=96&quality=70&imagetools'
+import EpochLogoDesktop from '../assets/images/full-logo.webp?w=185&h=48&quality=70&imagetools'
 
 export function Header() {
   const [imageLoaded, setImageLoaded] = useState(false)

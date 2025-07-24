@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/mage/background-mage-fire.webp?format=avif&quality=80&imagetools'
 
 export const fire: Tree = {
   specIcon: 'spell_fire_flamebolt.webp',
   name: 'Fire',
-  backgroundImage:
-    'src/assets/images/mage/background-mage-fire.webp',
+  backgroundImage,
   talents: [
     {
       id: 'improved_fireball',

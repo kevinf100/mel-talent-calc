@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/hunter/background-hunter-marksmanship.webp?format=avif&quality=80&imagetools'
 
 export const marksmanship: Tree = {
   specIcon: 'ability_marksmanship.webp',
   name: 'Marksmanship',
-  backgroundImage:
-    'src/assets/images/hunter/background-hunter-marksmanship.webp',
+  backgroundImage,
   talents: [
     {
       id: 'spell_frost_stun',

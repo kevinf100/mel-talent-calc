@@ -9,13 +9,13 @@ interface OptimizedImageOptions {
   
   /**
    * Mobile image options (width, quality, etc.)
-   * @default 'w=400&q=80&imagetools'
+   * @default 'format=avif&quality=70&w=400&imagetools'
    */
   mobileQuery?: string
   
   /**
    * Desktop image options (width, quality, etc.)
-   * @default 'w=800&q=80&imagetools'
+   * @default 'format=avif&quality=70&w=800&imagetools'
    */
   desktopQuery?: string
   
@@ -85,8 +85,8 @@ interface OptimizedImageResult {
  */
 export const useOptimizedImage = ({
   imagePath,
-  mobileQuery = 'w=400&q=80&imagetools',
-  desktopQuery = 'w=800&q=80&imagetools',
+  mobileQuery = 'format=avif&quality=70&w=400&imagetools',
+  desktopQuery = 'format=avif&quality=70&w=800&imagetools',
   mobileBreakpoint = 768,
   fallbackBackground,
   fallbackOpacity = 0.7

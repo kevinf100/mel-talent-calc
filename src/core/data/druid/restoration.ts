@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/druid/background-druid-restoration.webp?format=avif&quality=80&imagetools'
 
 export const restoration: Tree = {
   specIcon: 'spell_nature_healingtouch.webp',
   name: 'Restoration',
-  backgroundImage:
-    'src/assets/images/druid/background-druid-restoration.webp',
+  backgroundImage,
   talents: [
     {
       id: 'spell_nature_regeneration',

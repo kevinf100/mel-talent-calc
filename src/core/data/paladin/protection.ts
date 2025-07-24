@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/paladin/background-paladin-protection.webp?format=avif&quality=80&imagetools'
 
 export const protection: Tree = {
   specIcon: 'spell_holy_devotionaura.webp',
   name: 'Protection',
-  backgroundImage:
-    'src/assets/images/paladin/background-paladin-protection.webp',
+  backgroundImage,
   talents: [
     {
       id: 'spell_holy_devotionaura',

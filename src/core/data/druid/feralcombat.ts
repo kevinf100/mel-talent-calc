@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/druid/background-druid-feral.webp?format=avif&quality=80&imagetools'
 
 export const feralcombat: Tree = {
   specIcon: 'ability_racial_bearform.webp',
-  name: 'Feral',
-  backgroundImage:
-    'src/assets/images/druid/background-druid-feral.webp',
+  name: 'Feral Combat',
+  backgroundImage,
   talents: [
     {
       id: 'ability_hunter_pet_hyena',

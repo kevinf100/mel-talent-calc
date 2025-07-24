@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/rogue/background-rogue-combat.webp?format=avif&quality=80&imagetools'
 
 export const combat: Tree = {
   specIcon: 'ability_backstab.webp',
   name: 'Combat',
-  backgroundImage:
-    'src/assets/images/rogue/background-rogue-combat.webp',
+  backgroundImage,
   talents: [
     {
       id: 'ability_gouge',

@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/priest/background-priest-discipline.webp?format=avif&quality=80&imagetools'
 
 export const discipline: Tree = {
   specIcon: 'spell_holy_wordfortitude.webp',
   name: 'Discipline',
-  backgroundImage:
-    'src/assets/images/priest/background-priest-discipline.webp',
+  backgroundImage,
   talents: [
     {
       id: 'spell_magic_magearmor',

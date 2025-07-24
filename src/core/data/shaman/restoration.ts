@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/shaman/background-shaman-restoration.webp?format=avif&quality=80&imagetools'
 
 export const restoration: Tree = {
   specIcon: 'spell_nature_magicimmunity.webp',
   name: 'Restoration',
-  backgroundImage:
-    'src/assets/images/shaman/background-shaman-restoration.webp',
+  backgroundImage,
   talents: [
     {
       id: 'spell_nature_magicimmunity',

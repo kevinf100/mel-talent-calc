@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/priest/background-priest-shadow.webp?format=avif&quality=80&imagetools'
 
 export const shadow: Tree = {
   specIcon: 'spell_shadow_shadowwordpain.webp',
   name: 'Shadow',
-  backgroundImage:
-    'src/assets/images/priest/background-priest-shadow.webp',
+  backgroundImage,
   talents: [
     {
       id: 'spell_shadow_requiem',

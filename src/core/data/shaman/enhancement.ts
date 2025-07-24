@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/shaman/background-shaman-enhancement.webp?format=avif&quality=80&imagetools'
 
 export const enhancement: Tree = {
   specIcon: 'spell_nature_lightningshield.webp',
   name: 'Enhancement',
-  backgroundImage:
-    'src/assets/images/shaman/background-shaman-enhancement.webp',
+  backgroundImage,
   talents: [
     {
       id: 'spell_shadow_grimward',

@@ -17,7 +17,7 @@ import {
 import type { ClassName } from '../core/types'
 import { CLASS_NAMES } from '../core/constants'
 import ClipboardJS from 'clipboard'
-import { useAsset } from '../hooks/useAsset'
+import { useClassCrest } from '../hooks/useClassCrest'
 import ShareSprite from '../assets/ui/share-btn-sprite-small2.webp?w=616&h=592&imagetools'
 
 const SELECTED_CLASS_KEY =
@@ -134,8 +134,8 @@ export const TalentGrid = () => {
     selectedClass,
     setSelectedClass,
   })
-  // Use simple asset loading for class crest
-  const classCrest = useAsset(`images/${selectedClass}/classcrest_${selectedClass}.webp`)
+  // Use optimized AVIF class crest
+  const classCrest = useClassCrest(selectedClass)
 
   const pointsSpentPerTreeOrdered = trees.map(
     tree => pointsSpentPerTree[tree.name] || 0

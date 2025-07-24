@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/warrior/background-warrior-fury.webp?format=avif&quality=80&imagetools'
 
 export const fury: Tree = {
-  name: 'Fury',
-  backgroundImage:
-    'src/assets/images/warrior/background-warrior-fury.webp',
   specIcon: 'ability_warrior_innerrage.webp',
+  name: 'Fury',
+  backgroundImage,
   talents: [
     {
       row: 0,

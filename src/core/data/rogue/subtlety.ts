@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/rogue/background-rogue-subtlety.webp?format=avif&quality=80&imagetools'
 
 export const subtlety: Tree = {
   specIcon: 'ability_stealth.webp',
   name: 'Subtlety',
-  backgroundImage:
-    'src/assets/images/rogue/background-rogue-subtlety.webp',
+  backgroundImage,
   talents: [
     {
       id: 'spell_shadow_charm',

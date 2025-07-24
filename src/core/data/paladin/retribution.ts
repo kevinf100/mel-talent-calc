@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/paladin/background-paladin-retribution.webp?format=avif&quality=80&imagetools'
 
 export const retribution: Tree = {
   specIcon: 'spell_holy_auraoflight.webp',
   name: 'Retribution',
-  backgroundImage:
-    'src/assets/images/paladin/background-paladin-retribution.webp',
+  backgroundImage,
   talents: [
     {
       id: 'spell_holy_fistofjustice',

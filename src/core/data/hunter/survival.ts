@@ -1,11 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/hunter/background-hunter-survival.webp?format=avif&quality=80&imagetools'
 
 export const survival: Tree = {
-  specIcon:
-    'ability_hunter_swiftstrike.webp',
+  specIcon: 'ability_hunter_swiftstrike.webp',
   name: 'Survival',
-  backgroundImage:
-    'src/assets/images/hunter/background-hunter-survival.webp',
+  backgroundImage,
   talents: [
     {
       id: 'inv_misc_head_dragon_black',

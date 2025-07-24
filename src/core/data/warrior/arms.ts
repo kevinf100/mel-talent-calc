@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/warrior/background-warrior-arms.webp?format=avif&quality=80&imagetools'
 
 export const arms: Tree = {
-  name: 'Arms',
-  backgroundImage:
-    'src/assets/images/warrior/background-warrior-arms.webp',
   specIcon: 'ability_warrior_savageblow.webp',
+  name: 'Arms',
+  backgroundImage,
   talents: [
     {
       id: 'ability_rogue_ambush',

@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/shaman/background-shaman-elemental.webp?format=avif&quality=80&imagetools'
 
 export const elemental: Tree = {
   specIcon: 'spell_nature_lightning.webp',
   name: 'Elemental',
-  backgroundImage:
-    'src/assets/images/shaman/background-shaman-elemental.webp',
+  backgroundImage,
   talents: [
     {
       id: 'spell_nature_wispsplode',

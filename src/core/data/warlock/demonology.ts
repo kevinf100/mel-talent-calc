@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/warlock/background-warlock-demonology.webp?format=avif&quality=80&imagetools'
 
 export const demonology: Tree = {
   specIcon: 'spell_shadow_metamorphosis.webp',
   name: 'Demonology',
-  backgroundImage:
-    'src/assets/images/warlock/background-warlock-demonology.webp',
+  backgroundImage,
   talents: [
     {
       id: 'inv_stone_04',

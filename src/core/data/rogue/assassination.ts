@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/rogue/background-rogue-assassination.webp?format=avif&quality=80&imagetools'
 
 export const assassination: Tree = {
   specIcon: 'ability_rogue_eviscerate.webp',
   name: 'Assassination',
-  backgroundImage:
-    'src/assets/images/rogue/background-rogue-assassination.webp',
+  backgroundImage,
   talents: [
     {
       id: 'ability_rogue_eviscerate',

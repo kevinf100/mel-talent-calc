@@ -40,7 +40,8 @@ export const TalentTree = ({
     windowWidth,
     containerWidth,
   } = useViewport()
-  const treeBackground = useAsset(backgroundImage)
+  // Use backgroundImage directly since it's now an imported AVIF asset
+  const treeBackground = backgroundImage
   const treeIcon = useAsset(specIcon)
 
   const pointsSpent = talents.reduce(

@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/mage/background-mage-frost.webp?format=avif&quality=80&imagetools'
 
 export const frost: Tree = {
   specIcon: 'spell_frost_frostbolt02.webp',
   name: 'Frost',
-  backgroundImage:
-    'src/assets/images/mage/background-mage-frost.webp',
+  backgroundImage,
   talents: [
     {
       id: 'spell_frost_frostward',

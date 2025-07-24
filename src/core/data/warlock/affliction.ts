@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/warlock/background-warlock-affliction.webp?format=avif&quality=80&imagetools'
 
 export const affliction: Tree = {
   specIcon: 'spell_shadow_deathcoil.webp',
   name: 'Affliction',
-  backgroundImage:
-    'src/assets/images/warlock/background-warlock-affliction.webp',
+  backgroundImage,
   talents: [
     {
       id: 'spell_shadow_unsummonbuilding',

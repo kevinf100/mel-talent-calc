@@ -40,10 +40,12 @@ export const useTalentTrees = ({
         // Handle URL decoding if present
         const params = new URLSearchParams(window.location.search)
         const encoded = params.get('data')
+        const classInURL = params.get('class')
         
         let initialTrees: Tree[]
         
-        if (!encoded) {
+        // Only apply encoded data if the class in URL matches the selected class
+        if (!encoded || classInURL !== selectedClass) {
           initialTrees = JSON.parse(JSON.stringify(talentData))
         } else {
           const decoded = decodeTalentBuild(encoded)

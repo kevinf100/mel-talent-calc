@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/druid/background-druid-balance.webp?format=avif&quality=80&imagetools'
 
 export const balance: Tree = {
   specIcon: 'spell_nature_starfall.webp',
   name: 'Balance',
-  backgroundImage:
-    'src/assets/images/druid/background-druid-balance.webp',
+  backgroundImage,
   talents: [
     {
       id: 'spell_nature_abolishmagic',

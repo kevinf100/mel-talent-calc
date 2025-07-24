@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/hunter/background-hunter-beastmastery.webp?format=avif&quality=80&imagetools'
 
 export const beastmastery: Tree = {
   specIcon: 'ability_hunter_beasttaming.webp',
   name: 'Beast Mastery',
-  backgroundImage:
-    'src/assets/images/hunter/background-hunter-beastmastery.webp',
+  backgroundImage,
   talents: [
     {
       id: 'spell_nature_ravenform',

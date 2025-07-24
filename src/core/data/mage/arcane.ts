@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/mage/background-mage-arcane.webp?format=avif&quality=80&imagetools'
 
 export const arcane: Tree = {
   specIcon: 'spell_holy_magicalsentry.webp',
   name: 'Arcane',
-  backgroundImage:
-    'src/assets/images/mage/background-mage-arcane.webp',
+  backgroundImage,
   talents: [
     {
       id: 'spell_holy_dispelmagic',

@@ -1,10 +1,10 @@
 import type { Tree } from '../../types'
+import backgroundImage from '../../../assets/images/paladin/background-paladin-holy.webp?format=avif&quality=80&imagetools'
 
 export const holy: Tree = {
   specIcon: 'spell_holy_holybolt.webp',
   name: 'Holy',
-  backgroundImage:
-    'src/assets/images/paladin/background-paladin-holy.webp',
+  backgroundImage,
   talents: [
     {
       id: 'ability_golemthunderclap',
