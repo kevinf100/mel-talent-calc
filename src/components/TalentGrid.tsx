@@ -134,7 +134,7 @@ export const TalentGrid = () => {
     selectedClass,
     setSelectedClass,
   })
-  // Use optimized AVIF class crest
+  // Use optimized AVIF class crest  
   const classCrest = useClassCrest(selectedClass)
 
   const pointsSpentPerTreeOrdered = trees.map(

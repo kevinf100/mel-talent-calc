@@ -25,14 +25,12 @@ export const useTalentTrees = ({
   totalTalentPoints = 61
 }: UseTalentTreesProps) => {
   const [trees, setTrees] = useState<Tree[]>([])
-  const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
   // Load talent data when component mounts or class changes
   useEffect(() => {
     const loadData = async () => {
       try {
-        setIsLoading(true)
         setError(null)
         
         const talentData = await loadTalentData(selectedClass)
@@ -46,10 +44,15 @@ export const useTalentTrees = ({
         
         // Only apply encoded data if the class in URL matches the selected class
         if (!encoded || classInURL !== selectedClass) {
-          initialTrees = JSON.parse(JSON.stringify(talentData))
+          // Use structuredClone if available (faster than JSON), fallback to JSON
+          initialTrees = typeof structuredClone !== 'undefined' 
+            ? structuredClone(talentData)
+            : JSON.parse(JSON.stringify(talentData))
         } else {
           const decoded = decodeTalentBuild(encoded)
-          initialTrees = JSON.parse(JSON.stringify(talentData))
+          initialTrees = typeof structuredClone !== 'undefined'
+            ? structuredClone(talentData)
+            : JSON.parse(JSON.stringify(talentData))
           
           decoded.forEach(([globalIdx, pts]) => {
             let remaining = globalIdx
@@ -64,11 +67,11 @@ export const useTalentTrees = ({
         }
         
         setTrees(initialTrees)
-        updateURL(initialTrees, selectedClass)
+        
+        // Update URL asynchronously
+        setTimeout(() => updateURL(initialTrees, selectedClass), 0)
       } catch (err) {
         setError(`Failed to load talent data: ${err instanceof Error ? err.message : String(err)}`)
-      } finally {
-        setIsLoading(false)
       }
     }
     
@@ -215,7 +218,6 @@ export const useTalentTrees = ({
 
   return {
     trees,
-    isLoading,
     error,
     currentLevel,
     totalPointsSpent,
