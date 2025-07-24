@@ -1,4 +1,10 @@
 @layer components {
+  @media (max-width: 640px) {
+    .header-bg-img {
+      object-position: center; /* or whatever position you want for mobile */
+    }
+  }
+
   /* Arrow Styles - Non-critical, talent tree specific */
   .down-arrow::before {
     @apply absolute w-[56px] pointer-events-none;

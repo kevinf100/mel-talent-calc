@@ -10,8 +10,7 @@ import rogueCrest from '../assets/images/rogue/classcrest_rogue.webp?quality=70&
 import shamanCrest from '../assets/images/shaman/classcrest_shaman.webp?quality=70&imagetools'
 import warlockCrest from '../assets/images/warlock/classcrest_warlock.webp?quality=70&imagetools'
 import warriorCrest from '../assets/images/warrior/classcrest_warrior.webp?quality=70&imagetools'
-
-type ClassName = 'druid' | 'hunter' | 'mage' | 'paladin' | 'priest' | 'rogue' | 'shaman' | 'warlock' | 'warrior'
+import type { ClassName } from '../core/types'
 
 const CLASS_CRESTS = {
   druid: druidCrest,

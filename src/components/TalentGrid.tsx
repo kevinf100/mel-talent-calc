@@ -18,7 +18,7 @@ import type { ClassName } from '../core/types'
 import { CLASS_NAMES } from '../core/constants'
 import ClipboardJS from 'clipboard'
 import { useClassCrest } from '../hooks/useClassCrest'
-import ShareSprite from '../assets/ui/share-btn-sprite-small2.webp?w=616&h=592&imagetools'
+import ShareSprite from '../assets/ui/share-btn-sprite-small2.webp?w=616&h=592&q=80&imagetools'
 
 const SELECTED_CLASS_KEY =
   'mel-talent-calc-selected-class'
@@ -172,9 +172,9 @@ export const TalentGrid = () => {
           <ParchmentBorders>
             {/* Class Crest */}
             {classCrest && (
-              <div 
+              <div  // 565 × 665
                 className='absolute right-0 top-0 z-0 sm:opacity-50 opacity-40 pointer-events-none fade-mask 
-                w-[150px] h-[150px] sm:w-[250px] sm:h-[250px]'
+                w-[150px] h-[150px] sm:w-[565px] sm:h-[665px]'
                 style={{
                   backgroundImage: `url(${classCrest})`,
                   backgroundSize: 'contain',

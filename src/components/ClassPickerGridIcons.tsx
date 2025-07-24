@@ -1,6 +1,5 @@
 import { type ClassName } from '../core/types'
 import { useAsset } from '../hooks/useAsset'
-import GoldRing from '../assets/icons/gold-ring.webp?w=90&h=90&imagetools'
 
 type TClassPickerGridIcons = {
   className: ClassName
@@ -10,6 +9,7 @@ type TClassPickerGridIcons = {
   setHoveredClass: (
     className: ClassName | null
   ) => void
+  GoldRing: string
 }
 
 export const ClassPickerGridIcons = (
@@ -21,6 +21,7 @@ export const ClassPickerGridIcons = (
     isSelected,
     setSelectedClass,
     setHoveredClass,
+    GoldRing
   } = props
   const classIcon = useAsset(
     `classicon_${className}.webp`

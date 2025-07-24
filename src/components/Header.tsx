@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react'
 
 // Responsive header background images - improved quality
-import HeaderBgMobile from '../assets/images/header-bg.webp?w=800&h=400&quality=85&format=webp&imagetools'
-import HeaderBgTablet from '../assets/images/header-bg.webp?w=1400&h=350&quality=88&format=webp&imagetools'
-import HeaderBgDesktop from '../assets/images/header-bg.webp?w=2000&h=400&quality=90&format=webp&imagetools'
-import HeaderBgBlur from '../assets/images/header-bg.webp?w=40&h=20&blur=5&quality=30&format=webp&imagetools'
+import HeaderBgMobile from '../assets/images/header-bg.webp?w=1000&h=400&quality=85&position=left&imagetools'
+import HeaderBgTablet from '../assets/images/header-bg.webp?w=1400&h=350&quality=88&imagetools'
+import HeaderBgDesktop from '../assets/images/header-bg.webp'
+import HeaderBgBlur from '../assets/images/header-bg.webp?w=40&h=20&blur=5&quality=30&imagetools'
 import EpochLogoMobile from '../assets/images/full-logo.webp?w=370&h=96&quality=70&imagetools'
 import EpochLogoDesktop from '../assets/images/full-logo.webp?w=185&h=48&quality=70&imagetools'
+
 
 export function Header() {
   const [imageLoaded, setImageLoaded] = useState(false)
@@ -64,7 +65,7 @@ export function Header() {
 
       {/* Header Banner */}
       <div
-        className="w-full h-[200px] relative flex items-center justify-center overflow-hidden"
+        className="w-full h-[150px] md:h-[200px] relative flex items-center justify-center overflow-hidden"
         style={{
           borderTop: '3px solid #fffff',
           boxShadow: 'inset 0 0 8px rgba(0, 0, 0, 0.36), 0px 0px 20px 10px rgba(0, 0, 0, 0.36)',
@@ -113,7 +114,7 @@ export function Header() {
           <img 
             src={HeaderBgDesktop}
             alt="Fantasy game background for talent calculator header" 
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 z-10 ${
+            className={`header-bg-img object-cover absolute inset-0 w-full h-full  transition-opacity duration-500 z-10 ${
               imageLoaded ? 'opacity-100' : 'opacity-0'
             }`}
             fetchPriority="high"

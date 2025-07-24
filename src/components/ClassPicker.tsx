@@ -6,7 +6,7 @@ import {
 } from '../core/constants'
 import { useAsset } from '../hooks/useAsset'
 import { ClassPickerGridIcons } from './ClassPickerGridIcons'
-import GoldRing from '../assets/icons/gold-ring.webp?w=140&h=140&imagetools'
+import GoldRing from '../assets/icons/gold-ring.webp?q=80&imagetools'
 
 // 🌟 Shadow helpers
 const CLASS_SHADOWS = {
@@ -70,6 +70,7 @@ export const ClassPicker = ({
 
           return (
             <ClassPickerGridIcons
+              GoldRing={GoldRing}
               className={className}
               boxShadow={boxShadow}
               isSelected={isSelected}
@@ -89,7 +90,7 @@ export const ClassPicker = ({
             <img
               src={GoldRing}
               alt='Gold Ring'
-              className='absolute z-10 left-0 pointer-events-none object-contain w-full h-full scale-[1.3] top-1/2 -translate-y-1/2'
+              className='absolute z-10 left-0 pointer-events-none object-contain w-full h-full scale-[1.33] top-1/2 -translate-y-1/2'
             />
           )}
           {selectedClassIcon && (
@@ -106,7 +107,7 @@ export const ClassPicker = ({
             <img
               src={GoldRing}
               alt='Gold Ring'
-              className='absolute z-10 left-0 pointer-events-none object-contain w-full h-full top-0 scale-[1.3] opacity-75'
+              className='absolute z-10 left-0 pointer-events-none object-contain w-full h-full top-0 scale-[1.33] opacity-75'
             />
           )}
           {SpecIcon && (
