@@ -4,6 +4,7 @@ export type Talent = {
   id: string
   name: string
   ranks: string[]
+  spellIds: string[]
   row: number
   col: number
   points: number
