@@ -173,8 +173,15 @@ export const TalentGrid = () => {
             {/* Class Crest */}
             {classCrest && (
               <div  // 565 × 665
-                className='absolute right-0 top-0 z-0 sm:opacity-50 opacity-40 pointer-events-none fade-mask 
-                w-[150px] h-[150px] sm:w-[565px] sm:h-[665px]'
+                className='absolute z-0 sm:opacity-50 opacity-40 pointer-events-none fade-mask 
+                w-[565px] h-[665px]
+                right-[-30%]
+                top-[15%]
+                sm:right-[-10%]
+                sm:top-[10%]
+                md:right-0
+                md:top-0
+                [@media(min-width:994px)]:top-[-100px]'
                 style={{
                   backgroundImage: `url(${classCrest})`,
                   backgroundSize: 'contain',
