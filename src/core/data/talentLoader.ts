@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 import type { ClassName, Tree } from '../types'
 
 // Cache for loaded talent data to avoid re-importing
