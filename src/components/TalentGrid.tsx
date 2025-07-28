@@ -24,24 +24,30 @@ const SELECTED_CLASS_KEY =
   'mel-talent-calc-selected-class'
 
 const getInitialSelectedClass = (): ClassName => {
-  const params = new URLSearchParams(
-    window.location.search
-  )
+  const pathSegments = window.location.pathname.split('/').filter(Boolean)
+  const classFromPath = pathSegments[0]
+
+  if (
+    classFromPath &&
+    CLASS_NAMES.includes(classFromPath as ClassName)
+  ) {
+    return classFromPath as ClassName
+  }
+
+  // fallback to query param
+  const params = new URLSearchParams(window.location.search)
   const classFromURL = params.get('class')
 
   if (
     classFromURL &&
-    CLASS_NAMES.includes(
-      classFromURL as ClassName
-    )
+    CLASS_NAMES.includes(classFromURL as ClassName)
   ) {
     return classFromURL as ClassName
   }
 
+  // fallback to localStorage
   try {
-    const saved = localStorage.getItem(
-      SELECTED_CLASS_KEY
-    )
+    const saved = localStorage.getItem(SELECTED_CLASS_KEY)
     if (
       saved &&
       CLASS_NAMES.includes(saved as ClassName)
@@ -130,6 +136,7 @@ export const TalentGrid = () => {
     currentLevel,
     pointsSpentPerTree,
     primaryTree,
+    talentSpendOrder,
   } = useTalentTrees({
     selectedClass,
     setSelectedClass,
@@ -141,7 +148,14 @@ export const TalentGrid = () => {
     tree => pointsSpentPerTree[tree.name] || 0
   )
 
+  const handleClassChange = (cls: ClassName) => {
+    setSelectedClass(cls)
+    // Clear build/order in URL immediately on class switch.
+    window.history.replaceState(null, '', `/${cls}`)
+    // Optionally: updateUrl() here once the hook has loaded the new class (but it will be empty anyway)
+  }
 
+  console.log(talentSpendOrder)
   // Show error state if there's an error
   if (error) {
     return (
@@ -198,7 +212,7 @@ export const TalentGrid = () => {
                 primaryTree={primaryTree}
                 pointsSpentPerTree={pointsSpentPerTreeOrdered}
                 selectedClass={selectedClass}
-                setSelectedClass={setSelectedClass}
+                setSelectedClass={handleClassChange}
               />
               <div className='flex justify-center sm:justify-end gap-4 z-1 items-end'>
                 {/* Share Button */}

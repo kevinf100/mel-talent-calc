@@ -279,9 +279,9 @@ export const TalentNode = ({
         canIncrement={canIncrement}
         canDecrement={canDecrement}
       >
-        <h4 className='text-white text-xl'>
+        <p className='text-white text-xl'>
           {name}
-        </h4>
+        </p>
         <p className='text-white text-base'>
           Rank {points}/{maxPoints}
         </p>

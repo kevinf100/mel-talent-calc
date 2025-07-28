@@ -1,15 +1,18 @@
-import { useState, useMemo, useEffect } from 'react'
-import type { ClassName, Tree } from './types'
+// useTalentTrees.ts
+import { useState, useMemo, useEffect, useRef } from 'react'
+import type { ClassName, Tree, TalentOrderItem, Talent } from './types'
 import {
   canIncrementTalent,
   canSafelyDecrementTalent,
-  isTalentLocked
+  isTalentLocked,
 } from './talentUtils'
 import { loadTalentData } from './data/talentLoader'
 import {
+  encodeTalentBuild,
   decodeTalentBuild,
-  encodeTalentBuild
-} from '../utils/base64Utils'
+  encodeTalentSlug,
+  decodeTalentSlug,
+} from '../utils/talentDataParser'
 
 const additionalTalentPointsLevels = [14, 19, 24, 29, 34, 39, 44, 49, 54, 60]
 
@@ -22,68 +25,88 @@ type UseTalentTreesProps = {
 export const useTalentTrees = ({
   selectedClass,
   setSelectedClass,
-  totalTalentPoints = 61
+  totalTalentPoints = 61,
 }: UseTalentTreesProps) => {
   const [trees, setTrees] = useState<Tree[]>([])
   const [error, setError] = useState<string | null>(null)
+  const [talentSpendOrder, setTalentSpendOrder] = useState<TalentOrderItem[]>([])
 
-  // Load talent data when component mounts or class changes
+  // pristine base data to rebuild from (never mutated)
+  const baseTreesRef = useRef<Tree[]>([])
+
+  // ---- Load initial data ----------------------------------------------------
   useEffect(() => {
-    const loadData = async () => {
+    const loadDataAsync = async () => {
       try {
         setError(null)
-        
         const talentData = await loadTalentData(selectedClass)
-        
-        // Handle URL decoding if present
-        const params = new URLSearchParams(window.location.search)
-        const encoded = params.get('data')
-        const classInURL = params.get('class')
-        
+
+        const pathSegments = window.location.pathname
+          .split('/')
+          .filter(Boolean)
+
+        const [classFromPath, encodedBuild, orderSlug] = pathSegments
+
+        const cloneBase =
+          typeof structuredClone !== 'undefined'
+            ? structuredClone(talentData)
+            : JSON.parse(JSON.stringify(talentData))
+
+        baseTreesRef.current = cloneBase
+
         let initialTrees: Tree[]
-        
-        // Only apply encoded data if the class in URL matches the selected class
-        if (!encoded || classInURL !== selectedClass) {
-          // Use structuredClone if available (faster than JSON), fallback to JSON
-          initialTrees = typeof structuredClone !== 'undefined' 
-            ? structuredClone(talentData)
-            : JSON.parse(JSON.stringify(talentData))
+        let initialOrder: TalentOrderItem[] = []
+
+        const cloned = deepClone(baseTreesRef.current)
+        if (classFromPath === selectedClass && encodedBuild) {
+          initialTrees = decodeTalentBuild(encodedBuild, cloned)
         } else {
-          const decoded = decodeTalentBuild(encoded)
-          initialTrees = typeof structuredClone !== 'undefined'
-            ? structuredClone(talentData)
-            : JSON.parse(JSON.stringify(talentData))
-          
-          decoded.forEach(([globalIdx, pts]) => {
-            let remaining = globalIdx
-            for (const tree of initialTrees) {
-              if (remaining < tree.talents.length) {
-                tree.talents[remaining].points = pts
-                break
-              }
-              remaining -= tree.talents.length
-            }
-          })
+          initialTrees = cloned
         }
-        
+
+        if (classFromPath === selectedClass && orderSlug) {
+          initialOrder = decodeTalentSlug(orderSlug, initialTrees)
+        }
+
+        setTalentSpendOrder(initialOrder)
         setTrees(initialTrees)
-        
-        // Update URL asynchronously
-        setTimeout(() => updateURL(initialTrees, selectedClass), 0)
       } catch (err) {
-        setError(`Failed to load talent data: ${err instanceof Error ? err.message : String(err)}`)
+        setError(
+          `Failed to load talent data: ${
+            err instanceof Error ? err.message : String(err)
+          }`
+        )
       }
     }
-    
-    loadData()
+
+    loadDataAsync()
   }, [selectedClass])
 
-  const totalPointsSpent = useMemo(() => {
-    return trees.reduce(
-      (sum, tree) => sum + tree.talents.reduce((s, talent) => s + talent.points, 0),
-      0
-    )
-  }, [trees])
+  // ---- URL Update Helper ----------------------------------------------------
+  const updateUrl = (treesToUse = trees, orderToUse = talentSpendOrder) => {
+    const encodedData = encodeTalentBuild(treesToUse)
+    let url = `${window.location.origin}/${selectedClass}`
+    
+    if (encodedData) { // encodeTalentBuild returns '' if empty
+      url += `/${encodedData}`
+      const orderSlug = encodeTalentSlug(orderToUse, treesToUse)
+      if (orderSlug.length > 0) {
+        url += `/${orderSlug}`
+      }
+    }
+
+    window.history.replaceState(null, '', url)
+  }
+
+  // ---- derived --------------------------------------------------------------
+  const totalPointsSpent = useMemo(
+    () =>
+      trees.reduce(
+        (sum, tree) => sum + tree.talents.reduce((s, t) => s + t.points, 0),
+        0
+      ),
+    [trees]
+  )
 
   const pointsByLevel = useMemo(() => {
     const list: number[] = []
@@ -115,31 +138,15 @@ export const useTalentTrees = ({
     return cumulativePointsByLevel.length - 1
   }, [totalPointsSpent, cumulativePointsByLevel])
 
-  const pointsRemaining = useMemo(() => {
-    return Math.max(0, totalTalentPoints - totalPointsSpent)
-  }, [totalTalentPoints, totalPointsSpent])
-
-  const updateURL = (trees: Tree[], selectedClass: ClassName) => {
-    const isEmptyBuild = trees.every(tree =>
-      tree.talents.every(t => t.points === 0)
-    )
-
-    const params = new URLSearchParams()
-    params.set('class', selectedClass)
-
-    if (!isEmptyBuild) {
-      const encoded = encodeTalentBuild(trees)
-      params.set('data', encoded)
-    }
-
-    const url = `${window.location.origin}?${params.toString()}`
-    window.history.replaceState(null, '', url)
-  }
+  const pointsRemaining = useMemo(
+    () => Math.max(0, totalTalentPoints - totalPointsSpent),
+    [totalTalentPoints, totalPointsSpent]
+  )
 
   const pointsSpentPerTree = useMemo(() => {
     const result: Record<string, number> = {}
     for (const tree of trees) {
-      result[tree.name] = tree.talents.reduce((sum, talent) => sum + talent.points, 0)
+      result[tree.name] = tree.talents.reduce((sum, t) => sum + t.points, 0)
     }
     return result
   }, [trees])
@@ -147,74 +154,136 @@ export const useTalentTrees = ({
   const primaryTree = useMemo(() => {
     let maxPoints = 10
     let primary = { name: '', specIcon: '' }
-  
+
     for (const tree of trees) {
       const points = pointsSpentPerTree[tree.name] ?? 0
       if (points > maxPoints) {
         maxPoints = points
-        primary = {
-          name: tree.name,
-          specIcon: tree.specIcon
-        }
+        primary = { name: tree.name, specIcon: tree.specIcon }
       }
     }
-  
     return primary
   }, [trees, pointsSpentPerTree])
 
+  // ---- helpers --------------------------------------------------------------
+  const deepClone = <T,>(obj: T): T =>
+    typeof structuredClone !== 'undefined'
+      ? structuredClone(obj)
+      : JSON.parse(JSON.stringify(obj))
+
+  const rebuildTreesFromOrder = (order: TalentOrderItem[]): Tree[] => {
+    const clone = deepClone(baseTreesRef.current)
+
+    const rankCount: Record<string, number> = Object.create(null)
+
+    for (const item of order) {
+      const targetName = item.name
+      rankCount[targetName] = (rankCount[targetName] ?? 0) + 1
+      const desiredRank = rankCount[targetName]
+
+      const { tree, talent } = findTalentByName(clone, targetName) ?? {}
+      if (!tree || !talent) continue
+
+      // Apply ranks up to desiredRank (respecting maxPoints)
+      const newPoints = Math.min(desiredRank, talent.maxPoints)
+      talent.points = newPoints
+    }
+
+    return clone
+  }
+
+  const findTalentByName = (
+    treesArr: Tree[],
+    name: string
+  ): { tree: Tree; talent: Talent } | undefined => {
+    for (const tree of treesArr) {
+      const talent = tree.talents.find(t => t.name === name)
+      if (talent) return { tree, talent }
+    }
+    return undefined
+  }
+
+  // ---- reset ---------------------------------------------------------------
   const resetTree = (idx: number) => {
-    setTrees(prev => {
-      const copy = [...prev]
-      copy[idx] = {
-        ...copy[idx],
-        talents: copy[idx].talents.map(t => ({ ...t, points: 0 }))
-      }
-      updateURL(copy, selectedClass)
-      return copy
+    setTalentSpendOrder(prev => {
+      const base = baseTreesRef.current
+      const namesInTree = new Set(base[idx].talents.map(t => t.name))
+      const next = prev.filter(item => !namesInTree.has(item.name))
+      const rebuilt = rebuildTreesFromOrder(next)
+      setTrees(rebuilt)
+      updateUrl(rebuilt, next)
+      return next
     })
   }
 
   const resetAll = async () => {
     try {
       const talentData = await loadTalentData(selectedClass)
-      const reset = JSON.parse(JSON.stringify(talentData))
-      setTrees(reset)
-      updateURL(reset, selectedClass)
+      const fresh = deepClone(talentData)
+      baseTreesRef.current = fresh
+      setTalentSpendOrder([])
+      const resetTrees = deepClone(baseTreesRef.current)
+      setTrees(resetTrees)
+      updateUrl(resetTrees, [])
     } catch (err) {
       setError(`Failed to reset: ${err instanceof Error ? err.message : String(err)}`)
     }
   }
 
+  // ---- modify (order-first) -----------------------------------------------
   const modify = (
     treeIdx: number,
     talentId: string,
     e: React.MouseEvent | { shiftKey: boolean; type: string }
   ) => {
-    setTrees(prev => {
-      const copy = [...prev]
-      const talents = copy[treeIdx].talents.map(t => ({ ...t }))
-      const target = talents.find(t => t.id === talentId)
-      if (!target) return prev
-
-      const pointsSpent = talents.reduce((s, t) => s + t.points, 0)
-      const locked = isTalentLocked(target, talents, pointsSpent)
-      const isShift = e.shiftKey || e.type === 'contextmenu'
-
-      if (isShift) {
-        if (canSafelyDecrementTalent(target, talents)) {
-          target.points -= 1
+    const isDecrement = e.shiftKey || e.type === 'contextmenu'
+  
+    const targetTalent = trees[treeIdx].talents.find(t => t.id === talentId)
+    if (!targetTalent) return
+  
+    const targetName = targetTalent.name
+  
+    setTalentSpendOrder(prevOrder => {
+      const nextOrder = [...prevOrder]
+  
+      if (isDecrement) {
+        // Check if it is safe to decrement this talent
+        const safeToDecrement = canSafelyDecrementTalent(targetTalent, trees[treeIdx].talents)
+        if (!safeToDecrement) {
+          // Disallow decrement if it breaks requirements
+          return prevOrder
+        }
+  
+        // Find the last occurrence of this talent in the order array to remove
+        const lastIdx = [...nextOrder]
+          .map((item, i) => ({ item, i }))
+          .reverse()
+          .find(x => x.item.name === targetName)?.i
+  
+        if (lastIdx != null) {
+          nextOrder.splice(lastIdx, 1)
         }
       } else {
-        if (canIncrementTalent(target, pointsRemaining, locked)) {
-          target.points += 1
+        const pointsSpent = totalPointsSpent
+        const locked = isTalentLocked(targetTalent, trees[treeIdx].talents, pointsSpent)
+  
+        if (!canIncrementTalent(targetTalent, pointsRemaining, locked)) {
+          // Can't increment due to lock or no points remaining
+          return prevOrder
         }
+  
+        const newRank = nextOrder.filter(o => o.name === targetName).length + 1
+        nextOrder.push({ name: targetName, rank: newRank })
       }
-
-      copy[treeIdx] = { ...copy[treeIdx], talents }
-      updateURL(copy, selectedClass)
-      return copy
+  
+      const rebuilt = rebuildTreesFromOrder(nextOrder)
+      setTrees(rebuilt)
+      updateUrl(rebuilt, nextOrder)
+  
+      return nextOrder
     })
   }
+  
 
   return {
     trees,
@@ -225,9 +294,11 @@ export const useTalentTrees = ({
     pointsRemaining,
     pointsSpentPerTree,
     primaryTree,
+    talentSpendOrder,
     modify,
     resetTree,
     resetAll,
     setSelectedClass,
+    updateUrl, // exposed for external class-change triggers
   }
 }

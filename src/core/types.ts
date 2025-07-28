@@ -25,6 +25,11 @@ export type Tree = {
   specIcon: string
 }
 
+export type TalentOrderItem = {
+  name: string
+  rank: number
+}
+
 export type ClassName =
   (typeof CLASS_NAMES)[number]
 
