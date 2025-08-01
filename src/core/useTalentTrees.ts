@@ -110,7 +110,7 @@ export const useTalentTrees = ({
 
   const pointsByLevel = useMemo(() => {
     const list: number[] = []
-    for (let level = 1; level <= 200; level++) {
+    for (let level = 1; level <= 100; level++) {
       let points = 0
       if (level >= 10) points += 1
       if (additionalTalentPointsLevels.includes(level)) points += 1
@@ -295,6 +295,8 @@ export const useTalentTrees = ({
     pointsSpentPerTree,
     primaryTree,
     talentSpendOrder,
+    cumulativePointsByLevel,
+    pointsByLevel,
     modify,
     resetTree,
     resetAll,

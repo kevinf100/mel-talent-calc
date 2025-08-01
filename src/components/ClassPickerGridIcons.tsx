@@ -40,7 +40,7 @@ export const ClassPickerGridIcons = (
       onMouseLeave={() => {
         if (!isTouchDevice) setHoveredClass(null)
       }}
-      className='relative w-[60px] h-[60px] sm:w-[90px] sm:h-[90px] flex items-center justify-center group'
+      className='relative w-[60px] h-[60px] sm:w-[90px] sm:h-[90px] flex items-center justify-center group cursor-pointer'
     >
       {/* 🟡 Ring Frame */}
       {GoldRing && (

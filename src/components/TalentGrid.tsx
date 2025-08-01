@@ -17,8 +17,9 @@ import {
 import type { ClassName } from '../core/types'
 import { CLASS_NAMES } from '../core/constants'
 import ClipboardJS from 'clipboard'
-import { useClassCrest } from '../hooks/useClassCrest'
 import ShareSprite from '../assets/ui/share-btn-sprite-small2.webp?w=616&h=592&q=80&imagetools'
+import ClassCrest from './ClassCrest'
+import { TalentOrderSummary } from './TalentOrderSummary'
 
 const SELECTED_CLASS_KEY =
   'mel-talent-calc-selected-class'
@@ -137,12 +138,11 @@ export const TalentGrid = () => {
     pointsSpentPerTree,
     primaryTree,
     talentSpendOrder,
+    cumulativePointsByLevel,
   } = useTalentTrees({
     selectedClass,
     setSelectedClass,
   })
-  // Use optimized AVIF class crest  
-  const classCrest = useClassCrest(selectedClass)
 
   const pointsSpentPerTreeOrdered = trees.map(
     tree => pointsSpentPerTree[tree.name] || 0
@@ -155,12 +155,11 @@ export const TalentGrid = () => {
     // Optionally: updateUrl() here once the hook has loaded the new class (but it will be empty anyway)
   }
 
-  console.log(talentSpendOrder)
   // Show error state if there's an error
   if (error) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className='max-w-[85rem] w-full m-auto px-4'>
+      <div className='max-w-[85rem] w-full m-auto overflow-hidden'>
           <div className="w-full flex items-center justify-center bg-red-900 bg-opacity-30 rounded-lg py-16">
             <div className="text-center p-8">
               <p className="text-red-400 text-lg mb-4">Failed to load talent data</p>
@@ -181,31 +180,11 @@ export const TalentGrid = () => {
   // Show full app when everything is ready
   return (
     <div>
-      <div className='max-w-[85rem] m-auto'>
+      <div className='max-w-[85rem] w-full m-auto overflow-x-hidden'>
         <div className='flex flex-col w-full gap-4'>
           <ParchmentBorders>
             {/* Class Crest */}
-            {classCrest && (
-              <div  // 565 × 665
-                className='absolute z-0 sm:opacity-50 opacity-40 pointer-events-none fade-mask 
-                w-[565px] h-[665px]
-                right-[-30%]
-                top-[15%]
-                sm:right-[-10%]
-                sm:top-[10%]
-                md:right-0
-                md:top-0
-                [@media(min-width:994px)]:top-[-100px]'
-                style={{
-                  backgroundImage: `url(${classCrest})`,
-                  backgroundSize: 'contain',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat'
-                }}
-                role="img"
-                aria-label={`${selectedClass} crest`}
-              />
-            )}
+            {selectedClass && <ClassCrest selectedClass={selectedClass} />}
             <div className='flex flex-col w-full gap-6'>
               {/* 🎭 Class Picker in first row */}
               <ClassPicker
@@ -219,7 +198,7 @@ export const TalentGrid = () => {
                 <button
                   ref={shareBtnRef}
                   aria-label='Share'
-                  className='relative sm:top-1 w-[308px] h-[95px] bg-[length:308px_296px] bg-no-repeat sm:w-[308px] sm:h-[95px] sm:bg-[length:308px_296px]'
+                  className='relative sm:top-1 w-[308px] h-[95px] bg-[length:308px_296px] bg-no-repeat sm:w-[308px] sm:h-[95px] sm:bg-[length:308px_296px] cursor-pointer'
                   style={{
                     backgroundImage: `url(${ShareSprite})`,
                     backgroundPosition: '0px 0px',
@@ -271,7 +250,13 @@ export const TalentGrid = () => {
             ))}
           />
         </Suspense>
+        <div className='flex justify-center min-h-[20rem] w-[95%] md:w-[98%] text-white mx-auto'>
+          <TalentOrderSummary
+            cumulativePointsByLevel={cumulativePointsByLevel}
+            talentSpendOrder={talentSpendOrder}
+          />
+        </div>
       </div>
     </div>
-  )
+    )
 }

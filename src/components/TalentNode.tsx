@@ -164,6 +164,8 @@ export const TalentNode = ({
   const showNextRank =
     points > 0 && points < maxPoints
 
+  const cursorStyle = canBeClicked ? 'cursor-pointer' : 'cursor-default'
+
   return (
     <div
       className='relative overflow-visible'
@@ -178,7 +180,7 @@ export const TalentNode = ({
           if (!disabled) handleClick(e)
         }}
         aria-label={`${name}: ${points}/${maxPoints}`}
-        className='relative w-[56px] h-[56px] min-w-[42px] min-h-[42px] transition focus:outline-none'
+        className={`relative w-[56px] h-[56px] min-w-[42px] min-h-[42px] transition focus:outline-none ${cursorStyle}`}
       >
         {/* 🔲 Black Canvas */}
         <span

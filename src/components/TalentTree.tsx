@@ -103,7 +103,7 @@ export const TalentTree = ({
             <button
               onClick={onResetTree}
               aria-label='Reset Tree'
-              className='z-1 w-[39px] h-[38px] bg-no-repeat bg-[length:39px_76px] self-start'
+              className='z-1 w-[39px] h-[38px] bg-no-repeat bg-[length:39px_76px] self-start cursor-pointer'
               style={{
                 backgroundImage: `url(${ResetSprite})`,
                 backgroundPosition: '0px 0px',

@@ -28,7 +28,7 @@ export const GlobalPointsSummary = ({
           <button
             onClick={onResetAll}
             aria-label='Reset All'
-            className='w-[120px] h-[39px] bg-no-repeat bg-[length:120px_79px] sm:w-[150px] sm:h-[49px] sm:bg-[length:150px_99px] sm:flex'
+            className='w-[120px] h-[39px] bg-no-repeat bg-[length:120px_79px] sm:w-[150px] sm:h-[49px] sm:bg-[length:150px_99px] sm:flex cursor-pointer'
             style={{
               backgroundImage: `url(${ResetSprite})`,
               backgroundPosition: '0px 0px',
@@ -69,7 +69,7 @@ export const GlobalPointsSummary = ({
         <button
           onClick={onResetAll}
           aria-label='Reset All'
-          className='w-[120px] h-[39px] bg-no-repeat bg-[length:120px_79px] sm:w-[150px] sm:h-[49px] sm:bg-[length:150px_99px] hidden sm:flex'
+          className='w-[120px] h-[39px] bg-no-repeat bg-[length:120px_79px] sm:w-[150px] sm:h-[49px] sm:bg-[length:150px_99px] hidden sm:flex cursor-pointer'
           style={{
             backgroundImage: `url(${ResetSprite})`,
             backgroundPosition: '0px 0px',
