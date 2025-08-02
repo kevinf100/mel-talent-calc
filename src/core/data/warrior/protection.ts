@@ -2,7 +2,8 @@ import type { Tree } from '../../types'
 import backgroundImage from '../../../assets/images/warrior/background-warrior-protection.webp?format=avif&quality=80&imagetools'
 
 export const protection: Tree = {
-  specIcon: 'ability_warrior_defensivestance.webp',
+  specIcon:
+    'ability_warrior_defensivestance.webp',
   name: 'Protection',
   backgroundImage,
   talents: [
@@ -50,7 +51,13 @@ export const protection: Tree = {
         'Increases your Defense skill by 16.',
         'Increases your Defense skill by 20.',
       ],
-      spellIds: ['12297', '12750', '12751', '12752', '12753'],
+      spellIds: [
+        '12297',
+        '12750',
+        '12751',
+        '12752',
+        '12753',
+      ],
     },
     {
       row: 1,
@@ -67,7 +74,13 @@ export const protection: Tree = {
         'Increases your chance to block attacks with a shield by 4% and gives you a 80% chance to generate 1 rage point when a block occurs.',
         'Increases your chance to block attacks with a shield by 5% and gives you a 100% chance to generate 1 rage point when a block occurs.',
       ],
-      spellIds: ['12298', '12724', '12725', '12726', '12727'],
+      spellIds: [
+        '12298',
+        '12724',
+        '12725',
+        '12726',
+        '12727',
+      ],
     },
     {
       row: 1,
@@ -84,7 +97,13 @@ export const protection: Tree = {
         'Increases your armor value from items by 8%.',
         'Increases your armor value from items by 10%.',
       ],
-      spellIds: ['12299', '12761', '12762', '12763', '12764'],
+      spellIds: [
+        '12299',
+        '12761',
+        '12762',
+        '12763',
+        '12764',
+      ],
     },
     {
       row: 2,
@@ -273,7 +292,13 @@ export const protection: Tree = {
         'Increases physical damage you deal when a one-handed melee weapon is equipped by 8%.',
         'Increases physical damage you deal when a one-handed melee weapon is equipped by 10%.',
       ],
-      spellIds: ['16538', '16539', '16540', '16541', '16542'],
+      spellIds: [
+        '16538',
+        '16539',
+        '16540',
+        '16541',
+        '16542',
+      ],
     },
     {
       row: 6,
@@ -345,7 +370,13 @@ export const protection: Tree = {
         'Increases your total Stamina by 4% and your total Strength by 8%.',
         'Increases your total Stamina by 5% and your total Strength by 10%.',
       ],
-      spellIds: ['29140', '29143', '29144', '29145', '29146'],
+      spellIds: [
+        '29140',
+        '29143',
+        '29144',
+        '29145',
+        '29146',
+      ],
     },
     {
       row: 8,

@@ -21,7 +21,8 @@ export const TalentTreeScroller = forwardRef<
   const scrollContainerRef =
     useRef<HTMLDivElement>(null)
   const isManualScrollRef = useRef(false)
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] =
+    useState(false)
 
   // Add fade-in effect when trees are loaded
   useEffect(() => {

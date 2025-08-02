@@ -21,7 +21,7 @@ export const ClassPickerGridIcons = (
     isSelected,
     setSelectedClass,
     setHoveredClass,
-    GoldRing
+    GoldRing,
   } = props
   const classIcon = useAsset(
     `classicon_${className}.webp`

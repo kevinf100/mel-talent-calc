@@ -64,6 +64,11 @@ const CLASS_CRESTS = {
 /**
  * Hook to get optimized WebP class crest for a given class
  */
-export const useClassCrest = (className: ClassName) => {
-  return useMemo(() => CLASS_CRESTS[className], [className]);
-};
+export const useClassCrest = (
+  className: ClassName
+) => {
+  return useMemo(
+    () => CLASS_CRESTS[className],
+    [className]
+  )
+}

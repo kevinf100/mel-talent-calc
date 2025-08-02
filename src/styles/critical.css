@@ -100,10 +100,18 @@
   }
 
   /* Metal border positions */
-  .mb-top-left { background-position: 0 -269px; }
-  .mb-top-right { background-position: 0 -335px; }
-  .mb-bottom-left { background-position: 0 -132px; }
-  .mb-bottom-right { background-position: 0 -198px; }
+  .mb-top-left {
+    background-position: 0 -269px;
+  }
+  .mb-top-right {
+    background-position: 0 -335px;
+  }
+  .mb-bottom-left {
+    background-position: 0 -132px;
+  }
+  .mb-bottom-right {
+    background-position: 0 -198px;
+  }
   .mb-edge-top {
     background-position: 0 -18px;
     background-size: 128px auto;
@@ -114,8 +122,12 @@
     background-size: 128px auto;
     background-repeat: repeat-x;
   }
-  .mb-edge-left { background-position: 0 0; }
-  .mb-edge-right { background-position: 100% 0; }
+  .mb-edge-left {
+    background-position: 0 0;
+  }
+  .mb-edge-right {
+    background-position: 100% 0;
+  }
 
   @media (min-width: 640px) {
     .fade-mask {

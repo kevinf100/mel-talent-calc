@@ -76,7 +76,6 @@ export const Tooltip = ({
 
   if (!open || !referenceEl) return null
 
-
   const tooltip = (
     <div
       ref={setFloating}

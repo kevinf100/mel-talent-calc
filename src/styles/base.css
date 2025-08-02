@@ -3,7 +3,7 @@
 @theme {
   --color-gold-text: rgb(255, 215, 0);
   --color-green-400: oklch(0.78 0.32 147.09);
-  
+
   /* Standard Tailwind breakpoints */
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
@@ -60,4 +60,3 @@
   font-style: italic;
   font-display: swap;
 }
-

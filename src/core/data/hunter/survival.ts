@@ -89,7 +89,13 @@ export const survival: Tree = {
         'Increases your Parry chance by 4%.',
         'Increases your Parry chance by 5%.',
       ],
-      spellIds: ['19295', '19297', '19298', '19301', '19300'],
+      spellIds: [
+        '19295',
+        '19297',
+        '19298',
+        '19301',
+        '19300',
+      ],
       row: 1,
       name: 'Deflection',
       col: 1,
@@ -135,7 +141,13 @@ export const survival: Tree = {
         'Increases total health by 8%.',
         'Increases total health by 10%.',
       ],
-      spellIds: ['19255', '19256', '19257', '19258', '19259'],
+      spellIds: [
+        '19255',
+        '19256',
+        '19257',
+        '19258',
+        '19259',
+      ],
       row: 2,
       name: 'Survivalist',
       col: 1,
@@ -250,8 +262,11 @@ export const survival: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['45 Mana', 'Instant'],
-        rightSide: ['Melee Range', '5 sec cooldown']
-      }
+        rightSide: [
+          'Melee Range',
+          '5 sec cooldown',
+        ],
+      },
     },
     {
       id: 'ability_hunter_resourcefulness',
@@ -277,7 +292,13 @@ export const survival: Tree = {
         'Increases your Agility by 12%.',
         'Increases your Agility by 15%.',
       ],
-      spellIds: ['19168', '19180', '19181', '24296', '24297'],
+      spellIds: [
+        '19168',
+        '19180',
+        '19181',
+        '24296',
+        '24297',
+      ],
       row: 5,
       name: 'Lightning Reflexes',
       col: 2,
@@ -353,7 +374,13 @@ export const survival: Tree = {
         'Your successful ranged attacks have a 6% chance to increase your critical strike chance with all attacks by 8% for 8 seconds.',
         'Your successful ranged attacks have a 6% chance to increase your critical strike chance with all attacks by 10% for 8 seconds.',
       ],
-      spellIds: ['34506', '34507', '34508', '34838', '34839'],
+      spellIds: [
+        '34506',
+        '34507',
+        '34508',
+        '34838',
+        '34839',
+      ],
       row: 7,
       name: 'Master Tactician',
       col: 1,

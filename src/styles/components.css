@@ -145,7 +145,9 @@
     content: '';
     background: url('/src/assets/ui/arrow-rightdown-glow.webp')
       no-repeat;
-    width: var(--connector-width); /* Use dynamic width, fallback to 69px */
+    width: var(
+      --connector-width
+    ); /* Use dynamic width, fallback to 69px */
     height: 64px;
     right: -38px; /* Keep original positioning */
     top: calc(
@@ -231,5 +233,4 @@
     min-width: 24rem;
     max-width: 24rem;
   }
-
 }

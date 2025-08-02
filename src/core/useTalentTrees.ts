@@ -110,11 +110,7 @@ export const useTalentTrees = ({
         setTrees(initialTrees)
       } catch (err) {
         setError(
-          `Failed to load talent data: ${
-            err instanceof Error
-              ? err.message
-              : String(err)
-          }`
+          `Failed to load talent data: ${err instanceof Error ? err.message : String(err)}`
         )
       }
     }

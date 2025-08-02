@@ -114,11 +114,11 @@ export const getArrowProps = (
   ) {
     const effectiveNodeHeight = 45
     const effectiveNodeWidth =
-    calculateEffectiveNodeWidth(
-      windowWidth,
-      containerWidth,
-      isDesktop
-    ) + 43
+      calculateEffectiveNodeWidth(
+        windowWidth,
+        containerWidth,
+        isDesktop
+      ) + 43
 
     const rowDiff = talent.row - sourceTalent.row
     const colDiff = talent.col - sourceTalent.col
@@ -152,12 +152,18 @@ export const getArrowProps = (
 
   // Down Arrow
   if (sourceTalent.row < talent.row) {
-    const isIOS = /iP(hone|ad|od)/.test(navigator.userAgent);
+    const isIOS = /iP(hone|ad|od)/.test(
+      navigator.userAgent
+    )
 
     const rowDiff = talent.row - sourceTalent.row
-    const extraHeight = talent.row > 6 ? rowDiff * 5 + 4 : 0
-    const arrowHeight = 87 * rowDiff - 59 + (isIOS ? 0 : extraHeight)
-  
+    const extraHeight =
+      talent.row > 6 ? rowDiff * 5 + 4 : 0
+    const arrowHeight =
+      87 * rowDiff -
+      59 +
+      (isIOS ? 0 : extraHeight)
+
     return {
       class: `down-arrow ${glowClass}`,
       style: {

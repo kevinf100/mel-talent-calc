@@ -11,15 +11,15 @@ export const ParchmentBorders = ({
   return (
     <div className='relative w-full h-full md:min-h-[340px] min-h-[440px] parchment p-3'>
       {/* Critical LCP background is now in HTML for immediate rendering */}
-      
+
       {/* Parchment background - visible and optimized */}
-      <div 
+      <div
         className='p-8 absolute inset-0'
         style={{
           backgroundImage: `url(${ParchmentBgDesktop})`,
           backgroundRepeat: 'repeat',
           backgroundClip: 'content-box',
-          zIndex: 1
+          zIndex: 1,
         }}
       />
 

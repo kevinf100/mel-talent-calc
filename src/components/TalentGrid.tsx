@@ -1,10 +1,26 @@
 import { lazy, Suspense } from 'react'
 // Critical components for LCP - keep these eager
-const TalentTree = lazy(() => import('./TalentTree').then(m => ({ default: m.TalentTree })))
-const GlobalPointsSummary = lazy(() => import('./GlobalPointsSummary').then(m => ({ default: m.GlobalPointsSummary })))
-const ClassPicker = lazy(() => import('./ClassPicker').then(m => ({ default: m.ClassPicker })))
+const TalentTree = lazy(() =>
+  import('./TalentTree').then(m => ({
+    default: m.TalentTree,
+  }))
+)
+const GlobalPointsSummary = lazy(() =>
+  import('./GlobalPointsSummary').then(m => ({
+    default: m.GlobalPointsSummary,
+  }))
+)
+const ClassPicker = lazy(() =>
+  import('./ClassPicker').then(m => ({
+    default: m.ClassPicker,
+  }))
+)
 // Lazy load the talent tree scroller since it's below the fold
-const TalentTreeScroller = lazy(() => import('./TalentTreeScroller').then(m => ({ default: m.TalentTreeScroller })))
+const TalentTreeScroller = lazy(() =>
+  import('./TalentTreeScroller').then(m => ({
+    default: m.TalentTreeScroller,
+  }))
+)
 import { useTalentTrees } from '../core/useTalentTrees'
 import type { TalentTreeScrollerRef } from './TalentTreeScroller'
 import { ParchmentBorders } from './ParchmentBorders'
@@ -25,30 +41,40 @@ const SELECTED_CLASS_KEY =
   'mel-talent-calc-selected-class'
 
 const getInitialSelectedClass = (): ClassName => {
-  const pathSegments = window.location.pathname.split('/').filter(Boolean)
+  const pathSegments = window.location.pathname
+    .split('/')
+    .filter(Boolean)
   const classFromPath = pathSegments[0]
 
   if (
     classFromPath &&
-    CLASS_NAMES.includes(classFromPath as ClassName)
+    CLASS_NAMES.includes(
+      classFromPath as ClassName
+    )
   ) {
     return classFromPath as ClassName
   }
 
   // fallback to query param
-  const params = new URLSearchParams(window.location.search)
+  const params = new URLSearchParams(
+    window.location.search
+  )
   const classFromURL = params.get('class')
 
   if (
     classFromURL &&
-    CLASS_NAMES.includes(classFromURL as ClassName)
+    CLASS_NAMES.includes(
+      classFromURL as ClassName
+    )
   ) {
     return classFromURL as ClassName
   }
 
   // fallback to localStorage
   try {
-    const saved = localStorage.getItem(SELECTED_CLASS_KEY)
+    const saved = localStorage.getItem(
+      SELECTED_CLASS_KEY
+    )
     if (
       saved &&
       CLASS_NAMES.includes(saved as ClassName)
@@ -151,22 +177,32 @@ export const TalentGrid = () => {
   const handleClassChange = (cls: ClassName) => {
     setSelectedClass(cls)
     // Clear build/order in URL immediately on class switch.
-    window.history.replaceState(null, '', `/${cls}`)
+    window.history.replaceState(
+      null,
+      '',
+      `/${cls}`
+    )
     // Optionally: updateUrl() here once the hook has loaded the new class (but it will be empty anyway)
   }
 
   // Show error state if there's an error
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-      <div className='max-w-[85rem] w-full m-auto overflow-hidden'>
-          <div className="w-full flex items-center justify-center bg-red-900 bg-opacity-30 rounded-lg py-16">
-            <div className="text-center p-8">
-              <p className="text-red-400 text-lg mb-4">Failed to load talent data</p>
-              <p className="text-red-300 text-sm mb-4">{error}</p>
-              <button 
-                onClick={() => window.location.reload()} 
-                className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded transition-colors"
+      <div className='min-h-screen flex items-center justify-center'>
+        <div className='max-w-[85rem] w-full m-auto overflow-hidden'>
+          <div className='w-full flex items-center justify-center bg-red-900 bg-opacity-30 rounded-lg py-16'>
+            <div className='text-center p-8'>
+              <p className='text-red-400 text-lg mb-4'>
+                Failed to load talent data
+              </p>
+              <p className='text-red-300 text-sm mb-4'>
+                {error}
+              </p>
+              <button
+                onClick={() =>
+                  window.location.reload()
+                }
+                className='px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded transition-colors'
               >
                 Retry
               </button>
@@ -184,14 +220,22 @@ export const TalentGrid = () => {
         <div className='flex flex-col w-full gap-4'>
           <ParchmentBorders>
             {/* Class Crest */}
-            {selectedClass && <ClassCrest selectedClass={selectedClass} />}
+            {selectedClass && (
+              <ClassCrest
+                selectedClass={selectedClass}
+              />
+            )}
             <div className='flex flex-col w-full gap-6'>
               {/* 🎭 Class Picker in first row */}
               <ClassPicker
                 primaryTree={primaryTree}
-                pointsSpentPerTree={pointsSpentPerTreeOrdered}
+                pointsSpentPerTree={
+                  pointsSpentPerTreeOrdered
+                }
                 selectedClass={selectedClass}
-                setSelectedClass={handleClassChange}
+                setSelectedClass={
+                  handleClassChange
+                }
               />
               <div className='flex justify-center sm:justify-end gap-4 z-1 items-end'>
                 {/* Share Button */}
@@ -204,27 +248,34 @@ export const TalentGrid = () => {
                     backgroundPosition: '0px 0px',
                   }}
                   onMouseOver={e => {
-                    const isDesktop = window.innerWidth >= 640
+                    const isDesktop =
+                      window.innerWidth >= 640
                     if (isDesktop)
-                      e.currentTarget.style.backgroundPosition = '0px -197px'
+                      e.currentTarget.style.backgroundPosition =
+                        '0px -197px'
                   }}
                   onPointerDown={e => {
-                    const isDesktop = window.innerWidth >= 640
+                    const isDesktop =
+                      window.innerWidth >= 640
                     e.currentTarget.style.backgroundPosition =
-                      isDesktop ? '-1px -99.5px' : '-1px -100px'
+                      isDesktop
+                        ? '-1px -99.5px'
+                        : '-1px -100px'
                   }}
                   onPointerUp={e => {
-                    e.currentTarget.style.backgroundPosition = '0px -197px'
+                    e.currentTarget.style.backgroundPosition =
+                      '0px -197px'
                   }}
                   onPointerLeave={e => {
-                    e.currentTarget.style.backgroundPosition = '0px 0px'
+                    e.currentTarget.style.backgroundPosition =
+                      '0px 0px'
                   }}
                 />
               </div>
             </div>
           </ParchmentBorders>
         </div>
-        
+
         <GlobalPointsSummary
           totalTalentPoints={totalTalentPoints}
           totalPointsSpent={totalPointsSpent}
@@ -240,11 +291,15 @@ export const TalentGrid = () => {
               <TalentTree
                 key={tree.name}
                 name={tree.name}
-                backgroundImage={tree.backgroundImage}
+                backgroundImage={
+                  tree.backgroundImage
+                }
                 specIcon={tree.specIcon}
                 talents={tree.talents}
                 pointsRemaining={pointsRemaining}
-                onClickTalent={(id, e) => modify(i, id, e)}
+                onClickTalent={(id, e) =>
+                  modify(i, id, e)
+                }
                 onResetTree={() => resetTree(i)}
               />
             ))}
@@ -252,11 +307,13 @@ export const TalentGrid = () => {
         </Suspense>
         <div className='flex justify-center min-h-[20rem] w-[95%] md:w-[98%] text-white mx-auto'>
           <TalentOrderSummary
-            cumulativePointsByLevel={cumulativePointsByLevel}
+            cumulativePointsByLevel={
+              cumulativePointsByLevel
+            }
             talentSpendOrder={talentSpendOrder}
           />
         </div>
       </div>
     </div>
-    )
+  )
 }
