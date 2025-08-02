@@ -180,7 +180,6 @@ export const TalentGrid = () => {
     cumulativePointsByLevel,
   } = useTalentTrees({
     selectedClass,
-    setSelectedClass,
   })
 
   const pointsSpentPerTreeOrdered = trees.map(
@@ -189,15 +188,12 @@ export const TalentGrid = () => {
 
   const handleClassChange = (cls: ClassName) => {
     resetAll()
-    setSelectedClass(() => {
-      window.history.replaceState(
-        null,
-        '',
-        `/${cls}`
-      )
-      return cls
-    })
+    setSelectedClass(cls)
   }
+
+  useEffect(() => {
+    window.history.replaceState(null, '', `/${selectedClass}`)
+  }, [selectedClass])
 
   // Show error state if there's an error
   if (error) {

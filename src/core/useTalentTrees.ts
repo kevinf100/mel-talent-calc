@@ -30,13 +30,11 @@ const additionalTalentPointsLevels = [
 
 type UseTalentTreesProps = {
   selectedClass: ClassName
-  setSelectedClass: (className: ClassName) => void
   totalTalentPoints?: number
 }
 
 export const useTalentTrees = ({
   selectedClass,
-  setSelectedClass,
   totalTalentPoints = 61,
 }: UseTalentTreesProps) => {
   const [trees, setTrees] = useState<Tree[]>([])
@@ -429,7 +427,5 @@ export const useTalentTrees = ({
     modify,
     resetTree,
     resetAll,
-    setSelectedClass,
-    updateUrl, // exposed for external class-change triggers
   }
 }
