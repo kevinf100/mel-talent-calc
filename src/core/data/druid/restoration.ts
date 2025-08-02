@@ -142,8 +142,11 @@ export const restoration: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['115 Mana', '1.5 sec cast'],
-        rightSide: ['40 yd range', '1 min cooldown']
-      }
+        rightSide: [
+          '40 yd range',
+          '1 min cooldown',
+        ],
+      },
     },
     {
       id: 'spell_holy_elunesgrace',

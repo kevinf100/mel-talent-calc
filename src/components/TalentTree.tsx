@@ -40,8 +40,12 @@ export const TalentTree = ({
   } = useViewport()
   const treeBackground = useAsset(backgroundImage)
   const treeIcon = useAsset(specIcon)
-  const ResetSprite = useAsset('ui/reset-button-sprite.webp')
-  const RockBackground = useAsset('ui/background-rock.webp')
+  const ResetSprite = useAsset(
+    'ui/reset-button-sprite.webp'
+  )
+  const RockBackground = useAsset(
+    'ui/background-rock.webp'
+  )
 
   const pointsSpent = talents.reduce(
     (s, t) => s + t.points,

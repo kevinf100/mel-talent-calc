@@ -13,7 +13,6 @@ import { MetalBordersSmall } from './MetalBordersSmall'
 import { useViewport } from '../hooks/useViewport'
 import { optimizeTooltipWidth } from '../utils/tooltipOptimization'
 
-
 import { useAsset } from '../hooks/useAsset'
 
 type TooltipProps = {
@@ -50,10 +49,18 @@ export const Tooltip = ({
   canDecrement,
 }: TooltipProps) => {
   const { isDesktop } = useViewport()
-  const ButtonIncrement = useAsset('ui/red-button-increment.webp')
-  const ButtonDecrement = useAsset('ui/red-button-decrement.webp')
-  const ButtonIncrementGrey = useAsset('ui/red-button-increment-disabled2.webp')
-  const ButtonDecrementGrey = useAsset('ui/red-button-decrement-disabled2.webp')
+  const ButtonIncrement = useAsset(
+    'ui/red-button-increment.webp'
+  )
+  const ButtonDecrement = useAsset(
+    'ui/red-button-decrement.webp'
+  )
+  const ButtonIncrementGrey = useAsset(
+    'ui/red-button-increment-disabled2.webp'
+  )
+  const ButtonDecrementGrey = useAsset(
+    'ui/red-button-decrement-disabled2.webp'
+  )
 
   const { x, y, refs, strategy } = useFloating({
     placement: 'top-start',

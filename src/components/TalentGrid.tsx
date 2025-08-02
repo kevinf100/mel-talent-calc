@@ -134,7 +134,9 @@ export const TalentGrid = () => {
   const classCrestImage = useAsset(
     `images/${selectedClass}/classcrest_${selectedClass}.webp`
   )
-  const ShareSprite = useAsset('ui/share-btn-sprite-small2.webp')
+  const ShareSprite = useAsset(
+    'ui/share-btn-sprite-small2.webp'
+  )
 
   const pointsSpentPerTreeOrdered = trees.map(
     tree => pointsSpentPerTree[tree.name] || 0
@@ -160,7 +162,7 @@ export const TalentGrid = () => {
             <div className='flex flex-col w-full gap-6'>
               {/* 🎭 Class Picker in first row */}
               <ClassPicker
-              primaryTree={primaryTree}
+                primaryTree={primaryTree}
                 pointsSpentPerTree={
                   pointsSpentPerTreeOrdered
                 }
@@ -169,9 +171,7 @@ export const TalentGrid = () => {
                   setSelectedClass
                 }
               />
-              <div
-                className='flex justify-center sm:justify-end gap-4 z-1 items-end'
-              >
+              <div className='flex justify-center sm:justify-end gap-4 z-1 items-end'>
                 {/* Share Button */}
                 <button
                   ref={shareBtnRef}

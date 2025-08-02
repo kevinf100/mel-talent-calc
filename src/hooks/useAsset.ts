@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import { loadAsset } from '../assetsLoader'
 
-export const useAsset = (relativePath: string) => {
+export const useAsset = (
+  relativePath: string
+) => {
   const [url, setUrl] = useState<string>('')
 
   useEffect(() => {
@@ -9,7 +11,8 @@ export const useAsset = (relativePath: string) => {
 
     const load = async () => {
       if (!relativePath) return ''
-      const assetUrl = await loadAsset(relativePath)
+      const assetUrl =
+        await loadAsset(relativePath)
       if (!cancelled) {
         setUrl(assetUrl)
       }

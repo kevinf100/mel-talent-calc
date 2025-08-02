@@ -4,7 +4,8 @@ export const protection: Tree = {
   name: 'Protection',
   backgroundImage:
     'src/assets/images/warrior/background-warrior-protection.webp',
-  specIcon: 'ability_warrior_defensivestance.webp',
+  specIcon:
+    'ability_warrior_defensivestance.webp',
   talents: [
     {
       row: 0,

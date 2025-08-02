@@ -59,12 +59,22 @@ export const TalentNode = ({
   const [isHovered, setHovered] = useState(false)
   const [isPressed, setPressed] = useState(false)
   const iconUrl = useAsset(icon)
-  const FrameDefault = useAsset('ui/talent-frame-default.webp')
-  const FrameDefaultOuter = useAsset('ui/talent-frame-default-outer.webp')
-  const FrameGold = useAsset('ui/talent-frame-gold.webp')
-  const FrameGreen = useAsset('ui/talent-frame-green.webp')
-  const FrameActive = useAsset('ui/talent-frame-active.webp')
-  
+  const FrameDefault = useAsset(
+    'ui/talent-frame-default.webp'
+  )
+  const FrameDefaultOuter = useAsset(
+    'ui/talent-frame-default-outer.webp'
+  )
+  const FrameGold = useAsset(
+    'ui/talent-frame-gold.webp'
+  )
+  const FrameGreen = useAsset(
+    'ui/talent-frame-green.webp'
+  )
+  const FrameActive = useAsset(
+    'ui/talent-frame-active.webp'
+  )
+
   const isDesktop = window.innerWidth >= 768
 
   const isMaxed = points === maxPoints
@@ -74,12 +84,13 @@ export const TalentNode = ({
     !disabled && (hasSpendablePoints || isActive)
   const shouldShowRank =
     points > 0 || availablePoints > 0
-    
-    const shouldGrayOut =
+
+  const shouldGrayOut =
     (availablePoints === 0 && points === 0) ||
     (!isActive && !isMaxed && disabled)
-  const canBeClicked = !shouldGrayOut && availablePoints !== 0
-    
+  const canBeClicked =
+    !shouldGrayOut && availablePoints !== 0
+
   const outerFrame = isMaxed
     ? FrameGold
     : isAvailable
@@ -209,8 +220,14 @@ export const TalentNode = ({
           style={{
             width: '48px',
             height: '48px',
-            left: isPressed && canBeClicked ? '7px' : '4px',
-            top: isPressed && canBeClicked ? '7px' : '5px',
+            left:
+              isPressed && canBeClicked
+                ? '7px'
+                : '4px',
+            top:
+              isPressed && canBeClicked
+                ? '7px'
+                : '5px',
             backgroundImage: `url(${iconUrl})`,
             filter: shouldGrayOut
               ? 'grayscale(100%)'

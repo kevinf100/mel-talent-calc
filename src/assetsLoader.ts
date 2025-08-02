@@ -1,8 +1,15 @@
-const assets = import.meta.glob('./assets/**/*.{png,webp}', { query: 'url' })
+const assets = import.meta.glob(
+  './assets/**/*.{png,webp}',
+  { query: 'url' }
+)
 
-export const loadAsset = async (input: string): Promise<string> => {
+export const loadAsset = async (
+  input: string
+): Promise<string> => {
   // 1. Remove 'src/' prefix if present
-  let cleanInput = input.startsWith('src/') ? input.slice(4) : input
+  let cleanInput = input.startsWith('src/')
+    ? input.slice(4)
+    : input
 
   // 2. Remove leading './' if present
   if (cleanInput.startsWith('./')) {
@@ -24,10 +31,14 @@ export const loadAsset = async (input: string): Promise<string> => {
   const loader = assets[path]
 
   if (!loader) {
-    console.warn(`Asset not found: ${input} (normalized to ${path})`)
+    console.warn(
+      `Asset not found: ${input} (normalized to ${path})`
+    )
     return ''
   }
 
-  const mod = await loader() as { default: string }
+  const mod = (await loader()) as {
+    default: string
+  }
   return mod.default
 }

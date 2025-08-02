@@ -1,8 +1,7 @@
 import type { Tree } from '../../types'
 
 export const survival: Tree = {
-  specIcon:
-    'ability_hunter_swiftstrike.webp',
+  specIcon: 'ability_hunter_swiftstrike.webp',
   name: 'Survival',
   backgroundImage:
     'src/assets/images/hunter/background-hunter-survival.webp',
@@ -235,8 +234,11 @@ export const survival: Tree = {
       points: 0,
       abilityData: {
         leftSide: ['45 Mana', 'Instant'],
-        rightSide: ['Melee Range', '5 sec cooldown']
-      }
+        rightSide: [
+          'Melee Range',
+          '5 sec cooldown',
+        ],
+      },
     },
     {
       id: 'ability_hunter_resourcefulness',

@@ -104,22 +104,24 @@ export const ClassPicker = ({
             />
           )}
         </div>
-        {primaryTree.name && <div className='absolute z-15 w-[30px] h-[30px] translate-x-[40px] translate-y-[30px] sm:w-[45px] sm:h-[45px] sm:translate-x-[72.5px] sm:translate-y-[48px]'>
-          {GoldRing && (
-            <img
-              src={GoldRing}
-              alt='Gold Ring'
-              className='absolute z-10 left-0 pointer-events-none object-contain w-full h-full top-0 scale-[1.3] opacity-75'
-            />
-          )}
-          {SpecIcon && (
-            <img
-              src={SpecIcon}
-              alt={selectedClass}
-              className='relative z-1 object-cover rounded-full w-auto h-auto top-0 left-0'
-            />
-          )}
-        </div>}
+        {primaryTree.name && (
+          <div className='absolute z-15 w-[30px] h-[30px] translate-x-[40px] translate-y-[30px] sm:w-[45px] sm:h-[45px] sm:translate-x-[72.5px] sm:translate-y-[48px]'>
+            {GoldRing && (
+              <img
+                src={GoldRing}
+                alt='Gold Ring'
+                className='absolute z-10 left-0 pointer-events-none object-contain w-full h-full top-0 scale-[1.3] opacity-75'
+              />
+            )}
+            {SpecIcon && (
+              <img
+                src={SpecIcon}
+                alt={selectedClass}
+                className='relative z-1 object-cover rounded-full w-auto h-auto top-0 left-0'
+              />
+            )}
+          </div>
+        )}
 
         {/* 📈 Info Column */}
         <div className='flex flex-col text-[#4a2c0d] justify-between flex-1'>
@@ -142,9 +144,7 @@ export const ClassPicker = ({
             </span>
             {selectedClass}
           </h2>
-          <p
-            className='relative text-4xl md:text-shadow-none'
-          >
+          <p className='relative text-4xl md:text-shadow-none'>
             {pointsArray.join(' / ')}
           </p>
         </div>
