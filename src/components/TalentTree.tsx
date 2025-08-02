@@ -138,7 +138,7 @@ export const TalentTree = ({
           >
             <h2 className='text-center px-3 py-[1px] sm:py-[2px] text-sm w-full rounded shadow-inner text-gold-text lg:text-xs [@media(min-width:1160px)]:text-base'>
               Points spent in {name} Talents:{' '}
-              <span className='text-white font-italic text-base lg:text-sm'>
+              <span className='text-white text-base lg:text-sm'>
                 {pointsSpent}
               </span>
             </h2>

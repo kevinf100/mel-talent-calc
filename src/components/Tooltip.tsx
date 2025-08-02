@@ -53,7 +53,7 @@ export const Tooltip = ({
   const { isDesktop } = useViewport()
 
   const { x, y, refs, strategy } = useFloating({
-    placement: 'top-start',
+    placement: isDesktop ? 'top-start' : 'top',
     middleware: [
       offset({ crossAxis: 50 }),
       shift({ padding: 8 }),

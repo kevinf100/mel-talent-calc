@@ -141,7 +141,7 @@ export const ClassPicker = ({
             {selectedClass}
           </h2>
           <p
-            className='relative text-4xl md:text-shadow-none'
+            className='relative text-4xl md:text-5xl md:text-shadow-none font-serif'
           >
             {pointsArray.join(' / ')}
           </p>

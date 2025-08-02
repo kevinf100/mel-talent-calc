@@ -273,7 +273,7 @@ export const useTalentTrees = ({
         }
   
         const newRank = nextOrder.filter(o => o.name === targetName).length + 1
-        nextOrder.push({ name: targetName, rank: newRank })
+        nextOrder.push({ name: targetName, rank: newRank, icon: targetTalent.icon })
       }
   
       const rebuilt = rebuildTreesFromOrder(nextOrder)

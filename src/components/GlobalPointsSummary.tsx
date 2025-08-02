@@ -18,7 +18,7 @@ export const GlobalPointsSummary = ({
       <div className='flex justify-end text-xl sm:text-2xl text-white md:hidden'>
         <div className='flex space-x-2 items-center'>
           <p className='text-gold-text'>Level:</p>
-          <p>{currentLevel}</p>
+          <p className='font-serif text-2xl sm:text-3xl'>{currentLevel}</p>
         </div>
       </div>
 
@@ -56,7 +56,7 @@ export const GlobalPointsSummary = ({
           <p className='text-gold-text'>
             Talent Points:
           </p>
-          <p className='text-white'>
+          <p className='text-white font-serif'>
             {pointsRemaining} /{' '}
             {totalTalentPoints}
           </p>
@@ -97,13 +97,13 @@ export const GlobalPointsSummary = ({
             <p className='text-gold-text'>
               Level:
             </p>
-            <p>{currentLevel}</p>
+            <p className='font-serif'>{currentLevel}</p>
           </div>
           <div className='flex text-3xl space-x-2'>
             <p className='text-gold-text'>
               Talent Points:
             </p>
-            <p>
+            <p className='font-serif'>
               {pointsRemaining} /{' '}
               {totalTalentPoints}
             </p>

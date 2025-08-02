@@ -1,6 +1,12 @@
-import { useMemo, useState } from 'react'
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 import ExpandCollapseSprite from '../assets/ui/expand_collapse_btn.webp?w=67&h=316&imagetools'
 import type { TalentOrderItem } from '../core/types'
+import { TalentOrderSummaryItem } from './TalentOrderSummaryItem'
 
 type TalentOrderSummaryProps = {
   talentSpendOrder: TalentOrderItem[]
@@ -43,6 +49,26 @@ export const TalentOrderSummary = ({
     return map
   }, [cumulativePointsByLevel])
 
+  useEffect(() => {
+    if (!hasPointsSpent && isExpanded) {
+      setIsExpanded(false)
+    }
+  }, [hasPointsSpent, isExpanded])
+
+  const hasAutoExpanded = useRef(false)
+
+  useEffect(() => {
+    if (
+      hasPointsSpent &&
+      !isExpanded &&
+      !hasAutoExpanded.current
+    ) {
+      setIsExpanded(true)
+      hasAutoExpanded.current = true
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hasPointsSpent])
+
   const toggleExpanded = () => {
     if (isDisabled) return
     setIsExpanded(!isExpanded)
@@ -59,6 +85,8 @@ export const TalentOrderSummary = ({
   const cursorStyle = isDisabled
     ? 'cursor-default'
     : 'cursor-pointer'
+
+  console.log(talentSpendOrder)
 
   return (
     <div className='mt-2 mb-1 p-2 rounded-sm w-full text-white font-italic'>
@@ -106,25 +134,27 @@ export const TalentOrderSummary = ({
       </div>
 
       {/* Expanded content */}
-      {showExpandedContent && (
-        <div className='mt-4 p-3 rounded bg-black/20 border border-white/10'>
+      {
+        <div
+          className={`mt-4 p-3 mb-20 sm:mb-0 rounded bg-black/20 ${showExpandedContent ? 'block' : 'hidden'}`}
+        >
           {talentSpendOrder.length > 0 ? (
-            <div className='space-y-2'>
+            <div
+              className='columns-[420px] overflow-hidden'
+              style={{ columnGap: '8px' }} // equivalent to gap-4 (16px)
+            >
               {talentSpendOrder.map(
                 (entry, index) => (
-                  <div
-                    key={`${entry.name}-${entry.rank}-${index}`}
-                    className='flex justify-between items-center text-sm min-w-0'
-                  >
-                    <span className='text-white truncate'>
-                      Level{' '}
-                      {
-                        pointIndexToLevelMap[
-                          index + 1
-                        ]
+                  <div className='mb-2 last:mb-0'>
+                    {/* margin-bottom for vertical spacing */}
+                    <TalentOrderSummaryItem
+                      key={`${entry.name}-${entry.rank}-${index}`}
+                      entry={entry}
+                      index={index}
+                      pointIndexToLevelMap={
+                        pointIndexToLevelMap
                       }
-                      . {entry.name}
-                    </span>
+                    />
                   </div>
                 )
               )}
@@ -135,7 +165,7 @@ export const TalentOrderSummary = ({
             </p>
           )}
         </div>
-      )}
+      }
     </div>
   )
 }

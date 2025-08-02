@@ -28,6 +28,7 @@ export type Tree = {
 export type TalentOrderItem = {
   name: string
   rank: number
+  icon: string
 }
 
 export type ClassName =
