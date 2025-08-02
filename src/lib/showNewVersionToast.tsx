@@ -44,7 +44,7 @@ export const showNewVersionToast = () =>
 
               <p className='text-base sm:text-lg text-white leading-snug'>
                 The site has been updated with a new URL structure for sharing
-                talent builds. Old links like the one you used are no longer
+                Talent builds. Old links like the one you used are no longer
                 supported. Please create a new build. This version also includes{' '}
                 <i>Talent Order tracking</i>, which can be found below the Talent Trees.
               </p>
