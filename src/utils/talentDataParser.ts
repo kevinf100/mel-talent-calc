@@ -178,7 +178,7 @@ export const decodeTalentSlug = (
       for (let p = 0; p < pointsToAdd; p++) {
         const rank = (talentPointCounts[talentIdx] ?? 0) + 1
         talentPointCounts[talentIdx] = rank
-        result.push({ name: talent.name, rank, icon: talent.icon })
+        result.push({ name: talent.name, rank, icon: talent.icon, description: talent.ranks[rank - 1], abilityData: talent.abilityData })
       }
     }
   }

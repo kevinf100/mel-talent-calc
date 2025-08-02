@@ -29,6 +29,8 @@ export type TalentOrderItem = {
   name: string
   rank: number
   icon: string
+  description: string
+  abilityData?: Talent['abilityData']
 }
 
 export type ClassName =

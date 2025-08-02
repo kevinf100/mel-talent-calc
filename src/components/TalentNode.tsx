@@ -5,6 +5,7 @@ import {
 } from 'react'
 import { useAsset } from '../hooks/useAsset'
 import { Tooltip } from './Tooltip'
+import { TalentIncrementButtons } from './TalentIncrementButtons'
 import { AbilityDataSection } from './AbilityDataSection'
 import type { Talent } from '../core/types'
 import { getRequirementsText } from '../core/talentUtils'
@@ -64,7 +65,7 @@ export const TalentNode = ({
   const [isHovered, setHovered] = useState(false)
   const [isPressed, setPressed] = useState(false)
   const iconUrl = useAsset(icon)
-  
+
   const isDesktop = window.innerWidth >= 768
 
   const isMaxed = points === maxPoints
@@ -74,12 +75,13 @@ export const TalentNode = ({
     !disabled && (hasSpendablePoints || isActive)
   const shouldShowRank =
     points > 0 || availablePoints > 0
-    
-    const shouldGrayOut =
+
+  const shouldGrayOut =
     (availablePoints === 0 && points === 0) ||
     (!isActive && !isMaxed && disabled)
-  const canBeClicked = !shouldGrayOut && availablePoints !== 0
-    
+  const canBeClicked =
+    !shouldGrayOut && availablePoints !== 0
+
   const outerFrame = isMaxed
     ? FrameGold
     : isAvailable
@@ -164,7 +166,9 @@ export const TalentNode = ({
   const showNextRank =
     points > 0 && points < maxPoints
 
-  const cursorStyle = canBeClicked ? 'cursor-pointer' : 'cursor-default'
+  const cursorStyle = canBeClicked
+    ? 'cursor-pointer'
+    : 'cursor-default'
 
   return (
     <div
@@ -211,8 +215,14 @@ export const TalentNode = ({
           style={{
             width: '48px',
             height: '48px',
-            left: isPressed && canBeClicked ? '7px' : '4px',
-            top: isPressed && canBeClicked ? '7px' : '5px',
+            left:
+              isPressed && canBeClicked
+                ? '7px'
+                : '4px',
+            top:
+              isPressed && canBeClicked
+                ? '7px'
+                : '5px',
             backgroundImage: `url(${iconUrl})`,
             filter: shouldGrayOut
               ? 'grayscale(100%)'
@@ -263,23 +273,10 @@ export const TalentNode = ({
         )}
       </button>
 
-      {/* 🧠 Tooltip with control flags */}
+      {/* 🧠 Tooltip with increment/decrement buttons */}
       <Tooltip
         referenceEl={buttonRef.current}
         open={isHovered}
-        disabled={disabled}
-        onIncrement={
-          canIncrement
-            ? handleIncrement
-            : undefined
-        }
-        onDecrement={
-          canDecrement
-            ? handleDecrement
-            : undefined
-        }
-        canIncrement={canIncrement}
-        canDecrement={canDecrement}
       >
         <p className='text-white text-xl'>
           {name}
@@ -334,9 +331,25 @@ export const TalentNode = ({
           </p>
         )}
         {!isDesktop && (
-          <p className='mb-1 text-gray-400 italic'>
+          <p className='mb-1 mt-1 text-gray-400 italic'>
             (Tap outside to dismiss)
           </p>
+        )}
+        {!disabled && (
+          <TalentIncrementButtons
+            onIncrement={
+              canIncrement
+                ? handleIncrement
+                : undefined
+            }
+            onDecrement={
+              canDecrement
+                ? handleDecrement
+                : undefined
+            }
+            canIncrement={canIncrement}
+            canDecrement={canDecrement}
+          />
         )}
       </Tooltip>
     </div>

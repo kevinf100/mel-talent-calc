@@ -18,7 +18,7 @@ export const GlobalPointsSummary = ({
       <div className='flex justify-end text-xl sm:text-2xl text-white md:hidden'>
         <div className='flex space-x-2 items-center'>
           <p className='text-gold-text'>Level:</p>
-          <p className='font-serif text-2xl sm:text-3xl'>{currentLevel}</p>
+          <p className='font-serif text-xl sm:text-3xl'>{currentLevel}</p>
         </div>
       </div>
 
