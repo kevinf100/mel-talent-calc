@@ -4,6 +4,8 @@ import { useAsset } from '../hooks/useAsset'
 import { Tooltip } from './Tooltip'
 import { AbilityDataSection } from './AbilityDataSection'
 
+const mobileCloseFns: (() => void)[] = []
+
 export const TalentOrderSummaryItem = ({
   entry,
   index,
@@ -14,37 +16,51 @@ export const TalentOrderSummaryItem = ({
   pointIndexToLevelMap: Record<number, number>
 }) => {
   const iconUrl = useAsset(entry.icon)
-  const [isHovered, setHovered] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
   const tooltipRef = useRef<HTMLDivElement>(null)
   const isDesktop = window.innerWidth >= 768
 
   const handleClick = () => {
-    if (!isDesktop && !isHovered) {
-      setHovered(true)
-      return
+    if (isDesktop) return
+    if (!isOpen) {
+      // Close others on mobile before opening this one
+      mobileCloseFns.forEach(fn => fn())
+      setIsOpen(true)
+    } else {
+      setIsOpen(false)
     }
+  }
+
+  if (
+    !isDesktop &&
+    !mobileCloseFns.includes(() =>
+      setIsOpen(false)
+    )
+  ) {
+    mobileCloseFns.push(() => setIsOpen(false))
   }
 
   const responsiveProps = isDesktop
     ? {
-        onMouseEnter: () => setHovered(true),
-        onMouseLeave: () => setHovered(false),
+        onMouseEnter: () => setIsOpen(true),
+        onMouseLeave: () => setIsOpen(false),
       }
     : {
-        onMouseEnter: () => setHovered(true),
         onClick: handleClick,
+        onMouseLeave: () => setIsOpen(false), // keep for tap outside mobile close too
       }
 
   return (
     <div
       ref={tooltipRef}
       className='relative overflow-visible'
-      onMouseLeave={() => setHovered(false)}
+      onMouseLeave={() =>
+        isDesktop && setIsOpen(false)
+      }
     >
       <div
         {...responsiveProps}
         className='flex items-center justify-start gap-2 text-sm min-w-0 p-2 bg-black/20 rounded cursor-pointer hover:bg-black/30 transition-colors'
-        key={`${entry.name}-${entry.rank}-${index}`}
       >
         <span className='text-white text-xl sm:text-2xl font-serif min-w-[28px] text-center flex items-center justify-center'>
           {pointIndexToLevelMap[index + 1]}
@@ -58,9 +74,10 @@ export const TalentOrderSummaryItem = ({
           />
         )}
 
-        {/* Responsive name + rank wrapper */}
         <div className='flex flex-col sm:flex-row sm:items-center sm:gap-2'>
-          <span className='text-gold-text text-lg relative sm:top-[2px] top-0'>
+          <span
+            className={`max-w-[275px] text-gold-text ${entry.name.length > 30 ? 'text-base' : 'text-lg'} relative sm:top-[2px] top-0`}
+          >
             {entry.name}
           </span>
           <span className='text-white text-sm relative sm:top-[2px] top-0'>
@@ -68,9 +85,10 @@ export const TalentOrderSummaryItem = ({
           </span>
         </div>
       </div>
+
       <Tooltip
         referenceEl={tooltipRef.current}
-        open={isHovered}
+        open={isOpen}
       >
         <p className='text-white text-xl'>
           {entry.name}
@@ -86,7 +104,7 @@ export const TalentOrderSummaryItem = ({
         </p>
         {!isDesktop && (
           <p className='text-gray-400 italic'>
-            (Tap outside to dismiss)
+            (Tap again or outside to dismiss)
           </p>
         )}
       </Tooltip>

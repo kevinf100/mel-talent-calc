@@ -25,6 +25,7 @@ import { useTalentTrees } from '../core/useTalentTrees'
 import type { TalentTreeScrollerRef } from './TalentTreeScroller'
 import { ParchmentBorders } from './ParchmentBorders'
 import { showCopyToast } from '../lib/showCopyToast'
+import { showNewVersionToast } from '../lib/showNewVersionToast'
 import {
   useState,
   useEffect,
@@ -93,6 +94,7 @@ export const TalentGrid = () => {
     useState<ClassName>(getInitialSelectedClass)
   const scrollerRef =
     useRef<TalentTreeScrollerRef>(null)
+  const hasShownToastRef = useRef(false)
 
   // Save selected class to localStorage whenever it changes
   useEffect(() => {
@@ -105,6 +107,17 @@ export const TalentGrid = () => {
       // Silently fail if localStorage is not available
     }
   }, [selectedClass])
+
+  // Check for data query parameter and show new version toast
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const dataParam = params.get('data')
+    
+    if (dataParam && !hasShownToastRef.current) {
+      showNewVersionToast()
+      hasShownToastRef.current = true
+    }
+  }, [])
 
   // Reset scroll to first tree when class changes
   useEffect(() => {
@@ -175,14 +188,15 @@ export const TalentGrid = () => {
   )
 
   const handleClassChange = (cls: ClassName) => {
-    setSelectedClass(cls)
-    // Clear build/order in URL immediately on class switch.
-    window.history.replaceState(
-      null,
-      '',
-      `/${cls}`
-    )
-    // Optionally: updateUrl() here once the hook has loaded the new class (but it will be empty anyway)
+    resetAll()
+    setSelectedClass(() => {
+      window.history.replaceState(
+        null,
+        '',
+        `/${cls}`
+      )
+      return cls
+    })
   }
 
   // Show error state if there's an error
