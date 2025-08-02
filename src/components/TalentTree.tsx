@@ -10,6 +10,8 @@ import {
 import { MetalBorders } from './MetalBorders'
 import { useViewport } from '../hooks/useViewport'
 import { useAsset } from '../hooks/useAsset'
+import ResetSprite from '../assets/ui/reset-button-sprite.webp?w=65&h=121&imagetools'
+import RockBackground from '../assets/ui/background-rock.webp?w=400&h=100&imagetools'
 
 export type TTalentTreeProps = {
   name: string
@@ -38,14 +40,9 @@ export const TalentTree = ({
     windowWidth,
     containerWidth,
   } = useViewport()
-  const treeBackground = useAsset(backgroundImage)
+  // Use backgroundImage directly since it's now an imported AVIF asset
+  const treeBackground = backgroundImage
   const treeIcon = useAsset(specIcon)
-  const ResetSprite = useAsset(
-    'ui/reset-button-sprite.webp'
-  )
-  const RockBackground = useAsset(
-    'ui/background-rock.webp'
-  )
 
   const pointsSpent = talents.reduce(
     (s, t) => s + t.points,
@@ -55,7 +52,7 @@ export const TalentTree = ({
   return (
     <MetalBorders>
       <div
-        className='w-full p-6 rounded shadow-inner snap-start touch-manipulation relative'
+        className='w-full p-6 rounded snap-start touch-manipulation relative'
         style={{
           backgroundImage: `url(${treeBackground})`,
           backgroundSize: 'cover',
@@ -75,8 +72,8 @@ export const TalentTree = ({
             backgroundImage: `url(${RockBackground})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            borderBottom: '5px double #00000059',
+            backgroundRepeat: 'repeat',
+            borderBottom: '5px double #00000065',
           }}
         >
           <div className='w-full flex items-center justify-between'>
@@ -106,7 +103,7 @@ export const TalentTree = ({
             <button
               onClick={onResetTree}
               aria-label='Reset Tree'
-              className='z-1 w-[39px] h-[38px] bg-no-repeat bg-[length:39px_75.5px] self-start'
+              className='z-1 w-[39px] h-[38px] bg-no-repeat bg-[length:39px_76px] self-start cursor-pointer'
               style={{
                 backgroundImage: `url(${ResetSprite})`,
                 backgroundPosition: '0px 0px',
@@ -141,7 +138,7 @@ export const TalentTree = ({
           >
             <h2 className='text-center px-3 py-[1px] sm:py-[2px] text-sm w-full rounded shadow-inner text-gold-text lg:text-xs [@media(min-width:1160px)]:text-base'>
               Points spent in {name} Talents:{' '}
-              <span className='text-white font-italic text-base lg:text-sm'>
+              <span className='text-white text-base lg:text-sm'>
                 {pointsSpent}
               </span>
             </h2>

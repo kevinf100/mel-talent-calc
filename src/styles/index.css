@@ -1,0 +1,6 @@
+/* Critical styles loaded first for immediate painting */
+@import './base.css';
+@import './critical.css';
+
+/* Non-critical component styles loaded after critical path */
+@import './components.css';

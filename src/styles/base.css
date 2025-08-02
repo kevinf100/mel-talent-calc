@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-gold-text: rgb(255, 215, 0);
+  --color-green-400: oklch(0.78 0.32 147.09);
+
+  /* Standard Tailwind breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 2400px;
+}
+
+@font-face {
+  font-family: 'FrizQuadrata';
+  src:
+    url('/fonts/FrizQuadrataStd-Italic.woff2')
+      format('woff2'),
+    url('/fonts/FrizQuadrataStd-Italic.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'FrizQuadrata';
+  src:
+    url('/fonts/FrizQuadrataStd-Bold.woff2')
+      format('woff2'),
+    url('/fonts/FrizQuadrataStd-Bold.woff')
+      format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FrizQuadrata';
+  src:
+    url('/fonts/FrizQuadrataStd.woff2')
+      format('woff2'),
+    url('/fonts/FrizQuadrataStd.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'FrizQuadrata';
+  src:
+    url('/fonts/FrizQuadrataStd-BoldItalic.woff2')
+      format('woff2'),
+    url('/fonts/FrizQuadrataStd-BoldItalic.woff')
+      format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}

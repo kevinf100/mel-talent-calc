@@ -1,13 +1,31 @@
-import { TalentTree } from './TalentTree'
-import { GlobalPointsSummary } from './GlobalPointsSummary'
+import { lazy, Suspense } from 'react'
+// Critical components for LCP - keep these eager
+const TalentTree = lazy(() =>
+  import('./TalentTree').then(m => ({
+    default: m.TalentTree,
+  }))
+)
+const GlobalPointsSummary = lazy(() =>
+  import('./GlobalPointsSummary').then(m => ({
+    default: m.GlobalPointsSummary,
+  }))
+)
+const ClassPicker = lazy(() =>
+  import('./ClassPicker').then(m => ({
+    default: m.ClassPicker,
+  }))
+)
+// Lazy load the talent tree scroller since it's below the fold
+const TalentTreeScroller = lazy(() =>
+  import('./TalentTreeScroller').then(m => ({
+    default: m.TalentTreeScroller,
+  }))
+)
 import { useTalentTrees } from '../core/useTalentTrees'
-import {
-  TalentTreeScroller,
-  type TalentTreeScrollerRef,
-} from './TalentTreeScroller'
+import type { TalentTreeScrollerRef } from './TalentTreeScroller'
 import { ParchmentBorders } from './ParchmentBorders'
-import { ClassPicker } from './ClassPicker'
 import { showCopyToast } from '../lib/showCopyToast'
+import { showNewVersionToast } from '../lib/showNewVersionToast'
 import {
   useState,
   useEffect,
@@ -16,12 +34,29 @@ import {
 import type { ClassName } from '../core/types'
 import { CLASS_NAMES } from '../core/constants'
 import ClipboardJS from 'clipboard'
-import { useAsset } from '../hooks/useAsset'
+import ShareSprite from '../assets/ui/share-btn-sprite-small2.webp?w=616&h=592&q=80&imagetools'
+import ClassCrest from './ClassCrest'
+import { TalentOrderSummary } from './TalentOrderSummary'
 
 const SELECTED_CLASS_KEY =
   'mel-talent-calc-selected-class'
 
 const getInitialSelectedClass = (): ClassName => {
+  const pathSegments = window.location.pathname
+    .split('/')
+    .filter(Boolean)
+  const classFromPath = pathSegments[0]
+
+  if (
+    classFromPath &&
+    CLASS_NAMES.includes(
+      classFromPath as ClassName
+    )
+  ) {
+    return classFromPath as ClassName
+  }
+
+  // fallback to query param
   const params = new URLSearchParams(
     window.location.search
   )
@@ -36,6 +71,7 @@ const getInitialSelectedClass = (): ClassName => {
     return classFromURL as ClassName
   }
 
+  // fallback to localStorage
   try {
     const saved = localStorage.getItem(
       SELECTED_CLASS_KEY
@@ -58,6 +94,7 @@ export const TalentGrid = () => {
     useState<ClassName>(getInitialSelectedClass)
   const scrollerRef =
     useRef<TalentTreeScrollerRef>(null)
+  const hasShownToastRef = useRef(false)
 
   // Save selected class to localStorage whenever it changes
   useEffect(() => {
@@ -70,6 +107,17 @@ export const TalentGrid = () => {
       // Silently fail if localStorage is not available
     }
   }, [selectedClass])
+
+  // Check for data query parameter and show new version toast
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const dataParam = params.get('data')
+    
+    if (dataParam && !hasShownToastRef.current) {
+      showNewVersionToast()
+      hasShownToastRef.current = true
+    }
+  }, [])
 
   // Reset scroll to first tree when class changes
   useEffect(() => {
@@ -118,6 +166,7 @@ export const TalentGrid = () => {
 
   const {
     trees,
+    error,
     modify,
     resetTree,
     resetAll,
@@ -127,36 +176,59 @@ export const TalentGrid = () => {
     currentLevel,
     pointsSpentPerTree,
     primaryTree,
+    talentSpendOrder,
+    cumulativePointsByLevel,
   } = useTalentTrees({
     selectedClass,
-    setSelectedClass,
   })
-  const classCrestImage = useAsset(
-    `images/${selectedClass}/classcrest_${selectedClass}.webp`
-  )
-  const ShareSprite = useAsset(
-    'ui/share-btn-sprite-small2.webp'
-  )
 
   const pointsSpentPerTreeOrdered = trees.map(
     tree => pointsSpentPerTree[tree.name] || 0
   )
 
+  const handleClassChange = (cls: ClassName) => {
+    resetAll()
+    setSelectedClass(cls)
+  }
+
+  // Show error state if there's an error
+  if (error) {
+    return (
+      <div className='min-h-screen flex items-center justify-center'>
+        <div className='max-w-[85rem] w-full m-auto overflow-hidden'>
+          <div className='w-full flex items-center justify-center bg-red-900 bg-opacity-30 rounded-lg py-16'>
+            <div className='text-center p-8'>
+              <p className='text-red-400 text-lg mb-4'>
+                Failed to load talent data
+              </p>
+              <p className='text-red-300 text-sm mb-4'>
+                {error}
+              </p>
+              <button
+                onClick={() =>
+                  window.location.reload()
+                }
+                className='px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded transition-colors'
+              >
+                Retry
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  // Show full app when everything is ready
   return (
     <div>
-      <div className='max-w-[85rem] m-auto'>
+      <div className='max-w-[85rem] w-full m-auto overflow-x-hidden'>
         <div className='flex flex-col w-full gap-4'>
           <ParchmentBorders>
-            {/* 🛡️ Class Crest Image */}
-            {classCrestImage && (
-              <img
-                src={classCrestImage}
-                alt={`${selectedClass} crest`}
-                className='absolute right-0 top-0 z-0 sm:opacity-50 opacity-40 pointer-events-none fade-mask 
-              sm:top-[-100px] top-[5%] max-md:left-[140px] 
-              [@media(max-width:420px)]:top-[52%]
-              [@media(max-width:420px)]:left-[100px]
-              [@media(max-width:1009px)]:top-[0]'
+            {/* Class Crest */}
+            {selectedClass && (
+              <ClassCrest
+                selectedClass={selectedClass}
               />
             )}
             <div className='flex flex-col w-full gap-6'>
@@ -168,7 +240,7 @@ export const TalentGrid = () => {
                 }
                 selectedClass={selectedClass}
                 setSelectedClass={
-                  setSelectedClass
+                  handleClassChange
                 }
               />
               <div className='flex justify-center sm:justify-end gap-4 z-1 items-end'>
@@ -176,7 +248,7 @@ export const TalentGrid = () => {
                 <button
                   ref={shareBtnRef}
                   aria-label='Share'
-                  className='relative sm:top-1 w-[308px] h-[95px] bg-[length:308px_296px] bg-no-repeat sm:w-[308px] sm:h-[95px] sm:bg-[length:308px_296px]'
+                  className='relative sm:top-1 w-[308px] h-[95px] bg-[length:308px_296px] bg-no-repeat sm:w-[308px] sm:h-[95px] sm:bg-[length:308px_296px] cursor-pointer'
                   style={{
                     backgroundImage: `url(${ShareSprite})`,
                     backgroundPosition: '0px 0px',
@@ -209,6 +281,7 @@ export const TalentGrid = () => {
             </div>
           </ParchmentBorders>
         </div>
+
         <GlobalPointsSummary
           totalTalentPoints={totalTalentPoints}
           totalPointsSpent={totalPointsSpent}
@@ -217,25 +290,35 @@ export const TalentGrid = () => {
           onResetAll={resetAll}
         />
 
-        <TalentTreeScroller
-          ref={scrollerRef}
-          trees={trees.map((tree, i) => (
-            <TalentTree
-              key={tree.name}
-              name={tree.name}
-              backgroundImage={
-                tree.backgroundImage
-              }
-              specIcon={tree.specIcon}
-              talents={tree.talents}
-              pointsRemaining={pointsRemaining}
-              onClickTalent={(id, e) =>
-                modify(i, id, e)
-              }
-              onResetTree={() => resetTree(i)}
-            />
-          ))}
-        />
+        <Suspense fallback={null}>
+          <TalentTreeScroller
+            ref={scrollerRef}
+            trees={trees.map((tree, i) => (
+              <TalentTree
+                key={tree.name}
+                name={tree.name}
+                backgroundImage={
+                  tree.backgroundImage
+                }
+                specIcon={tree.specIcon}
+                talents={tree.talents}
+                pointsRemaining={pointsRemaining}
+                onClickTalent={(id, e) =>
+                  modify(i, id, e)
+                }
+                onResetTree={() => resetTree(i)}
+              />
+            ))}
+          />
+        </Suspense>
+        <div className='flex justify-center min-h-[20rem] w-[95%] md:w-[98%] text-white mx-auto'>
+          <TalentOrderSummary
+            cumulativePointsByLevel={
+              cumulativePointsByLevel
+            }
+            talentSpendOrder={talentSpendOrder}
+          />
+        </div>
       </div>
     </div>
   )

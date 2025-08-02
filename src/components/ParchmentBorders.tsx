@@ -1,3 +1,6 @@
+// High priority parchment background import for faster LCP
+import ParchmentBgDesktop from '../assets/ui/parchment-sprite-bg.webp?w=800&q=85&imagetools'
+
 type ParchmentBordersProps = {
   children: React.ReactNode
 }
@@ -7,8 +10,18 @@ export const ParchmentBorders = ({
 }: ParchmentBordersProps) => {
   return (
     <div className='relative w-full h-full md:min-h-[340px] min-h-[440px] parchment p-3'>
-      {/* Background Layer */}
-      <div className='absolute inset-0 p-8 background' />
+      {/* Critical LCP background is now in HTML for immediate rendering */}
+
+      {/* Parchment background - visible and optimized */}
+      <div
+        className='p-8 absolute inset-0'
+        style={{
+          backgroundImage: `url(${ParchmentBgDesktop})`,
+          backgroundRepeat: 'repeat',
+          backgroundClip: 'content-box',
+          zIndex: 1,
+        }}
+      />
 
       {/* Corners */}
       <div className='absolute w-[169px] h-[170px] top-0 left-0 corner top-left' />

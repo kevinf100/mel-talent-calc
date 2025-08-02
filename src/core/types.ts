@@ -4,6 +4,7 @@ export type Talent = {
   id: string
   name: string
   ranks: string[]
+  spellIds: string[]
   row: number
   col: number
   points: number
@@ -22,6 +23,14 @@ export type Tree = {
   talents: Talent[]
   backgroundImage: string
   specIcon: string
+}
+
+export type TalentOrderItem = {
+  name: string
+  rank: number
+  icon: string
+  description: string
+  abilityData?: Talent['abilityData']
 }
 
 export type ClassName =

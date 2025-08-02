@@ -6,6 +6,7 @@ import {
 } from '../core/constants'
 import { useAsset } from '../hooks/useAsset'
 import { ClassPickerGridIcons } from './ClassPickerGridIcons'
+import GoldRing from '../assets/icons/gold-ring.webp?q=80&imagetools'
 
 // 🌟 Shadow helpers
 const CLASS_SHADOWS = {
@@ -36,7 +37,6 @@ export const ClassPicker = ({
   const selectedClassIcon = useAsset(
     `classicon_${selectedClass}.webp`
   )
-  const GoldRing = useAsset('gold-ring.webp')
   const SpecIcon = useAsset(primaryTree.specIcon)
 
   const isTouchDevice =
@@ -50,7 +50,7 @@ export const ClassPicker = ({
   return (
     <div className='flex flex-col w-full items-start gap-6 sm:gap-8 h-full'>
       {/* 🧱 Icon Grid */}
-      <div className='flex flex-wrap gap-2 sm:justify-start justify-center w-full'>
+      <div className='flex flex-wrap gap-2 justify-center sm:justify-start w-full'>
         {CLASS_NAMES.map(className => {
           const isHovered =
             hoveredClass === className
@@ -70,6 +70,7 @@ export const ClassPicker = ({
 
           return (
             <ClassPickerGridIcons
+              GoldRing={GoldRing}
               className={className}
               boxShadow={boxShadow}
               isSelected={isSelected}
@@ -89,10 +90,7 @@ export const ClassPicker = ({
             <img
               src={GoldRing}
               alt='Gold Ring'
-              className='absolute z-10 left-0 pointer-events-none object-contain w-full h-full top-0 scale-[1.3]
-              [@media(max-width:420px)]:top-[-12px] [@media(max-width:420px)]:h-[84px]
-              [@media(min-width:420px)]:top-0 [@media(min-width:420px)]:h-full
-              [@media(min-width:768px)]:h-[140px] [@media(min-width:768px)]:top-[-17px]'
+              className='absolute z-10 left-0 pointer-events-none object-contain w-full h-full scale-[1.33] top-1/2 -translate-y-1/2'
             />
           )}
           {selectedClassIcon && (
@@ -110,7 +108,7 @@ export const ClassPicker = ({
               <img
                 src={GoldRing}
                 alt='Gold Ring'
-                className='absolute z-10 left-0 pointer-events-none object-contain w-full h-full top-0 scale-[1.3] opacity-75'
+                className='absolute z-10 left-0 pointer-events-none object-contain w-full h-full top-0 scale-[1.33] opacity-75'
               />
             )}
             {SpecIcon && (
@@ -144,7 +142,7 @@ export const ClassPicker = ({
             </span>
             {selectedClass}
           </h2>
-          <p className='relative text-4xl md:text-shadow-none'>
+          <p className='relative text-4xl md:text-5xl md:text-shadow-none font-serif'>
             {pointsArray.join(' / ')}
           </p>
         </div>

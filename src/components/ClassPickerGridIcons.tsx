@@ -9,6 +9,7 @@ type TClassPickerGridIcons = {
   setHoveredClass: (
     className: ClassName | null
   ) => void
+  GoldRing: string
 }
 
 export const ClassPickerGridIcons = (
@@ -20,11 +21,11 @@ export const ClassPickerGridIcons = (
     isSelected,
     setSelectedClass,
     setHoveredClass,
+    GoldRing,
   } = props
   const classIcon = useAsset(
     `classicon_${className}.webp`
   )
-  const GoldRing = useAsset('gold-ring.webp')
 
   const isTouchDevice =
     typeof window !== 'undefined' &&
@@ -39,7 +40,7 @@ export const ClassPickerGridIcons = (
       onMouseLeave={() => {
         if (!isTouchDevice) setHoveredClass(null)
       }}
-      className='relative w-[60px] h-[60px] sm:w-[90px] sm:h-[90px] flex items-center justify-center group'
+      className='relative w-[60px] h-[60px] sm:w-[90px] sm:h-[90px] flex items-center justify-center group cursor-pointer'
     >
       {/* 🟡 Ring Frame */}
       {GoldRing && (

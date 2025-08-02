@@ -13,17 +13,11 @@ import { MetalBordersSmall } from './MetalBordersSmall'
 import { useViewport } from '../hooks/useViewport'
 import { optimizeTooltipWidth } from '../utils/tooltipOptimization'
 
-import { useAsset } from '../hooks/useAsset'
-
 type TooltipProps = {
   children: ReactNode
   referenceEl: HTMLElement | null
   open: boolean
-  onIncrement?: () => void
-  onDecrement?: () => void
-  disabled?: boolean
-  canIncrement: boolean
-  canDecrement: boolean
+  // Removed increment/decrement functionality
 }
 
 /**
@@ -33,7 +27,6 @@ type TooltipProps = {
  * - Desktop: 24rem default width with aggressive expansion for vertical clipping
  * - Mobile: Simple bottom-only flip behavior with natural width
  * - Automatic viewport detection and responsive behavior
- * - Touch-friendly increment/decrement buttons on mobile
  *
  * @param props - TooltipProps configuration object
  * @returns JSX tooltip element rendered via portal
@@ -42,28 +35,11 @@ export const Tooltip = ({
   children,
   referenceEl,
   open,
-  onIncrement,
-  onDecrement,
-  disabled,
-  canIncrement,
-  canDecrement,
 }: TooltipProps) => {
   const { isDesktop } = useViewport()
-  const ButtonIncrement = useAsset(
-    'ui/red-button-increment.webp'
-  )
-  const ButtonDecrement = useAsset(
-    'ui/red-button-decrement.webp'
-  )
-  const ButtonIncrementGrey = useAsset(
-    'ui/red-button-increment-disabled2.webp'
-  )
-  const ButtonDecrementGrey = useAsset(
-    'ui/red-button-decrement-disabled2.webp'
-  )
 
   const { x, y, refs, strategy } = useFloating({
-    placement: 'top-start',
+    placement: isDesktop ? 'top-start' : 'top',
     middleware: [
       offset({ crossAxis: 50 }),
       shift({ padding: 8 }),
@@ -100,20 +76,6 @@ export const Tooltip = ({
 
   if (!open || !referenceEl) return null
 
-  const createButtonStyle = (
-    active: boolean,
-    activeSprite: string,
-    disabledSprite: string
-  ) => ({
-    backgroundImage: `url(${active ? activeSprite : disabledSprite})`,
-    backgroundSize: active
-      ? '125px 90px'
-      : '125px 46px',
-    backgroundPosition: active
-      ? '0px 0px'
-      : 'center',
-  })
-
   const tooltip = (
     <div
       ref={setFloating}
@@ -133,69 +95,6 @@ export const Tooltip = ({
             <div className='break-words whitespace-normal'>
               {children}
             </div>
-            {!disabled && (
-              <div className='flex gap-2 mt-1 md:hidden touch-manipulation justify-between'>
-                <button
-                  onClick={e => {
-                    if (!canDecrement) return
-                    e.stopPropagation()
-                    onDecrement?.()
-                  }}
-                  disabled={!canDecrement}
-                  className='w-[125px] h-[45px] bg-no-repeat'
-                  style={createButtonStyle(
-                    canDecrement,
-                    ButtonDecrement,
-                    ButtonDecrementGrey
-                  )}
-                  onPointerDown={e => {
-                    if (canDecrement)
-                      e.currentTarget.style.backgroundPosition =
-                        '0px -46px'
-                  }}
-                  onPointerUp={e => {
-                    if (canDecrement)
-                      e.currentTarget.style.backgroundPosition =
-                        '0px 0px'
-                  }}
-                  onPointerLeave={e => {
-                    if (canDecrement)
-                      e.currentTarget.style.backgroundPosition =
-                        '0px 0px'
-                  }}
-                />
-
-                <button
-                  onClick={e => {
-                    if (!canIncrement) return
-                    e.stopPropagation()
-                    onIncrement?.()
-                  }}
-                  disabled={!canIncrement}
-                  className='w-[125px] h-[45px] bg-no-repeat'
-                  style={createButtonStyle(
-                    canIncrement,
-                    ButtonIncrement,
-                    ButtonIncrementGrey
-                  )}
-                  onPointerDown={e => {
-                    if (canIncrement)
-                      e.currentTarget.style.backgroundPosition =
-                        '0px -46px'
-                  }}
-                  onPointerUp={e => {
-                    if (canIncrement)
-                      e.currentTarget.style.backgroundPosition =
-                        '0px 0px'
-                  }}
-                  onPointerLeave={e => {
-                    if (canIncrement)
-                      e.currentTarget.style.backgroundPosition =
-                        '0px 0px'
-                  }}
-                />
-              </div>
-            )}
           </div>
         </MetalBordersSmall>
       </div>

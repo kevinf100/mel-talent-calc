@@ -1,0 +1,236 @@
+@layer components {
+  @media (max-width: 640px) {
+    .header-bg-img {
+      object-position: center; /* or whatever position you want for mobile */
+    }
+  }
+
+  /* Arrow Styles - Non-critical, talent tree specific */
+  .down-arrow::before {
+    @apply absolute w-[56px] pointer-events-none;
+    content: '';
+    background: url('/src/assets/ui/arrow-down-glow.webp')
+      no-repeat bottom;
+    bottom: 64px; /* Aligns with target node's top */
+    height: var(--arrow-height);
+  }
+  .down-arrow:not(.glow)::before {
+    @apply grayscale;
+  }
+  .down-arrow::after {
+    @apply absolute w-[56px] h-[21px] z-[30] pointer-events-none md:bottom-[55.75px] bottom-[53.75px];
+    content: '';
+    background: url('/src/assets/ui/arrow-down-head-glow.webp')
+      no-repeat bottom;
+  }
+  .down-arrow:not(.glow)::after {
+    @apply grayscale;
+  }
+  .down-arrow.glow.disabled::before,
+  .down-arrow.glow.disabled::after {
+    @apply grayscale-0; /* Override disabled styling for glowing arrows */
+  }
+
+  /* Right arrow styles */
+  .right-arrow::before {
+    @apply absolute h-[56px] pointer-events-none right-[58px];
+    content: '';
+    background: url('/src/assets/ui/arrow-right-glow.webp')
+      no-repeat right;
+    width: var(--arrow-width);
+  }
+  .right-arrow:not(.glow)::before {
+    @apply grayscale;
+  }
+  .right-arrow::after {
+    @apply absolute h-[56px] w-[21px] z-[30] pointer-events-none md:right-[50px] right-[52px];
+    content: '';
+    background: url('/src/assets/ui/arrow-right-head-glow.webp')
+      no-repeat right;
+    top: 0; /* Fix: add proper top positioning */
+  }
+  .right-arrow:not(.glow)::after {
+    @apply grayscale;
+  }
+  .right-arrow.glow.disabled::before,
+  .right-arrow.glow.disabled::after {
+    @apply grayscale-0; /* Override disabled styling for glowing arrows */
+  }
+
+  /* Left arrow styles */
+  .left-arrow::before {
+    @apply absolute h-[56px] pointer-events-none left-[58px];
+    content: '';
+    background: url('/src/assets/ui/arrow-right-glow.webp')
+      no-repeat left;
+    width: var(--arrow-width);
+    transform: scaleX(
+      -1
+    ); /* Flip the glow horizontally */
+  }
+  .left-arrow:not(.glow)::before {
+    @apply grayscale;
+  }
+  .left-arrow::after {
+    @apply absolute h-[56px] w-[21px] z-[30] pointer-events-none md:left-[50px] left-[52px];
+    content: '';
+    background: url('/src/assets/ui/arrow-left-head-glow.webp')
+      no-repeat left;
+    top: 0;
+  }
+  .left-arrow:not(.glow)::after {
+    @apply grayscale;
+  }
+  .left-arrow.glow.disabled::before,
+  .left-arrow.glow.disabled::after {
+    @apply grayscale-0; /* Override disabled styling for glowing arrows */
+  }
+
+  /* Arrow elements for corner connections */
+  .arrow-element {
+    @apply absolute pointer-events-none;
+  }
+
+  /* Down arrow element styles */
+  .arrow-element.down-arrow::before {
+    @apply absolute w-[56px] pointer-events-none;
+    content: '';
+    background: url('/src/assets/ui/arrow-down-glow.webp')
+      no-repeat bottom;
+    bottom: 0;
+    height: var(--arrow-height);
+    left: 0;
+  }
+  .arrow-element.down-arrow:not(.glow)::before {
+    @apply grayscale;
+  }
+  .arrow-element.down-arrow::after {
+    @apply absolute w-[56px] h-[21px] z-[35] pointer-events-none;
+    content: '';
+    background: url('/src/assets/ui/arrow-down-head-glow.webp')
+      no-repeat bottom;
+    left: 0;
+    bottom: -7px;
+  }
+  .arrow-element.down-arrow:not(.glow)::after {
+    @apply grayscale;
+  }
+
+  /* Right arrow element styles (with arrowhead for standalone right arrows) */
+  .arrow-element.right-arrow::before {
+    @apply absolute h-[56px] pointer-events-none right-[65px];
+    content: '';
+    background: url('/src/assets/ui/arrow-right-glow.webp')
+      no-repeat right;
+    width: var(--arrow-width);
+    top: 0;
+  }
+  .arrow-element.right-arrow:not(.glow)::before {
+    @apply grayscale;
+  }
+  .arrow-element.right-arrow::after {
+    @apply absolute h-[56px] w-[21px] z-[30] pointer-events-none right-[52px];
+    content: '';
+    background: url('/src/assets/ui/arrow-right-head-glow.webp')
+      no-repeat right;
+    top: 0;
+  }
+  .arrow-element.right-arrow:not(.glow)::after {
+    @apply grayscale;
+  }
+
+  /* Right connector element styles (no arrowhead for corner connections) */
+  .arrow-element.right-connector-arrow::before {
+    @apply absolute pointer-events-none;
+    content: '';
+    background: url('/src/assets/ui/arrow-rightdown-glow.webp')
+      no-repeat;
+    width: var(
+      --connector-width
+    ); /* Use dynamic width, fallback to 69px */
+    height: 64px;
+    right: -38px; /* Keep original positioning */
+    top: calc(
+      -64px - 23px
+    ); /* -64px (node height) - 18px (gap/padding) = -82px */
+    background-position: 100% center;
+  }
+  .arrow-element.right-connector-arrow:not(
+      .glow
+    )::before {
+    @apply grayscale;
+  }
+  /* No ::after for right-connector-arrow - no arrowhead */
+
+  /* Reset button responsive sizing for mobile (below 640px) */
+  @media (max-width: 639px) {
+    /* Original: 150px x 49px, target: 120px wide (30px less) */
+    /* Aspect ratio: 150/49 ≈ 3.06, so 120px wide = 39.2px high */
+    button.w-\[150px\].h-\[49px\] {
+      width: 120px !important;
+      height: 39px !important;
+      background-size: 120px 79px !important; /* Scale background proportionally */
+    }
+  }
+
+  /* Small UI Frame Styles - Non-critical decorative elements */
+
+  /* Corners and horizontal beams from smaller sprite */
+  .corner-sm,
+  .edge-sm.top-sm,
+  .edge-sm.bottom-sm {
+    background-image: url('/src/assets/ui/ui-frame-diamond-metal.webp');
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+
+  .top-left-sm {
+    background-position: 0 -137px;
+  }
+
+  .top-right-sm {
+    background-position: 0 -171px;
+  }
+
+  .bottom-left-sm {
+    background-position: 0 -70px;
+  }
+
+  .bottom-right-sm {
+    background-position: 0 -104px;
+  }
+
+  .edge-sm.top-sm {
+    background-position: 0 -11px;
+    background-size: 64px auto;
+    background-repeat: repeat-x;
+  }
+
+  .edge-sm.bottom-sm {
+    background-position: 0 -35px;
+    background-size: 64px auto;
+    background-repeat: repeat-x;
+  }
+
+  /* Vertical beams from small sprite */
+  .edge-sm.left-sm,
+  .edge-sm.right-sm {
+    background-image: url('/src/assets/ui/ui-frame-diamond-metal-vertical.webp');
+    background-repeat: repeat-y;
+    background-size: 22px auto;
+    z-index: 1;
+  }
+
+  .edge-sm.left-sm {
+    background-position: 0 0;
+  }
+
+  .edge-sm.right-sm {
+    background-position: 100% 0;
+  }
+
+  .tooltip-container {
+    min-width: 24rem;
+    max-width: 24rem;
+  }
+}

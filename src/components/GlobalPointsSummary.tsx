@@ -1,4 +1,4 @@
-import { useAsset } from '../hooks/useAsset'
+import ResetSprite from '../assets/ui/reset-all-button-sprite-small.webp?w=201&h=132&imagetools'
 
 export const GlobalPointsSummary = ({
   totalTalentPoints,
@@ -12,16 +12,15 @@ export const GlobalPointsSummary = ({
   currentLevel: number
   onResetAll: () => void
 }) => {
-  const ResetSprite = useAsset(
-    'ui/reset-all-button-sprite-small.webp'
-  )
   return (
     <div className='mt-2 mb-1 p-2 rounded-sm w-[95%] md:w-[98%] text-white mx-auto  font-italic'>
       {/* Mobile: labels row */}
       <div className='flex justify-end text-xl sm:text-2xl text-white md:hidden'>
         <div className='flex space-x-2 items-center'>
           <p className='text-gold-text'>Level:</p>
-          <p>{currentLevel}</p>
+          <p className='font-serif text-xl sm:text-3xl'>
+            {currentLevel}
+          </p>
         </div>
       </div>
 
@@ -31,7 +30,7 @@ export const GlobalPointsSummary = ({
           <button
             onClick={onResetAll}
             aria-label='Reset All'
-            className='w-[120px] h-[39px] bg-no-repeat bg-[length:120px_79px] sm:w-[150px] sm:h-[49px] sm:bg-[length:150px_99px] sm:flex'
+            className='w-[120px] h-[39px] bg-no-repeat bg-[length:120px_79px] sm:w-[150px] sm:h-[49px] sm:bg-[length:150px_99px] sm:flex cursor-pointer'
             style={{
               backgroundImage: `url(${ResetSprite})`,
               backgroundPosition: '0px 0px',
@@ -41,8 +40,8 @@ export const GlobalPointsSummary = ({
                 window.innerWidth >= 640
               e.currentTarget.style.backgroundPosition =
                 isDesktop
-                  ? '0px -48.75px'
-                  : '0px -38.75px'
+                  ? '0px -49px'
+                  : '0px -39px'
             }}
             onPointerUp={e => {
               e.currentTarget.style.backgroundPosition =
@@ -59,7 +58,7 @@ export const GlobalPointsSummary = ({
           <p className='text-gold-text'>
             Talent Points:
           </p>
-          <p className='text-white'>
+          <p className='text-white font-serif'>
             {pointsRemaining} /{' '}
             {totalTalentPoints}
           </p>
@@ -72,7 +71,7 @@ export const GlobalPointsSummary = ({
         <button
           onClick={onResetAll}
           aria-label='Reset All'
-          className='w-[120px] h-[39px] bg-no-repeat bg-[length:120px_79px] sm:w-[150px] sm:h-[49px] sm:bg-[length:150px_99px] hidden sm:flex'
+          className='w-[120px] h-[39px] bg-no-repeat bg-[length:120px_79px] sm:w-[150px] sm:h-[49px] sm:bg-[length:150px_99px] hidden sm:flex cursor-pointer'
           style={{
             backgroundImage: `url(${ResetSprite})`,
             backgroundPosition: '0px 0px',
@@ -82,8 +81,8 @@ export const GlobalPointsSummary = ({
               window.innerWidth >= 640
             e.currentTarget.style.backgroundPosition =
               isDesktop
-                ? '0px -48.75px'
-                : '0px -38.75px'
+                ? '0px -49px'
+                : '0px -39px'
           }}
           onPointerUp={e => {
             e.currentTarget.style.backgroundPosition =
@@ -100,13 +99,15 @@ export const GlobalPointsSummary = ({
             <p className='text-gold-text'>
               Level:
             </p>
-            <p>{currentLevel}</p>
+            <p className='font-serif'>
+              {currentLevel}
+            </p>
           </div>
           <div className='flex text-3xl space-x-2'>
             <p className='text-gold-text'>
               Talent Points:
             </p>
-            <p>
+            <p className='font-serif'>
               {pointsRemaining} /{' '}
               {totalTalentPoints}
             </p>
