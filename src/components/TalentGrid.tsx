@@ -191,10 +191,6 @@ export const TalentGrid = () => {
     setSelectedClass(cls)
   }
 
-  useEffect(() => {
-    window.history.replaceState(null, '', `/${selectedClass}`)
-  }, [selectedClass])
-
   // Show error state if there's an error
   if (error) {
     return (

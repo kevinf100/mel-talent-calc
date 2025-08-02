@@ -1,4 +1,3 @@
-// useTalentTrees.ts
 import {
   useState,
   useMemo,
@@ -38,165 +37,138 @@ export const useTalentTrees = ({
   totalTalentPoints = 61,
 }: UseTalentTreesProps) => {
   const [trees, setTrees] = useState<Tree[]>([])
+  const [talentSpendOrder, setTalentSpendOrder] =
+    useState<TalentOrderItem[]>([])
   const [error, setError] = useState<
     string | null
   >(null)
-  const [talentSpendOrder, setTalentSpendOrder] =
-    useState<TalentOrderItem[]>([])
-
-  // pristine base data to rebuild from (never mutated)
   const baseTreesRef = useRef<Tree[]>([])
 
-  // ---- Load initial data ----------------------------------------------------
+  // Load initial data and parse any encoded build
   useEffect(() => {
-    const loadDataAsync = async () => {
+    const loadData = async () => {
       try {
         setError(null)
-        const talentData = await loadTalentData(
+        const data = await loadTalentData(
           selectedClass
         )
+        const pathSegs = window.location.pathname
+          .split('/')
+          .filter(Boolean)
+        const [clsFromPath, buildEnc, orderEnc] =
+          pathSegs
 
-        const pathSegments =
-          window.location.pathname
-            .split('/')
-            .filter(Boolean)
+        baseTreesRef.current =
+          structuredClone(data)
 
-        const [
-          classFromPath,
-          encodedBuild,
-          orderSlug,
-        ] = pathSegments
-
-        const cloneBase =
-          typeof structuredClone !== 'undefined'
-            ? structuredClone(talentData)
-            : JSON.parse(
-                JSON.stringify(talentData)
-              )
-
-        baseTreesRef.current = cloneBase
-
-        let initialTrees: Tree[]
+        let initialTrees: Tree[] =
+          structuredClone(data)
         let initialOrder: TalentOrderItem[] = []
 
-        const cloned = deepClone(
-          baseTreesRef.current
-        )
         if (
-          classFromPath === selectedClass &&
-          encodedBuild
+          clsFromPath === selectedClass &&
+          buildEnc
         ) {
           initialTrees = decodeTalentBuild(
-            encodedBuild,
-            cloned
+            buildEnc,
+            structuredClone(data)
           )
-        } else {
-          initialTrees = cloned
         }
-
         if (
-          classFromPath === selectedClass &&
-          orderSlug
+          clsFromPath === selectedClass &&
+          orderEnc
         ) {
           initialOrder = decodeTalentSlug(
-            orderSlug,
+            orderEnc,
             initialTrees
           )
         }
 
-        setTalentSpendOrder(initialOrder)
         setTrees(initialTrees)
+        setTalentSpendOrder(initialOrder)
       } catch (err) {
         setError(
-          `Failed to load talent data: ${err instanceof Error ? err.message : String(err)}`
+          err instanceof Error
+            ? err.message
+            : String(err)
         )
       }
     }
-
-    loadDataAsync()
+    loadData()
   }, [selectedClass])
 
-  // ---- URL Update Helper ----------------------------------------------------
   const updateUrl = (
     treesToUse = trees,
     orderToUse = talentSpendOrder
   ) => {
-    const encodedData =
-      encodeTalentBuild(treesToUse)
-    let url = `${window.location.origin}/${selectedClass}`
-
-    if (encodedData) {
-      // encodeTalentBuild returns '' if empty
-      url += `/${encodedData}`
-      const orderSlug = encodeTalentSlug(
+    const buildEnc = encodeTalentBuild(treesToUse)
+    let url = `/${selectedClass}`
+    if (buildEnc) {
+      url += `/${buildEnc}`
+      const orderEnc = encodeTalentSlug(
         orderToUse,
         treesToUse
       )
-      if (orderSlug.length > 0) {
-        url += `/${orderSlug}`
-      }
+      if (orderEnc) url += `/${orderEnc}`
     }
-
     window.history.replaceState(null, '', url)
   }
 
-  // ---- derived --------------------------------------------------------------
+  // Sync URL once class/trees/order settle—guarantees correct class
+  useEffect(() => {
+    // Don't update URL until trees are loaded
+    if (trees.length > 0) {
+      updateUrl()
+    }
+  }, [selectedClass, trees, talentSpendOrder])
+
+  // Derived values
   const totalPointsSpent = useMemo(
     () =>
       trees.reduce(
-        (sum, tree) =>
+        (sum, t) =>
           sum +
-          tree.talents.reduce(
-            (s, t) => s + t.points,
+          t.talents.reduce(
+            (s, x) => s + x.points,
             0
           ),
         0
       ),
     [trees]
   )
-
   const pointsByLevel = useMemo(() => {
     const list: number[] = []
-    for (let level = 1; level <= 100; level++) {
-      let points = 0
-      if (level >= 10) points += 1
+    for (let lvl = 1; lvl <= 100; lvl++) {
+      let pts = lvl >= 10 ? 1 : 0
       if (
-        additionalTalentPointsLevels.includes(
-          level
-        )
+        additionalTalentPointsLevels.includes(lvl)
       )
-        points += 1
-      list[level] = points
+        pts += 1
+      list[lvl] = pts
     }
     return list
   }, [])
-
   const cumulativePointsByLevel = useMemo(() => {
-    const cumulative: number[] = []
-    let total = 0
-    for (
-      let level = 1;
-      level < pointsByLevel.length;
-      level++
-    ) {
-      total += pointsByLevel[level]
-      cumulative[level] = total
-    }
-    return cumulative
+    const cum: number[] = []
+    let tot = 0
+    pointsByLevel.forEach((pts, lvl) => {
+      tot += pts
+      cum[lvl] = tot
+    })
+    return cum
   }, [pointsByLevel])
 
   const currentLevel = useMemo(() => {
     for (
-      let level = 10;
-      level < cumulativePointsByLevel.length;
-      level++
+      let lvl = 10;
+      lvl < cumulativePointsByLevel.length;
+      lvl++
     ) {
       if (
-        cumulativePointsByLevel[level] >=
+        cumulativePointsByLevel[lvl] >=
         totalPointsSpent
-      ) {
-        return level
-      }
+      )
+        return lvl
     }
     return cumulativePointsByLevel.length - 1
   }, [totalPointsSpent, cumulativePointsByLevel])
@@ -209,124 +181,112 @@ export const useTalentTrees = ({
       ),
     [totalTalentPoints, totalPointsSpent]
   )
-
   const pointsSpentPerTree = useMemo(() => {
-    const result: Record<string, number> = {}
-    for (const tree of trees) {
-      result[tree.name] = tree.talents.reduce(
-        (sum, t) => sum + t.points,
-        0
-      )
-    }
-    return result
+    return Object.fromEntries(
+      trees.map(tree => [
+        tree.name,
+        tree.talents.reduce(
+          (s, t) => s + t.points,
+          0
+        ),
+      ])
+    )
   }, [trees])
 
   const primaryTree = useMemo(() => {
-    let maxPoints = 10
-    let primary = { name: '', specIcon: '' }
-
-    for (const tree of trees) {
-      const points =
+    let max = 10,
+      primary = { name: '', specIcon: '' }
+    trees.forEach(tree => {
+      const pts =
         pointsSpentPerTree[tree.name] ?? 0
-      if (points > maxPoints) {
-        maxPoints = points
+      if (pts > max) {
+        max = pts
         primary = {
           name: tree.name,
           specIcon: tree.specIcon,
         }
       }
-    }
+    })
     return primary
   }, [trees, pointsSpentPerTree])
 
-  // ---- helpers --------------------------------------------------------------
+  // Internal helpers
   const deepClone = <T>(obj: T): T =>
     typeof structuredClone !== 'undefined'
       ? structuredClone(obj)
       : JSON.parse(JSON.stringify(obj))
 
-  const rebuildTreesFromOrder = (
-    order: TalentOrderItem[]
-  ): Tree[] => {
-    const clone = deepClone(baseTreesRef.current)
-
-    const rankCount: Record<string, number> =
-      Object.create(null)
-
-    for (const item of order) {
-      const targetName = item.name
-      rankCount[targetName] =
-        (rankCount[targetName] ?? 0) + 1
-      const desiredRank = rankCount[targetName]
-
-      const { tree, talent } =
-        findTalentByName(clone, targetName) ?? {}
-      if (!tree || !talent) continue
-
-      // Apply ranks up to desiredRank (respecting maxPoints)
-      const newPoints = Math.min(
-        desiredRank,
-        talent.maxPoints
-      )
-      talent.points = newPoints
-    }
-
-    return clone
-  }
-
   const findTalentByName = (
-    treesArr: Tree[],
+    arr: Tree[],
     name: string
   ):
     | { tree: Tree; talent: Talent }
     | undefined => {
-    for (const tree of treesArr) {
-      const talent = tree.talents.find(
+    for (const tree of arr) {
+      const tal = tree.talents.find(
         t => t.name === name
       )
-      if (talent) return { tree, talent }
+      if (tal) return { tree, talent: tal }
     }
     return undefined
   }
 
-  // ---- reset ---------------------------------------------------------------
-  const resetTree = (idx: number) => {
-    setTalentSpendOrder(prev => {
-      const base = baseTreesRef.current
-      const namesInTree = new Set(
-        base[idx].talents.map(t => t.name)
+  const rebuildFromOrder = (
+    order: TalentOrderItem[]
+  ): Tree[] => {
+    const clone = deepClone(baseTreesRef.current)
+    const rankCount: Record<string, number> = {}
+    order.forEach(item => {
+      const name = item.name
+      rankCount[name] = (rankCount[name] || 0) + 1
+      const rank = rankCount[name]
+      const found = findTalentByName(clone, name)
+      if (!found) return
+      const { talent } = found
+      talent.points = Math.min(
+        rank,
+        talent.maxPoints
       )
-      const next = prev.filter(
-        item => !namesInTree.has(item.name)
-      )
-      const rebuilt = rebuildTreesFromOrder(next)
-      setTrees(rebuilt)
-      updateUrl(rebuilt, next)
-      return next
     })
+    return clone
   }
 
+  // API methods
   const resetAll = async () => {
     try {
-      const talentData = await loadTalentData(
+      const data = await loadTalentData(
         selectedClass
       )
-      const fresh = deepClone(talentData)
+      const fresh = deepClone(data)
       baseTreesRef.current = fresh
       setTalentSpendOrder([])
-      const resetTrees = deepClone(
-        baseTreesRef.current
-      )
-      setTrees(resetTrees)
-      updateUrl(resetTrees, [])
+      setTrees(fresh)
+      // ❌ no direct URL update here
     } catch (err) {
       setError(
-        `Failed to reset: ${err instanceof Error ? err.message : String(err)}`
+        err instanceof Error
+          ? err.message
+          : String(err)
       )
     }
   }
 
-  // ---- modify (order-first) -----------------------------------------------
+  const resetTree = (idx: number) => {
+    setTalentSpendOrder(prev => {
+      const names = new Set(
+        baseTreesRef.current[idx].talents.map(
+          t => t.name
+        )
+      )
+      const nextOrder = prev.filter(
+        o => !names.has(o.name)
+      )
+      const newTrees = rebuildFromOrder(nextOrder)
+      setTrees(newTrees)
+      return nextOrder
+    })
+  }
+
   const modify = (
     treeIdx: number,
     talentId: string,
@@ -336,96 +296,77 @@ export const useTalentTrees = ({
   ) => {
     const isDecrement =
       e.shiftKey || e.type === 'contextmenu'
+    const talent = trees[treeIdx].talents.find(
+      t => t.id === talentId
+    )
+    if (!talent) return
+    const name = talent.name
 
-    const targetTalent = trees[
-      treeIdx
-    ].talents.find(t => t.id === talentId)
-    if (!targetTalent) return
-
-    const targetName = targetTalent.name
-
-    setTalentSpendOrder(prevOrder => {
-      const nextOrder = [...prevOrder]
-
+    setTalentSpendOrder(prev => {
+      const next = [...prev]
       if (isDecrement) {
-        // Check if it is safe to decrement this talent
-        const safeToDecrement =
-          canSafelyDecrementTalent(
-            targetTalent,
+        if (
+          !canSafelyDecrementTalent(
+            talent,
             trees[treeIdx].talents
           )
-        if (!safeToDecrement) {
-          // Disallow decrement if it breaks requirements
-          return prevOrder
+        ) {
+          return prev
         }
-
-        // Find the last occurrence of this talent in the order array to remove
-        const lastIdx = [...nextOrder]
-          .map((item, i) => ({ item, i }))
+        const lastIndex = [...next]
           .reverse()
-          .find(
-            x => x.item.name === targetName
-          )?.i
-
-        if (lastIdx != null) {
-          nextOrder.splice(lastIdx, 1)
-        }
+          .findIndex(o => o.name === name)
+        if (lastIndex >= 0)
+          next.splice(
+            next.length - 1 - lastIndex,
+            1
+          )
       } else {
-        const pointsSpent = totalPointsSpent
-        const locked = isTalentLocked(
-          targetTalent,
-          trees[treeIdx].talents,
-          pointsSpent
-        )
-
         if (
           !canIncrementTalent(
-            targetTalent,
+            talent,
             pointsRemaining,
-            locked
+            isTalentLocked(
+              talent,
+              trees[treeIdx].talents,
+              totalPointsSpent
+            )
           )
         ) {
-          // Can't increment due to lock or no points remaining
-          return prevOrder
+          return prev
         }
-
         const newRank =
-          nextOrder.filter(
-            o => o.name === targetName
-          ).length + 1
-        nextOrder.push({
-          name: targetName,
+          next.filter(o => o.name === name)
+            .length + 1
+        next.push({
+          name,
           rank: newRank,
-          icon: targetTalent.icon,
-          description:
-            targetTalent.ranks[newRank - 1],
-          abilityData: targetTalent.abilityData,
+          icon: talent.icon,
+          description: talent.ranks[newRank - 1],
+          abilityData: talent.abilityData,
         })
       }
 
-      const rebuilt =
-        rebuildTreesFromOrder(nextOrder)
-      setTrees(rebuilt)
-      updateUrl(rebuilt, nextOrder)
-
-      return nextOrder
+      const newTrees = rebuildFromOrder(next)
+      setTrees(newTrees)
+      return next
     })
   }
 
   return {
     trees,
     error,
-    currentLevel,
-    totalPointsSpent,
+    modify,
+    resetTree,
+    resetAll,
     totalTalentPoints,
+    totalPointsSpent,
     pointsRemaining,
+    currentLevel,
     pointsSpentPerTree,
     primaryTree,
     talentSpendOrder,
     cumulativePointsByLevel,
     pointsByLevel,
-    modify,
-    resetTree,
-    resetAll,
   }
 }
