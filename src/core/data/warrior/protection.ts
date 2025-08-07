@@ -328,7 +328,7 @@ export const protection: Tree = {
       ],
       spellIds: ['23922'],
       requires: {
-        id: 'ability_warrior_shieldwall',
+        id: 'ability_thunderbolt',
         points: 1,
       },
       abilityData: {
