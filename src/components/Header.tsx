@@ -7,6 +7,8 @@ import HeaderBgDesktop from '../assets/images/header-bg.webp'
 import HeaderBgBlur from '../assets/images/header-bg.webp?w=40&h=20&blur=5&quality=30&imagetools'
 import EpochLogoMobile from '../assets/images/full-logo.webp?w=370&h=96&quality=70&imagetools'
 import EpochLogoDesktop from '../assets/images/full-logo.webp?w=185&h=48&quality=70&imagetools'
+// https://github.com/logos
+import GitHubLogoWhite from '../assets/images/github-mark-white.svg?w=185&h=48&quality=70&imagetools'
 
 export function Header() {
   const [imageLoaded, setImageLoaded] =
@@ -76,6 +78,28 @@ export function Header() {
             height='48'
           />
         </a>
+        <div className="ml-auto flex items-center">
+          <a
+          href='https://github.com/MelEnt/mel-talent-calc'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='flex p-4 [@media(min-width:640px)]:p-0'
+          >
+            <img
+              src={GitHubLogoWhite}
+              srcSet={`${GitHubLogoWhite} 100w, ${GitHubLogoWhite} 100w`}
+              sizes='(max-width: 100px) 100px, 100px'
+              alt='Epoch Logo'
+              className='flex h-12 w-auto'
+              style={{
+                filter:
+                  'drop-shadow(2px 4px 6px black)',
+              }}
+              width='185'
+              height='48'
+            />
+          </a>
+        </div>
       </div>
       {/* Header Banner */}
       <div
