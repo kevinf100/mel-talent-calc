@@ -58,6 +58,7 @@ export function Header() {
       {/* React header - shows after critical version is hidden */}
       {/* Top Bar */}
       <div className='w-[85%] mx-auto h-[90px] flex items-center justify-center [@media(min-width:640px)]:!justify-start px-4 [@media(min-width:640px)]:px-0'>
+        {/* Epoch Logo */}
         <a
           href='https://www.ascension.gg/'
           target='_blank'
@@ -78,6 +79,7 @@ export function Header() {
             height='48'
           />
         </a>
+        {/* GitHub Logo */}
         <div className="ml-auto flex items-center">
           <a
           href='https://github.com/MelEnt/mel-talent-calc'
@@ -89,7 +91,7 @@ export function Header() {
               src={GitHubLogoWhite}
               srcSet={`${GitHubLogoWhite} 100w, ${GitHubLogoWhite} 100w`}
               sizes='(max-width: 100px) 100px, 100px'
-              alt='Epoch Logo'
+              alt='GitHub Logo'
               className='flex h-12 w-auto'
               style={{
                 filter:
