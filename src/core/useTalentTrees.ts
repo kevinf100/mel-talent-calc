@@ -253,6 +253,11 @@ export const useTalentTrees = ({
 
   // API methods
   const resetAll = async () => {
+    const shouldReset = window.confirm(
+      'Are you sure you want to reset all talent trees? This action cannot be undone.'
+    )
+    if (!shouldReset) return
+
     try {
       const data = await loadTalentData(
         selectedClass
@@ -272,6 +277,13 @@ export const useTalentTrees = ({
   }
 
   const resetTree = (idx: number) => {
+    const treeName = trees[idx]?.name
+    if (!treeName) return
+    const shouldReset = window.confirm(
+      `Are you sure you want to reset the ${treeName} talent tree? This action cannot be undone.`
+    )
+    if (!shouldReset) return
+
     setTalentSpendOrder(prev => {
       const names = new Set(
         baseTreesRef.current[idx].talents.map(
