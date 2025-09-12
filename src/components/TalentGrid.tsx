@@ -1,4 +1,21 @@
-import { lazy, Suspense } from 'react'
+import ClipboardJS from 'clipboard'
+import {
+  lazy,
+  Suspense,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
+import ShareSprite from '../assets/ui/share-btn-sprite-small2.webp?w=616&h=592&q=80&imagetools'
+import { CLASS_NAMES } from '../core/constants'
+import type { ClassName } from '../core/types'
+import { useTalentTrees } from '../core/useTalentTrees'
+import { showCopyToast } from '../lib/showCopyToast'
+import { showNewVersionToast } from '../lib/showNewVersionToast'
+import ClassCrest from './ClassCrest'
+import { ParchmentBorders } from './ParchmentBorders'
+import { TalentOrderSummary } from './TalentOrderSummary'
+import type { TalentTreeScrollerRef } from './TalentTreeScroller'
 // Critical components for LCP - keep these eager
 const TalentTree = lazy(() =>
   import('./TalentTree').then(m => ({
@@ -21,22 +38,6 @@ const TalentTreeScroller = lazy(() =>
     default: m.TalentTreeScroller,
   }))
 )
-import { useTalentTrees } from '../core/useTalentTrees'
-import type { TalentTreeScrollerRef } from './TalentTreeScroller'
-import { ParchmentBorders } from './ParchmentBorders'
-import { showCopyToast } from '../lib/showCopyToast'
-import { showNewVersionToast } from '../lib/showNewVersionToast'
-import {
-  useState,
-  useEffect,
-  useRef,
-} from 'react'
-import type { ClassName } from '../core/types'
-import { CLASS_NAMES } from '../core/constants'
-import ClipboardJS from 'clipboard'
-import ShareSprite from '../assets/ui/share-btn-sprite-small2.webp?w=616&h=592&q=80&imagetools'
-import ClassCrest from './ClassCrest'
-import { TalentOrderSummary } from './TalentOrderSummary'
 
 const SELECTED_CLASS_KEY =
   'mel-talent-calc-selected-class'
@@ -110,9 +111,11 @@ export const TalentGrid = () => {
 
   // Check for data query parameter and show new version toast
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search)
+    const params = new URLSearchParams(
+      window.location.search
+    )
     const dataParam = params.get('data')
-    
+
     if (dataParam && !hasShownToastRef.current) {
       showNewVersionToast()
       hasShownToastRef.current = true
@@ -243,41 +246,6 @@ export const TalentGrid = () => {
                   handleClassChange
                 }
               />
-              <div className='flex justify-center sm:justify-end gap-4 z-1 items-end'>
-                {/* Share Button */}
-                <button
-                  ref={shareBtnRef}
-                  aria-label='Share'
-                  className='relative sm:top-1 w-[308px] h-[95px] bg-[length:308px_296px] bg-no-repeat sm:w-[308px] sm:h-[95px] sm:bg-[length:308px_296px] cursor-pointer'
-                  style={{
-                    backgroundImage: `url(${ShareSprite})`,
-                    backgroundPosition: '0px 0px',
-                  }}
-                  onMouseOver={e => {
-                    const isDesktop =
-                      window.innerWidth >= 640
-                    if (isDesktop)
-                      e.currentTarget.style.backgroundPosition =
-                        '0px -197px'
-                  }}
-                  onPointerDown={e => {
-                    const isDesktop =
-                      window.innerWidth >= 640
-                    e.currentTarget.style.backgroundPosition =
-                      isDesktop
-                        ? '-1px -99.5px'
-                        : '-1px -100px'
-                  }}
-                  onPointerUp={e => {
-                    e.currentTarget.style.backgroundPosition =
-                      '0px -197px'
-                  }}
-                  onPointerLeave={e => {
-                    e.currentTarget.style.backgroundPosition =
-                      '0px 0px'
-                  }}
-                />
-              </div>
             </div>
           </ParchmentBorders>
         </div>
@@ -311,14 +279,47 @@ export const TalentGrid = () => {
             ))}
           />
         </Suspense>
-        <div className='flex justify-center min-h-[20rem] w-[95%] md:w-[98%] text-white mx-auto'>
-          <TalentOrderSummary
-            cumulativePointsByLevel={
-              cumulativePointsByLevel
-            }
-            talentSpendOrder={talentSpendOrder}
+        <div className='flex justify-center text-white mx-auto'>
+          {/* Share Button */}
+          <button
+            ref={shareBtnRef}
+            aria-label='Share'
+            className='relative sm:top-1 w-[308px] h-[95px] bg-no-repeat cursor-pointer'
+            style={{
+              backgroundImage: `url(${ShareSprite})`,
+              backgroundSize: '308px 296px',
+            }}
+            onMouseOver={e => {
+              const isDesktop =
+                window.innerWidth >= 640
+              if (isDesktop)
+                e.currentTarget.style.backgroundPosition =
+                  '0px -197px'
+            }}
+            onPointerDown={e => {
+              const isDesktop =
+                window.innerWidth >= 640
+              e.currentTarget.style.backgroundPosition =
+                isDesktop
+                  ? '-1px -99.5px'
+                  : '-1px -100px'
+            }}
+            onPointerUp={e => {
+              e.currentTarget.style.backgroundPosition =
+                '0px -197px'
+            }}
+            onPointerLeave={e => {
+              e.currentTarget.style.backgroundPosition =
+                '0px 0px'
+            }}
           />
         </div>
+        <TalentOrderSummary
+          cumulativePointsByLevel={
+            cumulativePointsByLevel
+          }
+          talentSpendOrder={talentSpendOrder}
+        />
       </div>
     </div>
   )
