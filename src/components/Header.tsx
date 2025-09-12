@@ -57,7 +57,7 @@ export function Header() {
       {/* Top Bar */}
       <div className='w-[85%] mx-auto h-[90px] flex items-center justify-center [@media(min-width:640px)]:!justify-start px-4 [@media(min-width:640px)]:px-0'>
         <a
-          href='https://www.project-epoch.net/'
+          href='https://www.ascension.gg/'
           target='_blank'
           rel='noopener noreferrer'
           className='flex p-4 [@media(min-width:640px)]:p-0'
