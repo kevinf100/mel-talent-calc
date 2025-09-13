@@ -39,6 +39,7 @@ import YesSpirit from '../assets/ui/red-button-yes.webp'
 import NoSpirit from '../assets/ui/red-button-no.webp'
 import ClassCrest from './ClassCrest'
 import { TalentOrderSummary } from './TalentOrderSummary'
+import { showCustomConfirm } from '../core/useTalentTrees'
 
 const SELECTED_CLASS_KEY =
   'mel-talent-calc-selected-class'
@@ -188,8 +189,16 @@ export const TalentGrid = () => {
     tree => pointsSpentPerTree[tree.name] || 0
   )
 
-  const handleClassChange = (cls: ClassName) => {
-    resetAll()
+  const handleClassChange = async (cls: ClassName) => {
+    if (totalPointsSpent > 0) {
+      const shouldReset = await showCustomConfirm(
+        `Are you sure you want to change classes? You will loss your current build!
+        Last chance to save your build by copying the URL below or just cancel this!!!`
+      )
+      if (!shouldReset) return
+      
+    }
+    resetAll(false)
     setSelectedClass(cls)
   }
 
