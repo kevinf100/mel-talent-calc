@@ -253,8 +253,9 @@ export const useTalentTrees = ({
 
   // API methods
   const resetAll = async () => {
-    const shouldReset = window.confirm(
-      'Are you sure you want to reset all talent trees? This action cannot be undone.'
+    const shouldReset = await showCustomConfirm(
+      `Are you sure you want to reset ALL talent trees? This action cannot be undone.
+      Last chance to save your build by copying the URL below!`
     )
     if (!shouldReset) return
 
@@ -276,11 +277,56 @@ export const useTalentTrees = ({
     }
   }
 
-  const resetTree = (idx: number) => {
+  const showCustomConfirm = (message: string): Promise<boolean> => {
+    return new Promise<boolean>((resolve) => {
+      const overlay = document.getElementById('customConfirmOverlay') as HTMLDivElement | null;
+      const confirmText = document.getElementById('confirmText') as HTMLParagraphElement | null;
+      const confirmYes = document.getElementById('confirmYes') as HTMLButtonElement | null;
+      const confirmNo = document.getElementById('confirmNo') as HTMLButtonElement | null;
+      const confirmUrl = document.getElementById('confirmUrl') as HTMLSpanElement | null;
+
+      if (!overlay || !confirmText || !confirmYes || !confirmNo || !confirmUrl) {
+        resolve(false);
+        return;
+      }
+
+      // Show message and current URL
+      const url = window.location.href;
+      confirmText.textContent = `${message}\n`;
+      confirmUrl.textContent = url;
+      overlay.style.display = 'flex';
+
+
+
+      const cleanup = () => {
+        overlay.style.display = 'none';
+        confirmYes.removeEventListener('click', handleYes);
+        confirmNo.removeEventListener('click', handleNo);
+      };
+
+      const handleYes = () => {
+        overlay.style.display = 'none';
+        cleanup();
+        resolve(true);
+      };
+
+      const handleNo = () => {
+        overlay.style.display = 'none';
+        cleanup();
+        resolve(false);
+      };
+
+      confirmYes.addEventListener('click', handleYes);
+      confirmNo.addEventListener('click', handleNo);
+    });
+  }
+
+  const resetTree = async (idx: number) => {
     const treeName = trees[idx]?.name
     if (!treeName) return
-    const shouldReset = window.confirm(
-      `Are you sure you want to reset the ${treeName} talent tree? This action cannot be undone.`
+    const shouldReset = await showCustomConfirm(
+      `Are you sure you want to reset the ${treeName} talent tree? This action cannot be undone.
+      Last chance to save your build by copying the URL below or just cancel this!!!`
     )
     if (!shouldReset) return
 

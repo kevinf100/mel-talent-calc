@@ -35,6 +35,8 @@ import type { ClassName } from '../core/types'
 import { CLASS_NAMES } from '../core/constants'
 import ClipboardJS from 'clipboard'
 import ShareSprite from '../assets/ui/share-btn-sprite-small2.webp?w=616&h=592&q=80&imagetools'
+import YesSpirit from '../assets/ui/red-button-yes.webp'
+import NoSpirit from '../assets/ui/red-button-no.webp'
 import ClassCrest from './ClassCrest'
 import { TalentOrderSummary } from './TalentOrderSummary'
 
@@ -133,36 +135,36 @@ export const TalentGrid = () => {
 
   const shareBtnRef =
     useRef<HTMLButtonElement>(null)
-  const clipboardInstance =
-    useRef<ClipboardJS | null>(null)
+  const urlBtnRef =
+    useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
-    if (!shareBtnRef.current) return
+    const buttons = [shareBtnRef.current, urlBtnRef.current].filter(Boolean);
+    if (buttons.length === 0) return;
 
-    // Initialize ClipboardJS on the share button
-    clipboardInstance.current = new ClipboardJS(
-      shareBtnRef.current,
-      {
-        text: () => window.location.href,
-      }
-    )
+    const instances: ClipboardJS[] = buttons.map(
+      btn =>
+        new ClipboardJS(btn as Element, {
+          text: () => window.location.href,
+        })
+    );
 
-    clipboardInstance.current.on(
-      'success',
-      () => {
-        showCopyToast()
-      }
-    )
+    instances.forEach(instance => {
+      instance.on('success', () => {
+        showCopyToast();
+      });
 
-    clipboardInstance.current.on('error', e => {
-      console.error('Clipboard copy failed', e)
-      showCopyToast()
-    })
+      instance.on('error', e => {
+        console.error('Clipboard copy failed', e);
+        showCopyToast();
+      });
+    });
 
     return () => {
-      clipboardInstance.current?.destroy()
-    }
-  }, [])
+      instances.forEach(instance => instance.destroy());
+    };
+  }, []);
+
 
   const {
     trees,
@@ -222,6 +224,70 @@ export const TalentGrid = () => {
   // Show full app when everything is ready
   return (
     <div>
+      <div id="customConfirmOverlay" className="confirm-overlay">
+        <div id="customConfirmDialog" className="confirm-dialog">
+          <p id="confirmMessage">
+            <span id="confirmText"></span>
+            <span
+              ref={urlBtnRef}
+              id="confirmUrl"
+              style={{
+                color: 'blue',
+                cursor: 'pointer',
+                textDecoration: 'underline',
+              }}
+            ></span>
+          </p>
+          <div className="confirm-buttons">
+            <button
+              id="confirmYes"
+              aria-label='Confirm Yes'
+              className='relative sm:top-1 w-[75px] h-[40px] bg-[length:80px_100px] bg-no-repeat sm:w-[75px] sm:h-[40px] sm:bg-[length:80px_100px] cursor-pointer'
+              style={{
+                backgroundImage: `url(${YesSpirit})`,
+                backgroundPosition: '0px 0px',
+                backgroundColor: 'transparent',
+              }}
+              onPointerDown={e => {
+                const isDesktop = window.innerWidth >= 640
+                e.currentTarget.style.backgroundPosition =
+                  isDesktop ? '0px -50px' : '0px -50px'
+              }}
+              onPointerUp={e => {
+                e.currentTarget.style.backgroundPosition = '0px 0px'
+              }}
+              onPointerLeave={e => {
+                e.currentTarget.style.backgroundPosition =
+                  '0px 0px'
+              }}
+            >
+            </button>
+            <button
+              id="confirmNo"
+              aria-label='Confirm No'
+              className='relative sm:top-1 w-[75px] h-[40px] bg-[length:80px_100px] bg-no-repeat sm:w-[75px] sm:h-[40px] sm:bg-[length:80px_100px] cursor-pointer'
+              style={{
+                backgroundImage: `url(${NoSpirit})`,
+                backgroundPosition: '0px 0px',
+                backgroundColor: 'transparent',
+              }}
+              onPointerDown={e => {
+                const isDesktop = window.innerWidth >= 640
+                e.currentTarget.style.backgroundPosition =
+                  isDesktop ? '0px -50px' : '0px -50px'
+              }}
+              onPointerUp={e => {
+                e.currentTarget.style.backgroundPosition = '0px 0px'
+              }}
+              onPointerLeave={e => {
+                e.currentTarget.style.backgroundPosition =
+                  '0px 0px'
+              }}
+            >
+            </button>
+          </div>
+        </div>
+      </div>
       <div className='max-w-[85rem] w-full m-auto overflow-x-hidden'>
         <div className='flex flex-col w-full gap-4'>
           <ParchmentBorders>
